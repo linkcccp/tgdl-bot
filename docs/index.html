@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>TGBot API 文档 | TGBot API 文档 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="TGBot API 文档 | TGBot API 文档 ">
+    
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tgbot-api-文档">TGBot API 文档</h1>
+
+<p><code>tgdl-bot</code> 是一个基于 .NET 10 的 Telegram 下载 Bot 控制台程序，支持 yt-dlp 下载与本地 Bot API Server（--local 模式）上传，内存占用 &lt; 100MB。</p>
+<h2 id="模块概览">模块概览</h2>
+<table>
+<thead>
+<tr>
+<th>命名空间</th>
+<th>职责</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TGBot.Config</code></td>
+<td>config.conf 解析与校验（中文错误提示）</td>
+</tr>
+<tr>
+<td><code>TGBot.Logging</code></td>
+<td>分级日志（控制台 + 可选文件）</td>
+</tr>
+<tr>
+<td><code>TGBot.Security</code></td>
+<td>URL/SSRF 校验、路径净化、临时目录、磁盘检查</td>
+</tr>
+<tr>
+<td><code>TGBot.Access</code></td>
+<td>双重白名单访问控制</td>
+</tr>
+<tr>
+<td><code>TGBot.Download</code></td>
+<td>yt-dlp 下载器抽象、并发闸门、任务注册表</td>
+</tr>
+<tr>
+<td><code>TGBot.Update</code></td>
+<td>ffmpeg/yt-dlp 原子自更新</td>
+</tr>
+<tr>
+<td><code>TGBot.Messaging</code></td>
+<td>Telegram 客户端抽象、上传服务、文案构建</td>
+</tr>
+<tr>
+<td><code>TGBot.Application</code></td>
+<td>消息路由、下载协调、指令处理、Bot 宿主</td>
+</tr>
+<tr>
+<td><code>TGBot.Texts</code></td>
+<td>面向用户的中文提示文案</td>
+</tr>
+</tbody>
+</table>
+<h2 id="构建文档">构建文档</h2>
+<pre><code class="lang-bash">dotnet tool install --global docfx
+docfx build docfx/docfx.json
+# 输出到 docs/ 目录，用浏览器打开 docs/index.html
+</code></pre>
+<p>本文档由 DocFX 从 XML 文档注释自动生成。</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      tgdl-bot — .NET Telegram 下载 Bot
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

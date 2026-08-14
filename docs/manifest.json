@@ -1,0 +1,1041 @@
+{
+  "source_base_path": "/home/yarch/source/tgdl-bot/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Access.AccessControlService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Access.AccessControlService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Access.AccessControlService",
+      "Summary": "<p sourcefile=\"api/TGBot.Access.AccessControlService.yml\" sourcestartlinenumber=\"1\">双重白名单访问控制：</p>\n<ul><li>私聊：仅 <code>AllowedUserIds</code> 中的用户可触发。</li><li>频道/群组：仅 <code>TargetChannelIds</code> 中的会话可触发。</li></ul>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Access.AccessDecision.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Access.AccessDecision.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Access.AccessDecision",
+      "Summary": "<p sourcefile=\"api/TGBot.Access.AccessDecision.yml\" sourcestartlinenumber=\"1\">访问控制判定结果。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Access.TriggerArea.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Access.TriggerArea.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Access.TriggerArea",
+      "Summary": "<p sourcefile=\"api/TGBot.Access.TriggerArea.yml\" sourcestartlinenumber=\"1\">触发区域：私聊，或频道/群组。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Access.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Access.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Access",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Application.AppHost.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Application.AppHost.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Application.AppHost",
+      "Summary": "<p sourcefile=\"api/TGBot.Application.AppHost.yml\" sourcestartlinenumber=\"1\">应用宿主：解析命令行参数、加载配置、装配各模块并启动 Bot 服务。</p>\n<p>支持 <code>--smoke-test</code> 自检模式（验证配置与模块装配并输出内存占用，不连接网络）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Application.BotService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Application.BotService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Application.BotService",
+      "Summary": "<p sourcefile=\"api/TGBot.Application.BotService.yml\" sourcestartlinenumber=\"1\">Bot 服务：Long Polling 主循环，带异常兜底与重启退避。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Application.CommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Application.CommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Application.CommandHandler",
+      "Summary": "<p sourcefile=\"api/TGBot.Application.CommandHandler.yml\" sourcestartlinenumber=\"1\">指令处理器：/update、/status、/help。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Application.DownloadCoordinator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Application.DownloadCoordinator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Application.DownloadCoordinator",
+      "Summary": "<p sourcefile=\"api/TGBot.Application.DownloadCoordinator.yml\" sourcestartlinenumber=\"1\">下载协调器：负责排队、并发控制、重试、进度通知与临时文件清理。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Application.MessageRouter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Application.MessageRouter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Application.MessageRouter",
+      "Summary": "<p sourcefile=\"api/TGBot.Application.MessageRouter.yml\" sourcestartlinenumber=\"1\">消息路由器：访问控制 → 指令 / 链接校验 → 下载任务入队。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Application.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Application.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Application",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Config.AppConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Config.AppConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Config.AppConfig",
+      "Summary": "<p sourcefile=\"api/TGBot.Config.AppConfig.yml\" sourcestartlinenumber=\"1\">应用配置模型，由 <xref href=\"TGBot.Config.ConfigParser\" data-throw-if-not-resolved=\"false\"></xref> 从 config.conf 解析得到。</p>\n<p>所有路径均为绝对路径（在加载阶段展开）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Config.ConfigLoadException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Config.ConfigLoadException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Config.ConfigLoadException",
+      "Summary": "<p sourcefile=\"api/TGBot.Config.ConfigLoadException.yml\" sourcestartlinenumber=\"1\">配置文件加载失败异常（文件不存在或不可读）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Config.ConfigLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Config.ConfigLoader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Config.ConfigLoader",
+      "Summary": "<p sourcefile=\"api/TGBot.Config.ConfigLoader.yml\" sourcestartlinenumber=\"1\">负责定位并读取 config.conf。</p>\n<p>查找顺序：<code>--config &lt;path&gt;</code> 参数 → 环境变量 <code>TGDL_CONFIG</code> →\n与程序二进制同目录 → 当前工作目录。若仍找不到则抛出 <xref href=\"TGBot.Config.ConfigLoadException\" data-throw-if-not-resolved=\"false\"></xref>。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Config.ConfigParseException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Config.ConfigParseException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Config.ConfigParseException",
+      "Summary": "<p sourcefile=\"api/TGBot.Config.ConfigParseException.yml\" sourcestartlinenumber=\"1\">配置解析错误。消息为面向用户的中文提示，不含内部实现细节。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Config.ConfigParseResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Config.ConfigParseResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Config.ConfigParseResult",
+      "Summary": "<p sourcefile=\"api/TGBot.Config.ConfigParseResult.yml\" sourcestartlinenumber=\"1\">解析结果，包含配置对象与解析过程中产生的警告。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Config.ConfigParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Config.ConfigParser.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Config.ConfigParser",
+      "Summary": "<p sourcefile=\"api/TGBot.Config.ConfigParser.yml\" sourcestartlinenumber=\"1\">config.conf 解析器。</p>\n<p>格式：每行 <code>键 = 值</code>，支持 <code>#</code>/<code>;</code> 注释、空行与 <code>[section]</code> 段头。\n解析失败抛出 <xref href=\"TGBot.Config.ConfigParseException\" data-throw-if-not-resolved=\"false\"></xref>，消息为清晰的中文提示（含行号）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Config.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Config",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Download.DownloadException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Download.DownloadException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Download.DownloadException",
+      "Summary": "<p sourcefile=\"api/TGBot.Download.DownloadException.yml\" sourcestartlinenumber=\"1\">下载失败异常。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Download.DownloadFailureReason.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Download.DownloadFailureReason.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Download.DownloadFailureReason",
+      "Summary": "<p sourcefile=\"api/TGBot.Download.DownloadFailureReason.yml\" sourcestartlinenumber=\"1\">下载失败原因分类，用于向用户给出准确提示而不泄露内部细节。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Download.DownloadGate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Download.DownloadGate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Download.DownloadGate",
+      "Summary": "<p sourcefile=\"api/TGBot.Download.DownloadGate.yml\" sourcestartlinenumber=\"1\">下载并发闸门：普通下载占 1 个槽位，自更新占满全部槽位，\n从而实现「更新与下载互斥、下载之间并发受限」。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Download.DownloadOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Download.DownloadOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Download.DownloadOptions",
+      "Summary": "<p sourcefile=\"api/TGBot.Download.DownloadOptions.yml\" sourcestartlinenumber=\"1\">单个下载任务的运行参数快照。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Download.DownloadProgress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Download.DownloadProgress.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Download.DownloadProgress",
+      "Summary": "<p sourcefile=\"api/TGBot.Download.DownloadProgress.yml\" sourcestartlinenumber=\"1\">下载进度信息。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Download.DownloadedMedia.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Download.DownloadedMedia.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Download.DownloadedMedia",
+      "Summary": "<p sourcefile=\"api/TGBot.Download.DownloadedMedia.yml\" sourcestartlinenumber=\"1\">下载成功的媒体文件信息。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Download.IDownloader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Download.IDownloader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Download.IDownloader",
+      "Summary": "<p sourcefile=\"api/TGBot.Download.IDownloader.yml\" sourcestartlinenumber=\"1\">下载器抽象，负责调用外部 yt-dlp 进程完成下载。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Download.JobRegistry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Download.JobRegistry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Download.JobRegistry",
+      "Summary": "<p sourcefile=\"api/TGBot.Download.JobRegistry.yml\" sourcestartlinenumber=\"1\">下载任务注册表：跟踪运行/排队任务数量，并对已受理的 URL 去重。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Download.YtDlpArgumentBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Download.YtDlpArgumentBuilder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Download.YtDlpArgumentBuilder",
+      "Summary": "<p sourcefile=\"api/TGBot.Download.YtDlpArgumentBuilder.yml\" sourcestartlinenumber=\"1\">构建 yt-dlp 命令行参数（纯函数，便于单元测试）。</p>\n<p>所有参数通过 <xref href=\"System.Diagnostics.ProcessStartInfo.ArgumentList\" data-throw-if-not-resolved=\"false\"></xref> 传递，\n不经过 shell，从根本上杜绝命令注入。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Download.YtDlpDownloader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Download.YtDlpDownloader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Download.YtDlpDownloader",
+      "Summary": "<p sourcefile=\"api/TGBot.Download.YtDlpDownloader.yml\" sourcestartlinenumber=\"1\">通过 <xref href=\"System.Diagnostics.Process.Start\" data-throw-if-not-resolved=\"false\"></xref> 调用系统安装的 yt-dlp 二进制实现下载。</p>\n<p>不内嵌 yt-dlp/ffmpeg，使用 <code>ArgumentList</code> 避免 shell 注入。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Download.YtDlpOutputParser.MetaLine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Download.YtDlpOutputParser.MetaLine.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Download.YtDlpOutputParser.MetaLine",
+      "Summary": "<p sourcefile=\"api/TGBot.Download.YtDlpOutputParser.MetaLine.yml\" sourcestartlinenumber=\"1\">元数据行解析结果。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Download.YtDlpOutputParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Download.YtDlpOutputParser.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Download.YtDlpOutputParser",
+      "Summary": "<p sourcefile=\"api/TGBot.Download.YtDlpOutputParser.yml\" sourcestartlinenumber=\"1\">yt-dlp 标准输出/错误输出解析器（纯函数，便于单元测试）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Download.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Download.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Download",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Logging.ConsoleLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Logging.ConsoleLogger.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Logging.ConsoleLogger",
+      "Summary": "<p sourcefile=\"api/TGBot.Logging.ConsoleLogger.yml\" sourcestartlinenumber=\"1\">写入控制台（stdout）并可选追加到日志文件的日志实现。</p>\n<p>线程安全：使用独立锁串行化写入，避免交错输出。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Logging.IAppLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Logging.IAppLogger.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Logging.IAppLogger",
+      "Summary": "<p sourcefile=\"api/TGBot.Logging.IAppLogger.yml\" sourcestartlinenumber=\"1\">应用日志抽象。所有模块通过本接口输出日志，便于替换实现与单元测试。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Logging.LogLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Logging.LogLevel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Logging.LogLevel",
+      "Summary": "<p sourcefile=\"api/TGBot.Logging.LogLevel.yml\" sourcestartlinenumber=\"1\">日志级别。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Logging.NullLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Logging.NullLogger.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Logging.NullLogger",
+      "Summary": "<p sourcefile=\"api/TGBot.Logging.NullLogger.yml\" sourcestartlinenumber=\"1\">不输出任何内容的空日志实现，用于单元测试。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Logging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Logging.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Logging",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Messaging.BotChatAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Messaging.BotChatAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Messaging.BotChatAction",
+      "Summary": "<p sourcefile=\"api/TGBot.Messaging.BotChatAction.yml\" sourcestartlinenumber=\"1\">Bot 聊天动作（发送中状态）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Messaging.CaptionBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Messaging.CaptionBuilder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Messaging.CaptionBuilder",
+      "Summary": "<p sourcefile=\"api/TGBot.Messaging.CaptionBuilder.yml\" sourcestartlinenumber=\"1\">媒体说明（caption）构建工具。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Messaging.ITelegramClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Messaging.ITelegramClient.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Messaging.ITelegramClient",
+      "Summary": "<p sourcefile=\"api/TGBot.Messaging.ITelegramClient.yml\" sourcestartlinenumber=\"1\">Telegram 客户端抽象：所有与 Telegram 的交互均通过本接口，便于替换与单测。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Messaging.InboundMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Messaging.InboundMessage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Messaging.InboundMessage",
+      "Summary": "<p sourcefile=\"api/TGBot.Messaging.InboundMessage.yml\" sourcestartlinenumber=\"1\">入站消息模型（与具体 Bot 库解耦，便于单元测试）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Messaging.TelegramClientWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Messaging.TelegramClientWrapper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Messaging.TelegramClientWrapper",
+      "Summary": "<p sourcefile=\"api/TGBot.Messaging.TelegramClientWrapper.yml\" sourcestartlinenumber=\"1\">基于 Telegram.Bot 库的客户端实现（Long Polling，连接本地 Bot API Server）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Messaging.UploadResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Messaging.UploadResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Messaging.UploadResult",
+      "Summary": "<p sourcefile=\"api/TGBot.Messaging.UploadResult.yml\" sourcestartlinenumber=\"1\">上传结果。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Messaging.UploadService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Messaging.UploadService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Messaging.UploadService",
+      "Summary": "<p sourcefile=\"api/TGBot.Messaging.UploadService.yml\" sourcestartlinenumber=\"1\">媒体上传服务：将下载产物推送到目标会话（含重试与状态动作）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Messaging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Messaging.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Messaging",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Security.DiskUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Security.DiskUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Security.DiskUtil",
+      "Summary": "<p sourcefile=\"api/TGBot.Security.DiskUtil.yml\" sourcestartlinenumber=\"1\">磁盘工具：查询目录所在文件系统的可用空间。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Security.DnsHostResolver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Security.DnsHostResolver.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Security.DnsHostResolver",
+      "Summary": "<p sourcefile=\"api/TGBot.Security.DnsHostResolver.yml\" sourcestartlinenumber=\"1\">基于 <xref href=\"System.Net.Dns\" data-throw-if-not-resolved=\"false\"></xref> 的真实 DNS 解析器。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Security.IHostResolver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Security.IHostResolver.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Security.IHostResolver",
+      "Summary": "<p sourcefile=\"api/TGBot.Security.IHostResolver.yml\" sourcestartlinenumber=\"1\">主机名解析抽象，便于单元测试注入伪造解析结果。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Security.IpAddressPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Security.IpAddressPolicy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Security.IpAddressPolicy",
+      "Summary": "<p sourcefile=\"api/TGBot.Security.IpAddressPolicy.yml\" sourcestartlinenumber=\"1\">IP 地址策略：判定地址是否属于私网/回环/链路本地等不受信任网段。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Security.PathSanitizer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Security.PathSanitizer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Security.PathSanitizer",
+      "Summary": "<p sourcefile=\"api/TGBot.Security.PathSanitizer.yml\" sourcestartlinenumber=\"1\">文件名/路径净化工具，用于防止路径穿越、隐藏文件、控制字符与符号链接攻击。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Security.TempDirManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Security.TempDirManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Security.TempDirManager",
+      "Summary": "<p sourcefile=\"api/TGBot.Security.TempDirManager.yml\" sourcestartlinenumber=\"1\">下载临时目录管理器：创建 0700 权限的任务子目录、清理遗留目录。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Security.UrlValidationResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Security.UrlValidationResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Security.UrlValidationResult",
+      "Summary": "<p sourcefile=\"api/TGBot.Security.UrlValidationResult.yml\" sourcestartlinenumber=\"1\">URL 校验结果。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Security.UrlValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Security.UrlValidator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Security.UrlValidator",
+      "Summary": "<p sourcefile=\"api/TGBot.Security.UrlValidator.yml\" sourcestartlinenumber=\"1\">零信任 URL 校验器。</p>\n<p>校验规则：仅 http/https、无内嵌凭据、长度受限、主机可解析且非私网/回环地址（SSRF 防护）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Security.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Security.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Security",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Texts.UserTexts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Texts.UserTexts.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Texts.UserTexts",
+      "Summary": "<p sourcefile=\"api/TGBot.Texts.UserTexts.yml\" sourcestartlinenumber=\"1\">面向 Telegram 用户的中文提示文案。</p>\n<p>所有文案均不含内部实现细节（堆栈、路径、配置值等），遵循零信任原则。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Texts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Texts.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Texts",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.AtomicFileReplacer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.AtomicFileReplacer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.AtomicFileReplacer",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.AtomicFileReplacer.yml\" sourcestartlinenumber=\"1\">原子文件替换器：先写临时文件再原子替换目标，失败时回滚旧版本。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.BinaryVersionParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.BinaryVersionParser.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.BinaryVersionParser",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.BinaryVersionParser.yml\" sourcestartlinenumber=\"1\">从二进制输出文本中解析版本号（纯函数，便于单元测试）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.FfmpegToolSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.FfmpegToolSource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.FfmpegToolSource",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.FfmpegToolSource.yml\" sourcestartlinenumber=\"1\">ffmpeg 官方静态构建源（johnvansickle.com）。</p>\n<p>选择理由：官方维护的静态构建，无需 root 权限即可安装到非 root 运行目录、\n支持原子替换与回滚，且版本通常领先 Debian apt 仓库；apt 需要 root 且版本较旧。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.IProcessRunner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.IProcessRunner.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.IProcessRunner",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.IProcessRunner.yml\" sourcestartlinenumber=\"1\">进程运行抽象，便于单元测试注入。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.IToolSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.IToolSource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.IToolSource",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.IToolSource.yml\" sourcestartlinenumber=\"1\">工具最新版本源抽象（用于发现最新版本并下载二进制）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.IUpdater.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.IUpdater.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.IUpdater",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.IUpdater.yml\" sourcestartlinenumber=\"1\">更新器抽象。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.ProcessOutput.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.ProcessOutput.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.ProcessOutput",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.ProcessOutput.yml\" sourcestartlinenumber=\"1\">进程运行结果。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.SystemProcessRunner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.SystemProcessRunner.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.SystemProcessRunner",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.SystemProcessRunner.yml\" sourcestartlinenumber=\"1\">基于 <xref href=\"System.Diagnostics.Process\" data-throw-if-not-resolved=\"false\"></xref> 的真实进程运行器。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.ToolUpdateResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.ToolUpdateResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.ToolUpdateResult",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.ToolUpdateResult.yml\" sourcestartlinenumber=\"1\">单个工具的更新结果。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.ToolUpdateStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.ToolUpdateStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.ToolUpdateStatus",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.ToolUpdateStatus.yml\" sourcestartlinenumber=\"1\">单个工具更新的状态。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.ToolVersion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.ToolVersion.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.ToolVersion",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.ToolVersion.yml\" sourcestartlinenumber=\"1\">工具版本模型（yt-dlp/ffmpeg），支持数值化比较。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.UpdateException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.UpdateException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.UpdateException",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.UpdateException.yml\" sourcestartlinenumber=\"1\">更新失败异常。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.UpdateReport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.UpdateReport.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.UpdateReport",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.UpdateReport.yml\" sourcestartlinenumber=\"1\">整体更新报告。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.Updater.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.Updater.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.Updater",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.Updater.yml\" sourcestartlinenumber=\"1\">默认更新器：对比本地/最新版本，必要时下载新二进制并原子替换，失败自动回滚。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.UriVersionParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.UriVersionParser.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.UriVersionParser",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.UriVersionParser.yml\" sourcestartlinenumber=\"1\">从远端响应中解析最新版本号（纯函数，便于单元测试）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.YtDlpToolSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.YtDlpToolSource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update.YtDlpToolSource",
+      "Summary": "<p sourcefile=\"api/TGBot.Update.YtDlpToolSource.yml\" sourcestartlinenumber=\"1\">yt-dlp 官方最新版源（GitHub releases）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Update.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Update.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Update",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

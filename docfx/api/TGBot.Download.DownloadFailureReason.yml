@@ -1,0 +1,181 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Download.DownloadFailureReason
+  commentId: T:TGBot.Download.DownloadFailureReason
+  id: DownloadFailureReason
+  parent: TGBot.Download
+  children:
+  - TGBot.Download.DownloadFailureReason.Cancelled
+  - TGBot.Download.DownloadFailureReason.Failed
+  - TGBot.Download.DownloadFailureReason.NoDiskSpace
+  - TGBot.Download.DownloadFailureReason.Timeout
+  - TGBot.Download.DownloadFailureReason.TooLarge
+  langs:
+  - csharp
+  - vb
+  name: DownloadFailureReason
+  nameWithType: DownloadFailureReason
+  fullName: TGBot.Download.DownloadFailureReason
+  type: Enum
+  source:
+    id: DownloadFailureReason
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    startLine: 5
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 下载失败原因分类，用于向用户给出准确提示而不泄露内部细节。
+  example: []
+  syntax:
+    content: public enum DownloadFailureReason
+    content.vb: Public Enum DownloadFailureReason
+- uid: TGBot.Download.DownloadFailureReason.Failed
+  commentId: F:TGBot.Download.DownloadFailureReason.Failed
+  id: Failed
+  parent: TGBot.Download.DownloadFailureReason
+  langs:
+  - csharp
+  - vb
+  name: Failed
+  nameWithType: DownloadFailureReason.Failed
+  fullName: TGBot.Download.DownloadFailureReason.Failed
+  type: Field
+  source:
+    id: Failed
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    startLine: 8
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 一般性失败（链接失效、格式错误、网络问题等）。
+  example: []
+  syntax:
+    content: Failed = 0
+    return:
+      type: TGBot.Download.DownloadFailureReason
+- uid: TGBot.Download.DownloadFailureReason.TooLarge
+  commentId: F:TGBot.Download.DownloadFailureReason.TooLarge
+  id: TooLarge
+  parent: TGBot.Download.DownloadFailureReason
+  langs:
+  - csharp
+  - vb
+  name: TooLarge
+  nameWithType: DownloadFailureReason.TooLarge
+  fullName: TGBot.Download.DownloadFailureReason.TooLarge
+  type: Field
+  source:
+    id: TooLarge
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    startLine: 11
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 文件超出大小上限。
+  example: []
+  syntax:
+    content: TooLarge = 1
+    return:
+      type: TGBot.Download.DownloadFailureReason
+- uid: TGBot.Download.DownloadFailureReason.NoDiskSpace
+  commentId: F:TGBot.Download.DownloadFailureReason.NoDiskSpace
+  id: NoDiskSpace
+  parent: TGBot.Download.DownloadFailureReason
+  langs:
+  - csharp
+  - vb
+  name: NoDiskSpace
+  nameWithType: DownloadFailureReason.NoDiskSpace
+  fullName: TGBot.Download.DownloadFailureReason.NoDiskSpace
+  type: Field
+  source:
+    id: NoDiskSpace
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    startLine: 14
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 磁盘空间不足。
+  example: []
+  syntax:
+    content: NoDiskSpace = 2
+    return:
+      type: TGBot.Download.DownloadFailureReason
+- uid: TGBot.Download.DownloadFailureReason.Timeout
+  commentId: F:TGBot.Download.DownloadFailureReason.Timeout
+  id: Timeout
+  parent: TGBot.Download.DownloadFailureReason
+  langs:
+  - csharp
+  - vb
+  name: Timeout
+  nameWithType: DownloadFailureReason.Timeout
+  fullName: TGBot.Download.DownloadFailureReason.Timeout
+  type: Field
+  source:
+    id: Timeout
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    startLine: 17
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 任务超时。
+  example: []
+  syntax:
+    content: Timeout = 3
+    return:
+      type: TGBot.Download.DownloadFailureReason
+- uid: TGBot.Download.DownloadFailureReason.Cancelled
+  commentId: F:TGBot.Download.DownloadFailureReason.Cancelled
+  id: Cancelled
+  parent: TGBot.Download.DownloadFailureReason
+  langs:
+  - csharp
+  - vb
+  name: Cancelled
+  nameWithType: DownloadFailureReason.Cancelled
+  fullName: TGBot.Download.DownloadFailureReason.Cancelled
+  type: Field
+  source:
+    id: Cancelled
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    startLine: 20
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 任务被取消（关机或用户中断）。
+  example: []
+  syntax:
+    content: Cancelled = 4
+    return:
+      type: TGBot.Download.DownloadFailureReason
+references:
+- uid: TGBot.Download
+  commentId: N:TGBot.Download
+  href: TGBot.html
+  name: TGBot.Download
+  nameWithType: TGBot.Download
+  fullName: TGBot.Download
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Download
+    name: Download
+    href: TGBot.Download.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Download
+    name: Download
+    href: TGBot.Download.html
+- uid: TGBot.Download.DownloadFailureReason
+  commentId: T:TGBot.Download.DownloadFailureReason
+  parent: TGBot.Download
+  href: TGBot.Download.DownloadFailureReason.html
+  name: DownloadFailureReason
+  nameWithType: DownloadFailureReason
+  fullName: TGBot.Download.DownloadFailureReason

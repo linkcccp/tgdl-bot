@@ -1,0 +1,557 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Messaging.UploadResult
+  commentId: T:TGBot.Messaging.UploadResult
+  id: UploadResult
+  parent: TGBot.Messaging
+  children:
+  - TGBot.Messaging.UploadResult.#ctor(System.Int32,System.Collections.Generic.IReadOnlyList{System.Int64})
+  - TGBot.Messaging.UploadResult.FailedChats
+  - TGBot.Messaging.UploadResult.SuccessCount
+  langs:
+  - csharp
+  - vb
+  name: UploadResult
+  nameWithType: UploadResult
+  fullName: TGBot.Messaging.UploadResult
+  type: Class
+  source:
+    id: UploadResult
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/UploadService.cs
+    startLine: 11
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 上传结果。
+  example: []
+  syntax:
+    content: 'public sealed record UploadResult : IEquatable<UploadResult>'
+    content.vb: Public NotInheritable Class UploadResult Implements IEquatable(Of UploadResult)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{TGBot.Messaging.UploadResult}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Messaging.UploadResult.#ctor(System.Int32,System.Collections.Generic.IReadOnlyList{System.Int64})
+  commentId: M:TGBot.Messaging.UploadResult.#ctor(System.Int32,System.Collections.Generic.IReadOnlyList{System.Int64})
+  id: '#ctor(System.Int32,System.Collections.Generic.IReadOnlyList{System.Int64})'
+  parent: TGBot.Messaging.UploadResult
+  langs:
+  - csharp
+  - vb
+  name: UploadResult(int, IReadOnlyList<long>)
+  nameWithType: UploadResult.UploadResult(int, IReadOnlyList<long>)
+  fullName: TGBot.Messaging.UploadResult.UploadResult(int, System.Collections.Generic.IReadOnlyList<long>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/UploadService.cs
+    startLine: 11
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 上传结果。
+  example: []
+  syntax:
+    content: public UploadResult(int SuccessCount, IReadOnlyList<long> FailedChats)
+    parameters:
+    - id: SuccessCount
+      type: System.Int32
+      description: 成功推送的会话数。
+    - id: FailedChats
+      type: System.Collections.Generic.IReadOnlyList{System.Int64}
+      description: 失败的会话 ID 列表。
+    content.vb: Public Sub New(SuccessCount As Integer, FailedChats As IReadOnlyList(Of Long))
+  overload: TGBot.Messaging.UploadResult.#ctor*
+  nameWithType.vb: UploadResult.New(Integer, IReadOnlyList(Of Long))
+  fullName.vb: TGBot.Messaging.UploadResult.New(Integer, System.Collections.Generic.IReadOnlyList(Of Long))
+  name.vb: New(Integer, IReadOnlyList(Of Long))
+- uid: TGBot.Messaging.UploadResult.SuccessCount
+  commentId: P:TGBot.Messaging.UploadResult.SuccessCount
+  id: SuccessCount
+  parent: TGBot.Messaging.UploadResult
+  langs:
+  - csharp
+  - vb
+  name: SuccessCount
+  nameWithType: UploadResult.SuccessCount
+  fullName: TGBot.Messaging.UploadResult.SuccessCount
+  type: Property
+  source:
+    id: SuccessCount
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/UploadService.cs
+    startLine: 11
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 成功推送的会话数。
+  example: []
+  syntax:
+    content: public int SuccessCount { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property SuccessCount As Integer
+  overload: TGBot.Messaging.UploadResult.SuccessCount*
+- uid: TGBot.Messaging.UploadResult.FailedChats
+  commentId: P:TGBot.Messaging.UploadResult.FailedChats
+  id: FailedChats
+  parent: TGBot.Messaging.UploadResult
+  langs:
+  - csharp
+  - vb
+  name: FailedChats
+  nameWithType: UploadResult.FailedChats
+  fullName: TGBot.Messaging.UploadResult.FailedChats
+  type: Property
+  source:
+    id: FailedChats
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/UploadService.cs
+    startLine: 11
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 失败的会话 ID 列表。
+  example: []
+  syntax:
+    content: public IReadOnlyList<long> FailedChats { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{System.Int64}
+    content.vb: Public Property FailedChats As IReadOnlyList(Of Long)
+  overload: TGBot.Messaging.UploadResult.FailedChats*
+references:
+- uid: TGBot.Messaging
+  commentId: N:TGBot.Messaging
+  href: TGBot.html
+  name: TGBot.Messaging
+  nameWithType: TGBot.Messaging
+  fullName: TGBot.Messaging
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{TGBot.Messaging.UploadResult}
+  commentId: T:System.IEquatable{TGBot.Messaging.UploadResult}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<UploadResult>
+  nameWithType: IEquatable<UploadResult>
+  fullName: System.IEquatable<TGBot.Messaging.UploadResult>
+  nameWithType.vb: IEquatable(Of UploadResult)
+  fullName.vb: System.IEquatable(Of TGBot.Messaging.UploadResult)
+  name.vb: IEquatable(Of UploadResult)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: TGBot.Messaging.UploadResult
+    name: UploadResult
+    href: TGBot.Messaging.UploadResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Messaging.UploadResult
+    name: UploadResult
+    href: TGBot.Messaging.UploadResult.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: TGBot.Messaging.UploadResult.#ctor*
+  commentId: Overload:TGBot.Messaging.UploadResult.#ctor
+  href: TGBot.Messaging.UploadResult.html#TGBot_Messaging_UploadResult__ctor_System_Int32_System_Collections_Generic_IReadOnlyList_System_Int64__
+  name: UploadResult
+  nameWithType: UploadResult.UploadResult
+  fullName: TGBot.Messaging.UploadResult.UploadResult
+  nameWithType.vb: UploadResult.New
+  fullName.vb: TGBot.Messaging.UploadResult.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Collections.Generic.IReadOnlyList{System.Int64}
+  commentId: T:System.Collections.Generic.IReadOnlyList{System.Int64}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<long>
+  nameWithType: IReadOnlyList<long>
+  fullName: System.Collections.Generic.IReadOnlyList<long>
+  nameWithType.vb: IReadOnlyList(Of Long)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Long)
+  name.vb: IReadOnlyList(Of Long)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: System.Int64
+    name: long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int64
+    name: Long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: TGBot.Messaging.UploadResult.SuccessCount*
+  commentId: Overload:TGBot.Messaging.UploadResult.SuccessCount
+  href: TGBot.Messaging.UploadResult.html#TGBot_Messaging_UploadResult_SuccessCount
+  name: SuccessCount
+  nameWithType: UploadResult.SuccessCount
+  fullName: TGBot.Messaging.UploadResult.SuccessCount
+- uid: TGBot.Messaging.UploadResult.FailedChats*
+  commentId: Overload:TGBot.Messaging.UploadResult.FailedChats
+  href: TGBot.Messaging.UploadResult.html#TGBot_Messaging_UploadResult_FailedChats
+  name: FailedChats
+  nameWithType: UploadResult.FailedChats
+  fullName: TGBot.Messaging.UploadResult.FailedChats

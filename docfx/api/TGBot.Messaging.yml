@@ -1,0 +1,91 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Messaging
+  commentId: N:TGBot.Messaging
+  id: TGBot.Messaging
+  children:
+  - TGBot.Messaging.BotChatAction
+  - TGBot.Messaging.CaptionBuilder
+  - TGBot.Messaging.ITelegramClient
+  - TGBot.Messaging.InboundMessage
+  - TGBot.Messaging.TelegramClientWrapper
+  - TGBot.Messaging.UploadResult
+  - TGBot.Messaging.UploadService
+  langs:
+  - csharp
+  - vb
+  name: TGBot.Messaging
+  nameWithType: TGBot.Messaging
+  fullName: TGBot.Messaging
+  type: Namespace
+  assemblies:
+  - tgdl-bot
+references:
+- uid: TGBot.Messaging.CaptionBuilder
+  commentId: T:TGBot.Messaging.CaptionBuilder
+  href: TGBot.Messaging.CaptionBuilder.html
+  name: CaptionBuilder
+  nameWithType: CaptionBuilder
+  fullName: TGBot.Messaging.CaptionBuilder
+- uid: TGBot.Messaging.InboundMessage
+  commentId: T:TGBot.Messaging.InboundMessage
+  parent: TGBot.Messaging
+  href: TGBot.Messaging.InboundMessage.html
+  name: InboundMessage
+  nameWithType: InboundMessage
+  fullName: TGBot.Messaging.InboundMessage
+- uid: TGBot.Messaging.BotChatAction
+  commentId: T:TGBot.Messaging.BotChatAction
+  parent: TGBot.Messaging
+  href: TGBot.Messaging.BotChatAction.html
+  name: BotChatAction
+  nameWithType: BotChatAction
+  fullName: TGBot.Messaging.BotChatAction
+- uid: TGBot.Messaging.ITelegramClient
+  commentId: T:TGBot.Messaging.ITelegramClient
+  parent: TGBot.Messaging
+  href: TGBot.Messaging.ITelegramClient.html
+  name: ITelegramClient
+  nameWithType: ITelegramClient
+  fullName: TGBot.Messaging.ITelegramClient
+- uid: TGBot.Messaging.TelegramClientWrapper
+  commentId: T:TGBot.Messaging.TelegramClientWrapper
+  href: TGBot.Messaging.TelegramClientWrapper.html
+  name: TelegramClientWrapper
+  nameWithType: TelegramClientWrapper
+  fullName: TGBot.Messaging.TelegramClientWrapper
+- uid: TGBot.Messaging.UploadResult
+  commentId: T:TGBot.Messaging.UploadResult
+  href: TGBot.Messaging.UploadResult.html
+  name: UploadResult
+  nameWithType: UploadResult
+  fullName: TGBot.Messaging.UploadResult
+- uid: TGBot.Messaging.UploadService
+  commentId: T:TGBot.Messaging.UploadService
+  parent: TGBot.Messaging
+  href: TGBot.Messaging.UploadService.html
+  name: UploadService
+  nameWithType: UploadService
+  fullName: TGBot.Messaging.UploadService
+- uid: TGBot.Messaging
+  commentId: N:TGBot.Messaging
+  href: TGBot.html
+  name: TGBot.Messaging
+  nameWithType: TGBot.Messaging
+  fullName: TGBot.Messaging
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html

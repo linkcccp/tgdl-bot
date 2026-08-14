@@ -1,0 +1,541 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Access.AccessDecision
+  commentId: T:TGBot.Access.AccessDecision
+  id: AccessDecision
+  parent: TGBot.Access
+  children:
+  - TGBot.Access.AccessDecision.#ctor(System.Boolean,System.String)
+  - TGBot.Access.AccessDecision.Allow
+  - TGBot.Access.AccessDecision.Allowed
+  - TGBot.Access.AccessDecision.Deny(System.String)
+  - TGBot.Access.AccessDecision.Reason
+  langs:
+  - csharp
+  - vb
+  name: AccessDecision
+  nameWithType: AccessDecision
+  fullName: TGBot.Access.AccessDecision
+  type: Class
+  source:
+    id: AccessDecision
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    startLine: 21
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Access
+  summary: 访问控制判定结果。
+  example: []
+  syntax:
+    content: 'public sealed record AccessDecision : IEquatable<AccessDecision>'
+    content.vb: Public NotInheritable Class AccessDecision Implements IEquatable(Of AccessDecision)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{TGBot.Access.AccessDecision}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Access.AccessDecision.#ctor(System.Boolean,System.String)
+  commentId: M:TGBot.Access.AccessDecision.#ctor(System.Boolean,System.String)
+  id: '#ctor(System.Boolean,System.String)'
+  parent: TGBot.Access.AccessDecision
+  langs:
+  - csharp
+  - vb
+  name: AccessDecision(bool, string?)
+  nameWithType: AccessDecision.AccessDecision(bool, string?)
+  fullName: TGBot.Access.AccessDecision.AccessDecision(bool, string?)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    startLine: 21
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Access
+  summary: 访问控制判定结果。
+  example: []
+  syntax:
+    content: public AccessDecision(bool Allowed, string? Reason)
+    parameters:
+    - id: Allowed
+      type: System.Boolean
+      description: 是否允许。
+    - id: Reason
+      type: System.String
+      description: 拒绝时的用户提示（允许时为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>）。
+    content.vb: Public Sub New(Allowed As Boolean, Reason As String)
+  overload: TGBot.Access.AccessDecision.#ctor*
+  nameWithType.vb: AccessDecision.New(Boolean, String)
+  fullName.vb: TGBot.Access.AccessDecision.New(Boolean, String)
+  name.vb: New(Boolean, String)
+- uid: TGBot.Access.AccessDecision.Allowed
+  commentId: P:TGBot.Access.AccessDecision.Allowed
+  id: Allowed
+  parent: TGBot.Access.AccessDecision
+  langs:
+  - csharp
+  - vb
+  name: Allowed
+  nameWithType: AccessDecision.Allowed
+  fullName: TGBot.Access.AccessDecision.Allowed
+  type: Property
+  source:
+    id: Allowed
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    startLine: 21
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Access
+  summary: 是否允许。
+  example: []
+  syntax:
+    content: public bool Allowed { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Allowed As Boolean
+  overload: TGBot.Access.AccessDecision.Allowed*
+- uid: TGBot.Access.AccessDecision.Reason
+  commentId: P:TGBot.Access.AccessDecision.Reason
+  id: Reason
+  parent: TGBot.Access.AccessDecision
+  langs:
+  - csharp
+  - vb
+  name: Reason
+  nameWithType: AccessDecision.Reason
+  fullName: TGBot.Access.AccessDecision.Reason
+  type: Property
+  source:
+    id: Reason
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    startLine: 21
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Access
+  summary: 拒绝时的用户提示（允许时为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>）。
+  example: []
+  syntax:
+    content: public string? Reason { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Reason As String
+  overload: TGBot.Access.AccessDecision.Reason*
+- uid: TGBot.Access.AccessDecision.Allow
+  commentId: F:TGBot.Access.AccessDecision.Allow
+  id: Allow
+  parent: TGBot.Access.AccessDecision
+  langs:
+  - csharp
+  - vb
+  name: Allow
+  nameWithType: AccessDecision.Allow
+  fullName: TGBot.Access.AccessDecision.Allow
+  type: Field
+  source:
+    id: Allow
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    startLine: 26
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Access
+  summary: 允许的判定。
+  example: []
+  syntax:
+    content: public static readonly AccessDecision Allow
+    return:
+      type: TGBot.Access.AccessDecision
+    content.vb: Public Shared ReadOnly Allow As AccessDecision
+- uid: TGBot.Access.AccessDecision.Deny(System.String)
+  commentId: M:TGBot.Access.AccessDecision.Deny(System.String)
+  id: Deny(System.String)
+  parent: TGBot.Access.AccessDecision
+  langs:
+  - csharp
+  - vb
+  name: Deny(string)
+  nameWithType: AccessDecision.Deny(string)
+  fullName: TGBot.Access.AccessDecision.Deny(string)
+  type: Method
+  source:
+    id: Deny
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    startLine: 32
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Access
+  summary: 拒绝的判定。
+  example: []
+  syntax:
+    content: public static AccessDecision Deny(string reason)
+    parameters:
+    - id: reason
+      type: System.String
+      description: 拒绝提示。
+    return:
+      type: TGBot.Access.AccessDecision
+    content.vb: Public Shared Function Deny(reason As String) As AccessDecision
+  overload: TGBot.Access.AccessDecision.Deny*
+  nameWithType.vb: AccessDecision.Deny(String)
+  fullName.vb: TGBot.Access.AccessDecision.Deny(String)
+  name.vb: Deny(String)
+references:
+- uid: TGBot.Access
+  commentId: N:TGBot.Access
+  href: TGBot.html
+  name: TGBot.Access
+  nameWithType: TGBot.Access
+  fullName: TGBot.Access
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Access
+    name: Access
+    href: TGBot.Access.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Access
+    name: Access
+    href: TGBot.Access.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{TGBot.Access.AccessDecision}
+  commentId: T:System.IEquatable{TGBot.Access.AccessDecision}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<AccessDecision>
+  nameWithType: IEquatable<AccessDecision>
+  fullName: System.IEquatable<TGBot.Access.AccessDecision>
+  nameWithType.vb: IEquatable(Of AccessDecision)
+  fullName.vb: System.IEquatable(Of TGBot.Access.AccessDecision)
+  name.vb: IEquatable(Of AccessDecision)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: TGBot.Access.AccessDecision
+    name: AccessDecision
+    href: TGBot.Access.AccessDecision.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Access.AccessDecision
+    name: AccessDecision
+    href: TGBot.Access.AccessDecision.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: TGBot.Access.AccessDecision.#ctor*
+  commentId: Overload:TGBot.Access.AccessDecision.#ctor
+  href: TGBot.Access.AccessDecision.html#TGBot_Access_AccessDecision__ctor_System_Boolean_System_String_
+  name: AccessDecision
+  nameWithType: AccessDecision.AccessDecision
+  fullName: TGBot.Access.AccessDecision.AccessDecision
+  nameWithType.vb: AccessDecision.New
+  fullName.vb: TGBot.Access.AccessDecision.New
+  name.vb: New
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: TGBot.Access.AccessDecision.Allowed*
+  commentId: Overload:TGBot.Access.AccessDecision.Allowed
+  href: TGBot.Access.AccessDecision.html#TGBot_Access_AccessDecision_Allowed
+  name: Allowed
+  nameWithType: AccessDecision.Allowed
+  fullName: TGBot.Access.AccessDecision.Allowed
+- uid: TGBot.Access.AccessDecision.Reason*
+  commentId: Overload:TGBot.Access.AccessDecision.Reason
+  href: TGBot.Access.AccessDecision.html#TGBot_Access_AccessDecision_Reason
+  name: Reason
+  nameWithType: AccessDecision.Reason
+  fullName: TGBot.Access.AccessDecision.Reason
+- uid: TGBot.Access.AccessDecision
+  commentId: T:TGBot.Access.AccessDecision
+  parent: TGBot.Access
+  href: TGBot.Access.AccessDecision.html
+  name: AccessDecision
+  nameWithType: AccessDecision
+  fullName: TGBot.Access.AccessDecision
+- uid: TGBot.Access.AccessDecision.Deny*
+  commentId: Overload:TGBot.Access.AccessDecision.Deny
+  href: TGBot.Access.AccessDecision.html#TGBot_Access_AccessDecision_Deny_System_String_
+  name: Deny
+  nameWithType: AccessDecision.Deny
+  fullName: TGBot.Access.AccessDecision.Deny

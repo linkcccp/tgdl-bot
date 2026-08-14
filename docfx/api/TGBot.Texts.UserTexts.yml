@@ -1,0 +1,857 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Texts.UserTexts
+  commentId: T:TGBot.Texts.UserTexts
+  id: UserTexts
+  parent: TGBot.Texts
+  children:
+  - TGBot.Texts.UserTexts.DownloadFailed
+  - TGBot.Texts.UserTexts.DownloadProgress
+  - TGBot.Texts.UserTexts.Downloading
+  - TGBot.Texts.UserTexts.FileTooLarge
+  - TGBot.Texts.UserTexts.Help
+  - TGBot.Texts.UserTexts.NoDiskSpace
+  - TGBot.Texts.UserTexts.NoValidUrl
+  - TGBot.Texts.UserTexts.Queued
+  - TGBot.Texts.UserTexts.StatusTemplate
+  - TGBot.Texts.UserTexts.UnauthorizedGroup
+  - TGBot.Texts.UserTexts.UnauthorizedPrivate
+  - TGBot.Texts.UserTexts.UnknownCommand
+  - TGBot.Texts.UserTexts.UntrustedUrl
+  - TGBot.Texts.UserTexts.UpdateDenied
+  - TGBot.Texts.UserTexts.UpdateDone
+  - TGBot.Texts.UserTexts.UpdateFailed
+  - TGBot.Texts.UserTexts.UpdateNotNeeded
+  - TGBot.Texts.UserTexts.UpdatePartialDone
+  - TGBot.Texts.UserTexts.UploadDone
+  - TGBot.Texts.UserTexts.UploadFailed
+  - TGBot.Texts.UserTexts.Uploading
+  langs:
+  - csharp
+  - vb
+  name: UserTexts
+  nameWithType: UserTexts
+  fullName: TGBot.Texts.UserTexts
+  type: Class
+  source:
+    id: UserTexts
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 6
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: >-
+    面向 Telegram 用户的中文提示文案。
+
+
+    <p>所有文案均不含内部实现细节（堆栈、路径、配置值等），遵循零信任原则。</p>
+  example: []
+  syntax:
+    content: public static class UserTexts
+    content.vb: Public Module UserTexts
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Texts.UserTexts.UnauthorizedPrivate
+  commentId: F:TGBot.Texts.UserTexts.UnauthorizedPrivate
+  id: UnauthorizedPrivate
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UnauthorizedPrivate
+  nameWithType: UserTexts.UnauthorizedPrivate
+  fullName: TGBot.Texts.UserTexts.UnauthorizedPrivate
+  type: Field
+  source:
+    id: UnauthorizedPrivate
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 9
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 私聊用户未在白名单时的拒绝提示。
+  example: []
+  syntax:
+    content: public const string UnauthorizedPrivate = "抱歉，您不在允许使用本服务的名单中，无法处理您发送的内容。"
+    return:
+      type: System.String
+    content.vb: Public Const UnauthorizedPrivate As String = "抱歉，您不在允许使用本服务的名单中，无法处理您发送的内容。"
+- uid: TGBot.Texts.UserTexts.UnauthorizedGroup
+  commentId: F:TGBot.Texts.UserTexts.UnauthorizedGroup
+  id: UnauthorizedGroup
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UnauthorizedGroup
+  nameWithType: UserTexts.UnauthorizedGroup
+  fullName: TGBot.Texts.UserTexts.UnauthorizedGroup
+  type: Field
+  source:
+    id: UnauthorizedGroup
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 13
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 频道/群组未在白名单时的拒绝提示。
+  example: []
+  syntax:
+    content: public const string UnauthorizedGroup = "抱歉，本频道/群组未获得授权，无法在此处理链接。"
+    return:
+      type: System.String
+    content.vb: Public Const UnauthorizedGroup As String = "抱歉，本频道/群组未获得授权，无法在此处理链接。"
+- uid: TGBot.Texts.UserTexts.NoValidUrl
+  commentId: F:TGBot.Texts.UserTexts.NoValidUrl
+  id: NoValidUrl
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: NoValidUrl
+  nameWithType: UserTexts.NoValidUrl
+  fullName: TGBot.Texts.UserTexts.NoValidUrl
+  type: Field
+  source:
+    id: NoValidUrl
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 17
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 消息中没有有效链接时的提示。
+  example: []
+  syntax:
+    content: public const string NoValidUrl = "消息中未找到有效的视频/音乐链接，请发送 http/https 链接。"
+    return:
+      type: System.String
+    content.vb: Public Const NoValidUrl As String = "消息中未找到有效的视频/音乐链接，请发送 http/https 链接。"
+- uid: TGBot.Texts.UserTexts.UntrustedUrl
+  commentId: F:TGBot.Texts.UserTexts.UntrustedUrl
+  id: UntrustedUrl
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UntrustedUrl
+  nameWithType: UserTexts.UntrustedUrl
+  fullName: TGBot.Texts.UserTexts.UntrustedUrl
+  type: Field
+  source:
+    id: UntrustedUrl
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 21
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 链接指向私网地址时的提示。
+  example: []
+  syntax:
+    content: public const string UntrustedUrl = "链接指向的地址不受信任，已拒绝下载。"
+    return:
+      type: System.String
+    content.vb: Public Const UntrustedUrl As String = "链接指向的地址不受信任，已拒绝下载。"
+- uid: TGBot.Texts.UserTexts.Queued
+  commentId: F:TGBot.Texts.UserTexts.Queued
+  id: Queued
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: Queued
+  nameWithType: UserTexts.Queued
+  fullName: TGBot.Texts.UserTexts.Queued
+  type: Field
+  source:
+    id: Queued
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 25
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 下载排队提示。参数依次为：队列位置。
+  example: []
+  syntax:
+    content: public const string Queued = "已收到，正在排队处理（队列位置：{0}）。"
+    return:
+      type: System.String
+    content.vb: Public Const Queued As String = "已收到，正在排队处理（队列位置：{0}）。"
+- uid: TGBot.Texts.UserTexts.Downloading
+  commentId: F:TGBot.Texts.UserTexts.Downloading
+  id: Downloading
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: Downloading
+  nameWithType: UserTexts.Downloading
+  fullName: TGBot.Texts.UserTexts.Downloading
+  type: Field
+  source:
+    id: Downloading
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 29
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 开始下载提示。
+  example: []
+  syntax:
+    content: public const string Downloading = "开始下载…"
+    return:
+      type: System.String
+    content.vb: Public Const Downloading As String = "开始下载…"
+- uid: TGBot.Texts.UserTexts.DownloadProgress
+  commentId: F:TGBot.Texts.UserTexts.DownloadProgress
+  id: DownloadProgress
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: DownloadProgress
+  nameWithType: UserTexts.DownloadProgress
+  fullName: TGBot.Texts.UserTexts.DownloadProgress
+  type: Field
+  source:
+    id: DownloadProgress
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 33
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 下载进度提示。参数依次为：百分比、速度。
+  example: []
+  syntax:
+    content: public const string DownloadProgress = "下载中：{0}%（{1}）"
+    return:
+      type: System.String
+    content.vb: Public Const DownloadProgress As String = "下载中：{0}%（{1}）"
+- uid: TGBot.Texts.UserTexts.Uploading
+  commentId: F:TGBot.Texts.UserTexts.Uploading
+  id: Uploading
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: Uploading
+  nameWithType: UserTexts.Uploading
+  fullName: TGBot.Texts.UserTexts.Uploading
+  type: Field
+  source:
+    id: Uploading
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 37
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 开始上传提示。
+  example: []
+  syntax:
+    content: public const string Uploading = "下载完成，正在上传到目标频道/群组…"
+    return:
+      type: System.String
+    content.vb: Public Const Uploading As String = "下载完成，正在上传到目标频道/群组…"
+- uid: TGBot.Texts.UserTexts.UploadDone
+  commentId: F:TGBot.Texts.UserTexts.UploadDone
+  id: UploadDone
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UploadDone
+  nameWithType: UserTexts.UploadDone
+  fullName: TGBot.Texts.UserTexts.UploadDone
+  type: Field
+  source:
+    id: UploadDone
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 41
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 上传成功提示。参数依次为：目标会话数量。
+  example: []
+  syntax:
+    content: public const string UploadDone = "已完成，已推送至 {0} 个目标会话。"
+    return:
+      type: System.String
+    content.vb: Public Const UploadDone As String = "已完成，已推送至 {0} 个目标会话。"
+- uid: TGBot.Texts.UserTexts.DownloadFailed
+  commentId: F:TGBot.Texts.UserTexts.DownloadFailed
+  id: DownloadFailed
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: DownloadFailed
+  nameWithType: UserTexts.DownloadFailed
+  fullName: TGBot.Texts.UserTexts.DownloadFailed
+  type: Field
+  source:
+    id: DownloadFailed
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 45
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 下载失败提示。
+  example: []
+  syntax:
+    content: public const string DownloadFailed = "下载失败，请稍后重试，或检查链接是否有效。"
+    return:
+      type: System.String
+    content.vb: Public Const DownloadFailed As String = "下载失败，请稍后重试，或检查链接是否有效。"
+- uid: TGBot.Texts.UserTexts.UploadFailed
+  commentId: F:TGBot.Texts.UserTexts.UploadFailed
+  id: UploadFailed
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UploadFailed
+  nameWithType: UserTexts.UploadFailed
+  fullName: TGBot.Texts.UserTexts.UploadFailed
+  type: Field
+  source:
+    id: UploadFailed
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 49
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 上传失败提示。
+  example: []
+  syntax:
+    content: public const string UploadFailed = "上传失败，请稍后重试。"
+    return:
+      type: System.String
+    content.vb: Public Const UploadFailed As String = "上传失败，请稍后重试。"
+- uid: TGBot.Texts.UserTexts.FileTooLarge
+  commentId: F:TGBot.Texts.UserTexts.FileTooLarge
+  id: FileTooLarge
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: FileTooLarge
+  nameWithType: UserTexts.FileTooLarge
+  fullName: TGBot.Texts.UserTexts.FileTooLarge
+  type: Field
+  source:
+    id: FileTooLarge
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 53
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 文件过大提示。
+  example: []
+  syntax:
+    content: public const string FileTooLarge = "文件过大，超出上传限制（约 2GB），已取消该任务。"
+    return:
+      type: System.String
+    content.vb: Public Const FileTooLarge As String = "文件过大，超出上传限制（约 2GB），已取消该任务。"
+- uid: TGBot.Texts.UserTexts.NoDiskSpace
+  commentId: F:TGBot.Texts.UserTexts.NoDiskSpace
+  id: NoDiskSpace
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: NoDiskSpace
+  nameWithType: UserTexts.NoDiskSpace
+  fullName: TGBot.Texts.UserTexts.NoDiskSpace
+  type: Field
+  source:
+    id: NoDiskSpace
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 57
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 磁盘空间不足提示。
+  example: []
+  syntax:
+    content: public const string NoDiskSpace = "服务器磁盘空间不足，已取消该任务，请稍后重试。"
+    return:
+      type: System.String
+    content.vb: Public Const NoDiskSpace As String = "服务器磁盘空间不足，已取消该任务，请稍后重试。"
+- uid: TGBot.Texts.UserTexts.UnknownCommand
+  commentId: F:TGBot.Texts.UserTexts.UnknownCommand
+  id: UnknownCommand
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UnknownCommand
+  nameWithType: UserTexts.UnknownCommand
+  fullName: TGBot.Texts.UserTexts.UnknownCommand
+  type: Field
+  source:
+    id: UnknownCommand
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 61
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 未知指令提示。
+  example: []
+  syntax:
+    content: public const string UnknownCommand = "未知指令。发送 /help 查看可用指令。"
+    return:
+      type: System.String
+    content.vb: Public Const UnknownCommand As String = "未知指令。发送 /help 查看可用指令。"
+- uid: TGBot.Texts.UserTexts.Help
+  commentId: F:TGBot.Texts.UserTexts.Help
+  id: Help
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: Help
+  nameWithType: UserTexts.Help
+  fullName: TGBot.Texts.UserTexts.Help
+  type: Field
+  source:
+    id: Help
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 65
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 帮助文本。
+  example: []
+  syntax:
+    content: public const string Help = "可用指令：\n/update - 检查并更新 ffmpeg 与 yt-dlp\n/status - 查看运行状态与版本\n/help   - 显示本帮助\n\n直接发送视频/音乐链接即可触发下载。"
+    return:
+      type: System.String
+    content.vb: Public Const Help As String = "可用指令：" & vbLf & "/update - 检查并更新 ffmpeg 与 yt-dlp" & vbLf & "/status - 查看运行状态与版本" & vbLf & "/help   - 显示本帮助" & vbLf & vbLf & "直接发送视频/音乐链接即可触发下载。"
+- uid: TGBot.Texts.UserTexts.UpdateNotNeeded
+  commentId: F:TGBot.Texts.UserTexts.UpdateNotNeeded
+  id: UpdateNotNeeded
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UpdateNotNeeded
+  nameWithType: UserTexts.UpdateNotNeeded
+  fullName: TGBot.Texts.UserTexts.UpdateNotNeeded
+  type: Field
+  source:
+    id: UpdateNotNeeded
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 73
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 更新无需执行提示。
+  example: []
+  syntax:
+    content: public const string UpdateNotNeeded = "yt-dlp 与 ffmpeg 均为最新版本，无需更新。"
+    return:
+      type: System.String
+    content.vb: Public Const UpdateNotNeeded As String = "yt-dlp 与 ffmpeg 均为最新版本，无需更新。"
+- uid: TGBot.Texts.UserTexts.UpdateDone
+  commentId: F:TGBot.Texts.UserTexts.UpdateDone
+  id: UpdateDone
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UpdateDone
+  nameWithType: UserTexts.UpdateDone
+  fullName: TGBot.Texts.UserTexts.UpdateDone
+  type: Field
+  source:
+    id: UpdateDone
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 77
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 更新完成提示。参数依次为：yt-dlp 旧版本、新版本、ffmpeg 旧版本、新版本。
+  example: []
+  syntax:
+    content: public const string UpdateDone = "更新完成：\nyt-dlp：{0} → {1}\nffmpeg：{2} → {3}"
+    return:
+      type: System.String
+    content.vb: Public Const UpdateDone As String = "更新完成：" & vbLf & "yt-dlp：{0} → {1}" & vbLf & "ffmpeg：{2} → {3}"
+- uid: TGBot.Texts.UserTexts.UpdatePartialDone
+  commentId: F:TGBot.Texts.UserTexts.UpdatePartialDone
+  id: UpdatePartialDone
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UpdatePartialDone
+  nameWithType: UserTexts.UpdatePartialDone
+  fullName: TGBot.Texts.UserTexts.UpdatePartialDone
+  type: Field
+  source:
+    id: UpdatePartialDone
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 81
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 更新部分完成提示（仅某个组件更新）。
+  example: []
+  syntax:
+    content: public const string UpdatePartialDone = "更新完成：\n{0}"
+    return:
+      type: System.String
+    content.vb: Public Const UpdatePartialDone As String = "更新完成：" & vbLf & "{0}"
+- uid: TGBot.Texts.UserTexts.UpdateFailed
+  commentId: F:TGBot.Texts.UserTexts.UpdateFailed
+  id: UpdateFailed
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UpdateFailed
+  nameWithType: UserTexts.UpdateFailed
+  fullName: TGBot.Texts.UserTexts.UpdateFailed
+  type: Field
+  source:
+    id: UpdateFailed
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 85
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 更新失败提示。
+  example: []
+  syntax:
+    content: public const string UpdateFailed = "更新失败，已回滚至原版本，请稍后重试。"
+    return:
+      type: System.String
+    content.vb: Public Const UpdateFailed As String = "更新失败，已回滚至原版本，请稍后重试。"
+- uid: TGBot.Texts.UserTexts.UpdateDenied
+  commentId: F:TGBot.Texts.UserTexts.UpdateDenied
+  id: UpdateDenied
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UpdateDenied
+  nameWithType: UserTexts.UpdateDenied
+  fullName: TGBot.Texts.UserTexts.UpdateDenied
+  type: Field
+  source:
+    id: UpdateDenied
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 89
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 更新被拒绝提示（非白名单用户）。
+  example: []
+  syntax:
+    content: public const string UpdateDenied = "您没有权限执行此操作。"
+    return:
+      type: System.String
+    content.vb: Public Const UpdateDenied As String = "您没有权限执行此操作。"
+- uid: TGBot.Texts.UserTexts.StatusTemplate
+  commentId: F:TGBot.Texts.UserTexts.StatusTemplate
+  id: StatusTemplate
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: StatusTemplate
+  nameWithType: UserTexts.StatusTemplate
+  fullName: TGBot.Texts.UserTexts.StatusTemplate
+  type: Field
+  source:
+    id: StatusTemplate
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Texts/UserTexts.cs
+    startLine: 93
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 状态信息模板。参数依次为：运行时间、队列、进行中、yt-dlp 版本、ffmpeg 版本、可用磁盘空间。
+  example: []
+  syntax:
+    content: public const string StatusTemplate = "运行状态：\n运行时间：{0}\n进行中任务：{1}\n排队任务：{2}\nyt-dlp：{3}\nffmpeg：{4}\n可用磁盘空间：{5}"
+    return:
+      type: System.String
+    content.vb: Public Const StatusTemplate As String = "运行状态：" & vbLf & "运行时间：{0}" & vbLf & "进行中任务：{1}" & vbLf & "排队任务：{2}" & vbLf & "yt-dlp：{3}" & vbLf & "ffmpeg：{4}" & vbLf & "可用磁盘空间：{5}"
+references:
+- uid: TGBot.Texts
+  commentId: N:TGBot.Texts
+  href: TGBot.html
+  name: TGBot.Texts
+  nameWithType: TGBot.Texts
+  fullName: TGBot.Texts
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

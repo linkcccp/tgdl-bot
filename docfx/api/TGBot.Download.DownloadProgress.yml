@@ -1,0 +1,508 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Download.DownloadProgress
+  commentId: T:TGBot.Download.DownloadProgress
+  id: DownloadProgress
+  parent: TGBot.Download
+  children:
+  - TGBot.Download.DownloadProgress.#ctor(System.Nullable{System.Double},System.String)
+  - TGBot.Download.DownloadProgress.Percent
+  - TGBot.Download.DownloadProgress.SpeedText
+  langs:
+  - csharp
+  - vb
+  name: DownloadProgress
+  nameWithType: DownloadProgress
+  fullName: TGBot.Download.DownloadProgress
+  type: Class
+  source:
+    id: DownloadProgress
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/IDownloader.cs
+    startLine: 7
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 下载进度信息。
+  example: []
+  syntax:
+    content: 'public sealed record DownloadProgress : IEquatable<DownloadProgress>'
+    content.vb: Public NotInheritable Class DownloadProgress Implements IEquatable(Of DownloadProgress)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{TGBot.Download.DownloadProgress}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Download.DownloadProgress.#ctor(System.Nullable{System.Double},System.String)
+  commentId: M:TGBot.Download.DownloadProgress.#ctor(System.Nullable{System.Double},System.String)
+  id: '#ctor(System.Nullable{System.Double},System.String)'
+  parent: TGBot.Download.DownloadProgress
+  langs:
+  - csharp
+  - vb
+  name: DownloadProgress(double?, string?)
+  nameWithType: DownloadProgress.DownloadProgress(double?, string?)
+  fullName: TGBot.Download.DownloadProgress.DownloadProgress(double?, string?)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/IDownloader.cs
+    startLine: 7
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 下载进度信息。
+  example: []
+  syntax:
+    content: public DownloadProgress(double? Percent, string? SpeedText)
+    parameters:
+    - id: Percent
+      type: System.Nullable{System.Double}
+      description: 下载百分比（0-100），未知为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    - id: SpeedText
+      type: System.String
+      description: 速度文本，可为空。
+    content.vb: Public Sub New(Percent As Double?, SpeedText As String)
+  overload: TGBot.Download.DownloadProgress.#ctor*
+  nameWithType.vb: DownloadProgress.New(Double?, String)
+  fullName.vb: TGBot.Download.DownloadProgress.New(Double?, String)
+  name.vb: New(Double?, String)
+- uid: TGBot.Download.DownloadProgress.Percent
+  commentId: P:TGBot.Download.DownloadProgress.Percent
+  id: Percent
+  parent: TGBot.Download.DownloadProgress
+  langs:
+  - csharp
+  - vb
+  name: Percent
+  nameWithType: DownloadProgress.Percent
+  fullName: TGBot.Download.DownloadProgress.Percent
+  type: Property
+  source:
+    id: Percent
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/IDownloader.cs
+    startLine: 7
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 下载百分比（0-100），未知为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+  example: []
+  syntax:
+    content: public double? Percent { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Double}
+    content.vb: Public Property Percent As Double?
+  overload: TGBot.Download.DownloadProgress.Percent*
+- uid: TGBot.Download.DownloadProgress.SpeedText
+  commentId: P:TGBot.Download.DownloadProgress.SpeedText
+  id: SpeedText
+  parent: TGBot.Download.DownloadProgress
+  langs:
+  - csharp
+  - vb
+  name: SpeedText
+  nameWithType: DownloadProgress.SpeedText
+  fullName: TGBot.Download.DownloadProgress.SpeedText
+  type: Property
+  source:
+    id: SpeedText
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/IDownloader.cs
+    startLine: 7
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 速度文本，可为空。
+  example: []
+  syntax:
+    content: public string? SpeedText { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property SpeedText As String
+  overload: TGBot.Download.DownloadProgress.SpeedText*
+references:
+- uid: TGBot.Download
+  commentId: N:TGBot.Download
+  href: TGBot.html
+  name: TGBot.Download
+  nameWithType: TGBot.Download
+  fullName: TGBot.Download
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Download
+    name: Download
+    href: TGBot.Download.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Download
+    name: Download
+    href: TGBot.Download.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{TGBot.Download.DownloadProgress}
+  commentId: T:System.IEquatable{TGBot.Download.DownloadProgress}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<DownloadProgress>
+  nameWithType: IEquatable<DownloadProgress>
+  fullName: System.IEquatable<TGBot.Download.DownloadProgress>
+  nameWithType.vb: IEquatable(Of DownloadProgress)
+  fullName.vb: System.IEquatable(Of TGBot.Download.DownloadProgress)
+  name.vb: IEquatable(Of DownloadProgress)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: TGBot.Download.DownloadProgress
+    name: DownloadProgress
+    href: TGBot.Download.DownloadProgress.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Download.DownloadProgress
+    name: DownloadProgress
+    href: TGBot.Download.DownloadProgress.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: TGBot.Download.DownloadProgress.#ctor*
+  commentId: Overload:TGBot.Download.DownloadProgress.#ctor
+  href: TGBot.Download.DownloadProgress.html#TGBot_Download_DownloadProgress__ctor_System_Nullable_System_Double__System_String_
+  name: DownloadProgress
+  nameWithType: DownloadProgress.DownloadProgress
+  fullName: TGBot.Download.DownloadProgress.DownloadProgress
+  nameWithType.vb: DownloadProgress.New
+  fullName.vb: TGBot.Download.DownloadProgress.New
+  name.vb: New
+- uid: System.Nullable{System.Double}
+  commentId: T:System.Nullable{System.Double}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double?
+  nameWithType: double?
+  fullName: double?
+  nameWithType.vb: Double?
+  fullName.vb: Double?
+  name.vb: Double?
+  spec.csharp:
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '?'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '?'
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: TGBot.Download.DownloadProgress.Percent*
+  commentId: Overload:TGBot.Download.DownloadProgress.Percent
+  href: TGBot.Download.DownloadProgress.html#TGBot_Download_DownloadProgress_Percent
+  name: Percent
+  nameWithType: DownloadProgress.Percent
+  fullName: TGBot.Download.DownloadProgress.Percent
+- uid: TGBot.Download.DownloadProgress.SpeedText*
+  commentId: Overload:TGBot.Download.DownloadProgress.SpeedText
+  href: TGBot.Download.DownloadProgress.html#TGBot_Download_DownloadProgress_SpeedText
+  name: SpeedText
+  nameWithType: DownloadProgress.SpeedText
+  fullName: TGBot.Download.DownloadProgress.SpeedText

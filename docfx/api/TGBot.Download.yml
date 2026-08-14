@@ -1,0 +1,146 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Download
+  commentId: N:TGBot.Download
+  id: TGBot.Download
+  children:
+  - TGBot.Download.DownloadException
+  - TGBot.Download.DownloadFailureReason
+  - TGBot.Download.DownloadGate
+  - TGBot.Download.DownloadOptions
+  - TGBot.Download.DownloadProgress
+  - TGBot.Download.DownloadedMedia
+  - TGBot.Download.IDownloader
+  - TGBot.Download.JobRegistry
+  - TGBot.Download.YtDlpArgumentBuilder
+  - TGBot.Download.YtDlpDownloader
+  - TGBot.Download.YtDlpOutputParser
+  - TGBot.Download.YtDlpOutputParser.MetaLine
+  langs:
+  - csharp
+  - vb
+  name: TGBot.Download
+  nameWithType: TGBot.Download
+  fullName: TGBot.Download
+  type: Namespace
+  assemblies:
+  - tgdl-bot
+references:
+- uid: TGBot.Download.DownloadedMedia
+  commentId: T:TGBot.Download.DownloadedMedia
+  parent: TGBot.Download
+  href: TGBot.Download.DownloadedMedia.html
+  name: DownloadedMedia
+  nameWithType: DownloadedMedia
+  fullName: TGBot.Download.DownloadedMedia
+- uid: TGBot.Download.DownloadFailureReason
+  commentId: T:TGBot.Download.DownloadFailureReason
+  parent: TGBot.Download
+  href: TGBot.Download.DownloadFailureReason.html
+  name: DownloadFailureReason
+  nameWithType: DownloadFailureReason
+  fullName: TGBot.Download.DownloadFailureReason
+- uid: TGBot.Download.DownloadException
+  commentId: T:TGBot.Download.DownloadException
+  href: TGBot.Download.DownloadException.html
+  name: DownloadException
+  nameWithType: DownloadException
+  fullName: TGBot.Download.DownloadException
+- uid: TGBot.Download.DownloadGate
+  commentId: T:TGBot.Download.DownloadGate
+  parent: TGBot.Download
+  href: TGBot.Download.DownloadGate.html
+  name: DownloadGate
+  nameWithType: DownloadGate
+  fullName: TGBot.Download.DownloadGate
+- uid: TGBot.Download.DownloadOptions
+  commentId: T:TGBot.Download.DownloadOptions
+  parent: TGBot.Download
+  href: TGBot.Download.DownloadOptions.html
+  name: DownloadOptions
+  nameWithType: DownloadOptions
+  fullName: TGBot.Download.DownloadOptions
+- uid: TGBot.Download.DownloadProgress
+  commentId: T:TGBot.Download.DownloadProgress
+  parent: TGBot.Download
+  href: TGBot.Download.DownloadProgress.html
+  name: DownloadProgress
+  nameWithType: DownloadProgress
+  fullName: TGBot.Download.DownloadProgress
+- uid: TGBot.Download.IDownloader
+  commentId: T:TGBot.Download.IDownloader
+  parent: TGBot.Download
+  href: TGBot.Download.IDownloader.html
+  name: IDownloader
+  nameWithType: IDownloader
+  fullName: TGBot.Download.IDownloader
+- uid: TGBot.Download.JobRegistry
+  commentId: T:TGBot.Download.JobRegistry
+  parent: TGBot.Download
+  href: TGBot.Download.JobRegistry.html
+  name: JobRegistry
+  nameWithType: JobRegistry
+  fullName: TGBot.Download.JobRegistry
+- uid: TGBot.Download.YtDlpArgumentBuilder
+  commentId: T:TGBot.Download.YtDlpArgumentBuilder
+  href: TGBot.Download.YtDlpArgumentBuilder.html
+  name: YtDlpArgumentBuilder
+  nameWithType: YtDlpArgumentBuilder
+  fullName: TGBot.Download.YtDlpArgumentBuilder
+- uid: TGBot.Download.YtDlpDownloader
+  commentId: T:TGBot.Download.YtDlpDownloader
+  href: TGBot.Download.YtDlpDownloader.html
+  name: YtDlpDownloader
+  nameWithType: YtDlpDownloader
+  fullName: TGBot.Download.YtDlpDownloader
+- uid: TGBot.Download.YtDlpOutputParser
+  commentId: T:TGBot.Download.YtDlpOutputParser
+  href: TGBot.Download.YtDlpOutputParser.html
+  name: YtDlpOutputParser
+  nameWithType: YtDlpOutputParser
+  fullName: TGBot.Download.YtDlpOutputParser
+- uid: TGBot.Download.YtDlpOutputParser.MetaLine
+  commentId: T:TGBot.Download.YtDlpOutputParser.MetaLine
+  parent: TGBot.Download
+  href: TGBot.Download.YtDlpOutputParser.html
+  name: YtDlpOutputParser.MetaLine
+  nameWithType: YtDlpOutputParser.MetaLine
+  fullName: TGBot.Download.YtDlpOutputParser.MetaLine
+  spec.csharp:
+  - uid: TGBot.Download.YtDlpOutputParser
+    name: YtDlpOutputParser
+    href: TGBot.Download.YtDlpOutputParser.html
+  - name: .
+  - uid: TGBot.Download.YtDlpOutputParser.MetaLine
+    name: MetaLine
+    href: TGBot.Download.YtDlpOutputParser.MetaLine.html
+  spec.vb:
+  - uid: TGBot.Download.YtDlpOutputParser
+    name: YtDlpOutputParser
+    href: TGBot.Download.YtDlpOutputParser.html
+  - name: .
+  - uid: TGBot.Download.YtDlpOutputParser.MetaLine
+    name: MetaLine
+    href: TGBot.Download.YtDlpOutputParser.MetaLine.html
+- uid: TGBot.Download
+  commentId: N:TGBot.Download
+  href: TGBot.html
+  name: TGBot.Download
+  nameWithType: TGBot.Download
+  fullName: TGBot.Download
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Download
+    name: Download
+    href: TGBot.Download.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Download
+    name: Download
+    href: TGBot.Download.html

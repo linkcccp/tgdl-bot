@@ -1,0 +1,69 @@
+namespace TGBot.Download;
+
+/// <summary>
+/// 构建 yt-dlp 命令行参数（纯函数，便于单元测试）。
+/// <para>所有参数通过 <see cref="System.Diagnostics.ProcessStartInfo.ArgumentList"/> 传递，
+/// 不经过 shell，从根本上杜绝命令注入。</para>
+/// </summary>
+public static class YtDlpArgumentBuilder
+{
+    /// <summary>
+    /// 构建 yt-dlp 参数列表。
+    /// </summary>
+    /// <param name="options">下载参数。</param>
+    /// <returns>参数列表。</returns>
+    public static IReadOnlyList<string> Build(DownloadOptions options)
+    {
+        var args = new List<string>
+        {
+            "--newline",
+            "--no-warnings",
+            "--force-overwrites",
+            "--trim-filenames",
+            "120",
+            "--retries",
+            "3",
+            "--fragment-retries",
+            "3",
+            "--socket-timeout",
+            "30",
+            "-o",
+            "media.%(ext)s",
+            "--merge-output-format",
+            options.MergeFormat,
+        };
+
+        if (!options.AllowPlaylists)
+        {
+            args.Add("--no-playlist");
+        }
+
+        if (options.ExtractAudio)
+        {
+            args.Add("--extract-audio");
+            args.Add("--audio-format");
+            args.Add("mp3");
+            args.Add("--audio-quality");
+            args.Add("0");
+        }
+
+        if (!string.IsNullOrEmpty(options.FfmpegDir))
+        {
+            args.Add("--ffmpeg-location");
+            args.Add(options.FfmpegDir);
+        }
+
+        args.Add("--print");
+        args.Add("META\u001f%(id)s\u001f%(title)s\u001f%(ext)s\u001f%(duration)s\u001f%(filesize_approx)s\u001f%(filesize)s");
+
+        args.Add("--print");
+        args.Add("after_move:FILE\u001f%(filepath)s");
+
+        args.Add("--progress-template");
+        args.Add("download:DLP %(progress._percent_str)s|%(progress._speed_str)s");
+
+        args.Add(options.Url);
+
+        return args;
+    }
+}

@@ -1,0 +1,225 @@
+### YamlMime:TableOfContent
+items:
+- uid: TGBot.Access
+  name: TGBot.Access
+  type: Namespace
+  items:
+  - uid: TGBot.Access.AccessControlService
+    name: AccessControlService
+    type: Class
+  - uid: TGBot.Access.AccessDecision
+    name: AccessDecision
+    type: Class
+  - uid: TGBot.Access.TriggerArea
+    name: TriggerArea
+    type: Enum
+- uid: TGBot.Application
+  name: TGBot.Application
+  type: Namespace
+  items:
+  - uid: TGBot.Application.AppHost
+    name: AppHost
+    type: Class
+  - uid: TGBot.Application.BotService
+    name: BotService
+    type: Class
+  - uid: TGBot.Application.CommandHandler
+    name: CommandHandler
+    type: Class
+  - uid: TGBot.Application.DownloadCoordinator
+    name: DownloadCoordinator
+    type: Class
+  - uid: TGBot.Application.MessageRouter
+    name: MessageRouter
+    type: Class
+- uid: TGBot.Config
+  name: TGBot.Config
+  type: Namespace
+  items:
+  - uid: TGBot.Config.AppConfig
+    name: AppConfig
+    type: Class
+  - uid: TGBot.Config.ConfigLoadException
+    name: ConfigLoadException
+    type: Class
+  - uid: TGBot.Config.ConfigLoader
+    name: ConfigLoader
+    type: Class
+  - uid: TGBot.Config.ConfigParseException
+    name: ConfigParseException
+    type: Class
+  - uid: TGBot.Config.ConfigParseResult
+    name: ConfigParseResult
+    type: Class
+  - uid: TGBot.Config.ConfigParser
+    name: ConfigParser
+    type: Class
+- uid: TGBot.Download
+  name: TGBot.Download
+  type: Namespace
+  items:
+  - uid: TGBot.Download.DownloadException
+    name: DownloadException
+    type: Class
+  - uid: TGBot.Download.DownloadFailureReason
+    name: DownloadFailureReason
+    type: Enum
+  - uid: TGBot.Download.DownloadGate
+    name: DownloadGate
+    type: Class
+  - uid: TGBot.Download.DownloadOptions
+    name: DownloadOptions
+    type: Class
+  - uid: TGBot.Download.DownloadProgress
+    name: DownloadProgress
+    type: Class
+  - uid: TGBot.Download.DownloadedMedia
+    name: DownloadedMedia
+    type: Class
+  - uid: TGBot.Download.IDownloader
+    name: IDownloader
+    type: Interface
+  - uid: TGBot.Download.JobRegistry
+    name: JobRegistry
+    type: Class
+  - uid: TGBot.Download.YtDlpArgumentBuilder
+    name: YtDlpArgumentBuilder
+    type: Class
+  - uid: TGBot.Download.YtDlpDownloader
+    name: YtDlpDownloader
+    type: Class
+  - uid: TGBot.Download.YtDlpOutputParser
+    name: YtDlpOutputParser
+    type: Class
+  - uid: TGBot.Download.YtDlpOutputParser.MetaLine
+    name: YtDlpOutputParser.MetaLine
+    type: Class
+- uid: TGBot.Logging
+  name: TGBot.Logging
+  type: Namespace
+  items:
+  - uid: TGBot.Logging.ConsoleLogger
+    name: ConsoleLogger
+    type: Class
+  - uid: TGBot.Logging.IAppLogger
+    name: IAppLogger
+    type: Interface
+  - uid: TGBot.Logging.LogLevel
+    name: LogLevel
+    type: Enum
+  - uid: TGBot.Logging.NullLogger
+    name: NullLogger
+    type: Class
+- uid: TGBot.Messaging
+  name: TGBot.Messaging
+  type: Namespace
+  items:
+  - uid: TGBot.Messaging.BotChatAction
+    name: BotChatAction
+    type: Enum
+  - uid: TGBot.Messaging.CaptionBuilder
+    name: CaptionBuilder
+    type: Class
+  - uid: TGBot.Messaging.ITelegramClient
+    name: ITelegramClient
+    type: Interface
+  - uid: TGBot.Messaging.InboundMessage
+    name: InboundMessage
+    type: Class
+  - uid: TGBot.Messaging.TelegramClientWrapper
+    name: TelegramClientWrapper
+    type: Class
+  - uid: TGBot.Messaging.UploadResult
+    name: UploadResult
+    type: Class
+  - uid: TGBot.Messaging.UploadService
+    name: UploadService
+    type: Class
+- uid: TGBot.Security
+  name: TGBot.Security
+  type: Namespace
+  items:
+  - uid: TGBot.Security.DiskUtil
+    name: DiskUtil
+    type: Class
+  - uid: TGBot.Security.DnsHostResolver
+    name: DnsHostResolver
+    type: Class
+  - uid: TGBot.Security.IHostResolver
+    name: IHostResolver
+    type: Interface
+  - uid: TGBot.Security.IpAddressPolicy
+    name: IpAddressPolicy
+    type: Class
+  - uid: TGBot.Security.PathSanitizer
+    name: PathSanitizer
+    type: Class
+  - uid: TGBot.Security.TempDirManager
+    name: TempDirManager
+    type: Class
+  - uid: TGBot.Security.UrlValidationResult
+    name: UrlValidationResult
+    type: Class
+  - uid: TGBot.Security.UrlValidator
+    name: UrlValidator
+    type: Class
+- uid: TGBot.Texts
+  name: TGBot.Texts
+  type: Namespace
+  items:
+  - uid: TGBot.Texts.UserTexts
+    name: UserTexts
+    type: Class
+- uid: TGBot.Update
+  name: TGBot.Update
+  type: Namespace
+  items:
+  - uid: TGBot.Update.AtomicFileReplacer
+    name: AtomicFileReplacer
+    type: Class
+  - uid: TGBot.Update.BinaryVersionParser
+    name: BinaryVersionParser
+    type: Class
+  - uid: TGBot.Update.FfmpegToolSource
+    name: FfmpegToolSource
+    type: Class
+  - uid: TGBot.Update.IProcessRunner
+    name: IProcessRunner
+    type: Interface
+  - uid: TGBot.Update.IToolSource
+    name: IToolSource
+    type: Interface
+  - uid: TGBot.Update.IUpdater
+    name: IUpdater
+    type: Interface
+  - uid: TGBot.Update.ProcessOutput
+    name: ProcessOutput
+    type: Class
+  - uid: TGBot.Update.SystemProcessRunner
+    name: SystemProcessRunner
+    type: Class
+  - uid: TGBot.Update.ToolUpdateResult
+    name: ToolUpdateResult
+    type: Class
+  - uid: TGBot.Update.ToolUpdateStatus
+    name: ToolUpdateStatus
+    type: Enum
+  - uid: TGBot.Update.ToolVersion
+    name: ToolVersion
+    type: Class
+  - uid: TGBot.Update.UpdateException
+    name: UpdateException
+    type: Class
+  - uid: TGBot.Update.UpdateReport
+    name: UpdateReport
+    type: Class
+  - uid: TGBot.Update.Updater
+    name: Updater
+    type: Class
+  - uid: TGBot.Update.UriVersionParser
+    name: UriVersionParser
+    type: Class
+  - uid: TGBot.Update.YtDlpToolSource
+    name: YtDlpToolSource
+    type: Class
+memberLayout: SamePage

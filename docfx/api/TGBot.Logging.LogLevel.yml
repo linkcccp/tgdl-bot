@@ -1,0 +1,181 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Logging.LogLevel
+  commentId: T:TGBot.Logging.LogLevel
+  id: LogLevel
+  parent: TGBot.Logging
+  children:
+  - TGBot.Logging.LogLevel.Debug
+  - TGBot.Logging.LogLevel.Error
+  - TGBot.Logging.LogLevel.Info
+  - TGBot.Logging.LogLevel.Trace
+  - TGBot.Logging.LogLevel.Warn
+  langs:
+  - csharp
+  - vb
+  name: LogLevel
+  nameWithType: LogLevel
+  fullName: TGBot.Logging.LogLevel
+  type: Enum
+  source:
+    id: LogLevel
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/LogLevel.cs
+    startLine: 5
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Logging
+  summary: 日志级别。
+  example: []
+  syntax:
+    content: public enum LogLevel
+    content.vb: Public Enum LogLevel
+- uid: TGBot.Logging.LogLevel.Trace
+  commentId: F:TGBot.Logging.LogLevel.Trace
+  id: Trace
+  parent: TGBot.Logging.LogLevel
+  langs:
+  - csharp
+  - vb
+  name: Trace
+  nameWithType: LogLevel.Trace
+  fullName: TGBot.Logging.LogLevel.Trace
+  type: Field
+  source:
+    id: Trace
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/LogLevel.cs
+    startLine: 8
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Logging
+  summary: 最详细的调试信息，仅在排查问题时使用。
+  example: []
+  syntax:
+    content: Trace = 0
+    return:
+      type: TGBot.Logging.LogLevel
+- uid: TGBot.Logging.LogLevel.Debug
+  commentId: F:TGBot.Logging.LogLevel.Debug
+  id: Debug
+  parent: TGBot.Logging.LogLevel
+  langs:
+  - csharp
+  - vb
+  name: Debug
+  nameWithType: LogLevel.Debug
+  fullName: TGBot.Logging.LogLevel.Debug
+  type: Field
+  source:
+    id: Debug
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/LogLevel.cs
+    startLine: 11
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Logging
+  summary: 调试信息。
+  example: []
+  syntax:
+    content: Debug = 1
+    return:
+      type: TGBot.Logging.LogLevel
+- uid: TGBot.Logging.LogLevel.Info
+  commentId: F:TGBot.Logging.LogLevel.Info
+  id: Info
+  parent: TGBot.Logging.LogLevel
+  langs:
+  - csharp
+  - vb
+  name: Info
+  nameWithType: LogLevel.Info
+  fullName: TGBot.Logging.LogLevel.Info
+  type: Field
+  source:
+    id: Info
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/LogLevel.cs
+    startLine: 14
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Logging
+  summary: 常规信息。
+  example: []
+  syntax:
+    content: Info = 2
+    return:
+      type: TGBot.Logging.LogLevel
+- uid: TGBot.Logging.LogLevel.Warn
+  commentId: F:TGBot.Logging.LogLevel.Warn
+  id: Warn
+  parent: TGBot.Logging.LogLevel
+  langs:
+  - csharp
+  - vb
+  name: Warn
+  nameWithType: LogLevel.Warn
+  fullName: TGBot.Logging.LogLevel.Warn
+  type: Field
+  source:
+    id: Warn
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/LogLevel.cs
+    startLine: 17
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Logging
+  summary: 警告信息，不影响正常运行。
+  example: []
+  syntax:
+    content: Warn = 3
+    return:
+      type: TGBot.Logging.LogLevel
+- uid: TGBot.Logging.LogLevel.Error
+  commentId: F:TGBot.Logging.LogLevel.Error
+  id: Error
+  parent: TGBot.Logging.LogLevel
+  langs:
+  - csharp
+  - vb
+  name: Error
+  nameWithType: LogLevel.Error
+  fullName: TGBot.Logging.LogLevel.Error
+  type: Field
+  source:
+    id: Error
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/LogLevel.cs
+    startLine: 20
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Logging
+  summary: 错误信息，通常表示某次操作失败。
+  example: []
+  syntax:
+    content: Error = 4
+    return:
+      type: TGBot.Logging.LogLevel
+references:
+- uid: TGBot.Logging
+  commentId: N:TGBot.Logging
+  href: TGBot.html
+  name: TGBot.Logging
+  nameWithType: TGBot.Logging
+  fullName: TGBot.Logging
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Logging
+    name: Logging
+    href: TGBot.Logging.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Logging
+    name: Logging
+    href: TGBot.Logging.html
+- uid: TGBot.Logging.LogLevel
+  commentId: T:TGBot.Logging.LogLevel
+  parent: TGBot.Logging
+  href: TGBot.Logging.LogLevel.html
+  name: LogLevel
+  nameWithType: LogLevel
+  fullName: TGBot.Logging.LogLevel

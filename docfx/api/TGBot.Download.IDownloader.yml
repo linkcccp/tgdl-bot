@@ -1,0 +1,316 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Download.IDownloader
+  commentId: T:TGBot.Download.IDownloader
+  id: IDownloader
+  parent: TGBot.Download
+  children:
+  - TGBot.Download.IDownloader.DownloadAsync(TGBot.Download.DownloadOptions,System.Action{TGBot.Download.DownloadProgress},System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IDownloader
+  nameWithType: IDownloader
+  fullName: TGBot.Download.IDownloader
+  type: Interface
+  source:
+    id: IDownloader
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/IDownloader.cs
+    startLine: 12
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 下载器抽象，负责调用外部 yt-dlp 进程完成下载。
+  example: []
+  syntax:
+    content: public interface IDownloader
+    content.vb: Public Interface IDownloader
+  derivedClasses:
+  - TGBot.Download.YtDlpDownloader
+- uid: TGBot.Download.IDownloader.DownloadAsync(TGBot.Download.DownloadOptions,System.Action{TGBot.Download.DownloadProgress},System.Threading.CancellationToken)
+  commentId: M:TGBot.Download.IDownloader.DownloadAsync(TGBot.Download.DownloadOptions,System.Action{TGBot.Download.DownloadProgress},System.Threading.CancellationToken)
+  id: DownloadAsync(TGBot.Download.DownloadOptions,System.Action{TGBot.Download.DownloadProgress},System.Threading.CancellationToken)
+  parent: TGBot.Download.IDownloader
+  langs:
+  - csharp
+  - vb
+  name: DownloadAsync(DownloadOptions, Action<DownloadProgress>?, CancellationToken)
+  nameWithType: IDownloader.DownloadAsync(DownloadOptions, Action<DownloadProgress>?, CancellationToken)
+  fullName: TGBot.Download.IDownloader.DownloadAsync(TGBot.Download.DownloadOptions, System.Action<TGBot.Download.DownloadProgress>?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    id: DownloadAsync
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/IDownloader.cs
+    startLine: 22
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 执行一次下载。
+  example: []
+  syntax:
+    content: Task<DownloadedMedia> DownloadAsync(DownloadOptions options, Action<DownloadProgress>? progress, CancellationToken cancellationToken)
+    parameters:
+    - id: options
+      type: TGBot.Download.DownloadOptions
+      description: 下载参数。
+    - id: progress
+      type: System.Action{TGBot.Download.DownloadProgress}
+      description: 进度回调，可为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task{TGBot.Download.DownloadedMedia}
+      description: 下载结果。
+    content.vb: Function DownloadAsync(options As DownloadOptions, progress As Action(Of DownloadProgress), cancellationToken As CancellationToken) As Task(Of DownloadedMedia)
+  overload: TGBot.Download.IDownloader.DownloadAsync*
+  exceptions:
+  - type: TGBot.Download.DownloadException
+    commentId: T:TGBot.Download.DownloadException
+    description: 下载失败时抛出，含用户可读的失败原因。
+  nameWithType.vb: IDownloader.DownloadAsync(DownloadOptions, Action(Of DownloadProgress), CancellationToken)
+  fullName.vb: TGBot.Download.IDownloader.DownloadAsync(TGBot.Download.DownloadOptions, System.Action(Of TGBot.Download.DownloadProgress), System.Threading.CancellationToken)
+  name.vb: DownloadAsync(DownloadOptions, Action(Of DownloadProgress), CancellationToken)
+references:
+- uid: TGBot.Download
+  commentId: N:TGBot.Download
+  href: TGBot.html
+  name: TGBot.Download
+  nameWithType: TGBot.Download
+  fullName: TGBot.Download
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Download
+    name: Download
+    href: TGBot.Download.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Download
+    name: Download
+    href: TGBot.Download.html
+- uid: TGBot.Download.DownloadException
+  commentId: T:TGBot.Download.DownloadException
+  href: TGBot.Download.DownloadException.html
+  name: DownloadException
+  nameWithType: DownloadException
+  fullName: TGBot.Download.DownloadException
+- uid: TGBot.Download.IDownloader.DownloadAsync*
+  commentId: Overload:TGBot.Download.IDownloader.DownloadAsync
+  href: TGBot.Download.IDownloader.html#TGBot_Download_IDownloader_DownloadAsync_TGBot_Download_DownloadOptions_System_Action_TGBot_Download_DownloadProgress__System_Threading_CancellationToken_
+  name: DownloadAsync
+  nameWithType: IDownloader.DownloadAsync
+  fullName: TGBot.Download.IDownloader.DownloadAsync
+- uid: TGBot.Download.DownloadOptions
+  commentId: T:TGBot.Download.DownloadOptions
+  parent: TGBot.Download
+  href: TGBot.Download.DownloadOptions.html
+  name: DownloadOptions
+  nameWithType: DownloadOptions
+  fullName: TGBot.Download.DownloadOptions
+- uid: System.Action{TGBot.Download.DownloadProgress}
+  commentId: T:System.Action{TGBot.Download.DownloadProgress}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<DownloadProgress>
+  nameWithType: Action<DownloadProgress>
+  fullName: System.Action<TGBot.Download.DownloadProgress>
+  nameWithType.vb: Action(Of DownloadProgress)
+  fullName.vb: System.Action(Of TGBot.Download.DownloadProgress)
+  name.vb: Action(Of DownloadProgress)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: TGBot.Download.DownloadProgress
+    name: DownloadProgress
+    href: TGBot.Download.DownloadProgress.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Download.DownloadProgress
+    name: DownloadProgress
+    href: TGBot.Download.DownloadProgress.html
+  - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{TGBot.Download.DownloadedMedia}
+  commentId: T:System.Threading.Tasks.Task{TGBot.Download.DownloadedMedia}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<DownloadedMedia>
+  nameWithType: Task<DownloadedMedia>
+  fullName: System.Threading.Tasks.Task<TGBot.Download.DownloadedMedia>
+  nameWithType.vb: Task(Of DownloadedMedia)
+  fullName.vb: System.Threading.Tasks.Task(Of TGBot.Download.DownloadedMedia)
+  name.vb: Task(Of DownloadedMedia)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: TGBot.Download.DownloadedMedia
+    name: DownloadedMedia
+    href: TGBot.Download.DownloadedMedia.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Download.DownloadedMedia
+    name: DownloadedMedia
+    href: TGBot.Download.DownloadedMedia.html
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

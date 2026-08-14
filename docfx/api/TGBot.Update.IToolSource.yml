@@ -1,0 +1,354 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Update.IToolSource
+  commentId: T:TGBot.Update.IToolSource
+  id: IToolSource
+  parent: TGBot.Update
+  children:
+  - TGBot.Update.IToolSource.DownloadBinaryAsync(System.String,System.Threading.CancellationToken)
+  - TGBot.Update.IToolSource.GetLatestVersionAsync(System.Threading.CancellationToken)
+  - TGBot.Update.IToolSource.Name
+  langs:
+  - csharp
+  - vb
+  name: IToolSource
+  nameWithType: IToolSource
+  fullName: TGBot.Update.IToolSource
+  type: Interface
+  source:
+    id: IToolSource
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolSource.cs
+    startLine: 7
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: 工具最新版本源抽象（用于发现最新版本并下载二进制）。
+  example: []
+  syntax:
+    content: public interface IToolSource
+    content.vb: Public Interface IToolSource
+  derivedClasses:
+  - TGBot.Update.FfmpegToolSource
+  - TGBot.Update.YtDlpToolSource
+- uid: TGBot.Update.IToolSource.Name
+  commentId: P:TGBot.Update.IToolSource.Name
+  id: Name
+  parent: TGBot.Update.IToolSource
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: IToolSource.Name
+  fullName: TGBot.Update.IToolSource.Name
+  type: Property
+  source:
+    id: Name
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolSource.cs
+    startLine: 12
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: 工具名称（yt-dlp / ffmpeg）。
+  example: []
+  syntax:
+    content: string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Name As String
+  overload: TGBot.Update.IToolSource.Name*
+- uid: TGBot.Update.IToolSource.GetLatestVersionAsync(System.Threading.CancellationToken)
+  commentId: M:TGBot.Update.IToolSource.GetLatestVersionAsync(System.Threading.CancellationToken)
+  id: GetLatestVersionAsync(System.Threading.CancellationToken)
+  parent: TGBot.Update.IToolSource
+  langs:
+  - csharp
+  - vb
+  name: GetLatestVersionAsync(CancellationToken)
+  nameWithType: IToolSource.GetLatestVersionAsync(CancellationToken)
+  fullName: TGBot.Update.IToolSource.GetLatestVersionAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    id: GetLatestVersionAsync
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolSource.cs
+    startLine: 19
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: 获取最新版本号。
+  example: []
+  syntax:
+    content: Task<ToolVersion?> GetLatestVersionAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task{TGBot.Update.ToolVersion}
+      description: 最新版本；无法获取时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Function GetLatestVersionAsync(cancellationToken As CancellationToken) As Task(Of ToolVersion)
+  overload: TGBot.Update.IToolSource.GetLatestVersionAsync*
+- uid: TGBot.Update.IToolSource.DownloadBinaryAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:TGBot.Update.IToolSource.DownloadBinaryAsync(System.String,System.Threading.CancellationToken)
+  id: DownloadBinaryAsync(System.String,System.Threading.CancellationToken)
+  parent: TGBot.Update.IToolSource
+  langs:
+  - csharp
+  - vb
+  name: DownloadBinaryAsync(string, CancellationToken)
+  nameWithType: IToolSource.DownloadBinaryAsync(string, CancellationToken)
+  fullName: TGBot.Update.IToolSource.DownloadBinaryAsync(string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    id: DownloadBinaryAsync
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolSource.cs
+    startLine: 27
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: 下载最新二进制到目标目录。
+  example: []
+  syntax:
+    content: Task<string> DownloadBinaryAsync(string destinationDir, CancellationToken cancellationToken)
+    parameters:
+    - id: destinationDir
+      type: System.String
+      description: 目标目录。
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+      description: 下载得到的可执行文件路径。
+    content.vb: Function DownloadBinaryAsync(destinationDir As String, cancellationToken As CancellationToken) As Task(Of String)
+  overload: TGBot.Update.IToolSource.DownloadBinaryAsync*
+  nameWithType.vb: IToolSource.DownloadBinaryAsync(String, CancellationToken)
+  fullName.vb: TGBot.Update.IToolSource.DownloadBinaryAsync(String, System.Threading.CancellationToken)
+  name.vb: DownloadBinaryAsync(String, CancellationToken)
+references:
+- uid: TGBot.Update
+  commentId: N:TGBot.Update
+  href: TGBot.html
+  name: TGBot.Update
+  nameWithType: TGBot.Update
+  fullName: TGBot.Update
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Update
+    name: Update
+    href: TGBot.Update.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Update
+    name: Update
+    href: TGBot.Update.html
+- uid: TGBot.Update.IToolSource.Name*
+  commentId: Overload:TGBot.Update.IToolSource.Name
+  href: TGBot.Update.IToolSource.html#TGBot_Update_IToolSource_Name
+  name: Name
+  nameWithType: IToolSource.Name
+  fullName: TGBot.Update.IToolSource.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TGBot.Update.IToolSource.GetLatestVersionAsync*
+  commentId: Overload:TGBot.Update.IToolSource.GetLatestVersionAsync
+  href: TGBot.Update.IToolSource.html#TGBot_Update_IToolSource_GetLatestVersionAsync_System_Threading_CancellationToken_
+  name: GetLatestVersionAsync
+  nameWithType: IToolSource.GetLatestVersionAsync
+  fullName: TGBot.Update.IToolSource.GetLatestVersionAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{TGBot.Update.ToolVersion}
+  commentId: T:System.Threading.Tasks.Task{TGBot.Update.ToolVersion}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ToolVersion>
+  nameWithType: Task<ToolVersion>
+  fullName: System.Threading.Tasks.Task<TGBot.Update.ToolVersion>
+  nameWithType.vb: Task(Of ToolVersion)
+  fullName.vb: System.Threading.Tasks.Task(Of TGBot.Update.ToolVersion)
+  name.vb: Task(Of ToolVersion)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: TGBot.Update.ToolVersion
+    name: ToolVersion
+    href: TGBot.Update.ToolVersion.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Update.ToolVersion
+    name: ToolVersion
+    href: TGBot.Update.ToolVersion.html
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: TGBot.Update.IToolSource.DownloadBinaryAsync*
+  commentId: Overload:TGBot.Update.IToolSource.DownloadBinaryAsync
+  href: TGBot.Update.IToolSource.html#TGBot_Update_IToolSource_DownloadBinaryAsync_System_String_System_Threading_CancellationToken_
+  name: DownloadBinaryAsync
+  nameWithType: IToolSource.DownloadBinaryAsync
+  fullName: TGBot.Update.IToolSource.DownloadBinaryAsync
+- uid: System.Threading.Tasks.Task{System.String}
+  commentId: T:System.Threading.Tasks.Task{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<string>
+  nameWithType: Task<string>
+  fullName: System.Threading.Tasks.Task<string>
+  nameWithType.vb: Task(Of String)
+  fullName.vb: System.Threading.Tasks.Task(Of String)
+  name.vb: Task(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )

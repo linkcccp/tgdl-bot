@@ -1,0 +1,98 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Security
+  commentId: N:TGBot.Security
+  id: TGBot.Security
+  children:
+  - TGBot.Security.DiskUtil
+  - TGBot.Security.DnsHostResolver
+  - TGBot.Security.IHostResolver
+  - TGBot.Security.IpAddressPolicy
+  - TGBot.Security.PathSanitizer
+  - TGBot.Security.TempDirManager
+  - TGBot.Security.UrlValidationResult
+  - TGBot.Security.UrlValidator
+  langs:
+  - csharp
+  - vb
+  name: TGBot.Security
+  nameWithType: TGBot.Security
+  fullName: TGBot.Security
+  type: Namespace
+  assemblies:
+  - tgdl-bot
+references:
+- uid: TGBot.Security.DiskUtil
+  commentId: T:TGBot.Security.DiskUtil
+  href: TGBot.Security.DiskUtil.html
+  name: DiskUtil
+  nameWithType: DiskUtil
+  fullName: TGBot.Security.DiskUtil
+- uid: TGBot.Security.IHostResolver
+  commentId: T:TGBot.Security.IHostResolver
+  parent: TGBot.Security
+  href: TGBot.Security.IHostResolver.html
+  name: IHostResolver
+  nameWithType: IHostResolver
+  fullName: TGBot.Security.IHostResolver
+- uid: TGBot.Security.DnsHostResolver
+  commentId: T:TGBot.Security.DnsHostResolver
+  href: TGBot.Security.DnsHostResolver.html
+  name: DnsHostResolver
+  nameWithType: DnsHostResolver
+  fullName: TGBot.Security.DnsHostResolver
+- uid: TGBot.Security.IpAddressPolicy
+  commentId: T:TGBot.Security.IpAddressPolicy
+  href: TGBot.Security.IpAddressPolicy.html
+  name: IpAddressPolicy
+  nameWithType: IpAddressPolicy
+  fullName: TGBot.Security.IpAddressPolicy
+- uid: TGBot.Security.PathSanitizer
+  commentId: T:TGBot.Security.PathSanitizer
+  href: TGBot.Security.PathSanitizer.html
+  name: PathSanitizer
+  nameWithType: PathSanitizer
+  fullName: TGBot.Security.PathSanitizer
+- uid: TGBot.Security.TempDirManager
+  commentId: T:TGBot.Security.TempDirManager
+  parent: TGBot.Security
+  href: TGBot.Security.TempDirManager.html
+  name: TempDirManager
+  nameWithType: TempDirManager
+  fullName: TGBot.Security.TempDirManager
+- uid: TGBot.Security.UrlValidationResult
+  commentId: T:TGBot.Security.UrlValidationResult
+  parent: TGBot.Security
+  href: TGBot.Security.UrlValidationResult.html
+  name: UrlValidationResult
+  nameWithType: UrlValidationResult
+  fullName: TGBot.Security.UrlValidationResult
+- uid: TGBot.Security.UrlValidator
+  commentId: T:TGBot.Security.UrlValidator
+  parent: TGBot.Security
+  href: TGBot.Security.UrlValidator.html
+  name: UrlValidator
+  nameWithType: UrlValidator
+  fullName: TGBot.Security.UrlValidator
+- uid: TGBot.Security
+  commentId: N:TGBot.Security
+  href: TGBot.html
+  name: TGBot.Security
+  nameWithType: TGBot.Security
+  fullName: TGBot.Security
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Security
+    name: Security
+    href: TGBot.Security.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Security
+    name: Security
+    href: TGBot.Security.html

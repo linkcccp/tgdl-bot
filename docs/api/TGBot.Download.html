@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Namespace TGBot.Download | TGBot API 文档 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Namespace TGBot.Download | TGBot API 文档 ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="TGBot.Download">
+
+  <h1 id="TGBot_Download" data-uid="TGBot.Download" class="text-break">Namespace TGBot.Download</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">
+Classes
+</h3>
+      <h4><a class="xref" href="TGBot.Download.DownloadException.html">DownloadException</a></h4>
+      <section><p>下载失败异常。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Download.DownloadGate.html">DownloadGate</a></h4>
+      <section><p>下载并发闸门：普通下载占 1 个槽位，自更新占满全部槽位，
+从而实现「更新与下载互斥、下载之间并发受限」。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Download.DownloadOptions.html">DownloadOptions</a></h4>
+      <section><p>单个下载任务的运行参数快照。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Download.DownloadProgress.html">DownloadProgress</a></h4>
+      <section><p>下载进度信息。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Download.DownloadedMedia.html">DownloadedMedia</a></h4>
+      <section><p>下载成功的媒体文件信息。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Download.JobRegistry.html">JobRegistry</a></h4>
+      <section><p>下载任务注册表：跟踪运行/排队任务数量，并对已受理的 URL 去重。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Download.YtDlpArgumentBuilder.html">YtDlpArgumentBuilder</a></h4>
+      <section><p>构建 yt-dlp 命令行参数（纯函数，便于单元测试）。</p>
+<p>所有参数通过 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.processstartinfo.argumentlist">ArgumentList</a> 传递，
+不经过 shell，从根本上杜绝命令注入。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Download.YtDlpDownloader.html">YtDlpDownloader</a></h4>
+      <section><p>通过 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.process.start#system-diagnostics-process-start">Start()</a> 调用系统安装的 yt-dlp 二进制实现下载。</p>
+<p>不内嵌 yt-dlp/ffmpeg，使用 <code>ArgumentList</code> 避免 shell 注入。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Download.YtDlpOutputParser.html">YtDlpOutputParser</a></h4>
+      <section><p>yt-dlp 标准输出/错误输出解析器（纯函数，便于单元测试）。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Download.YtDlpOutputParser.MetaLine.html">YtDlpOutputParser.MetaLine</a></h4>
+      <section><p>元数据行解析结果。</p>
+</section>
+    <h3 id="interfaces">
+Interfaces
+</h3>
+      <h4><a class="xref" href="TGBot.Download.IDownloader.html">IDownloader</a></h4>
+      <section><p>下载器抽象，负责调用外部 yt-dlp 进程完成下载。</p>
+</section>
+    <h3 id="enums">
+Enums
+</h3>
+      <h4><a class="xref" href="TGBot.Download.DownloadFailureReason.html">DownloadFailureReason</a></h4>
+      <section><p>下载失败原因分类，用于向用户给出准确提示而不泄露内部细节。</p>
+</section>
+
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      tgdl-bot — .NET Telegram 下载 Bot
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

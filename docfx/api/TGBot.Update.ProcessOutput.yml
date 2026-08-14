@@ -1,0 +1,505 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Update.ProcessOutput
+  commentId: T:TGBot.Update.ProcessOutput
+  id: ProcessOutput
+  parent: TGBot.Update
+  children:
+  - TGBot.Update.ProcessOutput.#ctor(System.Int32,System.String,System.String)
+  - TGBot.Update.ProcessOutput.ExitCode
+  - TGBot.Update.ProcessOutput.StdErr
+  - TGBot.Update.ProcessOutput.StdOut
+  langs:
+  - csharp
+  - vb
+  name: ProcessOutput
+  nameWithType: ProcessOutput
+  fullName: TGBot.Update.ProcessOutput
+  type: Class
+  source:
+    id: ProcessOutput
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ProcessRunner.cs
+    startLine: 10
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: 进程运行结果。
+  example: []
+  syntax:
+    content: 'public sealed record ProcessOutput : IEquatable<ProcessOutput>'
+    content.vb: Public NotInheritable Class ProcessOutput Implements IEquatable(Of ProcessOutput)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{TGBot.Update.ProcessOutput}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Update.ProcessOutput.#ctor(System.Int32,System.String,System.String)
+  commentId: M:TGBot.Update.ProcessOutput.#ctor(System.Int32,System.String,System.String)
+  id: '#ctor(System.Int32,System.String,System.String)'
+  parent: TGBot.Update.ProcessOutput
+  langs:
+  - csharp
+  - vb
+  name: ProcessOutput(int, string, string)
+  nameWithType: ProcessOutput.ProcessOutput(int, string, string)
+  fullName: TGBot.Update.ProcessOutput.ProcessOutput(int, string, string)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ProcessRunner.cs
+    startLine: 10
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: 进程运行结果。
+  example: []
+  syntax:
+    content: public ProcessOutput(int ExitCode, string StdOut, string StdErr)
+    parameters:
+    - id: ExitCode
+      type: System.Int32
+      description: 退出码。
+    - id: StdOut
+      type: System.String
+      description: 标准输出。
+    - id: StdErr
+      type: System.String
+      description: 标准错误输出。
+    content.vb: Public Sub New(ExitCode As Integer, StdOut As String, StdErr As String)
+  overload: TGBot.Update.ProcessOutput.#ctor*
+  nameWithType.vb: ProcessOutput.New(Integer, String, String)
+  fullName.vb: TGBot.Update.ProcessOutput.New(Integer, String, String)
+  name.vb: New(Integer, String, String)
+- uid: TGBot.Update.ProcessOutput.ExitCode
+  commentId: P:TGBot.Update.ProcessOutput.ExitCode
+  id: ExitCode
+  parent: TGBot.Update.ProcessOutput
+  langs:
+  - csharp
+  - vb
+  name: ExitCode
+  nameWithType: ProcessOutput.ExitCode
+  fullName: TGBot.Update.ProcessOutput.ExitCode
+  type: Property
+  source:
+    id: ExitCode
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ProcessRunner.cs
+    startLine: 10
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: 退出码。
+  example: []
+  syntax:
+    content: public int ExitCode { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ExitCode As Integer
+  overload: TGBot.Update.ProcessOutput.ExitCode*
+- uid: TGBot.Update.ProcessOutput.StdOut
+  commentId: P:TGBot.Update.ProcessOutput.StdOut
+  id: StdOut
+  parent: TGBot.Update.ProcessOutput
+  langs:
+  - csharp
+  - vb
+  name: StdOut
+  nameWithType: ProcessOutput.StdOut
+  fullName: TGBot.Update.ProcessOutput.StdOut
+  type: Property
+  source:
+    id: StdOut
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ProcessRunner.cs
+    startLine: 10
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: 标准输出。
+  example: []
+  syntax:
+    content: public string StdOut { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property StdOut As String
+  overload: TGBot.Update.ProcessOutput.StdOut*
+- uid: TGBot.Update.ProcessOutput.StdErr
+  commentId: P:TGBot.Update.ProcessOutput.StdErr
+  id: StdErr
+  parent: TGBot.Update.ProcessOutput
+  langs:
+  - csharp
+  - vb
+  name: StdErr
+  nameWithType: ProcessOutput.StdErr
+  fullName: TGBot.Update.ProcessOutput.StdErr
+  type: Property
+  source:
+    id: StdErr
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ProcessRunner.cs
+    startLine: 10
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: 标准错误输出。
+  example: []
+  syntax:
+    content: public string StdErr { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property StdErr As String
+  overload: TGBot.Update.ProcessOutput.StdErr*
+references:
+- uid: TGBot.Update
+  commentId: N:TGBot.Update
+  href: TGBot.html
+  name: TGBot.Update
+  nameWithType: TGBot.Update
+  fullName: TGBot.Update
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Update
+    name: Update
+    href: TGBot.Update.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Update
+    name: Update
+    href: TGBot.Update.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{TGBot.Update.ProcessOutput}
+  commentId: T:System.IEquatable{TGBot.Update.ProcessOutput}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<ProcessOutput>
+  nameWithType: IEquatable<ProcessOutput>
+  fullName: System.IEquatable<TGBot.Update.ProcessOutput>
+  nameWithType.vb: IEquatable(Of ProcessOutput)
+  fullName.vb: System.IEquatable(Of TGBot.Update.ProcessOutput)
+  name.vb: IEquatable(Of ProcessOutput)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: TGBot.Update.ProcessOutput
+    name: ProcessOutput
+    href: TGBot.Update.ProcessOutput.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Update.ProcessOutput
+    name: ProcessOutput
+    href: TGBot.Update.ProcessOutput.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: TGBot.Update.ProcessOutput.#ctor*
+  commentId: Overload:TGBot.Update.ProcessOutput.#ctor
+  href: TGBot.Update.ProcessOutput.html#TGBot_Update_ProcessOutput__ctor_System_Int32_System_String_System_String_
+  name: ProcessOutput
+  nameWithType: ProcessOutput.ProcessOutput
+  fullName: TGBot.Update.ProcessOutput.ProcessOutput
+  nameWithType.vb: ProcessOutput.New
+  fullName.vb: TGBot.Update.ProcessOutput.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: TGBot.Update.ProcessOutput.ExitCode*
+  commentId: Overload:TGBot.Update.ProcessOutput.ExitCode
+  href: TGBot.Update.ProcessOutput.html#TGBot_Update_ProcessOutput_ExitCode
+  name: ExitCode
+  nameWithType: ProcessOutput.ExitCode
+  fullName: TGBot.Update.ProcessOutput.ExitCode
+- uid: TGBot.Update.ProcessOutput.StdOut*
+  commentId: Overload:TGBot.Update.ProcessOutput.StdOut
+  href: TGBot.Update.ProcessOutput.html#TGBot_Update_ProcessOutput_StdOut
+  name: StdOut
+  nameWithType: ProcessOutput.StdOut
+  fullName: TGBot.Update.ProcessOutput.StdOut
+- uid: TGBot.Update.ProcessOutput.StdErr*
+  commentId: Overload:TGBot.Update.ProcessOutput.StdErr
+  href: TGBot.Update.ProcessOutput.html#TGBot_Update_ProcessOutput_StdErr
+  name: StdErr
+  nameWithType: ProcessOutput.StdErr
+  fullName: TGBot.Update.ProcessOutput.StdErr

@@ -1,0 +1,813 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Messaging.ITelegramClient
+  commentId: T:TGBot.Messaging.ITelegramClient
+  id: ITelegramClient
+  parent: TGBot.Messaging
+  children:
+  - TGBot.Messaging.ITelegramClient.DropPendingUpdatesAsync(System.Threading.CancellationToken)
+  - TGBot.Messaging.ITelegramClient.GetBotUsernameAsync(System.Threading.CancellationToken)
+  - TGBot.Messaging.ITelegramClient.RunLongPollingAsync(System.Func{TGBot.Messaging.InboundMessage,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
+  - TGBot.Messaging.ITelegramClient.SendAudioAsync(System.Int64,System.String,System.String,System.String,System.String,System.String,System.Threading.CancellationToken)
+  - TGBot.Messaging.ITelegramClient.SendChatActionAsync(System.Int64,TGBot.Messaging.BotChatAction,System.Threading.CancellationToken)
+  - TGBot.Messaging.ITelegramClient.SendDocumentAsync(System.Int64,System.String,System.String,System.String,System.Threading.CancellationToken)
+  - TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
+  - TGBot.Messaging.ITelegramClient.SendVideoAsync(System.Int64,System.String,System.String,System.String,System.Threading.CancellationToken)
+  - TGBot.Messaging.ITelegramClient.SetCommandsAsync(System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: ITelegramClient
+  nameWithType: ITelegramClient
+  fullName: TGBot.Messaging.ITelegramClient
+  type: Interface
+  source:
+    id: ITelegramClient
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 68
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: Telegram 客户端抽象：所有与 Telegram 的交互均通过本接口，便于替换与单测。
+  example: []
+  syntax:
+    content: public interface ITelegramClient
+    content.vb: Public Interface ITelegramClient
+  derivedClasses:
+  - TGBot.Messaging.TelegramClientWrapper
+- uid: TGBot.Messaging.ITelegramClient.GetBotUsernameAsync(System.Threading.CancellationToken)
+  commentId: M:TGBot.Messaging.ITelegramClient.GetBotUsernameAsync(System.Threading.CancellationToken)
+  id: GetBotUsernameAsync(System.Threading.CancellationToken)
+  parent: TGBot.Messaging.ITelegramClient
+  langs:
+  - csharp
+  - vb
+  name: GetBotUsernameAsync(CancellationToken)
+  nameWithType: ITelegramClient.GetBotUsernameAsync(CancellationToken)
+  fullName: TGBot.Messaging.ITelegramClient.GetBotUsernameAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    id: GetBotUsernameAsync
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 75
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 获取 Bot 用户名。
+  example: []
+  syntax:
+    content: Task<string> GetBotUsernameAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+      description: Bot 用户名（不含 @）。
+    content.vb: Function GetBotUsernameAsync(cancellationToken As CancellationToken) As Task(Of String)
+  overload: TGBot.Messaging.ITelegramClient.GetBotUsernameAsync*
+- uid: TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
+  commentId: M:TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
+  id: SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
+  parent: TGBot.Messaging.ITelegramClient
+  langs:
+  - csharp
+  - vb
+  name: SendMessageAsync(long, string, int, CancellationToken)
+  nameWithType: ITelegramClient.SendMessageAsync(long, string, int, CancellationToken)
+  fullName: TGBot.Messaging.ITelegramClient.SendMessageAsync(long, string, int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    id: SendMessageAsync
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 84
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 发送文本消息。
+  example: []
+  syntax:
+    content: Task SendMessageAsync(long chatId, string text, int replyToMessageId, CancellationToken cancellationToken)
+    parameters:
+    - id: chatId
+      type: System.Int64
+      description: 目标会话 ID。
+    - id: text
+      type: System.String
+      description: 文本。
+    - id: replyToMessageId
+      type: System.Int32
+      description: 回复的消息 ID，0 表示不回复。
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function SendMessageAsync(chatId As Long, text As String, replyToMessageId As Integer, cancellationToken As CancellationToken) As Task
+  overload: TGBot.Messaging.ITelegramClient.SendMessageAsync*
+  nameWithType.vb: ITelegramClient.SendMessageAsync(Long, String, Integer, CancellationToken)
+  fullName.vb: TGBot.Messaging.ITelegramClient.SendMessageAsync(Long, String, Integer, System.Threading.CancellationToken)
+  name.vb: SendMessageAsync(Long, String, Integer, CancellationToken)
+- uid: TGBot.Messaging.ITelegramClient.SendChatActionAsync(System.Int64,TGBot.Messaging.BotChatAction,System.Threading.CancellationToken)
+  commentId: M:TGBot.Messaging.ITelegramClient.SendChatActionAsync(System.Int64,TGBot.Messaging.BotChatAction,System.Threading.CancellationToken)
+  id: SendChatActionAsync(System.Int64,TGBot.Messaging.BotChatAction,System.Threading.CancellationToken)
+  parent: TGBot.Messaging.ITelegramClient
+  langs:
+  - csharp
+  - vb
+  name: SendChatActionAsync(long, BotChatAction, CancellationToken)
+  nameWithType: ITelegramClient.SendChatActionAsync(long, BotChatAction, CancellationToken)
+  fullName: TGBot.Messaging.ITelegramClient.SendChatActionAsync(long, TGBot.Messaging.BotChatAction, System.Threading.CancellationToken)
+  type: Method
+  source:
+    id: SendChatActionAsync
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 92
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 发送聊天动作。
+  example: []
+  syntax:
+    content: Task SendChatActionAsync(long chatId, BotChatAction action, CancellationToken cancellationToken)
+    parameters:
+    - id: chatId
+      type: System.Int64
+      description: 目标会话 ID。
+    - id: action
+      type: TGBot.Messaging.BotChatAction
+      description: 动作类型。
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function SendChatActionAsync(chatId As Long, action As BotChatAction, cancellationToken As CancellationToken) As Task
+  overload: TGBot.Messaging.ITelegramClient.SendChatActionAsync*
+  nameWithType.vb: ITelegramClient.SendChatActionAsync(Long, BotChatAction, CancellationToken)
+  fullName.vb: TGBot.Messaging.ITelegramClient.SendChatActionAsync(Long, TGBot.Messaging.BotChatAction, System.Threading.CancellationToken)
+  name.vb: SendChatActionAsync(Long, BotChatAction, CancellationToken)
+- uid: TGBot.Messaging.ITelegramClient.SendVideoAsync(System.Int64,System.String,System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:TGBot.Messaging.ITelegramClient.SendVideoAsync(System.Int64,System.String,System.String,System.String,System.Threading.CancellationToken)
+  id: SendVideoAsync(System.Int64,System.String,System.String,System.String,System.Threading.CancellationToken)
+  parent: TGBot.Messaging.ITelegramClient
+  langs:
+  - csharp
+  - vb
+  name: SendVideoAsync(long, string, string, string?, CancellationToken)
+  nameWithType: ITelegramClient.SendVideoAsync(long, string, string, string?, CancellationToken)
+  fullName: TGBot.Messaging.ITelegramClient.SendVideoAsync(long, string, string, string?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    id: SendVideoAsync
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 102
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 发送视频。
+  example: []
+  syntax:
+    content: Task SendVideoAsync(long chatId, string filePath, string fileName, string? caption, CancellationToken cancellationToken)
+    parameters:
+    - id: chatId
+      type: System.Int64
+      description: 目标会话 ID。
+    - id: filePath
+      type: System.String
+      description: 本地文件路径。
+    - id: fileName
+      type: System.String
+      description: 文件名。
+    - id: caption
+      type: System.String
+      description: 说明（可空）。
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function SendVideoAsync(chatId As Long, filePath As String, fileName As String, caption As String, cancellationToken As CancellationToken) As Task
+  overload: TGBot.Messaging.ITelegramClient.SendVideoAsync*
+  nameWithType.vb: ITelegramClient.SendVideoAsync(Long, String, String, String, CancellationToken)
+  fullName.vb: TGBot.Messaging.ITelegramClient.SendVideoAsync(Long, String, String, String, System.Threading.CancellationToken)
+  name.vb: SendVideoAsync(Long, String, String, String, CancellationToken)
+- uid: TGBot.Messaging.ITelegramClient.SendAudioAsync(System.Int64,System.String,System.String,System.String,System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:TGBot.Messaging.ITelegramClient.SendAudioAsync(System.Int64,System.String,System.String,System.String,System.String,System.String,System.Threading.CancellationToken)
+  id: SendAudioAsync(System.Int64,System.String,System.String,System.String,System.String,System.String,System.Threading.CancellationToken)
+  parent: TGBot.Messaging.ITelegramClient
+  langs:
+  - csharp
+  - vb
+  name: SendAudioAsync(long, string, string, string?, string?, string?, CancellationToken)
+  nameWithType: ITelegramClient.SendAudioAsync(long, string, string, string?, string?, string?, CancellationToken)
+  fullName: TGBot.Messaging.ITelegramClient.SendAudioAsync(long, string, string, string?, string?, string?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    id: SendAudioAsync
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 114
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 发送音频。
+  example: []
+  syntax:
+    content: Task SendAudioAsync(long chatId, string filePath, string fileName, string? caption, string? performer, string? title, CancellationToken cancellationToken)
+    parameters:
+    - id: chatId
+      type: System.Int64
+      description: 目标会话 ID。
+    - id: filePath
+      type: System.String
+      description: 本地文件路径。
+    - id: fileName
+      type: System.String
+      description: 文件名。
+    - id: caption
+      type: System.String
+      description: 说明（可空）。
+    - id: performer
+      type: System.String
+      description: 表演者（可空）。
+    - id: title
+      type: System.String
+      description: 标题（可空）。
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function SendAudioAsync(chatId As Long, filePath As String, fileName As String, caption As String, performer As String, title As String, cancellationToken As CancellationToken) As Task
+  overload: TGBot.Messaging.ITelegramClient.SendAudioAsync*
+  nameWithType.vb: ITelegramClient.SendAudioAsync(Long, String, String, String, String, String, CancellationToken)
+  fullName.vb: TGBot.Messaging.ITelegramClient.SendAudioAsync(Long, String, String, String, String, String, System.Threading.CancellationToken)
+  name.vb: SendAudioAsync(Long, String, String, String, String, String, CancellationToken)
+- uid: TGBot.Messaging.ITelegramClient.SendDocumentAsync(System.Int64,System.String,System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:TGBot.Messaging.ITelegramClient.SendDocumentAsync(System.Int64,System.String,System.String,System.String,System.Threading.CancellationToken)
+  id: SendDocumentAsync(System.Int64,System.String,System.String,System.String,System.Threading.CancellationToken)
+  parent: TGBot.Messaging.ITelegramClient
+  langs:
+  - csharp
+  - vb
+  name: SendDocumentAsync(long, string, string, string?, CancellationToken)
+  nameWithType: ITelegramClient.SendDocumentAsync(long, string, string, string?, CancellationToken)
+  fullName: TGBot.Messaging.ITelegramClient.SendDocumentAsync(long, string, string, string?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    id: SendDocumentAsync
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 124
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 发送文档（非视频/音频格式的兜底）。
+  example: []
+  syntax:
+    content: Task SendDocumentAsync(long chatId, string filePath, string fileName, string? caption, CancellationToken cancellationToken)
+    parameters:
+    - id: chatId
+      type: System.Int64
+      description: 目标会话 ID。
+    - id: filePath
+      type: System.String
+      description: 本地文件路径。
+    - id: fileName
+      type: System.String
+      description: 文件名。
+    - id: caption
+      type: System.String
+      description: 说明（可空）。
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function SendDocumentAsync(chatId As Long, filePath As String, fileName As String, caption As String, cancellationToken As CancellationToken) As Task
+  overload: TGBot.Messaging.ITelegramClient.SendDocumentAsync*
+  nameWithType.vb: ITelegramClient.SendDocumentAsync(Long, String, String, String, CancellationToken)
+  fullName.vb: TGBot.Messaging.ITelegramClient.SendDocumentAsync(Long, String, String, String, System.Threading.CancellationToken)
+  name.vb: SendDocumentAsync(Long, String, String, String, CancellationToken)
+- uid: TGBot.Messaging.ITelegramClient.SetCommandsAsync(System.Threading.CancellationToken)
+  commentId: M:TGBot.Messaging.ITelegramClient.SetCommandsAsync(System.Threading.CancellationToken)
+  id: SetCommandsAsync(System.Threading.CancellationToken)
+  parent: TGBot.Messaging.ITelegramClient
+  langs:
+  - csharp
+  - vb
+  name: SetCommandsAsync(CancellationToken)
+  nameWithType: ITelegramClient.SetCommandsAsync(CancellationToken)
+  fullName: TGBot.Messaging.ITelegramClient.SetCommandsAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    id: SetCommandsAsync
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 130
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 设置机器人指令菜单。
+  example: []
+  syntax:
+    content: Task SetCommandsAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function SetCommandsAsync(cancellationToken As CancellationToken) As Task
+  overload: TGBot.Messaging.ITelegramClient.SetCommandsAsync*
+- uid: TGBot.Messaging.ITelegramClient.DropPendingUpdatesAsync(System.Threading.CancellationToken)
+  commentId: M:TGBot.Messaging.ITelegramClient.DropPendingUpdatesAsync(System.Threading.CancellationToken)
+  id: DropPendingUpdatesAsync(System.Threading.CancellationToken)
+  parent: TGBot.Messaging.ITelegramClient
+  langs:
+  - csharp
+  - vb
+  name: DropPendingUpdatesAsync(CancellationToken)
+  nameWithType: ITelegramClient.DropPendingUpdatesAsync(CancellationToken)
+  fullName: TGBot.Messaging.ITelegramClient.DropPendingUpdatesAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    id: DropPendingUpdatesAsync
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 136
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 丢弃挂起的旧更新。
+  example: []
+  syntax:
+    content: Task DropPendingUpdatesAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function DropPendingUpdatesAsync(cancellationToken As CancellationToken) As Task
+  overload: TGBot.Messaging.ITelegramClient.DropPendingUpdatesAsync*
+- uid: TGBot.Messaging.ITelegramClient.RunLongPollingAsync(System.Func{TGBot.Messaging.InboundMessage,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
+  commentId: M:TGBot.Messaging.ITelegramClient.RunLongPollingAsync(System.Func{TGBot.Messaging.InboundMessage,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
+  id: RunLongPollingAsync(System.Func{TGBot.Messaging.InboundMessage,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
+  parent: TGBot.Messaging.ITelegramClient
+  langs:
+  - csharp
+  - vb
+  name: RunLongPollingAsync(Func<InboundMessage, CancellationToken, Task>, Func<Exception, CancellationToken, Task>, CancellationToken)
+  nameWithType: ITelegramClient.RunLongPollingAsync(Func<InboundMessage, CancellationToken, Task>, Func<Exception, CancellationToken, Task>, CancellationToken)
+  fullName: TGBot.Messaging.ITelegramClient.RunLongPollingAsync(System.Func<TGBot.Messaging.InboundMessage, System.Threading.CancellationToken, System.Threading.Tasks.Task>, System.Func<System.Exception, System.Threading.CancellationToken, System.Threading.Tasks.Task>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    id: RunLongPollingAsync
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 145
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 启动长轮询并阻塞，直到被取消。
+  example: []
+  syntax:
+    content: Task RunLongPollingAsync(Func<InboundMessage, CancellationToken, Task> onUpdate, Func<Exception, CancellationToken, Task> onPollError, CancellationToken cancellationToken)
+    parameters:
+    - id: onUpdate
+      type: System.Func{TGBot.Messaging.InboundMessage,System.Threading.CancellationToken,System.Threading.Tasks.Task}
+      description: 处理单条入站消息。
+    - id: onPollError
+      type: System.Func{System.Exception,System.Threading.CancellationToken,System.Threading.Tasks.Task}
+      description: 轮询错误的回调（不抛出则继续轮询）。
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task
+      description: 轮询正常退出时完成。
+    content.vb: Function RunLongPollingAsync(onUpdate As Func(Of InboundMessage, CancellationToken, Task), onPollError As Func(Of Exception, CancellationToken, Task), cancellationToken As CancellationToken) As Task
+  overload: TGBot.Messaging.ITelegramClient.RunLongPollingAsync*
+  nameWithType.vb: ITelegramClient.RunLongPollingAsync(Func(Of InboundMessage, CancellationToken, Task), Func(Of Exception, CancellationToken, Task), CancellationToken)
+  fullName.vb: TGBot.Messaging.ITelegramClient.RunLongPollingAsync(System.Func(Of TGBot.Messaging.InboundMessage, System.Threading.CancellationToken, System.Threading.Tasks.Task), System.Func(Of System.Exception, System.Threading.CancellationToken, System.Threading.Tasks.Task), System.Threading.CancellationToken)
+  name.vb: RunLongPollingAsync(Func(Of InboundMessage, CancellationToken, Task), Func(Of Exception, CancellationToken, Task), CancellationToken)
+references:
+- uid: TGBot.Messaging
+  commentId: N:TGBot.Messaging
+  href: TGBot.html
+  name: TGBot.Messaging
+  nameWithType: TGBot.Messaging
+  fullName: TGBot.Messaging
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html
+- uid: TGBot.Messaging.ITelegramClient.GetBotUsernameAsync*
+  commentId: Overload:TGBot.Messaging.ITelegramClient.GetBotUsernameAsync
+  href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_GetBotUsernameAsync_System_Threading_CancellationToken_
+  name: GetBotUsernameAsync
+  nameWithType: ITelegramClient.GetBotUsernameAsync
+  fullName: TGBot.Messaging.ITelegramClient.GetBotUsernameAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.String}
+  commentId: T:System.Threading.Tasks.Task{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<string>
+  nameWithType: Task<string>
+  fullName: System.Threading.Tasks.Task<string>
+  nameWithType.vb: Task(Of String)
+  fullName.vb: System.Threading.Tasks.Task(Of String)
+  name.vb: Task(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: TGBot.Messaging.ITelegramClient.SendMessageAsync*
+  commentId: Overload:TGBot.Messaging.ITelegramClient.SendMessageAsync
+  href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SendMessageAsync_System_Int64_System_String_System_Int32_System_Threading_CancellationToken_
+  name: SendMessageAsync
+  nameWithType: ITelegramClient.SendMessageAsync
+  fullName: TGBot.Messaging.ITelegramClient.SendMessageAsync
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TGBot.Messaging.ITelegramClient.SendChatActionAsync*
+  commentId: Overload:TGBot.Messaging.ITelegramClient.SendChatActionAsync
+  href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SendChatActionAsync_System_Int64_TGBot_Messaging_BotChatAction_System_Threading_CancellationToken_
+  name: SendChatActionAsync
+  nameWithType: ITelegramClient.SendChatActionAsync
+  fullName: TGBot.Messaging.ITelegramClient.SendChatActionAsync
+- uid: TGBot.Messaging.BotChatAction
+  commentId: T:TGBot.Messaging.BotChatAction
+  parent: TGBot.Messaging
+  href: TGBot.Messaging.BotChatAction.html
+  name: BotChatAction
+  nameWithType: BotChatAction
+  fullName: TGBot.Messaging.BotChatAction
+- uid: TGBot.Messaging.ITelegramClient.SendVideoAsync*
+  commentId: Overload:TGBot.Messaging.ITelegramClient.SendVideoAsync
+  href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SendVideoAsync_System_Int64_System_String_System_String_System_String_System_Threading_CancellationToken_
+  name: SendVideoAsync
+  nameWithType: ITelegramClient.SendVideoAsync
+  fullName: TGBot.Messaging.ITelegramClient.SendVideoAsync
+- uid: TGBot.Messaging.ITelegramClient.SendAudioAsync*
+  commentId: Overload:TGBot.Messaging.ITelegramClient.SendAudioAsync
+  href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SendAudioAsync_System_Int64_System_String_System_String_System_String_System_String_System_String_System_Threading_CancellationToken_
+  name: SendAudioAsync
+  nameWithType: ITelegramClient.SendAudioAsync
+  fullName: TGBot.Messaging.ITelegramClient.SendAudioAsync
+- uid: TGBot.Messaging.ITelegramClient.SendDocumentAsync*
+  commentId: Overload:TGBot.Messaging.ITelegramClient.SendDocumentAsync
+  href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SendDocumentAsync_System_Int64_System_String_System_String_System_String_System_Threading_CancellationToken_
+  name: SendDocumentAsync
+  nameWithType: ITelegramClient.SendDocumentAsync
+  fullName: TGBot.Messaging.ITelegramClient.SendDocumentAsync
+- uid: TGBot.Messaging.ITelegramClient.SetCommandsAsync*
+  commentId: Overload:TGBot.Messaging.ITelegramClient.SetCommandsAsync
+  href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SetCommandsAsync_System_Threading_CancellationToken_
+  name: SetCommandsAsync
+  nameWithType: ITelegramClient.SetCommandsAsync
+  fullName: TGBot.Messaging.ITelegramClient.SetCommandsAsync
+- uid: TGBot.Messaging.ITelegramClient.DropPendingUpdatesAsync*
+  commentId: Overload:TGBot.Messaging.ITelegramClient.DropPendingUpdatesAsync
+  href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_DropPendingUpdatesAsync_System_Threading_CancellationToken_
+  name: DropPendingUpdatesAsync
+  nameWithType: ITelegramClient.DropPendingUpdatesAsync
+  fullName: TGBot.Messaging.ITelegramClient.DropPendingUpdatesAsync
+- uid: TGBot.Messaging.ITelegramClient.RunLongPollingAsync*
+  commentId: Overload:TGBot.Messaging.ITelegramClient.RunLongPollingAsync
+  href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_RunLongPollingAsync_System_Func_TGBot_Messaging_InboundMessage_System_Threading_CancellationToken_System_Threading_Tasks_Task__System_Func_System_Exception_System_Threading_CancellationToken_System_Threading_Tasks_Task__System_Threading_CancellationToken_
+  name: RunLongPollingAsync
+  nameWithType: ITelegramClient.RunLongPollingAsync
+  fullName: TGBot.Messaging.ITelegramClient.RunLongPollingAsync
+- uid: System.Func{TGBot.Messaging.InboundMessage,System.Threading.CancellationToken,System.Threading.Tasks.Task}
+  commentId: T:System.Func{TGBot.Messaging.InboundMessage,System.Threading.CancellationToken,System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`3
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: Func<InboundMessage, CancellationToken, Task>
+  nameWithType: Func<InboundMessage, CancellationToken, Task>
+  fullName: System.Func<TGBot.Messaging.InboundMessage, System.Threading.CancellationToken, System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of InboundMessage, CancellationToken, Task)
+  fullName.vb: System.Func(Of TGBot.Messaging.InboundMessage, System.Threading.CancellationToken, System.Threading.Tasks.Task)
+  name.vb: Func(Of InboundMessage, CancellationToken, Task)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - uid: TGBot.Messaging.InboundMessage
+    name: InboundMessage
+    href: TGBot.Messaging.InboundMessage.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Messaging.InboundMessage
+    name: InboundMessage
+    href: TGBot.Messaging.InboundMessage.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+- uid: System.Func{System.Exception,System.Threading.CancellationToken,System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Exception,System.Threading.CancellationToken,System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`3
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: Func<Exception, CancellationToken, Task>
+  nameWithType: Func<Exception, CancellationToken, Task>
+  fullName: System.Func<System.Exception, System.Threading.CancellationToken, System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of Exception, CancellationToken, Task)
+  fullName.vb: System.Func(Of System.Exception, System.Threading.CancellationToken, System.Threading.Tasks.Task)
+  name.vb: Func(Of Exception, CancellationToken, Task)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+- uid: System.Func`3
+  commentId: T:System.Func`3
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://dotnet.github.io/docfx/schemas/docfx.schema.json",
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "src/TGBot/TGBot.csproj"
+          ],
+          "src": ".."
+        }
+      ],
+      "dest": "api",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "api/index.md"
+        ]
+      },
+      {
+        "files": [
+          "index.md",
+          "toc.yml"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "**/*.png"
+        ]
+      }
+    ],
+    "overwrite": [],
+    "globalMetadata": {
+      "_appTitle": "TGBot API 文档",
+      "_appFooter": "tgdl-bot — .NET Telegram 下载 Bot",
+      "_enableSearch": false
+    },
+    "dest": "../docs",
+    "template": [
+      "default"
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Access.TriggerArea
+  commentId: T:TGBot.Access.TriggerArea
+  id: TriggerArea
+  parent: TGBot.Access
+  children:
+  - TGBot.Access.TriggerArea.GroupOrChannel
+  - TGBot.Access.TriggerArea.Private
+  langs:
+  - csharp
+  - vb
+  name: TriggerArea
+  nameWithType: TriggerArea
+  fullName: TGBot.Access.TriggerArea
+  type: Enum
+  source:
+    id: TriggerArea
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    startLine: 7
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Access
+  summary: 触发区域：私聊，或频道/群组。
+  example: []
+  syntax:
+    content: public enum TriggerArea
+    content.vb: Public Enum TriggerArea
+- uid: TGBot.Access.TriggerArea.Private
+  commentId: F:TGBot.Access.TriggerArea.Private
+  id: Private
+  parent: TGBot.Access.TriggerArea
+  langs:
+  - csharp
+  - vb
+  name: Private
+  nameWithType: TriggerArea.Private
+  fullName: TGBot.Access.TriggerArea.Private
+  type: Field
+  source:
+    id: Private
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    startLine: 10
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Access
+  summary: 私聊（DM）。
+  example: []
+  syntax:
+    content: Private = 0
+    return:
+      type: TGBot.Access.TriggerArea
+- uid: TGBot.Access.TriggerArea.GroupOrChannel
+  commentId: F:TGBot.Access.TriggerArea.GroupOrChannel
+  id: GroupOrChannel
+  parent: TGBot.Access.TriggerArea
+  langs:
+  - csharp
+  - vb
+  name: GroupOrChannel
+  nameWithType: TriggerArea.GroupOrChannel
+  fullName: TGBot.Access.TriggerArea.GroupOrChannel
+  type: Field
+  source:
+    id: GroupOrChannel
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    startLine: 13
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Access
+  summary: 群组或频道。
+  example: []
+  syntax:
+    content: GroupOrChannel = 1
+    return:
+      type: TGBot.Access.TriggerArea
+references:
+- uid: TGBot.Access
+  commentId: N:TGBot.Access
+  href: TGBot.html
+  name: TGBot.Access
+  nameWithType: TGBot.Access
+  fullName: TGBot.Access
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Access
+    name: Access
+    href: TGBot.Access.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Access
+    name: Access
+    href: TGBot.Access.html
+- uid: TGBot.Access.TriggerArea
+  commentId: T:TGBot.Access.TriggerArea
+  parent: TGBot.Access
+  href: TGBot.Access.TriggerArea.html
+  name: TriggerArea
+  nameWithType: TriggerArea
+  fullName: TGBot.Access.TriggerArea

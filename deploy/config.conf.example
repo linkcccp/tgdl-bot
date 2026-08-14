@@ -1,0 +1,70 @@
+# ============================================================
+# tgdl-bot 配置文件示例
+# 位置：与 tgdl-bot 二进制同一目录（默认 /opt/tgdl-bot/config.conf）
+# 说明：# 或 ; 开头为注释；格式：键 = 值；支持 [section] 段头（忽略）
+# ============================================================
+
+# Bot Token：在 @BotFather 创建 bot 后获得
+BotToken = 123456789:AAAA-BBBB_ccccdddd_eeeee
+
+# 本地 Telegram Bot API Server 地址（--local 模式，默认端口 8081）
+# 必须与 telegram-bot-api 服务监听端口一致
+LocalApiBaseUrl = http://127.0.0.1:8081
+
+# Telegram API ID 与 API Hash（本地 Bot API Server 启动时需要，见 deploy/api.env）
+# 获取：https://my.telegram.org  →  API development tools
+TelegramApiId = 123456
+TelegramApiHash = abcdef0123456789abcdef0123456789
+
+# 目标频道/群组 ID 白名单（逗号分隔，支持负数）
+# 下载结果会推送到这些会话；只有列在这里的频道/群组内的链接才会被处理
+# 如何获取：把 bot 设为频道管理员后，发一条消息，用 https://api.telegram.org/bot<TOKEN>/getUpdates 查看 chat.id
+TargetChannelIds = -1001234567890
+
+# 允许在私聊中发送链接的用户 ID 白名单（逗号分隔）
+# 如何获取自己的 user ID：向 @userinfobot 发送任意消息，或看 getUpdates 返回的 from.id
+AllowedUserIds = 123456789
+
+# 下载临时目录（必须可写，建议与上传目标同磁盘）
+DownloadTempDir = /var/lib/tgdl-bot/tmp
+
+# yt-dlp / ffmpeg 安装路径（/update 命令会原子替换这两个文件，需对该目录有写权限）
+YtDlpPath = /opt/tgdl-bot/bin/yt-dlp
+FfmpegPath = /opt/tgdl-bot/bin/ffmpeg
+
+# 最大并发下载数（1-16）
+MaxConcurrentDownloads = 2
+
+# 日志级别：Trace / Debug / Info / Warn / Error
+LogLevel = Info
+
+# 可选：日志文件（为空则只输出到标准输出/journald）
+LogFile =
+
+# 下载失败任务级重试次数（不含首次尝试）
+DownloadRetries = 3
+
+# 单个下载任务超时（秒）
+DownloadTimeoutSeconds = 3600
+
+# 上传失败重试次数（不含首次尝试）
+UploadRetries = 2
+
+# 是否提取音频（转为 mp3 后以音频形式上传）
+ExtractAudio = false
+
+# 私聊请求者是否也接收下载后的媒体文件
+AlsoSendMediaToRequester = false
+
+# 是否允许下载指向私网/回环地址的 URL（SSRF 防护，默认关闭，不建议开启）
+AllowPrivateUrls = false
+
+# 是否允许下载播放列表（默认关闭）
+AllowPlaylists = false
+
+# ffmpeg 合并/转封装容器格式（默认 mp4，Telegram 兼容性最好）
+MergeFormat = mp4
+
+# 是否在 /update 时更新 yt-dlp 与 ffmpeg
+UpdateYtDlp = true
+UpdateFfmpeg = true

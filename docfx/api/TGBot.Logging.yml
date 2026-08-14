@@ -1,0 +1,69 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Logging
+  commentId: N:TGBot.Logging
+  id: TGBot.Logging
+  children:
+  - TGBot.Logging.ConsoleLogger
+  - TGBot.Logging.IAppLogger
+  - TGBot.Logging.LogLevel
+  - TGBot.Logging.NullLogger
+  langs:
+  - csharp
+  - vb
+  name: TGBot.Logging
+  nameWithType: TGBot.Logging
+  fullName: TGBot.Logging
+  type: Namespace
+  assemblies:
+  - tgdl-bot
+references:
+- uid: TGBot.Logging.ConsoleLogger
+  commentId: T:TGBot.Logging.ConsoleLogger
+  href: TGBot.Logging.ConsoleLogger.html
+  name: ConsoleLogger
+  nameWithType: ConsoleLogger
+  fullName: TGBot.Logging.ConsoleLogger
+- uid: TGBot.Logging.IAppLogger
+  commentId: T:TGBot.Logging.IAppLogger
+  parent: TGBot.Logging
+  href: TGBot.Logging.IAppLogger.html
+  name: IAppLogger
+  nameWithType: IAppLogger
+  fullName: TGBot.Logging.IAppLogger
+- uid: TGBot.Logging.LogLevel
+  commentId: T:TGBot.Logging.LogLevel
+  parent: TGBot.Logging
+  href: TGBot.Logging.LogLevel.html
+  name: LogLevel
+  nameWithType: LogLevel
+  fullName: TGBot.Logging.LogLevel
+- uid: TGBot.Logging.NullLogger
+  commentId: T:TGBot.Logging.NullLogger
+  parent: TGBot.Logging
+  href: TGBot.Logging.NullLogger.html
+  name: NullLogger
+  nameWithType: NullLogger
+  fullName: TGBot.Logging.NullLogger
+- uid: TGBot.Logging
+  commentId: N:TGBot.Logging
+  href: TGBot.html
+  name: TGBot.Logging
+  nameWithType: TGBot.Logging
+  fullName: TGBot.Logging
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Logging
+    name: Logging
+    href: TGBot.Logging.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Logging
+    name: Logging
+    href: TGBot.Logging.html

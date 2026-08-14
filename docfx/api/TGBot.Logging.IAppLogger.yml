@@ -1,0 +1,354 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Logging.IAppLogger
+  commentId: T:TGBot.Logging.IAppLogger
+  id: IAppLogger
+  parent: TGBot.Logging
+  children:
+  - TGBot.Logging.IAppLogger.Debug(System.String)
+  - TGBot.Logging.IAppLogger.Error(System.String,System.Exception)
+  - TGBot.Logging.IAppLogger.Info(System.String)
+  - TGBot.Logging.IAppLogger.Log(TGBot.Logging.LogLevel,System.String,System.Exception)
+  - TGBot.Logging.IAppLogger.Trace(System.String)
+  - TGBot.Logging.IAppLogger.Warn(System.String)
+  langs:
+  - csharp
+  - vb
+  name: IAppLogger
+  nameWithType: IAppLogger
+  fullName: TGBot.Logging.IAppLogger
+  type: Interface
+  source:
+    id: IAppLogger
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/IAppLogger.cs
+    startLine: 5
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Logging
+  summary: 应用日志抽象。所有模块通过本接口输出日志，便于替换实现与单元测试。
+  example: []
+  syntax:
+    content: 'public interface IAppLogger : IDisposable'
+    content.vb: Public Interface IAppLogger Inherits IDisposable
+  derivedClasses:
+  - TGBot.Logging.ConsoleLogger
+  - TGBot.Logging.NullLogger
+  inheritedMembers:
+  - System.IDisposable.Dispose
+- uid: TGBot.Logging.IAppLogger.Log(TGBot.Logging.LogLevel,System.String,System.Exception)
+  commentId: M:TGBot.Logging.IAppLogger.Log(TGBot.Logging.LogLevel,System.String,System.Exception)
+  id: Log(TGBot.Logging.LogLevel,System.String,System.Exception)
+  parent: TGBot.Logging.IAppLogger
+  langs:
+  - csharp
+  - vb
+  name: Log(LogLevel, string, Exception?)
+  nameWithType: IAppLogger.Log(LogLevel, string, Exception?)
+  fullName: TGBot.Logging.IAppLogger.Log(TGBot.Logging.LogLevel, string, System.Exception?)
+  type: Method
+  source:
+    id: Log
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/IAppLogger.cs
+    startLine: 13
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Logging
+  summary: 记录一条日志。
+  example: []
+  syntax:
+    content: void Log(LogLevel level, string message, Exception? exception = null)
+    parameters:
+    - id: level
+      type: TGBot.Logging.LogLevel
+      description: 日志级别。
+    - id: message
+      type: System.String
+      description: 日志消息。
+    - id: exception
+      type: System.Exception
+      description: 关联的异常，可为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Sub Log(level As LogLevel, message As String, exception As Exception = Nothing)
+  overload: TGBot.Logging.IAppLogger.Log*
+  nameWithType.vb: IAppLogger.Log(LogLevel, String, Exception)
+  fullName.vb: TGBot.Logging.IAppLogger.Log(TGBot.Logging.LogLevel, String, System.Exception)
+  name.vb: Log(LogLevel, String, Exception)
+- uid: TGBot.Logging.IAppLogger.Trace(System.String)
+  commentId: M:TGBot.Logging.IAppLogger.Trace(System.String)
+  id: Trace(System.String)
+  parent: TGBot.Logging.IAppLogger
+  langs:
+  - csharp
+  - vb
+  name: Trace(string)
+  nameWithType: IAppLogger.Trace(string)
+  fullName: TGBot.Logging.IAppLogger.Trace(string)
+  type: Method
+  source:
+    id: Trace
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/IAppLogger.cs
+    startLine: 19
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Logging
+  summary: 记录一条 Trace 级别日志。
+  example: []
+  syntax:
+    content: void Trace(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: 日志消息。
+    content.vb: Sub Trace(message As String)
+  overload: TGBot.Logging.IAppLogger.Trace*
+  nameWithType.vb: IAppLogger.Trace(String)
+  fullName.vb: TGBot.Logging.IAppLogger.Trace(String)
+  name.vb: Trace(String)
+- uid: TGBot.Logging.IAppLogger.Debug(System.String)
+  commentId: M:TGBot.Logging.IAppLogger.Debug(System.String)
+  id: Debug(System.String)
+  parent: TGBot.Logging.IAppLogger
+  langs:
+  - csharp
+  - vb
+  name: Debug(string)
+  nameWithType: IAppLogger.Debug(string)
+  fullName: TGBot.Logging.IAppLogger.Debug(string)
+  type: Method
+  source:
+    id: Debug
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/IAppLogger.cs
+    startLine: 25
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Logging
+  summary: 记录一条 Debug 级别日志。
+  example: []
+  syntax:
+    content: void Debug(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: 日志消息。
+    content.vb: Sub Debug(message As String)
+  overload: TGBot.Logging.IAppLogger.Debug*
+  nameWithType.vb: IAppLogger.Debug(String)
+  fullName.vb: TGBot.Logging.IAppLogger.Debug(String)
+  name.vb: Debug(String)
+- uid: TGBot.Logging.IAppLogger.Info(System.String)
+  commentId: M:TGBot.Logging.IAppLogger.Info(System.String)
+  id: Info(System.String)
+  parent: TGBot.Logging.IAppLogger
+  langs:
+  - csharp
+  - vb
+  name: Info(string)
+  nameWithType: IAppLogger.Info(string)
+  fullName: TGBot.Logging.IAppLogger.Info(string)
+  type: Method
+  source:
+    id: Info
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/IAppLogger.cs
+    startLine: 31
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Logging
+  summary: 记录一条 Info 级别日志。
+  example: []
+  syntax:
+    content: void Info(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: 日志消息。
+    content.vb: Sub Info(message As String)
+  overload: TGBot.Logging.IAppLogger.Info*
+  nameWithType.vb: IAppLogger.Info(String)
+  fullName.vb: TGBot.Logging.IAppLogger.Info(String)
+  name.vb: Info(String)
+- uid: TGBot.Logging.IAppLogger.Warn(System.String)
+  commentId: M:TGBot.Logging.IAppLogger.Warn(System.String)
+  id: Warn(System.String)
+  parent: TGBot.Logging.IAppLogger
+  langs:
+  - csharp
+  - vb
+  name: Warn(string)
+  nameWithType: IAppLogger.Warn(string)
+  fullName: TGBot.Logging.IAppLogger.Warn(string)
+  type: Method
+  source:
+    id: Warn
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/IAppLogger.cs
+    startLine: 37
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Logging
+  summary: 记录一条 Warn 级别日志。
+  example: []
+  syntax:
+    content: void Warn(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: 日志消息。
+    content.vb: Sub Warn(message As String)
+  overload: TGBot.Logging.IAppLogger.Warn*
+  nameWithType.vb: IAppLogger.Warn(String)
+  fullName.vb: TGBot.Logging.IAppLogger.Warn(String)
+  name.vb: Warn(String)
+- uid: TGBot.Logging.IAppLogger.Error(System.String,System.Exception)
+  commentId: M:TGBot.Logging.IAppLogger.Error(System.String,System.Exception)
+  id: Error(System.String,System.Exception)
+  parent: TGBot.Logging.IAppLogger
+  langs:
+  - csharp
+  - vb
+  name: Error(string, Exception?)
+  nameWithType: IAppLogger.Error(string, Exception?)
+  fullName: TGBot.Logging.IAppLogger.Error(string, System.Exception?)
+  type: Method
+  source:
+    id: Error
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/IAppLogger.cs
+    startLine: 44
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Logging
+  summary: 记录一条 Error 级别日志。
+  example: []
+  syntax:
+    content: void Error(string message, Exception? exception = null)
+    parameters:
+    - id: message
+      type: System.String
+      description: 日志消息。
+    - id: exception
+      type: System.Exception
+      description: 关联的异常，可为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Sub [Error](message As String, exception As Exception = Nothing)
+  overload: TGBot.Logging.IAppLogger.Error*
+  nameWithType.vb: IAppLogger.Error(String, Exception)
+  fullName.vb: TGBot.Logging.IAppLogger.Error(String, System.Exception)
+  name.vb: Error(String, Exception)
+references:
+- uid: TGBot.Logging
+  commentId: N:TGBot.Logging
+  href: TGBot.html
+  name: TGBot.Logging
+  nameWithType: TGBot.Logging
+  fullName: TGBot.Logging
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Logging
+    name: Logging
+    href: TGBot.Logging.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Logging
+    name: Logging
+    href: TGBot.Logging.html
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TGBot.Logging.IAppLogger.Log*
+  commentId: Overload:TGBot.Logging.IAppLogger.Log
+  href: TGBot.Logging.IAppLogger.html#TGBot_Logging_IAppLogger_Log_TGBot_Logging_LogLevel_System_String_System_Exception_
+  name: Log
+  nameWithType: IAppLogger.Log
+  fullName: TGBot.Logging.IAppLogger.Log
+- uid: TGBot.Logging.LogLevel
+  commentId: T:TGBot.Logging.LogLevel
+  parent: TGBot.Logging
+  href: TGBot.Logging.LogLevel.html
+  name: LogLevel
+  nameWithType: LogLevel
+  fullName: TGBot.Logging.LogLevel
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: TGBot.Logging.IAppLogger.Trace*
+  commentId: Overload:TGBot.Logging.IAppLogger.Trace
+  href: TGBot.Logging.IAppLogger.html#TGBot_Logging_IAppLogger_Trace_System_String_
+  name: Trace
+  nameWithType: IAppLogger.Trace
+  fullName: TGBot.Logging.IAppLogger.Trace
+- uid: TGBot.Logging.IAppLogger.Debug*
+  commentId: Overload:TGBot.Logging.IAppLogger.Debug
+  href: TGBot.Logging.IAppLogger.html#TGBot_Logging_IAppLogger_Debug_System_String_
+  name: Debug
+  nameWithType: IAppLogger.Debug
+  fullName: TGBot.Logging.IAppLogger.Debug
+- uid: TGBot.Logging.IAppLogger.Info*
+  commentId: Overload:TGBot.Logging.IAppLogger.Info
+  href: TGBot.Logging.IAppLogger.html#TGBot_Logging_IAppLogger_Info_System_String_
+  name: Info
+  nameWithType: IAppLogger.Info
+  fullName: TGBot.Logging.IAppLogger.Info
+- uid: TGBot.Logging.IAppLogger.Warn*
+  commentId: Overload:TGBot.Logging.IAppLogger.Warn
+  href: TGBot.Logging.IAppLogger.html#TGBot_Logging_IAppLogger_Warn_System_String_
+  name: Warn
+  nameWithType: IAppLogger.Warn
+  fullName: TGBot.Logging.IAppLogger.Warn
+- uid: TGBot.Logging.IAppLogger.Error*
+  commentId: Overload:TGBot.Logging.IAppLogger.Error
+  href: TGBot.Logging.IAppLogger.html#TGBot_Logging_IAppLogger_Error_System_String_System_Exception_
+  name: Error
+  nameWithType: IAppLogger.Error
+  fullName: TGBot.Logging.IAppLogger.Error

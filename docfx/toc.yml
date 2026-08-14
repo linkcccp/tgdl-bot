@@ -1,0 +1,22 @@
+- name: API 文档
+  href: index.md
+- name: 命名空间
+  items:
+    - name: TGBot.Config
+      href: api/TGBot.Config.yml
+    - name: TGBot.Logging
+      href: api/TGBot.Logging.yml
+    - name: TGBot.Security
+      href: api/TGBot.Security.yml
+    - name: TGBot.Access
+      href: api/TGBot.Access.yml
+    - name: TGBot.Download
+      href: api/TGBot.Download.yml
+    - name: TGBot.Update
+      href: api/TGBot.Update.yml
+    - name: TGBot.Messaging
+      href: api/TGBot.Messaging.yml
+    - name: TGBot.Application
+      href: api/TGBot.Application.yml
+    - name: TGBot.Texts
+      href: api/TGBot.Texts.yml

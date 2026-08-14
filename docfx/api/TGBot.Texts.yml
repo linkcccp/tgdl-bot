@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Texts
+  commentId: N:TGBot.Texts
+  id: TGBot.Texts
+  children:
+  - TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: TGBot.Texts
+  nameWithType: TGBot.Texts
+  fullName: TGBot.Texts
+  type: Namespace
+  assemblies:
+  - tgdl-bot
+references:
+- uid: TGBot.Texts.UserTexts
+  commentId: T:TGBot.Texts.UserTexts
+  href: TGBot.Texts.UserTexts.html
+  name: UserTexts
+  nameWithType: UserTexts
+  fullName: TGBot.Texts.UserTexts

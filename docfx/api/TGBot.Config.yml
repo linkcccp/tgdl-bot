@@ -1,0 +1,82 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Config
+  commentId: N:TGBot.Config
+  id: TGBot.Config
+  children:
+  - TGBot.Config.AppConfig
+  - TGBot.Config.ConfigLoadException
+  - TGBot.Config.ConfigLoader
+  - TGBot.Config.ConfigParseException
+  - TGBot.Config.ConfigParseResult
+  - TGBot.Config.ConfigParser
+  langs:
+  - csharp
+  - vb
+  name: TGBot.Config
+  nameWithType: TGBot.Config
+  fullName: TGBot.Config
+  type: Namespace
+  assemblies:
+  - tgdl-bot
+references:
+- uid: TGBot.Config.AppConfig
+  commentId: T:TGBot.Config.AppConfig
+  parent: TGBot.Config
+  href: TGBot.Config.AppConfig.html
+  name: AppConfig
+  nameWithType: AppConfig
+  fullName: TGBot.Config.AppConfig
+- uid: TGBot.Config.ConfigLoadException
+  commentId: T:TGBot.Config.ConfigLoadException
+  href: TGBot.Config.ConfigLoadException.html
+  name: ConfigLoadException
+  nameWithType: ConfigLoadException
+  fullName: TGBot.Config.ConfigLoadException
+- uid: TGBot.Config.ConfigLoader
+  commentId: T:TGBot.Config.ConfigLoader
+  href: TGBot.Config.ConfigLoader.html
+  name: ConfigLoader
+  nameWithType: ConfigLoader
+  fullName: TGBot.Config.ConfigLoader
+- uid: TGBot.Config.ConfigParseException
+  commentId: T:TGBot.Config.ConfigParseException
+  href: TGBot.Config.ConfigParseException.html
+  name: ConfigParseException
+  nameWithType: ConfigParseException
+  fullName: TGBot.Config.ConfigParseException
+- uid: TGBot.Config.ConfigParseResult
+  commentId: T:TGBot.Config.ConfigParseResult
+  parent: TGBot.Config
+  href: TGBot.Config.ConfigParseResult.html
+  name: ConfigParseResult
+  nameWithType: ConfigParseResult
+  fullName: TGBot.Config.ConfigParseResult
+- uid: TGBot.Config.ConfigParser
+  commentId: T:TGBot.Config.ConfigParser
+  href: TGBot.Config.ConfigParser.html
+  name: ConfigParser
+  nameWithType: ConfigParser
+  fullName: TGBot.Config.ConfigParser
+- uid: TGBot.Config
+  commentId: N:TGBot.Config
+  href: TGBot.html
+  name: TGBot.Config
+  nameWithType: TGBot.Config
+  fullName: TGBot.Config
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html

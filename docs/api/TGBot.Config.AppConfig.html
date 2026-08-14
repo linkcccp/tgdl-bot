@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class AppConfig | TGBot API 文档 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class AppConfig | TGBot API 文档 ">
+    
+    <meta name="description" content="应用配置模型，由  从 config.conf 解析得到。 所有路径均为绝对路径（在加载阶段展开）。">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="TGBot.Config.AppConfig">
+
+
+
+  <h1 id="TGBot_Config_AppConfig" data-uid="TGBot.Config.AppConfig" class="text-break">Class AppConfig</h1>
+  <div class="markdown level0 summary"><p>应用配置模型，由 <a class="xref" href="TGBot.Config.ConfigParser.html">ConfigParser</a> 从 config.conf 解析得到。</p>
+<p>所有路径均为绝对路径（在加载阶段展开）。</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">AppConfig</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="TGBot.html">TGBot</a>.<a class="xref" href="TGBot.Config.html">Config</a></h6>
+  <h6><strong>Assembly</strong>: tgdl-bot.dll</h6>
+  <h5 id="TGBot_Config_AppConfig_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class AppConfig</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="TGBot_Config_AppConfig_AllowPlaylists_" data-uid="TGBot.Config.AppConfig.AllowPlaylists*"></a>
+  <h4 id="TGBot_Config_AppConfig_AllowPlaylists" data-uid="TGBot.Config.AppConfig.AllowPlaylists">AllowPlaylists</h4>
+  <div class="markdown level1 summary"><p>是否允许下载播放列表（false 时添加 --no-playlist）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AllowPlaylists { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_AllowPrivateUrls_" data-uid="TGBot.Config.AppConfig.AllowPrivateUrls*"></a>
+  <h4 id="TGBot_Config_AppConfig_AllowPrivateUrls" data-uid="TGBot.Config.AppConfig.AllowPrivateUrls">AllowPrivateUrls</h4>
+  <div class="markdown level1 summary"><p>是否允许下载指向私网/回环地址的 URL（SSRF 防护，默认拒绝）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AllowPrivateUrls { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_AllowedUserIds_" data-uid="TGBot.Config.AppConfig.AllowedUserIds*"></a>
+  <h4 id="TGBot_Config_AppConfig_AllowedUserIds" data-uid="TGBot.Config.AppConfig.AllowedUserIds">AllowedUserIds</h4>
+  <div class="markdown level1 summary"><p>允许在私聊中触发下载的用户 ID 白名单。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;long&gt; AllowedUserIds { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_AlsoSendMediaToRequester_" data-uid="TGBot.Config.AppConfig.AlsoSendMediaToRequester*"></a>
+  <h4 id="TGBot_Config_AppConfig_AlsoSendMediaToRequester" data-uid="TGBot.Config.AppConfig.AlsoSendMediaToRequester">AlsoSendMediaToRequester</h4>
+  <div class="markdown level1 summary"><p>私聊请求者是否也接收下载后的媒体文件。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AlsoSendMediaToRequester { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_BotToken_" data-uid="TGBot.Config.AppConfig.BotToken*"></a>
+  <h4 id="TGBot_Config_AppConfig_BotToken" data-uid="TGBot.Config.AppConfig.BotToken">BotToken</h4>
+  <div class="markdown level1 summary"><p>Bot Token，来自 @BotFather。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BotToken { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_DownloadRetries_" data-uid="TGBot.Config.AppConfig.DownloadRetries*"></a>
+  <h4 id="TGBot_Config_AppConfig_DownloadRetries" data-uid="TGBot.Config.AppConfig.DownloadRetries">DownloadRetries</h4>
+  <div class="markdown level1 summary"><p>下载失败后的任务级重试次数（不含首次尝试）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DownloadRetries { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_DownloadTempDir_" data-uid="TGBot.Config.AppConfig.DownloadTempDir*"></a>
+  <h4 id="TGBot_Config_AppConfig_DownloadTempDir" data-uid="TGBot.Config.AppConfig.DownloadTempDir">DownloadTempDir</h4>
+  <div class="markdown level1 summary"><p>下载临时目录（绝对路径）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DownloadTempDir { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_DownloadTimeoutSeconds_" data-uid="TGBot.Config.AppConfig.DownloadTimeoutSeconds*"></a>
+  <h4 id="TGBot_Config_AppConfig_DownloadTimeoutSeconds" data-uid="TGBot.Config.AppConfig.DownloadTimeoutSeconds">DownloadTimeoutSeconds</h4>
+  <div class="markdown level1 summary"><p>单个下载任务的超时秒数。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DownloadTimeoutSeconds { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_ExtractAudio_" data-uid="TGBot.Config.AppConfig.ExtractAudio*"></a>
+  <h4 id="TGBot_Config_AppConfig_ExtractAudio" data-uid="TGBot.Config.AppConfig.ExtractAudio">ExtractAudio</h4>
+  <div class="markdown level1 summary"><p>是否提取音频（-x --audio-format mp3）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ExtractAudio { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_FfmpegPath_" data-uid="TGBot.Config.AppConfig.FfmpegPath*"></a>
+  <h4 id="TGBot_Config_AppConfig_FfmpegPath" data-uid="TGBot.Config.AppConfig.FfmpegPath">FfmpegPath</h4>
+  <div class="markdown level1 summary"><p>ffmpeg 二进制绝对路径。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FfmpegPath { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_LocalApiBaseUrl_" data-uid="TGBot.Config.AppConfig.LocalApiBaseUrl*"></a>
+  <h4 id="TGBot_Config_AppConfig_LocalApiBaseUrl" data-uid="TGBot.Config.AppConfig.LocalApiBaseUrl">LocalApiBaseUrl</h4>
+  <div class="markdown level1 summary"><p>本地 Telegram Bot API Server 地址（--local 模式）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LocalApiBaseUrl { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_LogFile_" data-uid="TGBot.Config.AppConfig.LogFile*"></a>
+  <h4 id="TGBot_Config_AppConfig_LogFile" data-uid="TGBot.Config.AppConfig.LogFile">LogFile</h4>
+  <div class="markdown level1 summary"><p>日志文件路径，为空表示不写文件。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? LogFile { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_LogLevel_" data-uid="TGBot.Config.AppConfig.LogLevel*"></a>
+  <h4 id="TGBot_Config_AppConfig_LogLevel" data-uid="TGBot.Config.AppConfig.LogLevel">LogLevel</h4>
+  <div class="markdown level1 summary"><p>日志级别。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LogLevel LogLevel { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="TGBot.Logging.LogLevel.html">LogLevel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_MaxConcurrentDownloads_" data-uid="TGBot.Config.AppConfig.MaxConcurrentDownloads*"></a>
+  <h4 id="TGBot_Config_AppConfig_MaxConcurrentDownloads" data-uid="TGBot.Config.AppConfig.MaxConcurrentDownloads">MaxConcurrentDownloads</h4>
+  <div class="markdown level1 summary"><p>最大并发下载任务数。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxConcurrentDownloads { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_MaxMediaSizeBytes_" data-uid="TGBot.Config.AppConfig.MaxMediaSizeBytes*"></a>
+  <h4 id="TGBot_Config_AppConfig_MaxMediaSizeBytes" data-uid="TGBot.Config.AppConfig.MaxMediaSizeBytes">MaxMediaSizeBytes</h4>
+  <div class="markdown level1 summary"><p>可上传的最大字节数（默认留安全余量，接近 Bot API 本地服务器 2GB 上限）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long MaxMediaSizeBytes { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_MergeFormat_" data-uid="TGBot.Config.AppConfig.MergeFormat*"></a>
+  <h4 id="TGBot_Config_AppConfig_MergeFormat" data-uid="TGBot.Config.AppConfig.MergeFormat">MergeFormat</h4>
+  <div class="markdown level1 summary"><p>ffmpeg 合并/转封装容器格式（默认 mp4，Telegram 兼容性最好）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string MergeFormat { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_SourcePath_" data-uid="TGBot.Config.AppConfig.SourcePath*"></a>
+  <h4 id="TGBot_Config_AppConfig_SourcePath" data-uid="TGBot.Config.AppConfig.SourcePath">SourcePath</h4>
+  <div class="markdown level1 summary"><p>配置文件的完整路径（加载后回填，用于日志与错误提示）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SourcePath { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_TargetChannelIds_" data-uid="TGBot.Config.AppConfig.TargetChannelIds*"></a>
+  <h4 id="TGBot_Config_AppConfig_TargetChannelIds" data-uid="TGBot.Config.AppConfig.TargetChannelIds">TargetChannelIds</h4>
+  <div class="markdown level1 summary"><p>目标频道/群组 ID 白名单，下载结果推送到这些会话。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;long&gt; TargetChannelIds { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_TelegramApiHash_" data-uid="TGBot.Config.AppConfig.TelegramApiHash*"></a>
+  <h4 id="TGBot_Config_AppConfig_TelegramApiHash" data-uid="TGBot.Config.AppConfig.TelegramApiHash">TelegramApiHash</h4>
+  <div class="markdown level1 summary"><p>Telegram API Hash（本地 Bot API Server 使用）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TelegramApiHash { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_TelegramApiId_" data-uid="TGBot.Config.AppConfig.TelegramApiId*"></a>
+  <h4 id="TGBot_Config_AppConfig_TelegramApiId" data-uid="TGBot.Config.AppConfig.TelegramApiId">TelegramApiId</h4>
+  <div class="markdown level1 summary"><p>Telegram API ID（本地 Bot API Server 使用）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long TelegramApiId { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_UpdateFfmpeg_" data-uid="TGBot.Config.AppConfig.UpdateFfmpeg*"></a>
+  <h4 id="TGBot_Config_AppConfig_UpdateFfmpeg" data-uid="TGBot.Config.AppConfig.UpdateFfmpeg">UpdateFfmpeg</h4>
+  <div class="markdown level1 summary"><p>是否在 /update 时更新 ffmpeg。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UpdateFfmpeg { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_UpdateYtDlp_" data-uid="TGBot.Config.AppConfig.UpdateYtDlp*"></a>
+  <h4 id="TGBot_Config_AppConfig_UpdateYtDlp" data-uid="TGBot.Config.AppConfig.UpdateYtDlp">UpdateYtDlp</h4>
+  <div class="markdown level1 summary"><p>是否在 /update 时更新 yt-dlp。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UpdateYtDlp { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_UploadRetries_" data-uid="TGBot.Config.AppConfig.UploadRetries*"></a>
+  <h4 id="TGBot_Config_AppConfig_UploadRetries" data-uid="TGBot.Config.AppConfig.UploadRetries">UploadRetries</h4>
+  <div class="markdown level1 summary"><p>上传失败的自动重试次数（不含首次尝试）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int UploadRetries { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="TGBot_Config_AppConfig_YtDlpPath_" data-uid="TGBot.Config.AppConfig.YtDlpPath*"></a>
+  <h4 id="TGBot_Config_AppConfig_YtDlpPath" data-uid="TGBot.Config.AppConfig.YtDlpPath">YtDlpPath</h4>
+  <div class="markdown level1 summary"><p>yt-dlp 二进制绝对路径。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string YtDlpPath { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      tgdl-bot — .NET Telegram 下载 Bot
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

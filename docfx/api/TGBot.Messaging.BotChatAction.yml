@@ -1,0 +1,156 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Messaging.BotChatAction
+  commentId: T:TGBot.Messaging.BotChatAction
+  id: BotChatAction
+  parent: TGBot.Messaging
+  children:
+  - TGBot.Messaging.BotChatAction.Typing
+  - TGBot.Messaging.BotChatAction.UploadAudio
+  - TGBot.Messaging.BotChatAction.UploadDocument
+  - TGBot.Messaging.BotChatAction.UploadVideo
+  langs:
+  - csharp
+  - vb
+  name: BotChatAction
+  nameWithType: BotChatAction
+  fullName: TGBot.Messaging.BotChatAction
+  type: Enum
+  source:
+    id: BotChatAction
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 50
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: Bot 聊天动作（发送中状态）。
+  example: []
+  syntax:
+    content: public enum BotChatAction
+    content.vb: Public Enum BotChatAction
+- uid: TGBot.Messaging.BotChatAction.Typing
+  commentId: F:TGBot.Messaging.BotChatAction.Typing
+  id: Typing
+  parent: TGBot.Messaging.BotChatAction
+  langs:
+  - csharp
+  - vb
+  name: Typing
+  nameWithType: BotChatAction.Typing
+  fullName: TGBot.Messaging.BotChatAction.Typing
+  type: Field
+  source:
+    id: Typing
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 53
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 正在输入。
+  example: []
+  syntax:
+    content: Typing = 0
+    return:
+      type: TGBot.Messaging.BotChatAction
+- uid: TGBot.Messaging.BotChatAction.UploadVideo
+  commentId: F:TGBot.Messaging.BotChatAction.UploadVideo
+  id: UploadVideo
+  parent: TGBot.Messaging.BotChatAction
+  langs:
+  - csharp
+  - vb
+  name: UploadVideo
+  nameWithType: BotChatAction.UploadVideo
+  fullName: TGBot.Messaging.BotChatAction.UploadVideo
+  type: Field
+  source:
+    id: UploadVideo
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 56
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 正在上传视频。
+  example: []
+  syntax:
+    content: UploadVideo = 1
+    return:
+      type: TGBot.Messaging.BotChatAction
+- uid: TGBot.Messaging.BotChatAction.UploadAudio
+  commentId: F:TGBot.Messaging.BotChatAction.UploadAudio
+  id: UploadAudio
+  parent: TGBot.Messaging.BotChatAction
+  langs:
+  - csharp
+  - vb
+  name: UploadAudio
+  nameWithType: BotChatAction.UploadAudio
+  fullName: TGBot.Messaging.BotChatAction.UploadAudio
+  type: Field
+  source:
+    id: UploadAudio
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 59
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 正在上传音频。
+  example: []
+  syntax:
+    content: UploadAudio = 2
+    return:
+      type: TGBot.Messaging.BotChatAction
+- uid: TGBot.Messaging.BotChatAction.UploadDocument
+  commentId: F:TGBot.Messaging.BotChatAction.UploadDocument
+  id: UploadDocument
+  parent: TGBot.Messaging.BotChatAction
+  langs:
+  - csharp
+  - vb
+  name: UploadDocument
+  nameWithType: BotChatAction.UploadDocument
+  fullName: TGBot.Messaging.BotChatAction.UploadDocument
+  type: Field
+  source:
+    id: UploadDocument
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 62
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 正在上传文档。
+  example: []
+  syntax:
+    content: UploadDocument = 3
+    return:
+      type: TGBot.Messaging.BotChatAction
+references:
+- uid: TGBot.Messaging
+  commentId: N:TGBot.Messaging
+  href: TGBot.html
+  name: TGBot.Messaging
+  nameWithType: TGBot.Messaging
+  fullName: TGBot.Messaging
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html
+- uid: TGBot.Messaging.BotChatAction
+  commentId: T:TGBot.Messaging.BotChatAction
+  parent: TGBot.Messaging
+  href: TGBot.Messaging.BotChatAction.html
+  name: BotChatAction
+  nameWithType: BotChatAction
+  fullName: TGBot.Messaging.BotChatAction

@@ -1,0 +1,604 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Messaging.InboundMessage
+  commentId: T:TGBot.Messaging.InboundMessage
+  id: InboundMessage
+  parent: TGBot.Messaging
+  children:
+  - TGBot.Messaging.InboundMessage.Caption
+  - TGBot.Messaging.InboundMessage.ChatId
+  - TGBot.Messaging.InboundMessage.IsPrivate
+  - TGBot.Messaging.InboundMessage.SenderUserId
+  - TGBot.Messaging.InboundMessage.Text
+  - TGBot.Messaging.InboundMessage.TriggerMessageId
+  - TGBot.Messaging.InboundMessage.UrlSearchText
+  langs:
+  - csharp
+  - vb
+  name: InboundMessage
+  nameWithType: InboundMessage
+  fullName: TGBot.Messaging.InboundMessage
+  type: Class
+  source:
+    id: InboundMessage
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 5
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 入站消息模型（与具体 Bot 库解耦，便于单元测试）。
+  example: []
+  syntax:
+    content: public sealed class InboundMessage
+    content.vb: Public NotInheritable Class InboundMessage
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Messaging.InboundMessage.ChatId
+  commentId: P:TGBot.Messaging.InboundMessage.ChatId
+  id: ChatId
+  parent: TGBot.Messaging.InboundMessage
+  langs:
+  - csharp
+  - vb
+  name: ChatId
+  nameWithType: InboundMessage.ChatId
+  fullName: TGBot.Messaging.InboundMessage.ChatId
+  type: Property
+  source:
+    id: ChatId
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 10
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 会话 ID。
+  example: []
+  syntax:
+    content: public required long ChatId { get; init; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property ChatId As Long
+  overload: TGBot.Messaging.InboundMessage.ChatId*
+- uid: TGBot.Messaging.InboundMessage.IsPrivate
+  commentId: P:TGBot.Messaging.InboundMessage.IsPrivate
+  id: IsPrivate
+  parent: TGBot.Messaging.InboundMessage
+  langs:
+  - csharp
+  - vb
+  name: IsPrivate
+  nameWithType: InboundMessage.IsPrivate
+  fullName: TGBot.Messaging.InboundMessage.IsPrivate
+  type: Property
+  source:
+    id: IsPrivate
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 15
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 是否为私聊。
+  example: []
+  syntax:
+    content: public required bool IsPrivate { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsPrivate As Boolean
+  overload: TGBot.Messaging.InboundMessage.IsPrivate*
+- uid: TGBot.Messaging.InboundMessage.SenderUserId
+  commentId: P:TGBot.Messaging.InboundMessage.SenderUserId
+  id: SenderUserId
+  parent: TGBot.Messaging.InboundMessage
+  langs:
+  - csharp
+  - vb
+  name: SenderUserId
+  nameWithType: InboundMessage.SenderUserId
+  fullName: TGBot.Messaging.InboundMessage.SenderUserId
+  type: Property
+  source:
+    id: SenderUserId
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 20
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 发送者用户 ID（可能为空）。
+  example: []
+  syntax:
+    content: public long? SenderUserId { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public Property SenderUserId As Long?
+  overload: TGBot.Messaging.InboundMessage.SenderUserId*
+- uid: TGBot.Messaging.InboundMessage.Text
+  commentId: P:TGBot.Messaging.InboundMessage.Text
+  id: Text
+  parent: TGBot.Messaging.InboundMessage
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: InboundMessage.Text
+  fullName: TGBot.Messaging.InboundMessage.Text
+  type: Property
+  source:
+    id: Text
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 25
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 消息文本。
+  example: []
+  syntax:
+    content: public string? Text { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Text As String
+  overload: TGBot.Messaging.InboundMessage.Text*
+- uid: TGBot.Messaging.InboundMessage.Caption
+  commentId: P:TGBot.Messaging.InboundMessage.Caption
+  id: Caption
+  parent: TGBot.Messaging.InboundMessage
+  langs:
+  - csharp
+  - vb
+  name: Caption
+  nameWithType: InboundMessage.Caption
+  fullName: TGBot.Messaging.InboundMessage.Caption
+  type: Property
+  source:
+    id: Caption
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 30
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 媒体说明（caption）。
+  example: []
+  syntax:
+    content: public string? Caption { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Caption As String
+  overload: TGBot.Messaging.InboundMessage.Caption*
+- uid: TGBot.Messaging.InboundMessage.TriggerMessageId
+  commentId: P:TGBot.Messaging.InboundMessage.TriggerMessageId
+  id: TriggerMessageId
+  parent: TGBot.Messaging.InboundMessage
+  langs:
+  - csharp
+  - vb
+  name: TriggerMessageId
+  nameWithType: InboundMessage.TriggerMessageId
+  fullName: TGBot.Messaging.InboundMessage.TriggerMessageId
+  type: Property
+  source:
+    id: TriggerMessageId
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 35
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 触发消息 ID（用于回复），0 表示未知。
+  example: []
+  syntax:
+    content: public int TriggerMessageId { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TriggerMessageId As Integer
+  overload: TGBot.Messaging.InboundMessage.TriggerMessageId*
+- uid: TGBot.Messaging.InboundMessage.UrlSearchText
+  commentId: P:TGBot.Messaging.InboundMessage.UrlSearchText
+  id: UrlSearchText
+  parent: TGBot.Messaging.InboundMessage
+  langs:
+  - csharp
+  - vb
+  name: UrlSearchText
+  nameWithType: InboundMessage.UrlSearchText
+  fullName: TGBot.Messaging.InboundMessage.UrlSearchText
+  type: Property
+  source:
+    id: UrlSearchText
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 40
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 用于提取 URL 的完整文本（文本 + 说明）。
+  example: []
+  syntax:
+    content: public string UrlSearchText { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property UrlSearchText As String
+  overload: TGBot.Messaging.InboundMessage.UrlSearchText*
+references:
+- uid: TGBot.Messaging
+  commentId: N:TGBot.Messaging
+  href: TGBot.html
+  name: TGBot.Messaging
+  nameWithType: TGBot.Messaging
+  fullName: TGBot.Messaging
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TGBot.Messaging.InboundMessage.ChatId*
+  commentId: Overload:TGBot.Messaging.InboundMessage.ChatId
+  href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_ChatId
+  name: ChatId
+  nameWithType: InboundMessage.ChatId
+  fullName: TGBot.Messaging.InboundMessage.ChatId
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: TGBot.Messaging.InboundMessage.IsPrivate*
+  commentId: Overload:TGBot.Messaging.InboundMessage.IsPrivate
+  href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_IsPrivate
+  name: IsPrivate
+  nameWithType: InboundMessage.IsPrivate
+  fullName: TGBot.Messaging.InboundMessage.IsPrivate
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: TGBot.Messaging.InboundMessage.SenderUserId*
+  commentId: Overload:TGBot.Messaging.InboundMessage.SenderUserId
+  href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_SenderUserId
+  name: SenderUserId
+  nameWithType: InboundMessage.SenderUserId
+  fullName: TGBot.Messaging.InboundMessage.SenderUserId
+- uid: System.Nullable{System.Int64}
+  commentId: T:System.Nullable{System.Int64}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long?
+  nameWithType: long?
+  fullName: long?
+  nameWithType.vb: Long?
+  fullName.vb: Long?
+  name.vb: Long?
+  spec.csharp:
+  - uid: System.Int64
+    name: long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: '?'
+  spec.vb:
+  - uid: System.Int64
+    name: Long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: TGBot.Messaging.InboundMessage.Text*
+  commentId: Overload:TGBot.Messaging.InboundMessage.Text
+  href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_Text
+  name: Text
+  nameWithType: InboundMessage.Text
+  fullName: TGBot.Messaging.InboundMessage.Text
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: TGBot.Messaging.InboundMessage.Caption*
+  commentId: Overload:TGBot.Messaging.InboundMessage.Caption
+  href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_Caption
+  name: Caption
+  nameWithType: InboundMessage.Caption
+  fullName: TGBot.Messaging.InboundMessage.Caption
+- uid: TGBot.Messaging.InboundMessage.TriggerMessageId*
+  commentId: Overload:TGBot.Messaging.InboundMessage.TriggerMessageId
+  href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_TriggerMessageId
+  name: TriggerMessageId
+  nameWithType: InboundMessage.TriggerMessageId
+  fullName: TGBot.Messaging.InboundMessage.TriggerMessageId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: TGBot.Messaging.InboundMessage.UrlSearchText*
+  commentId: Overload:TGBot.Messaging.InboundMessage.UrlSearchText
+  href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_UrlSearchText
+  name: UrlSearchText
+  nameWithType: InboundMessage.UrlSearchText
+  fullName: TGBot.Messaging.InboundMessage.UrlSearchText

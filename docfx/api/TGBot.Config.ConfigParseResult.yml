@@ -1,0 +1,553 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Config.ConfigParseResult
+  commentId: T:TGBot.Config.ConfigParseResult
+  id: ConfigParseResult
+  parent: TGBot.Config
+  children:
+  - TGBot.Config.ConfigParseResult.#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String})
+  - TGBot.Config.ConfigParseResult.Config
+  - TGBot.Config.ConfigParseResult.Warnings
+  langs:
+  - csharp
+  - vb
+  name: ConfigParseResult
+  nameWithType: ConfigParseResult
+  fullName: TGBot.Config.ConfigParseResult
+  type: Class
+  source:
+    id: ConfigParseResult
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigParser.cs
+    startLine: 11
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config
+  summary: 解析结果，包含配置对象与解析过程中产生的警告。
+  example: []
+  syntax:
+    content: 'public sealed record ConfigParseResult : IEquatable<ConfigParseResult>'
+    content.vb: Public NotInheritable Class ConfigParseResult Implements IEquatable(Of ConfigParseResult)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{TGBot.Config.ConfigParseResult}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Config.ConfigParseResult.#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String})
+  commentId: M:TGBot.Config.ConfigParseResult.#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String})
+  id: '#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String})'
+  parent: TGBot.Config.ConfigParseResult
+  langs:
+  - csharp
+  - vb
+  name: ConfigParseResult(AppConfig, IReadOnlyList<string>)
+  nameWithType: ConfigParseResult.ConfigParseResult(AppConfig, IReadOnlyList<string>)
+  fullName: TGBot.Config.ConfigParseResult.ConfigParseResult(TGBot.Config.AppConfig, System.Collections.Generic.IReadOnlyList<string>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigParser.cs
+    startLine: 11
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config
+  summary: 解析结果，包含配置对象与解析过程中产生的警告。
+  example: []
+  syntax:
+    content: public ConfigParseResult(AppConfig Config, IReadOnlyList<string> Warnings)
+    parameters:
+    - id: Config
+      type: TGBot.Config.AppConfig
+      description: 解析得到的配置。
+    - id: Warnings
+      type: System.Collections.Generic.IReadOnlyList{System.String}
+      description: 解析警告（如未知配置项）。
+    content.vb: Public Sub New(Config As AppConfig, Warnings As IReadOnlyList(Of String))
+  overload: TGBot.Config.ConfigParseResult.#ctor*
+  nameWithType.vb: ConfigParseResult.New(AppConfig, IReadOnlyList(Of String))
+  fullName.vb: TGBot.Config.ConfigParseResult.New(TGBot.Config.AppConfig, System.Collections.Generic.IReadOnlyList(Of String))
+  name.vb: New(AppConfig, IReadOnlyList(Of String))
+- uid: TGBot.Config.ConfigParseResult.Config
+  commentId: P:TGBot.Config.ConfigParseResult.Config
+  id: Config
+  parent: TGBot.Config.ConfigParseResult
+  langs:
+  - csharp
+  - vb
+  name: Config
+  nameWithType: ConfigParseResult.Config
+  fullName: TGBot.Config.ConfigParseResult.Config
+  type: Property
+  source:
+    id: Config
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigParser.cs
+    startLine: 11
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config
+  summary: 解析得到的配置。
+  example: []
+  syntax:
+    content: public AppConfig Config { get; init; }
+    parameters: []
+    return:
+      type: TGBot.Config.AppConfig
+    content.vb: Public Property Config As AppConfig
+  overload: TGBot.Config.ConfigParseResult.Config*
+- uid: TGBot.Config.ConfigParseResult.Warnings
+  commentId: P:TGBot.Config.ConfigParseResult.Warnings
+  id: Warnings
+  parent: TGBot.Config.ConfigParseResult
+  langs:
+  - csharp
+  - vb
+  name: Warnings
+  nameWithType: ConfigParseResult.Warnings
+  fullName: TGBot.Config.ConfigParseResult.Warnings
+  type: Property
+  source:
+    id: Warnings
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigParser.cs
+    startLine: 11
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config
+  summary: 解析警告（如未知配置项）。
+  example: []
+  syntax:
+    content: public IReadOnlyList<string> Warnings { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{System.String}
+    content.vb: Public Property Warnings As IReadOnlyList(Of String)
+  overload: TGBot.Config.ConfigParseResult.Warnings*
+references:
+- uid: TGBot.Config
+  commentId: N:TGBot.Config
+  href: TGBot.html
+  name: TGBot.Config
+  nameWithType: TGBot.Config
+  fullName: TGBot.Config
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{TGBot.Config.ConfigParseResult}
+  commentId: T:System.IEquatable{TGBot.Config.ConfigParseResult}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<ConfigParseResult>
+  nameWithType: IEquatable<ConfigParseResult>
+  fullName: System.IEquatable<TGBot.Config.ConfigParseResult>
+  nameWithType.vb: IEquatable(Of ConfigParseResult)
+  fullName.vb: System.IEquatable(Of TGBot.Config.ConfigParseResult)
+  name.vb: IEquatable(Of ConfigParseResult)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: TGBot.Config.ConfigParseResult
+    name: ConfigParseResult
+    href: TGBot.Config.ConfigParseResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Config.ConfigParseResult
+    name: ConfigParseResult
+    href: TGBot.Config.ConfigParseResult.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: TGBot.Config.ConfigParseResult.#ctor*
+  commentId: Overload:TGBot.Config.ConfigParseResult.#ctor
+  href: TGBot.Config.ConfigParseResult.html#TGBot_Config_ConfigParseResult__ctor_TGBot_Config_AppConfig_System_Collections_Generic_IReadOnlyList_System_String__
+  name: ConfigParseResult
+  nameWithType: ConfigParseResult.ConfigParseResult
+  fullName: TGBot.Config.ConfigParseResult.ConfigParseResult
+  nameWithType.vb: ConfigParseResult.New
+  fullName.vb: TGBot.Config.ConfigParseResult.New
+  name.vb: New
+- uid: TGBot.Config.AppConfig
+  commentId: T:TGBot.Config.AppConfig
+  parent: TGBot.Config
+  href: TGBot.Config.AppConfig.html
+  name: AppConfig
+  nameWithType: AppConfig
+  fullName: TGBot.Config.AppConfig
+- uid: System.Collections.Generic.IReadOnlyList{System.String}
+  commentId: T:System.Collections.Generic.IReadOnlyList{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<string>
+  nameWithType: IReadOnlyList<string>
+  fullName: System.Collections.Generic.IReadOnlyList<string>
+  nameWithType.vb: IReadOnlyList(Of String)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of String)
+  name.vb: IReadOnlyList(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: TGBot.Config.ConfigParseResult.Config*
+  commentId: Overload:TGBot.Config.ConfigParseResult.Config
+  href: TGBot.Config.ConfigParseResult.html#TGBot_Config_ConfigParseResult_Config
+  name: Config
+  nameWithType: ConfigParseResult.Config
+  fullName: TGBot.Config.ConfigParseResult.Config
+- uid: TGBot.Config.ConfigParseResult.Warnings*
+  commentId: Overload:TGBot.Config.ConfigParseResult.Warnings
+  href: TGBot.Config.ConfigParseResult.html#TGBot_Config_ConfigParseResult_Warnings
+  name: Warnings
+  nameWithType: ConfigParseResult.Warnings
+  fullName: TGBot.Config.ConfigParseResult.Warnings

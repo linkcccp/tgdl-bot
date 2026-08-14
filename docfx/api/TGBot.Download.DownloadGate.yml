@@ -1,0 +1,664 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Download.DownloadGate
+  commentId: T:TGBot.Download.DownloadGate
+  id: DownloadGate
+  parent: TGBot.Download
+  children:
+  - TGBot.Download.DownloadGate.#ctor(System.Int32)
+  - TGBot.Download.DownloadGate.AcquireDownloadAsync(System.Threading.CancellationToken)
+  - TGBot.Download.DownloadGate.AcquireExclusiveAsync(System.Threading.CancellationToken)
+  - TGBot.Download.DownloadGate.DisposeAsync
+  langs:
+  - csharp
+  - vb
+  name: DownloadGate
+  nameWithType: DownloadGate
+  fullName: TGBot.Download.DownloadGate
+  type: Class
+  source:
+    id: DownloadGate
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadGate.cs
+    startLine: 6
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: >-
+    下载并发闸门：普通下载占 1 个槽位，自更新占满全部槽位，
+
+    从而实现「更新与下载互斥、下载之间并发受限」。
+  example: []
+  syntax:
+    content: 'public sealed class DownloadGate : IAsyncDisposable'
+    content.vb: Public NotInheritable Class DownloadGate Implements IAsyncDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IAsyncDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Download.DownloadGate.#ctor(System.Int32)
+  commentId: M:TGBot.Download.DownloadGate.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: TGBot.Download.DownloadGate
+  langs:
+  - csharp
+  - vb
+  name: DownloadGate(int)
+  nameWithType: DownloadGate.DownloadGate(int)
+  fullName: TGBot.Download.DownloadGate.DownloadGate(int)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadGate.cs
+    startLine: 16
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 初始化 <xref href="TGBot.Download.DownloadGate" data-throw-if-not-resolved="false"></xref>。
+  example: []
+  syntax:
+    content: public DownloadGate(int maxConcurrent)
+    parameters:
+    - id: maxConcurrent
+      type: System.Int32
+      description: 最大并发下载数。
+    content.vb: Public Sub New(maxConcurrent As Integer)
+  overload: TGBot.Download.DownloadGate.#ctor*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: 参数小于 1 时抛出。
+  nameWithType.vb: DownloadGate.New(Integer)
+  fullName.vb: TGBot.Download.DownloadGate.New(Integer)
+  name.vb: New(Integer)
+- uid: TGBot.Download.DownloadGate.DisposeAsync
+  commentId: M:TGBot.Download.DownloadGate.DisposeAsync
+  id: DisposeAsync
+  parent: TGBot.Download.DownloadGate
+  langs:
+  - csharp
+  - vb
+  name: DisposeAsync()
+  nameWithType: DownloadGate.DisposeAsync()
+  fullName: TGBot.Download.DownloadGate.DisposeAsync()
+  type: Method
+  source:
+    id: DisposeAsync
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadGate.cs
+    startLine: 28
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: >-
+    Performs application-defined tasks associated with freeing, releasing, or
+
+    resetting unmanaged resources asynchronously.
+  example: []
+  syntax:
+    content: public ValueTask DisposeAsync()
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A task that represents the asynchronous dispose operation.
+    content.vb: Public Function DisposeAsync() As ValueTask
+  overload: TGBot.Download.DownloadGate.DisposeAsync*
+  implements:
+  - System.IAsyncDisposable.DisposeAsync
+- uid: TGBot.Download.DownloadGate.AcquireDownloadAsync(System.Threading.CancellationToken)
+  commentId: M:TGBot.Download.DownloadGate.AcquireDownloadAsync(System.Threading.CancellationToken)
+  id: AcquireDownloadAsync(System.Threading.CancellationToken)
+  parent: TGBot.Download.DownloadGate
+  langs:
+  - csharp
+  - vb
+  name: AcquireDownloadAsync(CancellationToken)
+  nameWithType: DownloadGate.AcquireDownloadAsync(CancellationToken)
+  fullName: TGBot.Download.DownloadGate.AcquireDownloadAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    id: AcquireDownloadAsync
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadGate.cs
+    startLine: 39
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 获取一个普通下载槽位（排队等待）。
+  example: []
+  syntax:
+    content: public ValueTask<IAsyncDisposable> AcquireDownloadAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.ValueTask{System.IAsyncDisposable}
+      description: 释放器，用毕调用 <xref href="System.IDisposable.Dispose" data-throw-if-not-resolved="false"></xref> 释放槽位。
+    content.vb: Public Function AcquireDownloadAsync(cancellationToken As CancellationToken) As ValueTask(Of IAsyncDisposable)
+  overload: TGBot.Download.DownloadGate.AcquireDownloadAsync*
+- uid: TGBot.Download.DownloadGate.AcquireExclusiveAsync(System.Threading.CancellationToken)
+  commentId: M:TGBot.Download.DownloadGate.AcquireExclusiveAsync(System.Threading.CancellationToken)
+  id: AcquireExclusiveAsync(System.Threading.CancellationToken)
+  parent: TGBot.Download.DownloadGate
+  langs:
+  - csharp
+  - vb
+  name: AcquireExclusiveAsync(CancellationToken)
+  nameWithType: DownloadGate.AcquireExclusiveAsync(CancellationToken)
+  fullName: TGBot.Download.DownloadGate.AcquireExclusiveAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    id: AcquireExclusiveAsync
+    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadGate.cs
+    startLine: 50
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 获取全部槽位（自更新用，等待所有下载结束并阻止新下载开始）。
+  example: []
+  syntax:
+    content: public ValueTask<IAsyncDisposable> AcquireExclusiveAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.ValueTask{System.IAsyncDisposable}
+      description: 释放器，用毕调用 <xref href="System.IDisposable.Dispose" data-throw-if-not-resolved="false"></xref> 释放全部槽位。
+    content.vb: Public Function AcquireExclusiveAsync(cancellationToken As CancellationToken) As ValueTask(Of IAsyncDisposable)
+  overload: TGBot.Download.DownloadGate.AcquireExclusiveAsync*
+references:
+- uid: TGBot.Download
+  commentId: N:TGBot.Download
+  href: TGBot.html
+  name: TGBot.Download
+  nameWithType: TGBot.Download
+  fullName: TGBot.Download
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Download
+    name: Download
+    href: TGBot.Download.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Download
+    name: Download
+    href: TGBot.Download.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IAsyncDisposable
+  commentId: T:System.IAsyncDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable
+  name: IAsyncDisposable
+  nameWithType: IAsyncDisposable
+  fullName: System.IAsyncDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TGBot.Download.DownloadGate
+  commentId: T:TGBot.Download.DownloadGate
+  parent: TGBot.Download
+  href: TGBot.Download.DownloadGate.html
+  name: DownloadGate
+  nameWithType: DownloadGate
+  fullName: TGBot.Download.DownloadGate
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: TGBot.Download.DownloadGate.#ctor*
+  commentId: Overload:TGBot.Download.DownloadGate.#ctor
+  href: TGBot.Download.DownloadGate.html#TGBot_Download_DownloadGate__ctor_System_Int32_
+  name: DownloadGate
+  nameWithType: DownloadGate.DownloadGate
+  fullName: TGBot.Download.DownloadGate.DownloadGate
+  nameWithType.vb: DownloadGate.New
+  fullName.vb: TGBot.Download.DownloadGate.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: TGBot.Download.DownloadGate.DisposeAsync*
+  commentId: Overload:TGBot.Download.DownloadGate.DisposeAsync
+  href: TGBot.Download.DownloadGate.html#TGBot_Download_DownloadGate_DisposeAsync
+  name: DisposeAsync
+  nameWithType: DownloadGate.DisposeAsync
+  fullName: TGBot.Download.DownloadGate.DisposeAsync
+- uid: System.IAsyncDisposable.DisposeAsync
+  commentId: M:System.IAsyncDisposable.DisposeAsync
+  parent: System.IAsyncDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  name: DisposeAsync()
+  nameWithType: IAsyncDisposable.DisposeAsync()
+  fullName: System.IAsyncDisposable.DisposeAsync()
+  spec.csharp:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.ValueTask
+  commentId: T:System.Threading.Tasks.ValueTask
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
+  name: ValueTask
+  nameWithType: ValueTask
+  fullName: System.Threading.Tasks.ValueTask
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+- uid: TGBot.Download.DownloadGate.AcquireDownloadAsync*
+  commentId: Overload:TGBot.Download.DownloadGate.AcquireDownloadAsync
+  href: TGBot.Download.DownloadGate.html#TGBot_Download_DownloadGate_AcquireDownloadAsync_System_Threading_CancellationToken_
+  name: AcquireDownloadAsync
+  nameWithType: DownloadGate.AcquireDownloadAsync
+  fullName: TGBot.Download.DownloadGate.AcquireDownloadAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.ValueTask{System.IAsyncDisposable}
+  commentId: T:System.Threading.Tasks.ValueTask{System.IAsyncDisposable}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.ValueTask`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  name: ValueTask<IAsyncDisposable>
+  nameWithType: ValueTask<IAsyncDisposable>
+  fullName: System.Threading.Tasks.ValueTask<System.IAsyncDisposable>
+  nameWithType.vb: ValueTask(Of IAsyncDisposable)
+  fullName.vb: System.Threading.Tasks.ValueTask(Of System.IAsyncDisposable)
+  name.vb: ValueTask(Of IAsyncDisposable)
+  spec.csharp:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: <
+  - uid: System.IAsyncDisposable
+    name: IAsyncDisposable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.IAsyncDisposable
+    name: IAsyncDisposable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable
+  - name: )
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.ValueTask`1
+  commentId: T:System.Threading.Tasks.ValueTask`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  name: ValueTask<TResult>
+  nameWithType: ValueTask<TResult>
+  fullName: System.Threading.Tasks.ValueTask<TResult>
+  nameWithType.vb: ValueTask(Of TResult)
+  fullName.vb: System.Threading.Tasks.ValueTask(Of TResult)
+  name.vb: ValueTask(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: TGBot.Download.DownloadGate.AcquireExclusiveAsync*
+  commentId: Overload:TGBot.Download.DownloadGate.AcquireExclusiveAsync
+  href: TGBot.Download.DownloadGate.html#TGBot_Download_DownloadGate_AcquireExclusiveAsync_System_Threading_CancellationToken_
+  name: AcquireExclusiveAsync
+  nameWithType: DownloadGate.AcquireExclusiveAsync
+  fullName: TGBot.Download.DownloadGate.AcquireExclusiveAsync
