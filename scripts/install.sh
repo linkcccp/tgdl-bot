@@ -145,11 +145,13 @@ if [[ -x "$INSTALL_DIR/tgdl-bot" ]]; then
 
     # 独立测量：扫描 /proc 中所有 "tgdl-bot --smoke-test" 进程的 VmRSS 取最大值
     # （runuser 会 fork 真实子进程，直接读 $SMOKE_PID 会得到 wrapper 的小数值）
+    # 注意：进程可能在读取间隙退出，需在子 shell 内抑制 bash 的重定向报错，
+    # 避免刷出 "No such file or directory" 噪音。
     MAX_RSS_KB=0
     for _ in 1 2 3 4; do
         for d in /proc/[0-9]*; do
-            if tr '\0' ' ' <"$d/cmdline" 2>/dev/null | grep -q "tgdl-bot --smoke-test"; then
-                V="$(awk '/VmRSS/{print $2}' "$d/status" 2>/dev/null || echo 0)"
+            if ( tr '\0' ' ' <"$d/cmdline" 2>/dev/null ) 2>/dev/null | grep -q "tgdl-bot --smoke-test"; then
+                V="$( ( awk '/VmRSS/{print $2}' "$d/status" 2>/dev/null ) 2>/dev/null || echo 0 )"
                 [[ "${V:-0}" -gt "$MAX_RSS_KB" ]] && MAX_RSS_KB=$V
             fi
         done
