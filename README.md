@@ -154,13 +154,16 @@ journalctl -u tgdl-bot -f
 
 ### 4) 本地 Bot API Server
 
-若 `install.sh` 未自动安装 `telegram-bot-api` 二进制：
+一条命令安装脚本会自动安装：先尝试下载 tdlib 官方预编译二进制，失败则**按官方 README
+从源码构建**（`git clone --recursive` + CMake Release，约 10-30 分钟，无需人工干预）。
+
+若源码构建也未成功，可手动处理：
 
 ```bash
 cd /opt/tgdl-bot/api
-sudo -u tgdl-bot curl -L -o telegram-bot-api \
-  https://github.com/tdlib/telegram-bot-api/releases/latest/download/telegram-bot-api-linux-amd64
-sudo chmod +x telegram-bot-api
+# 参考官方构建说明：https://tdlib.github.io/telegram-bot-api/build.html
+# 将构建得到的 telegram-bot-api 放到 /opt/tgdl-bot/api/ 并：
+sudo chmod +x /opt/tgdl-bot/api/telegram-bot-api
 sudo systemctl restart telegram-bot-api
 ```
 
