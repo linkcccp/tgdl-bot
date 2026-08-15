@@ -17,7 +17,7 @@ SEED_DIR="$INSTALL_DIR/seed-bin"
 BIN_DIR="$INSTALL_DIR/bin"
 API_DATA_DIR="$INSTALL_DIR/api-data"
 TMP_DIR="${TGDL_DOWNLOAD_TMP:-/var/lib/tgdl-bot/tmp}"
-COOKIE_DIR="${TGDL_COOKIE_STORE_DIR:-/opt/tgdl-bot/cookies}"
+COOKIE_DIR="${TGDL_COOKIE_STORE_DIR:-/opt/tgdl-bot/api-data/cookies}"
 RUN_USER=tgdl-bot
 
 log()  { printf '\033[1;32m[INFO ]\033[0m %s\n' "$*"; }

@@ -69,7 +69,8 @@ UpdateYtDlp = true
 UpdateFfmpeg = true
 
 # 下载站点 cookies 存储目录（各站点 cookie 由 bot 私聊 /cookie 上传，按域名自动选用）
-# CookieStoreDir = /opt/tgdl-bot/cookies
+# 默认 /opt/tgdl-bot/api-data/cookies（tgdl-data 卷内，跨镜像重建持久）
+# CookieStoreDir = /opt/tgdl-bot/api-data/cookies
 
 # yt-dlp HTTP(S) 代理（可选）
 # YtDlpProxy = http://127.0.0.1:7890

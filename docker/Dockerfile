@@ -61,6 +61,6 @@ ENV TGDL_CONFIG=/opt/tgdl-bot/config.conf \
     TGDL_DOWNLOAD_TMP=/var/lib/tgdl-bot/tmp \
     TGDL_YTDLP_PATH=/opt/tgdl-bot/bin/yt-dlp \
     TGDL_FFMPEG_PATH=/opt/tgdl-bot/bin/ffmpeg \
-    TGDL_COOKIE_STORE_DIR=/opt/tgdl-bot/cookies
+    TGDL_COOKIE_STORE_DIR=/opt/tgdl-bot/api-data/cookies
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]

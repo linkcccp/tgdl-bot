@@ -100,9 +100,9 @@ docker logs -f tgdl-bot
 
 ### 如何获取 user ID 与 channel ID
 
-1. **自己的 user ID**：私聊 [@userinfobot](https://t.me/userinfobot) 直接回复数字。
-2. **channel/群组 ID**：把 bot 加为频道/群组管理员 → 发一条消息 →
-   `curl https://api.telegram.org/bot<TOKEN>/getUpdates` 查看 `chat.id`（频道形如 `-100...`）。
+- **user ID / chat ID / channel ID**：私聊 [@userinfobot](https://t.me/userinfobot)，**点击它下方提供的按钮选项**即可获得自己的 ID、群组/频道 ID 等（最方便的方式）。
+- 也可：把 bot 加为频道/群组管理员 → 发一条消息 →
+  `curl https://api.telegram.org/bot<TOKEN>/getUpdates` 查看 `chat.id`（频道形如 `-100...`）。
 
 ## 常用运维
 
@@ -110,10 +110,22 @@ docker logs -f tgdl-bot
 docker ps                                   # 状态
 docker logs -f tgdl-bot                     # 日志
 cd /opt/tgdl-bot && docker compose up -d    # 改 .env 后重启
-cd /opt/tgdl-bot && sudo docker compose pull && sudo docker compose up -d && sudo docker image prune -f   # 升级镜像并清理旧镜像
 ```
 
 私聊 bot 发 `/update` 自动更新 yt-dlp/ffmpeg；`/status` 查看版本与内存。
+
+### 更新镜像（升级到新版本）
+
+```bash
+cd /opt/tgdl-bot && sudo docker compose pull && sudo docker compose up -d && sudo docker image prune -f
+```
+
+- `pull` 拉取最新镜像 → `up -d` 重建容器 → `image prune -f` 清理旧镜像（防磁盘堆积）
+- 只会更新镜像与容器；**`.env`、`tgdl-data`/`tgdl-tmp`/`tgdl-bin` 卷、cookies、下载缓存均保留**
+- 或直接重跑一键安装脚本（自动完成拉取/启动/清理）：
+  ```bash
+  curl -fsSL https://raw.githubusercontent.com/linkcccp/tgdl-bot/main/scripts/install.sh | sudo bash
+  ```
 
 ## 解决站点机器人检测（Bot 内上传 cookies）
 
@@ -129,7 +141,7 @@ cd /opt/tgdl-bot && sudo docker compose pull && sudo docker compose up -d && sud
 
 - **按域名自动选用**：上传的 cookie 归到对应站点；下载时按 URL 域名自动挑选该站点 cookie 传给 yt-dlp
 - 预置站点：YouTube、X（推特）、Instagram、TikTok、Twitch、Facebook、哔哩哔哩、抖音、小红书、微博、SoundCloud、Vimeo、Dailymotion、Reddit
-- 每站一个文件，存储于 `/opt/tgdl-bot/cookies`（`tgdl-cookies` 卷，跨重建保留；文件 0600）
+- 每站一个文件，存储于 `/opt/tgdl-bot/api-data/cookies`（`tgdl-data` 卷内，跨镜像重建持久；文件 0600）
 - 获取 cookies.txt：浏览器登录该站点后，用扩展（如 *Get cookies.txt LOCALLY*）导出 Netscape 格式文件
 
 ### 免 cookies 的备选（可选）

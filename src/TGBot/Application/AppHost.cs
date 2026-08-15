@@ -65,7 +65,9 @@ public static class AppHost
             tempDir.Initialize();
 
             var cookieStore = new CookieStore(
-                string.IsNullOrEmpty(config.CookieStoreDir) ? Path.Combine(config.DownloadTempDir, "cookies") : config.CookieStoreDir,
+                string.IsNullOrEmpty(config.CookieStoreDir)
+                    ? DefaultNativeCookieDir(config.DownloadTempDir)
+                    : config.CookieStoreDir,
                 logger);
             cookieStore.Initialize();
             var cookieService = new CookieService(
@@ -200,4 +202,16 @@ public static class AppHost
 
     private static string MaskToken(string token)
         => token.Length <= 8 ? "***" : token[..6] + "…" + token[^4..];
+
+    /// <summary>
+    /// 原生（非 Docker）运行时的 cookie 缺省目录：放在临时目录同级而非其内部，
+    /// 避免启动时清理临时目录误删 cookie。
+    /// </summary>
+    /// <param name="tempDir">下载临时目录。</param>
+    /// <returns>cookie 目录绝对路径。</returns>
+    private static string DefaultNativeCookieDir(string tempDir)
+    {
+        var parent = Path.GetDirectoryName(Path.GetFullPath(tempDir));
+        return Path.Combine(parent ?? tempDir, "cookies");
+    }
 }
