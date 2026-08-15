@@ -5,11 +5,12 @@ on:
     tags:
       - 'v*'
 
-# 需要写权限以创建 Release。
+# 需要写权限以创建 Release 与推送 GHCR 包。
 # 另请在仓库 Settings -> Actions -> General -> Workflow permissions 选择
-# "Read and write permissions"，否则 Release 创建会失败。
+# "Read and write permissions"，否则 Release 创建 / GHCR 推送会失败。
 permissions:
   contents: write
+  packages: write
 
 jobs:
   build:
@@ -52,7 +53,22 @@ jobs:
             --self-contained true -p:PublishSingleFile=true \
             -o "$RUNNER_TEMP/publish"
 
-      - name: Package tarball + bare binary
+      - name: Download yt-dlp & ffmpeg (静态版)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p docker/dist
+          curl -fsSL --retry 3 -o docker/dist/yt-dlp \
+            "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp"
+          chmod +x docker/dist/yt-dlp
+          curl -fsSL --retry 3 -A "Mozilla/5.0" -o /tmp/ff.tar.xz \
+            "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz"
+          mkdir -p /tmp/ff && tar -xf /tmp/ff.tar.xz -C /tmp/ff
+          cp "$(find /tmp/ff -name ffmpeg -type f | head -n1)" docker/dist/ffmpeg
+          chmod +x docker/dist/ffmpeg
+          echo "yt-dlp=$(./docker/dist/yt-dlp --version)" "ffmpeg=$(./docker/dist/ffmpeg -version | head -n1 | grep -oE 'version [^ ]+' | head -n1)"
+
+      - name: Stage docker build context
         shell: bash
         env:
           GITHUB_REF: ${{ github.ref }}
@@ -60,18 +76,30 @@ jobs:
           set -euo pipefail
           TAG="${GITHUB_REF#refs/tags/}"
           VER="${TAG#v}"
-          echo "tag=${TAG} version=${VER}"
-          STAGE="$RUNNER_TEMP/stage"
-          mkdir -p "$STAGE"
-          cp "$RUNNER_TEMP/publish/tgdl-bot" "$STAGE/"
-          cp third_party/telegram-bot-api/build/telegram-bot-api "$STAGE/telegram-bot-api"
-          cp -r deploy "$STAGE/"
-          cp README.md "$STAGE/"
-          tar -C "$STAGE" -czf "$RUNNER_TEMP/tgdl-bot-${VER}-linux-x64.tar.gz" .
-          cp "$RUNNER_TEMP/publish/tgdl-bot" "$RUNNER_TEMP/tgdl-bot-linux-x64"
+          cp "$RUNNER_TEMP/publish/tgdl-bot" docker/dist/tgdl-bot
+          cp third_party/telegram-bot-api/build/telegram-bot-api docker/dist/telegram-bot-api
           echo "VERSION=${VER}" >> "$GITHUB_ENV"
-          echo "ASSET_TARBALL=$RUNNER_TEMP/tgdl-bot-${VER}-linux-x64.tar.gz" >> "$GITHUB_ENV"
-          echo "ASSET_BINARY=$RUNNER_TEMP/tgdl-bot-linux-x64" >> "$GITHUB_ENV"
+          ls -la docker/dist/
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build & push image
+        uses: docker/build-push-action@v6
+        with:
+          context: docker
+          file: docker/Dockerfile
+          push: true
+          tags: |
+            ghcr.io/linkcccp/tgdl-bot:${{ env.VERSION }}
+            ghcr.io/linkcccp/tgdl-bot:latest
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v3
@@ -79,6 +107,10 @@ jobs:
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
           generate_release_notes: true
-          files: |
-            ${{ env.ASSET_TARBALL }}
-            ${{ env.ASSET_BINARY }}
+          body: |
+            已发布 Docker 镜像：`ghcr.io/linkcccp/tgdl-bot:${{ env.VERSION }}`（及 `:latest`）
+
+            一键部署：
+            ```bash
+            curl -fsSL https://raw.githubusercontent.com/linkcccp/tgdl-bot/main/scripts/install.sh | sudo bash
+            ```
