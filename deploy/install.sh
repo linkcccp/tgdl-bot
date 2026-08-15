@@ -25,9 +25,9 @@ DATA_DIR="/var/lib/tgdl-bot"
 API_DATA_DIR="/var/lib/tgdl-bot-api"
 SERVICE_USER="tgdl-bot"
 
-echo ">>> 1/6 安装依赖（curl、xz-utils）"
+echo ">>> 1/6 安装依赖（curl、xz-utils、libssl3）"
 apt-get update -qq
-apt-get install -y -qq curl xz-utils >/dev/null
+apt-get install -y -qq curl xz-utils libssl3 zlib1g >/dev/null
 
 echo ">>> 2/6 创建用户与目录"
 id "$SERVICE_USER" >/dev/null 2>&1 || useradd --system --no-create-home --shell /usr/sbin/nologin "$SERVICE_USER"

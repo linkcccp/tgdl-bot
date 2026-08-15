@@ -51,9 +51,9 @@ else
     die "无法识别操作系统（缺少 /etc/os-release）。"
 fi
 
-log "安装依赖：curl、jq、xz-utils"
+log "安装依赖：curl、jq、xz-utils、libssl3（telegram-bot-api 运行期依赖）"
 apt-get update -qq || die "apt 更新失败，请检查网络与软件源后重试。"
-apt-get install -y -qq curl jq xz-utils >/dev/null || die "依赖安装失败，请检查网络后重试。"
+apt-get install -y -qq curl jq xz-utils libssl3 zlib1g >/dev/null || die "依赖安装失败，请检查网络后重试。"
 
 # ---------- 3. 获取 Release 信息并下载 ----------
 TMPDIR="$(mktemp -d)"
