@@ -4,6 +4,9 @@
 # ============================================================
 FROM debian:12-slim
 
+# buildx 提供的平台参数：amd64 / arm64（dist 目录按此组织）
+ARG TARGETARCH
+
 # 运行期依赖：
 #   python3     -> yt-dlp 是 Python zipapp，运行时需要解释器
 #   libssl3/zlib1g -> telegram-bot-api 动态链接所需
@@ -25,10 +28,10 @@ RUN apt-get update \
 WORKDIR /opt/tgdl-bot
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-COPY dist/tgdl-bot /opt/tgdl-bot/tgdl-bot
-COPY dist/telegram-bot-api /opt/tgdl-bot/api/telegram-bot-api
+COPY dist/${TARGETARCH}/tgdl-bot /opt/tgdl-bot/tgdl-bot
+COPY dist/${TARGETARCH}/telegram-bot-api /opt/tgdl-bot/api/telegram-bot-api
 COPY dist/yt-dlp /opt/tgdl-bot/seed-bin/yt-dlp
-COPY dist/ffmpeg /opt/tgdl-bot/seed-bin/ffmpeg
+COPY dist/${TARGETARCH}/ffmpeg /opt/tgdl-bot/seed-bin/ffmpeg
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh \
         /opt/tgdl-bot/tgdl-bot \

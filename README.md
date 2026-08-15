@@ -126,17 +126,22 @@ dotnet publish src/TGBot/TGBot.csproj -c Release -r linux-x64 --self-contained t
 ### 构建 Docker 镜像
 
 ```bash
-# 先按 CI 方式把 4 个产物放入 docker/dist/：
-#   tgdl-bot（dotnet publish 产物）、telegram-bot-api（debian:12 容器编译）、
-#   yt-dlp（官方 latest 静态版）、ffmpeg（johnvansickle 静态版）
-docker build -f docker/Dockerfile -t ghcr.io/linkcccp/tgdl-bot:dev docker/
+# 先按 CI 方式准备 docker/dist/ 产物：
+#   dist/{amd64,arm64}/tgdl-bot            （dotnet publish -r linux-x64 / linux-arm64）
+#   dist/{amd64,arm64}/telegram-bot-api     （来自 fork linkcccp/telegram-bot-api 的预编译 Release）
+#   dist/{amd64,arm64}/ffmpeg               （johnvansickle 静态版）
+#   dist/yt-dlp                             （官方 latest 静态版，跨架构通用）
+# 单架构本地构建：
+docker build --build-arg TARGETARCH=amd64 -f docker/Dockerfile -t ghcr.io/linkcccp/tgdl-bot:dev docker/
 ```
 
-## 发布（GitHub Actions 自动构建并推送镜像）
+## 发布（GitHub Actions 自动构建并推送多架构镜像）
 
 打 `v*` tag 触发 [`.github/workflows/release.yml`](.github/workflows/release.yml)：
-编译 telegram-bot-api 子项目 → 发布 tgdl-bot → 下载 yt-dlp/ffmpeg 静态版 → 构建
-Docker 镜像并推送到 **GHCR**（`ghcr.io/linkcccp/tgdl-bot:{tag}` 与 `:latest`）→ 创建 Release。
+发布 tgdl-bot（x64+arm64）→ 从 **fork `linkcccp/telegram-bot-api` 的最新 Release 下载
+预编译 telegram-bot-api**（该 fork 由 `auto-sync` 工作流自动同步上游并构建 x64/arm64）→
+下载 yt-dlp/ffmpeg 静态版 → 构建 **多架构**（linux/amd64 + linux/arm64）Docker 镜像并推送
+GHCR（`ghcr.io/linkcccp/tgdl-bot:{tag}` 与 `:latest`）→ 创建 Release。
 
 ```bash
 git tag v2.0.0 && git push origin v2.0.0
@@ -155,9 +160,11 @@ dotnet tool install --global docfx
 
 ## 已知限制与未验证项
 
-- **架构**：当前发布 x86_64 镜像；arm64 需 buildx 多架构 + tba arm64 编译（后续项）
+- **架构**：已发布 linux/amd64 + linux/arm64 多架构镜像；arm64 由 CI（QEMU 模拟）验证，本机未实跑
 - 超过上传上限（约 2GB）的文件会先完整下载再被拒绝（直链大小不可预知）
 - 与无空格中文粘连的 URL 无法可靠切分，需以空格分隔
+- telegram-bot-api 预编译二进制依赖 fork（`linkcccp/telegram-bot-api`）的 Release；
+  fork 的 `auto-sync` 工作流会定时同步上游并自动构建发布
 - **未验证项**：真实的 Telegram Bot API 交互（需真实 Token）无法在本开发机验证；容器全链路
   （tba 就绪 / bot 连接 / 内存）已在本机 Docker 实测通过
 - 仓库托管于 https://github.com/linkcccp/tgdl-bot（公开，GitHub 仅保留 main 分支 + tag）

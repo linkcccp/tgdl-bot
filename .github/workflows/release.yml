@@ -16,44 +16,67 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout (含子项目 telegram-bot-api)
+      - name: Checkout
         uses: actions/checkout@v7
-        with:
-          submodules: recursive
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '10.0.x'
 
-      - name: Build telegram-bot-api (子项目，Debian 12 容器内编译以兼容 Debian 12 glibc)
+      - name: Resolve version
+        shell: bash
+        env:
+          GITHUB_REF: ${{ github.ref }}
+        run: |
+          TAG="${GITHUB_REF#refs/tags/}"
+          echo "VERSION=${TAG#v}" >> "$GITHUB_ENV"
+
+      # telegram-bot-api 预编译二进制来自 fork（linkcccp/telegram-bot-api）：
+      # fork 由 auto-sync 工作流自动同步上游并构建 x64/arm64 发布到其 Release。
+      - name: Download telegram-bot-api (fork latest 预编译)
         shell: bash
         run: |
           set -euo pipefail
-          # 必须在 Debian 12 容器内编译：ubuntu-latest (glibc 2.39) 产出的二进制
-          # 会依赖 GLIBC_2.38+，无法在 Debian 12 (glibc 2.36) 上运行。
-          docker run --rm \
-            -v "$GITHUB_WORKSPACE":/workspace \
-            -w /workspace/third_party/telegram-bot-api \
-            debian:12 bash -c '
-              set -euo pipefail
-              apt-get update -qq
-              apt-get install -y -qq build-essential cmake gperf git libssl-dev zlib1g-dev pkg-config
-              mkdir -p build
-              cd build
-              cmake -DCMAKE_BUILD_TYPE=Release ..
-              cmake --build . -j"$(nproc)"
-              test -x ./telegram-bot-api
-            '
-          echo "built telegram-bot-api: $(ls -la third_party/telegram-bot-api/build/telegram-bot-api | awk '{print $5}') bytes"
+          TBA_REPO="${TBA_REPO:-linkcccp/telegram-bot-api}"
+          echo "TBA_REPO=${TBA_REPO}"
+          JSON="$(curl -fsSL --retry 3 "https://api.github.com/repos/${TBA_REPO}/releases/latest")"
+          for pair in "amd64:telegram-bot-api-linux-x64" "arm64:telegram-bot-api-linux-arm64"; do
+            arch="${pair%%:*}"; asset="${pair##*:}"
+            url="$(printf '%s' "$JSON" | jq -r --arg n "$asset" '.assets[] | select(.name==$n) | .browser_download_url' | head -n1)"
+            [[ -n "$url" ]] || { echo "错误：${TBA_REPO} latest Release 缺少资产 ${asset}"; exit 1; }
+            mkdir -p "docker/dist/${arch}"
+            curl -fsSL --retry 3 -o "docker/dist/${arch}/telegram-bot-api" "$url"
+            chmod +x "docker/dist/${arch}/telegram-bot-api"
+            echo "${asset}: $(stat -c%s "docker/dist/${arch}/telegram-bot-api") bytes"
+          done
 
-      - name: Publish (linux-x64 self-contained single file)
+      - name: Publish (linux-x64 + linux-arm64)
         run: |
-          dotnet publish src/TGBot/TGBot.csproj -c Release -r linux-x64 \
-            --self-contained true -p:PublishSingleFile=true \
-            -o "$RUNNER_TEMP/publish"
+          set -euo pipefail
+          dotnet publish src/TGBot/TGBot.csproj -c Release -r linux-x64 --self-contained true -p:PublishSingleFile=true -o "$RUNNER_TEMP/publish/x64"
+          dotnet publish src/TGBot/TGBot.csproj -c Release -r linux-arm64 --self-contained true -p:PublishSingleFile=true -o "$RUNNER_TEMP/publish/arm64"
+          mkdir -p docker/dist/amd64 docker/dist/arm64
+          cp "$RUNNER_TEMP/publish/x64/tgdl-bot" docker/dist/amd64/tgdl-bot
+          cp "$RUNNER_TEMP/publish/arm64/tgdl-bot" docker/dist/arm64/tgdl-bot
 
-      - name: Download yt-dlp & ffmpeg (静态版)
+      - name: Download ffmpeg (静态, x64 + arm64)
+        shell: bash
+        run: |
+          set -euo pipefail
+          for pair in "amd64:amd64" "arm64:arm64"; do
+            arch="${pair%%:*}"; jv="${pair##*:}"
+            curl -fsSL --retry 3 -A "Mozilla/5.0" -o "/tmp/ff-${arch}.tar.xz" \
+              "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-${jv}-static.tar.xz"
+            mkdir -p "/tmp/ff-${arch}"
+            tar -xf "/tmp/ff-${arch}.tar.xz" -C "/tmp/ff-${arch}"
+            mkdir -p "docker/dist/${arch}"
+            cp "$(find "/tmp/ff-${arch}" -name ffmpeg -type f | head -n1)" "docker/dist/${arch}/ffmpeg"
+            chmod +x "docker/dist/${arch}/ffmpeg"
+            echo "ffmpeg(${arch}): $(docker/dist/${arch}/ffmpeg -version 2>/dev/null | head -n1 || true)"
+          done
+
+      - name: Download yt-dlp (跨架构通用)
         shell: bash
         run: |
           set -euo pipefail
@@ -61,28 +84,13 @@ jobs:
           curl -fsSL --retry 3 -o docker/dist/yt-dlp \
             "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp"
           chmod +x docker/dist/yt-dlp
-          curl -fsSL --retry 3 -A "Mozilla/5.0" -o /tmp/ff.tar.xz \
-            "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz"
-          mkdir -p /tmp/ff && tar -xf /tmp/ff.tar.xz -C /tmp/ff
-          cp "$(find /tmp/ff -name ffmpeg -type f | head -n1)" docker/dist/ffmpeg
-          chmod +x docker/dist/ffmpeg
-          echo "yt-dlp=$(./docker/dist/yt-dlp --version)" "ffmpeg=$(./docker/dist/ffmpeg -version | head -n1 | grep -oE 'version [^ ]+' | head -n1)"
-
-      - name: Stage docker build context
-        shell: bash
-        env:
-          GITHUB_REF: ${{ github.ref }}
-        run: |
-          set -euo pipefail
-          TAG="${GITHUB_REF#refs/tags/}"
-          VER="${TAG#v}"
-          cp "$RUNNER_TEMP/publish/tgdl-bot" docker/dist/tgdl-bot
-          cp third_party/telegram-bot-api/build/telegram-bot-api docker/dist/telegram-bot-api
-          echo "VERSION=${VER}" >> "$GITHUB_ENV"
-          ls -la docker/dist/
+          echo "yt-dlp: $(docker/dist/yt-dlp --version)"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+
+      - name: Set up QEMU (arm64 模拟)
+        uses: docker/setup-qemu-action@v3
 
       - name: Login to GHCR
         uses: docker/login-action@v3
@@ -91,11 +99,12 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build & push image
+      - name: Build & push image (amd64 + arm64)
         uses: docker/build-push-action@v6
         with:
           context: docker
           file: docker/Dockerfile
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: |
             ghcr.io/linkcccp/tgdl-bot:${{ env.VERSION }}
@@ -108,7 +117,8 @@ jobs:
           name: Release ${{ github.ref_name }}
           generate_release_notes: true
           body: |
-            已发布 Docker 镜像：`ghcr.io/linkcccp/tgdl-bot:${{ env.VERSION }}`（及 `:latest`）
+            已发布多架构 Docker 镜像：`ghcr.io/linkcccp/tgdl-bot:${{ env.VERSION }}`（及 `:latest`）
+            平台：linux/amd64、linux/arm64
 
             一键部署：
             ```bash
