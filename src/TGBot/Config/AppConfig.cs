@@ -39,7 +39,7 @@ public sealed class AppConfig
     public string YtDlpExtraArgs { get; init; } = string.Empty;
 
     /// <summary>YouTube 多 player_client 列表（仅 YouTube 域名生效，逗号分隔；为空则禁用）。</summary>
-    public string YtDlpYoutubePlayerClients { get; init; } = "default,android,ios,web_embedded";
+    public string YtDlpYoutubePlayerClients { get; init; } = "android,ios,web_embedded,tv";
 
     /// <summary>最大并发下载任务数。</summary>
     public int MaxConcurrentDownloads { get; init; } = 2;

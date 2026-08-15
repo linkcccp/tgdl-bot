@@ -110,10 +110,10 @@ public class FormatUnavailableFallbackTests : IDisposable
         // 第一次：默认参数（player_client 默认开启）；第二次：挑选结果 + mkv
         Assert.Equal("mp4/mkv", calls[0].Merge);
         Assert.Null(calls[0].Expr);
-        Assert.Equal("default,android,ios,web_embedded", calls[0].Clients);
+        Assert.Equal("android,ios,web_embedded,tv", calls[0].Clients);
         Assert.Equal("mkv", calls[1].Merge);
         Assert.Equal("137+140", calls[1].Expr);
-        Assert.Equal("default,android,ios,web_embedded", calls[1].Clients);
+        Assert.Equal("android,ios,web_embedded,tv", calls[1].Clients);
         Assert.Contains(client.Videos, v => v.ChatId == -100111);
     }
 

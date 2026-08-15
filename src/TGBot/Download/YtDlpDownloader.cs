@@ -294,7 +294,8 @@ public sealed class YtDlpDownloader : IDownloader
             await Task.WhenAll(stdoutTask, stderrTask).ConfigureAwait(false);
             if (process.ExitCode != 0)
             {
-                _logger.Warn($"格式探测失败：{stderrTask.Result.Split('\n').LastOrDefault()?.Trim()}");
+                var tail = LastNonEmptyLine(stderrTask.Result) ?? "(无错误输出)";
+                _logger.Warn($"格式探测失败（退出码 {process.ExitCode}）：{tail}");
                 return null;
             }
 
@@ -343,6 +344,24 @@ public sealed class YtDlpDownloader : IDownloader
         }
 
         return sb.ToString();
+    }
+
+    private static string? LastNonEmptyLine(string text)
+    {
+        if (string.IsNullOrEmpty(text))
+        {
+            return null;
+        }
+
+        foreach (var line in text.Replace("\r\n", "\n", StringComparison.Ordinal).Split('\n').Reverse())
+        {
+            if (!string.IsNullOrWhiteSpace(line))
+            {
+                return line.Trim();
+            }
+        }
+
+        return null;
     }
 
     private static async Task<DownloadedMedia> ResolveOutputAsync(

@@ -77,5 +77,6 @@ UpdateFfmpeg = true
 # yt-dlp 附加参数（按空白拆分，如免 cookies 绕过 YouTube 机器人检测）
 # YtDlpExtraArgs = --extractor-args youtube:player_client=android,ios
 
-# YouTube 多 player_client（仅 YouTube 生效，默认 default,android,ios,web_embedded，留空可禁用）
-YtDlpYoutubePlayerClients = default,android,ios,web_embedded
+# YouTube 多 player_client（仅 YouTube 生效，留空可禁用；
+# 不含 default(web)：其对部分视频返回不完整格式表，会导致 "Requested format is not available"）
+YtDlpYoutubePlayerClients = android,ios,web_embedded,tv

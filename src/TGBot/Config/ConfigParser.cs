@@ -141,7 +141,7 @@ public static class ConfigParser
             YtDlpExtraArgs = GetString(values, "YtDlpExtraArgs"),
             YtDlpYoutubePlayerClients = values.TryGetValue("YtDlpYoutubePlayerClients", out var pc)
                 ? pc
-                : "default,android,ios,web_embedded",
+                : "android,ios,web_embedded,tv",
             MaxConcurrentDownloads = GetInt(values, "MaxConcurrentDownloads", 2),
             LogLevel = GetLogLevel(values, "LogLevel", Logging.LogLevel.Info),
             LogFile = string.IsNullOrEmpty(GetString(values, "LogFile")) ? null : GetString(values, "LogFile"),
