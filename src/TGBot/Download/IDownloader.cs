@@ -32,4 +32,25 @@ public interface IDownloader
     /// <param name="cancellationToken">取消令牌。</param>
     /// <returns>格式表达式（如 <c>137+140</c>）；无法挑选时返回 <see langword="null"/>。</returns>
     Task<string?> ProbeBestFormatAsync(DownloadOptions options, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// 探测并返回媒体格式列表（<c>-J</c>，不下载）；失败返回 <see langword="null"/>。
+    /// </summary>
+    /// <param name="options">探测参数。</param>
+    /// <param name="cancellationToken">取消令牌。</param>
+    /// <returns>格式列表或 <see langword="null"/>。</returns>
+    Task<IReadOnlyList<FormatInfo>?> ProbeFormatsAsync(DownloadOptions options, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// 仅音频下载：下载该站最高音质音频，并用 ffmpeg 转出两份（flac 无损 + mp3@320k）。
+    /// </summary>
+    /// <param name="options">下载参数（需含 <see cref="DownloadOptions.FfmpegPath"/>）。</param>
+    /// <param name="progress">进度回调，可为 <see langword="null"/>。</param>
+    /// <param name="cancellationToken">取消令牌。</param>
+    /// <returns>两个媒体（flac、mp3）。</returns>
+    /// <exception cref="DownloadException">下载或转码失败时抛出。</exception>
+    Task<IReadOnlyList<DownloadedMedia>> DownloadAudioBundleAsync(
+        DownloadOptions options,
+        Action<DownloadProgress>? progress,
+        CancellationToken cancellationToken);
 }

@@ -30,7 +30,6 @@ items:
 references:
 - uid: TGBot.Download.DownloadedMedia
   commentId: T:TGBot.Download.DownloadedMedia
-  parent: TGBot.Download
   href: TGBot.Download.DownloadedMedia.html
   name: DownloadedMedia
   nameWithType: DownloadedMedia

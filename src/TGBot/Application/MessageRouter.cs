@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using TGBot.Access;
 using TGBot.Config;
 using TGBot.Cookie;
@@ -10,10 +11,13 @@ using TGBot.Texts;
 namespace TGBot.Application;
 
 /// <summary>
-/// 消息路由器：访问控制 → 指令 / 文件（cookies 上传）/ 链接校验 → 下载任务入队。
+/// 消息路由器：访问控制 → 指令 / 文件（cookies 上传）/ 链接校验与模式选择 → 下载任务入队。
 /// </summary>
 public sealed class MessageRouter
 {
+    private const string CallbackPrefix = "dl:";
+    private static readonly TimeSpan ChoiceTimeout = TimeSpan.FromMinutes(2);
+
     private readonly AccessControlService _access;
     private readonly UrlValidator _urlValidator;
     private readonly DownloadCoordinator _coordinator;
@@ -22,6 +26,9 @@ public sealed class MessageRouter
     private readonly ITelegramClient _client;
     private readonly AppConfig _config;
     private readonly IAppLogger _logger;
+    private readonly ConcurrentDictionary<string, PendingChoice> _pendingChoices = new();
+
+    private sealed record PendingChoice(long ChatId, long? SenderUserId, string Url, int TriggerMessageId, string DefaultMode);
 
     /// <summary>
     /// 初始化 <see cref="MessageRouter"/>。
@@ -55,12 +62,18 @@ public sealed class MessageRouter
     }
 
     /// <summary>
-    /// 处理一条入站消息。
+    /// 处理一条入站消息或回调。
     /// </summary>
     /// <param name="msg">入站消息。</param>
     /// <param name="cancellationToken">取消令牌。</param>
     public async Task HandleAsync(InboundMessage msg, CancellationToken cancellationToken)
     {
+        if (msg.IsCallback)
+        {
+            await HandleCallbackAsync(msg, cancellationToken).ConfigureAwait(false);
+            return;
+        }
+
         var text = msg.Text?.Trim();
         var isCommand = !string.IsNullOrEmpty(text) && text.StartsWith("/", StringComparison.Ordinal);
 
@@ -77,6 +90,54 @@ public sealed class MessageRouter
         }
 
         await HandleUrlAsync(msg, cancellationToken).ConfigureAwait(false);
+    }
+
+    private async Task HandleCallbackAsync(InboundMessage msg, CancellationToken cancellationToken)
+    {
+        var data = msg.CallbackData;
+        if (string.IsNullOrEmpty(data) || !data.StartsWith(CallbackPrefix, StringComparison.Ordinal))
+        {
+            return;
+        }
+
+        var parts = data.Split(':');
+        if (parts.Length != 3)
+        {
+            return;
+        }
+
+        var token = parts[1];
+        var mode = parts[2];
+        if (mode is not ("video" or "audio"))
+        {
+            return;
+        }
+
+        if (!_pendingChoices.TryRemove(token, out var pending))
+        {
+            return;
+        }
+
+        // 仅允许发起该选择的用户选择
+        if (pending.ChatId != msg.ChatId || pending.SenderUserId != msg.SenderUserId)
+        {
+            return;
+        }
+
+        var jobMsg = new InboundMessage
+        {
+            ChatId = pending.ChatId,
+            IsPrivate = true,
+            SenderUserId = pending.SenderUserId,
+            Text = pending.Url,
+            TriggerMessageId = pending.TriggerMessageId,
+        };
+
+        var enqueued = await _coordinator.EnqueueAsync(jobMsg, pending.Url, mode, cancellationToken).ConfigureAwait(false);
+        if (!enqueued)
+        {
+            await SendToAsync(msg, "该链接正在处理中，请稍候。", cancellationToken).ConfigureAwait(false);
+        }
     }
 
     private async Task HandleCookieFileAsync(InboundMessage msg, CancellationToken cancellationToken)
@@ -150,16 +211,84 @@ public sealed class MessageRouter
                 continue;
             }
 
-            var enqueued = await _coordinator.EnqueueAsync(msg, result.NormalizedUrl, cancellationToken).ConfigureAwait(false);
-            if (!enqueued && msg.IsPrivate)
+            var url = result.NormalizedUrl;
+
+            // 探测：仅音频 → 直接走音频模式；含视频 → 私聊询问，否则默认模式
+            var audioOnly = await _coordinator.IsAudioOnlyAsync(url, cancellationToken).ConfigureAwait(false);
+            if (audioOnly)
             {
-                await SendToAsync(msg, "该链接正在处理中，请稍候。", cancellationToken).ConfigureAwait(false);
+                await EnqueueOrNotifyAsync(msg, url, "audio", cancellationToken).ConfigureAwait(false);
+                return;
             }
 
+            if (msg.IsPrivate)
+            {
+                await PromptModeAsync(msg, url, cancellationToken).ConfigureAwait(false);
+                return;
+            }
+
+            await EnqueueOrNotifyAsync(msg, url, _config.TgdlDefaultMode, cancellationToken).ConfigureAwait(false);
             return;
         }
 
         await SendToAsync(msg, lastError ?? UserTexts.NoValidUrl, cancellationToken).ConfigureAwait(false);
+    }
+
+    private async Task EnqueueOrNotifyAsync(InboundMessage msg, string url, string mode, CancellationToken cancellationToken)
+    {
+        var enqueued = await _coordinator.EnqueueAsync(msg, url, mode, cancellationToken).ConfigureAwait(false);
+        if (!enqueued && msg.IsPrivate)
+        {
+            await SendToAsync(msg, "该链接正在处理中，请稍候。", cancellationToken).ConfigureAwait(false);
+        }
+    }
+
+    private async Task PromptModeAsync(InboundMessage msg, string url, CancellationToken cancellationToken)
+    {
+        var token = Guid.NewGuid().ToString("N");
+        var pending = new PendingChoice(msg.ChatId, msg.SenderUserId, url, msg.TriggerMessageId, _config.TgdlDefaultMode);
+        _pendingChoices[token] = pending;
+
+        var keyboard = new[]
+        {
+            new InlineButton(UserTexts.ModeVideoButton, $"{CallbackPrefix}{token}:video"),
+            new InlineButton(UserTexts.ModeAudioButton, $"{CallbackPrefix}{token}:audio"),
+        };
+        await SendToAsync(msg, UserTexts.ModeChoice, keyboard, cancellationToken).ConfigureAwait(false);
+
+        // 超时未选择 → 回退默认模式
+        _ = Task.Run(async () =>
+        {
+            try
+            {
+                await Task.Delay(ChoiceTimeout, cancellationToken).ConfigureAwait(false);
+            }
+            catch (OperationCanceledException)
+            {
+                return;
+            }
+
+            if (_pendingChoices.TryRemove(token, out var expired))
+            {
+                var fallbackMsg = new InboundMessage
+                {
+                    ChatId = expired.ChatId,
+                    IsPrivate = true,
+                    SenderUserId = expired.SenderUserId,
+                    Text = expired.Url,
+                    TriggerMessageId = expired.TriggerMessageId,
+                };
+                _logger.Info($"下载选择超时，回退默认模式（{expired.DefaultMode}）：{MaskUrl(expired.Url)}");
+                try
+                {
+                    await _coordinator.EnqueueAsync(fallbackMsg, expired.Url, expired.DefaultMode, CancellationToken.None).ConfigureAwait(false);
+                }
+                catch (Exception ex)
+                {
+                    _logger.Warn($"超时回退入队失败：{ex.Message}");
+                }
+            }
+        }, CancellationToken.None);
     }
 
     private async Task SendDeniedOrNoteAsync(InboundMessage msg, AccessDecision decision, string note, CancellationToken cancellationToken)
@@ -175,14 +304,30 @@ public sealed class MessageRouter
     }
 
     private async Task SendToAsync(InboundMessage msg, string text, CancellationToken cancellationToken)
+        => await SendToAsync(msg, text, null, cancellationToken).ConfigureAwait(false);
+
+    private async Task SendToAsync(InboundMessage msg, string text, IReadOnlyList<InlineButton>? keyboard, CancellationToken cancellationToken)
     {
         try
         {
-            await _client.SendMessageAsync(msg.ChatId, text, msg.IsPrivate ? msg.TriggerMessageId : 0, cancellationToken).ConfigureAwait(false);
+            await _client.SendMessageAsync(msg.ChatId, text, msg.IsPrivate ? msg.TriggerMessageId : 0, keyboard, cancellationToken).ConfigureAwait(false);
         }
         catch (Exception ex)
         {
             _logger.Warn($"回复发送失败：{ex.Message}");
+        }
+    }
+
+    private static string MaskUrl(string url)
+    {
+        try
+        {
+            var uri = new Uri(url);
+            return $"{uri.Scheme}://{uri.Host}{uri.AbsolutePath}";
+        }
+        catch
+        {
+            return "<无效URL>";
         }
     }
 }

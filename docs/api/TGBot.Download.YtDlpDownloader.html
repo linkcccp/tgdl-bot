@@ -229,6 +229,84 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Download_YtDlpDownloader_DownloadAudioBundleAsync_TGBot_Download_DownloadOptions_System_Action_TGBot_Download_DownloadProgress__System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Download.YtDlpDownloader.DownloadAudioBundleAsync(TGBot.Download.DownloadOptions%2CSystem.Action%7BTGBot.Download.DownloadProgress%7D%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Download/YtDlpDownloader.cs/#L344">View Source</a>
+  </span>
+  <a id="TGBot_Download_YtDlpDownloader_DownloadAudioBundleAsync_" data-uid="TGBot.Download.YtDlpDownloader.DownloadAudioBundleAsync*"></a>
+  <h4 id="TGBot_Download_YtDlpDownloader_DownloadAudioBundleAsync_TGBot_Download_DownloadOptions_System_Action_TGBot_Download_DownloadProgress__System_Threading_CancellationToken_" data-uid="TGBot.Download.YtDlpDownloader.DownloadAudioBundleAsync(TGBot.Download.DownloadOptions,System.Action{TGBot.Download.DownloadProgress},System.Threading.CancellationToken)">DownloadAudioBundleAsync(DownloadOptions, Action&lt;DownloadProgress&gt;?, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>仅音频下载：下载该站最高音质音频，并用 ffmpeg 转出两份（flac 无损 + mp3@320k）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IReadOnlyList&lt;DownloadedMedia&gt;&gt; DownloadAudioBundleAsync(DownloadOptions options, Action&lt;DownloadProgress&gt;? progress, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="TGBot.Download.DownloadOptions.html">DownloadOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>下载参数（需含 <a class="xref" href="TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_FfmpegPath">FfmpegPath</a>）。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="TGBot.Download.DownloadProgress.html">DownloadProgress</a>&gt;</td>
+        <td><span class="parametername">progress</span></td>
+        <td><p>进度回调，可为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>取消令牌。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="TGBot.Download.DownloadedMedia.html">DownloadedMedia</a>&gt;&gt;</td>
+        <td><p>两个媒体（flac、mp3）。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="TGBot.Download.DownloadException.html">DownloadException</a></td>
+        <td><p>下载或转码失败时抛出。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Download_YtDlpDownloader_ProbeBestFormatAsync_TGBot_Download_DownloadOptions_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Download.YtDlpDownloader.ProbeBestFormatAsync(TGBot.Download.DownloadOptions%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -279,6 +357,62 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
         <td><p>格式表达式（如 <code>137+140</code>）；无法挑选时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Download_YtDlpDownloader_ProbeFormatsAsync_TGBot_Download_DownloadOptions_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Download.YtDlpDownloader.ProbeFormatsAsync(TGBot.Download.DownloadOptions%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Download/YtDlpDownloader.cs/#L239">View Source</a>
+  </span>
+  <a id="TGBot_Download_YtDlpDownloader_ProbeFormatsAsync_" data-uid="TGBot.Download.YtDlpDownloader.ProbeFormatsAsync*"></a>
+  <h4 id="TGBot_Download_YtDlpDownloader_ProbeFormatsAsync_TGBot_Download_DownloadOptions_System_Threading_CancellationToken_" data-uid="TGBot.Download.YtDlpDownloader.ProbeFormatsAsync(TGBot.Download.DownloadOptions,System.Threading.CancellationToken)">ProbeFormatsAsync(DownloadOptions, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>探测并返回媒体格式列表（<code>-J</code>，不下载）；失败返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IReadOnlyList&lt;FormatInfo&gt;?&gt; ProbeFormatsAsync(DownloadOptions options, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="TGBot.Download.DownloadOptions.html">DownloadOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>探测参数。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>取消令牌。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="TGBot.Download.FormatInfo.html">FormatInfo</a>&gt;&gt;</td>
+        <td><p>格式列表或 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。</p>
 </td>
       </tr>
     </tbody>

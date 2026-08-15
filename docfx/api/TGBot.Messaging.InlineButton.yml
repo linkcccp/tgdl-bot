@@ -1,124 +1,170 @@
 ### YamlMime:ManagedReference
 items:
-- uid: TGBot.Config.ConfigParser
-  commentId: T:TGBot.Config.ConfigParser
-  id: ConfigParser
-  parent: TGBot.Config
+- uid: TGBot.Messaging.InlineButton
+  commentId: T:TGBot.Messaging.InlineButton
+  id: InlineButton
+  parent: TGBot.Messaging
   children:
-  - TGBot.Config.ConfigParser.Parse(System.String,System.String)
+  - TGBot.Messaging.InlineButton.#ctor(System.String,System.String)
+  - TGBot.Messaging.InlineButton.CallbackData
+  - TGBot.Messaging.InlineButton.Text
   langs:
   - csharp
   - vb
-  name: ConfigParser
-  nameWithType: ConfigParser
-  fullName: TGBot.Config.ConfigParser
+  name: InlineButton
+  nameWithType: InlineButton
+  fullName: TGBot.Messaging.InlineButton
   type: Class
   source:
     remote:
-      path: src/TGBot/Config/ConfigParser.cs
+      path: src/TGBot/Messaging/ITelegramClient.cs
       branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
-    id: ConfigParser
-    path: ../src/TGBot/Config/ConfigParser.cs
-    startLine: 18
+    id: InlineButton
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 7
   assemblies:
   - tgdl-bot
-  namespace: TGBot.Config
-  summary: >-
-    config.conf 解析器。
-
-
-    <p>格式：每行 <code>键 = 值</code>，支持 <code>#</code>/<code>;</code> 注释、空行与 <code>[section]</code> 段头。
-
-    解析失败抛出 <xref href="TGBot.Config.ConfigParseException" data-throw-if-not-resolved="false"></xref>，消息为清晰的中文提示（含行号）。</p>
+  namespace: TGBot.Messaging
+  summary: 内联键盘按钮。
   example: []
   syntax:
-    content: public static class ConfigParser
-    content.vb: Public Module ConfigParser
+    content: 'public sealed record InlineButton : IEquatable<InlineButton>'
+    content.vb: Public NotInheritable Class InlineButton Implements IEquatable(Of InlineButton)
   inheritance:
   - System.Object
+  implements:
+  - System.IEquatable{TGBot.Messaging.InlineButton}
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
   - System.Object.GetType
-  - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Config.ConfigParser.Parse(System.String,System.String)
-  commentId: M:TGBot.Config.ConfigParser.Parse(System.String,System.String)
-  id: Parse(System.String,System.String)
-  parent: TGBot.Config.ConfigParser
+- uid: TGBot.Messaging.InlineButton.#ctor(System.String,System.String)
+  commentId: M:TGBot.Messaging.InlineButton.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: TGBot.Messaging.InlineButton
   langs:
   - csharp
   - vb
-  name: Parse(string, string)
-  nameWithType: ConfigParser.Parse(string, string)
-  fullName: TGBot.Config.ConfigParser.Parse(string, string)
-  type: Method
+  name: InlineButton(string, string)
+  nameWithType: InlineButton.InlineButton(string, string)
+  fullName: TGBot.Messaging.InlineButton.InlineButton(string, string)
+  type: Constructor
   source:
     remote:
-      path: src/TGBot/Config/ConfigParser.cs
+      path: src/TGBot/Messaging/ITelegramClient.cs
       branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
-    id: Parse
-    path: ../src/TGBot/Config/ConfigParser.cs
-    startLine: 71
+    id: .ctor
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 7
   assemblies:
   - tgdl-bot
-  namespace: TGBot.Config
-  summary: 解析配置文件文本。
+  namespace: TGBot.Messaging
+  summary: 内联键盘按钮。
   example: []
   syntax:
-    content: public static ConfigParseResult Parse(string content, string sourcePath)
+    content: public InlineButton(string Text, string CallbackData)
     parameters:
-    - id: content
+    - id: Text
       type: System.String
-      description: 配置文件全部内容。
-    - id: sourcePath
+      description: 按钮文本。
+    - id: CallbackData
       type: System.String
-      description: 配置文件路径，用于错误提示。
+      description: 回调数据。
+    content.vb: Public Sub New(Text As String, CallbackData As String)
+  overload: TGBot.Messaging.InlineButton.#ctor*
+  nameWithType.vb: InlineButton.New(String, String)
+  fullName.vb: TGBot.Messaging.InlineButton.New(String, String)
+  name.vb: New(String, String)
+- uid: TGBot.Messaging.InlineButton.Text
+  commentId: P:TGBot.Messaging.InlineButton.Text
+  id: Text
+  parent: TGBot.Messaging.InlineButton
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: InlineButton.Text
+  fullName: TGBot.Messaging.InlineButton.Text
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Text
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 7
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 按钮文本。
+  example: []
+  syntax:
+    content: public string Text { get; init; }
+    parameters: []
     return:
-      type: TGBot.Config.ConfigParseResult
-      description: 解析结果。
-    content.vb: Public Shared Function Parse(content As String, sourcePath As String) As ConfigParseResult
-  overload: TGBot.Config.ConfigParser.Parse*
-  exceptions:
-  - type: TGBot.Config.ConfigParseException
-    commentId: T:TGBot.Config.ConfigParseException
-    description: 配置缺失、格式错误或值非法时抛出。
-  nameWithType.vb: ConfigParser.Parse(String, String)
-  fullName.vb: TGBot.Config.ConfigParser.Parse(String, String)
-  name.vb: Parse(String, String)
+      type: System.String
+    content.vb: Public Property Text As String
+  overload: TGBot.Messaging.InlineButton.Text*
+- uid: TGBot.Messaging.InlineButton.CallbackData
+  commentId: P:TGBot.Messaging.InlineButton.CallbackData
+  id: CallbackData
+  parent: TGBot.Messaging.InlineButton
+  langs:
+  - csharp
+  - vb
+  name: CallbackData
+  nameWithType: InlineButton.CallbackData
+  fullName: TGBot.Messaging.InlineButton.CallbackData
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CallbackData
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 7
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 回调数据。
+  example: []
+  syntax:
+    content: public string CallbackData { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CallbackData As String
+  overload: TGBot.Messaging.InlineButton.CallbackData*
 references:
-- uid: TGBot.Config.ConfigParseException
-  commentId: T:TGBot.Config.ConfigParseException
-  href: TGBot.Config.ConfigParseException.html
-  name: ConfigParseException
-  nameWithType: ConfigParseException
-  fullName: TGBot.Config.ConfigParseException
-- uid: TGBot.Config
-  commentId: N:TGBot.Config
+- uid: TGBot.Messaging
+  commentId: N:TGBot.Messaging
   href: TGBot.html
-  name: TGBot.Config
-  nameWithType: TGBot.Config
-  fullName: TGBot.Config
+  name: TGBot.Messaging
+  nameWithType: TGBot.Messaging
+  fullName: TGBot.Messaging
   spec.csharp:
   - uid: TGBot
     name: TGBot
     href: TGBot.html
   - name: .
-  - uid: TGBot.Config
-    name: Config
-    href: TGBot.Config.html
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html
   spec.vb:
   - uid: TGBot
     name: TGBot
     href: TGBot.html
   - name: .
-  - uid: TGBot.Config
-    name: Config
-    href: TGBot.Config.html
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -130,6 +176,39 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: System.IEquatable{TGBot.Messaging.InlineButton}
+  commentId: T:System.IEquatable{TGBot.Messaging.InlineButton}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<InlineButton>
+  nameWithType: IEquatable<InlineButton>
+  fullName: System.IEquatable<TGBot.Messaging.InlineButton>
+  nameWithType.vb: IEquatable(Of InlineButton)
+  fullName.vb: System.IEquatable(Of TGBot.Messaging.InlineButton)
+  name.vb: IEquatable(Of InlineButton)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: TGBot.Messaging.InlineButton
+    name: InlineButton
+    href: TGBot.Messaging.InlineButton.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Messaging.InlineButton
+    name: InlineButton
+    href: TGBot.Messaging.InlineButton.html
+  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -256,30 +335,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
   - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
@@ -356,12 +411,43 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: TGBot.Config.ConfigParser.Parse*
-  commentId: Overload:TGBot.Config.ConfigParser.Parse
-  href: TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_Parse_System_String_System_String_
-  name: Parse
-  nameWithType: ConfigParser.Parse
-  fullName: TGBot.Config.ConfigParser.Parse
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: TGBot.Messaging.InlineButton.#ctor*
+  commentId: Overload:TGBot.Messaging.InlineButton.#ctor
+  href: TGBot.Messaging.InlineButton.html#TGBot_Messaging_InlineButton__ctor_System_String_System_String_
+  name: InlineButton
+  nameWithType: InlineButton.InlineButton
+  fullName: TGBot.Messaging.InlineButton.InlineButton
+  nameWithType.vb: InlineButton.New
+  fullName.vb: TGBot.Messaging.InlineButton.New
+  name.vb: New
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -373,10 +459,15 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: TGBot.Config.ConfigParseResult
-  commentId: T:TGBot.Config.ConfigParseResult
-  parent: TGBot.Config
-  href: TGBot.Config.ConfigParseResult.html
-  name: ConfigParseResult
-  nameWithType: ConfigParseResult
-  fullName: TGBot.Config.ConfigParseResult
+- uid: TGBot.Messaging.InlineButton.Text*
+  commentId: Overload:TGBot.Messaging.InlineButton.Text
+  href: TGBot.Messaging.InlineButton.html#TGBot_Messaging_InlineButton_Text
+  name: Text
+  nameWithType: InlineButton.Text
+  fullName: TGBot.Messaging.InlineButton.Text
+- uid: TGBot.Messaging.InlineButton.CallbackData*
+  commentId: Overload:TGBot.Messaging.InlineButton.CallbackData
+  href: TGBot.Messaging.InlineButton.html#TGBot_Messaging_InlineButton_CallbackData
+  name: CallbackData
+  nameWithType: InlineButton.CallbackData
+  fullName: TGBot.Messaging.InlineButton.CallbackData

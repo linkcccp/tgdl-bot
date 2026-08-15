@@ -1,6 +1,13 @@
 namespace TGBot.Messaging;
 
 /// <summary>
+/// 内联键盘按钮。
+/// </summary>
+/// <param name="Text">按钮文本。</param>
+/// <param name="CallbackData">回调数据。</param>
+public sealed record InlineButton(string Text, string CallbackData);
+
+/// <summary>
 /// 入站消息模型（与具体 Bot 库解耦，便于单元测试）。
 /// </summary>
 public sealed class InboundMessage
@@ -51,6 +58,16 @@ public sealed class InboundMessage
     public long? DocumentSizeBytes { get; init; }
 
     /// <summary>
+    /// 是否为回调消息（内联键盘按钮）。
+    /// </summary>
+    public bool IsCallback { get; init; }
+
+    /// <summary>
+    /// 回调数据（IsCallback 为 true 时非空）。
+    /// </summary>
+    public string? CallbackData { get; init; }
+
+    /// <summary>
     /// 用于提取 URL 的完整文本（文本 + 说明）。
     /// </summary>
     public string UrlSearchText => string.IsNullOrEmpty(Text)
@@ -96,8 +113,9 @@ public interface ITelegramClient
     /// <param name="chatId">目标会话 ID。</param>
     /// <param name="text">文本。</param>
     /// <param name="replyToMessageId">回复的消息 ID，0 表示不回复。</param>
+    /// <param name="inlineKeyboard">内联键盘按钮（可为空）。</param>
     /// <param name="cancellationToken">取消令牌。</param>
-    Task SendMessageAsync(long chatId, string text, int replyToMessageId, CancellationToken cancellationToken);
+    Task SendMessageAsync(long chatId, string text, int replyToMessageId, IReadOnlyList<InlineButton>? inlineKeyboard, CancellationToken cancellationToken);
 
     /// <summary>
     /// 发送聊天动作。

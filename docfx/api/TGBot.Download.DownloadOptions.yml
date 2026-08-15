@@ -11,6 +11,7 @@ items:
   - TGBot.Download.DownloadOptions.ExtraArgs
   - TGBot.Download.DownloadOptions.ExtractAudio
   - TGBot.Download.DownloadOptions.FfmpegDir
+  - TGBot.Download.DownloadOptions.FfmpegPath
   - TGBot.Download.DownloadOptions.FormatExpression
   - TGBot.Download.DownloadOptions.JobDir
   - TGBot.Download.DownloadOptions.MaxSizeBytes
@@ -547,6 +548,37 @@ items:
       type: System.String
     content.vb: Public Property YoutubePlayerClients As String
   overload: TGBot.Download.DownloadOptions.YoutubePlayerClients*
+- uid: TGBot.Download.DownloadOptions.FfmpegPath
+  commentId: P:TGBot.Download.DownloadOptions.FfmpegPath
+  id: FfmpegPath
+  parent: TGBot.Download.DownloadOptions
+  langs:
+  - csharp
+  - vb
+  name: FfmpegPath
+  nameWithType: DownloadOptions.FfmpegPath
+  fullName: TGBot.Download.DownloadOptions.FfmpegPath
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Download/DownloadOptions.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: FfmpegPath
+    path: ../src/TGBot/Download/DownloadOptions.cs
+    startLine: 41
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: ffmpeg 二进制绝对路径（音频转码用，可为空）。
+  example: []
+  syntax:
+    content: public string? FfmpegPath { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property FfmpegPath As String
+  overload: TGBot.Download.DownloadOptions.FfmpegPath*
 references:
 - uid: TGBot.Download
   commentId: N:TGBot.Download
@@ -1078,3 +1110,9 @@ references:
   name: YoutubePlayerClients
   nameWithType: DownloadOptions.YoutubePlayerClients
   fullName: TGBot.Download.DownloadOptions.YoutubePlayerClients
+- uid: TGBot.Download.DownloadOptions.FfmpegPath*
+  commentId: Overload:TGBot.Download.DownloadOptions.FfmpegPath
+  href: TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_FfmpegPath
+  name: FfmpegPath
+  nameWithType: DownloadOptions.FfmpegPath
+  fullName: TGBot.Download.DownloadOptions.FfmpegPath

@@ -276,7 +276,7 @@ public sealed class CommandHandler
     {
         try
         {
-            await _client.SendMessageAsync(msg.ChatId, text, msg.IsPrivate ? msg.TriggerMessageId : 0, cancellationToken).ConfigureAwait(false);
+            await _client.SendMessageAsync(msg.ChatId, text, msg.IsPrivate ? msg.TriggerMessageId : 0, null, cancellationToken).ConfigureAwait(false);
         }
         catch (Exception ex)
         {

@@ -92,6 +92,21 @@ public static class YtDlpFormatPicker
         return $"{bestVideo.FormatId}+{bestAudio.FormatId}";
     }
 
+    /// <summary>
+    /// 判断媒体是否含视频流（存在 <c>vcodec!="none"</c> 且高度 &gt; 0 的真实视频格式，排除 storyboard 等）。
+    /// </summary>
+    /// <param name="formats">格式列表。</param>
+    /// <returns>含视频返回 <see langword="true"/>。</returns>
+    public static bool HasVideo(IReadOnlyList<FormatInfo> formats)
+        => formats.Any(f => !IsNone(f.Vcodec) && (f.Height ?? 0) > 0 && !f.HasDrm);
+
+    /// <summary>
+    /// 判断媒体是否仅音频（没有任何真实视频格式）。
+    /// </summary>
+    /// <param name="formats">格式列表。</param>
+    /// <returns>仅音频返回 <see langword="true"/>。</returns>
+    public static bool IsAudioOnly(IReadOnlyList<FormatInfo> formats) => !HasVideo(formats);
+
     private static bool IsNone(string? codec)
         => string.IsNullOrEmpty(codec) || codec.Equals("none", StringComparison.OrdinalIgnoreCase);
 

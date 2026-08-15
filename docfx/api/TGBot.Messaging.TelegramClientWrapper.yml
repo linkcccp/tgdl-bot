@@ -13,7 +13,7 @@ items:
   - TGBot.Messaging.TelegramClientWrapper.SendAudioAsync(System.Int64,System.String,System.String,System.String,System.String,System.String,System.Threading.CancellationToken)
   - TGBot.Messaging.TelegramClientWrapper.SendChatActionAsync(System.Int64,TGBot.Messaging.BotChatAction,System.Threading.CancellationToken)
   - TGBot.Messaging.TelegramClientWrapper.SendDocumentAsync(System.Int64,System.String,System.String,System.String,System.Threading.CancellationToken)
-  - TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
+  - TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(System.Int64,System.String,System.Int32,System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton},System.Threading.CancellationToken)
   - TGBot.Messaging.TelegramClientWrapper.SendVideoAsync(System.Int64,System.String,System.String,System.String,System.Threading.CancellationToken)
   - TGBot.Messaging.TelegramClientWrapper.SetCommandsAsync(System.Threading.CancellationToken)
   langs:
@@ -30,7 +30,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TelegramClientWrapper
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -68,7 +68,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 27
+    startLine: 28
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -112,7 +112,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetBotUsernameAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -131,16 +131,16 @@ items:
   overload: TGBot.Messaging.TelegramClientWrapper.GetBotUsernameAsync*
   implements:
   - TGBot.Messaging.ITelegramClient.GetBotUsernameAsync(System.Threading.CancellationToken)
-- uid: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
-  commentId: M:TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
-  id: SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
+- uid: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(System.Int64,System.String,System.Int32,System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton},System.Threading.CancellationToken)
+  commentId: M:TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(System.Int64,System.String,System.Int32,System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton},System.Threading.CancellationToken)
+  id: SendMessageAsync(System.Int64,System.String,System.Int32,System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton},System.Threading.CancellationToken)
   parent: TGBot.Messaging.TelegramClientWrapper
   langs:
   - csharp
   - vb
-  name: SendMessageAsync(long, string, int, CancellationToken)
-  nameWithType: TelegramClientWrapper.SendMessageAsync(long, string, int, CancellationToken)
-  fullName: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(long, string, int, System.Threading.CancellationToken)
+  name: SendMessageAsync(long, string, int, IReadOnlyList<InlineButton>?, CancellationToken)
+  nameWithType: TelegramClientWrapper.SendMessageAsync(long, string, int, IReadOnlyList<InlineButton>?, CancellationToken)
+  fullName: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(long, string, int, System.Collections.Generic.IReadOnlyList<TGBot.Messaging.InlineButton>?, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -149,14 +149,14 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendMessageAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 41
+    startLine: 42
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
   summary: 发送文本消息。
   example: []
   syntax:
-    content: public Task SendMessageAsync(long chatId, string text, int replyToMessageId, CancellationToken cancellationToken)
+    content: public Task SendMessageAsync(long chatId, string text, int replyToMessageId, IReadOnlyList<InlineButton>? inlineKeyboard, CancellationToken cancellationToken)
     parameters:
     - id: chatId
       type: System.Int64
@@ -167,18 +167,21 @@ items:
     - id: replyToMessageId
       type: System.Int32
       description: 回复的消息 ID，0 表示不回复。
+    - id: inlineKeyboard
+      type: System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton}
+      description: 内联键盘按钮（可为空）。
     - id: cancellationToken
       type: System.Threading.CancellationToken
       description: 取消令牌。
     return:
       type: System.Threading.Tasks.Task
-    content.vb: Public Function SendMessageAsync(chatId As Long, text As String, replyToMessageId As Integer, cancellationToken As CancellationToken) As Task
+    content.vb: Public Function SendMessageAsync(chatId As Long, text As String, replyToMessageId As Integer, inlineKeyboard As IReadOnlyList(Of InlineButton), cancellationToken As CancellationToken) As Task
   overload: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync*
   implements:
-  - TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
-  nameWithType.vb: TelegramClientWrapper.SendMessageAsync(Long, String, Integer, CancellationToken)
-  fullName.vb: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(Long, String, Integer, System.Threading.CancellationToken)
-  name.vb: SendMessageAsync(Long, String, Integer, CancellationToken)
+  - TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton},System.Threading.CancellationToken)
+  nameWithType.vb: TelegramClientWrapper.SendMessageAsync(Long, String, Integer, IReadOnlyList(Of InlineButton), CancellationToken)
+  fullName.vb: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(Long, String, Integer, System.Collections.Generic.IReadOnlyList(Of TGBot.Messaging.InlineButton), System.Threading.CancellationToken)
+  name.vb: SendMessageAsync(Long, String, Integer, IReadOnlyList(Of InlineButton), CancellationToken)
 - uid: TGBot.Messaging.TelegramClientWrapper.SendChatActionAsync(System.Int64,TGBot.Messaging.BotChatAction,System.Threading.CancellationToken)
   commentId: M:TGBot.Messaging.TelegramClientWrapper.SendChatActionAsync(System.Int64,TGBot.Messaging.BotChatAction,System.Threading.CancellationToken)
   id: SendChatActionAsync(System.Int64,TGBot.Messaging.BotChatAction,System.Threading.CancellationToken)
@@ -197,7 +200,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendChatActionAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 50
+    startLine: 58
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -242,7 +245,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendVideoAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 63
+    startLine: 71
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -293,7 +296,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendAudioAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 75
+    startLine: 83
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -350,7 +353,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendDocumentAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 88
+    startLine: 96
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -401,7 +404,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SetCommandsAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 99
+    startLine: 107
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -437,7 +440,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadFileAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 113
+    startLine: 121
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -482,7 +485,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DropPendingUpdatesAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 129
+    startLine: 137
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -518,7 +521,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RunLongPollingAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 135
+    startLine: 143
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -1031,25 +1034,25 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
 - uid: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync*
   commentId: Overload:TGBot.Messaging.TelegramClientWrapper.SendMessageAsync
-  href: TGBot.Messaging.TelegramClientWrapper.html#TGBot_Messaging_TelegramClientWrapper_SendMessageAsync_System_Int64_System_String_System_Int32_System_Threading_CancellationToken_
+  href: TGBot.Messaging.TelegramClientWrapper.html#TGBot_Messaging_TelegramClientWrapper_SendMessageAsync_System_Int64_System_String_System_Int32_System_Collections_Generic_IReadOnlyList_TGBot_Messaging_InlineButton__System_Threading_CancellationToken_
   name: SendMessageAsync
   nameWithType: TelegramClientWrapper.SendMessageAsync
   fullName: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync
-- uid: TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
-  commentId: M:TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
+- uid: TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton},System.Threading.CancellationToken)
+  commentId: M:TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton},System.Threading.CancellationToken)
   parent: TGBot.Messaging.ITelegramClient
   isExternal: true
-  href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SendMessageAsync_System_Int64_System_String_System_Int32_System_Threading_CancellationToken_
-  name: SendMessageAsync(long, string, int, CancellationToken)
-  nameWithType: ITelegramClient.SendMessageAsync(long, string, int, CancellationToken)
-  fullName: TGBot.Messaging.ITelegramClient.SendMessageAsync(long, string, int, System.Threading.CancellationToken)
-  nameWithType.vb: ITelegramClient.SendMessageAsync(Long, String, Integer, CancellationToken)
-  fullName.vb: TGBot.Messaging.ITelegramClient.SendMessageAsync(Long, String, Integer, System.Threading.CancellationToken)
-  name.vb: SendMessageAsync(Long, String, Integer, CancellationToken)
+  href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SendMessageAsync_System_Int64_System_String_System_Int32_System_Collections_Generic_IReadOnlyList_TGBot_Messaging_InlineButton__System_Threading_CancellationToken_
+  name: SendMessageAsync(long, string, int, IReadOnlyList<InlineButton>, CancellationToken)
+  nameWithType: ITelegramClient.SendMessageAsync(long, string, int, IReadOnlyList<InlineButton>, CancellationToken)
+  fullName: TGBot.Messaging.ITelegramClient.SendMessageAsync(long, string, int, System.Collections.Generic.IReadOnlyList<TGBot.Messaging.InlineButton>, System.Threading.CancellationToken)
+  nameWithType.vb: ITelegramClient.SendMessageAsync(Long, String, Integer, IReadOnlyList(Of InlineButton), CancellationToken)
+  fullName.vb: TGBot.Messaging.ITelegramClient.SendMessageAsync(Long, String, Integer, System.Collections.Generic.IReadOnlyList(Of TGBot.Messaging.InlineButton), System.Threading.CancellationToken)
+  name.vb: SendMessageAsync(Long, String, Integer, IReadOnlyList(Of InlineButton), CancellationToken)
   spec.csharp:
-  - uid: TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
+  - uid: TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton},System.Threading.CancellationToken)
     name: SendMessageAsync
-    href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SendMessageAsync_System_Int64_System_String_System_Int32_System_Threading_CancellationToken_
+    href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SendMessageAsync_System_Int64_System_String_System_Int32_System_Collections_Generic_IReadOnlyList_TGBot_Messaging_InlineButton__System_Threading_CancellationToken_
   - name: (
   - uid: System.Int64
     name: long
@@ -1069,15 +1072,26 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: ','
   - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: TGBot.Messaging.InlineButton
+    name: InlineButton
+    href: TGBot.Messaging.InlineButton.html
+  - name: '>'
+  - name: ','
+  - name: " "
   - uid: System.Threading.CancellationToken
     name: CancellationToken
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
   - name: )
   spec.vb:
-  - uid: TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
+  - uid: TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton},System.Threading.CancellationToken)
     name: SendMessageAsync
-    href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SendMessageAsync_System_Int64_System_String_System_Int32_System_Threading_CancellationToken_
+    href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SendMessageAsync_System_Int64_System_String_System_Int32_System_Collections_Generic_IReadOnlyList_TGBot_Messaging_InlineButton__System_Threading_CancellationToken_
   - name: (
   - uid: System.Int64
     name: Long
@@ -1095,6 +1109,19 @@ references:
     name: Integer
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Messaging.InlineButton
+    name: InlineButton
+    href: TGBot.Messaging.InlineButton.html
+  - name: )
   - name: ','
   - name: " "
   - uid: System.Threading.CancellationToken
@@ -1124,6 +1151,39 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton}
+  commentId: T:System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<InlineButton>
+  nameWithType: IReadOnlyList<InlineButton>
+  fullName: System.Collections.Generic.IReadOnlyList<TGBot.Messaging.InlineButton>
+  nameWithType.vb: IReadOnlyList(Of InlineButton)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of TGBot.Messaging.InlineButton)
+  name.vb: IReadOnlyList(Of InlineButton)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: TGBot.Messaging.InlineButton
+    name: InlineButton
+    href: TGBot.Messaging.InlineButton.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Messaging.InlineButton
+    name: InlineButton
+    href: TGBot.Messaging.InlineButton.html
+  - name: )
 - uid: System.Threading.Tasks.Task
   commentId: T:System.Threading.Tasks.Task
   parent: System.Threading.Tasks
@@ -1132,6 +1192,71 @@ references:
   name: Task
   nameWithType: Task
   fullName: System.Threading.Tasks.Task
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: TGBot.Messaging.TelegramClientWrapper.SendChatActionAsync*
   commentId: Overload:TGBot.Messaging.TelegramClientWrapper.SendChatActionAsync
   href: TGBot.Messaging.TelegramClientWrapper.html#TGBot_Messaging_TelegramClientWrapper_SendChatActionAsync_System_Int64_TGBot_Messaging_BotChatAction_System_Threading_CancellationToken_

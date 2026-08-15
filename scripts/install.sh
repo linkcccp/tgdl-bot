@@ -90,6 +90,10 @@ fi
 log "容器状态："
 docker ps --filter name=tgdl-bot --format '  {{.Names}}  {{.Status}}  {{.Image}}'
 
+# 清理旧镜像（悬空），避免磁盘堆积；不影响在用镜像与卷
+log "清理悬空旧镜像…"
+docker image prune -f >/dev/null 2>&1 || true
+
 # ---------- 5. 提示 ----------
 cat <<EOF
 

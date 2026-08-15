@@ -199,6 +199,9 @@ items:
   - uid: TGBot.Messaging.InboundMessage
     name: InboundMessage
     type: Class
+  - uid: TGBot.Messaging.InlineButton
+    name: InlineButton
+    type: Class
   - uid: TGBot.Messaging.TelegramClientWrapper
     name: TelegramClientWrapper
     type: Class

@@ -271,15 +271,15 @@ references:
   fullName.vb: TGBot.Application.DownloadCoordinator.New
   nameWithType: DownloadCoordinator.DownloadCoordinator
   nameWithType.vb: DownloadCoordinator.New
-- uid: TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)
-  name: EnqueueAsync(InboundMessage, string, CancellationToken)
-  href: api/TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator_EnqueueAsync_TGBot_Messaging_InboundMessage_System_String_System_Threading_CancellationToken_
-  commentId: M:TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)
-  name.vb: EnqueueAsync(InboundMessage, String, CancellationToken)
-  fullName: TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage, string, System.Threading.CancellationToken)
-  fullName.vb: TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage, String, System.Threading.CancellationToken)
-  nameWithType: DownloadCoordinator.EnqueueAsync(InboundMessage, string, CancellationToken)
-  nameWithType.vb: DownloadCoordinator.EnqueueAsync(InboundMessage, String, CancellationToken)
+- uid: TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.String,System.Threading.CancellationToken)
+  name: EnqueueAsync(InboundMessage, string, string, CancellationToken)
+  href: api/TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator_EnqueueAsync_TGBot_Messaging_InboundMessage_System_String_System_String_System_Threading_CancellationToken_
+  commentId: M:TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.String,System.Threading.CancellationToken)
+  name.vb: EnqueueAsync(InboundMessage, String, String, CancellationToken)
+  fullName: TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage, string, string, System.Threading.CancellationToken)
+  fullName.vb: TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage, String, String, System.Threading.CancellationToken)
+  nameWithType: DownloadCoordinator.EnqueueAsync(InboundMessage, string, string, CancellationToken)
+  nameWithType.vb: DownloadCoordinator.EnqueueAsync(InboundMessage, String, String, CancellationToken)
 - uid: TGBot.Application.DownloadCoordinator.EnqueueAsync*
   name: EnqueueAsync
   href: api/TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator_EnqueueAsync_
@@ -287,6 +287,22 @@ references:
   isSpec: "True"
   fullName: TGBot.Application.DownloadCoordinator.EnqueueAsync
   nameWithType: DownloadCoordinator.EnqueueAsync
+- uid: TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync(System.String,System.Threading.CancellationToken)
+  name: IsAudioOnlyAsync(string, CancellationToken)
+  href: api/TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator_IsAudioOnlyAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync(System.String,System.Threading.CancellationToken)
+  name.vb: IsAudioOnlyAsync(String, CancellationToken)
+  fullName: TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync(string, System.Threading.CancellationToken)
+  fullName.vb: TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync(String, System.Threading.CancellationToken)
+  nameWithType: DownloadCoordinator.IsAudioOnlyAsync(string, CancellationToken)
+  nameWithType.vb: DownloadCoordinator.IsAudioOnlyAsync(String, CancellationToken)
+- uid: TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync*
+  name: IsAudioOnlyAsync
+  href: api/TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator_IsAudioOnlyAsync_
+  commentId: Overload:TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync
+  isSpec: "True"
+  fullName: TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync
+  nameWithType: DownloadCoordinator.IsAudioOnlyAsync
 - uid: TGBot.Application.MessageRouter
   name: MessageRouter
   href: api/TGBot.Application.MessageRouter.html
@@ -584,6 +600,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Config.AppConfig.TargetChannelIds
   nameWithType: AppConfig.TargetChannelIds
+- uid: TGBot.Config.AppConfig.TgdlDefaultMode
+  name: TgdlDefaultMode
+  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_TgdlDefaultMode
+  commentId: P:TGBot.Config.AppConfig.TgdlDefaultMode
+  fullName: TGBot.Config.AppConfig.TgdlDefaultMode
+  nameWithType: AppConfig.TgdlDefaultMode
+- uid: TGBot.Config.AppConfig.TgdlDefaultMode*
+  name: TgdlDefaultMode
+  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_TgdlDefaultMode_
+  commentId: Overload:TGBot.Config.AppConfig.TgdlDefaultMode
+  isSpec: "True"
+  fullName: TGBot.Config.AppConfig.TgdlDefaultMode
+  nameWithType: AppConfig.TgdlDefaultMode
 - uid: TGBot.Config.AppConfig.UpdateFfmpeg
   name: UpdateFfmpeg
   href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_UpdateFfmpeg
@@ -2280,6 +2309,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Download.DownloadOptions.FfmpegDir
   nameWithType: DownloadOptions.FfmpegDir
+- uid: TGBot.Download.DownloadOptions.FfmpegPath
+  name: FfmpegPath
+  href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_FfmpegPath
+  commentId: P:TGBot.Download.DownloadOptions.FfmpegPath
+  fullName: TGBot.Download.DownloadOptions.FfmpegPath
+  nameWithType: DownloadOptions.FfmpegPath
+- uid: TGBot.Download.DownloadOptions.FfmpegPath*
+  name: FfmpegPath
+  href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_FfmpegPath_
+  commentId: Overload:TGBot.Download.DownloadOptions.FfmpegPath
+  isSpec: "True"
+  fullName: TGBot.Download.DownloadOptions.FfmpegPath
+  nameWithType: DownloadOptions.FfmpegPath
 - uid: TGBot.Download.DownloadOptions.FormatExpression
   name: FormatExpression
   href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_FormatExpression
@@ -2696,6 +2738,22 @@ references:
   isSpec: "True"
   fullName: TGBot.Download.IDownloader.DownloadAsync
   nameWithType: IDownloader.DownloadAsync
+- uid: TGBot.Download.IDownloader.DownloadAudioBundleAsync(TGBot.Download.DownloadOptions,System.Action{TGBot.Download.DownloadProgress},System.Threading.CancellationToken)
+  name: DownloadAudioBundleAsync(DownloadOptions, Action<DownloadProgress>?, CancellationToken)
+  href: api/TGBot.Download.IDownloader.html#TGBot_Download_IDownloader_DownloadAudioBundleAsync_TGBot_Download_DownloadOptions_System_Action_TGBot_Download_DownloadProgress__System_Threading_CancellationToken_
+  commentId: M:TGBot.Download.IDownloader.DownloadAudioBundleAsync(TGBot.Download.DownloadOptions,System.Action{TGBot.Download.DownloadProgress},System.Threading.CancellationToken)
+  name.vb: DownloadAudioBundleAsync(DownloadOptions, Action(Of DownloadProgress), CancellationToken)
+  fullName: TGBot.Download.IDownloader.DownloadAudioBundleAsync(TGBot.Download.DownloadOptions, System.Action<TGBot.Download.DownloadProgress>?, System.Threading.CancellationToken)
+  fullName.vb: TGBot.Download.IDownloader.DownloadAudioBundleAsync(TGBot.Download.DownloadOptions, System.Action(Of TGBot.Download.DownloadProgress), System.Threading.CancellationToken)
+  nameWithType: IDownloader.DownloadAudioBundleAsync(DownloadOptions, Action<DownloadProgress>?, CancellationToken)
+  nameWithType.vb: IDownloader.DownloadAudioBundleAsync(DownloadOptions, Action(Of DownloadProgress), CancellationToken)
+- uid: TGBot.Download.IDownloader.DownloadAudioBundleAsync*
+  name: DownloadAudioBundleAsync
+  href: api/TGBot.Download.IDownloader.html#TGBot_Download_IDownloader_DownloadAudioBundleAsync_
+  commentId: Overload:TGBot.Download.IDownloader.DownloadAudioBundleAsync
+  isSpec: "True"
+  fullName: TGBot.Download.IDownloader.DownloadAudioBundleAsync
+  nameWithType: IDownloader.DownloadAudioBundleAsync
 - uid: TGBot.Download.IDownloader.ProbeBestFormatAsync(TGBot.Download.DownloadOptions,System.Threading.CancellationToken)
   name: ProbeBestFormatAsync(DownloadOptions, CancellationToken)
   href: api/TGBot.Download.IDownloader.html#TGBot_Download_IDownloader_ProbeBestFormatAsync_TGBot_Download_DownloadOptions_System_Threading_CancellationToken_
@@ -2709,6 +2767,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Download.IDownloader.ProbeBestFormatAsync
   nameWithType: IDownloader.ProbeBestFormatAsync
+- uid: TGBot.Download.IDownloader.ProbeFormatsAsync(TGBot.Download.DownloadOptions,System.Threading.CancellationToken)
+  name: ProbeFormatsAsync(DownloadOptions, CancellationToken)
+  href: api/TGBot.Download.IDownloader.html#TGBot_Download_IDownloader_ProbeFormatsAsync_TGBot_Download_DownloadOptions_System_Threading_CancellationToken_
+  commentId: M:TGBot.Download.IDownloader.ProbeFormatsAsync(TGBot.Download.DownloadOptions,System.Threading.CancellationToken)
+  fullName: TGBot.Download.IDownloader.ProbeFormatsAsync(TGBot.Download.DownloadOptions, System.Threading.CancellationToken)
+  nameWithType: IDownloader.ProbeFormatsAsync(DownloadOptions, CancellationToken)
+- uid: TGBot.Download.IDownloader.ProbeFormatsAsync*
+  name: ProbeFormatsAsync
+  href: api/TGBot.Download.IDownloader.html#TGBot_Download_IDownloader_ProbeFormatsAsync_
+  commentId: Overload:TGBot.Download.IDownloader.ProbeFormatsAsync
+  isSpec: "True"
+  fullName: TGBot.Download.IDownloader.ProbeFormatsAsync
+  nameWithType: IDownloader.ProbeFormatsAsync
 - uid: TGBot.Download.JobRegistry
   name: JobRegistry
   href: api/TGBot.Download.JobRegistry.html
@@ -2888,6 +2959,22 @@ references:
   isSpec: "True"
   fullName: TGBot.Download.YtDlpDownloader.DownloadAsync
   nameWithType: YtDlpDownloader.DownloadAsync
+- uid: TGBot.Download.YtDlpDownloader.DownloadAudioBundleAsync(TGBot.Download.DownloadOptions,System.Action{TGBot.Download.DownloadProgress},System.Threading.CancellationToken)
+  name: DownloadAudioBundleAsync(DownloadOptions, Action<DownloadProgress>?, CancellationToken)
+  href: api/TGBot.Download.YtDlpDownloader.html#TGBot_Download_YtDlpDownloader_DownloadAudioBundleAsync_TGBot_Download_DownloadOptions_System_Action_TGBot_Download_DownloadProgress__System_Threading_CancellationToken_
+  commentId: M:TGBot.Download.YtDlpDownloader.DownloadAudioBundleAsync(TGBot.Download.DownloadOptions,System.Action{TGBot.Download.DownloadProgress},System.Threading.CancellationToken)
+  name.vb: DownloadAudioBundleAsync(DownloadOptions, Action(Of DownloadProgress), CancellationToken)
+  fullName: TGBot.Download.YtDlpDownloader.DownloadAudioBundleAsync(TGBot.Download.DownloadOptions, System.Action<TGBot.Download.DownloadProgress>?, System.Threading.CancellationToken)
+  fullName.vb: TGBot.Download.YtDlpDownloader.DownloadAudioBundleAsync(TGBot.Download.DownloadOptions, System.Action(Of TGBot.Download.DownloadProgress), System.Threading.CancellationToken)
+  nameWithType: YtDlpDownloader.DownloadAudioBundleAsync(DownloadOptions, Action<DownloadProgress>?, CancellationToken)
+  nameWithType.vb: YtDlpDownloader.DownloadAudioBundleAsync(DownloadOptions, Action(Of DownloadProgress), CancellationToken)
+- uid: TGBot.Download.YtDlpDownloader.DownloadAudioBundleAsync*
+  name: DownloadAudioBundleAsync
+  href: api/TGBot.Download.YtDlpDownloader.html#TGBot_Download_YtDlpDownloader_DownloadAudioBundleAsync_
+  commentId: Overload:TGBot.Download.YtDlpDownloader.DownloadAudioBundleAsync
+  isSpec: "True"
+  fullName: TGBot.Download.YtDlpDownloader.DownloadAudioBundleAsync
+  nameWithType: YtDlpDownloader.DownloadAudioBundleAsync
 - uid: TGBot.Download.YtDlpDownloader.ProbeBestFormatAsync(TGBot.Download.DownloadOptions,System.Threading.CancellationToken)
   name: ProbeBestFormatAsync(DownloadOptions, CancellationToken)
   href: api/TGBot.Download.YtDlpDownloader.html#TGBot_Download_YtDlpDownloader_ProbeBestFormatAsync_TGBot_Download_DownloadOptions_System_Threading_CancellationToken_
@@ -2901,12 +2988,57 @@ references:
   isSpec: "True"
   fullName: TGBot.Download.YtDlpDownloader.ProbeBestFormatAsync
   nameWithType: YtDlpDownloader.ProbeBestFormatAsync
+- uid: TGBot.Download.YtDlpDownloader.ProbeFormatsAsync(TGBot.Download.DownloadOptions,System.Threading.CancellationToken)
+  name: ProbeFormatsAsync(DownloadOptions, CancellationToken)
+  href: api/TGBot.Download.YtDlpDownloader.html#TGBot_Download_YtDlpDownloader_ProbeFormatsAsync_TGBot_Download_DownloadOptions_System_Threading_CancellationToken_
+  commentId: M:TGBot.Download.YtDlpDownloader.ProbeFormatsAsync(TGBot.Download.DownloadOptions,System.Threading.CancellationToken)
+  fullName: TGBot.Download.YtDlpDownloader.ProbeFormatsAsync(TGBot.Download.DownloadOptions, System.Threading.CancellationToken)
+  nameWithType: YtDlpDownloader.ProbeFormatsAsync(DownloadOptions, CancellationToken)
+- uid: TGBot.Download.YtDlpDownloader.ProbeFormatsAsync*
+  name: ProbeFormatsAsync
+  href: api/TGBot.Download.YtDlpDownloader.html#TGBot_Download_YtDlpDownloader_ProbeFormatsAsync_
+  commentId: Overload:TGBot.Download.YtDlpDownloader.ProbeFormatsAsync
+  isSpec: "True"
+  fullName: TGBot.Download.YtDlpDownloader.ProbeFormatsAsync
+  nameWithType: YtDlpDownloader.ProbeFormatsAsync
 - uid: TGBot.Download.YtDlpFormatPicker
   name: YtDlpFormatPicker
   href: api/TGBot.Download.YtDlpFormatPicker.html
   commentId: T:TGBot.Download.YtDlpFormatPicker
   fullName: TGBot.Download.YtDlpFormatPicker
   nameWithType: YtDlpFormatPicker
+- uid: TGBot.Download.YtDlpFormatPicker.HasVideo(System.Collections.Generic.IReadOnlyList{TGBot.Download.FormatInfo})
+  name: HasVideo(IReadOnlyList<FormatInfo>)
+  href: api/TGBot.Download.YtDlpFormatPicker.html#TGBot_Download_YtDlpFormatPicker_HasVideo_System_Collections_Generic_IReadOnlyList_TGBot_Download_FormatInfo__
+  commentId: M:TGBot.Download.YtDlpFormatPicker.HasVideo(System.Collections.Generic.IReadOnlyList{TGBot.Download.FormatInfo})
+  name.vb: HasVideo(IReadOnlyList(Of FormatInfo))
+  fullName: TGBot.Download.YtDlpFormatPicker.HasVideo(System.Collections.Generic.IReadOnlyList<TGBot.Download.FormatInfo>)
+  fullName.vb: TGBot.Download.YtDlpFormatPicker.HasVideo(System.Collections.Generic.IReadOnlyList(Of TGBot.Download.FormatInfo))
+  nameWithType: YtDlpFormatPicker.HasVideo(IReadOnlyList<FormatInfo>)
+  nameWithType.vb: YtDlpFormatPicker.HasVideo(IReadOnlyList(Of FormatInfo))
+- uid: TGBot.Download.YtDlpFormatPicker.HasVideo*
+  name: HasVideo
+  href: api/TGBot.Download.YtDlpFormatPicker.html#TGBot_Download_YtDlpFormatPicker_HasVideo_
+  commentId: Overload:TGBot.Download.YtDlpFormatPicker.HasVideo
+  isSpec: "True"
+  fullName: TGBot.Download.YtDlpFormatPicker.HasVideo
+  nameWithType: YtDlpFormatPicker.HasVideo
+- uid: TGBot.Download.YtDlpFormatPicker.IsAudioOnly(System.Collections.Generic.IReadOnlyList{TGBot.Download.FormatInfo})
+  name: IsAudioOnly(IReadOnlyList<FormatInfo>)
+  href: api/TGBot.Download.YtDlpFormatPicker.html#TGBot_Download_YtDlpFormatPicker_IsAudioOnly_System_Collections_Generic_IReadOnlyList_TGBot_Download_FormatInfo__
+  commentId: M:TGBot.Download.YtDlpFormatPicker.IsAudioOnly(System.Collections.Generic.IReadOnlyList{TGBot.Download.FormatInfo})
+  name.vb: IsAudioOnly(IReadOnlyList(Of FormatInfo))
+  fullName: TGBot.Download.YtDlpFormatPicker.IsAudioOnly(System.Collections.Generic.IReadOnlyList<TGBot.Download.FormatInfo>)
+  fullName.vb: TGBot.Download.YtDlpFormatPicker.IsAudioOnly(System.Collections.Generic.IReadOnlyList(Of TGBot.Download.FormatInfo))
+  nameWithType: YtDlpFormatPicker.IsAudioOnly(IReadOnlyList<FormatInfo>)
+  nameWithType.vb: YtDlpFormatPicker.IsAudioOnly(IReadOnlyList(Of FormatInfo))
+- uid: TGBot.Download.YtDlpFormatPicker.IsAudioOnly*
+  name: IsAudioOnly
+  href: api/TGBot.Download.YtDlpFormatPicker.html#TGBot_Download_YtDlpFormatPicker_IsAudioOnly_
+  commentId: Overload:TGBot.Download.YtDlpFormatPicker.IsAudioOnly
+  isSpec: "True"
+  fullName: TGBot.Download.YtDlpFormatPicker.IsAudioOnly
+  nameWithType: YtDlpFormatPicker.IsAudioOnly
 - uid: TGBot.Download.YtDlpFormatPicker.ParseFormats(System.String)
   name: ParseFormats(string)
   href: api/TGBot.Download.YtDlpFormatPicker.html#TGBot_Download_YtDlpFormatPicker_ParseFormats_System_String_
@@ -3692,15 +3824,15 @@ references:
   isSpec: "True"
   fullName: TGBot.Messaging.ITelegramClient.SendDocumentAsync
   nameWithType: ITelegramClient.SendDocumentAsync
-- uid: TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
-  name: SendMessageAsync(long, string, int, CancellationToken)
-  href: api/TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SendMessageAsync_System_Int64_System_String_System_Int32_System_Threading_CancellationToken_
-  commentId: M:TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
-  name.vb: SendMessageAsync(Long, String, Integer, CancellationToken)
-  fullName: TGBot.Messaging.ITelegramClient.SendMessageAsync(long, string, int, System.Threading.CancellationToken)
-  fullName.vb: TGBot.Messaging.ITelegramClient.SendMessageAsync(Long, String, Integer, System.Threading.CancellationToken)
-  nameWithType: ITelegramClient.SendMessageAsync(long, string, int, CancellationToken)
-  nameWithType.vb: ITelegramClient.SendMessageAsync(Long, String, Integer, CancellationToken)
+- uid: TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton},System.Threading.CancellationToken)
+  name: SendMessageAsync(long, string, int, IReadOnlyList<InlineButton>?, CancellationToken)
+  href: api/TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SendMessageAsync_System_Int64_System_String_System_Int32_System_Collections_Generic_IReadOnlyList_TGBot_Messaging_InlineButton__System_Threading_CancellationToken_
+  commentId: M:TGBot.Messaging.ITelegramClient.SendMessageAsync(System.Int64,System.String,System.Int32,System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton},System.Threading.CancellationToken)
+  name.vb: SendMessageAsync(Long, String, Integer, IReadOnlyList(Of InlineButton), CancellationToken)
+  fullName: TGBot.Messaging.ITelegramClient.SendMessageAsync(long, string, int, System.Collections.Generic.IReadOnlyList<TGBot.Messaging.InlineButton>?, System.Threading.CancellationToken)
+  fullName.vb: TGBot.Messaging.ITelegramClient.SendMessageAsync(Long, String, Integer, System.Collections.Generic.IReadOnlyList(Of TGBot.Messaging.InlineButton), System.Threading.CancellationToken)
+  nameWithType: ITelegramClient.SendMessageAsync(long, string, int, IReadOnlyList<InlineButton>?, CancellationToken)
+  nameWithType.vb: ITelegramClient.SendMessageAsync(Long, String, Integer, IReadOnlyList(Of InlineButton), CancellationToken)
 - uid: TGBot.Messaging.ITelegramClient.SendMessageAsync*
   name: SendMessageAsync
   href: api/TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SendMessageAsync_
@@ -3743,6 +3875,19 @@ references:
   commentId: T:TGBot.Messaging.InboundMessage
   fullName: TGBot.Messaging.InboundMessage
   nameWithType: InboundMessage
+- uid: TGBot.Messaging.InboundMessage.CallbackData
+  name: CallbackData
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_CallbackData
+  commentId: P:TGBot.Messaging.InboundMessage.CallbackData
+  fullName: TGBot.Messaging.InboundMessage.CallbackData
+  nameWithType: InboundMessage.CallbackData
+- uid: TGBot.Messaging.InboundMessage.CallbackData*
+  name: CallbackData
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_CallbackData_
+  commentId: Overload:TGBot.Messaging.InboundMessage.CallbackData
+  isSpec: "True"
+  fullName: TGBot.Messaging.InboundMessage.CallbackData
+  nameWithType: InboundMessage.CallbackData
 - uid: TGBot.Messaging.InboundMessage.Caption
   name: Caption
   href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_Caption
@@ -3808,6 +3953,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Messaging.InboundMessage.DocumentSizeBytes
   nameWithType: InboundMessage.DocumentSizeBytes
+- uid: TGBot.Messaging.InboundMessage.IsCallback
+  name: IsCallback
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_IsCallback
+  commentId: P:TGBot.Messaging.InboundMessage.IsCallback
+  fullName: TGBot.Messaging.InboundMessage.IsCallback
+  nameWithType: InboundMessage.IsCallback
+- uid: TGBot.Messaging.InboundMessage.IsCallback*
+  name: IsCallback
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_IsCallback_
+  commentId: Overload:TGBot.Messaging.InboundMessage.IsCallback
+  isSpec: "True"
+  fullName: TGBot.Messaging.InboundMessage.IsCallback
+  nameWithType: InboundMessage.IsCallback
 - uid: TGBot.Messaging.InboundMessage.IsPrivate
   name: IsPrivate
   href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_IsPrivate
@@ -3873,6 +4031,57 @@ references:
   isSpec: "True"
   fullName: TGBot.Messaging.InboundMessage.UrlSearchText
   nameWithType: InboundMessage.UrlSearchText
+- uid: TGBot.Messaging.InlineButton
+  name: InlineButton
+  href: api/TGBot.Messaging.InlineButton.html
+  commentId: T:TGBot.Messaging.InlineButton
+  fullName: TGBot.Messaging.InlineButton
+  nameWithType: InlineButton
+- uid: TGBot.Messaging.InlineButton.#ctor(System.String,System.String)
+  name: InlineButton(string, string)
+  href: api/TGBot.Messaging.InlineButton.html#TGBot_Messaging_InlineButton__ctor_System_String_System_String_
+  commentId: M:TGBot.Messaging.InlineButton.#ctor(System.String,System.String)
+  name.vb: New(String, String)
+  fullName: TGBot.Messaging.InlineButton.InlineButton(string, string)
+  fullName.vb: TGBot.Messaging.InlineButton.New(String, String)
+  nameWithType: InlineButton.InlineButton(string, string)
+  nameWithType.vb: InlineButton.New(String, String)
+- uid: TGBot.Messaging.InlineButton.#ctor*
+  name: InlineButton
+  href: api/TGBot.Messaging.InlineButton.html#TGBot_Messaging_InlineButton__ctor_
+  commentId: Overload:TGBot.Messaging.InlineButton.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Messaging.InlineButton.InlineButton
+  fullName.vb: TGBot.Messaging.InlineButton.New
+  nameWithType: InlineButton.InlineButton
+  nameWithType.vb: InlineButton.New
+- uid: TGBot.Messaging.InlineButton.CallbackData
+  name: CallbackData
+  href: api/TGBot.Messaging.InlineButton.html#TGBot_Messaging_InlineButton_CallbackData
+  commentId: P:TGBot.Messaging.InlineButton.CallbackData
+  fullName: TGBot.Messaging.InlineButton.CallbackData
+  nameWithType: InlineButton.CallbackData
+- uid: TGBot.Messaging.InlineButton.CallbackData*
+  name: CallbackData
+  href: api/TGBot.Messaging.InlineButton.html#TGBot_Messaging_InlineButton_CallbackData_
+  commentId: Overload:TGBot.Messaging.InlineButton.CallbackData
+  isSpec: "True"
+  fullName: TGBot.Messaging.InlineButton.CallbackData
+  nameWithType: InlineButton.CallbackData
+- uid: TGBot.Messaging.InlineButton.Text
+  name: Text
+  href: api/TGBot.Messaging.InlineButton.html#TGBot_Messaging_InlineButton_Text
+  commentId: P:TGBot.Messaging.InlineButton.Text
+  fullName: TGBot.Messaging.InlineButton.Text
+  nameWithType: InlineButton.Text
+- uid: TGBot.Messaging.InlineButton.Text*
+  name: Text
+  href: api/TGBot.Messaging.InlineButton.html#TGBot_Messaging_InlineButton_Text_
+  commentId: Overload:TGBot.Messaging.InlineButton.Text
+  isSpec: "True"
+  fullName: TGBot.Messaging.InlineButton.Text
+  nameWithType: InlineButton.Text
 - uid: TGBot.Messaging.TelegramClientWrapper
   name: TelegramClientWrapper
   href: api/TGBot.Messaging.TelegramClientWrapper.html
@@ -4004,15 +4213,15 @@ references:
   isSpec: "True"
   fullName: TGBot.Messaging.TelegramClientWrapper.SendDocumentAsync
   nameWithType: TelegramClientWrapper.SendDocumentAsync
-- uid: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
-  name: SendMessageAsync(long, string, int, CancellationToken)
-  href: api/TGBot.Messaging.TelegramClientWrapper.html#TGBot_Messaging_TelegramClientWrapper_SendMessageAsync_System_Int64_System_String_System_Int32_System_Threading_CancellationToken_
-  commentId: M:TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(System.Int64,System.String,System.Int32,System.Threading.CancellationToken)
-  name.vb: SendMessageAsync(Long, String, Integer, CancellationToken)
-  fullName: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(long, string, int, System.Threading.CancellationToken)
-  fullName.vb: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(Long, String, Integer, System.Threading.CancellationToken)
-  nameWithType: TelegramClientWrapper.SendMessageAsync(long, string, int, CancellationToken)
-  nameWithType.vb: TelegramClientWrapper.SendMessageAsync(Long, String, Integer, CancellationToken)
+- uid: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(System.Int64,System.String,System.Int32,System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton},System.Threading.CancellationToken)
+  name: SendMessageAsync(long, string, int, IReadOnlyList<InlineButton>?, CancellationToken)
+  href: api/TGBot.Messaging.TelegramClientWrapper.html#TGBot_Messaging_TelegramClientWrapper_SendMessageAsync_System_Int64_System_String_System_Int32_System_Collections_Generic_IReadOnlyList_TGBot_Messaging_InlineButton__System_Threading_CancellationToken_
+  commentId: M:TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(System.Int64,System.String,System.Int32,System.Collections.Generic.IReadOnlyList{TGBot.Messaging.InlineButton},System.Threading.CancellationToken)
+  name.vb: SendMessageAsync(Long, String, Integer, IReadOnlyList(Of InlineButton), CancellationToken)
+  fullName: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(long, string, int, System.Collections.Generic.IReadOnlyList<TGBot.Messaging.InlineButton>?, System.Threading.CancellationToken)
+  fullName.vb: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(Long, String, Integer, System.Collections.Generic.IReadOnlyList(Of TGBot.Messaging.InlineButton), System.Threading.CancellationToken)
+  nameWithType: TelegramClientWrapper.SendMessageAsync(long, string, int, IReadOnlyList<InlineButton>?, CancellationToken)
+  nameWithType.vb: TelegramClientWrapper.SendMessageAsync(Long, String, Integer, IReadOnlyList(Of InlineButton), CancellationToken)
 - uid: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync*
   name: SendMessageAsync
   href: api/TGBot.Messaging.TelegramClientWrapper.html#TGBot_Messaging_TelegramClientWrapper_SendMessageAsync_
@@ -4125,15 +4334,15 @@ references:
   fullName.vb: TGBot.Messaging.UploadService.New
   nameWithType: UploadService.UploadService
   nameWithType.vb: UploadService.New
-- uid: TGBot.Messaging.UploadService.UploadAsync(TGBot.Download.DownloadedMedia,System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
-  name: UploadAsync(DownloadedMedia, IReadOnlyList<long>, long?, CancellationToken)
-  href: api/TGBot.Messaging.UploadService.html#TGBot_Messaging_UploadService_UploadAsync_TGBot_Download_DownloadedMedia_System_Collections_Generic_IReadOnlyList_System_Int64__System_Nullable_System_Int64__System_Threading_CancellationToken_
-  commentId: M:TGBot.Messaging.UploadService.UploadAsync(TGBot.Download.DownloadedMedia,System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
-  name.vb: UploadAsync(DownloadedMedia, IReadOnlyList(Of Long), Long?, CancellationToken)
-  fullName: TGBot.Messaging.UploadService.UploadAsync(TGBot.Download.DownloadedMedia, System.Collections.Generic.IReadOnlyList<long>, long?, System.Threading.CancellationToken)
-  fullName.vb: TGBot.Messaging.UploadService.UploadAsync(TGBot.Download.DownloadedMedia, System.Collections.Generic.IReadOnlyList(Of Long), Long?, System.Threading.CancellationToken)
-  nameWithType: UploadService.UploadAsync(DownloadedMedia, IReadOnlyList<long>, long?, CancellationToken)
-  nameWithType.vb: UploadService.UploadAsync(DownloadedMedia, IReadOnlyList(Of Long), Long?, CancellationToken)
+- uid: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
+  name: UploadAsync(IReadOnlyList<DownloadedMedia>, IReadOnlyList<long>, long?, CancellationToken)
+  href: api/TGBot.Messaging.UploadService.html#TGBot_Messaging_UploadService_UploadAsync_System_Collections_Generic_IReadOnlyList_TGBot_Download_DownloadedMedia__System_Collections_Generic_IReadOnlyList_System_Int64__System_Nullable_System_Int64__System_Threading_CancellationToken_
+  commentId: M:TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
+  name.vb: UploadAsync(IReadOnlyList(Of DownloadedMedia), IReadOnlyList(Of Long), Long?, CancellationToken)
+  fullName: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList<TGBot.Download.DownloadedMedia>, System.Collections.Generic.IReadOnlyList<long>, long?, System.Threading.CancellationToken)
+  fullName.vb: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList(Of TGBot.Download.DownloadedMedia), System.Collections.Generic.IReadOnlyList(Of Long), Long?, System.Threading.CancellationToken)
+  nameWithType: UploadService.UploadAsync(IReadOnlyList<DownloadedMedia>, IReadOnlyList<long>, long?, CancellationToken)
+  nameWithType.vb: UploadService.UploadAsync(IReadOnlyList(Of DownloadedMedia), IReadOnlyList(Of Long), Long?, CancellationToken)
 - uid: TGBot.Messaging.UploadService.UploadAsync*
   name: UploadAsync
   href: api/TGBot.Messaging.UploadService.html#TGBot_Messaging_UploadService_UploadAsync_
@@ -4515,6 +4724,12 @@ references:
   commentId: T:TGBot.Texts.UserTexts
   fullName: TGBot.Texts.UserTexts
   nameWithType: UserTexts
+- uid: TGBot.Texts.UserTexts.AudioBundleDone
+  name: AudioBundleDone
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AudioBundleDone
+  commentId: F:TGBot.Texts.UserTexts.AudioBundleDone
+  fullName: TGBot.Texts.UserTexts.AudioBundleDone
+  nameWithType: UserTexts.AudioBundleDone
 - uid: TGBot.Texts.UserTexts.AuthRequired
   name: AuthRequired
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AuthRequired
@@ -4629,6 +4844,24 @@ references:
   commentId: F:TGBot.Texts.UserTexts.Help
   fullName: TGBot.Texts.UserTexts.Help
   nameWithType: UserTexts.Help
+- uid: TGBot.Texts.UserTexts.ModeAudioButton
+  name: ModeAudioButton
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ModeAudioButton
+  commentId: F:TGBot.Texts.UserTexts.ModeAudioButton
+  fullName: TGBot.Texts.UserTexts.ModeAudioButton
+  nameWithType: UserTexts.ModeAudioButton
+- uid: TGBot.Texts.UserTexts.ModeChoice
+  name: ModeChoice
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ModeChoice
+  commentId: F:TGBot.Texts.UserTexts.ModeChoice
+  fullName: TGBot.Texts.UserTexts.ModeChoice
+  nameWithType: UserTexts.ModeChoice
+- uid: TGBot.Texts.UserTexts.ModeVideoButton
+  name: ModeVideoButton
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ModeVideoButton
+  commentId: F:TGBot.Texts.UserTexts.ModeVideoButton
+  fullName: TGBot.Texts.UserTexts.ModeVideoButton
+  nameWithType: UserTexts.ModeVideoButton
 - uid: TGBot.Texts.UserTexts.NoDiskSpace
   name: NoDiskSpace
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_NoDiskSpace

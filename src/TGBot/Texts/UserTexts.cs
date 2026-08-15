@@ -80,6 +80,20 @@ public static class UserTexts
     public const string FormatUnavailable =
         "该视频可用格式不足，无法按当前配置下载（可能仅限登录/地区，或编码无法封装）。";
 
+    /// <summary>下载模式选择提示。</summary>
+    public const string ModeChoice =
+        "该链接含视频和音频，请选择下载方式：";
+
+    /// <summary>视频+音频按钮。</summary>
+    public const string ModeVideoButton = "🎬 视频+音频";
+
+    /// <summary>仅音频按钮。</summary>
+    public const string ModeAudioButton = "🎵 仅音频";
+
+    /// <summary>仅音频任务完成提示。参数：flac 文件名、mp3 文件名。</summary>
+    public const string AudioBundleDone =
+        "已推送最高音质音频：\n{0}（无损）\n{1}（流式播放）";
+
     /// <summary>cookie 使用说明。</summary>
     public const string CookieUsage =
         "用法：\n"

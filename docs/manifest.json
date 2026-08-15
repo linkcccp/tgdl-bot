@@ -112,7 +112,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "TGBot.Application.DownloadCoordinator",
-      "Summary": "<p sourcefile=\"api/TGBot.Application.DownloadCoordinator.yml\" sourcestartlinenumber=\"1\">下载协调器：负责排队、并发控制、重试、进度通知与临时文件清理。</p>\n"
+      "Summary": "<p sourcefile=\"api/TGBot.Application.DownloadCoordinator.yml\" sourcestartlinenumber=\"1\">下载协调器：负责排队、并发控制、模式（视频/音频）、重试、进度通知与临时文件清理。</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -126,7 +126,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "TGBot.Application.MessageRouter",
-      "Summary": "<p sourcefile=\"api/TGBot.Application.MessageRouter.yml\" sourcestartlinenumber=\"1\">消息路由器：访问控制 → 指令 / 文件（cookies 上传）/ 链接校验 → 下载任务入队。</p>\n"
+      "Summary": "<p sourcefile=\"api/TGBot.Application.MessageRouter.yml\" sourcestartlinenumber=\"1\">消息路由器：访问控制 → 指令 / 文件（cookies 上传）/ 链接校验与模式选择 → 下载任务入队。</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -883,6 +883,20 @@
       "IsMRef": true,
       "Title": "TGBot.Messaging.InboundMessage",
       "Summary": "<p sourcefile=\"api/TGBot.Messaging.InboundMessage.yml\" sourcestartlinenumber=\"1\">入站消息模型（与具体 Bot 库解耦，便于单元测试）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Messaging.InlineButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Messaging.InlineButton.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Messaging.InlineButton",
+      "Summary": "<p sourcefile=\"api/TGBot.Messaging.InlineButton.yml\" sourcestartlinenumber=\"1\">内联键盘按钮。</p>\n"
     },
     {
       "type": "ManagedReference",

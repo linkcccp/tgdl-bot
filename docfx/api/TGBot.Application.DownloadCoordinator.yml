@@ -6,7 +6,8 @@ items:
   parent: TGBot.Application
   children:
   - TGBot.Application.DownloadCoordinator.#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
-  - TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)
+  - TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.String,System.Threading.CancellationToken)
+  - TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync(System.String,System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
@@ -25,7 +26,7 @@ items:
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
-  summary: 下载协调器：负责排队、并发控制、重试、进度通知与临时文件清理。
+  summary: 下载协调器：负责排队、并发控制、模式（视频/音频）、重试、进度通知与临时文件清理。
   example: []
   syntax:
     content: public sealed class DownloadCoordinator
@@ -98,16 +99,57 @@ items:
   nameWithType.vb: DownloadCoordinator.New(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger)
   fullName.vb: TGBot.Application.DownloadCoordinator.New(TGBot.Download.IDownloader, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, TGBot.Security.TempDirManager, TGBot.Messaging.UploadService, TGBot.Messaging.ITelegramClient, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
   name.vb: New(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger)
-- uid: TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)
-  commentId: M:TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)
-  id: EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)
+- uid: TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync(System.String,System.Threading.CancellationToken)
+  id: IsAudioOnlyAsync(System.String,System.Threading.CancellationToken)
   parent: TGBot.Application.DownloadCoordinator
   langs:
   - csharp
   - vb
-  name: EnqueueAsync(InboundMessage, string, CancellationToken)
-  nameWithType: DownloadCoordinator.EnqueueAsync(InboundMessage, string, CancellationToken)
-  fullName: TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage, string, System.Threading.CancellationToken)
+  name: IsAudioOnlyAsync(string, CancellationToken)
+  nameWithType: DownloadCoordinator.IsAudioOnlyAsync(string, CancellationToken)
+  fullName: TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync(string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Application/DownloadCoordinator.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: IsAudioOnlyAsync
+    path: ../src/TGBot/Application/DownloadCoordinator.cs
+    startLine: 65
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Application
+  summary: 探测媒体是否仅音频（用于决定下载模式）。
+  example: []
+  syntax:
+    content: public Task<bool> IsAudioOnlyAsync(string url, CancellationToken cancellationToken)
+    parameters:
+    - id: url
+      type: System.String
+      description: 规范化 URL。
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: 仅音频返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；探测失败时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>（按含视频处理）。
+    content.vb: Public Function IsAudioOnlyAsync(url As String, cancellationToken As CancellationToken) As Task(Of Boolean)
+  overload: TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync*
+  nameWithType.vb: DownloadCoordinator.IsAudioOnlyAsync(String, CancellationToken)
+  fullName.vb: TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync(String, System.Threading.CancellationToken)
+  name.vb: IsAudioOnlyAsync(String, CancellationToken)
+- uid: TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.String,System.Threading.CancellationToken)
+  id: EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.String,System.Threading.CancellationToken)
+  parent: TGBot.Application.DownloadCoordinator
+  langs:
+  - csharp
+  - vb
+  name: EnqueueAsync(InboundMessage, string, string, CancellationToken)
+  nameWithType: DownloadCoordinator.EnqueueAsync(InboundMessage, string, string, CancellationToken)
+  fullName: TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage, string, string, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -116,14 +158,14 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: EnqueueAsync
     path: ../src/TGBot/Application/DownloadCoordinator.cs
-    startLine: 66
+    startLine: 93
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
   summary: 入队一个下载任务。URL 去重失败时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>。
   example: []
   syntax:
-    content: public Task<bool> EnqueueAsync(InboundMessage msg, string normalizedUrl, CancellationToken cancellationToken)
+    content: public Task<bool> EnqueueAsync(InboundMessage msg, string normalizedUrl, string mode, CancellationToken cancellationToken)
     parameters:
     - id: msg
       type: TGBot.Messaging.InboundMessage
@@ -131,17 +173,20 @@ items:
     - id: normalizedUrl
       type: System.String
       description: 规范化 URL。
+    - id: mode
+      type: System.String
+      description: 下载模式：<code>video</code>（合并）或 <code>audio</code>（仅音频）。
     - id: cancellationToken
       type: System.Threading.CancellationToken
       description: 取消令牌。
     return:
       type: System.Threading.Tasks.Task{System.Boolean}
       description: 入队成功返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。
-    content.vb: Public Function EnqueueAsync(msg As InboundMessage, normalizedUrl As String, cancellationToken As CancellationToken) As Task(Of Boolean)
+    content.vb: Public Function EnqueueAsync(msg As InboundMessage, normalizedUrl As String, mode As String, cancellationToken As CancellationToken) As Task(Of Boolean)
   overload: TGBot.Application.DownloadCoordinator.EnqueueAsync*
-  nameWithType.vb: DownloadCoordinator.EnqueueAsync(InboundMessage, String, CancellationToken)
-  fullName.vb: TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage, String, System.Threading.CancellationToken)
-  name.vb: EnqueueAsync(InboundMessage, String, CancellationToken)
+  nameWithType.vb: DownloadCoordinator.EnqueueAsync(InboundMessage, String, String, CancellationToken)
+  fullName.vb: TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage, String, String, System.Threading.CancellationToken)
+  name.vb: EnqueueAsync(InboundMessage, String, String, CancellationToken)
 references:
 - uid: TGBot.Application
   commentId: N:TGBot.Application
@@ -589,19 +634,12 @@ references:
   - uid: TGBot.Logging
     name: Logging
     href: TGBot.Logging.html
-- uid: TGBot.Application.DownloadCoordinator.EnqueueAsync*
-  commentId: Overload:TGBot.Application.DownloadCoordinator.EnqueueAsync
-  href: TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator_EnqueueAsync_TGBot_Messaging_InboundMessage_System_String_System_Threading_CancellationToken_
-  name: EnqueueAsync
-  nameWithType: DownloadCoordinator.EnqueueAsync
-  fullName: TGBot.Application.DownloadCoordinator.EnqueueAsync
-- uid: TGBot.Messaging.InboundMessage
-  commentId: T:TGBot.Messaging.InboundMessage
-  parent: TGBot.Messaging
-  href: TGBot.Messaging.InboundMessage.html
-  name: InboundMessage
-  nameWithType: InboundMessage
-  fullName: TGBot.Messaging.InboundMessage
+- uid: TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync*
+  commentId: Overload:TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync
+  href: TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator_IsAudioOnlyAsync_System_String_System_Threading_CancellationToken_
+  name: IsAudioOnlyAsync
+  nameWithType: DownloadCoordinator.IsAudioOnlyAsync
+  fullName: TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -748,3 +786,16 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: TGBot.Application.DownloadCoordinator.EnqueueAsync*
+  commentId: Overload:TGBot.Application.DownloadCoordinator.EnqueueAsync
+  href: TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator_EnqueueAsync_TGBot_Messaging_InboundMessage_System_String_System_String_System_Threading_CancellationToken_
+  name: EnqueueAsync
+  nameWithType: DownloadCoordinator.EnqueueAsync
+  fullName: TGBot.Application.DownloadCoordinator.EnqueueAsync
+- uid: TGBot.Messaging.InboundMessage
+  commentId: T:TGBot.Messaging.InboundMessage
+  parent: TGBot.Messaging
+  href: TGBot.Messaging.InboundMessage.html
+  name: InboundMessage
+  nameWithType: InboundMessage
+  fullName: TGBot.Messaging.InboundMessage

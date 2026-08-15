@@ -33,7 +33,7 @@ cd /opt/tgdl-bot && sudo docker compose up -d
 docker ps                                   # 查看容器状态
 docker logs -f tgdl-bot                     # 查看日志
 cd /opt/tgdl-bot && sudo docker compose up -d   # 修改 .env 后重启
-cd /opt/tgdl-bot && sudo docker compose pull && sudo docker compose up -d   # 升级到最新镜像
+cd /opt/tgdl-bot && sudo docker compose pull && sudo docker compose up -d && sudo docker image prune -f   # 升级并清理旧镜像
 ```
 
 ## 容器内自更新

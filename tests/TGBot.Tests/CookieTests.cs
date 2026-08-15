@@ -324,7 +324,7 @@ public class AuthRequiredNoRetryTests : IDisposable
             SenderUserId = 1000,
             Text = "https://youtube.com/watch?v=1",
         };
-        Assert.True(await coordinator.EnqueueAsync(msg, "https://youtube.com/watch?v=1", CancellationToken.None));
+        Assert.True(await coordinator.EnqueueAsync(msg, "https://youtube.com/watch?v=1", "video", CancellationToken.None));
 
         for (var i = 0; i < 50 && calls == 0; i++)
         {

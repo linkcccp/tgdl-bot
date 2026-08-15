@@ -5,11 +5,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class ConfigParser | TGBot API 文档 </title>
+      <title>Class InlineButton | TGBot API 文档 </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class ConfigParser | TGBot API 文档 ">
+      <meta name="title" content="Class InlineButton | TGBot API 文档 ">
     
-    <meta name="description" content="config.conf 解析器。 格式：每行 键 = 值，支持 #/; 注释、空行与 [section] 段头。 解析失败抛出 ，消息为清晰的中文提示（含行号）。">
+    <meta name="description" content="内联键盘按钮。">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -66,20 +66,22 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="TGBot.Config.ConfigParser">
+            <article class="content wrap" id="_content" data-uid="TGBot.Messaging.InlineButton">
 
 
 
-  <h1 id="TGBot_Config_ConfigParser" data-uid="TGBot.Config.ConfigParser" class="text-break">Class ConfigParser</h1>
-  <div class="markdown level0 summary"><p>config.conf 解析器。</p>
-<p>格式：每行 <code>键 = 值</code>，支持 <code>#</code>/<code>;</code> 注释、空行与 <code>[section]</code> 段头。
-解析失败抛出 <a class="xref" href="TGBot.Config.ConfigParseException.html">ConfigParseException</a>，消息为清晰的中文提示（含行号）。</p>
+  <h1 id="TGBot_Messaging_InlineButton" data-uid="TGBot.Messaging.InlineButton" class="text-break">Class InlineButton</h1>
+  <div class="markdown level0 summary"><p>内联键盘按钮。</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">ConfigParser</span></div>
+    <div class="level1"><span class="xref">InlineButton</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="TGBot.Messaging.InlineButton.html">InlineButton</a>&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -96,38 +98,35 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="TGBot.html">TGBot</a>.<a class="xref" href="TGBot.Config.html">Config</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="TGBot.html">TGBot</a>.<a class="xref" href="TGBot.Messaging.html">Messaging</a></h6>
   <h6><strong>Assembly</strong>: tgdl-bot.dll</h6>
-  <h5 id="TGBot_Config_ConfigParser_syntax">Syntax</h5>
+  <h5 id="TGBot_Messaging_InlineButton_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class ConfigParser</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed record InlineButton : IEquatable&lt;InlineButton&gt;</code></pre>
   </div>
-  <h3 id="methods">Methods
+  <h3 id="constructors">Constructors
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Config_ConfigParser_Parse_System_String_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigParser.Parse(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Messaging_InlineButton__ctor_System_String_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Messaging.InlineButton.%23ctor(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Config/ConfigParser.cs/#L72">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Messaging/ITelegramClient.cs/#L8">View Source</a>
   </span>
-  <a id="TGBot_Config_ConfigParser_Parse_" data-uid="TGBot.Config.ConfigParser.Parse*"></a>
-  <h4 id="TGBot_Config_ConfigParser_Parse_System_String_System_String_" data-uid="TGBot.Config.ConfigParser.Parse(System.String,System.String)">Parse(string, string)</h4>
-  <div class="markdown level1 summary"><p>解析配置文件文本。</p>
+  <a id="TGBot_Messaging_InlineButton__ctor_" data-uid="TGBot.Messaging.InlineButton.#ctor*"></a>
+  <h4 id="TGBot_Messaging_InlineButton__ctor_System_String_System_String_" data-uid="TGBot.Messaging.InlineButton.#ctor(System.String,System.String)">InlineButton(string, string)</h4>
+  <div class="markdown level1 summary"><p>内联键盘按钮。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static ConfigParseResult Parse(string content, string sourcePath)</code></pre>
+    <pre><code class="lang-csharp hljs">public InlineButton(string Text, string CallbackData)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -141,19 +140,37 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">content</span></td>
-        <td><p>配置文件全部内容。</p>
+        <td><span class="parametername">Text</span></td>
+        <td><p>按钮文本。</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">sourcePath</span></td>
-        <td><p>配置文件路径，用于错误提示。</p>
+        <td><span class="parametername">CallbackData</span></td>
+        <td><p>回调数据。</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Messaging_InlineButton_CallbackData.md&amp;value=---%0Auid%3A%20TGBot.Messaging.InlineButton.CallbackData%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Messaging/ITelegramClient.cs/#L8">View Source</a>
+  </span>
+  <a id="TGBot_Messaging_InlineButton_CallbackData_" data-uid="TGBot.Messaging.InlineButton.CallbackData*"></a>
+  <h4 id="TGBot_Messaging_InlineButton_CallbackData" data-uid="TGBot.Messaging.InlineButton.CallbackData">CallbackData</h4>
+  <div class="markdown level1 summary"><p>回调数据。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CallbackData { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
     <thead>
       <tr>
@@ -163,28 +180,46 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="TGBot.Config.ConfigParseResult.html">ConfigParseResult</a></td>
-        <td><p>解析结果。</p>
-</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 class="exceptions">Exceptions</h5>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Messaging_InlineButton_Text.md&amp;value=---%0Auid%3A%20TGBot.Messaging.InlineButton.Text%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Messaging/ITelegramClient.cs/#L8">View Source</a>
+  </span>
+  <a id="TGBot_Messaging_InlineButton_Text_" data-uid="TGBot.Messaging.InlineButton.Text*"></a>
+  <h4 id="TGBot_Messaging_InlineButton_Text" data-uid="TGBot.Messaging.InlineButton.Text">Text</h4>
+  <div class="markdown level1 summary"><p>按钮文本。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Text { get; init; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Condition</th>
+        <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="TGBot.Config.ConfigParseException.html">ConfigParseException</a></td>
-        <td><p>配置缺失、格式错误或值非法时抛出。</p>
-</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
 
 </article>
           </div>
@@ -194,10 +229,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Config_ConfigParser.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigParser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Messaging_InlineButton.md&amp;value=---%0Auid%3A%20TGBot.Messaging.InlineButton%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Config/ConfigParser.cs/#L19" class="contribution-link">View Source</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Messaging/ITelegramClient.cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

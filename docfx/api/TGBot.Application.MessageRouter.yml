@@ -21,11 +21,11 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MessageRouter
     path: ../src/TGBot/Application/MessageRouter.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
-  summary: 消息路由器：访问控制 → 指令 / 文件（cookies 上传）/ 链接校验 → 下载任务入队。
+  summary: 消息路由器：访问控制 → 指令 / 文件（cookies 上传）/ 链接校验与模式选择 → 下载任务入队。
   example: []
   syntax:
     content: public sealed class MessageRouter
@@ -57,7 +57,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Application/MessageRouter.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
@@ -113,11 +113,11 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: HandleAsync
     path: ../src/TGBot/Application/MessageRouter.cs
-    startLine: 61
+    startLine: 68
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
-  summary: 处理一条入站消息。
+  summary: 处理一条入站消息或回调。
   example: []
   syntax:
     content: public Task HandleAsync(InboundMessage msg, CancellationToken cancellationToken)

@@ -23,7 +23,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: BotChatAction
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 65
+    startLine: 82
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -50,7 +50,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Typing
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 68
+    startLine: 85
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -78,7 +78,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadVideo
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 71
+    startLine: 88
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -106,7 +106,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadAudio
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 74
+    startLine: 91
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -134,7 +134,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadDocument
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 77
+    startLine: 94
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging

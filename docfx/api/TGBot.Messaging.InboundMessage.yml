@@ -5,11 +5,13 @@ items:
   id: InboundMessage
   parent: TGBot.Messaging
   children:
+  - TGBot.Messaging.InboundMessage.CallbackData
   - TGBot.Messaging.InboundMessage.Caption
   - TGBot.Messaging.InboundMessage.ChatId
   - TGBot.Messaging.InboundMessage.DocumentFileId
   - TGBot.Messaging.InboundMessage.DocumentFileName
   - TGBot.Messaging.InboundMessage.DocumentSizeBytes
+  - TGBot.Messaging.InboundMessage.IsCallback
   - TGBot.Messaging.InboundMessage.IsPrivate
   - TGBot.Messaging.InboundMessage.SenderUserId
   - TGBot.Messaging.InboundMessage.Text
@@ -29,7 +31,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: InboundMessage
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 5
+    startLine: 12
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -65,7 +67,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ChatId
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 10
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -96,7 +98,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsPrivate
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 15
+    startLine: 22
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -127,7 +129,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SenderUserId
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 20
+    startLine: 27
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -158,7 +160,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Text
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 25
+    startLine: 32
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -189,7 +191,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Caption
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 30
+    startLine: 37
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -220,7 +222,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TriggerMessageId
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 35
+    startLine: 42
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -251,7 +253,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DocumentFileId
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 40
+    startLine: 47
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -282,7 +284,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DocumentFileName
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 45
+    startLine: 52
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -313,7 +315,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DocumentSizeBytes
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 50
+    startLine: 57
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -326,6 +328,68 @@ items:
       type: System.Nullable{System.Int64}
     content.vb: Public Property DocumentSizeBytes As Long?
   overload: TGBot.Messaging.InboundMessage.DocumentSizeBytes*
+- uid: TGBot.Messaging.InboundMessage.IsCallback
+  commentId: P:TGBot.Messaging.InboundMessage.IsCallback
+  id: IsCallback
+  parent: TGBot.Messaging.InboundMessage
+  langs:
+  - csharp
+  - vb
+  name: IsCallback
+  nameWithType: InboundMessage.IsCallback
+  fullName: TGBot.Messaging.InboundMessage.IsCallback
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: IsCallback
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 62
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 是否为回调消息（内联键盘按钮）。
+  example: []
+  syntax:
+    content: public bool IsCallback { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCallback As Boolean
+  overload: TGBot.Messaging.InboundMessage.IsCallback*
+- uid: TGBot.Messaging.InboundMessage.CallbackData
+  commentId: P:TGBot.Messaging.InboundMessage.CallbackData
+  id: CallbackData
+  parent: TGBot.Messaging.InboundMessage
+  langs:
+  - csharp
+  - vb
+  name: CallbackData
+  nameWithType: InboundMessage.CallbackData
+  fullName: TGBot.Messaging.InboundMessage.CallbackData
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CallbackData
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 67
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 回调数据（IsCallback 为 true 时非空）。
+  example: []
+  syntax:
+    content: public string? CallbackData { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CallbackData As String
+  overload: TGBot.Messaging.InboundMessage.CallbackData*
 - uid: TGBot.Messaging.InboundMessage.UrlSearchText
   commentId: P:TGBot.Messaging.InboundMessage.UrlSearchText
   id: UrlSearchText
@@ -344,7 +408,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlSearchText
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 55
+    startLine: 72
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -742,6 +806,18 @@ references:
   name: DocumentSizeBytes
   nameWithType: InboundMessage.DocumentSizeBytes
   fullName: TGBot.Messaging.InboundMessage.DocumentSizeBytes
+- uid: TGBot.Messaging.InboundMessage.IsCallback*
+  commentId: Overload:TGBot.Messaging.InboundMessage.IsCallback
+  href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_IsCallback
+  name: IsCallback
+  nameWithType: InboundMessage.IsCallback
+  fullName: TGBot.Messaging.InboundMessage.IsCallback
+- uid: TGBot.Messaging.InboundMessage.CallbackData*
+  commentId: Overload:TGBot.Messaging.InboundMessage.CallbackData
+  href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_CallbackData
+  name: CallbackData
+  nameWithType: InboundMessage.CallbackData
+  fullName: TGBot.Messaging.InboundMessage.CallbackData
 - uid: TGBot.Messaging.InboundMessage.UrlSearchText*
   commentId: Overload:TGBot.Messaging.InboundMessage.UrlSearchText
   href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_UrlSearchText

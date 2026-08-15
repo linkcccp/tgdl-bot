@@ -38,6 +38,8 @@ public static class ConfigParser
         ["YtDlpProxy"] = "YtDlpProxy",
         ["YtDlpExtraArgs"] = "YtDlpExtraArgs",
         ["YtDlpYoutubePlayerClients"] = "YtDlpYoutubePlayerClients",
+        ["TgdlDefaultMode"] = "TgdlDefaultMode",
+        ["DefaultMode"] = "TgdlDefaultMode",
         ["MaxConcurrentDownloads"] = "MaxConcurrentDownloads",
         ["Concurrency"] = "MaxConcurrentDownloads",
         ["LogLevel"] = "LogLevel",
@@ -142,6 +144,7 @@ public static class ConfigParser
             YtDlpYoutubePlayerClients = values.TryGetValue("YtDlpYoutubePlayerClients", out var pc)
                 ? pc
                 : "android,ios,web_embedded,tv",
+            TgdlDefaultMode = GetDefaultMode(values),
             MaxConcurrentDownloads = GetInt(values, "MaxConcurrentDownloads", 2),
             LogLevel = GetLogLevel(values, "LogLevel", Logging.LogLevel.Info),
             LogFile = string.IsNullOrEmpty(GetString(values, "LogFile")) ? null : GetString(values, "LogFile"),
@@ -160,6 +163,22 @@ public static class ConfigParser
 
         Validate(config);
         return new ConfigParseResult(config, warnings);
+    }
+
+    private static string GetDefaultMode(Dictionary<string, string> values)
+    {
+        if (!values.TryGetValue("TgdlDefaultMode", out var v) || v.Length == 0)
+        {
+            return "video";
+        }
+
+        var mode = v.Trim().ToLowerInvariant();
+        if (mode is "video" or "audio")
+        {
+            return mode;
+        }
+
+        throw new ConfigParseException($"配置项 TgdlDefaultMode 必须是 video/audio，实际值为“{v}”。");
     }
 
     private static string NormalizeBaseUrl(string value, string key)

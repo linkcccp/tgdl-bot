@@ -2,6 +2,7 @@ using Telegram.Bot;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.ReplyMarkups;
 
 namespace TGBot.Messaging;
 
@@ -15,7 +16,7 @@ public sealed class TelegramClientWrapper : ITelegramClient
     private readonly ITelegramBotClient _client;
     private readonly ReceiverOptions _receiverOptions = new()
     {
-        AllowedUpdates = new[] { UpdateType.Message, UpdateType.ChannelPost },
+        AllowedUpdates = new[] { UpdateType.Message, UpdateType.ChannelPost, UpdateType.CallbackQuery },
     };
 
     /// <summary>
@@ -39,12 +40,19 @@ public sealed class TelegramClientWrapper : ITelegramClient
     }
 
     /// <inheritdoc />
-    public async Task SendMessageAsync(long chatId, string text, int replyToMessageId, CancellationToken cancellationToken)
+    public async Task SendMessageAsync(long chatId, string text, int replyToMessageId, IReadOnlyList<InlineButton>? inlineKeyboard, CancellationToken cancellationToken)
     {
         ReplyParameters? reply = replyToMessageId > 0
             ? new ReplyParameters { MessageId = replyToMessageId, AllowSendingWithoutReply = true }
             : null;
-        await _client.SendMessage(chatId, text, replyParameters: reply, cancellationToken: cancellationToken).ConfigureAwait(false);
+        InlineKeyboardMarkup? markup = null;
+        if (inlineKeyboard is { Count: > 0 })
+        {
+            markup = new InlineKeyboardMarkup(inlineKeyboard
+                .Select(b => new[] { InlineKeyboardButton.WithCallbackData(b.Text, b.CallbackData) }));
+        }
+
+        await _client.SendMessage(chatId, text, replyParameters: reply, replyMarkup: markup, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <inheritdoc />
@@ -178,6 +186,19 @@ public sealed class TelegramClientWrapper : ITelegramClient
                 Text = cp.Text,
                 Caption = cp.Caption,
                 TriggerMessageId = cp.MessageId,
+            };
+        }
+
+        if (update.CallbackQuery is { } cb && cb.Message is { } cbm)
+        {
+            return new InboundMessage
+            {
+                ChatId = cbm.Chat.Id,
+                IsPrivate = cbm.Chat.Type == ChatType.Private,
+                SenderUserId = cb.From.Id,
+                TriggerMessageId = cbm.MessageId,
+                IsCallback = true,
+                CallbackData = cb.Data,
             };
         }
 

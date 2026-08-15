@@ -8,6 +8,7 @@ items:
   - TGBot.Messaging.CaptionBuilder
   - TGBot.Messaging.ITelegramClient
   - TGBot.Messaging.InboundMessage
+  - TGBot.Messaging.InlineButton
   - TGBot.Messaging.TelegramClientWrapper
   - TGBot.Messaging.UploadResult
   - TGBot.Messaging.UploadService
@@ -27,6 +28,12 @@ references:
   name: CaptionBuilder
   nameWithType: CaptionBuilder
   fullName: TGBot.Messaging.CaptionBuilder
+- uid: TGBot.Messaging.InlineButton
+  commentId: T:TGBot.Messaging.InlineButton
+  href: TGBot.Messaging.InlineButton.html
+  name: InlineButton
+  nameWithType: InlineButton
+  fullName: TGBot.Messaging.InlineButton
 - uid: TGBot.Messaging.InboundMessage
   commentId: T:TGBot.Messaging.InboundMessage
   parent: TGBot.Messaging

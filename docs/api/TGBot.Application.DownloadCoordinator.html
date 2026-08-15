@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class DownloadCoordinator | TGBot API 文档 ">
     
-    <meta name="description" content="下载协调器：负责排队、并发控制、重试、进度通知与临时文件清理。">
+    <meta name="description" content="下载协调器：负责排队、并发控制、模式（视频/音频）、重试、进度通知与临时文件清理。">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -71,7 +71,7 @@
 
 
   <h1 id="TGBot_Application_DownloadCoordinator" data-uid="TGBot.Application.DownloadCoordinator" class="text-break">Class DownloadCoordinator</h1>
-  <div class="markdown level0 summary"><p>下载协调器：负责排队、并发控制、重试、进度通知与临时文件清理。</p>
+  <div class="markdown level0 summary"><p>下载协调器：负责排队、并发控制、模式（视频/音频）、重试、进度通知与临时文件清理。</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -194,19 +194,19 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Application_DownloadCoordinator_EnqueueAsync_TGBot_Messaging_InboundMessage_System_String_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage%2CSystem.String%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Application_DownloadCoordinator_EnqueueAsync_TGBot_Messaging_InboundMessage_System_String_System_String_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage%2CSystem.String%2CSystem.String%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Application/DownloadCoordinator.cs/#L67">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Application/DownloadCoordinator.cs/#L94">View Source</a>
   </span>
   <a id="TGBot_Application_DownloadCoordinator_EnqueueAsync_" data-uid="TGBot.Application.DownloadCoordinator.EnqueueAsync*"></a>
-  <h4 id="TGBot_Application_DownloadCoordinator_EnqueueAsync_TGBot_Messaging_InboundMessage_System_String_System_Threading_CancellationToken_" data-uid="TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)">EnqueueAsync(InboundMessage, string, CancellationToken)</h4>
+  <h4 id="TGBot_Application_DownloadCoordinator_EnqueueAsync_TGBot_Messaging_InboundMessage_System_String_System_String_System_Threading_CancellationToken_" data-uid="TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.String,System.Threading.CancellationToken)">EnqueueAsync(InboundMessage, string, string, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>入队一个下载任务。URL 去重失败时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; EnqueueAsync(InboundMessage msg, string normalizedUrl, CancellationToken cancellationToken)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; EnqueueAsync(InboundMessage msg, string normalizedUrl, string mode, CancellationToken cancellationToken)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -231,6 +231,12 @@
 </td>
       </tr>
       <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>下载模式：<code>video</code>（合并）或 <code>audio</code>（仅音频）。</p>
+</td>
+      </tr>
+      <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>取消令牌。</p>
@@ -250,6 +256,62 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
         <td><p>入队成功返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Application_DownloadCoordinator_IsAudioOnlyAsync_System_String_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync(System.String%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Application/DownloadCoordinator.cs/#L66">View Source</a>
+  </span>
+  <a id="TGBot_Application_DownloadCoordinator_IsAudioOnlyAsync_" data-uid="TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync*"></a>
+  <h4 id="TGBot_Application_DownloadCoordinator_IsAudioOnlyAsync_System_String_System_Threading_CancellationToken_" data-uid="TGBot.Application.DownloadCoordinator.IsAudioOnlyAsync(System.String,System.Threading.CancellationToken)">IsAudioOnlyAsync(string, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>探测媒体是否仅音频（用于决定下载模式）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; IsAudioOnlyAsync(string url, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">url</span></td>
+        <td><p>规范化 URL。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>取消令牌。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
+        <td><p>仅音频返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；探测失败时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>（按含视频处理）。</p>
 </td>
       </tr>
     </tbody>

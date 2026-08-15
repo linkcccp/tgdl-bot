@@ -99,7 +99,7 @@ public class FormatUnavailableFallbackTests : IDisposable
         var (coordinator, client) = Build(downloader);
 
         var msg = new InboundMessage { ChatId = 1000, IsPrivate = true, SenderUserId = 1000, Text = "https://youtube.com/v" };
-        Assert.True(await coordinator.EnqueueAsync(msg, "https://youtube.com/v", CancellationToken.None));
+        Assert.True(await coordinator.EnqueueAsync(msg, "https://youtube.com/v", "video", CancellationToken.None));
 
         for (var i = 0; i < 50 && calls.Count < 2; i++)
         {
@@ -146,7 +146,7 @@ public class FormatUnavailableFallbackTests : IDisposable
         var (coordinator, _) = Build(downloader);
 
         var msg = new InboundMessage { ChatId = 1000, IsPrivate = true, SenderUserId = 1000, Text = "https://youtube.com/v" };
-        Assert.True(await coordinator.EnqueueAsync(msg, "https://youtube.com/v", CancellationToken.None));
+        Assert.True(await coordinator.EnqueueAsync(msg, "https://youtube.com/v", "video", CancellationToken.None));
 
         for (var i = 0; i < 50 && calls < 2; i++)
         {
@@ -172,7 +172,7 @@ public class FormatUnavailableFallbackTests : IDisposable
         var (coordinator, client) = Build(downloader);
 
         var msg = new InboundMessage { ChatId = 1000, IsPrivate = true, SenderUserId = 1000, Text = "https://youtube.com/v" };
-        Assert.True(await coordinator.EnqueueAsync(msg, "https://youtube.com/v", CancellationToken.None));
+        Assert.True(await coordinator.EnqueueAsync(msg, "https://youtube.com/v", "video", CancellationToken.None));
 
         for (var i = 0; i < 50 && calls < 2; i++)
         {
@@ -304,5 +304,56 @@ public class YtDlpFormatArgsTests
         Assert.True(YtDlpArgumentBuilder.IsYoutubeUrl("https://youtu.be/abc"));
         Assert.True(YtDlpArgumentBuilder.IsYoutubeUrl("https://music.youtube.com/x"));
         Assert.False(YtDlpArgumentBuilder.IsYoutubeUrl("https://example.com/v"));
+    }
+}
+
+/// <summary>
+/// <see cref="YtDlpFormatPicker"/> 音视频分类测试。
+/// </summary>
+public class MediaKindTests
+{
+    [Fact]
+    public void HasVideo_RealVideoFormats_True()
+    {
+        var formats = new List<FormatInfo>
+        {
+            new("137", "avc1", "none", 1080, 4000, null, false),
+            new("140", "none", "mp4a.40.2", null, null, 128, false),
+        };
+        Assert.True(YtDlpFormatPicker.HasVideo(formats));
+        Assert.False(YtDlpFormatPicker.IsAudioOnly(formats));
+    }
+
+    [Fact]
+    public void HasVideo_AudioOnly_False()
+    {
+        var formats = new List<FormatInfo>
+        {
+            new("140", "none", "mp4a.40.2", null, null, 128, false),
+            new("251", "none", "opus", null, null, 160, false),
+        };
+        Assert.False(YtDlpFormatPicker.HasVideo(formats));
+        Assert.True(YtDlpFormatPicker.IsAudioOnly(formats));
+    }
+
+    [Fact]
+    public void HasVideo_StoryboardOnly_False()
+    {
+        var formats = new List<FormatInfo>
+        {
+            new("sb0", null, null, 240, null, null, false),
+        };
+        Assert.False(YtDlpFormatPicker.HasVideo(formats));
+    }
+
+    [Fact]
+    public void HasVideo_DrmVideo_Excluded()
+    {
+        var formats = new List<FormatInfo>
+        {
+            new("a", "avc1", "none", 2160, 10000, null, true),
+            new("b", "none", "opus", null, null, 160, false),
+        };
+        Assert.False(YtDlpFormatPicker.HasVideo(formats));
     }
 }

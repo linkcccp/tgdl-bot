@@ -110,7 +110,7 @@ docker logs -f tgdl-bot
 docker ps                                   # 状态
 docker logs -f tgdl-bot                     # 日志
 cd /opt/tgdl-bot && docker compose up -d    # 改 .env 后重启
-cd /opt/tgdl-bot && docker compose pull && docker compose up -d   # 升级镜像
+cd /opt/tgdl-bot && sudo docker compose pull && sudo docker compose up -d && sudo docker image prune -f   # 升级镜像并清理旧镜像
 ```
 
 私聊 bot 发 `/update` 自动更新 yt-dlp/ffmpeg；`/status` 查看版本与内存。
@@ -152,6 +152,20 @@ YouTube 默认启用多 player_client（`TGDL_YTDLP_PLAYER_CLIENTS=android,ios,w
 > **JS 运行时**：yt-dlp 2026.07.04+ 的 YouTube 完整格式提取需要 JavaScript 运行时（deno），
 > 缺失时格式列表不完整，会报 "Requested format is not available"。**Docker 镜像已内置 deno**
 > （仅存在于容器沙盒，不污染宿主机）；本机直接跑 yt-dlp 时需自行安装 deno 并加入 PATH。
+
+## 下载模式（视频 / 音频）
+
+发链接后 bot 会先探测内容，自动选择下载方式：
+
+- **仅音频**（如歌曲链接）：直接下载该站**最高音质音频**，并输出两份上传到目标频道：
+  - `.flac`（无损容器，最高质副本）
+  - `.mp3`（320k，Telegram 在线流式播放）
+- **含视频**：私聊（白名单）内弹出按钮选择：
+  - 🎬 **视频+音频**：合并下载（mp4/mkv，含自动格式兜底）
+  - 🎵 **仅音频**：同上输出 flac+mp3
+  - 2 分钟未选择 / 频道/群组触发 → 按 `TGDL_DEFAULT_MODE`（默认 `video`，可改 `audio`）
+
+升级流程会自动清理旧镜像（`docker image prune -f`）。
 
 ## 本地开发与测试
 

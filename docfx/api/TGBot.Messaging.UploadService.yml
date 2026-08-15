@@ -6,7 +6,7 @@ items:
   parent: TGBot.Messaging
   children:
   - TGBot.Messaging.UploadService.#ctor(TGBot.Messaging.ITelegramClient,System.Int32,System.Boolean,TGBot.Logging.IAppLogger)
-  - TGBot.Messaging.UploadService.UploadAsync(TGBot.Download.DownloadedMedia,System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
+  - TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
@@ -83,16 +83,16 @@ items:
   nameWithType.vb: UploadService.New(ITelegramClient, Integer, Boolean, IAppLogger)
   fullName.vb: TGBot.Messaging.UploadService.New(TGBot.Messaging.ITelegramClient, Integer, Boolean, TGBot.Logging.IAppLogger)
   name.vb: New(ITelegramClient, Integer, Boolean, IAppLogger)
-- uid: TGBot.Messaging.UploadService.UploadAsync(TGBot.Download.DownloadedMedia,System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
-  commentId: M:TGBot.Messaging.UploadService.UploadAsync(TGBot.Download.DownloadedMedia,System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
-  id: UploadAsync(TGBot.Download.DownloadedMedia,System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
+- uid: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
+  commentId: M:TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
+  id: UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
   parent: TGBot.Messaging.UploadService
   langs:
   - csharp
   - vb
-  name: UploadAsync(DownloadedMedia, IReadOnlyList<long>, long?, CancellationToken)
-  nameWithType: UploadService.UploadAsync(DownloadedMedia, IReadOnlyList<long>, long?, CancellationToken)
-  fullName: TGBot.Messaging.UploadService.UploadAsync(TGBot.Download.DownloadedMedia, System.Collections.Generic.IReadOnlyList<long>, long?, System.Threading.CancellationToken)
+  name: UploadAsync(IReadOnlyList<DownloadedMedia>, IReadOnlyList<long>, long?, CancellationToken)
+  nameWithType: UploadService.UploadAsync(IReadOnlyList<DownloadedMedia>, IReadOnlyList<long>, long?, CancellationToken)
+  fullName: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList<TGBot.Download.DownloadedMedia>, System.Collections.Generic.IReadOnlyList<long>, long?, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -105,14 +105,14 @@ items:
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
-  summary: 将媒体上传到所有目标会话。
+  summary: 将一组媒体上传到所有目标会话（同一任务可能含多个产物，如 flac+mp3）。
   example: []
   syntax:
-    content: public Task<UploadResult> UploadAsync(DownloadedMedia media, IReadOnlyList<long> targetChatIds, long? requesterChatId, CancellationToken cancellationToken)
+    content: public Task<UploadResult> UploadAsync(IReadOnlyList<DownloadedMedia> media, IReadOnlyList<long> targetChatIds, long? requesterChatId, CancellationToken cancellationToken)
     parameters:
     - id: media
-      type: TGBot.Download.DownloadedMedia
-      description: 下载产物。
+      type: System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia}
+      description: 下载产物列表。
     - id: targetChatIds
       type: System.Collections.Generic.IReadOnlyList{System.Int64}
       description: 目标会话 ID 列表。
@@ -125,11 +125,11 @@ items:
     return:
       type: System.Threading.Tasks.Task{TGBot.Messaging.UploadResult}
       description: 上传结果。
-    content.vb: Public Function UploadAsync(media As DownloadedMedia, targetChatIds As IReadOnlyList(Of Long), requesterChatId As Long?, cancellationToken As CancellationToken) As Task(Of UploadResult)
+    content.vb: Public Function UploadAsync(media As IReadOnlyList(Of DownloadedMedia), targetChatIds As IReadOnlyList(Of Long), requesterChatId As Long?, cancellationToken As CancellationToken) As Task(Of UploadResult)
   overload: TGBot.Messaging.UploadService.UploadAsync*
-  nameWithType.vb: UploadService.UploadAsync(DownloadedMedia, IReadOnlyList(Of Long), Long?, CancellationToken)
-  fullName.vb: TGBot.Messaging.UploadService.UploadAsync(TGBot.Download.DownloadedMedia, System.Collections.Generic.IReadOnlyList(Of Long), Long?, System.Threading.CancellationToken)
-  name.vb: UploadAsync(DownloadedMedia, IReadOnlyList(Of Long), Long?, CancellationToken)
+  nameWithType.vb: UploadService.UploadAsync(IReadOnlyList(Of DownloadedMedia), IReadOnlyList(Of Long), Long?, CancellationToken)
+  fullName.vb: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList(Of TGBot.Download.DownloadedMedia), System.Collections.Generic.IReadOnlyList(Of Long), Long?, System.Threading.CancellationToken)
+  name.vb: UploadAsync(IReadOnlyList(Of DownloadedMedia), IReadOnlyList(Of Long), Long?, CancellationToken)
 references:
 - uid: TGBot.Messaging
   commentId: N:TGBot.Messaging
@@ -442,17 +442,43 @@ references:
     href: TGBot.Logging.html
 - uid: TGBot.Messaging.UploadService.UploadAsync*
   commentId: Overload:TGBot.Messaging.UploadService.UploadAsync
-  href: TGBot.Messaging.UploadService.html#TGBot_Messaging_UploadService_UploadAsync_TGBot_Download_DownloadedMedia_System_Collections_Generic_IReadOnlyList_System_Int64__System_Nullable_System_Int64__System_Threading_CancellationToken_
+  href: TGBot.Messaging.UploadService.html#TGBot_Messaging_UploadService_UploadAsync_System_Collections_Generic_IReadOnlyList_TGBot_Download_DownloadedMedia__System_Collections_Generic_IReadOnlyList_System_Int64__System_Nullable_System_Int64__System_Threading_CancellationToken_
   name: UploadAsync
   nameWithType: UploadService.UploadAsync
   fullName: TGBot.Messaging.UploadService.UploadAsync
-- uid: TGBot.Download.DownloadedMedia
-  commentId: T:TGBot.Download.DownloadedMedia
-  parent: TGBot.Download
-  href: TGBot.Download.DownloadedMedia.html
-  name: DownloadedMedia
-  nameWithType: DownloadedMedia
-  fullName: TGBot.Download.DownloadedMedia
+- uid: System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia}
+  commentId: T:System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<DownloadedMedia>
+  nameWithType: IReadOnlyList<DownloadedMedia>
+  fullName: System.Collections.Generic.IReadOnlyList<TGBot.Download.DownloadedMedia>
+  nameWithType.vb: IReadOnlyList(Of DownloadedMedia)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of TGBot.Download.DownloadedMedia)
+  name.vb: IReadOnlyList(Of DownloadedMedia)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: TGBot.Download.DownloadedMedia
+    name: DownloadedMedia
+    href: TGBot.Download.DownloadedMedia.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Download.DownloadedMedia
+    name: DownloadedMedia
+    href: TGBot.Download.DownloadedMedia.html
+  - name: )
 - uid: System.Collections.Generic.IReadOnlyList{System.Int64}
   commentId: T:System.Collections.Generic.IReadOnlyList{System.Int64}
   parent: System.Collections.Generic
@@ -552,28 +578,6 @@ references:
     name: UploadResult
     href: TGBot.Messaging.UploadResult.html
   - name: )
-- uid: TGBot.Download
-  commentId: N:TGBot.Download
-  href: TGBot.html
-  name: TGBot.Download
-  nameWithType: TGBot.Download
-  fullName: TGBot.Download
-  spec.csharp:
-  - uid: TGBot
-    name: TGBot
-    href: TGBot.html
-  - name: .
-  - uid: TGBot.Download
-    name: Download
-    href: TGBot.Download.html
-  spec.vb:
-  - uid: TGBot
-    name: TGBot
-    href: TGBot.html
-  - name: .
-  - uid: TGBot.Download
-    name: Download
-    href: TGBot.Download.html
 - uid: System.Collections.Generic.IReadOnlyList`1
   commentId: T:System.Collections.Generic.IReadOnlyList`1
   isExternal: true

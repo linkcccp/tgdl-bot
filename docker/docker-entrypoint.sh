@@ -79,6 +79,7 @@ else
         if [[ -n "${TGDL_YTDLP_PLAYER_CLIENTS+x}" ]]; then
             printf 'YtDlpYoutubePlayerClients = %s\n' "$TGDL_YTDLP_PLAYER_CLIENTS"
         fi
+        [[ -n "${TGDL_DEFAULT_MODE:-}" ]] && printf 'TgdlDefaultMode = %s\n' "$TGDL_DEFAULT_MODE"
     } > "$CONFIG_FILE"
     chown "$RUN_USER":"$RUN_USER" "$CONFIG_FILE" 2>/dev/null || true
     log "已根据环境变量生成配置：${CONFIG_FILE}"

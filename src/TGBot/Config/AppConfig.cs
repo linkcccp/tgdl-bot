@@ -41,6 +41,9 @@ public sealed class AppConfig
     /// <summary>YouTube 多 player_client 列表（仅 YouTube 域名生效，逗号分隔；为空则禁用）。</summary>
     public string YtDlpYoutubePlayerClients { get; init; } = "android,ios,web_embedded,tv";
 
+    /// <summary>非交互场景（channel/group 触发或选择超时）的默认下载模式：video（合并）或 audio（仅音频）。</summary>
+    public string TgdlDefaultMode { get; init; } = "video";
+
     /// <summary>最大并发下载任务数。</summary>
     public int MaxConcurrentDownloads { get; init; } = 2;
 

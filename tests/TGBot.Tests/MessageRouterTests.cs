@@ -18,6 +18,8 @@ public sealed class FakeTelegramClient : ITelegramClient
 {
     public List<(long ChatId, string Text, int ReplyTo)> Messages { get; } = new();
 
+    public List<IReadOnlyList<InlineButton>> PromptButtons { get; } = new();
+
     public List<(long ChatId, string FilePath, string FileName, string? Caption)> Videos { get; } = new();
 
     public List<(long ChatId, string FilePath, string FileName, string? Caption)> Audios { get; } = new();
@@ -30,9 +32,14 @@ public sealed class FakeTelegramClient : ITelegramClient
 
     public Task<string> GetBotUsernameAsync(CancellationToken cancellationToken) => Task.FromResult("testbot");
 
-    public Task SendMessageAsync(long chatId, string text, int replyToMessageId, CancellationToken cancellationToken)
+    public Task SendMessageAsync(long chatId, string text, int replyToMessageId, IReadOnlyList<InlineButton>? inlineKeyboard, CancellationToken cancellationToken)
     {
         Messages.Add((chatId, text, replyToMessageId));
+        if (inlineKeyboard is { Count: > 0 })
+        {
+            PromptButtons.Add(inlineKeyboard);
+        }
+
         return Task.CompletedTask;
     }
 
@@ -101,11 +108,23 @@ public sealed class FakeDownloader : IDownloader
 
     public Func<DownloadOptions, CancellationToken, Task<string?>>? ProbeHandler { get; set; }
 
+    public Func<DownloadOptions, CancellationToken, Task<IReadOnlyList<FormatInfo>?>>? ProbeFormatsHandler { get; set; }
+
+    public Func<DownloadOptions, Action<DownloadProgress>?, CancellationToken, Task<IReadOnlyList<DownloadedMedia>>>? AudioBundleHandler { get; set; }
+
     public Task<DownloadedMedia> DownloadAsync(DownloadOptions options, Action<DownloadProgress>? progress, CancellationToken cancellationToken)
         => Handler(options, progress, cancellationToken);
 
     public Task<string?> ProbeBestFormatAsync(DownloadOptions options, CancellationToken cancellationToken)
         => ProbeHandler is null ? Task.FromResult<string?>(null) : ProbeHandler(options, cancellationToken);
+
+    public Task<IReadOnlyList<FormatInfo>?> ProbeFormatsAsync(DownloadOptions options, CancellationToken cancellationToken)
+        => ProbeFormatsHandler is null ? Task.FromResult<IReadOnlyList<FormatInfo>?>(null) : ProbeFormatsHandler(options, cancellationToken);
+
+    public Task<IReadOnlyList<DownloadedMedia>> DownloadAudioBundleAsync(DownloadOptions options, Action<DownloadProgress>? progress, CancellationToken cancellationToken)
+        => AudioBundleHandler is null
+            ? throw new DownloadException(DownloadFailureReason.Failed, "音频下载未模拟")
+            : AudioBundleHandler(options, progress, cancellationToken);
 }
 
 /// <summary>
@@ -149,7 +168,7 @@ public class CaptionBuilderTests
 /// </summary>
 public class MessageRouterTests
 {
-    private static MessageRouter Build(
+    internal static MessageRouter Build(
         FakeTelegramClient client,
         FakeDownloader downloader,
         out DownloadCoordinator coordinator,
@@ -215,7 +234,7 @@ public class MessageRouterTests
     }
 
     [Fact]
-    public async Task Private_AuthorizedUser_EnqueuesDownload()
+    public async Task Private_AuthorizedUser_VideoDm_ShowsModeChoice()
     {
         var client = new FakeTelegramClient();
         var downloader = new FakeDownloader
@@ -233,8 +252,33 @@ public class MessageRouterTests
         var router = Build(client, downloader, out _);
         await router.HandleAsync(Dm(1000, "https://example.com/v"), CancellationToken.None);
 
+        // 探测失败 → 视为含视频；私聊 → 弹选择，不直接入队
+        await Task.Delay(300);
+        Assert.Contains(client.Messages, m => m.Text.Contains("请选择下载方式", StringComparison.Ordinal));
+        Assert.DoesNotContain(client.Messages, m => m.Text.Contains("已收到", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task Private_AuthorizedUser_AudioOnly_EnqueuesAudio()
+    {
+        var client = new FakeTelegramClient();
+        var downloader = new FakeDownloader
+        {
+            ProbeFormatsHandler = (_, _) => Task.FromResult<IReadOnlyList<FormatInfo>?>(
+                new List<FormatInfo> { new("140", "none", "mp4a.40.2", null, null, 128, false) }),
+            AudioBundleHandler = (_, _, _) => Task.FromResult<IReadOnlyList<DownloadedMedia>>(
+                new[]
+                {
+                    new DownloadedMedia { FilePath = "/tmp/a.flac", Title = "t", Extension = "flac", SizeBytes = 1, IsAudio = true, SourceUrl = "https://example.com/v" },
+                    new DownloadedMedia { FilePath = "/tmp/a.mp3", Title = "t", Extension = "mp3", SizeBytes = 1, IsAudio = true, SourceUrl = "https://example.com/v" },
+                }),
+        };
+        var router = Build(client, downloader, out _);
+        await router.HandleAsync(Dm(1000, "https://example.com/v"), CancellationToken.None);
+
         await Task.Delay(500);
         Assert.Contains(client.Messages, m => m.Text.Contains("已收到", StringComparison.Ordinal));
+        Assert.DoesNotContain(client.Messages, m => m.Text.Contains("请选择下载方式", StringComparison.Ordinal));
     }
 
     [Fact]
@@ -320,4 +364,57 @@ public sealed class FakeUpdater : IUpdater
             new ToolUpdateResult("yt-dlp", null, null, ToolUpdateStatus.AlreadyUpToDate),
             new ToolUpdateResult("ffmpeg", null, null, ToolUpdateStatus.AlreadyUpToDate),
         }));
+}
+
+/// <summary>
+/// 回调选择路由测试。
+/// </summary>
+public class MessageRouterCallbackTests
+{
+    [Fact]
+    public async Task Callback_AudioMode_EnqueuesAudio()
+    {
+        var client = new FakeTelegramClient();
+        var downloader = new FakeDownloader
+        {
+            // 含视频 → 触发选择
+            ProbeFormatsHandler = (_, _) => Task.FromResult<IReadOnlyList<FormatInfo>?>(
+                new List<FormatInfo> { new("137", "avc1", "none", 720, null, null, false) }),
+            AudioBundleHandler = (_, _, _) => Task.FromResult<IReadOnlyList<DownloadedMedia>>(
+                new[]
+                {
+                    new DownloadedMedia { FilePath = "/tmp/a.flac", Title = "t", Extension = "flac", SizeBytes = 1, IsAudio = true, SourceUrl = "https://example.com/v" },
+                    new DownloadedMedia { FilePath = "/tmp/a.mp3", Title = "t", Extension = "mp3", SizeBytes = 1, IsAudio = true, SourceUrl = "https://example.com/v" },
+                }),
+        };
+
+        var router = MessageRouterTests.Build(client, downloader, out _);
+
+        var dm = new InboundMessage { ChatId = 1000, IsPrivate = true, SenderUserId = 1000, Text = "https://example.com/v", TriggerMessageId = 5 };
+        await router.HandleAsync(dm, CancellationToken.None);
+
+        await Task.Delay(300);
+        Assert.NotEmpty(client.PromptButtons);
+        var audioButton = client.PromptButtons[0].First(b => b.Text.Contains("仅音频", StringComparison.Ordinal));
+
+        var cb = new InboundMessage
+        {
+            ChatId = 1000,
+            IsPrivate = true,
+            SenderUserId = 1000,
+            IsCallback = true,
+            CallbackData = audioButton.CallbackData,
+        };
+        await router.HandleAsync(cb, CancellationToken.None);
+
+        for (var i = 0; i < 50; i++)
+        {
+            if (client.Messages.Any(m => m.Text.Contains("已收到", StringComparison.Ordinal))) break;
+            await Task.Delay(100);
+        }
+
+        Assert.Contains(client.Messages, m => m.Text.Contains("已收到", StringComparison.Ordinal));
+        Assert.Contains(client.Audios, a => a.FileName.EndsWith(".flac", StringComparison.Ordinal));
+        Assert.Contains(client.Audios, a => a.FileName.EndsWith(".mp3", StringComparison.Ordinal));
+    }
 }

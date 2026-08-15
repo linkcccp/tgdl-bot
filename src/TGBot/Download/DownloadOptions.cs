@@ -37,4 +37,7 @@ public sealed record DownloadOptions(
 
     /// <summary>YouTube player_client 列表（可为空，仅 YouTube 域名生效）。</summary>
     public string? YoutubePlayerClients { get; init; }
+
+    /// <summary>ffmpeg 二进制绝对路径（音频转码用，可为空）。</summary>
+    public string? FfmpegPath { get; init; }
 }

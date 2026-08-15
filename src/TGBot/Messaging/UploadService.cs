@@ -42,15 +42,15 @@ public sealed class UploadService
     }
 
     /// <summary>
-    /// 将媒体上传到所有目标会话。
+    /// 将一组媒体上传到所有目标会话（同一任务可能含多个产物，如 flac+mp3）。
     /// </summary>
-    /// <param name="media">下载产物。</param>
+    /// <param name="media">下载产物列表。</param>
     /// <param name="targetChatIds">目标会话 ID 列表。</param>
     /// <param name="requesterChatId">请求者会话 ID（私聊，可空）。</param>
     /// <param name="cancellationToken">取消令牌。</param>
     /// <returns>上传结果。</returns>
     public async Task<UploadResult> UploadAsync(
-        DownloadedMedia media,
+        IReadOnlyList<DownloadedMedia> media,
         IReadOnlyList<long> targetChatIds,
         long? requesterChatId,
         CancellationToken cancellationToken)
@@ -60,7 +60,7 @@ public sealed class UploadService
 
         foreach (var chatId in targetChatIds)
         {
-            if (await SendToChatAsync(media, chatId, cancellationToken).ConfigureAwait(false))
+            if (await SendMediaListAsync(media, chatId, cancellationToken).ConfigureAwait(false))
             {
                 success++;
             }
@@ -73,13 +73,26 @@ public sealed class UploadService
         if (_alsoSendToRequester && requesterChatId is { } requester &&
             !targetChatIds.Contains(requester))
         {
-            if (await SendToChatAsync(media, requester, cancellationToken).ConfigureAwait(false))
+            if (await SendMediaListAsync(media, requester, cancellationToken).ConfigureAwait(false))
             {
                 success++;
             }
         }
 
         return new UploadResult(success, failures);
+    }
+
+    private async Task<bool> SendMediaListAsync(IReadOnlyList<DownloadedMedia> media, long chatId, CancellationToken cancellationToken)
+    {
+        foreach (var item in media)
+        {
+            if (!await SendToChatAsync(item, chatId, cancellationToken).ConfigureAwait(false))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private async Task<bool> SendToChatAsync(DownloadedMedia media, long chatId, CancellationToken cancellationToken)

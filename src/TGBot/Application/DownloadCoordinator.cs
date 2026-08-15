@@ -9,7 +9,7 @@ using TGBot.Texts;
 namespace TGBot.Application;
 
 /// <summary>
-/// 下载协调器：负责排队、并发控制、重试、进度通知与临时文件清理。
+/// 下载协调器：负责排队、并发控制、模式（视频/音频）、重试、进度通知与临时文件清理。
 /// </summary>
 public sealed class DownloadCoordinator
 {
@@ -58,13 +58,40 @@ public sealed class DownloadCoordinator
     }
 
     /// <summary>
+    /// 探测媒体是否仅音频（用于决定下载模式）。
+    /// </summary>
+    /// <param name="url">规范化 URL。</param>
+    /// <param name="cancellationToken">取消令牌。</param>
+    /// <returns>仅音频返回 <see langword="true"/>；探测失败时返回 <see langword="false"/>（按含视频处理）。</returns>
+    public async Task<bool> IsAudioOnlyAsync(string url, CancellationToken cancellationToken)
+    {
+        var jobDir = _tempDir.CreateJobDirectory();
+        try
+        {
+            var options = BuildOptions(url, jobDir);
+            var formats = await _downloader.ProbeFormatsAsync(options, cancellationToken).ConfigureAwait(false);
+            return formats is not null && YtDlpFormatPicker.IsAudioOnly(formats);
+        }
+        catch (Exception ex) when (ex is not OperationCanceledException)
+        {
+            _logger.Warn($"媒体分类探测失败：{ex.Message}");
+            return false;
+        }
+        finally
+        {
+            _tempDir.CleanupJobDirectory(jobDir);
+        }
+    }
+
+    /// <summary>
     /// 入队一个下载任务。URL 去重失败时返回 <see langword="false"/>。
     /// </summary>
     /// <param name="msg">触发消息。</param>
     /// <param name="normalizedUrl">规范化 URL。</param>
+    /// <param name="mode">下载模式：<c>video</c>（合并）或 <c>audio</c>（仅音频）。</param>
     /// <param name="cancellationToken">取消令牌。</param>
     /// <returns>入队成功返回 <see langword="true"/>。</returns>
-    public Task<bool> EnqueueAsync(InboundMessage msg, string normalizedUrl, CancellationToken cancellationToken)
+    public Task<bool> EnqueueAsync(InboundMessage msg, string normalizedUrl, string mode, CancellationToken cancellationToken)
     {
         if (!_registry.TryReserveUrl(normalizedUrl))
         {
@@ -74,11 +101,11 @@ public sealed class DownloadCoordinator
         _registry.OnEnqueue();
         var position = _registry.Queued;
 
-        _ = Task.Run(() => ProcessJobAsync(msg, normalizedUrl, position, cancellationToken), CancellationToken.None);
+        _ = Task.Run(() => ProcessJobAsync(msg, normalizedUrl, mode, position, cancellationToken), CancellationToken.None);
         return Task.FromResult(true);
     }
 
-    private async Task ProcessJobAsync(InboundMessage msg, string url, int position, CancellationToken shutdownToken)
+    private async Task ProcessJobAsync(InboundMessage msg, string url, string mode, int position, CancellationToken shutdownToken)
     {
         var requesterChatId = msg.IsPrivate ? msg.ChatId : (long?)null;
         try
@@ -95,16 +122,18 @@ public sealed class DownloadCoordinator
             try
             {
                 await NotifyAsync(requesterChatId, UserTexts.Downloading, CancellationToken.None);
-                await _client.SendChatActionAsync(msg.ChatId, BotChatAction.UploadVideo, CancellationToken.None);
+                await _client.SendChatActionAsync(msg.ChatId, mode == "audio" ? BotChatAction.UploadAudio : BotChatAction.UploadVideo, CancellationToken.None);
 
-                var media = await DownloadWithRetriesAsync(url, jobDir, requesterChatId, CancellationToken.None);
+                var mediaList = mode == "audio"
+                    ? await DownloadAudioWithRetriesAsync(url, jobDir, requesterChatId, CancellationToken.None)
+                    : await DownloadWithRetriesAsync(url, jobDir, requesterChatId, CancellationToken.None);
 
                 if (requesterChatId is not null)
                 {
                     await NotifyAsync(requesterChatId.Value, UserTexts.Uploading, CancellationToken.None);
                 }
 
-                var result = await _upload.UploadAsync(media, _config.TargetChannelIds, requesterChatId, CancellationToken.None);
+                var result = await _upload.UploadAsync(mediaList, _config.TargetChannelIds, requesterChatId, CancellationToken.None);
 
                 if (result.FailedChats.Count > 0)
                 {
@@ -113,9 +142,7 @@ public sealed class DownloadCoordinator
 
                 if (requesterChatId is not null)
                 {
-                    var text = result.FailedChats.Count > 0
-                        ? UserTexts.UploadDone.Format(result.SuccessCount) + " 部分会话失败，请查看日志。"
-                        : UserTexts.UploadDone.Format(result.SuccessCount);
+                    var text = ComposeDoneText(mediaList, result);
                     await NotifyAsync(requesterChatId.Value, text, CancellationToken.None);
                 }
             }
@@ -145,31 +172,29 @@ public sealed class DownloadCoordinator
         }
     }
 
-    private async Task<DownloadedMedia> DownloadWithRetriesAsync(
+    private string ComposeDoneText(IReadOnlyList<DownloadedMedia> mediaList, UploadResult result)
+    {
+        var suffix = result.FailedChats.Count > 0 ? " 部分会话失败，请查看日志。" : string.Empty;
+        if (mediaList.Count >= 2 && mediaList.All(m => m.IsAudio))
+        {
+            var flac = mediaList.FirstOrDefault(m => m.Extension == "flac");
+            var mp3 = mediaList.FirstOrDefault(m => m.Extension == "mp3");
+            return string.Format(
+                UserTexts.AudioBundleDone,
+                flac is null ? "audio.flac" : $"{flac.Title}.flac",
+                mp3 is null ? "audio.mp3" : $"{mp3.Title}.mp3") + suffix;
+        }
+
+        return UserTexts.UploadDone.Format(result.SuccessCount) + suffix;
+    }
+
+    private async Task<IReadOnlyList<DownloadedMedia>> DownloadWithRetriesAsync(
         string url,
         string jobDir,
         long? requesterChatId,
         CancellationToken shutdownToken)
     {
-        var options = new DownloadOptions(
-            url,
-            jobDir,
-            _config.YtDlpPath,
-            string.IsNullOrEmpty(_config.FfmpegPath) ? null : Path.GetDirectoryName(Path.GetFullPath(_config.FfmpegPath)),
-            _config.MergeFormat,
-            _config.ExtractAudio,
-            _config.AllowPlaylists,
-            _config.MaxMediaSizeBytes,
-            TimeSpan.FromSeconds(_config.DownloadTimeoutSeconds))
-        {
-            CookiesFile = _cookies.ResolveCookieFile(url),
-            Proxy = string.IsNullOrEmpty(_config.YtDlpProxy) ? null : _config.YtDlpProxy,
-            ExtraArgs = string.IsNullOrWhiteSpace(_config.YtDlpExtraArgs)
-                ? null
-                : _config.YtDlpExtraArgs.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries),
-            YoutubePlayerClients = string.IsNullOrEmpty(_config.YtDlpYoutubePlayerClients) ? null : _config.YtDlpYoutubePlayerClients,
-        };
-
+        var options = BuildOptions(url, jobDir);
         var attempts = _config.DownloadRetries + 1;
         var lastError = string.Empty;
         var formatFallbackTried = false;
@@ -178,10 +203,11 @@ public sealed class DownloadCoordinator
         {
             try
             {
-                return await _downloader.DownloadAsync(
+                var media = await _downloader.DownloadAsync(
                     options,
                     p => OnProgress(p, requesterChatId),
                     shutdownToken).ConfigureAwait(false);
+                return new[] { media };
             }
             catch (DownloadException ex) when (
                 ex.Reason is DownloadFailureReason.TooLarge
@@ -232,6 +258,72 @@ public sealed class DownloadCoordinator
         throw new DownloadException(DownloadFailureReason.Failed, UserTexts.DownloadFailed, lastError);
     }
 
+    private async Task<IReadOnlyList<DownloadedMedia>> DownloadAudioWithRetriesAsync(
+        string url,
+        string jobDir,
+        long? requesterChatId,
+        CancellationToken shutdownToken)
+    {
+        var options = BuildOptions(url, jobDir);
+        var attempts = _config.DownloadRetries + 1;
+        var lastError = string.Empty;
+
+        for (var attempt = 1; attempt <= attempts; attempt++)
+        {
+            try
+            {
+                return await _downloader.DownloadAudioBundleAsync(
+                    options,
+                    p => OnProgress(p, requesterChatId),
+                    shutdownToken).ConfigureAwait(false);
+            }
+            catch (DownloadException ex) when (
+                ex.Reason is DownloadFailureReason.TooLarge
+                    or DownloadFailureReason.NoDiskSpace
+                    or DownloadFailureReason.Timeout
+                    or DownloadFailureReason.Cancelled
+                    or DownloadFailureReason.AuthRequired)
+            {
+                throw;
+            }
+            catch (DownloadException ex)
+            {
+                lastError = ex.Message;
+                if (attempt < attempts)
+                {
+                    _logger.Warn($"音频下载重试 {attempt}/{attempts}：{MaskUrl(url)}");
+                    await Task.Delay(TimeSpan.FromSeconds(3 * attempt), shutdownToken).ConfigureAwait(false);
+                }
+            }
+        }
+
+        throw new DownloadException(DownloadFailureReason.Failed, UserTexts.DownloadFailed, lastError);
+    }
+
+    private DownloadOptions BuildOptions(string url, string jobDir)
+    {
+        var ffmpegPath = string.IsNullOrEmpty(_config.FfmpegPath) ? null : Path.GetFullPath(_config.FfmpegPath);
+        return new DownloadOptions(
+            url,
+            jobDir,
+            _config.YtDlpPath,
+            string.IsNullOrEmpty(_config.FfmpegPath) ? null : Path.GetDirectoryName(ffmpegPath),
+            _config.MergeFormat,
+            _config.ExtractAudio,
+            _config.AllowPlaylists,
+            _config.MaxMediaSizeBytes,
+            TimeSpan.FromSeconds(_config.DownloadTimeoutSeconds))
+        {
+            CookiesFile = _cookies.ResolveCookieFile(url),
+            Proxy = string.IsNullOrEmpty(_config.YtDlpProxy) ? null : _config.YtDlpProxy,
+            ExtraArgs = string.IsNullOrWhiteSpace(_config.YtDlpExtraArgs)
+                ? null
+                : _config.YtDlpExtraArgs.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries),
+            YoutubePlayerClients = string.IsNullOrEmpty(_config.YtDlpYoutubePlayerClients) ? null : _config.YtDlpYoutubePlayerClients,
+            FfmpegPath = ffmpegPath,
+        };
+    }
+
     private DateTime _lastProgressSent = DateTime.MinValue;
     private double _lastProgressPercent = -1;
 
@@ -256,6 +348,7 @@ public sealed class DownloadCoordinator
                 requesterChatId.Value,
                 string.Format(UserTexts.DownloadProgress, percent.ToString("0.0", System.Globalization.CultureInfo.InvariantCulture), p.SpeedText ?? "未知"),
                 0,
+                null,
                 CancellationToken.None).ConfigureAwait(false);
         }
         catch
@@ -273,7 +366,7 @@ public sealed class DownloadCoordinator
 
         try
         {
-            await _client.SendMessageAsync(chatId.Value, text, 0, ct).ConfigureAwait(false);
+            await _client.SendMessageAsync(chatId.Value, text, 0, null, ct).ConfigureAwait(false);
         }
         catch (Exception ex)
         {

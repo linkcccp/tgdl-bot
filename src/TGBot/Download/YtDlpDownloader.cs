@@ -220,6 +220,24 @@ public sealed class YtDlpDownloader : IDownloader
     /// <inheritdoc />
     public async Task<string?> ProbeBestFormatAsync(DownloadOptions options, CancellationToken cancellationToken)
     {
+        var formats = await ProbeFormatsAsync(options, cancellationToken).ConfigureAwait(false);
+        if (formats is null)
+        {
+            return null;
+        }
+
+        var expression = YtDlpFormatPicker.PickBestExpression(formats);
+        if (expression is not null)
+        {
+            _logger.Info($"格式探测结果：-f {expression}");
+        }
+
+        return expression;
+    }
+
+    /// <inheritdoc />
+    public async Task<IReadOnlyList<FormatInfo>?> ProbeFormatsAsync(DownloadOptions options, CancellationToken cancellationToken)
+    {
         var args = new List<string>
         {
             "-J", "--no-playlist", "--no-warnings", "--socket-timeout", "30",
@@ -299,14 +317,7 @@ public sealed class YtDlpDownloader : IDownloader
                 return null;
             }
 
-            var formats = YtDlpFormatPicker.ParseFormats(stdoutTask.Result);
-            var expression = YtDlpFormatPicker.PickBestExpression(formats);
-            if (expression is not null)
-            {
-                _logger.Info($"格式探测结果：-f {expression}");
-            }
-
-            return expression;
+            return YtDlpFormatPicker.ParseFormats(stdoutTask.Result);
         }
         catch (Exception ex) when (ex is not OperationCanceledException)
         {
@@ -326,6 +337,289 @@ public sealed class YtDlpDownloader : IDownloader
                     // ignore
                 }
             }
+        }
+    }
+
+    /// <inheritdoc />
+    public async Task<IReadOnlyList<DownloadedMedia>> DownloadAudioBundleAsync(
+        DownloadOptions options,
+        Action<DownloadProgress>? progress,
+        CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrEmpty(options.FfmpegPath))
+        {
+            throw new DownloadException(DownloadFailureReason.Failed, UserTexts.DownloadFailed, "未配置 ffmpeg 路径");
+        }
+
+        var args = new List<string>
+        {
+            "--newline", "--no-warnings", "--force-overwrites", "--trim-filenames", "120",
+            "--retries", "3", "--fragment-retries", "3", "--socket-timeout", "30",
+            "-o", "audio.%(ext)s",
+        };
+        if (!options.AllowPlaylists)
+        {
+            args.Add("--no-playlist");
+        }
+
+        args.Add("-f");
+        args.Add("bestaudio/best");
+        if (!string.IsNullOrEmpty(options.CookiesFile))
+        {
+            args.Add("--cookies");
+            args.Add(options.CookiesFile);
+        }
+
+        if (!string.IsNullOrEmpty(options.Proxy))
+        {
+            args.Add("--proxy");
+            args.Add(options.Proxy);
+        }
+
+        if (!string.IsNullOrEmpty(options.YoutubePlayerClients) && YtDlpArgumentBuilder.IsYoutubeUrl(options.Url))
+        {
+            args.Add("--extractor-args");
+            args.Add($"youtube:player_client={options.YoutubePlayerClients}");
+        }
+
+        if (options.ExtraArgs is { Count: > 0 })
+        {
+            args.AddRange(options.ExtraArgs);
+        }
+
+        args.Add("--print");
+        args.Add("META\u001f%(id)s\u001f%(title)s\u001f%(ext)s\u001f%(duration)s");
+        args.Add("--print");
+        args.Add("after_move:FILE\u001f%(filepath)s");
+        args.Add("--progress-template");
+        args.Add("download:DLP %(progress._percent_str)s|%(progress._speed_str)s");
+        args.Add(options.Url);
+
+        var outcome = await RunYtDlpCoreAsync(options, args, progress, cancellationToken).ConfigureAwait(false);
+        if (outcome.Error is not null)
+        {
+            throw new DownloadException(DownloadFailureReason.Failed, UserTexts.DownloadFailed, outcome.Error);
+        }
+
+        var audio = await ResolveOutputAsync(options, outcome.Meta, outcome.FilePath, cancellationToken).ConfigureAwait(false);
+
+        var flacPath = Path.Combine(options.JobDir, "audio.flac");
+        var mp3Path = Path.Combine(options.JobDir, "audio.mp3");
+        await RunFfmpegAsync(options.FfmpegPath, new[] { "-y", "-i", audio.FilePath, "-map", "0:a:0", "-vn", "-c:a", "flac", flacPath }, cancellationToken).ConfigureAwait(false);
+        await RunFfmpegAsync(options.FfmpegPath, new[] { "-y", "-i", audio.FilePath, "-map", "0:a:0", "-vn", "-c:a", "libmp3lame", "-b:a", "320k", mp3Path }, cancellationToken).ConfigureAwait(false);
+
+        var title = audio.RawTitle ?? audio.Title;
+        return new DownloadedMedia[]
+        {
+            new()
+            {
+                FilePath = flacPath,
+                Title = audio.Title,
+                RawTitle = title,
+                Extension = "flac",
+                SizeBytes = new FileInfo(flacPath).Length,
+                DurationSeconds = audio.DurationSeconds,
+                IsAudio = true,
+                SourceUrl = options.Url,
+            },
+            new()
+            {
+                FilePath = mp3Path,
+                Title = audio.Title,
+                RawTitle = title,
+                Extension = "mp3",
+                SizeBytes = new FileInfo(mp3Path).Length,
+                DurationSeconds = audio.DurationSeconds,
+                IsAudio = true,
+                SourceUrl = options.Url,
+            },
+        };
+    }
+
+    /// <summary>
+    /// 一次 yt-dlp 运行的结果。
+    /// </summary>
+    private sealed class RunOutcome
+    {
+        public MetaBuilder Meta { get; } = new();
+
+        public string? FilePath { get; set; }
+
+        public string? Error { get; set; }
+    }
+
+    /// <summary>
+    /// 运行一次 yt-dlp 并收集元数据/产物路径/错误（供下载与音频下载复用）。
+    /// </summary>
+    /// <returns>包含元数据、产物路径与错误信息的结果。</returns>
+    private async Task<RunOutcome> RunYtDlpCoreAsync(
+        DownloadOptions options,
+        IReadOnlyList<string> args,
+        Action<DownloadProgress>? progress,
+        CancellationToken cancellationToken)
+    {
+        var outcome = new RunOutcome();
+        using var process = new Process
+        {
+            StartInfo = new ProcessStartInfo
+            {
+                FileName = options.YtDlpPath,
+                WorkingDirectory = options.JobDir,
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                CreateNoWindow = true,
+            },
+        };
+        foreach (var a in args)
+        {
+            process.StartInfo.ArgumentList.Add(a);
+        }
+
+        try
+        {
+            if (!process.Start())
+            {
+                outcome.Error = "无法启动 yt-dlp 进程";
+                return outcome;
+            }
+        }
+        catch (Exception ex)
+        {
+            outcome.Error = $"启动 yt-dlp 失败：{ex.Message}";
+            return outcome;
+        }
+
+        var stderrTail = new RingBuffer(12);
+        var stdoutTask = ReadLinesAsync(process.StandardOutput, line =>
+        {
+            if (line.StartsWith(YtDlpOutputParser.MetaMarker, StringComparison.Ordinal))
+            {
+                var parsed = YtDlpOutputParser.ParseMeta(line);
+                if (parsed is { } p)
+                {
+                    outcome.Meta.Apply(p);
+                }
+            }
+            else if (line.StartsWith(YtDlpOutputParser.FileMarker, StringComparison.Ordinal))
+            {
+                outcome.FilePath = line.Split('\u001f', 2)[^1];
+            }
+        }, cancellationToken);
+
+        var stderrTask = ReadLinesAsync(process.StandardError, line =>
+        {
+            stderrTail.Add(line);
+            var p = YtDlpOutputParser.ParseProgress(line);
+            if (p is not null)
+            {
+                progress?.Invoke(p);
+            }
+        }, cancellationToken);
+
+        try
+        {
+            var exitTask = process.WaitForExitAsync(cancellationToken);
+            var completed = await Task.WhenAny(exitTask, Task.Delay(options.Timeout, cancellationToken)).ConfigureAwait(false);
+            if (completed != exitTask)
+            {
+                try
+                {
+                    process.Kill(entireProcessTree: true);
+                }
+                catch
+                {
+                    // ignore
+                }
+
+                outcome.Error = "yt-dlp 超时";
+                return outcome;
+            }
+
+            await stdoutTask.ConfigureAwait(false);
+            await stderrTask.ConfigureAwait(false);
+        }
+        catch (OperationCanceledException)
+        {
+            throw new DownloadException(DownloadFailureReason.Cancelled, UserTexts.DownloadFailed, "任务被取消");
+        }
+        finally
+        {
+            if (!process.HasExited)
+            {
+                try
+                {
+                    process.Kill(entireProcessTree: true);
+                }
+                catch
+                {
+                    // ignore
+                }
+            }
+        }
+
+        var detail = string.Join(" | ", stderrTail);
+        if (process.ExitCode != 0)
+        {
+            _logger.Warn($"yt-dlp 退出码 {process.ExitCode}：{detail}");
+            if (YtDlpOutputParser.IsAuthRequiredMessage(detail))
+            {
+                throw new DownloadException(DownloadFailureReason.AuthRequired, UserTexts.AuthRequired, $"站点要求认证：{detail}");
+            }
+
+            outcome.Error = $"yt-dlp 退出码 {process.ExitCode}";
+        }
+
+        return outcome;
+    }
+
+    private async Task RunFfmpegAsync(string ffmpegPath, IReadOnlyList<string> args, CancellationToken cancellationToken)
+    {
+        using var process = new Process
+        {
+            StartInfo = new ProcessStartInfo
+            {
+                FileName = ffmpegPath,
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                CreateNoWindow = true,
+            },
+        };
+        foreach (var a in args)
+        {
+            process.StartInfo.ArgumentList.Add(a);
+        }
+
+        try
+        {
+            process.Start();
+            var stderrTask = process.StandardError.ReadToEndAsync(cancellationToken);
+            var exitTask = process.WaitForExitAsync(cancellationToken);
+            var completed = await Task.WhenAny(exitTask, Task.Delay(TimeSpan.FromMinutes(5), cancellationToken)).ConfigureAwait(false);
+            if (completed != exitTask)
+            {
+                try
+                {
+                    process.Kill(entireProcessTree: true);
+                }
+                catch
+                {
+                    // ignore
+                }
+
+                throw new DownloadException(DownloadFailureReason.Failed, UserTexts.DownloadFailed, "ffmpeg 转码超时");
+            }
+
+            var err = await stderrTask.ConfigureAwait(false);
+            if (process.ExitCode != 0)
+            {
+                throw new DownloadException(DownloadFailureReason.Failed, UserTexts.DownloadFailed, $"ffmpeg 转码失败：{LastNonEmptyLine(err)}");
+            }
+        }
+        catch (OperationCanceledException)
+        {
+            throw new DownloadException(DownloadFailureReason.Cancelled, UserTexts.DownloadFailed, "任务被取消");
         }
     }
 
@@ -383,7 +677,9 @@ public sealed class YtDlpDownloader : IDownloader
 
         if (path is null)
         {
-            path = Directory.EnumerateFiles(options.JobDir, "media.*", SearchOption.AllDirectories)
+            // 兼容 media.* 与 audio.* 输出，跳过临时分片文件
+            path = Directory.EnumerateFiles(options.JobDir, "*", SearchOption.AllDirectories)
+                .Where(p => !p.EndsWith(".part", StringComparison.Ordinal) && !p.EndsWith(".ytdl", StringComparison.Ordinal))
                 .OrderByDescending(p => new FileInfo(p).Length)
                 .FirstOrDefault();
         }
