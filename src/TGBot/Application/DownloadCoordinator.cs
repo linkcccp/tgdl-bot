@@ -167,11 +167,12 @@ public sealed class DownloadCoordinator
             ExtraArgs = string.IsNullOrWhiteSpace(_config.YtDlpExtraArgs)
                 ? null
                 : _config.YtDlpExtraArgs.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries),
+            YoutubePlayerClients = string.IsNullOrEmpty(_config.YtDlpYoutubePlayerClients) ? null : _config.YtDlpYoutubePlayerClients,
         };
 
         var attempts = _config.DownloadRetries + 1;
         var lastError = string.Empty;
-        var mergeFallbackTried = false;
+        var formatFallbackTried = false;
 
         for (var attempt = 1; attempt <= attempts; attempt++)
         {
@@ -193,13 +194,26 @@ public sealed class DownloadCoordinator
             }
             catch (DownloadException ex) when (ex.Reason == DownloadFailureReason.FormatUnavailable)
             {
-                // 格式不足（如仅 VP9/Opus 无法合入 mp4）：换 mkv 回退一次，避免用相同参数盲目重试
-                if (!mergeFallbackTried)
+                // 可用格式不足：后台自动列出格式 → 挑最高视频+音频 → 用 ffmpeg 合并重试一次
+                if (!formatFallbackTried)
                 {
-                    mergeFallbackTried = true;
-                    options = options with { MergeFormat = "mkv" };
-                    _logger.Warn($"可用格式不足，改用 mkv 重试：{MaskUrl(url)}");
-                    continue;
+                    formatFallbackTried = true;
+                    _logger.Warn($"可用格式不足，自动挑选最高视频/音频重试：{MaskUrl(url)}");
+                    try
+                    {
+                        var expression = await _downloader.ProbeBestFormatAsync(options, shutdownToken).ConfigureAwait(false);
+                        options = options with
+                        {
+                            FormatExpression = expression ?? "best",
+                            MergeFormat = "mkv",
+                        };
+                        continue;
+                    }
+                    catch (Exception probeEx) when (probeEx is not OperationCanceledException)
+                    {
+                        _logger.Warn($"格式探测失败：{probeEx.Message}");
+                        throw;
+                    }
                 }
 
                 throw;

@@ -10,10 +10,12 @@ items:
   - TGBot.Download.DownloadOptions
   - TGBot.Download.DownloadProgress
   - TGBot.Download.DownloadedMedia
+  - TGBot.Download.FormatInfo
   - TGBot.Download.IDownloader
   - TGBot.Download.JobRegistry
   - TGBot.Download.YtDlpArgumentBuilder
   - TGBot.Download.YtDlpDownloader
+  - TGBot.Download.YtDlpFormatPicker
   - TGBot.Download.YtDlpOutputParser
   - TGBot.Download.YtDlpOutputParser.MetaLine
   langs:
@@ -93,6 +95,18 @@ references:
   name: YtDlpDownloader
   nameWithType: YtDlpDownloader
   fullName: TGBot.Download.YtDlpDownloader
+- uid: TGBot.Download.FormatInfo
+  commentId: T:TGBot.Download.FormatInfo
+  href: TGBot.Download.FormatInfo.html
+  name: FormatInfo
+  nameWithType: FormatInfo
+  fullName: TGBot.Download.FormatInfo
+- uid: TGBot.Download.YtDlpFormatPicker
+  commentId: T:TGBot.Download.YtDlpFormatPicker
+  href: TGBot.Download.YtDlpFormatPicker.html
+  name: YtDlpFormatPicker
+  nameWithType: YtDlpFormatPicker
+  fullName: TGBot.Download.YtDlpFormatPicker
 - uid: TGBot.Download.YtDlpOutputParser
   commentId: T:TGBot.Download.YtDlpOutputParser
   href: TGBot.Download.YtDlpOutputParser.html

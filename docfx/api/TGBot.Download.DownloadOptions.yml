@@ -11,12 +11,14 @@ items:
   - TGBot.Download.DownloadOptions.ExtraArgs
   - TGBot.Download.DownloadOptions.ExtractAudio
   - TGBot.Download.DownloadOptions.FfmpegDir
+  - TGBot.Download.DownloadOptions.FormatExpression
   - TGBot.Download.DownloadOptions.JobDir
   - TGBot.Download.DownloadOptions.MaxSizeBytes
   - TGBot.Download.DownloadOptions.MergeFormat
   - TGBot.Download.DownloadOptions.Proxy
   - TGBot.Download.DownloadOptions.Timeout
   - TGBot.Download.DownloadOptions.Url
+  - TGBot.Download.DownloadOptions.YoutubePlayerClients
   - TGBot.Download.DownloadOptions.YtDlpPath
   langs:
   - csharp
@@ -483,6 +485,68 @@ items:
       type: System.Collections.Generic.IReadOnlyList{System.String}
     content.vb: Public Property ExtraArgs As IReadOnlyList(Of String)
   overload: TGBot.Download.DownloadOptions.ExtraArgs*
+- uid: TGBot.Download.DownloadOptions.FormatExpression
+  commentId: P:TGBot.Download.DownloadOptions.FormatExpression
+  id: FormatExpression
+  parent: TGBot.Download.DownloadOptions
+  langs:
+  - csharp
+  - vb
+  name: FormatExpression
+  nameWithType: DownloadOptions.FormatExpression
+  fullName: TGBot.Download.DownloadOptions.FormatExpression
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Download/DownloadOptions.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: FormatExpression
+    path: ../src/TGBot/Download/DownloadOptions.cs
+    startLine: 35
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 显式 <code>-f</code> 格式表达式（可为空，如 <code>137+140</code>）。
+  example: []
+  syntax:
+    content: public string? FormatExpression { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property FormatExpression As String
+  overload: TGBot.Download.DownloadOptions.FormatExpression*
+- uid: TGBot.Download.DownloadOptions.YoutubePlayerClients
+  commentId: P:TGBot.Download.DownloadOptions.YoutubePlayerClients
+  id: YoutubePlayerClients
+  parent: TGBot.Download.DownloadOptions
+  langs:
+  - csharp
+  - vb
+  name: YoutubePlayerClients
+  nameWithType: DownloadOptions.YoutubePlayerClients
+  fullName: TGBot.Download.DownloadOptions.YoutubePlayerClients
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Download/DownloadOptions.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: YoutubePlayerClients
+    path: ../src/TGBot/Download/DownloadOptions.cs
+    startLine: 38
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: YouTube player_client 列表（可为空，仅 YouTube 域名生效）。
+  example: []
+  syntax:
+    content: public string? YoutubePlayerClients { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property YoutubePlayerClients As String
+  overload: TGBot.Download.DownloadOptions.YoutubePlayerClients*
 references:
 - uid: TGBot.Download
   commentId: N:TGBot.Download
@@ -1002,3 +1066,15 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: TGBot.Download.DownloadOptions.FormatExpression*
+  commentId: Overload:TGBot.Download.DownloadOptions.FormatExpression
+  href: TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_FormatExpression
+  name: FormatExpression
+  nameWithType: DownloadOptions.FormatExpression
+  fullName: TGBot.Download.DownloadOptions.FormatExpression
+- uid: TGBot.Download.DownloadOptions.YoutubePlayerClients*
+  commentId: Overload:TGBot.Download.DownloadOptions.YoutubePlayerClients
+  href: TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_YoutubePlayerClients
+  name: YoutubePlayerClients
+  nameWithType: DownloadOptions.YoutubePlayerClients
+  fullName: TGBot.Download.DownloadOptions.YoutubePlayerClients

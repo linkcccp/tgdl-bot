@@ -24,4 +24,12 @@ public interface IDownloader
         DownloadOptions options,
         Action<DownloadProgress>? progress,
         CancellationToken cancellationToken);
+
+    /// <summary>
+    /// 探测并返回「最高画质视频 + 最高音质音频」的 <c>-f</c> 表达式（不下载）。
+    /// </summary>
+    /// <param name="options">探测参数（复用 URL/cookies/代理/额外参数等）。</param>
+    /// <param name="cancellationToken">取消令牌。</param>
+    /// <returns>格式表达式（如 <c>137+140</c>）；无法挑选时返回 <see langword="null"/>。</returns>
+    Task<string?> ProbeBestFormatAsync(DownloadOptions options, CancellationToken cancellationToken);
 }

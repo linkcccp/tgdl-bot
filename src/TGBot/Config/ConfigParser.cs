@@ -37,6 +37,7 @@ public static class ConfigParser
         ["CookieStoreDir"] = "CookieStoreDir",
         ["YtDlpProxy"] = "YtDlpProxy",
         ["YtDlpExtraArgs"] = "YtDlpExtraArgs",
+        ["YtDlpYoutubePlayerClients"] = "YtDlpYoutubePlayerClients",
         ["MaxConcurrentDownloads"] = "MaxConcurrentDownloads",
         ["Concurrency"] = "MaxConcurrentDownloads",
         ["LogLevel"] = "LogLevel",
@@ -138,6 +139,9 @@ public static class ConfigParser
             CookieStoreDir = GetString(values, "CookieStoreDir"),
             YtDlpProxy = GetString(values, "YtDlpProxy"),
             YtDlpExtraArgs = GetString(values, "YtDlpExtraArgs"),
+            YtDlpYoutubePlayerClients = values.TryGetValue("YtDlpYoutubePlayerClients", out var pc)
+                ? pc
+                : "default,android,ios,web_embedded",
             MaxConcurrentDownloads = GetInt(values, "MaxConcurrentDownloads", 2),
             LogLevel = GetLogLevel(values, "LogLevel", Logging.LogLevel.Info),
             LogFile = string.IsNullOrEmpty(GetString(values, "LogFile")) ? null : GetString(values, "LogFile"),
@@ -230,6 +234,11 @@ public static class ConfigParser
         if (c.YtDlpExtraArgs.Length > 512)
         {
             throw new ConfigParseException("配置项 YtDlpExtraArgs 长度超过限制。");
+        }
+
+        if (c.YtDlpYoutubePlayerClients.Length > 200)
+        {
+            throw new ConfigParseException("配置项 YtDlpYoutubePlayerClients 长度超过限制。");
         }
 
         if (c.YtDlpProxy.Length > 512)

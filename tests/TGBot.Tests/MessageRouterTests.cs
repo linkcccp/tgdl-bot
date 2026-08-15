@@ -99,8 +99,13 @@ public sealed class FakeDownloader : IDownloader
     public Func<DownloadOptions, Action<DownloadProgress>?, CancellationToken, Task<DownloadedMedia>> Handler { get; set; } =
         (_, _, _) => throw new DownloadException(DownloadFailureReason.Failed, "模拟失败");
 
+    public Func<DownloadOptions, CancellationToken, Task<string?>>? ProbeHandler { get; set; }
+
     public Task<DownloadedMedia> DownloadAsync(DownloadOptions options, Action<DownloadProgress>? progress, CancellationToken cancellationToken)
         => Handler(options, progress, cancellationToken);
+
+    public Task<string?> ProbeBestFormatAsync(DownloadOptions options, CancellationToken cancellationToken)
+        => ProbeHandler is null ? Task.FromResult<string?>(null) : ProbeHandler(options, cancellationToken);
 }
 
 /// <summary>

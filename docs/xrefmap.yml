@@ -662,6 +662,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Config.AppConfig.YtDlpProxy
   nameWithType: AppConfig.YtDlpProxy
+- uid: TGBot.Config.AppConfig.YtDlpYoutubePlayerClients
+  name: YtDlpYoutubePlayerClients
+  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_YtDlpYoutubePlayerClients
+  commentId: P:TGBot.Config.AppConfig.YtDlpYoutubePlayerClients
+  fullName: TGBot.Config.AppConfig.YtDlpYoutubePlayerClients
+  nameWithType: AppConfig.YtDlpYoutubePlayerClients
+- uid: TGBot.Config.AppConfig.YtDlpYoutubePlayerClients*
+  name: YtDlpYoutubePlayerClients
+  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_YtDlpYoutubePlayerClients_
+  commentId: Overload:TGBot.Config.AppConfig.YtDlpYoutubePlayerClients
+  isSpec: "True"
+  fullName: TGBot.Config.AppConfig.YtDlpYoutubePlayerClients
+  nameWithType: AppConfig.YtDlpYoutubePlayerClients
 - uid: TGBot.Config.ConfigLoadException
   name: ConfigLoadException
   href: api/TGBot.Config.ConfigLoadException.html
@@ -2267,6 +2280,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Download.DownloadOptions.FfmpegDir
   nameWithType: DownloadOptions.FfmpegDir
+- uid: TGBot.Download.DownloadOptions.FormatExpression
+  name: FormatExpression
+  href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_FormatExpression
+  commentId: P:TGBot.Download.DownloadOptions.FormatExpression
+  fullName: TGBot.Download.DownloadOptions.FormatExpression
+  nameWithType: DownloadOptions.FormatExpression
+- uid: TGBot.Download.DownloadOptions.FormatExpression*
+  name: FormatExpression
+  href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_FormatExpression_
+  commentId: Overload:TGBot.Download.DownloadOptions.FormatExpression
+  isSpec: "True"
+  fullName: TGBot.Download.DownloadOptions.FormatExpression
+  nameWithType: DownloadOptions.FormatExpression
 - uid: TGBot.Download.DownloadOptions.JobDir
   name: JobDir
   href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_JobDir
@@ -2345,6 +2371,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Download.DownloadOptions.Url
   nameWithType: DownloadOptions.Url
+- uid: TGBot.Download.DownloadOptions.YoutubePlayerClients
+  name: YoutubePlayerClients
+  href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_YoutubePlayerClients
+  commentId: P:TGBot.Download.DownloadOptions.YoutubePlayerClients
+  fullName: TGBot.Download.DownloadOptions.YoutubePlayerClients
+  nameWithType: DownloadOptions.YoutubePlayerClients
+- uid: TGBot.Download.DownloadOptions.YoutubePlayerClients*
+  name: YoutubePlayerClients
+  href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_YoutubePlayerClients_
+  commentId: Overload:TGBot.Download.DownloadOptions.YoutubePlayerClients
+  isSpec: "True"
+  fullName: TGBot.Download.DownloadOptions.YoutubePlayerClients
+  nameWithType: DownloadOptions.YoutubePlayerClients
 - uid: TGBot.Download.DownloadOptions.YtDlpPath
   name: YtDlpPath
   href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_YtDlpPath
@@ -2519,6 +2558,122 @@ references:
   isSpec: "True"
   fullName: TGBot.Download.DownloadedMedia.Title
   nameWithType: DownloadedMedia.Title
+- uid: TGBot.Download.FormatInfo
+  name: FormatInfo
+  href: api/TGBot.Download.FormatInfo.html
+  commentId: T:TGBot.Download.FormatInfo
+  fullName: TGBot.Download.FormatInfo
+  nameWithType: FormatInfo
+- uid: TGBot.Download.FormatInfo.#ctor(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Double},System.Nullable{System.Double},System.Boolean)
+  name: FormatInfo(string?, string?, string?, int?, double?, double?, bool)
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo__ctor_System_String_System_String_System_String_System_Nullable_System_Int32__System_Nullable_System_Double__System_Nullable_System_Double__System_Boolean_
+  commentId: M:TGBot.Download.FormatInfo.#ctor(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Double},System.Nullable{System.Double},System.Boolean)
+  name.vb: New(String, String, String, Integer?, Double?, Double?, Boolean)
+  fullName: TGBot.Download.FormatInfo.FormatInfo(string?, string?, string?, int?, double?, double?, bool)
+  fullName.vb: TGBot.Download.FormatInfo.New(String, String, String, Integer?, Double?, Double?, Boolean)
+  nameWithType: FormatInfo.FormatInfo(string?, string?, string?, int?, double?, double?, bool)
+  nameWithType.vb: FormatInfo.New(String, String, String, Integer?, Double?, Double?, Boolean)
+- uid: TGBot.Download.FormatInfo.#ctor*
+  name: FormatInfo
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo__ctor_
+  commentId: Overload:TGBot.Download.FormatInfo.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Download.FormatInfo.FormatInfo
+  fullName.vb: TGBot.Download.FormatInfo.New
+  nameWithType: FormatInfo.FormatInfo
+  nameWithType.vb: FormatInfo.New
+- uid: TGBot.Download.FormatInfo.Abr
+  name: Abr
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo_Abr
+  commentId: P:TGBot.Download.FormatInfo.Abr
+  fullName: TGBot.Download.FormatInfo.Abr
+  nameWithType: FormatInfo.Abr
+- uid: TGBot.Download.FormatInfo.Abr*
+  name: Abr
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo_Abr_
+  commentId: Overload:TGBot.Download.FormatInfo.Abr
+  isSpec: "True"
+  fullName: TGBot.Download.FormatInfo.Abr
+  nameWithType: FormatInfo.Abr
+- uid: TGBot.Download.FormatInfo.Acodec
+  name: Acodec
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo_Acodec
+  commentId: P:TGBot.Download.FormatInfo.Acodec
+  fullName: TGBot.Download.FormatInfo.Acodec
+  nameWithType: FormatInfo.Acodec
+- uid: TGBot.Download.FormatInfo.Acodec*
+  name: Acodec
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo_Acodec_
+  commentId: Overload:TGBot.Download.FormatInfo.Acodec
+  isSpec: "True"
+  fullName: TGBot.Download.FormatInfo.Acodec
+  nameWithType: FormatInfo.Acodec
+- uid: TGBot.Download.FormatInfo.FormatId
+  name: FormatId
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo_FormatId
+  commentId: P:TGBot.Download.FormatInfo.FormatId
+  fullName: TGBot.Download.FormatInfo.FormatId
+  nameWithType: FormatInfo.FormatId
+- uid: TGBot.Download.FormatInfo.FormatId*
+  name: FormatId
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo_FormatId_
+  commentId: Overload:TGBot.Download.FormatInfo.FormatId
+  isSpec: "True"
+  fullName: TGBot.Download.FormatInfo.FormatId
+  nameWithType: FormatInfo.FormatId
+- uid: TGBot.Download.FormatInfo.HasDrm
+  name: HasDrm
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo_HasDrm
+  commentId: P:TGBot.Download.FormatInfo.HasDrm
+  fullName: TGBot.Download.FormatInfo.HasDrm
+  nameWithType: FormatInfo.HasDrm
+- uid: TGBot.Download.FormatInfo.HasDrm*
+  name: HasDrm
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo_HasDrm_
+  commentId: Overload:TGBot.Download.FormatInfo.HasDrm
+  isSpec: "True"
+  fullName: TGBot.Download.FormatInfo.HasDrm
+  nameWithType: FormatInfo.HasDrm
+- uid: TGBot.Download.FormatInfo.Height
+  name: Height
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo_Height
+  commentId: P:TGBot.Download.FormatInfo.Height
+  fullName: TGBot.Download.FormatInfo.Height
+  nameWithType: FormatInfo.Height
+- uid: TGBot.Download.FormatInfo.Height*
+  name: Height
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo_Height_
+  commentId: Overload:TGBot.Download.FormatInfo.Height
+  isSpec: "True"
+  fullName: TGBot.Download.FormatInfo.Height
+  nameWithType: FormatInfo.Height
+- uid: TGBot.Download.FormatInfo.Tbr
+  name: Tbr
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo_Tbr
+  commentId: P:TGBot.Download.FormatInfo.Tbr
+  fullName: TGBot.Download.FormatInfo.Tbr
+  nameWithType: FormatInfo.Tbr
+- uid: TGBot.Download.FormatInfo.Tbr*
+  name: Tbr
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo_Tbr_
+  commentId: Overload:TGBot.Download.FormatInfo.Tbr
+  isSpec: "True"
+  fullName: TGBot.Download.FormatInfo.Tbr
+  nameWithType: FormatInfo.Tbr
+- uid: TGBot.Download.FormatInfo.Vcodec
+  name: Vcodec
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo_Vcodec
+  commentId: P:TGBot.Download.FormatInfo.Vcodec
+  fullName: TGBot.Download.FormatInfo.Vcodec
+  nameWithType: FormatInfo.Vcodec
+- uid: TGBot.Download.FormatInfo.Vcodec*
+  name: Vcodec
+  href: api/TGBot.Download.FormatInfo.html#TGBot_Download_FormatInfo_Vcodec_
+  commentId: Overload:TGBot.Download.FormatInfo.Vcodec
+  isSpec: "True"
+  fullName: TGBot.Download.FormatInfo.Vcodec
+  nameWithType: FormatInfo.Vcodec
 - uid: TGBot.Download.IDownloader
   name: IDownloader
   href: api/TGBot.Download.IDownloader.html
@@ -2541,6 +2696,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Download.IDownloader.DownloadAsync
   nameWithType: IDownloader.DownloadAsync
+- uid: TGBot.Download.IDownloader.ProbeBestFormatAsync(TGBot.Download.DownloadOptions,System.Threading.CancellationToken)
+  name: ProbeBestFormatAsync(DownloadOptions, CancellationToken)
+  href: api/TGBot.Download.IDownloader.html#TGBot_Download_IDownloader_ProbeBestFormatAsync_TGBot_Download_DownloadOptions_System_Threading_CancellationToken_
+  commentId: M:TGBot.Download.IDownloader.ProbeBestFormatAsync(TGBot.Download.DownloadOptions,System.Threading.CancellationToken)
+  fullName: TGBot.Download.IDownloader.ProbeBestFormatAsync(TGBot.Download.DownloadOptions, System.Threading.CancellationToken)
+  nameWithType: IDownloader.ProbeBestFormatAsync(DownloadOptions, CancellationToken)
+- uid: TGBot.Download.IDownloader.ProbeBestFormatAsync*
+  name: ProbeBestFormatAsync
+  href: api/TGBot.Download.IDownloader.html#TGBot_Download_IDownloader_ProbeBestFormatAsync_
+  commentId: Overload:TGBot.Download.IDownloader.ProbeBestFormatAsync
+  isSpec: "True"
+  fullName: TGBot.Download.IDownloader.ProbeBestFormatAsync
+  nameWithType: IDownloader.ProbeBestFormatAsync
 - uid: TGBot.Download.JobRegistry
   name: JobRegistry
   href: api/TGBot.Download.JobRegistry.html
@@ -2663,6 +2831,22 @@ references:
   isSpec: "True"
   fullName: TGBot.Download.YtDlpArgumentBuilder.Build
   nameWithType: YtDlpArgumentBuilder.Build
+- uid: TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl(System.String)
+  name: IsYoutubeUrl(string)
+  href: api/TGBot.Download.YtDlpArgumentBuilder.html#TGBot_Download_YtDlpArgumentBuilder_IsYoutubeUrl_System_String_
+  commentId: M:TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl(System.String)
+  name.vb: IsYoutubeUrl(String)
+  fullName: TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl(string)
+  fullName.vb: TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl(String)
+  nameWithType: YtDlpArgumentBuilder.IsYoutubeUrl(string)
+  nameWithType.vb: YtDlpArgumentBuilder.IsYoutubeUrl(String)
+- uid: TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl*
+  name: IsYoutubeUrl
+  href: api/TGBot.Download.YtDlpArgumentBuilder.html#TGBot_Download_YtDlpArgumentBuilder_IsYoutubeUrl_
+  commentId: Overload:TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl
+  isSpec: "True"
+  fullName: TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl
+  nameWithType: YtDlpArgumentBuilder.IsYoutubeUrl
 - uid: TGBot.Download.YtDlpDownloader
   name: YtDlpDownloader
   href: api/TGBot.Download.YtDlpDownloader.html
@@ -2704,6 +2888,57 @@ references:
   isSpec: "True"
   fullName: TGBot.Download.YtDlpDownloader.DownloadAsync
   nameWithType: YtDlpDownloader.DownloadAsync
+- uid: TGBot.Download.YtDlpDownloader.ProbeBestFormatAsync(TGBot.Download.DownloadOptions,System.Threading.CancellationToken)
+  name: ProbeBestFormatAsync(DownloadOptions, CancellationToken)
+  href: api/TGBot.Download.YtDlpDownloader.html#TGBot_Download_YtDlpDownloader_ProbeBestFormatAsync_TGBot_Download_DownloadOptions_System_Threading_CancellationToken_
+  commentId: M:TGBot.Download.YtDlpDownloader.ProbeBestFormatAsync(TGBot.Download.DownloadOptions,System.Threading.CancellationToken)
+  fullName: TGBot.Download.YtDlpDownloader.ProbeBestFormatAsync(TGBot.Download.DownloadOptions, System.Threading.CancellationToken)
+  nameWithType: YtDlpDownloader.ProbeBestFormatAsync(DownloadOptions, CancellationToken)
+- uid: TGBot.Download.YtDlpDownloader.ProbeBestFormatAsync*
+  name: ProbeBestFormatAsync
+  href: api/TGBot.Download.YtDlpDownloader.html#TGBot_Download_YtDlpDownloader_ProbeBestFormatAsync_
+  commentId: Overload:TGBot.Download.YtDlpDownloader.ProbeBestFormatAsync
+  isSpec: "True"
+  fullName: TGBot.Download.YtDlpDownloader.ProbeBestFormatAsync
+  nameWithType: YtDlpDownloader.ProbeBestFormatAsync
+- uid: TGBot.Download.YtDlpFormatPicker
+  name: YtDlpFormatPicker
+  href: api/TGBot.Download.YtDlpFormatPicker.html
+  commentId: T:TGBot.Download.YtDlpFormatPicker
+  fullName: TGBot.Download.YtDlpFormatPicker
+  nameWithType: YtDlpFormatPicker
+- uid: TGBot.Download.YtDlpFormatPicker.ParseFormats(System.String)
+  name: ParseFormats(string)
+  href: api/TGBot.Download.YtDlpFormatPicker.html#TGBot_Download_YtDlpFormatPicker_ParseFormats_System_String_
+  commentId: M:TGBot.Download.YtDlpFormatPicker.ParseFormats(System.String)
+  name.vb: ParseFormats(String)
+  fullName: TGBot.Download.YtDlpFormatPicker.ParseFormats(string)
+  fullName.vb: TGBot.Download.YtDlpFormatPicker.ParseFormats(String)
+  nameWithType: YtDlpFormatPicker.ParseFormats(string)
+  nameWithType.vb: YtDlpFormatPicker.ParseFormats(String)
+- uid: TGBot.Download.YtDlpFormatPicker.ParseFormats*
+  name: ParseFormats
+  href: api/TGBot.Download.YtDlpFormatPicker.html#TGBot_Download_YtDlpFormatPicker_ParseFormats_
+  commentId: Overload:TGBot.Download.YtDlpFormatPicker.ParseFormats
+  isSpec: "True"
+  fullName: TGBot.Download.YtDlpFormatPicker.ParseFormats
+  nameWithType: YtDlpFormatPicker.ParseFormats
+- uid: TGBot.Download.YtDlpFormatPicker.PickBestExpression(System.Collections.Generic.IReadOnlyList{TGBot.Download.FormatInfo})
+  name: PickBestExpression(IReadOnlyList<FormatInfo>)
+  href: api/TGBot.Download.YtDlpFormatPicker.html#TGBot_Download_YtDlpFormatPicker_PickBestExpression_System_Collections_Generic_IReadOnlyList_TGBot_Download_FormatInfo__
+  commentId: M:TGBot.Download.YtDlpFormatPicker.PickBestExpression(System.Collections.Generic.IReadOnlyList{TGBot.Download.FormatInfo})
+  name.vb: PickBestExpression(IReadOnlyList(Of FormatInfo))
+  fullName: TGBot.Download.YtDlpFormatPicker.PickBestExpression(System.Collections.Generic.IReadOnlyList<TGBot.Download.FormatInfo>)
+  fullName.vb: TGBot.Download.YtDlpFormatPicker.PickBestExpression(System.Collections.Generic.IReadOnlyList(Of TGBot.Download.FormatInfo))
+  nameWithType: YtDlpFormatPicker.PickBestExpression(IReadOnlyList<FormatInfo>)
+  nameWithType.vb: YtDlpFormatPicker.PickBestExpression(IReadOnlyList(Of FormatInfo))
+- uid: TGBot.Download.YtDlpFormatPicker.PickBestExpression*
+  name: PickBestExpression
+  href: api/TGBot.Download.YtDlpFormatPicker.html#TGBot_Download_YtDlpFormatPicker_PickBestExpression_
+  commentId: Overload:TGBot.Download.YtDlpFormatPicker.PickBestExpression
+  isSpec: "True"
+  fullName: TGBot.Download.YtDlpFormatPicker.PickBestExpression
+  nameWithType: YtDlpFormatPicker.PickBestExpression
 - uid: TGBot.Download.YtDlpOutputParser
   name: YtDlpOutputParser
   href: api/TGBot.Download.YtDlpOutputParser.html

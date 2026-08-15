@@ -143,6 +143,9 @@ items:
   - uid: TGBot.Download.DownloadedMedia
     name: DownloadedMedia
     type: Class
+  - uid: TGBot.Download.FormatInfo
+    name: FormatInfo
+    type: Class
   - uid: TGBot.Download.IDownloader
     name: IDownloader
     type: Interface
@@ -154,6 +157,9 @@ items:
     type: Class
   - uid: TGBot.Download.YtDlpDownloader
     name: YtDlpDownloader
+    type: Class
+  - uid: TGBot.Download.YtDlpFormatPicker
+    name: YtDlpFormatPicker
     type: Class
   - uid: TGBot.Download.YtDlpOutputParser
     name: YtDlpOutputParser

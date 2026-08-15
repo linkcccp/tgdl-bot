@@ -91,6 +91,9 @@ Classes
       <h4><a class="xref" href="TGBot.Download.DownloadedMedia.html">DownloadedMedia</a></h4>
       <section><p>下载成功的媒体文件信息。</p>
 </section>
+      <h4><a class="xref" href="TGBot.Download.FormatInfo.html">FormatInfo</a></h4>
+      <section><p>单个格式信息（来自 yt-dlp -J 输出）。</p>
+</section>
       <h4><a class="xref" href="TGBot.Download.JobRegistry.html">JobRegistry</a></h4>
       <section><p>下载任务注册表：跟踪运行/排队任务数量，并对已受理的 URL 去重。</p>
 </section>
@@ -102,6 +105,10 @@ Classes
       <h4><a class="xref" href="TGBot.Download.YtDlpDownloader.html">YtDlpDownloader</a></h4>
       <section><p>通过 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.process.start#system-diagnostics-process-start(system-diagnostics-processstartinfo)">Start(ProcessStartInfo)</a> 调用系统安装的 yt-dlp 二进制实现下载。</p>
 <p>不内嵌 yt-dlp/ffmpeg，使用 <code>ArgumentList</code> 避免 shell 注入。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Download.YtDlpFormatPicker.html">YtDlpFormatPicker</a></h4>
+      <section><p>从 yt-dlp <code>-J</code> JSON 中挑选「最高画质视频 + 最高音质音频」的组合表达式。</p>
+<p>纯解析逻辑，便于单元测试。</p>
 </section>
       <h4><a class="xref" href="TGBot.Download.YtDlpOutputParser.html">YtDlpOutputParser</a></h4>
       <section><p>yt-dlp 标准输出/错误输出解析器（纯函数，便于单元测试）。</p>

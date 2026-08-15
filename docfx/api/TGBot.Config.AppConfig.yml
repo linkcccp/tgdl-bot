@@ -30,6 +30,7 @@ items:
   - TGBot.Config.AppConfig.YtDlpExtraArgs
   - TGBot.Config.AppConfig.YtDlpPath
   - TGBot.Config.AppConfig.YtDlpProxy
+  - TGBot.Config.AppConfig.YtDlpYoutubePlayerClients
   langs:
   - csharp
   - vb
@@ -376,6 +377,37 @@ items:
       type: System.String
     content.vb: Public Property YtDlpExtraArgs As String
   overload: TGBot.Config.AppConfig.YtDlpExtraArgs*
+- uid: TGBot.Config.AppConfig.YtDlpYoutubePlayerClients
+  commentId: P:TGBot.Config.AppConfig.YtDlpYoutubePlayerClients
+  id: YtDlpYoutubePlayerClients
+  parent: TGBot.Config.AppConfig
+  langs:
+  - csharp
+  - vb
+  name: YtDlpYoutubePlayerClients
+  nameWithType: AppConfig.YtDlpYoutubePlayerClients
+  fullName: TGBot.Config.AppConfig.YtDlpYoutubePlayerClients
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: YtDlpYoutubePlayerClients
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 41
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config
+  summary: YouTube 多 player_client 列表（仅 YouTube 域名生效，逗号分隔；为空则禁用）。
+  example: []
+  syntax:
+    content: public string YtDlpYoutubePlayerClients { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property YtDlpYoutubePlayerClients As String
+  overload: TGBot.Config.AppConfig.YtDlpYoutubePlayerClients*
 - uid: TGBot.Config.AppConfig.MaxConcurrentDownloads
   commentId: P:TGBot.Config.AppConfig.MaxConcurrentDownloads
   id: MaxConcurrentDownloads
@@ -394,7 +426,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MaxConcurrentDownloads
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 41
+    startLine: 44
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -425,7 +457,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LogLevel
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 44
+    startLine: 47
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -456,7 +488,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LogFile
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 47
+    startLine: 50
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -487,7 +519,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadRetries
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 50
+    startLine: 53
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -518,7 +550,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadTimeoutSeconds
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 53
+    startLine: 56
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -549,7 +581,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadRetries
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 56
+    startLine: 59
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -580,7 +612,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ExtractAudio
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 59
+    startLine: 62
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -611,7 +643,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AlsoSendMediaToRequester
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 62
+    startLine: 65
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -642,7 +674,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AllowPrivateUrls
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 65
+    startLine: 68
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -673,7 +705,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MaxMediaSizeBytes
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 68
+    startLine: 71
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -704,7 +736,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AllowPlaylists
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 71
+    startLine: 74
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -735,7 +767,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MergeFormat
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 74
+    startLine: 77
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -766,7 +798,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateYtDlp
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 77
+    startLine: 80
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -797,7 +829,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateFfmpeg
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 80
+    startLine: 83
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -828,7 +860,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SourcePath
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 83
+    startLine: 86
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -1254,6 +1286,12 @@ references:
   name: YtDlpExtraArgs
   nameWithType: AppConfig.YtDlpExtraArgs
   fullName: TGBot.Config.AppConfig.YtDlpExtraArgs
+- uid: TGBot.Config.AppConfig.YtDlpYoutubePlayerClients*
+  commentId: Overload:TGBot.Config.AppConfig.YtDlpYoutubePlayerClients
+  href: TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_YtDlpYoutubePlayerClients
+  name: YtDlpYoutubePlayerClients
+  nameWithType: AppConfig.YtDlpYoutubePlayerClients
+  fullName: TGBot.Config.AppConfig.YtDlpYoutubePlayerClients
 - uid: TGBot.Config.AppConfig.MaxConcurrentDownloads*
   commentId: Overload:TGBot.Config.AppConfig.MaxConcurrentDownloads
   href: TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_MaxConcurrentDownloads

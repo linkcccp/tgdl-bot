@@ -65,6 +65,18 @@ public static class YtDlpArgumentBuilder
             args.Add(options.Proxy);
         }
 
+        if (!string.IsNullOrEmpty(options.FormatExpression))
+        {
+            args.Add("-f");
+            args.Add(options.FormatExpression);
+        }
+
+        if (!string.IsNullOrEmpty(options.YoutubePlayerClients) && IsYoutubeHost(options.Url))
+        {
+            args.Add("--extractor-args");
+            args.Add($"youtube:player_client={options.YoutubePlayerClients}");
+        }
+
         if (options.ExtraArgs is { Count: > 0 })
         {
             args.AddRange(options.ExtraArgs);
@@ -82,5 +94,28 @@ public static class YtDlpArgumentBuilder
         args.Add(options.Url);
 
         return args;
+    }
+
+    private static bool IsYoutubeHost(string url)
+    {
+        try
+        {
+            return IsYoutubeUrl(url);
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// 判断 URL 是否属于 YouTube 域名。
+    /// </summary>
+    /// <param name="url">URL。</param>
+    /// <returns>是 YouTube 域名返回 <see langword="true"/>。</returns>
+    public static bool IsYoutubeUrl(string url)
+    {
+        var host = new Uri(url).Host.ToLowerInvariant();
+        return host is "youtube.com" or "youtu.be" or "m.youtube.com" or "music.youtube.com" or "www.youtube.com";
     }
 }

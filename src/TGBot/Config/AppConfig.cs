@@ -38,6 +38,9 @@ public sealed class AppConfig
     /// <summary>附加 yt-dlp 参数（按空白拆分），如 <c>--extractor-args youtube:player_client=android</c>。</summary>
     public string YtDlpExtraArgs { get; init; } = string.Empty;
 
+    /// <summary>YouTube 多 player_client 列表（仅 YouTube 域名生效，逗号分隔；为空则禁用）。</summary>
+    public string YtDlpYoutubePlayerClients { get; init; } = "default,android,ios,web_embedded";
+
     /// <summary>最大并发下载任务数。</summary>
     public int MaxConcurrentDownloads { get; init; } = 2;
 

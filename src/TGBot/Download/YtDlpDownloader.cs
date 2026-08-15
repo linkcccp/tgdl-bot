@@ -217,6 +217,134 @@ public sealed class YtDlpDownloader : IDownloader
         return media;
     }
 
+    /// <inheritdoc />
+    public async Task<string?> ProbeBestFormatAsync(DownloadOptions options, CancellationToken cancellationToken)
+    {
+        var args = new List<string>
+        {
+            "-J", "--no-playlist", "--no-warnings", "--socket-timeout", "30",
+        };
+        if (!string.IsNullOrEmpty(options.CookiesFile))
+        {
+            args.Add("--cookies");
+            args.Add(options.CookiesFile);
+        }
+
+        if (!string.IsNullOrEmpty(options.Proxy))
+        {
+            args.Add("--proxy");
+            args.Add(options.Proxy);
+        }
+
+        if (!string.IsNullOrEmpty(options.YoutubePlayerClients) && YtDlpArgumentBuilder.IsYoutubeUrl(options.Url))
+        {
+            args.Add("--extractor-args");
+            args.Add($"youtube:player_client={options.YoutubePlayerClients}");
+        }
+
+        if (options.ExtraArgs is { Count: > 0 })
+        {
+            args.AddRange(options.ExtraArgs);
+        }
+
+        args.Add(options.Url);
+
+        using var process = new Process
+        {
+            StartInfo = new ProcessStartInfo
+            {
+                FileName = options.YtDlpPath,
+                WorkingDirectory = options.JobDir,
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                CreateNoWindow = true,
+            },
+        };
+        foreach (var a in args)
+        {
+            process.StartInfo.ArgumentList.Add(a);
+        }
+
+        if (!process.Start())
+        {
+            return null;
+        }
+
+        try
+        {
+            var stdoutTask = ReadWithLimitAsync(process.StandardOutput, 8_000_000, cancellationToken);
+            var stderrTask = process.StandardError.ReadToEndAsync(cancellationToken);
+            var exitTask = process.WaitForExitAsync(cancellationToken);
+            var completed = await Task.WhenAny(exitTask, Task.Delay(TimeSpan.FromSeconds(90), cancellationToken)).ConfigureAwait(false);
+            if (completed != exitTask)
+            {
+                try
+                {
+                    process.Kill(entireProcessTree: true);
+                }
+                catch
+                {
+                    // ignore
+                }
+
+                return null;
+            }
+
+            await Task.WhenAll(stdoutTask, stderrTask).ConfigureAwait(false);
+            if (process.ExitCode != 0)
+            {
+                _logger.Warn($"格式探测失败：{stderrTask.Result.Split('\n').LastOrDefault()?.Trim()}");
+                return null;
+            }
+
+            var formats = YtDlpFormatPicker.ParseFormats(stdoutTask.Result);
+            var expression = YtDlpFormatPicker.PickBestExpression(formats);
+            if (expression is not null)
+            {
+                _logger.Info($"格式探测结果：-f {expression}");
+            }
+
+            return expression;
+        }
+        catch (Exception ex) when (ex is not OperationCanceledException)
+        {
+            _logger.Warn($"格式探测异常：{ex.Message}");
+            return null;
+        }
+        finally
+        {
+            if (!process.HasExited)
+            {
+                try
+                {
+                    process.Kill(entireProcessTree: true);
+                }
+                catch
+                {
+                    // ignore
+                }
+            }
+        }
+    }
+
+    private static async Task<string> ReadWithLimitAsync(TextReader reader, int limit, CancellationToken cancellationToken)
+    {
+        var sb = new System.Text.StringBuilder();
+        var buffer = new char[8192];
+        int n;
+        while ((n = await reader.ReadAsync(buffer, 0, buffer.Length).ConfigureAwait(false)) > 0)
+        {
+            sb.Append(buffer, 0, n);
+            if (sb.Length > limit)
+            {
+                throw new InvalidDataException("输出超过大小限制");
+            }
+        }
+
+        return sb.ToString();
+    }
+
     private static async Task<DownloadedMedia> ResolveOutputAsync(
         DownloadOptions options,
         MetaBuilder meta,

@@ -75,6 +75,10 @@ else
         [[ -n "${TGDL_COOKIE_STORE_DIR:-}" ]] && printf 'CookieStoreDir = %s\n' "$TGDL_COOKIE_STORE_DIR"
         [[ -n "${TGDL_YTDLP_PROXY:-}" ]]     && printf 'YtDlpProxy = %s\n' "$TGDL_YTDLP_PROXY"
         [[ -n "${TGDL_YTDLP_EXTRA_ARGS:-}" ]] && printf 'YtDlpExtraArgs = %s\n' "$TGDL_YTDLP_EXTRA_ARGS"
+        # 该键支持显式留空以禁用（写空值即可）
+        if [[ -n "${TGDL_YTDLP_PLAYER_CLIENTS+x}" ]]; then
+            printf 'YtDlpYoutubePlayerClients = %s\n' "$TGDL_YTDLP_PLAYER_CLIENTS"
+        fi
     } > "$CONFIG_FILE"
     chown "$RUN_USER":"$RUN_USER" "$CONFIG_FILE" 2>/dev/null || true
     log "已根据环境变量生成配置：${CONFIG_FILE}"

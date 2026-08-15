@@ -31,4 +31,10 @@ public sealed record DownloadOptions(
 
     /// <summary>附加 yt-dlp 参数（可为空）。</summary>
     public IReadOnlyList<string>? ExtraArgs { get; init; }
+
+    /// <summary>显式 <c>-f</c> 格式表达式（可为空，如 <c>137+140</c>）。</summary>
+    public string? FormatExpression { get; init; }
+
+    /// <summary>YouTube player_client 列表（可为空，仅 YouTube 域名生效）。</summary>
+    public string? YoutubePlayerClients { get; init; }
 }

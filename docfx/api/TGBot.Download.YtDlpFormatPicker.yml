@@ -1,41 +1,39 @@
 ### YamlMime:ManagedReference
 items:
-- uid: TGBot.Download.YtDlpArgumentBuilder
-  commentId: T:TGBot.Download.YtDlpArgumentBuilder
-  id: YtDlpArgumentBuilder
+- uid: TGBot.Download.YtDlpFormatPicker
+  commentId: T:TGBot.Download.YtDlpFormatPicker
+  id: YtDlpFormatPicker
   parent: TGBot.Download
   children:
-  - TGBot.Download.YtDlpArgumentBuilder.Build(TGBot.Download.DownloadOptions)
-  - TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl(System.String)
+  - TGBot.Download.YtDlpFormatPicker.ParseFormats(System.String)
+  - TGBot.Download.YtDlpFormatPicker.PickBestExpression(System.Collections.Generic.IReadOnlyList{TGBot.Download.FormatInfo})
   langs:
   - csharp
   - vb
-  name: YtDlpArgumentBuilder
-  nameWithType: YtDlpArgumentBuilder
-  fullName: TGBot.Download.YtDlpArgumentBuilder
+  name: YtDlpFormatPicker
+  nameWithType: YtDlpFormatPicker
+  fullName: TGBot.Download.YtDlpFormatPicker
   type: Class
   source:
     remote:
-      path: src/TGBot/Download/YtDlpArgumentBuilder.cs
+      path: src/TGBot/Download/YtDlpFormatPicker.cs
       branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
-    id: YtDlpArgumentBuilder
-    path: ../src/TGBot/Download/YtDlpArgumentBuilder.cs
-    startLine: 7
+    id: YtDlpFormatPicker
+    path: ../src/TGBot/Download/YtDlpFormatPicker.cs
+    startLine: 20
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
   summary: >-
-    构建 yt-dlp 命令行参数（纯函数，便于单元测试）。
+    从 yt-dlp <code>-J</code> JSON 中挑选「最高画质视频 + 最高音质音频」的组合表达式。
 
 
-    <p>所有参数通过 <xref href="System.Diagnostics.ProcessStartInfo.ArgumentList" data-throw-if-not-resolved="false"></xref> 传递，
-
-    不经过 shell，从根本上杜绝命令注入。</p>
+    <p>纯解析逻辑，便于单元测试。</p>
   example: []
   syntax:
-    content: public static class YtDlpArgumentBuilder
-    content.vb: Public Module YtDlpArgumentBuilder
+    content: public static class YtDlpFormatPicker
+    content.vb: Public Module YtDlpFormatPicker
   inheritance:
   - System.Object
   inheritedMembers:
@@ -46,87 +44,86 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Download.YtDlpArgumentBuilder.Build(TGBot.Download.DownloadOptions)
-  commentId: M:TGBot.Download.YtDlpArgumentBuilder.Build(TGBot.Download.DownloadOptions)
-  id: Build(TGBot.Download.DownloadOptions)
-  parent: TGBot.Download.YtDlpArgumentBuilder
+- uid: TGBot.Download.YtDlpFormatPicker.ParseFormats(System.String)
+  commentId: M:TGBot.Download.YtDlpFormatPicker.ParseFormats(System.String)
+  id: ParseFormats(System.String)
+  parent: TGBot.Download.YtDlpFormatPicker
   langs:
   - csharp
   - vb
-  name: Build(DownloadOptions)
-  nameWithType: YtDlpArgumentBuilder.Build(DownloadOptions)
-  fullName: TGBot.Download.YtDlpArgumentBuilder.Build(TGBot.Download.DownloadOptions)
+  name: ParseFormats(string)
+  nameWithType: YtDlpFormatPicker.ParseFormats(string)
+  fullName: TGBot.Download.YtDlpFormatPicker.ParseFormats(string)
   type: Method
   source:
     remote:
-      path: src/TGBot/Download/YtDlpArgumentBuilder.cs
+      path: src/TGBot/Download/YtDlpFormatPicker.cs
       branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
-    id: Build
-    path: ../src/TGBot/Download/YtDlpArgumentBuilder.cs
-    startLine: 14
+    id: ParseFormats
+    path: ../src/TGBot/Download/YtDlpFormatPicker.cs
+    startLine: 27
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
-  summary: 构建 yt-dlp 参数列表。
+  summary: 解析 yt-dlp -J 输出的 formats 列表。
   example: []
   syntax:
-    content: public static IReadOnlyList<string> Build(DownloadOptions options)
+    content: public static IReadOnlyList<FormatInfo> ParseFormats(string json)
     parameters:
-    - id: options
-      type: TGBot.Download.DownloadOptions
-      description: 下载参数。
-    return:
-      type: System.Collections.Generic.IReadOnlyList{System.String}
-      description: 参数列表。
-    content.vb: Public Shared Function Build(options As DownloadOptions) As IReadOnlyList(Of String)
-  overload: TGBot.Download.YtDlpArgumentBuilder.Build*
-- uid: TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl(System.String)
-  commentId: M:TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl(System.String)
-  id: IsYoutubeUrl(System.String)
-  parent: TGBot.Download.YtDlpArgumentBuilder
-  langs:
-  - csharp
-  - vb
-  name: IsYoutubeUrl(string)
-  nameWithType: YtDlpArgumentBuilder.IsYoutubeUrl(string)
-  fullName: TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl(string)
-  type: Method
-  source:
-    remote:
-      path: src/TGBot/Download/YtDlpArgumentBuilder.cs
-      branch: main
-      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
-    id: IsYoutubeUrl
-    path: ../src/TGBot/Download/YtDlpArgumentBuilder.cs
-    startLine: 115
-  assemblies:
-  - tgdl-bot
-  namespace: TGBot.Download
-  summary: 判断 URL 是否属于 YouTube 域名。
-  example: []
-  syntax:
-    content: public static bool IsYoutubeUrl(string url)
-    parameters:
-    - id: url
+    - id: json
       type: System.String
-      description: URL。
+      description: -J 输出 JSON。
     return:
-      type: System.Boolean
-      description: 是 YouTube 域名返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。
-    content.vb: Public Shared Function IsYoutubeUrl(url As String) As Boolean
-  overload: TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl*
-  nameWithType.vb: YtDlpArgumentBuilder.IsYoutubeUrl(String)
-  fullName.vb: TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl(String)
-  name.vb: IsYoutubeUrl(String)
+      type: System.Collections.Generic.IReadOnlyList{TGBot.Download.FormatInfo}
+      description: 格式列表。
+    content.vb: Public Shared Function ParseFormats(json As String) As IReadOnlyList(Of FormatInfo)
+  overload: TGBot.Download.YtDlpFormatPicker.ParseFormats*
+  nameWithType.vb: YtDlpFormatPicker.ParseFormats(String)
+  fullName.vb: TGBot.Download.YtDlpFormatPicker.ParseFormats(String)
+  name.vb: ParseFormats(String)
+- uid: TGBot.Download.YtDlpFormatPicker.PickBestExpression(System.Collections.Generic.IReadOnlyList{TGBot.Download.FormatInfo})
+  commentId: M:TGBot.Download.YtDlpFormatPicker.PickBestExpression(System.Collections.Generic.IReadOnlyList{TGBot.Download.FormatInfo})
+  id: PickBestExpression(System.Collections.Generic.IReadOnlyList{TGBot.Download.FormatInfo})
+  parent: TGBot.Download.YtDlpFormatPicker
+  langs:
+  - csharp
+  - vb
+  name: PickBestExpression(IReadOnlyList<FormatInfo>)
+  nameWithType: YtDlpFormatPicker.PickBestExpression(IReadOnlyList<FormatInfo>)
+  fullName: TGBot.Download.YtDlpFormatPicker.PickBestExpression(System.Collections.Generic.IReadOnlyList<TGBot.Download.FormatInfo>)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Download/YtDlpFormatPicker.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: PickBestExpression
+    path: ../src/TGBot/Download/YtDlpFormatPicker.cs
+    startLine: 69
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: >-
+    挑选最高视频+音频组合，返回 <code>-f</code> 表达式（如 <code>137+140</code>）。
+
+    无纯视频/纯音频时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>（调用方改用 <code>best</code>）。
+  example: []
+  syntax:
+    content: public static string? PickBestExpression(IReadOnlyList<FormatInfo> formats)
+    parameters:
+    - id: formats
+      type: System.Collections.Generic.IReadOnlyList{TGBot.Download.FormatInfo}
+      description: 格式列表。
+    return:
+      type: System.String
+      description: 表达式或 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Public Shared Function PickBestExpression(formats As IReadOnlyList(Of FormatInfo)) As String
+  overload: TGBot.Download.YtDlpFormatPicker.PickBestExpression*
+  nameWithType.vb: YtDlpFormatPicker.PickBestExpression(IReadOnlyList(Of FormatInfo))
+  fullName.vb: TGBot.Download.YtDlpFormatPicker.PickBestExpression(System.Collections.Generic.IReadOnlyList(Of TGBot.Download.FormatInfo))
+  name.vb: PickBestExpression(IReadOnlyList(Of FormatInfo))
 references:
-- uid: System.Diagnostics.ProcessStartInfo.ArgumentList
-  commentId: P:System.Diagnostics.ProcessStartInfo.ArgumentList
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.processstartinfo.argumentlist
-  name: ArgumentList
-  nameWithType: ProcessStartInfo.ArgumentList
-  fullName: System.Diagnostics.ProcessStartInfo.ArgumentList
 - uid: TGBot.Download
   commentId: N:TGBot.Download
   href: TGBot.html
@@ -386,40 +383,43 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: TGBot.Download.YtDlpArgumentBuilder.Build*
-  commentId: Overload:TGBot.Download.YtDlpArgumentBuilder.Build
-  href: TGBot.Download.YtDlpArgumentBuilder.html#TGBot_Download_YtDlpArgumentBuilder_Build_TGBot_Download_DownloadOptions_
-  name: Build
-  nameWithType: YtDlpArgumentBuilder.Build
-  fullName: TGBot.Download.YtDlpArgumentBuilder.Build
-- uid: TGBot.Download.DownloadOptions
-  commentId: T:TGBot.Download.DownloadOptions
-  parent: TGBot.Download
-  href: TGBot.Download.DownloadOptions.html
-  name: DownloadOptions
-  nameWithType: DownloadOptions
-  fullName: TGBot.Download.DownloadOptions
-- uid: System.Collections.Generic.IReadOnlyList{System.String}
-  commentId: T:System.Collections.Generic.IReadOnlyList{System.String}
+- uid: TGBot.Download.YtDlpFormatPicker.ParseFormats*
+  commentId: Overload:TGBot.Download.YtDlpFormatPicker.ParseFormats
+  href: TGBot.Download.YtDlpFormatPicker.html#TGBot_Download_YtDlpFormatPicker_ParseFormats_System_String_
+  name: ParseFormats
+  nameWithType: YtDlpFormatPicker.ParseFormats
+  fullName: TGBot.Download.YtDlpFormatPicker.ParseFormats
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Collections.Generic.IReadOnlyList{TGBot.Download.FormatInfo}
+  commentId: T:System.Collections.Generic.IReadOnlyList{TGBot.Download.FormatInfo}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IReadOnlyList`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
-  name: IReadOnlyList<string>
-  nameWithType: IReadOnlyList<string>
-  fullName: System.Collections.Generic.IReadOnlyList<string>
-  nameWithType.vb: IReadOnlyList(Of String)
-  fullName.vb: System.Collections.Generic.IReadOnlyList(Of String)
-  name.vb: IReadOnlyList(Of String)
+  name: IReadOnlyList<FormatInfo>
+  nameWithType: IReadOnlyList<FormatInfo>
+  fullName: System.Collections.Generic.IReadOnlyList<TGBot.Download.FormatInfo>
+  nameWithType.vb: IReadOnlyList(Of FormatInfo)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of TGBot.Download.FormatInfo)
+  name.vb: IReadOnlyList(Of FormatInfo)
   spec.csharp:
   - uid: System.Collections.Generic.IReadOnlyList`1
     name: IReadOnlyList
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
+  - uid: TGBot.Download.FormatInfo
+    name: FormatInfo
+    href: TGBot.Download.FormatInfo.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IReadOnlyList`1
@@ -429,10 +429,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
+  - uid: TGBot.Download.FormatInfo
+    name: FormatInfo
+    href: TGBot.Download.FormatInfo.html
   - name: )
 - uid: System.Collections.Generic.IReadOnlyList`1
   commentId: T:System.Collections.Generic.IReadOnlyList`1
@@ -499,31 +498,9 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl*
-  commentId: Overload:TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl
-  href: TGBot.Download.YtDlpArgumentBuilder.html#TGBot_Download_YtDlpArgumentBuilder_IsYoutubeUrl_System_String_
-  name: IsYoutubeUrl
-  nameWithType: YtDlpArgumentBuilder.IsYoutubeUrl
-  fullName: TGBot.Download.YtDlpArgumentBuilder.IsYoutubeUrl
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
+- uid: TGBot.Download.YtDlpFormatPicker.PickBestExpression*
+  commentId: Overload:TGBot.Download.YtDlpFormatPicker.PickBestExpression
+  href: TGBot.Download.YtDlpFormatPicker.html#TGBot_Download_YtDlpFormatPicker_PickBestExpression_System_Collections_Generic_IReadOnlyList_TGBot_Download_FormatInfo__
+  name: PickBestExpression
+  nameWithType: YtDlpFormatPicker.PickBestExpression
+  fullName: TGBot.Download.YtDlpFormatPicker.PickBestExpression

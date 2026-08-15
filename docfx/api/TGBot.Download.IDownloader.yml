@@ -6,6 +6,7 @@ items:
   parent: TGBot.Download
   children:
   - TGBot.Download.IDownloader.DownloadAsync(TGBot.Download.DownloadOptions,System.Action{TGBot.Download.DownloadProgress},System.Threading.CancellationToken)
+  - TGBot.Download.IDownloader.ProbeBestFormatAsync(TGBot.Download.DownloadOptions,System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
@@ -79,6 +80,44 @@ items:
   nameWithType.vb: IDownloader.DownloadAsync(DownloadOptions, Action(Of DownloadProgress), CancellationToken)
   fullName.vb: TGBot.Download.IDownloader.DownloadAsync(TGBot.Download.DownloadOptions, System.Action(Of TGBot.Download.DownloadProgress), System.Threading.CancellationToken)
   name.vb: DownloadAsync(DownloadOptions, Action(Of DownloadProgress), CancellationToken)
+- uid: TGBot.Download.IDownloader.ProbeBestFormatAsync(TGBot.Download.DownloadOptions,System.Threading.CancellationToken)
+  commentId: M:TGBot.Download.IDownloader.ProbeBestFormatAsync(TGBot.Download.DownloadOptions,System.Threading.CancellationToken)
+  id: ProbeBestFormatAsync(TGBot.Download.DownloadOptions,System.Threading.CancellationToken)
+  parent: TGBot.Download.IDownloader
+  langs:
+  - csharp
+  - vb
+  name: ProbeBestFormatAsync(DownloadOptions, CancellationToken)
+  nameWithType: IDownloader.ProbeBestFormatAsync(DownloadOptions, CancellationToken)
+  fullName: TGBot.Download.IDownloader.ProbeBestFormatAsync(TGBot.Download.DownloadOptions, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Download/IDownloader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ProbeBestFormatAsync
+    path: ../src/TGBot/Download/IDownloader.cs
+    startLine: 33
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 探测并返回「最高画质视频 + 最高音质音频」的 <code>-f</code> 表达式（不下载）。
+  example: []
+  syntax:
+    content: Task<string?> ProbeBestFormatAsync(DownloadOptions options, CancellationToken cancellationToken)
+    parameters:
+    - id: options
+      type: TGBot.Download.DownloadOptions
+      description: 探测参数（复用 URL/cookies/代理/额外参数等）。
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+      description: 格式表达式（如 <code>137+140</code>）；无法挑选时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Function ProbeBestFormatAsync(options As DownloadOptions, cancellationToken As CancellationToken) As Task(Of String)
+  overload: TGBot.Download.IDownloader.ProbeBestFormatAsync*
 references:
 - uid: TGBot.Download
   commentId: N:TGBot.Download
@@ -322,3 +361,44 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: TGBot.Download.IDownloader.ProbeBestFormatAsync*
+  commentId: Overload:TGBot.Download.IDownloader.ProbeBestFormatAsync
+  href: TGBot.Download.IDownloader.html#TGBot_Download_IDownloader_ProbeBestFormatAsync_TGBot_Download_DownloadOptions_System_Threading_CancellationToken_
+  name: ProbeBestFormatAsync
+  nameWithType: IDownloader.ProbeBestFormatAsync
+  fullName: TGBot.Download.IDownloader.ProbeBestFormatAsync
+- uid: System.Threading.Tasks.Task{System.String}
+  commentId: T:System.Threading.Tasks.Task{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<string>
+  nameWithType: Task<string>
+  fullName: System.Threading.Tasks.Task<string>
+  nameWithType.vb: Task(Of String)
+  fullName.vb: System.Threading.Tasks.Task(Of String)
+  name.vb: Task(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )

@@ -142,6 +142,13 @@ TGDL_YTDLP_PROXY=http://<住宅/独享代理>:端口
 TGDL_YTDLP_EXTRA_ARGS=--extractor-args youtube:player_client=android,ios
 ```
 
+### 自动格式兜底
+
+若默认格式选择失败（`Requested format is not available`，常见于 YouTube 多 player_client
+返回的格式列表不一致），bot 会**自动后台**：列出可用格式 → 挑**最高画质视频 + 最高音质音频**
+→ 用 `-f <视频ID>+<音频ID>` 重新下载并 **ffmpeg 合并**，无需人工干预。
+YouTube 默认启用多 player_client（`TGDL_YTDLP_PLAYER_CLIENTS=default,android,ios,web_embedded`，留空可禁用）。
+
 ## 本地开发与测试
 
 ```bash
