@@ -28,52 +28,6 @@ warn() { printf '\033[1;33m[警告 ]\033[0m %s\n' "$*" >&2; }
 err()  { printf '\033[1;31m[错误 ]\033[0m %s\n' "$*" >&2; }
 die()  { err "$*"; exit 1; }
 
-# 按官方 README 从源码构建 telegram-bot-api（tdlib 无预编译二进制时的自动方案）
-# 参考：git clone --recursive + CMake Release 构建
-# 构建较重（tdlib 代码量），并行度按内存限制（约 1.5GB/任务）防小内存 VPS OOM。
-# 参数：$1 = 构建产物要复制到的目标路径
-build_telegram_bot_api() {
-    local dest="$1"
-    local log_file="$TMPDIR/tba-build.log"
-
-    log "安装构建依赖（build-essential、cmake、gperf、git、libssl-dev、zlib1g-dev、pkg-config）…"
-    apt-get install -y -qq build-essential cmake gperf git libssl-dev zlib1g-dev pkg-config >/dev/null \
-        || { warn "构建依赖安装失败。"; return 1; }
-
-    log "克隆官方仓库（--recursive）…"
-    if ! git clone --depth 1 --recursive \
-        "https://github.com/tdlib/telegram-bot-api.git" "$TMPDIR/tba-src" >/dev/null 2>&1; then
-        warn "克隆失败，请检查网络后重试。"
-        return 1
-    fi
-
-    # 并行度：默认按可用内存估算，可用 TGDL_BUILD_JOBS 覆盖
-    local cores ram_mb jobs
-    cores="$(nproc 2>/dev/null || echo 2)"
-    ram_mb="$(awk '/MemTotal/{print int($2/1024)}' /proc/meminfo 2>/dev/null || echo 2048)"
-    jobs=$((ram_mb / 1500))
-    [[ "$jobs" -lt 1 ]] && jobs=1
-    [[ "$jobs" -gt "$cores" ]] && jobs="$cores"
-    [[ -n "${TGDL_BUILD_JOBS:-}" ]] && jobs="$TGDL_BUILD_JOBS"
-
-    log "开始源码构建（-j${jobs}，官方 README 流程；视机器性能约 10-30 分钟，请耐心等待）…"
-    if ! ( cd "$TMPDIR/tba-src" && mkdir -p build && cd build \
-            && cmake -DCMAKE_BUILD_TYPE=Release .. >"$log_file" 2>&1 \
-            && cmake --build . -j"$jobs" >>"$log_file" 2>&1 ); then
-        warn "构建失败，日志最后几行："
-        tail -n 5 "$log_file" 2>/dev/null | sed 's/^/      /'
-        return 1
-    fi
-
-    if [[ ! -x "$TMPDIR/tba-src/build/telegram-bot-api" ]]; then
-        warn "构建完成但未找到 telegram-bot-api 产物。"
-        return 1
-    fi
-
-    install -m 0755 "$TMPDIR/tba-src/build/telegram-bot-api" "$dest"
-    return 0
-}
-
 # ---------- 1. root 检查 ----------
 if [[ $EUID -ne 0 ]]; then
     die "需要 root 权限，请使用：curl -fsSL https://raw.githubusercontent.com/${REPO}/main/scripts/install.sh | sudo bash"
@@ -136,29 +90,18 @@ chmod +x "$BOT_BIN"
 [[ -x "$BOT_BIN" ]] || die "tgdl-bot 二进制不可执行。"
 [[ -f "$TMPDIR/deploy/install.sh" ]] || die "压缩包中未找到 deploy/install.sh。"
 
-# ---------- 4. 安装 telegram-bot-api（本地 Bot API Server） ----------
-# 决策：本地 Bot API Server 是 Bot 正常工作的必需组件。tdlib 官方仓库当前
-# 没有发布预编译二进制（其 releases 无资产、latest 直链 404）。
-# 因此本脚本按官方 README 的做法：先尝试下载预编译二进制（若官方恢复发布则走快速路径），
-# 失败后自动 git clone 官方仓库并用 CMake 从源码构建（官方 README 流程），全程无需人工干预。
-if [[ ! -x "$INSTALL_DIR/api/telegram-bot-api" ]]; then
-    TBA_URL="https://github.com/tdlib/telegram-bot-api/releases/download/latest/telegram-bot-api-linux-amd64"
-    log "尝试自动下载 telegram-bot-api（本地 Bot API Server）…"
-    if curl -fsSL --retry 2 --retry-delay 2 --max-time 180 -o "$TMPDIR/deploy/telegram-bot-api" "$TBA_URL" \
-        && [[ "$(head -c4 "$TMPDIR/deploy/telegram-bot-api" 2>/dev/null)" == $'\x7fELF' ]] \
-        && chmod +x "$TMPDIR/deploy/telegram-bot-api"; then
-        log "telegram-bot-api 下载成功，将由 deploy/install.sh 安装。"
-    else
-        rm -f "$TMPDIR/deploy/telegram-bot-api"
-        if build_telegram_bot_api "$TMPDIR/deploy/telegram-bot-api"; then
-            log "telegram-bot-api 源码构建成功，将由 deploy/install.sh 安装。"
-        else
-            warn "telegram-bot-api 源码构建失败，Bot 依赖本地 Bot API Server 才能工作。"
-            warn "可重跑本脚本重试，或手动处理："
-            warn "  参考构建说明：https://tdlib.github.io/telegram-bot-api/build.html"
-            warn "  将 linux x64 二进制放到 /opt/tgdl-bot/api/telegram-bot-api 后：systemctl restart telegram-bot-api"
-        fi
-    fi
+# ---------- 4. telegram-bot-api 二进制（随 Release 附带） ----------
+# telegram-bot-api 作为子项目（third_party/telegram-bot-api）随仓库维护，
+# 由 GitHub Actions 在 Release 时编译好并打进 tgdl-bot-*-linux-x64.tar.gz。
+# VPS 无需本地 clone/构建，直接安装压缩包内的二进制即可（弱性能 VPS 友好）。
+TBA_BIN="$TMPDIR/telegram-bot-api"
+if [[ ! -f "$TBA_BIN" ]]; then
+    warn "压缩包中未找到 telegram-bot-api 二进制（该 Release 可能较旧或 CI 未附带构建产物）。"
+    warn "Bot 依赖本地 Bot API Server 才能工作，请手动安装："
+    warn "  将 linux x64 的 telegram-bot-api 放到 /opt/tgdl-bot/api/telegram-bot-api 后：systemctl restart telegram-bot-api"
+else
+    chmod +x "$TBA_BIN" 2>/dev/null || true
+    log "压缩包内已含 telegram-bot-api 二进制，将由 deploy/install.sh 安装。"
 fi
 
 # ---------- 5. 复用现有部署逻辑 ----------

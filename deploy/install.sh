@@ -62,8 +62,16 @@ fi
 
 echo ">>> 5/6 安装 telegram-bot-api（本地 Bot API Server）"
 if [[ ! -x "$API_DIR/telegram-bot-api" ]]; then
+    # 优先从脚本同目录（deploy/）找；再退回父目录（压缩包根，与 tgdl-bot 并列）找
+    TBA_SRC=""
     if [[ -f "$SCRIPT_DIR/telegram-bot-api" ]]; then
-        install -o "$SERVICE_USER" -g "$SERVICE_USER" -m 0755 "$SCRIPT_DIR/telegram-bot-api" "$API_DIR/telegram-bot-api"
+        TBA_SRC="$SCRIPT_DIR/telegram-bot-api"
+    elif [[ -f "$(dirname "$SCRIPT_DIR")/telegram-bot-api" ]]; then
+        TBA_SRC="$(dirname "$SCRIPT_DIR")/telegram-bot-api"
+    fi
+
+    if [[ -n "$TBA_SRC" ]]; then
+        install -o "$SERVICE_USER" -g "$SERVICE_USER" -m 0755 "$TBA_SRC" "$API_DIR/telegram-bot-api"
     else
         echo "    [可选] 未找到 telegram-bot-api 二进制，请手动下载后放置到 $API_DIR/telegram-bot-api"
         echo "    下载：https://github.com/tdlib/telegram-bot-api/releases （linux amd64）"

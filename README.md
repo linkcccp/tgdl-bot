@@ -154,10 +154,11 @@ journalctl -u tgdl-bot -f
 
 ### 4) 本地 Bot API Server
 
-一条命令安装脚本会自动安装：先尝试下载 tdlib 官方预编译二进制，失败则**按官方 README
-从源码构建**（`git clone --recursive` + CMake Release，约 10-30 分钟，无需人工干预）。
+**无需手动安装**：`telegram-bot-api` 以**子项目（`third_party/telegram-bot-api` submodule）**
+形式维护，由 GitHub Actions 在 Release 时于 CI runner 上编译好并打进
+`tgdl-bot-*-linux-x64.tar.gz`；一条命令安装脚本会直接从压缩包安装二进制（VPS 不本地构建）。
 
-若源码构建也未成功，可手动处理：
+若压缩包内没有该二进制（旧 Release），可手动构建后放置：
 
 ```bash
 cd /opt/tgdl-bot/api
@@ -176,7 +177,8 @@ sudo systemctl restart telegram-bot-api
 ## 发布（GitHub Actions 自动构建 Release）
 
 打 `v*` tag 即触发 [`.github/workflows/release.yml`](.github/workflows/release.yml)：
-自动发布单文件二进制 → 打包 `tgdl-bot-<tag>-linux-x64.tar.gz`（含 `deploy/` 与 README）→
+自动编译 **telegram-bot-api 子项目**（`third_party/telegram-bot-api` submodule）与 tgdl-bot
+单文件二进制 → 打包 `tgdl-bot-<tag>-linux-x64.tar.gz`（含两个二进制、`deploy/` 与 README）→
 创建 GitHub Release 并上传产物。
 
 ```bash
