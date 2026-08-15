@@ -25,20 +25,26 @@ jobs:
         with:
           dotnet-version: '10.0.x'
 
-      - name: Build telegram-bot-api (子项目，随 Release 附带)
+      - name: Build telegram-bot-api (子项目，Debian 12 容器内编译以兼容 Debian 12 glibc)
         shell: bash
         run: |
           set -euo pipefail
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq build-essential cmake gperf git libssl-dev zlib1g-dev pkg-config
-          cd third_party/telegram-bot-api
-          mkdir -p build
-          cd build
-          cmake -DCMAKE_BUILD_TYPE=Release ..
-          cmake --build . -j"$(nproc)"
-          test -x ./telegram-bot-api
-          ./telegram-bot-api --help >/dev/null 2>&1 || true
-          echo "built telegram-bot-api: $(ls -la ./telegram-bot-api | awk '{print $5}') bytes"
+          # 必须在 Debian 12 容器内编译：ubuntu-latest (glibc 2.39) 产出的二进制
+          # 会依赖 GLIBC_2.38+，无法在 Debian 12 (glibc 2.36) 上运行。
+          docker run --rm \
+            -v "$GITHUB_WORKSPACE":/workspace \
+            -w /workspace/third_party/telegram-bot-api \
+            debian:12 bash -c '
+              set -euo pipefail
+              apt-get update -qq
+              apt-get install -y -qq build-essential cmake gperf git libssl-dev zlib1g-dev pkg-config
+              mkdir -p build
+              cd build
+              cmake -DCMAKE_BUILD_TYPE=Release ..
+              cmake --build . -j"$(nproc)"
+              test -x ./telegram-bot-api
+            '
+          echo "built telegram-bot-api: $(ls -la third_party/telegram-bot-api/build/telegram-bot-api | awk '{print $5}') bytes"
 
       - name: Publish (linux-x64 self-contained single file)
         run: |
