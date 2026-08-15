@@ -14,9 +14,20 @@ ARG TARGETARCH
 #   passwd      -> useradd（构建用户）
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        python3 libssl3 zlib1g curl ca-certificates passwd \
+        python3 libssl3 zlib1g curl ca-certificates passwd unzip \
     && rm -rf /var/lib/apt/lists/* \
     && useradd --system --no-create-home --uid 10001 tgdl-bot
+
+# JavaScript 运行时（deno）：yt-dlp 2026.07.04+ 的 YouTube 提取依赖它，
+# 否则格式列表不完整会报 "Requested format is not available"。
+# 仅装入容器沙盒内，不污染宿主机。deno 为自包含单文件，按 TARGETARCH 选取。
+RUN ARCH="$([ "$TARGETARCH" = "arm64" ] && echo "aarch64-unknown-linux-gnu" || echo "x86_64-unknown-linux-gnu")" \
+    && curl -fsSL -o /tmp/deno.zip \
+        "https://github.com/denoland/deno/releases/latest/download/deno-${ARCH}.zip" \
+    && unzip -o /tmp/deno.zip -d /usr/local/bin \
+    && rm -f /tmp/deno.zip \
+    && chmod +x /usr/local/bin/deno \
+    && deno --version
 
 # 运行目录布局：
 #   /opt/tgdl-bot/tgdl-bot          主程序（自包含单文件）

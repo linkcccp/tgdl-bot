@@ -149,6 +149,10 @@ TGDL_YTDLP_EXTRA_ARGS=--extractor-args youtube:player_client=android,ios
 → 用 `-f <视频ID>+<音频ID>` 重新下载并 **ffmpeg 合并**，无需人工干预。
 YouTube 默认启用多 player_client（`TGDL_YTDLP_PLAYER_CLIENTS=android,ios,web_embedded,tv`，留空可禁用）。
 
+> **JS 运行时**：yt-dlp 2026.07.04+ 的 YouTube 完整格式提取需要 JavaScript 运行时（deno），
+> 缺失时格式列表不完整，会报 "Requested format is not available"。**Docker 镜像已内置 deno**
+> （仅存在于容器沙盒，不污染宿主机）；本机直接跑 yt-dlp 时需自行安装 deno 并加入 PATH。
+
 ## 本地开发与测试
 
 ```bash

@@ -110,6 +110,16 @@ jobs:
             ghcr.io/linkcccp/tgdl-bot:${{ env.VERSION }}
             ghcr.io/linkcccp/tgdl-bot:latest
 
+      - name: Verify image (deno JS runtime)
+        shell: bash
+        run: |
+          docker run --rm --entrypoint bash "ghcr.io/linkcccp/tgdl-bot:${{ env.VERSION }}" -c '
+            set -e
+            deno --version >/dev/null
+            /opt/tgdl-bot/seed-bin/yt-dlp --version >/dev/null
+            echo "deno JS runtime OK"
+          '
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v3
         with:
