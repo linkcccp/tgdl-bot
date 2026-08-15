@@ -164,22 +164,21 @@ dotnet publish src/TGBot/TGBot.csproj -c Release -r linux-x64 --self-contained t
 ### 构建 Docker 镜像
 
 ```bash
-# 先按 CI 方式准备 docker/dist/ 产物：
-#   dist/{amd64,arm64}/tgdl-bot            （dotnet publish -r linux-x64 / linux-arm64）
-#   dist/{amd64,arm64}/telegram-bot-api     （来自 fork linkcccp/telegram-bot-api 的预编译 Release）
-#   dist/{amd64,arm64}/ffmpeg               （johnvansickle 静态版）
-#   dist/yt-dlp                             （官方 latest 静态版，跨架构通用）
-# 单架构本地构建：
+# 先按 CI 方式准备 docker/dist/ 产物（当前仅 x86_64）：
+#   dist/amd64/tgdl-bot            （dotnet publish -r linux-x64）
+#   dist/amd64/telegram-bot-api     （来自 fork linkcccp/telegram-bot-api 的预编译 Release）
+#   dist/amd64/ffmpeg               （johnvansickle 静态版）
+#   dist/yt-dlp                     （官方 latest 静态版）
+# 本地构建：
 docker build --build-arg TARGETARCH=amd64 -f docker/Dockerfile -t ghcr.io/linkcccp/tgdl-bot:dev docker/
 ```
 
-## 发布（GitHub Actions 自动构建并推送多架构镜像）
+## 发布（GitHub Actions 自动构建并推送镜像）
 
 打 `v*` tag 触发 [`.github/workflows/release.yml`](.github/workflows/release.yml)：
-发布 tgdl-bot（x64+arm64）→ 从 **fork `linkcccp/telegram-bot-api` 的最新 Release 下载
-预编译 telegram-bot-api**（该 fork 由 `auto-sync` 工作流自动同步上游并构建 x64/arm64）→
-下载 yt-dlp/ffmpeg 静态版 → 构建 **多架构**（linux/amd64 + linux/arm64）Docker 镜像并推送
-GHCR（`ghcr.io/linkcccp/tgdl-bot:{tag}` 与 `:latest`）→ 创建 Release。
+发布 tgdl-bot（linux-x64）→ 从 **fork `linkcccp/telegram-bot-api` 的最新 Release 下载
+预编译 telegram-bot-api**（x86_64）→ 下载 yt-dlp/ffmpeg 静态版 → 构建
+**linux/amd64（x86_64）** Docker 镜像并推送 GHCR（`ghcr.io/linkcccp/tgdl-bot:{tag}` 与 `:latest`）→ 创建 Release。
 
 ```bash
 git tag v2.0.0 && git push origin v2.0.0
@@ -198,7 +197,7 @@ dotnet tool install --global docfx
 
 ## 已知限制与未验证项
 
-- **架构**：已发布 linux/amd64 + linux/arm64 多架构镜像；arm64 由 CI（QEMU 模拟）验证，本机未实跑
+- **架构**：仅发布 linux/amd64（x86_64）；暂不支持 arm64
 - 超过上传上限（约 2GB）的文件会先完整下载再被拒绝（直链大小不可预知）
 - 与无空格中文粘连的 URL 无法可靠切分，需以空格分隔
 - telegram-bot-api 预编译二进制依赖 fork（`linkcccp/telegram-bot-api`）的 Release；
