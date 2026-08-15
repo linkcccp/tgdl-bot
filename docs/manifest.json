@@ -98,7 +98,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "TGBot.Application.CommandHandler",
-      "Summary": "<p sourcefile=\"api/TGBot.Application.CommandHandler.yml\" sourcestartlinenumber=\"1\">指令处理器：/update、/status、/help。</p>\n"
+      "Summary": "<p sourcefile=\"api/TGBot.Application.CommandHandler.yml\" sourcestartlinenumber=\"1\">指令处理器：/update、/status、/help、/cookie、/cookies。</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -126,7 +126,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "TGBot.Application.MessageRouter",
-      "Summary": "<p sourcefile=\"api/TGBot.Application.MessageRouter.yml\" sourcestartlinenumber=\"1\">消息路由器：访问控制 → 指令 / 链接校验 → 下载任务入队。</p>\n"
+      "Summary": "<p sourcefile=\"api/TGBot.Application.MessageRouter.yml\" sourcestartlinenumber=\"1\">消息路由器：访问控制 → 指令 / 文件（cookies 上传）/ 链接校验 → 下载任务入队。</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -238,6 +238,314 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "TGBot.Config",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.BilibiliCookieSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.BilibiliCookieSite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.BilibiliCookieSite",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.BilibiliCookieSite.yml\" sourcestartlinenumber=\"1\">哔哩哔哩。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.CookieService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.CookieService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.CookieService",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.CookieService.yml\" sourcestartlinenumber=\"1\">cookies 服务：待上传状态管理、从 Telegram 下载并校验落盘、按 URL 域名解析 cookie 文件。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.CookieSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.CookieSite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.CookieSite",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.CookieSite.yml\" sourcestartlinenumber=\"1\">站点抽象：一个站点对应一套 cookies 文件，并声明其匹配的域名。</p>\n<p>新增站点 = 继承本抽象并注册到 <xref href=\"TGBot.Cookie.SiteCookieRegistry\" data-throw-if-not-resolved=\"false\"></xref>，命令与存储零改动。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.CookieSiteUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.CookieSiteUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.CookieSiteUtil",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.CookieSiteUtil.yml\" sourcestartlinenumber=\"1\">通用站点辅助。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.CookieStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.CookieStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.CookieStatus",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.CookieStatus.yml\" sourcestartlinenumber=\"1\">站点 cookie 状态（用于列表展示）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.CookieStore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.CookieStore.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.CookieStore",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.CookieStore.yml\" sourcestartlinenumber=\"1\">cookies 持久化存储：<code>&lt;storeDir&gt;/&lt;siteKey&gt;.txt</code>，文件 0600、目录 0700。</p>\n<p>站点键仅允许 <code>[a-z0-9_-]</code>，杜绝路径穿越；不使用用户提供的文件名。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.CookieUploadResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.CookieUploadResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.CookieUploadResult",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.CookieUploadResult.yml\" sourcestartlinenumber=\"1\">cookie 上传结果。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.DailymotionCookieSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.DailymotionCookieSite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.DailymotionCookieSite",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.DailymotionCookieSite.yml\" sourcestartlinenumber=\"1\">Dailymotion。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.DouyinCookieSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.DouyinCookieSite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.DouyinCookieSite",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.DouyinCookieSite.yml\" sourcestartlinenumber=\"1\">抖音。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.FacebookCookieSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.FacebookCookieSite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.FacebookCookieSite",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.FacebookCookieSite.yml\" sourcestartlinenumber=\"1\">Facebook。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.InstagramCookieSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.InstagramCookieSite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.InstagramCookieSite",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.InstagramCookieSite.yml\" sourcestartlinenumber=\"1\">Instagram。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.RedditCookieSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.RedditCookieSite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.RedditCookieSite",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.RedditCookieSite.yml\" sourcestartlinenumber=\"1\">Reddit。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.SiteCookieRegistry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.SiteCookieRegistry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.SiteCookieRegistry",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.SiteCookieRegistry.yml\" sourcestartlinenumber=\"1\">站点注册表：把规范化主机名 / 站点键映射到 <xref href=\"TGBot.Cookie.CookieSite\" data-throw-if-not-resolved=\"false\"></xref>。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.SoundcloudCookieSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.SoundcloudCookieSite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.SoundcloudCookieSite",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.SoundcloudCookieSite.yml\" sourcestartlinenumber=\"1\">SoundCloud。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.TiktokCookieSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.TiktokCookieSite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.TiktokCookieSite",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.TiktokCookieSite.yml\" sourcestartlinenumber=\"1\">TikTok。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.TwitchCookieSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.TwitchCookieSite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.TwitchCookieSite",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.TwitchCookieSite.yml\" sourcestartlinenumber=\"1\">Twitch。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.TwitterCookieSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.TwitterCookieSite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.TwitterCookieSite",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.TwitterCookieSite.yml\" sourcestartlinenumber=\"1\">X（推特）。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.VimeoCookieSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.VimeoCookieSite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.VimeoCookieSite",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.VimeoCookieSite.yml\" sourcestartlinenumber=\"1\">Vimeo。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.WeiboCookieSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.WeiboCookieSite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.WeiboCookieSite",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.WeiboCookieSite.yml\" sourcestartlinenumber=\"1\">微博。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.XiaohongshuCookieSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.XiaohongshuCookieSite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.XiaohongshuCookieSite",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.XiaohongshuCookieSite.yml\" sourcestartlinenumber=\"1\">小红书。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.YoutubeCookieSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.YoutubeCookieSite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie.YoutubeCookieSite",
+      "Summary": "<p sourcefile=\"api/TGBot.Cookie.YoutubeCookieSite.yml\" sourcestartlinenumber=\"1\">YouTube。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TGBot.Cookie.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TGBot.Cookie.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TGBot.Cookie",
       "Summary": null
     },
     {

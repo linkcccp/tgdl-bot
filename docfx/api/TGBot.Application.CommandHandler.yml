@@ -5,7 +5,7 @@ items:
   id: CommandHandler
   parent: TGBot.Application
   children:
-  - TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger)
+  - TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger)
   - TGBot.Application.CommandHandler.HandleAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)
   langs:
   - csharp
@@ -21,11 +21,11 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CommandHandler
     path: ../src/TGBot/Application/CommandHandler.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
-  summary: 指令处理器：/update、/status、/help。
+  summary: 指令处理器：/update、/status、/help、/cookie、/cookies。
   example: []
   syntax:
     content: public sealed class CommandHandler
@@ -39,16 +39,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger)
-  commentId: M:TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger)
-  id: '#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger)'
+- uid: TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger)
+  commentId: M:TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger)
+  id: '#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger)'
   parent: TGBot.Application.CommandHandler
   langs:
   - csharp
   - vb
-  name: CommandHandler(ITelegramClient, IUpdater, DownloadGate, JobRegistry, string, AppConfig, IProcessRunner, IAppLogger)
-  nameWithType: CommandHandler.CommandHandler(ITelegramClient, IUpdater, DownloadGate, JobRegistry, string, AppConfig, IProcessRunner, IAppLogger)
-  fullName: TGBot.Application.CommandHandler.CommandHandler(TGBot.Messaging.ITelegramClient, TGBot.Update.IUpdater, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, string, TGBot.Config.AppConfig, TGBot.Update.IProcessRunner, TGBot.Logging.IAppLogger)
+  name: CommandHandler(ITelegramClient, IUpdater, DownloadGate, JobRegistry, string, CookieService, AppConfig, IProcessRunner, IAppLogger)
+  nameWithType: CommandHandler.CommandHandler(ITelegramClient, IUpdater, DownloadGate, JobRegistry, string, CookieService, AppConfig, IProcessRunner, IAppLogger)
+  fullName: TGBot.Application.CommandHandler.CommandHandler(TGBot.Messaging.ITelegramClient, TGBot.Update.IUpdater, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, string, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Update.IProcessRunner, TGBot.Logging.IAppLogger)
   type: Constructor
   source:
     remote:
@@ -57,14 +57,14 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Application/CommandHandler.cs
-    startLine: 40
+    startLine: 43
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
   summary: 初始化 <xref href="TGBot.Application.CommandHandler" data-throw-if-not-resolved="false"></xref>。
   example: []
   syntax:
-    content: public CommandHandler(ITelegramClient client, IUpdater updater, DownloadGate gate, JobRegistry registry, string tempDir, AppConfig config, IProcessRunner runner, IAppLogger logger)
+    content: public CommandHandler(ITelegramClient client, IUpdater updater, DownloadGate gate, JobRegistry registry, string tempDir, CookieService cookies, AppConfig config, IProcessRunner runner, IAppLogger logger)
     parameters:
     - id: client
       type: TGBot.Messaging.ITelegramClient
@@ -81,6 +81,9 @@ items:
     - id: tempDir
       type: System.String
       description: 临时目录（用于磁盘空间显示）。
+    - id: cookies
+      type: TGBot.Cookie.CookieService
+      description: cookies 服务。
     - id: config
       type: TGBot.Config.AppConfig
       description: 配置。
@@ -90,11 +93,11 @@ items:
     - id: logger
       type: TGBot.Logging.IAppLogger
       description: 日志器。
-    content.vb: Public Sub New(client As ITelegramClient, updater As IUpdater, gate As DownloadGate, registry As JobRegistry, tempDir As String, config As AppConfig, runner As IProcessRunner, logger As IAppLogger)
+    content.vb: Public Sub New(client As ITelegramClient, updater As IUpdater, gate As DownloadGate, registry As JobRegistry, tempDir As String, cookies As CookieService, config As AppConfig, runner As IProcessRunner, logger As IAppLogger)
   overload: TGBot.Application.CommandHandler.#ctor*
-  nameWithType.vb: CommandHandler.New(ITelegramClient, IUpdater, DownloadGate, JobRegistry, String, AppConfig, IProcessRunner, IAppLogger)
-  fullName.vb: TGBot.Application.CommandHandler.New(TGBot.Messaging.ITelegramClient, TGBot.Update.IUpdater, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, String, TGBot.Config.AppConfig, TGBot.Update.IProcessRunner, TGBot.Logging.IAppLogger)
-  name.vb: New(ITelegramClient, IUpdater, DownloadGate, JobRegistry, String, AppConfig, IProcessRunner, IAppLogger)
+  nameWithType.vb: CommandHandler.New(ITelegramClient, IUpdater, DownloadGate, JobRegistry, String, CookieService, AppConfig, IProcessRunner, IAppLogger)
+  fullName.vb: TGBot.Application.CommandHandler.New(TGBot.Messaging.ITelegramClient, TGBot.Update.IUpdater, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, String, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Update.IProcessRunner, TGBot.Logging.IAppLogger)
+  name.vb: New(ITelegramClient, IUpdater, DownloadGate, JobRegistry, String, CookieService, AppConfig, IProcessRunner, IAppLogger)
 - uid: TGBot.Application.CommandHandler.HandleAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)
   commentId: M:TGBot.Application.CommandHandler.HandleAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)
   id: HandleAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)
@@ -113,7 +116,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: HandleAsync
     path: ../src/TGBot/Application/CommandHandler.cs
-    startLine: 67
+    startLine: 72
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
@@ -383,7 +386,7 @@ references:
   fullName: TGBot.Application.CommandHandler
 - uid: TGBot.Application.CommandHandler.#ctor*
   commentId: Overload:TGBot.Application.CommandHandler.#ctor
-  href: TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler__ctor_TGBot_Messaging_ITelegramClient_TGBot_Update_IUpdater_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_System_String_TGBot_Config_AppConfig_TGBot_Update_IProcessRunner_TGBot_Logging_IAppLogger_
+  href: TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler__ctor_TGBot_Messaging_ITelegramClient_TGBot_Update_IUpdater_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_System_String_TGBot_Cookie_CookieService_TGBot_Config_AppConfig_TGBot_Update_IProcessRunner_TGBot_Logging_IAppLogger_
   name: CommandHandler
   nameWithType: CommandHandler.CommandHandler
   fullName: TGBot.Application.CommandHandler.CommandHandler
@@ -429,6 +432,13 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: TGBot.Cookie.CookieService
+  commentId: T:TGBot.Cookie.CookieService
+  parent: TGBot.Cookie
+  href: TGBot.Cookie.CookieService.html
+  name: CookieService
+  nameWithType: CookieService
+  fullName: TGBot.Cookie.CookieService
 - uid: TGBot.Config.AppConfig
   commentId: T:TGBot.Config.AppConfig
   parent: TGBot.Config
@@ -516,6 +526,28 @@ references:
   - uid: TGBot.Download
     name: Download
     href: TGBot.Download.html
+- uid: TGBot.Cookie
+  commentId: N:TGBot.Cookie
+  href: TGBot.html
+  name: TGBot.Cookie
+  nameWithType: TGBot.Cookie
+  fullName: TGBot.Cookie
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Cookie
+    name: Cookie
+    href: TGBot.Cookie.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Cookie
+    name: Cookie
+    href: TGBot.Cookie.html
 - uid: TGBot.Config
   commentId: N:TGBot.Config
   href: TGBot.html

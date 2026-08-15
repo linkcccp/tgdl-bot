@@ -1,0 +1,525 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Cookie.CookieStatus
+  commentId: T:TGBot.Cookie.CookieStatus
+  id: CookieStatus
+  parent: TGBot.Cookie
+  children:
+  - TGBot.Cookie.CookieStatus.#ctor(System.String,System.String,System.Boolean)
+  - TGBot.Cookie.CookieStatus.DisplayName
+  - TGBot.Cookie.CookieStatus.Has
+  - TGBot.Cookie.CookieStatus.Key
+  langs:
+  - csharp
+  - vb
+  name: CookieStatus
+  nameWithType: CookieStatus
+  fullName: TGBot.Cookie.CookieStatus
+  type: Class
+  source:
+    remote:
+      path: src/TGBot/Cookie/CookieService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieStatus
+    path: ../src/TGBot/Cookie/CookieService.cs
+    startLine: 20
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Cookie
+  summary: 站点 cookie 状态（用于列表展示）。
+  example: []
+  syntax:
+    content: 'public sealed record CookieStatus : IEquatable<CookieStatus>'
+    content.vb: Public NotInheritable Class CookieStatus Implements IEquatable(Of CookieStatus)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{TGBot.Cookie.CookieStatus}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Cookie.CookieStatus.#ctor(System.String,System.String,System.Boolean)
+  commentId: M:TGBot.Cookie.CookieStatus.#ctor(System.String,System.String,System.Boolean)
+  id: '#ctor(System.String,System.String,System.Boolean)'
+  parent: TGBot.Cookie.CookieStatus
+  langs:
+  - csharp
+  - vb
+  name: CookieStatus(string, string, bool)
+  nameWithType: CookieStatus.CookieStatus(string, string, bool)
+  fullName: TGBot.Cookie.CookieStatus.CookieStatus(string, string, bool)
+  type: Constructor
+  source:
+    remote:
+      path: src/TGBot/Cookie/CookieService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: .ctor
+    path: ../src/TGBot/Cookie/CookieService.cs
+    startLine: 20
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Cookie
+  summary: 站点 cookie 状态（用于列表展示）。
+  example: []
+  syntax:
+    content: public CookieStatus(string Key, string DisplayName, bool Has)
+    parameters:
+    - id: Key
+      type: System.String
+      description: 站点键。
+    - id: DisplayName
+      type: System.String
+      description: 显示名。
+    - id: Has
+      type: System.Boolean
+      description: 是否已保存 cookie。
+    content.vb: Public Sub New(Key As String, DisplayName As String, Has As Boolean)
+  overload: TGBot.Cookie.CookieStatus.#ctor*
+  nameWithType.vb: CookieStatus.New(String, String, Boolean)
+  fullName.vb: TGBot.Cookie.CookieStatus.New(String, String, Boolean)
+  name.vb: New(String, String, Boolean)
+- uid: TGBot.Cookie.CookieStatus.Key
+  commentId: P:TGBot.Cookie.CookieStatus.Key
+  id: Key
+  parent: TGBot.Cookie.CookieStatus
+  langs:
+  - csharp
+  - vb
+  name: Key
+  nameWithType: CookieStatus.Key
+  fullName: TGBot.Cookie.CookieStatus.Key
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Cookie/CookieService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Key
+    path: ../src/TGBot/Cookie/CookieService.cs
+    startLine: 20
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Cookie
+  summary: 站点键。
+  example: []
+  syntax:
+    content: public string Key { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Key As String
+  overload: TGBot.Cookie.CookieStatus.Key*
+- uid: TGBot.Cookie.CookieStatus.DisplayName
+  commentId: P:TGBot.Cookie.CookieStatus.DisplayName
+  id: DisplayName
+  parent: TGBot.Cookie.CookieStatus
+  langs:
+  - csharp
+  - vb
+  name: DisplayName
+  nameWithType: CookieStatus.DisplayName
+  fullName: TGBot.Cookie.CookieStatus.DisplayName
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Cookie/CookieService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: DisplayName
+    path: ../src/TGBot/Cookie/CookieService.cs
+    startLine: 20
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Cookie
+  summary: 显示名。
+  example: []
+  syntax:
+    content: public string DisplayName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DisplayName As String
+  overload: TGBot.Cookie.CookieStatus.DisplayName*
+- uid: TGBot.Cookie.CookieStatus.Has
+  commentId: P:TGBot.Cookie.CookieStatus.Has
+  id: Has
+  parent: TGBot.Cookie.CookieStatus
+  langs:
+  - csharp
+  - vb
+  name: Has
+  nameWithType: CookieStatus.Has
+  fullName: TGBot.Cookie.CookieStatus.Has
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Cookie/CookieService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Has
+    path: ../src/TGBot/Cookie/CookieService.cs
+    startLine: 20
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Cookie
+  summary: 是否已保存 cookie。
+  example: []
+  syntax:
+    content: public bool Has { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Has As Boolean
+  overload: TGBot.Cookie.CookieStatus.Has*
+references:
+- uid: TGBot.Cookie
+  commentId: N:TGBot.Cookie
+  href: TGBot.html
+  name: TGBot.Cookie
+  nameWithType: TGBot.Cookie
+  fullName: TGBot.Cookie
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Cookie
+    name: Cookie
+    href: TGBot.Cookie.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Cookie
+    name: Cookie
+    href: TGBot.Cookie.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{TGBot.Cookie.CookieStatus}
+  commentId: T:System.IEquatable{TGBot.Cookie.CookieStatus}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<CookieStatus>
+  nameWithType: IEquatable<CookieStatus>
+  fullName: System.IEquatable<TGBot.Cookie.CookieStatus>
+  nameWithType.vb: IEquatable(Of CookieStatus)
+  fullName.vb: System.IEquatable(Of TGBot.Cookie.CookieStatus)
+  name.vb: IEquatable(Of CookieStatus)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: TGBot.Cookie.CookieStatus
+    name: CookieStatus
+    href: TGBot.Cookie.CookieStatus.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Cookie.CookieStatus
+    name: CookieStatus
+    href: TGBot.Cookie.CookieStatus.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: TGBot.Cookie.CookieStatus.#ctor*
+  commentId: Overload:TGBot.Cookie.CookieStatus.#ctor
+  href: TGBot.Cookie.CookieStatus.html#TGBot_Cookie_CookieStatus__ctor_System_String_System_String_System_Boolean_
+  name: CookieStatus
+  nameWithType: CookieStatus.CookieStatus
+  fullName: TGBot.Cookie.CookieStatus.CookieStatus
+  nameWithType.vb: CookieStatus.New
+  fullName.vb: TGBot.Cookie.CookieStatus.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: TGBot.Cookie.CookieStatus.Key*
+  commentId: Overload:TGBot.Cookie.CookieStatus.Key
+  href: TGBot.Cookie.CookieStatus.html#TGBot_Cookie_CookieStatus_Key
+  name: Key
+  nameWithType: CookieStatus.Key
+  fullName: TGBot.Cookie.CookieStatus.Key
+- uid: TGBot.Cookie.CookieStatus.DisplayName*
+  commentId: Overload:TGBot.Cookie.CookieStatus.DisplayName
+  href: TGBot.Cookie.CookieStatus.html#TGBot_Cookie_CookieStatus_DisplayName
+  name: DisplayName
+  nameWithType: CookieStatus.DisplayName
+  fullName: TGBot.Cookie.CookieStatus.DisplayName
+- uid: TGBot.Cookie.CookieStatus.Has*
+  commentId: Overload:TGBot.Cookie.CookieStatus.Has
+  href: TGBot.Cookie.CookieStatus.html#TGBot_Cookie_CookieStatus_Has
+  name: Has
+  nameWithType: CookieStatus.Has
+  fullName: TGBot.Cookie.CookieStatus.Has

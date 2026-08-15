@@ -5,7 +5,7 @@ items:
   id: MessageRouter
   parent: TGBot.Application
   children:
-  - TGBot.Application.MessageRouter.#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
+  - TGBot.Application.MessageRouter.#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Cookie.CookieService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
   - TGBot.Application.MessageRouter.HandleAsync(TGBot.Messaging.InboundMessage,System.Threading.CancellationToken)
   langs:
   - csharp
@@ -21,11 +21,11 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MessageRouter
     path: ../src/TGBot/Application/MessageRouter.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
-  summary: 消息路由器：访问控制 → 指令 / 链接校验 → 下载任务入队。
+  summary: 消息路由器：访问控制 → 指令 / 文件（cookies 上传）/ 链接校验 → 下载任务入队。
   example: []
   syntax:
     content: public sealed class MessageRouter
@@ -39,16 +39,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Application.MessageRouter.#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
-  commentId: M:TGBot.Application.MessageRouter.#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
-  id: '#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)'
+- uid: TGBot.Application.MessageRouter.#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Cookie.CookieService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
+  commentId: M:TGBot.Application.MessageRouter.#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Cookie.CookieService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
+  id: '#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Cookie.CookieService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)'
   parent: TGBot.Application.MessageRouter
   langs:
   - csharp
   - vb
-  name: MessageRouter(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, ITelegramClient, AppConfig, IAppLogger)
-  nameWithType: MessageRouter.MessageRouter(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, ITelegramClient, AppConfig, IAppLogger)
-  fullName: TGBot.Application.MessageRouter.MessageRouter(TGBot.Access.AccessControlService, TGBot.Security.UrlValidator, TGBot.Application.DownloadCoordinator, TGBot.Application.CommandHandler, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
+  name: MessageRouter(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger)
+  nameWithType: MessageRouter.MessageRouter(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger)
+  fullName: TGBot.Application.MessageRouter.MessageRouter(TGBot.Access.AccessControlService, TGBot.Security.UrlValidator, TGBot.Application.DownloadCoordinator, TGBot.Application.CommandHandler, TGBot.Cookie.CookieService, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
   type: Constructor
   source:
     remote:
@@ -57,14 +57,14 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Application/MessageRouter.cs
-    startLine: 33
+    startLine: 36
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
   summary: 初始化 <xref href="TGBot.Application.MessageRouter" data-throw-if-not-resolved="false"></xref>。
   example: []
   syntax:
-    content: public MessageRouter(AccessControlService access, UrlValidator urlValidator, DownloadCoordinator coordinator, CommandHandler commands, ITelegramClient client, AppConfig config, IAppLogger logger)
+    content: public MessageRouter(AccessControlService access, UrlValidator urlValidator, DownloadCoordinator coordinator, CommandHandler commands, CookieService cookies, ITelegramClient client, AppConfig config, IAppLogger logger)
     parameters:
     - id: access
       type: TGBot.Access.AccessControlService
@@ -78,6 +78,9 @@ items:
     - id: commands
       type: TGBot.Application.CommandHandler
       description: 指令处理器。
+    - id: cookies
+      type: TGBot.Cookie.CookieService
+      description: cookies 服务。
     - id: client
       type: TGBot.Messaging.ITelegramClient
       description: Telegram 客户端。
@@ -87,11 +90,11 @@ items:
     - id: logger
       type: TGBot.Logging.IAppLogger
       description: 日志器。
-    content.vb: Public Sub New(access As AccessControlService, urlValidator As UrlValidator, coordinator As DownloadCoordinator, commands As CommandHandler, client As ITelegramClient, config As AppConfig, logger As IAppLogger)
+    content.vb: Public Sub New(access As AccessControlService, urlValidator As UrlValidator, coordinator As DownloadCoordinator, commands As CommandHandler, cookies As CookieService, client As ITelegramClient, config As AppConfig, logger As IAppLogger)
   overload: TGBot.Application.MessageRouter.#ctor*
-  nameWithType.vb: MessageRouter.New(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, ITelegramClient, AppConfig, IAppLogger)
-  fullName.vb: TGBot.Application.MessageRouter.New(TGBot.Access.AccessControlService, TGBot.Security.UrlValidator, TGBot.Application.DownloadCoordinator, TGBot.Application.CommandHandler, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
-  name.vb: New(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, ITelegramClient, AppConfig, IAppLogger)
+  nameWithType.vb: MessageRouter.New(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger)
+  fullName.vb: TGBot.Application.MessageRouter.New(TGBot.Access.AccessControlService, TGBot.Security.UrlValidator, TGBot.Application.DownloadCoordinator, TGBot.Application.CommandHandler, TGBot.Cookie.CookieService, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
+  name.vb: New(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger)
 - uid: TGBot.Application.MessageRouter.HandleAsync(TGBot.Messaging.InboundMessage,System.Threading.CancellationToken)
   commentId: M:TGBot.Application.MessageRouter.HandleAsync(TGBot.Messaging.InboundMessage,System.Threading.CancellationToken)
   id: HandleAsync(TGBot.Messaging.InboundMessage,System.Threading.CancellationToken)
@@ -110,7 +113,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: HandleAsync
     path: ../src/TGBot/Application/MessageRouter.cs
-    startLine: 56
+    startLine: 61
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
@@ -374,7 +377,7 @@ references:
   fullName: TGBot.Application.MessageRouter
 - uid: TGBot.Application.MessageRouter.#ctor*
   commentId: Overload:TGBot.Application.MessageRouter.#ctor
-  href: TGBot.Application.MessageRouter.html#TGBot_Application_MessageRouter__ctor_TGBot_Access_AccessControlService_TGBot_Security_UrlValidator_TGBot_Application_DownloadCoordinator_TGBot_Application_CommandHandler_TGBot_Messaging_ITelegramClient_TGBot_Config_AppConfig_TGBot_Logging_IAppLogger_
+  href: TGBot.Application.MessageRouter.html#TGBot_Application_MessageRouter__ctor_TGBot_Access_AccessControlService_TGBot_Security_UrlValidator_TGBot_Application_DownloadCoordinator_TGBot_Application_CommandHandler_TGBot_Cookie_CookieService_TGBot_Messaging_ITelegramClient_TGBot_Config_AppConfig_TGBot_Logging_IAppLogger_
   name: MessageRouter
   nameWithType: MessageRouter.MessageRouter
   fullName: TGBot.Application.MessageRouter.MessageRouter
@@ -409,6 +412,13 @@ references:
   name: CommandHandler
   nameWithType: CommandHandler
   fullName: TGBot.Application.CommandHandler
+- uid: TGBot.Cookie.CookieService
+  commentId: T:TGBot.Cookie.CookieService
+  parent: TGBot.Cookie
+  href: TGBot.Cookie.CookieService.html
+  name: CookieService
+  nameWithType: CookieService
+  fullName: TGBot.Cookie.CookieService
 - uid: TGBot.Messaging.ITelegramClient
   commentId: T:TGBot.Messaging.ITelegramClient
   parent: TGBot.Messaging
@@ -474,6 +484,28 @@ references:
   - uid: TGBot.Security
     name: Security
     href: TGBot.Security.html
+- uid: TGBot.Cookie
+  commentId: N:TGBot.Cookie
+  href: TGBot.html
+  name: TGBot.Cookie
+  nameWithType: TGBot.Cookie
+  fullName: TGBot.Cookie
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Cookie
+    name: Cookie
+    href: TGBot.Cookie.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Cookie
+    name: Cookie
+    href: TGBot.Cookie.html
 - uid: TGBot.Messaging
   commentId: N:TGBot.Messaging
   href: TGBot.html

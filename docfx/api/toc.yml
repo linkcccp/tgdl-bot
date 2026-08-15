@@ -54,6 +54,73 @@ items:
   - uid: TGBot.Config.ConfigParser
     name: ConfigParser
     type: Class
+- uid: TGBot.Cookie
+  name: TGBot.Cookie
+  type: Namespace
+  items:
+  - uid: TGBot.Cookie.BilibiliCookieSite
+    name: BilibiliCookieSite
+    type: Class
+  - uid: TGBot.Cookie.CookieService
+    name: CookieService
+    type: Class
+  - uid: TGBot.Cookie.CookieSite
+    name: CookieSite
+    type: Class
+  - uid: TGBot.Cookie.CookieSiteUtil
+    name: CookieSiteUtil
+    type: Class
+  - uid: TGBot.Cookie.CookieStatus
+    name: CookieStatus
+    type: Class
+  - uid: TGBot.Cookie.CookieStore
+    name: CookieStore
+    type: Class
+  - uid: TGBot.Cookie.CookieUploadResult
+    name: CookieUploadResult
+    type: Class
+  - uid: TGBot.Cookie.DailymotionCookieSite
+    name: DailymotionCookieSite
+    type: Class
+  - uid: TGBot.Cookie.DouyinCookieSite
+    name: DouyinCookieSite
+    type: Class
+  - uid: TGBot.Cookie.FacebookCookieSite
+    name: FacebookCookieSite
+    type: Class
+  - uid: TGBot.Cookie.InstagramCookieSite
+    name: InstagramCookieSite
+    type: Class
+  - uid: TGBot.Cookie.RedditCookieSite
+    name: RedditCookieSite
+    type: Class
+  - uid: TGBot.Cookie.SiteCookieRegistry
+    name: SiteCookieRegistry
+    type: Class
+  - uid: TGBot.Cookie.SoundcloudCookieSite
+    name: SoundcloudCookieSite
+    type: Class
+  - uid: TGBot.Cookie.TiktokCookieSite
+    name: TiktokCookieSite
+    type: Class
+  - uid: TGBot.Cookie.TwitchCookieSite
+    name: TwitchCookieSite
+    type: Class
+  - uid: TGBot.Cookie.TwitterCookieSite
+    name: TwitterCookieSite
+    type: Class
+  - uid: TGBot.Cookie.VimeoCookieSite
+    name: VimeoCookieSite
+    type: Class
+  - uid: TGBot.Cookie.WeiboCookieSite
+    name: WeiboCookieSite
+    type: Class
+  - uid: TGBot.Cookie.XiaohongshuCookieSite
+    name: XiaohongshuCookieSite
+    type: Class
+  - uid: TGBot.Cookie.YoutubeCookieSite
+    name: YoutubeCookieSite
+    type: Class
 - uid: TGBot.Download
   name: TGBot.Download
   type: Namespace

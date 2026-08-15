@@ -53,6 +53,23 @@ public static class YtDlpArgumentBuilder
             args.Add(options.FfmpegDir);
         }
 
+        if (!string.IsNullOrEmpty(options.CookiesFile))
+        {
+            args.Add("--cookies");
+            args.Add(options.CookiesFile);
+        }
+
+        if (!string.IsNullOrEmpty(options.Proxy))
+        {
+            args.Add("--proxy");
+            args.Add(options.Proxy);
+        }
+
+        if (options.ExtraArgs is { Count: > 0 })
+        {
+            args.AddRange(options.ExtraArgs);
+        }
+
         args.Add("--print");
         args.Add("META\u001f%(id)s\u001f%(title)s\u001f%(ext)s\u001f%(duration)s\u001f%(filesize_approx)s\u001f%(filesize)s");
 

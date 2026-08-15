@@ -7,6 +7,9 @@ items:
   children:
   - TGBot.Messaging.InboundMessage.Caption
   - TGBot.Messaging.InboundMessage.ChatId
+  - TGBot.Messaging.InboundMessage.DocumentFileId
+  - TGBot.Messaging.InboundMessage.DocumentFileName
+  - TGBot.Messaging.InboundMessage.DocumentSizeBytes
   - TGBot.Messaging.InboundMessage.IsPrivate
   - TGBot.Messaging.InboundMessage.SenderUserId
   - TGBot.Messaging.InboundMessage.Text
@@ -230,6 +233,99 @@ items:
       type: System.Int32
     content.vb: Public Property TriggerMessageId As Integer
   overload: TGBot.Messaging.InboundMessage.TriggerMessageId*
+- uid: TGBot.Messaging.InboundMessage.DocumentFileId
+  commentId: P:TGBot.Messaging.InboundMessage.DocumentFileId
+  id: DocumentFileId
+  parent: TGBot.Messaging.InboundMessage
+  langs:
+  - csharp
+  - vb
+  name: DocumentFileId
+  nameWithType: InboundMessage.DocumentFileId
+  fullName: TGBot.Messaging.InboundMessage.DocumentFileId
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: DocumentFileId
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 40
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 文档文件 ID（消息携带文档时非空）。
+  example: []
+  syntax:
+    content: public string? DocumentFileId { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DocumentFileId As String
+  overload: TGBot.Messaging.InboundMessage.DocumentFileId*
+- uid: TGBot.Messaging.InboundMessage.DocumentFileName
+  commentId: P:TGBot.Messaging.InboundMessage.DocumentFileName
+  id: DocumentFileName
+  parent: TGBot.Messaging.InboundMessage
+  langs:
+  - csharp
+  - vb
+  name: DocumentFileName
+  nameWithType: InboundMessage.DocumentFileName
+  fullName: TGBot.Messaging.InboundMessage.DocumentFileName
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: DocumentFileName
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 45
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 文档文件名（可为空）。
+  example: []
+  syntax:
+    content: public string? DocumentFileName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DocumentFileName As String
+  overload: TGBot.Messaging.InboundMessage.DocumentFileName*
+- uid: TGBot.Messaging.InboundMessage.DocumentSizeBytes
+  commentId: P:TGBot.Messaging.InboundMessage.DocumentSizeBytes
+  id: DocumentSizeBytes
+  parent: TGBot.Messaging.InboundMessage
+  langs:
+  - csharp
+  - vb
+  name: DocumentSizeBytes
+  nameWithType: InboundMessage.DocumentSizeBytes
+  fullName: TGBot.Messaging.InboundMessage.DocumentSizeBytes
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: DocumentSizeBytes
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 50
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 文档文件字节数（可为空）。
+  example: []
+  syntax:
+    content: public long? DocumentSizeBytes { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public Property DocumentSizeBytes As Long?
+  overload: TGBot.Messaging.InboundMessage.DocumentSizeBytes*
 - uid: TGBot.Messaging.InboundMessage.UrlSearchText
   commentId: P:TGBot.Messaging.InboundMessage.UrlSearchText
   id: UrlSearchText
@@ -248,7 +344,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlSearchText
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 40
+    startLine: 55
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -628,6 +724,24 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: TGBot.Messaging.InboundMessage.DocumentFileId*
+  commentId: Overload:TGBot.Messaging.InboundMessage.DocumentFileId
+  href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_DocumentFileId
+  name: DocumentFileId
+  nameWithType: InboundMessage.DocumentFileId
+  fullName: TGBot.Messaging.InboundMessage.DocumentFileId
+- uid: TGBot.Messaging.InboundMessage.DocumentFileName*
+  commentId: Overload:TGBot.Messaging.InboundMessage.DocumentFileName
+  href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_DocumentFileName
+  name: DocumentFileName
+  nameWithType: InboundMessage.DocumentFileName
+  fullName: TGBot.Messaging.InboundMessage.DocumentFileName
+- uid: TGBot.Messaging.InboundMessage.DocumentSizeBytes*
+  commentId: Overload:TGBot.Messaging.InboundMessage.DocumentSizeBytes
+  href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_DocumentSizeBytes
+  name: DocumentSizeBytes
+  nameWithType: InboundMessage.DocumentSizeBytes
+  fullName: TGBot.Messaging.InboundMessage.DocumentSizeBytes
 - uid: TGBot.Messaging.InboundMessage.UrlSearchText*
   commentId: Overload:TGBot.Messaging.InboundMessage.UrlSearchText
   href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_UrlSearchText

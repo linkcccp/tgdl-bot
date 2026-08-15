@@ -5,6 +5,19 @@ items:
   id: UserTexts
   parent: TGBot.Texts
   children:
+  - TGBot.Texts.UserTexts.AuthRequired
+  - TGBot.Texts.UserTexts.CookieDeleted
+  - TGBot.Texts.UserTexts.CookieExpired
+  - TGBot.Texts.UserTexts.CookieFileTooLarge
+  - TGBot.Texts.UserTexts.CookieInvalidFile
+  - TGBot.Texts.UserTexts.CookieListTemplate
+  - TGBot.Texts.UserTexts.CookieNone
+  - TGBot.Texts.UserTexts.CookiePrompt
+  - TGBot.Texts.UserTexts.CookieSaveFailed
+  - TGBot.Texts.UserTexts.CookieSaved
+  - TGBot.Texts.UserTexts.CookieSavedSuspicious
+  - TGBot.Texts.UserTexts.CookieUnknownSite
+  - TGBot.Texts.UserTexts.CookieUsage
   - TGBot.Texts.UserTexts.DownloadFailed
   - TGBot.Texts.UserTexts.DownloadProgress
   - TGBot.Texts.UserTexts.Downloading
@@ -494,10 +507,387 @@ items:
   summary: 帮助文本。
   example: []
   syntax:
-    content: public const string Help = "可用指令：\n/update - 检查并更新 ffmpeg 与 yt-dlp\n/status - 查看运行状态与版本\n/help   - 显示本帮助\n\n直接发送视频/音乐链接即可触发下载。"
+    content: public const string Help = "可用指令：\n/update    - 检查并更新 ffmpeg 与 yt-dlp\n/cookie    - 上传指定站点的 cookies（如 /cookie youtube）\n/cookies   - 查看各站点 cookies 状态\n/status    - 查看运行状态与版本\n/help      - 显示本帮助\n\n直接发送视频/音乐链接即可触发下载。"
     return:
       type: System.String
-    content.vb: Public Const Help As String = "可用指令：" & vbLf & "/update - 检查并更新 ffmpeg 与 yt-dlp" & vbLf & "/status - 查看运行状态与版本" & vbLf & "/help   - 显示本帮助" & vbLf & vbLf & "直接发送视频/音乐链接即可触发下载。"
+    content.vb: Public Const Help As String = "可用指令：" & vbLf & "/update    - 检查并更新 ffmpeg 与 yt-dlp" & vbLf & "/cookie    - 上传指定站点的 cookies（如 /cookie youtube）" & vbLf & "/cookies   - 查看各站点 cookies 状态" & vbLf & "/status    - 查看运行状态与版本" & vbLf & "/help      - 显示本帮助" & vbLf & vbLf & "直接发送视频/音乐链接即可触发下载。"
+- uid: TGBot.Texts.UserTexts.AuthRequired
+  commentId: F:TGBot.Texts.UserTexts.AuthRequired
+  id: AuthRequired
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: AuthRequired
+  nameWithType: UserTexts.AuthRequired
+  fullName: TGBot.Texts.UserTexts.AuthRequired
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AuthRequired
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 75
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 目标站点要求认证提示。
+  example: []
+  syntax:
+    content: public const string AuthRequired = "目标站点要求登录/认证（如 YouTube 机器人检测）。请通过 /cookie 上传该站点的 cookies 后重试。"
+    return:
+      type: System.String
+    content.vb: Public Const AuthRequired As String = "目标站点要求登录/认证（如 YouTube 机器人检测）。请通过 /cookie 上传该站点的 cookies 后重试。"
+- uid: TGBot.Texts.UserTexts.CookieUsage
+  commentId: F:TGBot.Texts.UserTexts.CookieUsage
+  id: CookieUsage
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CookieUsage
+  nameWithType: UserTexts.CookieUsage
+  fullName: TGBot.Texts.UserTexts.CookieUsage
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieUsage
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 79
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: cookie 使用说明。
+  example: []
+  syntax:
+    content: public const string CookieUsage = "用法：\n/cookie <站点> - 开始上传该站点 cookies，然后发送 cookies 文件\n/cookie <站点> clear - 删除该站点 cookies\n/cookies - 查看各站点状态\n\n可用站点：{0}"
+    return:
+      type: System.String
+    content.vb: Public Const CookieUsage As String = "用法：" & vbLf & "/cookie <站点> - 开始上传该站点 cookies，然后发送 cookies 文件" & vbLf & "/cookie <站点> clear - 删除该站点 cookies" & vbLf & "/cookies - 查看各站点状态" & vbLf & vbLf & "可用站点：{0}"
+- uid: TGBot.Texts.UserTexts.CookiePrompt
+  commentId: F:TGBot.Texts.UserTexts.CookiePrompt
+  id: CookiePrompt
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CookiePrompt
+  nameWithType: UserTexts.CookiePrompt
+  fullName: TGBot.Texts.UserTexts.CookiePrompt
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookiePrompt
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 87
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 开始上传提示。参数：站点显示名。
+  example: []
+  syntax:
+    content: public const string CookiePrompt = "请发送 cookies 文件（用于 {0}）。\n文件应为 Netscape 格式的 cookies.txt（≤1MB，浏览器导出）。"
+    return:
+      type: System.String
+    content.vb: Public Const CookiePrompt As String = "请发送 cookies 文件（用于 {0}）。" & vbLf & "文件应为 Netscape 格式的 cookies.txt（≤1MB，浏览器导出）。"
+- uid: TGBot.Texts.UserTexts.CookieSaved
+  commentId: F:TGBot.Texts.UserTexts.CookieSaved
+  id: CookieSaved
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CookieSaved
+  nameWithType: UserTexts.CookieSaved
+  fullName: TGBot.Texts.UserTexts.CookieSaved
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieSaved
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 91
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 保存成功提示。参数：站点显示名、站点键。
+  example: []
+  syntax:
+    content: public const string CookieSaved = "{0} 的 cookies 已保存（站点键：{1}），下载该站点链接时将自动使用。"
+    return:
+      type: System.String
+    content.vb: Public Const CookieSaved As String = "{0} 的 cookies 已保存（站点键：{1}），下载该站点链接时将自动使用。"
+- uid: TGBot.Texts.UserTexts.CookieSavedSuspicious
+  commentId: F:TGBot.Texts.UserTexts.CookieSavedSuspicious
+  id: CookieSavedSuspicious
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CookieSavedSuspicious
+  nameWithType: UserTexts.CookieSavedSuspicious
+  fullName: TGBot.Texts.UserTexts.CookieSavedSuspicious
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieSavedSuspicious
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 95
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 保存成功但格式可疑提示。参数：站点显示名、站点键。
+  example: []
+  syntax:
+    content: public const string CookieSavedSuspicious = "{0} 的 cookies 已保存（站点键：{1}），但文件格式不像标准 cookies.txt，若下载仍失败请重新导出。"
+    return:
+      type: System.String
+    content.vb: Public Const CookieSavedSuspicious As String = "{0} 的 cookies 已保存（站点键：{1}），但文件格式不像标准 cookies.txt，若下载仍失败请重新导出。"
+- uid: TGBot.Texts.UserTexts.CookieSaveFailed
+  commentId: F:TGBot.Texts.UserTexts.CookieSaveFailed
+  id: CookieSaveFailed
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CookieSaveFailed
+  nameWithType: UserTexts.CookieSaveFailed
+  fullName: TGBot.Texts.UserTexts.CookieSaveFailed
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieSaveFailed
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 99
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 保存失败提示。
+  example: []
+  syntax:
+    content: public const string CookieSaveFailed = "cookies 保存失败，请稍后重试。"
+    return:
+      type: System.String
+    content.vb: Public Const CookieSaveFailed As String = "cookies 保存失败，请稍后重试。"
+- uid: TGBot.Texts.UserTexts.CookieDeleted
+  commentId: F:TGBot.Texts.UserTexts.CookieDeleted
+  id: CookieDeleted
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CookieDeleted
+  nameWithType: UserTexts.CookieDeleted
+  fullName: TGBot.Texts.UserTexts.CookieDeleted
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieDeleted
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 103
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 删除成功提示。参数：站点显示名。
+  example: []
+  syntax:
+    content: public const string CookieDeleted = "{0} 的 cookies 已删除。"
+    return:
+      type: System.String
+    content.vb: Public Const CookieDeleted As String = "{0} 的 cookies 已删除。"
+- uid: TGBot.Texts.UserTexts.CookieNone
+  commentId: F:TGBot.Texts.UserTexts.CookieNone
+  id: CookieNone
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CookieNone
+  nameWithType: UserTexts.CookieNone
+  fullName: TGBot.Texts.UserTexts.CookieNone
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieNone
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 107
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 无任何站点 cookie 提示。
+  example: []
+  syntax:
+    content: public const string CookieNone = "当前没有任何站点的 cookies。发送 /cookie <站点> 开始上传。"
+    return:
+      type: System.String
+    content.vb: Public Const CookieNone As String = "当前没有任何站点的 cookies。发送 /cookie <站点> 开始上传。"
+- uid: TGBot.Texts.UserTexts.CookieListTemplate
+  commentId: F:TGBot.Texts.UserTexts.CookieListTemplate
+  id: CookieListTemplate
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CookieListTemplate
+  nameWithType: UserTexts.CookieListTemplate
+  fullName: TGBot.Texts.UserTexts.CookieListTemplate
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieListTemplate
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 111
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: cookie 列表模板。参数：站点键/状态行。
+  example: []
+  syntax:
+    content: public const string CookieListTemplate = "各站点 cookies 状态：\n{0}\n\n/cookie <站点> 上传，/cookie <站点> clear 删除。"
+    return:
+      type: System.String
+    content.vb: Public Const CookieListTemplate As String = "各站点 cookies 状态：" & vbLf & "{0}" & vbLf & vbLf & "/cookie <站点> 上传，/cookie <站点> clear 删除。"
+- uid: TGBot.Texts.UserTexts.CookieUnknownSite
+  commentId: F:TGBot.Texts.UserTexts.CookieUnknownSite
+  id: CookieUnknownSite
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CookieUnknownSite
+  nameWithType: UserTexts.CookieUnknownSite
+  fullName: TGBot.Texts.UserTexts.CookieUnknownSite
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieUnknownSite
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 115
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 未知站点提示。参数：站点键、可用站点。
+  example: []
+  syntax:
+    content: public const string CookieUnknownSite = "未知站点：{0}。可用站点：{1}"
+    return:
+      type: System.String
+    content.vb: Public Const CookieUnknownSite As String = "未知站点：{0}。可用站点：{1}"
+- uid: TGBot.Texts.UserTexts.CookieFileTooLarge
+  commentId: F:TGBot.Texts.UserTexts.CookieFileTooLarge
+  id: CookieFileTooLarge
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CookieFileTooLarge
+  nameWithType: UserTexts.CookieFileTooLarge
+  fullName: TGBot.Texts.UserTexts.CookieFileTooLarge
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieFileTooLarge
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 119
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: cookies 文件过大提示。
+  example: []
+  syntax:
+    content: public const string CookieFileTooLarge = "cookies 文件过大（限制 1MB），请重新导出。"
+    return:
+      type: System.String
+    content.vb: Public Const CookieFileTooLarge As String = "cookies 文件过大（限制 1MB），请重新导出。"
+- uid: TGBot.Texts.UserTexts.CookieInvalidFile
+  commentId: F:TGBot.Texts.UserTexts.CookieInvalidFile
+  id: CookieInvalidFile
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CookieInvalidFile
+  nameWithType: UserTexts.CookieInvalidFile
+  fullName: TGBot.Texts.UserTexts.CookieInvalidFile
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieInvalidFile
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 123
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: cookies 文件无效提示。
+  example: []
+  syntax:
+    content: public const string CookieInvalidFile = "cookies 文件无效，请发送文本格式的 cookies.txt。"
+    return:
+      type: System.String
+    content.vb: Public Const CookieInvalidFile As String = "cookies 文件无效，请发送文本格式的 cookies.txt。"
+- uid: TGBot.Texts.UserTexts.CookieExpired
+  commentId: F:TGBot.Texts.UserTexts.CookieExpired
+  id: CookieExpired
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CookieExpired
+  nameWithType: UserTexts.CookieExpired
+  fullName: TGBot.Texts.UserTexts.CookieExpired
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieExpired
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 127
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 上传超时提示。
+  example: []
+  syntax:
+    content: public const string CookieExpired = "上传等待超时，请重新发送 /cookie <站点> 后再发文件。"
+    return:
+      type: System.String
+    content.vb: Public Const CookieExpired As String = "上传等待超时，请重新发送 /cookie <站点> 后再发文件。"
 - uid: TGBot.Texts.UserTexts.UpdateNotNeeded
   commentId: F:TGBot.Texts.UserTexts.UpdateNotNeeded
   id: UpdateNotNeeded
@@ -516,7 +906,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateNotNeeded
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 73
+    startLine: 131
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -545,7 +935,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateDone
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 77
+    startLine: 135
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -574,7 +964,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdatePartialDone
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 81
+    startLine: 139
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -603,7 +993,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateFailed
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 85
+    startLine: 143
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -632,7 +1022,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateDenied
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 89
+    startLine: 147
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -661,7 +1051,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: StatusTemplate
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 93
+    startLine: 151
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts

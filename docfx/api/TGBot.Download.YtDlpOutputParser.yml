@@ -6,6 +6,7 @@ items:
   parent: TGBot.Download
   children:
   - TGBot.Download.YtDlpOutputParser.FileMarker
+  - TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage(System.String)
   - TGBot.Download.YtDlpOutputParser.IsTooLargeMessage(System.String)
   - TGBot.Download.YtDlpOutputParser.MetaMarker
   - TGBot.Download.YtDlpOutputParser.ParseMeta(System.String)
@@ -207,6 +208,44 @@ items:
   nameWithType.vb: YtDlpOutputParser.IsTooLargeMessage(String)
   fullName.vb: TGBot.Download.YtDlpOutputParser.IsTooLargeMessage(String)
   name.vb: IsTooLargeMessage(String)
+- uid: TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage(System.String)
+  commentId: M:TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage(System.String)
+  id: IsAuthRequiredMessage(System.String)
+  parent: TGBot.Download.YtDlpOutputParser
+  langs:
+  - csharp
+  - vb
+  name: IsAuthRequiredMessage(string)
+  nameWithType: YtDlpOutputParser.IsAuthRequiredMessage(string)
+  fullName: TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage(string)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Download/YtDlpOutputParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: IsAuthRequiredMessage
+    path: ../src/TGBot/Download/YtDlpOutputParser.cs
+    startLine: 88
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 判断输出是否表示站点要求登录/认证（机器人检测等）。
+  example: []
+  syntax:
+    content: public static bool IsAuthRequiredMessage(string text)
+    parameters:
+    - id: text
+      type: System.String
+      description: 输出文本（含错误）。
+    return:
+      type: System.Boolean
+      description: 需要认证时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。
+    content.vb: Public Shared Function IsAuthRequiredMessage(text As String) As Boolean
+  overload: TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage*
+  nameWithType.vb: YtDlpOutputParser.IsAuthRequiredMessage(String)
+  fullName.vb: TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage(String)
+  name.vb: IsAuthRequiredMessage(String)
 - uid: TGBot.Download.YtDlpOutputParser.ParseMeta(System.String)
   commentId: M:TGBot.Download.YtDlpOutputParser.ParseMeta(System.String)
   id: ParseMeta(System.String)
@@ -225,7 +264,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseMeta
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
-    startLine: 73
+    startLine: 106
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -546,6 +585,12 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage*
+  commentId: Overload:TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage
+  href: TGBot.Download.YtDlpOutputParser.html#TGBot_Download_YtDlpOutputParser_IsAuthRequiredMessage_System_String_
+  name: IsAuthRequiredMessage
+  nameWithType: YtDlpOutputParser.IsAuthRequiredMessage
+  fullName: TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage
 - uid: TGBot.Download.YtDlpOutputParser.ParseMeta*
   commentId: Overload:TGBot.Download.YtDlpOutputParser.ParseMeta
   href: TGBot.Download.YtDlpOutputParser.html#TGBot_Download_YtDlpOutputParser_ParseMeta_System_String_

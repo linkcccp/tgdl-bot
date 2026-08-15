@@ -1,0 +1,1114 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Cookie.CookieService
+  commentId: T:TGBot.Cookie.CookieService
+  id: CookieService
+  parent: TGBot.Cookie
+  children:
+  - TGBot.Cookie.CookieService.#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger)
+  - TGBot.Cookie.CookieService.BeginPendingUpload(System.Int64,System.String)
+  - TGBot.Cookie.CookieService.Clear(System.String)
+  - TGBot.Cookie.CookieService.ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.Threading.CancellationToken)
+  - TGBot.Cookie.CookieService.List
+  - TGBot.Cookie.CookieService.ResolveCookieFile(System.String)
+  - TGBot.Cookie.CookieService.ResolveSite(System.String)
+  - TGBot.Cookie.CookieService.SiteListText
+  - TGBot.Cookie.CookieService.Sites
+  langs:
+  - csharp
+  - vb
+  name: CookieService
+  nameWithType: CookieService
+  fullName: TGBot.Cookie.CookieService
+  type: Class
+  source:
+    remote:
+      path: src/TGBot/Cookie/CookieService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieService
+    path: ../src/TGBot/Cookie/CookieService.cs
+    startLine: 25
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Cookie
+  summary: cookies 服务：待上传状态管理、从 Telegram 下载并校验落盘、按 URL 域名解析 cookie 文件。
+  example: []
+  syntax:
+    content: public sealed class CookieService
+    content.vb: Public NotInheritable Class CookieService
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Cookie.CookieService.#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger)
+  commentId: M:TGBot.Cookie.CookieService.#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger)
+  id: '#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger)'
+  parent: TGBot.Cookie.CookieService
+  langs:
+  - csharp
+  - vb
+  name: CookieService(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
+  nameWithType: CookieService.CookieService(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
+  fullName: TGBot.Cookie.CookieService.CookieService(TGBot.Cookie.SiteCookieRegistry, TGBot.Cookie.CookieStore, TGBot.Messaging.ITelegramClient, TGBot.Logging.IAppLogger)
+  type: Constructor
+  source:
+    remote:
+      path: src/TGBot/Cookie/CookieService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: .ctor
+    path: ../src/TGBot/Cookie/CookieService.cs
+    startLine: 45
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Cookie
+  summary: 初始化 <xref href="TGBot.Cookie.CookieService" data-throw-if-not-resolved="false"></xref>。
+  example: []
+  syntax:
+    content: public CookieService(SiteCookieRegistry registry, CookieStore store, ITelegramClient client, IAppLogger logger)
+    parameters:
+    - id: registry
+      type: TGBot.Cookie.SiteCookieRegistry
+      description: 站点注册表。
+    - id: store
+      type: TGBot.Cookie.CookieStore
+      description: cookie 存储。
+    - id: client
+      type: TGBot.Messaging.ITelegramClient
+      description: Telegram 客户端（用于下载上传的文件）。
+    - id: logger
+      type: TGBot.Logging.IAppLogger
+      description: 日志器。
+    content.vb: Public Sub New(registry As SiteCookieRegistry, store As CookieStore, client As ITelegramClient, logger As IAppLogger)
+  overload: TGBot.Cookie.CookieService.#ctor*
+  nameWithType.vb: CookieService.New(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
+  fullName.vb: TGBot.Cookie.CookieService.New(TGBot.Cookie.SiteCookieRegistry, TGBot.Cookie.CookieStore, TGBot.Messaging.ITelegramClient, TGBot.Logging.IAppLogger)
+  name.vb: New(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
+- uid: TGBot.Cookie.CookieService.Sites
+  commentId: P:TGBot.Cookie.CookieService.Sites
+  id: Sites
+  parent: TGBot.Cookie.CookieService
+  langs:
+  - csharp
+  - vb
+  name: Sites
+  nameWithType: CookieService.Sites
+  fullName: TGBot.Cookie.CookieService.Sites
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Cookie/CookieService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Sites
+    path: ../src/TGBot/Cookie/CookieService.cs
+    startLine: 56
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Cookie
+  summary: 全部已注册站点。
+  example: []
+  syntax:
+    content: public IReadOnlyList<CookieSite> Sites { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{TGBot.Cookie.CookieSite}
+    content.vb: Public ReadOnly Property Sites As IReadOnlyList(Of CookieSite)
+  overload: TGBot.Cookie.CookieService.Sites*
+- uid: TGBot.Cookie.CookieService.ResolveSite(System.String)
+  commentId: M:TGBot.Cookie.CookieService.ResolveSite(System.String)
+  id: ResolveSite(System.String)
+  parent: TGBot.Cookie.CookieService
+  langs:
+  - csharp
+  - vb
+  name: ResolveSite(string)
+  nameWithType: CookieService.ResolveSite(string)
+  fullName: TGBot.Cookie.CookieService.ResolveSite(string)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Cookie/CookieService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ResolveSite
+    path: ../src/TGBot/Cookie/CookieService.cs
+    startLine: 63
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Cookie
+  summary: 按站点键解析站点。
+  example: []
+  syntax:
+    content: public CookieSite? ResolveSite(string key)
+    parameters:
+    - id: key
+      type: System.String
+      description: 站点键。
+    return:
+      type: TGBot.Cookie.CookieSite
+      description: 站点；未知返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Public Function ResolveSite(key As String) As CookieSite
+  overload: TGBot.Cookie.CookieService.ResolveSite*
+  nameWithType.vb: CookieService.ResolveSite(String)
+  fullName.vb: TGBot.Cookie.CookieService.ResolveSite(String)
+  name.vb: ResolveSite(String)
+- uid: TGBot.Cookie.CookieService.ResolveCookieFile(System.String)
+  commentId: M:TGBot.Cookie.CookieService.ResolveCookieFile(System.String)
+  id: ResolveCookieFile(System.String)
+  parent: TGBot.Cookie.CookieService
+  langs:
+  - csharp
+  - vb
+  name: ResolveCookieFile(string)
+  nameWithType: CookieService.ResolveCookieFile(string)
+  fullName: TGBot.Cookie.CookieService.ResolveCookieFile(string)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Cookie/CookieService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ResolveCookieFile
+    path: ../src/TGBot/Cookie/CookieService.cs
+    startLine: 70
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Cookie
+  summary: 按 URL 解析该域名对应站点已保存的 cookie 文件路径。
+  example: []
+  syntax:
+    content: public string? ResolveCookieFile(string url)
+    parameters:
+    - id: url
+      type: System.String
+      description: 下载 URL。
+    return:
+      type: System.String
+      description: cookie 文件路径；无则返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Public Function ResolveCookieFile(url As String) As String
+  overload: TGBot.Cookie.CookieService.ResolveCookieFile*
+  nameWithType.vb: CookieService.ResolveCookieFile(String)
+  fullName.vb: TGBot.Cookie.CookieService.ResolveCookieFile(String)
+  name.vb: ResolveCookieFile(String)
+- uid: TGBot.Cookie.CookieService.BeginPendingUpload(System.Int64,System.String)
+  commentId: M:TGBot.Cookie.CookieService.BeginPendingUpload(System.Int64,System.String)
+  id: BeginPendingUpload(System.Int64,System.String)
+  parent: TGBot.Cookie.CookieService
+  langs:
+  - csharp
+  - vb
+  name: BeginPendingUpload(long, string)
+  nameWithType: CookieService.BeginPendingUpload(long, string)
+  fullName: TGBot.Cookie.CookieService.BeginPendingUpload(long, string)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Cookie/CookieService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: BeginPendingUpload
+    path: ../src/TGBot/Cookie/CookieService.cs
+    startLine: 90
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Cookie
+  summary: 开始一次待上传（记录私聊会话的目标站点，带超时）。
+  example: []
+  syntax:
+    content: public CookieSite? BeginPendingUpload(long chatId, string siteKey)
+    parameters:
+    - id: chatId
+      type: System.Int64
+      description: 私聊会话 ID。
+    - id: siteKey
+      type: System.String
+      description: 站点键。
+    return:
+      type: TGBot.Cookie.CookieSite
+      description: 站点；未知键返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Public Function BeginPendingUpload(chatId As Long, siteKey As String) As CookieSite
+  overload: TGBot.Cookie.CookieService.BeginPendingUpload*
+  nameWithType.vb: CookieService.BeginPendingUpload(Long, String)
+  fullName.vb: TGBot.Cookie.CookieService.BeginPendingUpload(Long, String)
+  name.vb: BeginPendingUpload(Long, String)
+- uid: TGBot.Cookie.CookieService.ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.Threading.CancellationToken)
+  commentId: M:TGBot.Cookie.CookieService.ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.Threading.CancellationToken)
+  id: ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.Threading.CancellationToken)
+  parent: TGBot.Cookie.CookieService
+  langs:
+  - csharp
+  - vb
+  name: ConsumePendingAsync(long, string, long?, CancellationToken)
+  nameWithType: CookieService.ConsumePendingAsync(long, string, long?, CancellationToken)
+  fullName: TGBot.Cookie.CookieService.ConsumePendingAsync(long, string, long?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Cookie/CookieService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConsumePendingAsync
+    path: ../src/TGBot/Cookie/CookieService.cs
+    startLine: 110
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Cookie
+  summary: 消费待上传：收到文件消息时调用，下载、校验并保存为该站点 cookie。
+  example: []
+  syntax:
+    content: public Task<CookieUploadResult?> ConsumePendingAsync(long chatId, string fileId, long? sizeBytes, CancellationToken cancellationToken)
+    parameters:
+    - id: chatId
+      type: System.Int64
+      description: 私聊会话 ID。
+    - id: fileId
+      type: System.String
+      description: Telegram 文件 ID。
+    - id: sizeBytes
+      type: System.Nullable{System.Int64}
+      description: 文件大小（可为空）。
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task{TGBot.Cookie.CookieUploadResult}
+      description: 处理结果；该会话无待上传请求时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Public Function ConsumePendingAsync(chatId As Long, fileId As String, sizeBytes As Long?, cancellationToken As CancellationToken) As Task(Of CookieUploadResult)
+  overload: TGBot.Cookie.CookieService.ConsumePendingAsync*
+  nameWithType.vb: CookieService.ConsumePendingAsync(Long, String, Long?, CancellationToken)
+  fullName.vb: TGBot.Cookie.CookieService.ConsumePendingAsync(Long, String, Long?, System.Threading.CancellationToken)
+  name.vb: ConsumePendingAsync(Long, String, Long?, CancellationToken)
+- uid: TGBot.Cookie.CookieService.List
+  commentId: M:TGBot.Cookie.CookieService.List
+  id: List
+  parent: TGBot.Cookie.CookieService
+  langs:
+  - csharp
+  - vb
+  name: List()
+  nameWithType: CookieService.List()
+  fullName: TGBot.Cookie.CookieService.List()
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Cookie/CookieService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: List
+    path: ../src/TGBot/Cookie/CookieService.cs
+    startLine: 177
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Cookie
+  summary: 列出各站点 cookie 状态。
+  example: []
+  syntax:
+    content: public IReadOnlyList<CookieStatus> List()
+    return:
+      type: System.Collections.Generic.IReadOnlyList{TGBot.Cookie.CookieStatus}
+      description: 状态列表。
+    content.vb: Public Function List() As IReadOnlyList(Of CookieStatus)
+  overload: TGBot.Cookie.CookieService.List*
+- uid: TGBot.Cookie.CookieService.Clear(System.String)
+  commentId: M:TGBot.Cookie.CookieService.Clear(System.String)
+  id: Clear(System.String)
+  parent: TGBot.Cookie.CookieService
+  langs:
+  - csharp
+  - vb
+  name: Clear(string)
+  nameWithType: CookieService.Clear(string)
+  fullName: TGBot.Cookie.CookieService.Clear(string)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Cookie/CookieService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Clear
+    path: ../src/TGBot/Cookie/CookieService.cs
+    startLine: 190
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Cookie
+  summary: 删除站点 cookie。
+  example: []
+  syntax:
+    content: public bool Clear(string siteKey)
+    parameters:
+    - id: siteKey
+      type: System.String
+      description: 站点键。
+    return:
+      type: System.Boolean
+      description: 站点存在且删除成功返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。
+    content.vb: Public Function Clear(siteKey As String) As Boolean
+  overload: TGBot.Cookie.CookieService.Clear*
+  nameWithType.vb: CookieService.Clear(String)
+  fullName.vb: TGBot.Cookie.CookieService.Clear(String)
+  name.vb: Clear(String)
+- uid: TGBot.Cookie.CookieService.SiteListText
+  commentId: M:TGBot.Cookie.CookieService.SiteListText
+  id: SiteListText
+  parent: TGBot.Cookie.CookieService
+  langs:
+  - csharp
+  - vb
+  name: SiteListText()
+  nameWithType: CookieService.SiteListText()
+  fullName: TGBot.Cookie.CookieService.SiteListText()
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Cookie/CookieService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: SiteListText
+    path: ../src/TGBot/Cookie/CookieService.cs
+    startLine: 200
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Cookie
+  summary: 全部站点键文本（用于提示）。
+  example: []
+  syntax:
+    content: public string SiteListText()
+    return:
+      type: System.String
+      description: 逗号分隔的站点键。
+    content.vb: Public Function SiteListText() As String
+  overload: TGBot.Cookie.CookieService.SiteListText*
+references:
+- uid: TGBot.Cookie
+  commentId: N:TGBot.Cookie
+  href: TGBot.html
+  name: TGBot.Cookie
+  nameWithType: TGBot.Cookie
+  fullName: TGBot.Cookie
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Cookie
+    name: Cookie
+    href: TGBot.Cookie.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Cookie
+    name: Cookie
+    href: TGBot.Cookie.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TGBot.Cookie.CookieService
+  commentId: T:TGBot.Cookie.CookieService
+  parent: TGBot.Cookie
+  href: TGBot.Cookie.CookieService.html
+  name: CookieService
+  nameWithType: CookieService
+  fullName: TGBot.Cookie.CookieService
+- uid: TGBot.Cookie.CookieService.#ctor*
+  commentId: Overload:TGBot.Cookie.CookieService.#ctor
+  href: TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService__ctor_TGBot_Cookie_SiteCookieRegistry_TGBot_Cookie_CookieStore_TGBot_Messaging_ITelegramClient_TGBot_Logging_IAppLogger_
+  name: CookieService
+  nameWithType: CookieService.CookieService
+  fullName: TGBot.Cookie.CookieService.CookieService
+  nameWithType.vb: CookieService.New
+  fullName.vb: TGBot.Cookie.CookieService.New
+  name.vb: New
+- uid: TGBot.Cookie.SiteCookieRegistry
+  commentId: T:TGBot.Cookie.SiteCookieRegistry
+  parent: TGBot.Cookie
+  href: TGBot.Cookie.SiteCookieRegistry.html
+  name: SiteCookieRegistry
+  nameWithType: SiteCookieRegistry
+  fullName: TGBot.Cookie.SiteCookieRegistry
+- uid: TGBot.Cookie.CookieStore
+  commentId: T:TGBot.Cookie.CookieStore
+  parent: TGBot.Cookie
+  href: TGBot.Cookie.CookieStore.html
+  name: CookieStore
+  nameWithType: CookieStore
+  fullName: TGBot.Cookie.CookieStore
+- uid: TGBot.Messaging.ITelegramClient
+  commentId: T:TGBot.Messaging.ITelegramClient
+  parent: TGBot.Messaging
+  href: TGBot.Messaging.ITelegramClient.html
+  name: ITelegramClient
+  nameWithType: ITelegramClient
+  fullName: TGBot.Messaging.ITelegramClient
+- uid: TGBot.Logging.IAppLogger
+  commentId: T:TGBot.Logging.IAppLogger
+  parent: TGBot.Logging
+  href: TGBot.Logging.IAppLogger.html
+  name: IAppLogger
+  nameWithType: IAppLogger
+  fullName: TGBot.Logging.IAppLogger
+- uid: TGBot.Messaging
+  commentId: N:TGBot.Messaging
+  href: TGBot.html
+  name: TGBot.Messaging
+  nameWithType: TGBot.Messaging
+  fullName: TGBot.Messaging
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html
+- uid: TGBot.Logging
+  commentId: N:TGBot.Logging
+  href: TGBot.html
+  name: TGBot.Logging
+  nameWithType: TGBot.Logging
+  fullName: TGBot.Logging
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Logging
+    name: Logging
+    href: TGBot.Logging.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Logging
+    name: Logging
+    href: TGBot.Logging.html
+- uid: TGBot.Cookie.CookieService.Sites*
+  commentId: Overload:TGBot.Cookie.CookieService.Sites
+  href: TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_Sites
+  name: Sites
+  nameWithType: CookieService.Sites
+  fullName: TGBot.Cookie.CookieService.Sites
+- uid: System.Collections.Generic.IReadOnlyList{TGBot.Cookie.CookieSite}
+  commentId: T:System.Collections.Generic.IReadOnlyList{TGBot.Cookie.CookieSite}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<CookieSite>
+  nameWithType: IReadOnlyList<CookieSite>
+  fullName: System.Collections.Generic.IReadOnlyList<TGBot.Cookie.CookieSite>
+  nameWithType.vb: IReadOnlyList(Of CookieSite)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of TGBot.Cookie.CookieSite)
+  name.vb: IReadOnlyList(Of CookieSite)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: TGBot.Cookie.CookieSite
+    name: CookieSite
+    href: TGBot.Cookie.CookieSite.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Cookie.CookieSite
+    name: CookieSite
+    href: TGBot.Cookie.CookieSite.html
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: TGBot.Cookie.CookieService.ResolveSite*
+  commentId: Overload:TGBot.Cookie.CookieService.ResolveSite
+  href: TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_ResolveSite_System_String_
+  name: ResolveSite
+  nameWithType: CookieService.ResolveSite
+  fullName: TGBot.Cookie.CookieService.ResolveSite
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: TGBot.Cookie.CookieSite
+  commentId: T:TGBot.Cookie.CookieSite
+  parent: TGBot.Cookie
+  href: TGBot.Cookie.CookieSite.html
+  name: CookieSite
+  nameWithType: CookieSite
+  fullName: TGBot.Cookie.CookieSite
+- uid: TGBot.Cookie.CookieService.ResolveCookieFile*
+  commentId: Overload:TGBot.Cookie.CookieService.ResolveCookieFile
+  href: TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_ResolveCookieFile_System_String_
+  name: ResolveCookieFile
+  nameWithType: CookieService.ResolveCookieFile
+  fullName: TGBot.Cookie.CookieService.ResolveCookieFile
+- uid: TGBot.Cookie.CookieService.BeginPendingUpload*
+  commentId: Overload:TGBot.Cookie.CookieService.BeginPendingUpload
+  href: TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_BeginPendingUpload_System_Int64_System_String_
+  name: BeginPendingUpload
+  nameWithType: CookieService.BeginPendingUpload
+  fullName: TGBot.Cookie.CookieService.BeginPendingUpload
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: TGBot.Cookie.CookieService.ConsumePendingAsync*
+  commentId: Overload:TGBot.Cookie.CookieService.ConsumePendingAsync
+  href: TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_ConsumePendingAsync_System_Int64_System_String_System_Nullable_System_Int64__System_Threading_CancellationToken_
+  name: ConsumePendingAsync
+  nameWithType: CookieService.ConsumePendingAsync
+  fullName: TGBot.Cookie.CookieService.ConsumePendingAsync
+- uid: System.Nullable{System.Int64}
+  commentId: T:System.Nullable{System.Int64}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long?
+  nameWithType: long?
+  fullName: long?
+  nameWithType.vb: Long?
+  fullName.vb: Long?
+  name.vb: Long?
+  spec.csharp:
+  - uid: System.Int64
+    name: long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: '?'
+  spec.vb:
+  - uid: System.Int64
+    name: Long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: '?'
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{TGBot.Cookie.CookieUploadResult}
+  commentId: T:System.Threading.Tasks.Task{TGBot.Cookie.CookieUploadResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<CookieUploadResult>
+  nameWithType: Task<CookieUploadResult>
+  fullName: System.Threading.Tasks.Task<TGBot.Cookie.CookieUploadResult>
+  nameWithType.vb: Task(Of CookieUploadResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TGBot.Cookie.CookieUploadResult)
+  name.vb: Task(Of CookieUploadResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: TGBot.Cookie.CookieUploadResult
+    name: CookieUploadResult
+    href: TGBot.Cookie.CookieUploadResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Cookie.CookieUploadResult
+    name: CookieUploadResult
+    href: TGBot.Cookie.CookieUploadResult.html
+  - name: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: TGBot.Cookie.CookieService.List*
+  commentId: Overload:TGBot.Cookie.CookieService.List
+  href: TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_List
+  name: List
+  nameWithType: CookieService.List
+  fullName: TGBot.Cookie.CookieService.List
+- uid: System.Collections.Generic.IReadOnlyList{TGBot.Cookie.CookieStatus}
+  commentId: T:System.Collections.Generic.IReadOnlyList{TGBot.Cookie.CookieStatus}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<CookieStatus>
+  nameWithType: IReadOnlyList<CookieStatus>
+  fullName: System.Collections.Generic.IReadOnlyList<TGBot.Cookie.CookieStatus>
+  nameWithType.vb: IReadOnlyList(Of CookieStatus)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of TGBot.Cookie.CookieStatus)
+  name.vb: IReadOnlyList(Of CookieStatus)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: TGBot.Cookie.CookieStatus
+    name: CookieStatus
+    href: TGBot.Cookie.CookieStatus.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Cookie.CookieStatus
+    name: CookieStatus
+    href: TGBot.Cookie.CookieStatus.html
+  - name: )
+- uid: TGBot.Cookie.CookieService.Clear*
+  commentId: Overload:TGBot.Cookie.CookieService.Clear
+  href: TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_Clear_System_String_
+  name: Clear
+  nameWithType: CookieService.Clear
+  fullName: TGBot.Cookie.CookieService.Clear
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: TGBot.Cookie.CookieService.SiteListText*
+  commentId: Overload:TGBot.Cookie.CookieService.SiteListText
+  href: TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_SiteListText
+  name: SiteListText
+  nameWithType: CookieService.SiteListText
+  fullName: TGBot.Cookie.CookieService.SiteListText

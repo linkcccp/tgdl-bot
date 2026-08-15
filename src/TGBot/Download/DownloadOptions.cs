@@ -21,4 +21,14 @@ public sealed record DownloadOptions(
     bool ExtractAudio,
     bool AllowPlaylists,
     long MaxSizeBytes,
-    TimeSpan Timeout);
+    TimeSpan Timeout)
+{
+    /// <summary>站点 cookies 文件路径（可为空）。</summary>
+    public string? CookiesFile { get; init; }
+
+    /// <summary>HTTP(S) 代理地址（可为空）。</summary>
+    public string? Proxy { get; init; }
+
+    /// <summary>附加 yt-dlp 参数（可为空）。</summary>
+    public IReadOnlyList<string>? ExtraArgs { get; init; }
+}

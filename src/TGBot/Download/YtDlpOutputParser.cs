@@ -66,6 +66,39 @@ public static class YtDlpOutputParser
            line.Contains("larger than", StringComparison.OrdinalIgnoreCase) ||
            line.Contains("max filesize", StringComparison.OrdinalIgnoreCase);
 
+    private static readonly string[] AuthRequiredPatterns =
+    {
+        "sign in to confirm",
+        "confirm you're not a bot",
+        "use --cookies",
+        "sign in to",
+        "login required",
+        "requires authentication",
+        "to access this page",
+        "private video",
+        "incomplete login",
+        "po_token",
+        "not a bot",
+    };
+
+    /// <summary>
+    /// 判断输出是否表示站点要求登录/认证（机器人检测等）。
+    /// </summary>
+    /// <param name="text">输出文本（含错误）。</param>
+    /// <returns>需要认证时返回 <see langword="true"/>。</returns>
+    public static bool IsAuthRequiredMessage(string text)
+    {
+        foreach (var p in AuthRequiredPatterns)
+        {
+            if (text.Contains(p, StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     /// <summary>
     /// 从元数据行提取标题、时长与文件大小。
     /// </summary>

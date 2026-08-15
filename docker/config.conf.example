@@ -67,3 +67,12 @@ MergeFormat = mp4
 # 是否在 /update 时更新 yt-dlp 与 ffmpeg
 UpdateYtDlp = true
 UpdateFfmpeg = true
+
+# 下载站点 cookies 存储目录（各站点 cookie 由 bot 私聊 /cookie 上传，按域名自动选用）
+# CookieStoreDir = /opt/tgdl-bot/cookies
+
+# yt-dlp HTTP(S) 代理（可选）
+# YtDlpProxy = http://127.0.0.1:7890
+
+# yt-dlp 附加参数（按空白拆分，如免 cookies 绕过 YouTube 机器人检测）
+# YtDlpExtraArgs = --extractor-args youtube:player_client=android,ios

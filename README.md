@@ -115,6 +115,33 @@ cd /opt/tgdl-bot && docker compose pull && docker compose up -d   # 升级镜像
 
 私聊 bot 发 `/update` 自动更新 yt-dlp/ffmpeg；`/status` 查看版本与内存。
 
+## 解决站点机器人检测（Bot 内上传 cookies）
+
+某些站点（如 YouTube）会要求登录确认，bot 会**快速失败**并提示需要 cookies（不再空转重试）。
+可通过 bot 私聊直接上传该站点的 cookies：
+
+```text
+/cookie youtube         → bot 提示「请发送 cookies 文件」
+（发送 cookies.txt 文件）→ bot 保存并提示「已保存」
+/cookies                → 查看各站点状态
+/cookie youtube clear   → 删除该站点 cookies
+```
+
+- **按域名自动选用**：上传的 cookie 归到对应站点；下载时按 URL 域名自动挑选该站点 cookie 传给 yt-dlp
+- 预置站点：YouTube、X（推特）、Instagram、TikTok、Twitch、Facebook、哔哩哔哩、抖音、小红书、微博、SoundCloud、Vimeo、Dailymotion、Reddit
+- 每站一个文件，存储于 `/opt/tgdl-bot/cookies`（`tgdl-cookies` 卷，跨重建保留；文件 0600）
+- 获取 cookies.txt：浏览器登录该站点后，用扩展（如 *Get cookies.txt LOCALLY*）导出 Netscape 格式文件
+
+### 免 cookies 的备选（可选）
+
+数据中心 IP 常被 YouTube 拦截，除 cookies 外可尝试：
+
+```bash
+# docker/.env 中配置代理，或附加 yt-dlp 参数
+TGDL_YTDLP_PROXY=http://<住宅/独享代理>:端口
+TGDL_YTDLP_EXTRA_ARGS=--extractor-args youtube:player_client=android,ios
+```
+
 ## 本地开发与测试
 
 ```bash

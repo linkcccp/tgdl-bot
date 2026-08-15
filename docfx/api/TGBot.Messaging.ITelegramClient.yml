@@ -5,6 +5,7 @@ items:
   id: ITelegramClient
   parent: TGBot.Messaging
   children:
+  - TGBot.Messaging.ITelegramClient.DownloadFileAsync(System.String,System.String,System.Threading.CancellationToken)
   - TGBot.Messaging.ITelegramClient.DropPendingUpdatesAsync(System.Threading.CancellationToken)
   - TGBot.Messaging.ITelegramClient.GetBotUsernameAsync(System.Threading.CancellationToken)
   - TGBot.Messaging.ITelegramClient.RunLongPollingAsync(System.Func{TGBot.Messaging.InboundMessage,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
@@ -28,7 +29,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ITelegramClient
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 68
+    startLine: 83
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -57,7 +58,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetBotUsernameAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 75
+    startLine: 90
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -92,7 +93,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendMessageAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 84
+    startLine: 99
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -138,7 +139,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendChatActionAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 92
+    startLine: 107
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -181,7 +182,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendVideoAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 102
+    startLine: 117
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -230,7 +231,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendAudioAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 114
+    startLine: 129
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -285,7 +286,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendDocumentAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 124
+    startLine: 139
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -316,6 +317,49 @@ items:
   nameWithType.vb: ITelegramClient.SendDocumentAsync(Long, String, String, String, CancellationToken)
   fullName.vb: TGBot.Messaging.ITelegramClient.SendDocumentAsync(Long, String, String, String, System.Threading.CancellationToken)
   name.vb: SendDocumentAsync(Long, String, String, String, CancellationToken)
+- uid: TGBot.Messaging.ITelegramClient.DownloadFileAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:TGBot.Messaging.ITelegramClient.DownloadFileAsync(System.String,System.String,System.Threading.CancellationToken)
+  id: DownloadFileAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: TGBot.Messaging.ITelegramClient
+  langs:
+  - csharp
+  - vb
+  name: DownloadFileAsync(string, string, CancellationToken)
+  nameWithType: ITelegramClient.DownloadFileAsync(string, string, CancellationToken)
+  fullName: TGBot.Messaging.ITelegramClient.DownloadFileAsync(string, string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: DownloadFileAsync
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 147
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 下载文件到本地路径（--local 模式下优先复制服务器本地文件）。
+  example: []
+  syntax:
+    content: Task DownloadFileAsync(string fileId, string destinationPath, CancellationToken cancellationToken)
+    parameters:
+    - id: fileId
+      type: System.String
+      description: Telegram 文件 ID。
+    - id: destinationPath
+      type: System.String
+      description: 目标路径。
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function DownloadFileAsync(fileId As String, destinationPath As String, cancellationToken As CancellationToken) As Task
+  overload: TGBot.Messaging.ITelegramClient.DownloadFileAsync*
+  nameWithType.vb: ITelegramClient.DownloadFileAsync(String, String, CancellationToken)
+  fullName.vb: TGBot.Messaging.ITelegramClient.DownloadFileAsync(String, String, System.Threading.CancellationToken)
+  name.vb: DownloadFileAsync(String, String, CancellationToken)
 - uid: TGBot.Messaging.ITelegramClient.SetCommandsAsync(System.Threading.CancellationToken)
   commentId: M:TGBot.Messaging.ITelegramClient.SetCommandsAsync(System.Threading.CancellationToken)
   id: SetCommandsAsync(System.Threading.CancellationToken)
@@ -334,7 +378,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SetCommandsAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 130
+    startLine: 153
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -368,7 +412,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DropPendingUpdatesAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 136
+    startLine: 159
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -402,7 +446,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RunLongPollingAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 145
+    startLine: 168
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -677,6 +721,12 @@ references:
   name: SendDocumentAsync
   nameWithType: ITelegramClient.SendDocumentAsync
   fullName: TGBot.Messaging.ITelegramClient.SendDocumentAsync
+- uid: TGBot.Messaging.ITelegramClient.DownloadFileAsync*
+  commentId: Overload:TGBot.Messaging.ITelegramClient.DownloadFileAsync
+  href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_DownloadFileAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: DownloadFileAsync
+  nameWithType: ITelegramClient.DownloadFileAsync
+  fullName: TGBot.Messaging.ITelegramClient.DownloadFileAsync
 - uid: TGBot.Messaging.ITelegramClient.SetCommandsAsync*
   commentId: Overload:TGBot.Messaging.ITelegramClient.SetCommandsAsync
   href: TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_SetCommandsAsync_System_Threading_CancellationToken_

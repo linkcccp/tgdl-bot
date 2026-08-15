@@ -190,6 +190,14 @@ public sealed class YtDlpDownloader : IDownloader
         if (process.ExitCode != 0)
         {
             _logger.Warn($"yt-dlp 退出码 {process.ExitCode}：{detail}");
+            if (YtDlpOutputParser.IsAuthRequiredMessage(detail))
+            {
+                throw new DownloadException(
+                    DownloadFailureReason.AuthRequired,
+                    UserTexts.AuthRequired,
+                    $"站点要求认证：{detail}");
+            }
+
             throw new DownloadException(
                 DownloadFailureReason.Failed,
                 UserTexts.DownloadFailed,

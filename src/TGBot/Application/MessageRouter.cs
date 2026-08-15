@@ -1,5 +1,6 @@
 using TGBot.Access;
 using TGBot.Config;
+using TGBot.Cookie;
 using TGBot.Download;
 using TGBot.Logging;
 using TGBot.Messaging;
@@ -9,7 +10,7 @@ using TGBot.Texts;
 namespace TGBot.Application;
 
 /// <summary>
-/// 消息路由器：访问控制 → 指令 / 链接校验 → 下载任务入队。
+/// 消息路由器：访问控制 → 指令 / 文件（cookies 上传）/ 链接校验 → 下载任务入队。
 /// </summary>
 public sealed class MessageRouter
 {
@@ -17,6 +18,7 @@ public sealed class MessageRouter
     private readonly UrlValidator _urlValidator;
     private readonly DownloadCoordinator _coordinator;
     private readonly CommandHandler _commands;
+    private readonly CookieService _cookies;
     private readonly ITelegramClient _client;
     private readonly AppConfig _config;
     private readonly IAppLogger _logger;
@@ -28,6 +30,7 @@ public sealed class MessageRouter
     /// <param name="urlValidator">URL 校验器。</param>
     /// <param name="coordinator">下载协调器。</param>
     /// <param name="commands">指令处理器。</param>
+    /// <param name="cookies">cookies 服务。</param>
     /// <param name="client">Telegram 客户端。</param>
     /// <param name="config">配置。</param>
     /// <param name="logger">日志器。</param>
@@ -36,6 +39,7 @@ public sealed class MessageRouter
         UrlValidator urlValidator,
         DownloadCoordinator coordinator,
         CommandHandler commands,
+        CookieService cookies,
         ITelegramClient client,
         AppConfig config,
         IAppLogger logger)
@@ -44,6 +48,7 @@ public sealed class MessageRouter
         _urlValidator = urlValidator;
         _coordinator = coordinator;
         _commands = commands;
+        _cookies = cookies;
         _client = client;
         _config = config;
         _logger = logger;
@@ -65,7 +70,28 @@ public sealed class MessageRouter
             return;
         }
 
+        if (msg.DocumentFileId is not null)
+        {
+            await HandleCookieFileAsync(msg, cancellationToken).ConfigureAwait(false);
+            return;
+        }
+
         await HandleUrlAsync(msg, cancellationToken).ConfigureAwait(false);
+    }
+
+    private async Task HandleCookieFileAsync(InboundMessage msg, CancellationToken cancellationToken)
+    {
+        var result = await _cookies.ConsumePendingAsync(
+            msg.ChatId,
+            msg.DocumentFileId,
+            msg.DocumentSizeBytes,
+            cancellationToken).ConfigureAwait(false);
+
+        // 无待上传请求时静默忽略普通文件消息
+        if (result is not null)
+        {
+            await SendToAsync(msg, result.Message, cancellationToken).ConfigureAwait(false);
+        }
     }
 
     private async Task HandleCommandAsync(InboundMessage msg, string commandText, CancellationToken cancellationToken)

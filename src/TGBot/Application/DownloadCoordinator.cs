@@ -1,4 +1,5 @@
 using TGBot.Config;
+using TGBot.Cookie;
 using TGBot.Download;
 using TGBot.Logging;
 using TGBot.Messaging;
@@ -18,6 +19,7 @@ public sealed class DownloadCoordinator
     private readonly TempDirManager _tempDir;
     private readonly UploadService _upload;
     private readonly ITelegramClient _client;
+    private readonly CookieService _cookies;
     private readonly AppConfig _config;
     private readonly IAppLogger _logger;
 
@@ -30,6 +32,7 @@ public sealed class DownloadCoordinator
     /// <param name="tempDir">临时目录管理器。</param>
     /// <param name="upload">上传服务。</param>
     /// <param name="client">Telegram 客户端。</param>
+    /// <param name="cookies">cookies 服务（按域名解析站点 cookie）。</param>
     /// <param name="config">配置。</param>
     /// <param name="logger">日志器。</param>
     public DownloadCoordinator(
@@ -39,6 +42,7 @@ public sealed class DownloadCoordinator
         TempDirManager tempDir,
         UploadService upload,
         ITelegramClient client,
+        CookieService cookies,
         AppConfig config,
         IAppLogger logger)
     {
@@ -48,6 +52,7 @@ public sealed class DownloadCoordinator
         _tempDir = tempDir;
         _upload = upload;
         _client = client;
+        _cookies = cookies;
         _config = config;
         _logger = logger;
     }
@@ -155,7 +160,14 @@ public sealed class DownloadCoordinator
             _config.ExtractAudio,
             _config.AllowPlaylists,
             _config.MaxMediaSizeBytes,
-            TimeSpan.FromSeconds(_config.DownloadTimeoutSeconds));
+            TimeSpan.FromSeconds(_config.DownloadTimeoutSeconds))
+        {
+            CookiesFile = _cookies.ResolveCookieFile(url),
+            Proxy = string.IsNullOrEmpty(_config.YtDlpProxy) ? null : _config.YtDlpProxy,
+            ExtraArgs = string.IsNullOrWhiteSpace(_config.YtDlpExtraArgs)
+                ? null
+                : _config.YtDlpExtraArgs.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries),
+        };
 
         var attempts = _config.DownloadRetries + 1;
         var lastError = string.Empty;
@@ -170,7 +182,11 @@ public sealed class DownloadCoordinator
                     shutdownToken).ConfigureAwait(false);
             }
             catch (DownloadException ex) when (
-                ex.Reason is DownloadFailureReason.TooLarge or DownloadFailureReason.NoDiskSpace or DownloadFailureReason.Timeout or DownloadFailureReason.Cancelled)
+                ex.Reason is DownloadFailureReason.TooLarge
+                    or DownloadFailureReason.NoDiskSpace
+                    or DownloadFailureReason.Timeout
+                    or DownloadFailureReason.Cancelled
+                    or DownloadFailureReason.AuthRequired)
             {
                 throw;
             }

@@ -19,6 +19,9 @@ public enum DownloadFailureReason
 
     /// <summary>任务被取消（关机或用户中断）。</summary>
     Cancelled,
+
+    /// <summary>目标站点要求登录/认证（如 YouTube 机器人检测），配置 cookies 后可解决。</summary>
+    AuthRequired,
 }
 
 /// <summary>

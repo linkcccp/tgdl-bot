@@ -63,7 +63,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Parse
     path: ../src/TGBot/Config/ConfigParser.cs
-    startLine: 65
+    startLine: 68
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config

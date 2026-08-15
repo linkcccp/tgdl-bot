@@ -211,15 +211,15 @@ references:
   commentId: T:TGBot.Application.CommandHandler
   fullName: TGBot.Application.CommandHandler
   nameWithType: CommandHandler
-- uid: TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger)
-  name: CommandHandler(ITelegramClient, IUpdater, DownloadGate, JobRegistry, string, AppConfig, IProcessRunner, IAppLogger)
-  href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler__ctor_TGBot_Messaging_ITelegramClient_TGBot_Update_IUpdater_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_System_String_TGBot_Config_AppConfig_TGBot_Update_IProcessRunner_TGBot_Logging_IAppLogger_
-  commentId: M:TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger)
-  name.vb: New(ITelegramClient, IUpdater, DownloadGate, JobRegistry, String, AppConfig, IProcessRunner, IAppLogger)
-  fullName: TGBot.Application.CommandHandler.CommandHandler(TGBot.Messaging.ITelegramClient, TGBot.Update.IUpdater, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, string, TGBot.Config.AppConfig, TGBot.Update.IProcessRunner, TGBot.Logging.IAppLogger)
-  fullName.vb: TGBot.Application.CommandHandler.New(TGBot.Messaging.ITelegramClient, TGBot.Update.IUpdater, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, String, TGBot.Config.AppConfig, TGBot.Update.IProcessRunner, TGBot.Logging.IAppLogger)
-  nameWithType: CommandHandler.CommandHandler(ITelegramClient, IUpdater, DownloadGate, JobRegistry, string, AppConfig, IProcessRunner, IAppLogger)
-  nameWithType.vb: CommandHandler.New(ITelegramClient, IUpdater, DownloadGate, JobRegistry, String, AppConfig, IProcessRunner, IAppLogger)
+- uid: TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger)
+  name: CommandHandler(ITelegramClient, IUpdater, DownloadGate, JobRegistry, string, CookieService, AppConfig, IProcessRunner, IAppLogger)
+  href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler__ctor_TGBot_Messaging_ITelegramClient_TGBot_Update_IUpdater_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_System_String_TGBot_Cookie_CookieService_TGBot_Config_AppConfig_TGBot_Update_IProcessRunner_TGBot_Logging_IAppLogger_
+  commentId: M:TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger)
+  name.vb: New(ITelegramClient, IUpdater, DownloadGate, JobRegistry, String, CookieService, AppConfig, IProcessRunner, IAppLogger)
+  fullName: TGBot.Application.CommandHandler.CommandHandler(TGBot.Messaging.ITelegramClient, TGBot.Update.IUpdater, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, string, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Update.IProcessRunner, TGBot.Logging.IAppLogger)
+  fullName.vb: TGBot.Application.CommandHandler.New(TGBot.Messaging.ITelegramClient, TGBot.Update.IUpdater, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, String, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Update.IProcessRunner, TGBot.Logging.IAppLogger)
+  nameWithType: CommandHandler.CommandHandler(ITelegramClient, IUpdater, DownloadGate, JobRegistry, string, CookieService, AppConfig, IProcessRunner, IAppLogger)
+  nameWithType.vb: CommandHandler.New(ITelegramClient, IUpdater, DownloadGate, JobRegistry, String, CookieService, AppConfig, IProcessRunner, IAppLogger)
 - uid: TGBot.Application.CommandHandler.#ctor*
   name: CommandHandler
   href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler__ctor_
@@ -252,15 +252,15 @@ references:
   commentId: T:TGBot.Application.DownloadCoordinator
   fullName: TGBot.Application.DownloadCoordinator
   nameWithType: DownloadCoordinator
-- uid: TGBot.Application.DownloadCoordinator.#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
-  name: DownloadCoordinator(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, AppConfig, IAppLogger)
-  href: api/TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator__ctor_TGBot_Download_IDownloader_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_TGBot_Security_TempDirManager_TGBot_Messaging_UploadService_TGBot_Messaging_ITelegramClient_TGBot_Config_AppConfig_TGBot_Logging_IAppLogger_
-  commentId: M:TGBot.Application.DownloadCoordinator.#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
-  name.vb: New(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, AppConfig, IAppLogger)
-  fullName: TGBot.Application.DownloadCoordinator.DownloadCoordinator(TGBot.Download.IDownloader, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, TGBot.Security.TempDirManager, TGBot.Messaging.UploadService, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
-  fullName.vb: TGBot.Application.DownloadCoordinator.New(TGBot.Download.IDownloader, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, TGBot.Security.TempDirManager, TGBot.Messaging.UploadService, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
-  nameWithType: DownloadCoordinator.DownloadCoordinator(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, AppConfig, IAppLogger)
-  nameWithType.vb: DownloadCoordinator.New(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, AppConfig, IAppLogger)
+- uid: TGBot.Application.DownloadCoordinator.#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
+  name: DownloadCoordinator(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger)
+  href: api/TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator__ctor_TGBot_Download_IDownloader_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_TGBot_Security_TempDirManager_TGBot_Messaging_UploadService_TGBot_Messaging_ITelegramClient_TGBot_Cookie_CookieService_TGBot_Config_AppConfig_TGBot_Logging_IAppLogger_
+  commentId: M:TGBot.Application.DownloadCoordinator.#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
+  name.vb: New(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger)
+  fullName: TGBot.Application.DownloadCoordinator.DownloadCoordinator(TGBot.Download.IDownloader, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, TGBot.Security.TempDirManager, TGBot.Messaging.UploadService, TGBot.Messaging.ITelegramClient, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
+  fullName.vb: TGBot.Application.DownloadCoordinator.New(TGBot.Download.IDownloader, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, TGBot.Security.TempDirManager, TGBot.Messaging.UploadService, TGBot.Messaging.ITelegramClient, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
+  nameWithType: DownloadCoordinator.DownloadCoordinator(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger)
+  nameWithType.vb: DownloadCoordinator.New(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger)
 - uid: TGBot.Application.DownloadCoordinator.#ctor*
   name: DownloadCoordinator
   href: api/TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator__ctor_
@@ -293,15 +293,15 @@ references:
   commentId: T:TGBot.Application.MessageRouter
   fullName: TGBot.Application.MessageRouter
   nameWithType: MessageRouter
-- uid: TGBot.Application.MessageRouter.#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
-  name: MessageRouter(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, ITelegramClient, AppConfig, IAppLogger)
-  href: api/TGBot.Application.MessageRouter.html#TGBot_Application_MessageRouter__ctor_TGBot_Access_AccessControlService_TGBot_Security_UrlValidator_TGBot_Application_DownloadCoordinator_TGBot_Application_CommandHandler_TGBot_Messaging_ITelegramClient_TGBot_Config_AppConfig_TGBot_Logging_IAppLogger_
-  commentId: M:TGBot.Application.MessageRouter.#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
-  name.vb: New(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, ITelegramClient, AppConfig, IAppLogger)
-  fullName: TGBot.Application.MessageRouter.MessageRouter(TGBot.Access.AccessControlService, TGBot.Security.UrlValidator, TGBot.Application.DownloadCoordinator, TGBot.Application.CommandHandler, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
-  fullName.vb: TGBot.Application.MessageRouter.New(TGBot.Access.AccessControlService, TGBot.Security.UrlValidator, TGBot.Application.DownloadCoordinator, TGBot.Application.CommandHandler, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
-  nameWithType: MessageRouter.MessageRouter(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, ITelegramClient, AppConfig, IAppLogger)
-  nameWithType.vb: MessageRouter.New(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, ITelegramClient, AppConfig, IAppLogger)
+- uid: TGBot.Application.MessageRouter.#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Cookie.CookieService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
+  name: MessageRouter(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger)
+  href: api/TGBot.Application.MessageRouter.html#TGBot_Application_MessageRouter__ctor_TGBot_Access_AccessControlService_TGBot_Security_UrlValidator_TGBot_Application_DownloadCoordinator_TGBot_Application_CommandHandler_TGBot_Cookie_CookieService_TGBot_Messaging_ITelegramClient_TGBot_Config_AppConfig_TGBot_Logging_IAppLogger_
+  commentId: M:TGBot.Application.MessageRouter.#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Cookie.CookieService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
+  name.vb: New(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger)
+  fullName: TGBot.Application.MessageRouter.MessageRouter(TGBot.Access.AccessControlService, TGBot.Security.UrlValidator, TGBot.Application.DownloadCoordinator, TGBot.Application.CommandHandler, TGBot.Cookie.CookieService, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
+  fullName.vb: TGBot.Application.MessageRouter.New(TGBot.Access.AccessControlService, TGBot.Security.UrlValidator, TGBot.Application.DownloadCoordinator, TGBot.Application.CommandHandler, TGBot.Cookie.CookieService, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
+  nameWithType: MessageRouter.MessageRouter(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger)
+  nameWithType.vb: MessageRouter.New(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger)
 - uid: TGBot.Application.MessageRouter.#ctor*
   name: MessageRouter
   href: api/TGBot.Application.MessageRouter.html#TGBot_Application_MessageRouter__ctor_
@@ -402,6 +402,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Config.AppConfig.BotToken
   nameWithType: AppConfig.BotToken
+- uid: TGBot.Config.AppConfig.CookieStoreDir
+  name: CookieStoreDir
+  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_CookieStoreDir
+  commentId: P:TGBot.Config.AppConfig.CookieStoreDir
+  fullName: TGBot.Config.AppConfig.CookieStoreDir
+  nameWithType: AppConfig.CookieStoreDir
+- uid: TGBot.Config.AppConfig.CookieStoreDir*
+  name: CookieStoreDir
+  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_CookieStoreDir_
+  commentId: Overload:TGBot.Config.AppConfig.CookieStoreDir
+  isSpec: "True"
+  fullName: TGBot.Config.AppConfig.CookieStoreDir
+  nameWithType: AppConfig.CookieStoreDir
 - uid: TGBot.Config.AppConfig.DownloadRetries
   name: DownloadRetries
   href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_DownloadRetries
@@ -610,6 +623,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Config.AppConfig.UploadRetries
   nameWithType: AppConfig.UploadRetries
+- uid: TGBot.Config.AppConfig.YtDlpExtraArgs
+  name: YtDlpExtraArgs
+  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_YtDlpExtraArgs
+  commentId: P:TGBot.Config.AppConfig.YtDlpExtraArgs
+  fullName: TGBot.Config.AppConfig.YtDlpExtraArgs
+  nameWithType: AppConfig.YtDlpExtraArgs
+- uid: TGBot.Config.AppConfig.YtDlpExtraArgs*
+  name: YtDlpExtraArgs
+  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_YtDlpExtraArgs_
+  commentId: Overload:TGBot.Config.AppConfig.YtDlpExtraArgs
+  isSpec: "True"
+  fullName: TGBot.Config.AppConfig.YtDlpExtraArgs
+  nameWithType: AppConfig.YtDlpExtraArgs
 - uid: TGBot.Config.AppConfig.YtDlpPath
   name: YtDlpPath
   href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_YtDlpPath
@@ -623,6 +649,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Config.AppConfig.YtDlpPath
   nameWithType: AppConfig.YtDlpPath
+- uid: TGBot.Config.AppConfig.YtDlpProxy
+  name: YtDlpProxy
+  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_YtDlpProxy
+  commentId: P:TGBot.Config.AppConfig.YtDlpProxy
+  fullName: TGBot.Config.AppConfig.YtDlpProxy
+  nameWithType: AppConfig.YtDlpProxy
+- uid: TGBot.Config.AppConfig.YtDlpProxy*
+  name: YtDlpProxy
+  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_YtDlpProxy_
+  commentId: Overload:TGBot.Config.AppConfig.YtDlpProxy
+  isSpec: "True"
+  fullName: TGBot.Config.AppConfig.YtDlpProxy
+  nameWithType: AppConfig.YtDlpProxy
 - uid: TGBot.Config.ConfigLoadException
   name: ConfigLoadException
   href: api/TGBot.Config.ConfigLoadException.html
@@ -796,6 +835,1179 @@ references:
   isSpec: "True"
   fullName: TGBot.Config.ConfigParser.Parse
   nameWithType: ConfigParser.Parse
+- uid: TGBot.Cookie
+  name: TGBot.Cookie
+  href: api/TGBot.Cookie.html
+  commentId: N:TGBot.Cookie
+  fullName: TGBot.Cookie
+  nameWithType: TGBot.Cookie
+- uid: TGBot.Cookie.BilibiliCookieSite
+  name: BilibiliCookieSite
+  href: api/TGBot.Cookie.BilibiliCookieSite.html
+  commentId: T:TGBot.Cookie.BilibiliCookieSite
+  fullName: TGBot.Cookie.BilibiliCookieSite
+  nameWithType: BilibiliCookieSite
+- uid: TGBot.Cookie.BilibiliCookieSite.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.BilibiliCookieSite.html#TGBot_Cookie_BilibiliCookieSite_DisplayName
+  commentId: P:TGBot.Cookie.BilibiliCookieSite.DisplayName
+  fullName: TGBot.Cookie.BilibiliCookieSite.DisplayName
+  nameWithType: BilibiliCookieSite.DisplayName
+- uid: TGBot.Cookie.BilibiliCookieSite.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.BilibiliCookieSite.html#TGBot_Cookie_BilibiliCookieSite_DisplayName_
+  commentId: Overload:TGBot.Cookie.BilibiliCookieSite.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.BilibiliCookieSite.DisplayName
+  nameWithType: BilibiliCookieSite.DisplayName
+- uid: TGBot.Cookie.BilibiliCookieSite.Hosts
+  name: Hosts
+  href: api/TGBot.Cookie.BilibiliCookieSite.html#TGBot_Cookie_BilibiliCookieSite_Hosts
+  commentId: P:TGBot.Cookie.BilibiliCookieSite.Hosts
+  fullName: TGBot.Cookie.BilibiliCookieSite.Hosts
+  nameWithType: BilibiliCookieSite.Hosts
+- uid: TGBot.Cookie.BilibiliCookieSite.Hosts*
+  name: Hosts
+  href: api/TGBot.Cookie.BilibiliCookieSite.html#TGBot_Cookie_BilibiliCookieSite_Hosts_
+  commentId: Overload:TGBot.Cookie.BilibiliCookieSite.Hosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.BilibiliCookieSite.Hosts
+  nameWithType: BilibiliCookieSite.Hosts
+- uid: TGBot.Cookie.BilibiliCookieSite.Key
+  name: Key
+  href: api/TGBot.Cookie.BilibiliCookieSite.html#TGBot_Cookie_BilibiliCookieSite_Key
+  commentId: P:TGBot.Cookie.BilibiliCookieSite.Key
+  fullName: TGBot.Cookie.BilibiliCookieSite.Key
+  nameWithType: BilibiliCookieSite.Key
+- uid: TGBot.Cookie.BilibiliCookieSite.Key*
+  name: Key
+  href: api/TGBot.Cookie.BilibiliCookieSite.html#TGBot_Cookie_BilibiliCookieSite_Key_
+  commentId: Overload:TGBot.Cookie.BilibiliCookieSite.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.BilibiliCookieSite.Key
+  nameWithType: BilibiliCookieSite.Key
+- uid: TGBot.Cookie.CookieService
+  name: CookieService
+  href: api/TGBot.Cookie.CookieService.html
+  commentId: T:TGBot.Cookie.CookieService
+  fullName: TGBot.Cookie.CookieService
+  nameWithType: CookieService
+- uid: TGBot.Cookie.CookieService.#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger)
+  name: CookieService(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService__ctor_TGBot_Cookie_SiteCookieRegistry_TGBot_Cookie_CookieStore_TGBot_Messaging_ITelegramClient_TGBot_Logging_IAppLogger_
+  commentId: M:TGBot.Cookie.CookieService.#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger)
+  name.vb: New(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
+  fullName: TGBot.Cookie.CookieService.CookieService(TGBot.Cookie.SiteCookieRegistry, TGBot.Cookie.CookieStore, TGBot.Messaging.ITelegramClient, TGBot.Logging.IAppLogger)
+  fullName.vb: TGBot.Cookie.CookieService.New(TGBot.Cookie.SiteCookieRegistry, TGBot.Cookie.CookieStore, TGBot.Messaging.ITelegramClient, TGBot.Logging.IAppLogger)
+  nameWithType: CookieService.CookieService(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
+  nameWithType.vb: CookieService.New(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
+- uid: TGBot.Cookie.CookieService.#ctor*
+  name: CookieService
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService__ctor_
+  commentId: Overload:TGBot.Cookie.CookieService.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Cookie.CookieService.CookieService
+  fullName.vb: TGBot.Cookie.CookieService.New
+  nameWithType: CookieService.CookieService
+  nameWithType.vb: CookieService.New
+- uid: TGBot.Cookie.CookieService.BeginPendingUpload(System.Int64,System.String)
+  name: BeginPendingUpload(long, string)
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_BeginPendingUpload_System_Int64_System_String_
+  commentId: M:TGBot.Cookie.CookieService.BeginPendingUpload(System.Int64,System.String)
+  name.vb: BeginPendingUpload(Long, String)
+  fullName: TGBot.Cookie.CookieService.BeginPendingUpload(long, string)
+  fullName.vb: TGBot.Cookie.CookieService.BeginPendingUpload(Long, String)
+  nameWithType: CookieService.BeginPendingUpload(long, string)
+  nameWithType.vb: CookieService.BeginPendingUpload(Long, String)
+- uid: TGBot.Cookie.CookieService.BeginPendingUpload*
+  name: BeginPendingUpload
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_BeginPendingUpload_
+  commentId: Overload:TGBot.Cookie.CookieService.BeginPendingUpload
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieService.BeginPendingUpload
+  nameWithType: CookieService.BeginPendingUpload
+- uid: TGBot.Cookie.CookieService.Clear(System.String)
+  name: Clear(string)
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_Clear_System_String_
+  commentId: M:TGBot.Cookie.CookieService.Clear(System.String)
+  name.vb: Clear(String)
+  fullName: TGBot.Cookie.CookieService.Clear(string)
+  fullName.vb: TGBot.Cookie.CookieService.Clear(String)
+  nameWithType: CookieService.Clear(string)
+  nameWithType.vb: CookieService.Clear(String)
+- uid: TGBot.Cookie.CookieService.Clear*
+  name: Clear
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_Clear_
+  commentId: Overload:TGBot.Cookie.CookieService.Clear
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieService.Clear
+  nameWithType: CookieService.Clear
+- uid: TGBot.Cookie.CookieService.ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.Threading.CancellationToken)
+  name: ConsumePendingAsync(long, string, long?, CancellationToken)
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_ConsumePendingAsync_System_Int64_System_String_System_Nullable_System_Int64__System_Threading_CancellationToken_
+  commentId: M:TGBot.Cookie.CookieService.ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.Threading.CancellationToken)
+  name.vb: ConsumePendingAsync(Long, String, Long?, CancellationToken)
+  fullName: TGBot.Cookie.CookieService.ConsumePendingAsync(long, string, long?, System.Threading.CancellationToken)
+  fullName.vb: TGBot.Cookie.CookieService.ConsumePendingAsync(Long, String, Long?, System.Threading.CancellationToken)
+  nameWithType: CookieService.ConsumePendingAsync(long, string, long?, CancellationToken)
+  nameWithType.vb: CookieService.ConsumePendingAsync(Long, String, Long?, CancellationToken)
+- uid: TGBot.Cookie.CookieService.ConsumePendingAsync*
+  name: ConsumePendingAsync
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_ConsumePendingAsync_
+  commentId: Overload:TGBot.Cookie.CookieService.ConsumePendingAsync
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieService.ConsumePendingAsync
+  nameWithType: CookieService.ConsumePendingAsync
+- uid: TGBot.Cookie.CookieService.List
+  name: List()
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_List
+  commentId: M:TGBot.Cookie.CookieService.List
+  fullName: TGBot.Cookie.CookieService.List()
+  nameWithType: CookieService.List()
+- uid: TGBot.Cookie.CookieService.List*
+  name: List
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_List_
+  commentId: Overload:TGBot.Cookie.CookieService.List
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieService.List
+  nameWithType: CookieService.List
+- uid: TGBot.Cookie.CookieService.ResolveCookieFile(System.String)
+  name: ResolveCookieFile(string)
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_ResolveCookieFile_System_String_
+  commentId: M:TGBot.Cookie.CookieService.ResolveCookieFile(System.String)
+  name.vb: ResolveCookieFile(String)
+  fullName: TGBot.Cookie.CookieService.ResolveCookieFile(string)
+  fullName.vb: TGBot.Cookie.CookieService.ResolveCookieFile(String)
+  nameWithType: CookieService.ResolveCookieFile(string)
+  nameWithType.vb: CookieService.ResolveCookieFile(String)
+- uid: TGBot.Cookie.CookieService.ResolveCookieFile*
+  name: ResolveCookieFile
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_ResolveCookieFile_
+  commentId: Overload:TGBot.Cookie.CookieService.ResolveCookieFile
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieService.ResolveCookieFile
+  nameWithType: CookieService.ResolveCookieFile
+- uid: TGBot.Cookie.CookieService.ResolveSite(System.String)
+  name: ResolveSite(string)
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_ResolveSite_System_String_
+  commentId: M:TGBot.Cookie.CookieService.ResolveSite(System.String)
+  name.vb: ResolveSite(String)
+  fullName: TGBot.Cookie.CookieService.ResolveSite(string)
+  fullName.vb: TGBot.Cookie.CookieService.ResolveSite(String)
+  nameWithType: CookieService.ResolveSite(string)
+  nameWithType.vb: CookieService.ResolveSite(String)
+- uid: TGBot.Cookie.CookieService.ResolveSite*
+  name: ResolveSite
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_ResolveSite_
+  commentId: Overload:TGBot.Cookie.CookieService.ResolveSite
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieService.ResolveSite
+  nameWithType: CookieService.ResolveSite
+- uid: TGBot.Cookie.CookieService.SiteListText
+  name: SiteListText()
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_SiteListText
+  commentId: M:TGBot.Cookie.CookieService.SiteListText
+  fullName: TGBot.Cookie.CookieService.SiteListText()
+  nameWithType: CookieService.SiteListText()
+- uid: TGBot.Cookie.CookieService.SiteListText*
+  name: SiteListText
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_SiteListText_
+  commentId: Overload:TGBot.Cookie.CookieService.SiteListText
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieService.SiteListText
+  nameWithType: CookieService.SiteListText
+- uid: TGBot.Cookie.CookieService.Sites
+  name: Sites
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_Sites
+  commentId: P:TGBot.Cookie.CookieService.Sites
+  fullName: TGBot.Cookie.CookieService.Sites
+  nameWithType: CookieService.Sites
+- uid: TGBot.Cookie.CookieService.Sites*
+  name: Sites
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_Sites_
+  commentId: Overload:TGBot.Cookie.CookieService.Sites
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieService.Sites
+  nameWithType: CookieService.Sites
+- uid: TGBot.Cookie.CookieSite
+  name: CookieSite
+  href: api/TGBot.Cookie.CookieSite.html
+  commentId: T:TGBot.Cookie.CookieSite
+  fullName: TGBot.Cookie.CookieSite
+  nameWithType: CookieSite
+- uid: TGBot.Cookie.CookieSite.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.CookieSite.html#TGBot_Cookie_CookieSite_DisplayName
+  commentId: P:TGBot.Cookie.CookieSite.DisplayName
+  fullName: TGBot.Cookie.CookieSite.DisplayName
+  nameWithType: CookieSite.DisplayName
+- uid: TGBot.Cookie.CookieSite.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.CookieSite.html#TGBot_Cookie_CookieSite_DisplayName_
+  commentId: Overload:TGBot.Cookie.CookieSite.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieSite.DisplayName
+  nameWithType: CookieSite.DisplayName
+- uid: TGBot.Cookie.CookieSite.Hosts
+  name: Hosts
+  href: api/TGBot.Cookie.CookieSite.html#TGBot_Cookie_CookieSite_Hosts
+  commentId: P:TGBot.Cookie.CookieSite.Hosts
+  fullName: TGBot.Cookie.CookieSite.Hosts
+  nameWithType: CookieSite.Hosts
+- uid: TGBot.Cookie.CookieSite.Hosts*
+  name: Hosts
+  href: api/TGBot.Cookie.CookieSite.html#TGBot_Cookie_CookieSite_Hosts_
+  commentId: Overload:TGBot.Cookie.CookieSite.Hosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieSite.Hosts
+  nameWithType: CookieSite.Hosts
+- uid: TGBot.Cookie.CookieSite.Key
+  name: Key
+  href: api/TGBot.Cookie.CookieSite.html#TGBot_Cookie_CookieSite_Key
+  commentId: P:TGBot.Cookie.CookieSite.Key
+  fullName: TGBot.Cookie.CookieSite.Key
+  nameWithType: CookieSite.Key
+- uid: TGBot.Cookie.CookieSite.Key*
+  name: Key
+  href: api/TGBot.Cookie.CookieSite.html#TGBot_Cookie_CookieSite_Key_
+  commentId: Overload:TGBot.Cookie.CookieSite.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieSite.Key
+  nameWithType: CookieSite.Key
+- uid: TGBot.Cookie.CookieSite.MatchedHosts
+  name: MatchedHosts
+  href: api/TGBot.Cookie.CookieSite.html#TGBot_Cookie_CookieSite_MatchedHosts
+  commentId: P:TGBot.Cookie.CookieSite.MatchedHosts
+  fullName: TGBot.Cookie.CookieSite.MatchedHosts
+  nameWithType: CookieSite.MatchedHosts
+- uid: TGBot.Cookie.CookieSite.MatchedHosts*
+  name: MatchedHosts
+  href: api/TGBot.Cookie.CookieSite.html#TGBot_Cookie_CookieSite_MatchedHosts_
+  commentId: Overload:TGBot.Cookie.CookieSite.MatchedHosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieSite.MatchedHosts
+  nameWithType: CookieSite.MatchedHosts
+- uid: TGBot.Cookie.CookieSite.Matches(System.String)
+  name: Matches(string)
+  href: api/TGBot.Cookie.CookieSite.html#TGBot_Cookie_CookieSite_Matches_System_String_
+  commentId: M:TGBot.Cookie.CookieSite.Matches(System.String)
+  name.vb: Matches(String)
+  fullName: TGBot.Cookie.CookieSite.Matches(string)
+  fullName.vb: TGBot.Cookie.CookieSite.Matches(String)
+  nameWithType: CookieSite.Matches(string)
+  nameWithType.vb: CookieSite.Matches(String)
+- uid: TGBot.Cookie.CookieSite.Matches*
+  name: Matches
+  href: api/TGBot.Cookie.CookieSite.html#TGBot_Cookie_CookieSite_Matches_
+  commentId: Overload:TGBot.Cookie.CookieSite.Matches
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieSite.Matches
+  nameWithType: CookieSite.Matches
+- uid: TGBot.Cookie.CookieSiteUtil
+  name: CookieSiteUtil
+  href: api/TGBot.Cookie.CookieSiteUtil.html
+  commentId: T:TGBot.Cookie.CookieSiteUtil
+  fullName: TGBot.Cookie.CookieSiteUtil
+  nameWithType: CookieSiteUtil
+- uid: TGBot.Cookie.CookieSiteUtil.NormalizeHost(System.String)
+  name: NormalizeHost(string)
+  href: api/TGBot.Cookie.CookieSiteUtil.html#TGBot_Cookie_CookieSiteUtil_NormalizeHost_System_String_
+  commentId: M:TGBot.Cookie.CookieSiteUtil.NormalizeHost(System.String)
+  name.vb: NormalizeHost(String)
+  fullName: TGBot.Cookie.CookieSiteUtil.NormalizeHost(string)
+  fullName.vb: TGBot.Cookie.CookieSiteUtil.NormalizeHost(String)
+  nameWithType: CookieSiteUtil.NormalizeHost(string)
+  nameWithType.vb: CookieSiteUtil.NormalizeHost(String)
+- uid: TGBot.Cookie.CookieSiteUtil.NormalizeHost*
+  name: NormalizeHost
+  href: api/TGBot.Cookie.CookieSiteUtil.html#TGBot_Cookie_CookieSiteUtil_NormalizeHost_
+  commentId: Overload:TGBot.Cookie.CookieSiteUtil.NormalizeHost
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieSiteUtil.NormalizeHost
+  nameWithType: CookieSiteUtil.NormalizeHost
+- uid: TGBot.Cookie.CookieStatus
+  name: CookieStatus
+  href: api/TGBot.Cookie.CookieStatus.html
+  commentId: T:TGBot.Cookie.CookieStatus
+  fullName: TGBot.Cookie.CookieStatus
+  nameWithType: CookieStatus
+- uid: TGBot.Cookie.CookieStatus.#ctor(System.String,System.String,System.Boolean)
+  name: CookieStatus(string, string, bool)
+  href: api/TGBot.Cookie.CookieStatus.html#TGBot_Cookie_CookieStatus__ctor_System_String_System_String_System_Boolean_
+  commentId: M:TGBot.Cookie.CookieStatus.#ctor(System.String,System.String,System.Boolean)
+  name.vb: New(String, String, Boolean)
+  fullName: TGBot.Cookie.CookieStatus.CookieStatus(string, string, bool)
+  fullName.vb: TGBot.Cookie.CookieStatus.New(String, String, Boolean)
+  nameWithType: CookieStatus.CookieStatus(string, string, bool)
+  nameWithType.vb: CookieStatus.New(String, String, Boolean)
+- uid: TGBot.Cookie.CookieStatus.#ctor*
+  name: CookieStatus
+  href: api/TGBot.Cookie.CookieStatus.html#TGBot_Cookie_CookieStatus__ctor_
+  commentId: Overload:TGBot.Cookie.CookieStatus.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Cookie.CookieStatus.CookieStatus
+  fullName.vb: TGBot.Cookie.CookieStatus.New
+  nameWithType: CookieStatus.CookieStatus
+  nameWithType.vb: CookieStatus.New
+- uid: TGBot.Cookie.CookieStatus.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.CookieStatus.html#TGBot_Cookie_CookieStatus_DisplayName
+  commentId: P:TGBot.Cookie.CookieStatus.DisplayName
+  fullName: TGBot.Cookie.CookieStatus.DisplayName
+  nameWithType: CookieStatus.DisplayName
+- uid: TGBot.Cookie.CookieStatus.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.CookieStatus.html#TGBot_Cookie_CookieStatus_DisplayName_
+  commentId: Overload:TGBot.Cookie.CookieStatus.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieStatus.DisplayName
+  nameWithType: CookieStatus.DisplayName
+- uid: TGBot.Cookie.CookieStatus.Has
+  name: Has
+  href: api/TGBot.Cookie.CookieStatus.html#TGBot_Cookie_CookieStatus_Has
+  commentId: P:TGBot.Cookie.CookieStatus.Has
+  fullName: TGBot.Cookie.CookieStatus.Has
+  nameWithType: CookieStatus.Has
+- uid: TGBot.Cookie.CookieStatus.Has*
+  name: Has
+  href: api/TGBot.Cookie.CookieStatus.html#TGBot_Cookie_CookieStatus_Has_
+  commentId: Overload:TGBot.Cookie.CookieStatus.Has
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieStatus.Has
+  nameWithType: CookieStatus.Has
+- uid: TGBot.Cookie.CookieStatus.Key
+  name: Key
+  href: api/TGBot.Cookie.CookieStatus.html#TGBot_Cookie_CookieStatus_Key
+  commentId: P:TGBot.Cookie.CookieStatus.Key
+  fullName: TGBot.Cookie.CookieStatus.Key
+  nameWithType: CookieStatus.Key
+- uid: TGBot.Cookie.CookieStatus.Key*
+  name: Key
+  href: api/TGBot.Cookie.CookieStatus.html#TGBot_Cookie_CookieStatus_Key_
+  commentId: Overload:TGBot.Cookie.CookieStatus.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieStatus.Key
+  nameWithType: CookieStatus.Key
+- uid: TGBot.Cookie.CookieStore
+  name: CookieStore
+  href: api/TGBot.Cookie.CookieStore.html
+  commentId: T:TGBot.Cookie.CookieStore
+  fullName: TGBot.Cookie.CookieStore
+  nameWithType: CookieStore
+- uid: TGBot.Cookie.CookieStore.#ctor(System.String,TGBot.Logging.IAppLogger)
+  name: CookieStore(string, IAppLogger)
+  href: api/TGBot.Cookie.CookieStore.html#TGBot_Cookie_CookieStore__ctor_System_String_TGBot_Logging_IAppLogger_
+  commentId: M:TGBot.Cookie.CookieStore.#ctor(System.String,TGBot.Logging.IAppLogger)
+  name.vb: New(String, IAppLogger)
+  fullName: TGBot.Cookie.CookieStore.CookieStore(string, TGBot.Logging.IAppLogger)
+  fullName.vb: TGBot.Cookie.CookieStore.New(String, TGBot.Logging.IAppLogger)
+  nameWithType: CookieStore.CookieStore(string, IAppLogger)
+  nameWithType.vb: CookieStore.New(String, IAppLogger)
+- uid: TGBot.Cookie.CookieStore.#ctor*
+  name: CookieStore
+  href: api/TGBot.Cookie.CookieStore.html#TGBot_Cookie_CookieStore__ctor_
+  commentId: Overload:TGBot.Cookie.CookieStore.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Cookie.CookieStore.CookieStore
+  fullName.vb: TGBot.Cookie.CookieStore.New
+  nameWithType: CookieStore.CookieStore
+  nameWithType.vb: CookieStore.New
+- uid: TGBot.Cookie.CookieStore.Delete(System.String)
+  name: Delete(string)
+  href: api/TGBot.Cookie.CookieStore.html#TGBot_Cookie_CookieStore_Delete_System_String_
+  commentId: M:TGBot.Cookie.CookieStore.Delete(System.String)
+  name.vb: Delete(String)
+  fullName: TGBot.Cookie.CookieStore.Delete(string)
+  fullName.vb: TGBot.Cookie.CookieStore.Delete(String)
+  nameWithType: CookieStore.Delete(string)
+  nameWithType.vb: CookieStore.Delete(String)
+- uid: TGBot.Cookie.CookieStore.Delete*
+  name: Delete
+  href: api/TGBot.Cookie.CookieStore.html#TGBot_Cookie_CookieStore_Delete_
+  commentId: Overload:TGBot.Cookie.CookieStore.Delete
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieStore.Delete
+  nameWithType: CookieStore.Delete
+- uid: TGBot.Cookie.CookieStore.GetFile(System.String)
+  name: GetFile(string)
+  href: api/TGBot.Cookie.CookieStore.html#TGBot_Cookie_CookieStore_GetFile_System_String_
+  commentId: M:TGBot.Cookie.CookieStore.GetFile(System.String)
+  name.vb: GetFile(String)
+  fullName: TGBot.Cookie.CookieStore.GetFile(string)
+  fullName.vb: TGBot.Cookie.CookieStore.GetFile(String)
+  nameWithType: CookieStore.GetFile(string)
+  nameWithType.vb: CookieStore.GetFile(String)
+- uid: TGBot.Cookie.CookieStore.GetFile*
+  name: GetFile
+  href: api/TGBot.Cookie.CookieStore.html#TGBot_Cookie_CookieStore_GetFile_
+  commentId: Overload:TGBot.Cookie.CookieStore.GetFile
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieStore.GetFile
+  nameWithType: CookieStore.GetFile
+- uid: TGBot.Cookie.CookieStore.Initialize
+  name: Initialize()
+  href: api/TGBot.Cookie.CookieStore.html#TGBot_Cookie_CookieStore_Initialize
+  commentId: M:TGBot.Cookie.CookieStore.Initialize
+  fullName: TGBot.Cookie.CookieStore.Initialize()
+  nameWithType: CookieStore.Initialize()
+- uid: TGBot.Cookie.CookieStore.Initialize*
+  name: Initialize
+  href: api/TGBot.Cookie.CookieStore.html#TGBot_Cookie_CookieStore_Initialize_
+  commentId: Overload:TGBot.Cookie.CookieStore.Initialize
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieStore.Initialize
+  nameWithType: CookieStore.Initialize
+- uid: TGBot.Cookie.CookieStore.List
+  name: List()
+  href: api/TGBot.Cookie.CookieStore.html#TGBot_Cookie_CookieStore_List
+  commentId: M:TGBot.Cookie.CookieStore.List
+  fullName: TGBot.Cookie.CookieStore.List()
+  nameWithType: CookieStore.List()
+- uid: TGBot.Cookie.CookieStore.List*
+  name: List
+  href: api/TGBot.Cookie.CookieStore.html#TGBot_Cookie_CookieStore_List_
+  commentId: Overload:TGBot.Cookie.CookieStore.List
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieStore.List
+  nameWithType: CookieStore.List
+- uid: TGBot.Cookie.CookieStore.RootDir
+  name: RootDir
+  href: api/TGBot.Cookie.CookieStore.html#TGBot_Cookie_CookieStore_RootDir
+  commentId: P:TGBot.Cookie.CookieStore.RootDir
+  fullName: TGBot.Cookie.CookieStore.RootDir
+  nameWithType: CookieStore.RootDir
+- uid: TGBot.Cookie.CookieStore.RootDir*
+  name: RootDir
+  href: api/TGBot.Cookie.CookieStore.html#TGBot_Cookie_CookieStore_RootDir_
+  commentId: Overload:TGBot.Cookie.CookieStore.RootDir
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieStore.RootDir
+  nameWithType: CookieStore.RootDir
+- uid: TGBot.Cookie.CookieStore.Save(System.String,System.String)
+  name: Save(string, string)
+  href: api/TGBot.Cookie.CookieStore.html#TGBot_Cookie_CookieStore_Save_System_String_System_String_
+  commentId: M:TGBot.Cookie.CookieStore.Save(System.String,System.String)
+  name.vb: Save(String, String)
+  fullName: TGBot.Cookie.CookieStore.Save(string, string)
+  fullName.vb: TGBot.Cookie.CookieStore.Save(String, String)
+  nameWithType: CookieStore.Save(string, string)
+  nameWithType.vb: CookieStore.Save(String, String)
+- uid: TGBot.Cookie.CookieStore.Save*
+  name: Save
+  href: api/TGBot.Cookie.CookieStore.html#TGBot_Cookie_CookieStore_Save_
+  commentId: Overload:TGBot.Cookie.CookieStore.Save
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieStore.Save
+  nameWithType: CookieStore.Save
+- uid: TGBot.Cookie.CookieUploadResult
+  name: CookieUploadResult
+  href: api/TGBot.Cookie.CookieUploadResult.html
+  commentId: T:TGBot.Cookie.CookieUploadResult
+  fullName: TGBot.Cookie.CookieUploadResult
+  nameWithType: CookieUploadResult
+- uid: TGBot.Cookie.CookieUploadResult.#ctor(System.Boolean,System.String)
+  name: CookieUploadResult(bool, string)
+  href: api/TGBot.Cookie.CookieUploadResult.html#TGBot_Cookie_CookieUploadResult__ctor_System_Boolean_System_String_
+  commentId: M:TGBot.Cookie.CookieUploadResult.#ctor(System.Boolean,System.String)
+  name.vb: New(Boolean, String)
+  fullName: TGBot.Cookie.CookieUploadResult.CookieUploadResult(bool, string)
+  fullName.vb: TGBot.Cookie.CookieUploadResult.New(Boolean, String)
+  nameWithType: CookieUploadResult.CookieUploadResult(bool, string)
+  nameWithType.vb: CookieUploadResult.New(Boolean, String)
+- uid: TGBot.Cookie.CookieUploadResult.#ctor*
+  name: CookieUploadResult
+  href: api/TGBot.Cookie.CookieUploadResult.html#TGBot_Cookie_CookieUploadResult__ctor_
+  commentId: Overload:TGBot.Cookie.CookieUploadResult.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Cookie.CookieUploadResult.CookieUploadResult
+  fullName.vb: TGBot.Cookie.CookieUploadResult.New
+  nameWithType: CookieUploadResult.CookieUploadResult
+  nameWithType.vb: CookieUploadResult.New
+- uid: TGBot.Cookie.CookieUploadResult.Message
+  name: Message
+  href: api/TGBot.Cookie.CookieUploadResult.html#TGBot_Cookie_CookieUploadResult_Message
+  commentId: P:TGBot.Cookie.CookieUploadResult.Message
+  fullName: TGBot.Cookie.CookieUploadResult.Message
+  nameWithType: CookieUploadResult.Message
+- uid: TGBot.Cookie.CookieUploadResult.Message*
+  name: Message
+  href: api/TGBot.Cookie.CookieUploadResult.html#TGBot_Cookie_CookieUploadResult_Message_
+  commentId: Overload:TGBot.Cookie.CookieUploadResult.Message
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieUploadResult.Message
+  nameWithType: CookieUploadResult.Message
+- uid: TGBot.Cookie.CookieUploadResult.Success
+  name: Success
+  href: api/TGBot.Cookie.CookieUploadResult.html#TGBot_Cookie_CookieUploadResult_Success
+  commentId: P:TGBot.Cookie.CookieUploadResult.Success
+  fullName: TGBot.Cookie.CookieUploadResult.Success
+  nameWithType: CookieUploadResult.Success
+- uid: TGBot.Cookie.CookieUploadResult.Success*
+  name: Success
+  href: api/TGBot.Cookie.CookieUploadResult.html#TGBot_Cookie_CookieUploadResult_Success_
+  commentId: Overload:TGBot.Cookie.CookieUploadResult.Success
+  isSpec: "True"
+  fullName: TGBot.Cookie.CookieUploadResult.Success
+  nameWithType: CookieUploadResult.Success
+- uid: TGBot.Cookie.DailymotionCookieSite
+  name: DailymotionCookieSite
+  href: api/TGBot.Cookie.DailymotionCookieSite.html
+  commentId: T:TGBot.Cookie.DailymotionCookieSite
+  fullName: TGBot.Cookie.DailymotionCookieSite
+  nameWithType: DailymotionCookieSite
+- uid: TGBot.Cookie.DailymotionCookieSite.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.DailymotionCookieSite.html#TGBot_Cookie_DailymotionCookieSite_DisplayName
+  commentId: P:TGBot.Cookie.DailymotionCookieSite.DisplayName
+  fullName: TGBot.Cookie.DailymotionCookieSite.DisplayName
+  nameWithType: DailymotionCookieSite.DisplayName
+- uid: TGBot.Cookie.DailymotionCookieSite.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.DailymotionCookieSite.html#TGBot_Cookie_DailymotionCookieSite_DisplayName_
+  commentId: Overload:TGBot.Cookie.DailymotionCookieSite.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.DailymotionCookieSite.DisplayName
+  nameWithType: DailymotionCookieSite.DisplayName
+- uid: TGBot.Cookie.DailymotionCookieSite.Hosts
+  name: Hosts
+  href: api/TGBot.Cookie.DailymotionCookieSite.html#TGBot_Cookie_DailymotionCookieSite_Hosts
+  commentId: P:TGBot.Cookie.DailymotionCookieSite.Hosts
+  fullName: TGBot.Cookie.DailymotionCookieSite.Hosts
+  nameWithType: DailymotionCookieSite.Hosts
+- uid: TGBot.Cookie.DailymotionCookieSite.Hosts*
+  name: Hosts
+  href: api/TGBot.Cookie.DailymotionCookieSite.html#TGBot_Cookie_DailymotionCookieSite_Hosts_
+  commentId: Overload:TGBot.Cookie.DailymotionCookieSite.Hosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.DailymotionCookieSite.Hosts
+  nameWithType: DailymotionCookieSite.Hosts
+- uid: TGBot.Cookie.DailymotionCookieSite.Key
+  name: Key
+  href: api/TGBot.Cookie.DailymotionCookieSite.html#TGBot_Cookie_DailymotionCookieSite_Key
+  commentId: P:TGBot.Cookie.DailymotionCookieSite.Key
+  fullName: TGBot.Cookie.DailymotionCookieSite.Key
+  nameWithType: DailymotionCookieSite.Key
+- uid: TGBot.Cookie.DailymotionCookieSite.Key*
+  name: Key
+  href: api/TGBot.Cookie.DailymotionCookieSite.html#TGBot_Cookie_DailymotionCookieSite_Key_
+  commentId: Overload:TGBot.Cookie.DailymotionCookieSite.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.DailymotionCookieSite.Key
+  nameWithType: DailymotionCookieSite.Key
+- uid: TGBot.Cookie.DouyinCookieSite
+  name: DouyinCookieSite
+  href: api/TGBot.Cookie.DouyinCookieSite.html
+  commentId: T:TGBot.Cookie.DouyinCookieSite
+  fullName: TGBot.Cookie.DouyinCookieSite
+  nameWithType: DouyinCookieSite
+- uid: TGBot.Cookie.DouyinCookieSite.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.DouyinCookieSite.html#TGBot_Cookie_DouyinCookieSite_DisplayName
+  commentId: P:TGBot.Cookie.DouyinCookieSite.DisplayName
+  fullName: TGBot.Cookie.DouyinCookieSite.DisplayName
+  nameWithType: DouyinCookieSite.DisplayName
+- uid: TGBot.Cookie.DouyinCookieSite.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.DouyinCookieSite.html#TGBot_Cookie_DouyinCookieSite_DisplayName_
+  commentId: Overload:TGBot.Cookie.DouyinCookieSite.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.DouyinCookieSite.DisplayName
+  nameWithType: DouyinCookieSite.DisplayName
+- uid: TGBot.Cookie.DouyinCookieSite.Hosts
+  name: Hosts
+  href: api/TGBot.Cookie.DouyinCookieSite.html#TGBot_Cookie_DouyinCookieSite_Hosts
+  commentId: P:TGBot.Cookie.DouyinCookieSite.Hosts
+  fullName: TGBot.Cookie.DouyinCookieSite.Hosts
+  nameWithType: DouyinCookieSite.Hosts
+- uid: TGBot.Cookie.DouyinCookieSite.Hosts*
+  name: Hosts
+  href: api/TGBot.Cookie.DouyinCookieSite.html#TGBot_Cookie_DouyinCookieSite_Hosts_
+  commentId: Overload:TGBot.Cookie.DouyinCookieSite.Hosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.DouyinCookieSite.Hosts
+  nameWithType: DouyinCookieSite.Hosts
+- uid: TGBot.Cookie.DouyinCookieSite.Key
+  name: Key
+  href: api/TGBot.Cookie.DouyinCookieSite.html#TGBot_Cookie_DouyinCookieSite_Key
+  commentId: P:TGBot.Cookie.DouyinCookieSite.Key
+  fullName: TGBot.Cookie.DouyinCookieSite.Key
+  nameWithType: DouyinCookieSite.Key
+- uid: TGBot.Cookie.DouyinCookieSite.Key*
+  name: Key
+  href: api/TGBot.Cookie.DouyinCookieSite.html#TGBot_Cookie_DouyinCookieSite_Key_
+  commentId: Overload:TGBot.Cookie.DouyinCookieSite.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.DouyinCookieSite.Key
+  nameWithType: DouyinCookieSite.Key
+- uid: TGBot.Cookie.FacebookCookieSite
+  name: FacebookCookieSite
+  href: api/TGBot.Cookie.FacebookCookieSite.html
+  commentId: T:TGBot.Cookie.FacebookCookieSite
+  fullName: TGBot.Cookie.FacebookCookieSite
+  nameWithType: FacebookCookieSite
+- uid: TGBot.Cookie.FacebookCookieSite.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.FacebookCookieSite.html#TGBot_Cookie_FacebookCookieSite_DisplayName
+  commentId: P:TGBot.Cookie.FacebookCookieSite.DisplayName
+  fullName: TGBot.Cookie.FacebookCookieSite.DisplayName
+  nameWithType: FacebookCookieSite.DisplayName
+- uid: TGBot.Cookie.FacebookCookieSite.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.FacebookCookieSite.html#TGBot_Cookie_FacebookCookieSite_DisplayName_
+  commentId: Overload:TGBot.Cookie.FacebookCookieSite.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.FacebookCookieSite.DisplayName
+  nameWithType: FacebookCookieSite.DisplayName
+- uid: TGBot.Cookie.FacebookCookieSite.Hosts
+  name: Hosts
+  href: api/TGBot.Cookie.FacebookCookieSite.html#TGBot_Cookie_FacebookCookieSite_Hosts
+  commentId: P:TGBot.Cookie.FacebookCookieSite.Hosts
+  fullName: TGBot.Cookie.FacebookCookieSite.Hosts
+  nameWithType: FacebookCookieSite.Hosts
+- uid: TGBot.Cookie.FacebookCookieSite.Hosts*
+  name: Hosts
+  href: api/TGBot.Cookie.FacebookCookieSite.html#TGBot_Cookie_FacebookCookieSite_Hosts_
+  commentId: Overload:TGBot.Cookie.FacebookCookieSite.Hosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.FacebookCookieSite.Hosts
+  nameWithType: FacebookCookieSite.Hosts
+- uid: TGBot.Cookie.FacebookCookieSite.Key
+  name: Key
+  href: api/TGBot.Cookie.FacebookCookieSite.html#TGBot_Cookie_FacebookCookieSite_Key
+  commentId: P:TGBot.Cookie.FacebookCookieSite.Key
+  fullName: TGBot.Cookie.FacebookCookieSite.Key
+  nameWithType: FacebookCookieSite.Key
+- uid: TGBot.Cookie.FacebookCookieSite.Key*
+  name: Key
+  href: api/TGBot.Cookie.FacebookCookieSite.html#TGBot_Cookie_FacebookCookieSite_Key_
+  commentId: Overload:TGBot.Cookie.FacebookCookieSite.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.FacebookCookieSite.Key
+  nameWithType: FacebookCookieSite.Key
+- uid: TGBot.Cookie.InstagramCookieSite
+  name: InstagramCookieSite
+  href: api/TGBot.Cookie.InstagramCookieSite.html
+  commentId: T:TGBot.Cookie.InstagramCookieSite
+  fullName: TGBot.Cookie.InstagramCookieSite
+  nameWithType: InstagramCookieSite
+- uid: TGBot.Cookie.InstagramCookieSite.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.InstagramCookieSite.html#TGBot_Cookie_InstagramCookieSite_DisplayName
+  commentId: P:TGBot.Cookie.InstagramCookieSite.DisplayName
+  fullName: TGBot.Cookie.InstagramCookieSite.DisplayName
+  nameWithType: InstagramCookieSite.DisplayName
+- uid: TGBot.Cookie.InstagramCookieSite.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.InstagramCookieSite.html#TGBot_Cookie_InstagramCookieSite_DisplayName_
+  commentId: Overload:TGBot.Cookie.InstagramCookieSite.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.InstagramCookieSite.DisplayName
+  nameWithType: InstagramCookieSite.DisplayName
+- uid: TGBot.Cookie.InstagramCookieSite.Hosts
+  name: Hosts
+  href: api/TGBot.Cookie.InstagramCookieSite.html#TGBot_Cookie_InstagramCookieSite_Hosts
+  commentId: P:TGBot.Cookie.InstagramCookieSite.Hosts
+  fullName: TGBot.Cookie.InstagramCookieSite.Hosts
+  nameWithType: InstagramCookieSite.Hosts
+- uid: TGBot.Cookie.InstagramCookieSite.Hosts*
+  name: Hosts
+  href: api/TGBot.Cookie.InstagramCookieSite.html#TGBot_Cookie_InstagramCookieSite_Hosts_
+  commentId: Overload:TGBot.Cookie.InstagramCookieSite.Hosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.InstagramCookieSite.Hosts
+  nameWithType: InstagramCookieSite.Hosts
+- uid: TGBot.Cookie.InstagramCookieSite.Key
+  name: Key
+  href: api/TGBot.Cookie.InstagramCookieSite.html#TGBot_Cookie_InstagramCookieSite_Key
+  commentId: P:TGBot.Cookie.InstagramCookieSite.Key
+  fullName: TGBot.Cookie.InstagramCookieSite.Key
+  nameWithType: InstagramCookieSite.Key
+- uid: TGBot.Cookie.InstagramCookieSite.Key*
+  name: Key
+  href: api/TGBot.Cookie.InstagramCookieSite.html#TGBot_Cookie_InstagramCookieSite_Key_
+  commentId: Overload:TGBot.Cookie.InstagramCookieSite.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.InstagramCookieSite.Key
+  nameWithType: InstagramCookieSite.Key
+- uid: TGBot.Cookie.RedditCookieSite
+  name: RedditCookieSite
+  href: api/TGBot.Cookie.RedditCookieSite.html
+  commentId: T:TGBot.Cookie.RedditCookieSite
+  fullName: TGBot.Cookie.RedditCookieSite
+  nameWithType: RedditCookieSite
+- uid: TGBot.Cookie.RedditCookieSite.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.RedditCookieSite.html#TGBot_Cookie_RedditCookieSite_DisplayName
+  commentId: P:TGBot.Cookie.RedditCookieSite.DisplayName
+  fullName: TGBot.Cookie.RedditCookieSite.DisplayName
+  nameWithType: RedditCookieSite.DisplayName
+- uid: TGBot.Cookie.RedditCookieSite.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.RedditCookieSite.html#TGBot_Cookie_RedditCookieSite_DisplayName_
+  commentId: Overload:TGBot.Cookie.RedditCookieSite.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.RedditCookieSite.DisplayName
+  nameWithType: RedditCookieSite.DisplayName
+- uid: TGBot.Cookie.RedditCookieSite.Hosts
+  name: Hosts
+  href: api/TGBot.Cookie.RedditCookieSite.html#TGBot_Cookie_RedditCookieSite_Hosts
+  commentId: P:TGBot.Cookie.RedditCookieSite.Hosts
+  fullName: TGBot.Cookie.RedditCookieSite.Hosts
+  nameWithType: RedditCookieSite.Hosts
+- uid: TGBot.Cookie.RedditCookieSite.Hosts*
+  name: Hosts
+  href: api/TGBot.Cookie.RedditCookieSite.html#TGBot_Cookie_RedditCookieSite_Hosts_
+  commentId: Overload:TGBot.Cookie.RedditCookieSite.Hosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.RedditCookieSite.Hosts
+  nameWithType: RedditCookieSite.Hosts
+- uid: TGBot.Cookie.RedditCookieSite.Key
+  name: Key
+  href: api/TGBot.Cookie.RedditCookieSite.html#TGBot_Cookie_RedditCookieSite_Key
+  commentId: P:TGBot.Cookie.RedditCookieSite.Key
+  fullName: TGBot.Cookie.RedditCookieSite.Key
+  nameWithType: RedditCookieSite.Key
+- uid: TGBot.Cookie.RedditCookieSite.Key*
+  name: Key
+  href: api/TGBot.Cookie.RedditCookieSite.html#TGBot_Cookie_RedditCookieSite_Key_
+  commentId: Overload:TGBot.Cookie.RedditCookieSite.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.RedditCookieSite.Key
+  nameWithType: RedditCookieSite.Key
+- uid: TGBot.Cookie.SiteCookieRegistry
+  name: SiteCookieRegistry
+  href: api/TGBot.Cookie.SiteCookieRegistry.html
+  commentId: T:TGBot.Cookie.SiteCookieRegistry
+  fullName: TGBot.Cookie.SiteCookieRegistry
+  nameWithType: SiteCookieRegistry
+- uid: TGBot.Cookie.SiteCookieRegistry.#ctor(System.Collections.Generic.IEnumerable{TGBot.Cookie.CookieSite})
+  name: SiteCookieRegistry(IEnumerable<CookieSite>)
+  href: api/TGBot.Cookie.SiteCookieRegistry.html#TGBot_Cookie_SiteCookieRegistry__ctor_System_Collections_Generic_IEnumerable_TGBot_Cookie_CookieSite__
+  commentId: M:TGBot.Cookie.SiteCookieRegistry.#ctor(System.Collections.Generic.IEnumerable{TGBot.Cookie.CookieSite})
+  name.vb: New(IEnumerable(Of CookieSite))
+  fullName: TGBot.Cookie.SiteCookieRegistry.SiteCookieRegistry(System.Collections.Generic.IEnumerable<TGBot.Cookie.CookieSite>)
+  fullName.vb: TGBot.Cookie.SiteCookieRegistry.New(System.Collections.Generic.IEnumerable(Of TGBot.Cookie.CookieSite))
+  nameWithType: SiteCookieRegistry.SiteCookieRegistry(IEnumerable<CookieSite>)
+  nameWithType.vb: SiteCookieRegistry.New(IEnumerable(Of CookieSite))
+- uid: TGBot.Cookie.SiteCookieRegistry.#ctor*
+  name: SiteCookieRegistry
+  href: api/TGBot.Cookie.SiteCookieRegistry.html#TGBot_Cookie_SiteCookieRegistry__ctor_
+  commentId: Overload:TGBot.Cookie.SiteCookieRegistry.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Cookie.SiteCookieRegistry.SiteCookieRegistry
+  fullName.vb: TGBot.Cookie.SiteCookieRegistry.New
+  nameWithType: SiteCookieRegistry.SiteCookieRegistry
+  nameWithType.vb: SiteCookieRegistry.New
+- uid: TGBot.Cookie.SiteCookieRegistry.ResolveHost(System.String)
+  name: ResolveHost(string)
+  href: api/TGBot.Cookie.SiteCookieRegistry.html#TGBot_Cookie_SiteCookieRegistry_ResolveHost_System_String_
+  commentId: M:TGBot.Cookie.SiteCookieRegistry.ResolveHost(System.String)
+  name.vb: ResolveHost(String)
+  fullName: TGBot.Cookie.SiteCookieRegistry.ResolveHost(string)
+  fullName.vb: TGBot.Cookie.SiteCookieRegistry.ResolveHost(String)
+  nameWithType: SiteCookieRegistry.ResolveHost(string)
+  nameWithType.vb: SiteCookieRegistry.ResolveHost(String)
+- uid: TGBot.Cookie.SiteCookieRegistry.ResolveHost*
+  name: ResolveHost
+  href: api/TGBot.Cookie.SiteCookieRegistry.html#TGBot_Cookie_SiteCookieRegistry_ResolveHost_
+  commentId: Overload:TGBot.Cookie.SiteCookieRegistry.ResolveHost
+  isSpec: "True"
+  fullName: TGBot.Cookie.SiteCookieRegistry.ResolveHost
+  nameWithType: SiteCookieRegistry.ResolveHost
+- uid: TGBot.Cookie.SiteCookieRegistry.ResolveKey(System.String)
+  name: ResolveKey(string)
+  href: api/TGBot.Cookie.SiteCookieRegistry.html#TGBot_Cookie_SiteCookieRegistry_ResolveKey_System_String_
+  commentId: M:TGBot.Cookie.SiteCookieRegistry.ResolveKey(System.String)
+  name.vb: ResolveKey(String)
+  fullName: TGBot.Cookie.SiteCookieRegistry.ResolveKey(string)
+  fullName.vb: TGBot.Cookie.SiteCookieRegistry.ResolveKey(String)
+  nameWithType: SiteCookieRegistry.ResolveKey(string)
+  nameWithType.vb: SiteCookieRegistry.ResolveKey(String)
+- uid: TGBot.Cookie.SiteCookieRegistry.ResolveKey*
+  name: ResolveKey
+  href: api/TGBot.Cookie.SiteCookieRegistry.html#TGBot_Cookie_SiteCookieRegistry_ResolveKey_
+  commentId: Overload:TGBot.Cookie.SiteCookieRegistry.ResolveKey
+  isSpec: "True"
+  fullName: TGBot.Cookie.SiteCookieRegistry.ResolveKey
+  nameWithType: SiteCookieRegistry.ResolveKey
+- uid: TGBot.Cookie.SiteCookieRegistry.Sites
+  name: Sites
+  href: api/TGBot.Cookie.SiteCookieRegistry.html#TGBot_Cookie_SiteCookieRegistry_Sites
+  commentId: P:TGBot.Cookie.SiteCookieRegistry.Sites
+  fullName: TGBot.Cookie.SiteCookieRegistry.Sites
+  nameWithType: SiteCookieRegistry.Sites
+- uid: TGBot.Cookie.SiteCookieRegistry.Sites*
+  name: Sites
+  href: api/TGBot.Cookie.SiteCookieRegistry.html#TGBot_Cookie_SiteCookieRegistry_Sites_
+  commentId: Overload:TGBot.Cookie.SiteCookieRegistry.Sites
+  isSpec: "True"
+  fullName: TGBot.Cookie.SiteCookieRegistry.Sites
+  nameWithType: SiteCookieRegistry.Sites
+- uid: TGBot.Cookie.SoundcloudCookieSite
+  name: SoundcloudCookieSite
+  href: api/TGBot.Cookie.SoundcloudCookieSite.html
+  commentId: T:TGBot.Cookie.SoundcloudCookieSite
+  fullName: TGBot.Cookie.SoundcloudCookieSite
+  nameWithType: SoundcloudCookieSite
+- uid: TGBot.Cookie.SoundcloudCookieSite.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.SoundcloudCookieSite.html#TGBot_Cookie_SoundcloudCookieSite_DisplayName
+  commentId: P:TGBot.Cookie.SoundcloudCookieSite.DisplayName
+  fullName: TGBot.Cookie.SoundcloudCookieSite.DisplayName
+  nameWithType: SoundcloudCookieSite.DisplayName
+- uid: TGBot.Cookie.SoundcloudCookieSite.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.SoundcloudCookieSite.html#TGBot_Cookie_SoundcloudCookieSite_DisplayName_
+  commentId: Overload:TGBot.Cookie.SoundcloudCookieSite.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.SoundcloudCookieSite.DisplayName
+  nameWithType: SoundcloudCookieSite.DisplayName
+- uid: TGBot.Cookie.SoundcloudCookieSite.Hosts
+  name: Hosts
+  href: api/TGBot.Cookie.SoundcloudCookieSite.html#TGBot_Cookie_SoundcloudCookieSite_Hosts
+  commentId: P:TGBot.Cookie.SoundcloudCookieSite.Hosts
+  fullName: TGBot.Cookie.SoundcloudCookieSite.Hosts
+  nameWithType: SoundcloudCookieSite.Hosts
+- uid: TGBot.Cookie.SoundcloudCookieSite.Hosts*
+  name: Hosts
+  href: api/TGBot.Cookie.SoundcloudCookieSite.html#TGBot_Cookie_SoundcloudCookieSite_Hosts_
+  commentId: Overload:TGBot.Cookie.SoundcloudCookieSite.Hosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.SoundcloudCookieSite.Hosts
+  nameWithType: SoundcloudCookieSite.Hosts
+- uid: TGBot.Cookie.SoundcloudCookieSite.Key
+  name: Key
+  href: api/TGBot.Cookie.SoundcloudCookieSite.html#TGBot_Cookie_SoundcloudCookieSite_Key
+  commentId: P:TGBot.Cookie.SoundcloudCookieSite.Key
+  fullName: TGBot.Cookie.SoundcloudCookieSite.Key
+  nameWithType: SoundcloudCookieSite.Key
+- uid: TGBot.Cookie.SoundcloudCookieSite.Key*
+  name: Key
+  href: api/TGBot.Cookie.SoundcloudCookieSite.html#TGBot_Cookie_SoundcloudCookieSite_Key_
+  commentId: Overload:TGBot.Cookie.SoundcloudCookieSite.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.SoundcloudCookieSite.Key
+  nameWithType: SoundcloudCookieSite.Key
+- uid: TGBot.Cookie.TiktokCookieSite
+  name: TiktokCookieSite
+  href: api/TGBot.Cookie.TiktokCookieSite.html
+  commentId: T:TGBot.Cookie.TiktokCookieSite
+  fullName: TGBot.Cookie.TiktokCookieSite
+  nameWithType: TiktokCookieSite
+- uid: TGBot.Cookie.TiktokCookieSite.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.TiktokCookieSite.html#TGBot_Cookie_TiktokCookieSite_DisplayName
+  commentId: P:TGBot.Cookie.TiktokCookieSite.DisplayName
+  fullName: TGBot.Cookie.TiktokCookieSite.DisplayName
+  nameWithType: TiktokCookieSite.DisplayName
+- uid: TGBot.Cookie.TiktokCookieSite.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.TiktokCookieSite.html#TGBot_Cookie_TiktokCookieSite_DisplayName_
+  commentId: Overload:TGBot.Cookie.TiktokCookieSite.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.TiktokCookieSite.DisplayName
+  nameWithType: TiktokCookieSite.DisplayName
+- uid: TGBot.Cookie.TiktokCookieSite.Hosts
+  name: Hosts
+  href: api/TGBot.Cookie.TiktokCookieSite.html#TGBot_Cookie_TiktokCookieSite_Hosts
+  commentId: P:TGBot.Cookie.TiktokCookieSite.Hosts
+  fullName: TGBot.Cookie.TiktokCookieSite.Hosts
+  nameWithType: TiktokCookieSite.Hosts
+- uid: TGBot.Cookie.TiktokCookieSite.Hosts*
+  name: Hosts
+  href: api/TGBot.Cookie.TiktokCookieSite.html#TGBot_Cookie_TiktokCookieSite_Hosts_
+  commentId: Overload:TGBot.Cookie.TiktokCookieSite.Hosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.TiktokCookieSite.Hosts
+  nameWithType: TiktokCookieSite.Hosts
+- uid: TGBot.Cookie.TiktokCookieSite.Key
+  name: Key
+  href: api/TGBot.Cookie.TiktokCookieSite.html#TGBot_Cookie_TiktokCookieSite_Key
+  commentId: P:TGBot.Cookie.TiktokCookieSite.Key
+  fullName: TGBot.Cookie.TiktokCookieSite.Key
+  nameWithType: TiktokCookieSite.Key
+- uid: TGBot.Cookie.TiktokCookieSite.Key*
+  name: Key
+  href: api/TGBot.Cookie.TiktokCookieSite.html#TGBot_Cookie_TiktokCookieSite_Key_
+  commentId: Overload:TGBot.Cookie.TiktokCookieSite.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.TiktokCookieSite.Key
+  nameWithType: TiktokCookieSite.Key
+- uid: TGBot.Cookie.TwitchCookieSite
+  name: TwitchCookieSite
+  href: api/TGBot.Cookie.TwitchCookieSite.html
+  commentId: T:TGBot.Cookie.TwitchCookieSite
+  fullName: TGBot.Cookie.TwitchCookieSite
+  nameWithType: TwitchCookieSite
+- uid: TGBot.Cookie.TwitchCookieSite.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.TwitchCookieSite.html#TGBot_Cookie_TwitchCookieSite_DisplayName
+  commentId: P:TGBot.Cookie.TwitchCookieSite.DisplayName
+  fullName: TGBot.Cookie.TwitchCookieSite.DisplayName
+  nameWithType: TwitchCookieSite.DisplayName
+- uid: TGBot.Cookie.TwitchCookieSite.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.TwitchCookieSite.html#TGBot_Cookie_TwitchCookieSite_DisplayName_
+  commentId: Overload:TGBot.Cookie.TwitchCookieSite.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.TwitchCookieSite.DisplayName
+  nameWithType: TwitchCookieSite.DisplayName
+- uid: TGBot.Cookie.TwitchCookieSite.Hosts
+  name: Hosts
+  href: api/TGBot.Cookie.TwitchCookieSite.html#TGBot_Cookie_TwitchCookieSite_Hosts
+  commentId: P:TGBot.Cookie.TwitchCookieSite.Hosts
+  fullName: TGBot.Cookie.TwitchCookieSite.Hosts
+  nameWithType: TwitchCookieSite.Hosts
+- uid: TGBot.Cookie.TwitchCookieSite.Hosts*
+  name: Hosts
+  href: api/TGBot.Cookie.TwitchCookieSite.html#TGBot_Cookie_TwitchCookieSite_Hosts_
+  commentId: Overload:TGBot.Cookie.TwitchCookieSite.Hosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.TwitchCookieSite.Hosts
+  nameWithType: TwitchCookieSite.Hosts
+- uid: TGBot.Cookie.TwitchCookieSite.Key
+  name: Key
+  href: api/TGBot.Cookie.TwitchCookieSite.html#TGBot_Cookie_TwitchCookieSite_Key
+  commentId: P:TGBot.Cookie.TwitchCookieSite.Key
+  fullName: TGBot.Cookie.TwitchCookieSite.Key
+  nameWithType: TwitchCookieSite.Key
+- uid: TGBot.Cookie.TwitchCookieSite.Key*
+  name: Key
+  href: api/TGBot.Cookie.TwitchCookieSite.html#TGBot_Cookie_TwitchCookieSite_Key_
+  commentId: Overload:TGBot.Cookie.TwitchCookieSite.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.TwitchCookieSite.Key
+  nameWithType: TwitchCookieSite.Key
+- uid: TGBot.Cookie.TwitterCookieSite
+  name: TwitterCookieSite
+  href: api/TGBot.Cookie.TwitterCookieSite.html
+  commentId: T:TGBot.Cookie.TwitterCookieSite
+  fullName: TGBot.Cookie.TwitterCookieSite
+  nameWithType: TwitterCookieSite
+- uid: TGBot.Cookie.TwitterCookieSite.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.TwitterCookieSite.html#TGBot_Cookie_TwitterCookieSite_DisplayName
+  commentId: P:TGBot.Cookie.TwitterCookieSite.DisplayName
+  fullName: TGBot.Cookie.TwitterCookieSite.DisplayName
+  nameWithType: TwitterCookieSite.DisplayName
+- uid: TGBot.Cookie.TwitterCookieSite.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.TwitterCookieSite.html#TGBot_Cookie_TwitterCookieSite_DisplayName_
+  commentId: Overload:TGBot.Cookie.TwitterCookieSite.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.TwitterCookieSite.DisplayName
+  nameWithType: TwitterCookieSite.DisplayName
+- uid: TGBot.Cookie.TwitterCookieSite.Hosts
+  name: Hosts
+  href: api/TGBot.Cookie.TwitterCookieSite.html#TGBot_Cookie_TwitterCookieSite_Hosts
+  commentId: P:TGBot.Cookie.TwitterCookieSite.Hosts
+  fullName: TGBot.Cookie.TwitterCookieSite.Hosts
+  nameWithType: TwitterCookieSite.Hosts
+- uid: TGBot.Cookie.TwitterCookieSite.Hosts*
+  name: Hosts
+  href: api/TGBot.Cookie.TwitterCookieSite.html#TGBot_Cookie_TwitterCookieSite_Hosts_
+  commentId: Overload:TGBot.Cookie.TwitterCookieSite.Hosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.TwitterCookieSite.Hosts
+  nameWithType: TwitterCookieSite.Hosts
+- uid: TGBot.Cookie.TwitterCookieSite.Key
+  name: Key
+  href: api/TGBot.Cookie.TwitterCookieSite.html#TGBot_Cookie_TwitterCookieSite_Key
+  commentId: P:TGBot.Cookie.TwitterCookieSite.Key
+  fullName: TGBot.Cookie.TwitterCookieSite.Key
+  nameWithType: TwitterCookieSite.Key
+- uid: TGBot.Cookie.TwitterCookieSite.Key*
+  name: Key
+  href: api/TGBot.Cookie.TwitterCookieSite.html#TGBot_Cookie_TwitterCookieSite_Key_
+  commentId: Overload:TGBot.Cookie.TwitterCookieSite.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.TwitterCookieSite.Key
+  nameWithType: TwitterCookieSite.Key
+- uid: TGBot.Cookie.VimeoCookieSite
+  name: VimeoCookieSite
+  href: api/TGBot.Cookie.VimeoCookieSite.html
+  commentId: T:TGBot.Cookie.VimeoCookieSite
+  fullName: TGBot.Cookie.VimeoCookieSite
+  nameWithType: VimeoCookieSite
+- uid: TGBot.Cookie.VimeoCookieSite.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.VimeoCookieSite.html#TGBot_Cookie_VimeoCookieSite_DisplayName
+  commentId: P:TGBot.Cookie.VimeoCookieSite.DisplayName
+  fullName: TGBot.Cookie.VimeoCookieSite.DisplayName
+  nameWithType: VimeoCookieSite.DisplayName
+- uid: TGBot.Cookie.VimeoCookieSite.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.VimeoCookieSite.html#TGBot_Cookie_VimeoCookieSite_DisplayName_
+  commentId: Overload:TGBot.Cookie.VimeoCookieSite.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.VimeoCookieSite.DisplayName
+  nameWithType: VimeoCookieSite.DisplayName
+- uid: TGBot.Cookie.VimeoCookieSite.Hosts
+  name: Hosts
+  href: api/TGBot.Cookie.VimeoCookieSite.html#TGBot_Cookie_VimeoCookieSite_Hosts
+  commentId: P:TGBot.Cookie.VimeoCookieSite.Hosts
+  fullName: TGBot.Cookie.VimeoCookieSite.Hosts
+  nameWithType: VimeoCookieSite.Hosts
+- uid: TGBot.Cookie.VimeoCookieSite.Hosts*
+  name: Hosts
+  href: api/TGBot.Cookie.VimeoCookieSite.html#TGBot_Cookie_VimeoCookieSite_Hosts_
+  commentId: Overload:TGBot.Cookie.VimeoCookieSite.Hosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.VimeoCookieSite.Hosts
+  nameWithType: VimeoCookieSite.Hosts
+- uid: TGBot.Cookie.VimeoCookieSite.Key
+  name: Key
+  href: api/TGBot.Cookie.VimeoCookieSite.html#TGBot_Cookie_VimeoCookieSite_Key
+  commentId: P:TGBot.Cookie.VimeoCookieSite.Key
+  fullName: TGBot.Cookie.VimeoCookieSite.Key
+  nameWithType: VimeoCookieSite.Key
+- uid: TGBot.Cookie.VimeoCookieSite.Key*
+  name: Key
+  href: api/TGBot.Cookie.VimeoCookieSite.html#TGBot_Cookie_VimeoCookieSite_Key_
+  commentId: Overload:TGBot.Cookie.VimeoCookieSite.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.VimeoCookieSite.Key
+  nameWithType: VimeoCookieSite.Key
+- uid: TGBot.Cookie.WeiboCookieSite
+  name: WeiboCookieSite
+  href: api/TGBot.Cookie.WeiboCookieSite.html
+  commentId: T:TGBot.Cookie.WeiboCookieSite
+  fullName: TGBot.Cookie.WeiboCookieSite
+  nameWithType: WeiboCookieSite
+- uid: TGBot.Cookie.WeiboCookieSite.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.WeiboCookieSite.html#TGBot_Cookie_WeiboCookieSite_DisplayName
+  commentId: P:TGBot.Cookie.WeiboCookieSite.DisplayName
+  fullName: TGBot.Cookie.WeiboCookieSite.DisplayName
+  nameWithType: WeiboCookieSite.DisplayName
+- uid: TGBot.Cookie.WeiboCookieSite.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.WeiboCookieSite.html#TGBot_Cookie_WeiboCookieSite_DisplayName_
+  commentId: Overload:TGBot.Cookie.WeiboCookieSite.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.WeiboCookieSite.DisplayName
+  nameWithType: WeiboCookieSite.DisplayName
+- uid: TGBot.Cookie.WeiboCookieSite.Hosts
+  name: Hosts
+  href: api/TGBot.Cookie.WeiboCookieSite.html#TGBot_Cookie_WeiboCookieSite_Hosts
+  commentId: P:TGBot.Cookie.WeiboCookieSite.Hosts
+  fullName: TGBot.Cookie.WeiboCookieSite.Hosts
+  nameWithType: WeiboCookieSite.Hosts
+- uid: TGBot.Cookie.WeiboCookieSite.Hosts*
+  name: Hosts
+  href: api/TGBot.Cookie.WeiboCookieSite.html#TGBot_Cookie_WeiboCookieSite_Hosts_
+  commentId: Overload:TGBot.Cookie.WeiboCookieSite.Hosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.WeiboCookieSite.Hosts
+  nameWithType: WeiboCookieSite.Hosts
+- uid: TGBot.Cookie.WeiboCookieSite.Key
+  name: Key
+  href: api/TGBot.Cookie.WeiboCookieSite.html#TGBot_Cookie_WeiboCookieSite_Key
+  commentId: P:TGBot.Cookie.WeiboCookieSite.Key
+  fullName: TGBot.Cookie.WeiboCookieSite.Key
+  nameWithType: WeiboCookieSite.Key
+- uid: TGBot.Cookie.WeiboCookieSite.Key*
+  name: Key
+  href: api/TGBot.Cookie.WeiboCookieSite.html#TGBot_Cookie_WeiboCookieSite_Key_
+  commentId: Overload:TGBot.Cookie.WeiboCookieSite.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.WeiboCookieSite.Key
+  nameWithType: WeiboCookieSite.Key
+- uid: TGBot.Cookie.XiaohongshuCookieSite
+  name: XiaohongshuCookieSite
+  href: api/TGBot.Cookie.XiaohongshuCookieSite.html
+  commentId: T:TGBot.Cookie.XiaohongshuCookieSite
+  fullName: TGBot.Cookie.XiaohongshuCookieSite
+  nameWithType: XiaohongshuCookieSite
+- uid: TGBot.Cookie.XiaohongshuCookieSite.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.XiaohongshuCookieSite.html#TGBot_Cookie_XiaohongshuCookieSite_DisplayName
+  commentId: P:TGBot.Cookie.XiaohongshuCookieSite.DisplayName
+  fullName: TGBot.Cookie.XiaohongshuCookieSite.DisplayName
+  nameWithType: XiaohongshuCookieSite.DisplayName
+- uid: TGBot.Cookie.XiaohongshuCookieSite.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.XiaohongshuCookieSite.html#TGBot_Cookie_XiaohongshuCookieSite_DisplayName_
+  commentId: Overload:TGBot.Cookie.XiaohongshuCookieSite.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.XiaohongshuCookieSite.DisplayName
+  nameWithType: XiaohongshuCookieSite.DisplayName
+- uid: TGBot.Cookie.XiaohongshuCookieSite.Hosts
+  name: Hosts
+  href: api/TGBot.Cookie.XiaohongshuCookieSite.html#TGBot_Cookie_XiaohongshuCookieSite_Hosts
+  commentId: P:TGBot.Cookie.XiaohongshuCookieSite.Hosts
+  fullName: TGBot.Cookie.XiaohongshuCookieSite.Hosts
+  nameWithType: XiaohongshuCookieSite.Hosts
+- uid: TGBot.Cookie.XiaohongshuCookieSite.Hosts*
+  name: Hosts
+  href: api/TGBot.Cookie.XiaohongshuCookieSite.html#TGBot_Cookie_XiaohongshuCookieSite_Hosts_
+  commentId: Overload:TGBot.Cookie.XiaohongshuCookieSite.Hosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.XiaohongshuCookieSite.Hosts
+  nameWithType: XiaohongshuCookieSite.Hosts
+- uid: TGBot.Cookie.XiaohongshuCookieSite.Key
+  name: Key
+  href: api/TGBot.Cookie.XiaohongshuCookieSite.html#TGBot_Cookie_XiaohongshuCookieSite_Key
+  commentId: P:TGBot.Cookie.XiaohongshuCookieSite.Key
+  fullName: TGBot.Cookie.XiaohongshuCookieSite.Key
+  nameWithType: XiaohongshuCookieSite.Key
+- uid: TGBot.Cookie.XiaohongshuCookieSite.Key*
+  name: Key
+  href: api/TGBot.Cookie.XiaohongshuCookieSite.html#TGBot_Cookie_XiaohongshuCookieSite_Key_
+  commentId: Overload:TGBot.Cookie.XiaohongshuCookieSite.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.XiaohongshuCookieSite.Key
+  nameWithType: XiaohongshuCookieSite.Key
+- uid: TGBot.Cookie.YoutubeCookieSite
+  name: YoutubeCookieSite
+  href: api/TGBot.Cookie.YoutubeCookieSite.html
+  commentId: T:TGBot.Cookie.YoutubeCookieSite
+  fullName: TGBot.Cookie.YoutubeCookieSite
+  nameWithType: YoutubeCookieSite
+- uid: TGBot.Cookie.YoutubeCookieSite.DisplayName
+  name: DisplayName
+  href: api/TGBot.Cookie.YoutubeCookieSite.html#TGBot_Cookie_YoutubeCookieSite_DisplayName
+  commentId: P:TGBot.Cookie.YoutubeCookieSite.DisplayName
+  fullName: TGBot.Cookie.YoutubeCookieSite.DisplayName
+  nameWithType: YoutubeCookieSite.DisplayName
+- uid: TGBot.Cookie.YoutubeCookieSite.DisplayName*
+  name: DisplayName
+  href: api/TGBot.Cookie.YoutubeCookieSite.html#TGBot_Cookie_YoutubeCookieSite_DisplayName_
+  commentId: Overload:TGBot.Cookie.YoutubeCookieSite.DisplayName
+  isSpec: "True"
+  fullName: TGBot.Cookie.YoutubeCookieSite.DisplayName
+  nameWithType: YoutubeCookieSite.DisplayName
+- uid: TGBot.Cookie.YoutubeCookieSite.Hosts
+  name: Hosts
+  href: api/TGBot.Cookie.YoutubeCookieSite.html#TGBot_Cookie_YoutubeCookieSite_Hosts
+  commentId: P:TGBot.Cookie.YoutubeCookieSite.Hosts
+  fullName: TGBot.Cookie.YoutubeCookieSite.Hosts
+  nameWithType: YoutubeCookieSite.Hosts
+- uid: TGBot.Cookie.YoutubeCookieSite.Hosts*
+  name: Hosts
+  href: api/TGBot.Cookie.YoutubeCookieSite.html#TGBot_Cookie_YoutubeCookieSite_Hosts_
+  commentId: Overload:TGBot.Cookie.YoutubeCookieSite.Hosts
+  isSpec: "True"
+  fullName: TGBot.Cookie.YoutubeCookieSite.Hosts
+  nameWithType: YoutubeCookieSite.Hosts
+- uid: TGBot.Cookie.YoutubeCookieSite.Key
+  name: Key
+  href: api/TGBot.Cookie.YoutubeCookieSite.html#TGBot_Cookie_YoutubeCookieSite_Key
+  commentId: P:TGBot.Cookie.YoutubeCookieSite.Key
+  fullName: TGBot.Cookie.YoutubeCookieSite.Key
+  nameWithType: YoutubeCookieSite.Key
+- uid: TGBot.Cookie.YoutubeCookieSite.Key*
+  name: Key
+  href: api/TGBot.Cookie.YoutubeCookieSite.html#TGBot_Cookie_YoutubeCookieSite_Key_
+  commentId: Overload:TGBot.Cookie.YoutubeCookieSite.Key
+  isSpec: "True"
+  fullName: TGBot.Cookie.YoutubeCookieSite.Key
+  nameWithType: YoutubeCookieSite.Key
 - uid: TGBot.Download
   name: TGBot.Download
   href: api/TGBot.Download.html
@@ -859,6 +2071,12 @@ references:
   commentId: T:TGBot.Download.DownloadFailureReason
   fullName: TGBot.Download.DownloadFailureReason
   nameWithType: DownloadFailureReason
+- uid: TGBot.Download.DownloadFailureReason.AuthRequired
+  name: AuthRequired
+  href: api/TGBot.Download.DownloadFailureReason.html#TGBot_Download_DownloadFailureReason_AuthRequired
+  commentId: F:TGBot.Download.DownloadFailureReason.AuthRequired
+  fullName: TGBot.Download.DownloadFailureReason.AuthRequired
+  nameWithType: DownloadFailureReason.AuthRequired
 - uid: TGBot.Download.DownloadFailureReason.Cancelled
   name: Cancelled
   href: api/TGBot.Download.DownloadFailureReason.html#TGBot_Download_DownloadFailureReason_Cancelled
@@ -991,6 +2209,32 @@ references:
   isSpec: "True"
   fullName: TGBot.Download.DownloadOptions.AllowPlaylists
   nameWithType: DownloadOptions.AllowPlaylists
+- uid: TGBot.Download.DownloadOptions.CookiesFile
+  name: CookiesFile
+  href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_CookiesFile
+  commentId: P:TGBot.Download.DownloadOptions.CookiesFile
+  fullName: TGBot.Download.DownloadOptions.CookiesFile
+  nameWithType: DownloadOptions.CookiesFile
+- uid: TGBot.Download.DownloadOptions.CookiesFile*
+  name: CookiesFile
+  href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_CookiesFile_
+  commentId: Overload:TGBot.Download.DownloadOptions.CookiesFile
+  isSpec: "True"
+  fullName: TGBot.Download.DownloadOptions.CookiesFile
+  nameWithType: DownloadOptions.CookiesFile
+- uid: TGBot.Download.DownloadOptions.ExtraArgs
+  name: ExtraArgs
+  href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_ExtraArgs
+  commentId: P:TGBot.Download.DownloadOptions.ExtraArgs
+  fullName: TGBot.Download.DownloadOptions.ExtraArgs
+  nameWithType: DownloadOptions.ExtraArgs
+- uid: TGBot.Download.DownloadOptions.ExtraArgs*
+  name: ExtraArgs
+  href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_ExtraArgs_
+  commentId: Overload:TGBot.Download.DownloadOptions.ExtraArgs
+  isSpec: "True"
+  fullName: TGBot.Download.DownloadOptions.ExtraArgs
+  nameWithType: DownloadOptions.ExtraArgs
 - uid: TGBot.Download.DownloadOptions.ExtractAudio
   name: ExtractAudio
   href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_ExtractAudio
@@ -1056,6 +2300,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Download.DownloadOptions.MergeFormat
   nameWithType: DownloadOptions.MergeFormat
+- uid: TGBot.Download.DownloadOptions.Proxy
+  name: Proxy
+  href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_Proxy
+  commentId: P:TGBot.Download.DownloadOptions.Proxy
+  fullName: TGBot.Download.DownloadOptions.Proxy
+  nameWithType: DownloadOptions.Proxy
+- uid: TGBot.Download.DownloadOptions.Proxy*
+  name: Proxy
+  href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_Proxy_
+  commentId: Overload:TGBot.Download.DownloadOptions.Proxy
+  isSpec: "True"
+  fullName: TGBot.Download.DownloadOptions.Proxy
+  nameWithType: DownloadOptions.Proxy
 - uid: TGBot.Download.DownloadOptions.Timeout
   name: Timeout
   href: api/TGBot.Download.DownloadOptions.html#TGBot_Download_DownloadOptions_Timeout
@@ -1453,6 +2710,22 @@ references:
   commentId: F:TGBot.Download.YtDlpOutputParser.FileMarker
   fullName: TGBot.Download.YtDlpOutputParser.FileMarker
   nameWithType: YtDlpOutputParser.FileMarker
+- uid: TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage(System.String)
+  name: IsAuthRequiredMessage(string)
+  href: api/TGBot.Download.YtDlpOutputParser.html#TGBot_Download_YtDlpOutputParser_IsAuthRequiredMessage_System_String_
+  commentId: M:TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage(System.String)
+  name.vb: IsAuthRequiredMessage(String)
+  fullName: TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage(string)
+  fullName.vb: TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage(String)
+  nameWithType: YtDlpOutputParser.IsAuthRequiredMessage(string)
+  nameWithType.vb: YtDlpOutputParser.IsAuthRequiredMessage(String)
+- uid: TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage*
+  name: IsAuthRequiredMessage
+  href: api/TGBot.Download.YtDlpOutputParser.html#TGBot_Download_YtDlpOutputParser_IsAuthRequiredMessage_
+  commentId: Overload:TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage
+  isSpec: "True"
+  fullName: TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage
+  nameWithType: YtDlpOutputParser.IsAuthRequiredMessage
 - uid: TGBot.Download.YtDlpOutputParser.IsTooLargeMessage(System.String)
   name: IsTooLargeMessage(string)
   href: api/TGBot.Download.YtDlpOutputParser.html#TGBot_Download_YtDlpOutputParser_IsTooLargeMessage_System_String_
@@ -2056,6 +3329,22 @@ references:
   commentId: T:TGBot.Messaging.ITelegramClient
   fullName: TGBot.Messaging.ITelegramClient
   nameWithType: ITelegramClient
+- uid: TGBot.Messaging.ITelegramClient.DownloadFileAsync(System.String,System.String,System.Threading.CancellationToken)
+  name: DownloadFileAsync(string, string, CancellationToken)
+  href: api/TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_DownloadFileAsync_System_String_System_String_System_Threading_CancellationToken_
+  commentId: M:TGBot.Messaging.ITelegramClient.DownloadFileAsync(System.String,System.String,System.Threading.CancellationToken)
+  name.vb: DownloadFileAsync(String, String, CancellationToken)
+  fullName: TGBot.Messaging.ITelegramClient.DownloadFileAsync(string, string, System.Threading.CancellationToken)
+  fullName.vb: TGBot.Messaging.ITelegramClient.DownloadFileAsync(String, String, System.Threading.CancellationToken)
+  nameWithType: ITelegramClient.DownloadFileAsync(string, string, CancellationToken)
+  nameWithType.vb: ITelegramClient.DownloadFileAsync(String, String, CancellationToken)
+- uid: TGBot.Messaging.ITelegramClient.DownloadFileAsync*
+  name: DownloadFileAsync
+  href: api/TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_DownloadFileAsync_
+  commentId: Overload:TGBot.Messaging.ITelegramClient.DownloadFileAsync
+  isSpec: "True"
+  fullName: TGBot.Messaging.ITelegramClient.DownloadFileAsync
+  nameWithType: ITelegramClient.DownloadFileAsync
 - uid: TGBot.Messaging.ITelegramClient.DropPendingUpdatesAsync(System.Threading.CancellationToken)
   name: DropPendingUpdatesAsync(CancellationToken)
   href: api/TGBot.Messaging.ITelegramClient.html#TGBot_Messaging_ITelegramClient_DropPendingUpdatesAsync_System_Threading_CancellationToken_
@@ -2223,6 +3512,45 @@ references:
   isSpec: "True"
   fullName: TGBot.Messaging.InboundMessage.ChatId
   nameWithType: InboundMessage.ChatId
+- uid: TGBot.Messaging.InboundMessage.DocumentFileId
+  name: DocumentFileId
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_DocumentFileId
+  commentId: P:TGBot.Messaging.InboundMessage.DocumentFileId
+  fullName: TGBot.Messaging.InboundMessage.DocumentFileId
+  nameWithType: InboundMessage.DocumentFileId
+- uid: TGBot.Messaging.InboundMessage.DocumentFileId*
+  name: DocumentFileId
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_DocumentFileId_
+  commentId: Overload:TGBot.Messaging.InboundMessage.DocumentFileId
+  isSpec: "True"
+  fullName: TGBot.Messaging.InboundMessage.DocumentFileId
+  nameWithType: InboundMessage.DocumentFileId
+- uid: TGBot.Messaging.InboundMessage.DocumentFileName
+  name: DocumentFileName
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_DocumentFileName
+  commentId: P:TGBot.Messaging.InboundMessage.DocumentFileName
+  fullName: TGBot.Messaging.InboundMessage.DocumentFileName
+  nameWithType: InboundMessage.DocumentFileName
+- uid: TGBot.Messaging.InboundMessage.DocumentFileName*
+  name: DocumentFileName
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_DocumentFileName_
+  commentId: Overload:TGBot.Messaging.InboundMessage.DocumentFileName
+  isSpec: "True"
+  fullName: TGBot.Messaging.InboundMessage.DocumentFileName
+  nameWithType: InboundMessage.DocumentFileName
+- uid: TGBot.Messaging.InboundMessage.DocumentSizeBytes
+  name: DocumentSizeBytes
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_DocumentSizeBytes
+  commentId: P:TGBot.Messaging.InboundMessage.DocumentSizeBytes
+  fullName: TGBot.Messaging.InboundMessage.DocumentSizeBytes
+  nameWithType: InboundMessage.DocumentSizeBytes
+- uid: TGBot.Messaging.InboundMessage.DocumentSizeBytes*
+  name: DocumentSizeBytes
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_DocumentSizeBytes_
+  commentId: Overload:TGBot.Messaging.InboundMessage.DocumentSizeBytes
+  isSpec: "True"
+  fullName: TGBot.Messaging.InboundMessage.DocumentSizeBytes
+  nameWithType: InboundMessage.DocumentSizeBytes
 - uid: TGBot.Messaging.InboundMessage.IsPrivate
   name: IsPrivate
   href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_IsPrivate
@@ -2313,6 +3641,22 @@ references:
   fullName.vb: TGBot.Messaging.TelegramClientWrapper.New
   nameWithType: TelegramClientWrapper.TelegramClientWrapper
   nameWithType.vb: TelegramClientWrapper.New
+- uid: TGBot.Messaging.TelegramClientWrapper.DownloadFileAsync(System.String,System.String,System.Threading.CancellationToken)
+  name: DownloadFileAsync(string, string, CancellationToken)
+  href: api/TGBot.Messaging.TelegramClientWrapper.html#TGBot_Messaging_TelegramClientWrapper_DownloadFileAsync_System_String_System_String_System_Threading_CancellationToken_
+  commentId: M:TGBot.Messaging.TelegramClientWrapper.DownloadFileAsync(System.String,System.String,System.Threading.CancellationToken)
+  name.vb: DownloadFileAsync(String, String, CancellationToken)
+  fullName: TGBot.Messaging.TelegramClientWrapper.DownloadFileAsync(string, string, System.Threading.CancellationToken)
+  fullName.vb: TGBot.Messaging.TelegramClientWrapper.DownloadFileAsync(String, String, System.Threading.CancellationToken)
+  nameWithType: TelegramClientWrapper.DownloadFileAsync(string, string, CancellationToken)
+  nameWithType.vb: TelegramClientWrapper.DownloadFileAsync(String, String, CancellationToken)
+- uid: TGBot.Messaging.TelegramClientWrapper.DownloadFileAsync*
+  name: DownloadFileAsync
+  href: api/TGBot.Messaging.TelegramClientWrapper.html#TGBot_Messaging_TelegramClientWrapper_DownloadFileAsync_
+  commentId: Overload:TGBot.Messaging.TelegramClientWrapper.DownloadFileAsync
+  isSpec: "True"
+  fullName: TGBot.Messaging.TelegramClientWrapper.DownloadFileAsync
+  nameWithType: TelegramClientWrapper.DownloadFileAsync
 - uid: TGBot.Messaging.TelegramClientWrapper.DropPendingUpdatesAsync(System.Threading.CancellationToken)
   name: DropPendingUpdatesAsync(CancellationToken)
   href: api/TGBot.Messaging.TelegramClientWrapper.html#TGBot_Messaging_TelegramClientWrapper_DropPendingUpdatesAsync_System_Threading_CancellationToken_
@@ -2914,6 +4258,84 @@ references:
   commentId: T:TGBot.Texts.UserTexts
   fullName: TGBot.Texts.UserTexts
   nameWithType: UserTexts
+- uid: TGBot.Texts.UserTexts.AuthRequired
+  name: AuthRequired
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AuthRequired
+  commentId: F:TGBot.Texts.UserTexts.AuthRequired
+  fullName: TGBot.Texts.UserTexts.AuthRequired
+  nameWithType: UserTexts.AuthRequired
+- uid: TGBot.Texts.UserTexts.CookieDeleted
+  name: CookieDeleted
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieDeleted
+  commentId: F:TGBot.Texts.UserTexts.CookieDeleted
+  fullName: TGBot.Texts.UserTexts.CookieDeleted
+  nameWithType: UserTexts.CookieDeleted
+- uid: TGBot.Texts.UserTexts.CookieExpired
+  name: CookieExpired
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieExpired
+  commentId: F:TGBot.Texts.UserTexts.CookieExpired
+  fullName: TGBot.Texts.UserTexts.CookieExpired
+  nameWithType: UserTexts.CookieExpired
+- uid: TGBot.Texts.UserTexts.CookieFileTooLarge
+  name: CookieFileTooLarge
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieFileTooLarge
+  commentId: F:TGBot.Texts.UserTexts.CookieFileTooLarge
+  fullName: TGBot.Texts.UserTexts.CookieFileTooLarge
+  nameWithType: UserTexts.CookieFileTooLarge
+- uid: TGBot.Texts.UserTexts.CookieInvalidFile
+  name: CookieInvalidFile
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieInvalidFile
+  commentId: F:TGBot.Texts.UserTexts.CookieInvalidFile
+  fullName: TGBot.Texts.UserTexts.CookieInvalidFile
+  nameWithType: UserTexts.CookieInvalidFile
+- uid: TGBot.Texts.UserTexts.CookieListTemplate
+  name: CookieListTemplate
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieListTemplate
+  commentId: F:TGBot.Texts.UserTexts.CookieListTemplate
+  fullName: TGBot.Texts.UserTexts.CookieListTemplate
+  nameWithType: UserTexts.CookieListTemplate
+- uid: TGBot.Texts.UserTexts.CookieNone
+  name: CookieNone
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieNone
+  commentId: F:TGBot.Texts.UserTexts.CookieNone
+  fullName: TGBot.Texts.UserTexts.CookieNone
+  nameWithType: UserTexts.CookieNone
+- uid: TGBot.Texts.UserTexts.CookiePrompt
+  name: CookiePrompt
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookiePrompt
+  commentId: F:TGBot.Texts.UserTexts.CookiePrompt
+  fullName: TGBot.Texts.UserTexts.CookiePrompt
+  nameWithType: UserTexts.CookiePrompt
+- uid: TGBot.Texts.UserTexts.CookieSaveFailed
+  name: CookieSaveFailed
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieSaveFailed
+  commentId: F:TGBot.Texts.UserTexts.CookieSaveFailed
+  fullName: TGBot.Texts.UserTexts.CookieSaveFailed
+  nameWithType: UserTexts.CookieSaveFailed
+- uid: TGBot.Texts.UserTexts.CookieSaved
+  name: CookieSaved
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieSaved
+  commentId: F:TGBot.Texts.UserTexts.CookieSaved
+  fullName: TGBot.Texts.UserTexts.CookieSaved
+  nameWithType: UserTexts.CookieSaved
+- uid: TGBot.Texts.UserTexts.CookieSavedSuspicious
+  name: CookieSavedSuspicious
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieSavedSuspicious
+  commentId: F:TGBot.Texts.UserTexts.CookieSavedSuspicious
+  fullName: TGBot.Texts.UserTexts.CookieSavedSuspicious
+  nameWithType: UserTexts.CookieSavedSuspicious
+- uid: TGBot.Texts.UserTexts.CookieUnknownSite
+  name: CookieUnknownSite
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieUnknownSite
+  commentId: F:TGBot.Texts.UserTexts.CookieUnknownSite
+  fullName: TGBot.Texts.UserTexts.CookieUnknownSite
+  nameWithType: UserTexts.CookieUnknownSite
+- uid: TGBot.Texts.UserTexts.CookieUsage
+  name: CookieUsage
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieUsage
+  commentId: F:TGBot.Texts.UserTexts.CookieUsage
+  fullName: TGBot.Texts.UserTexts.CookieUsage
+  nameWithType: UserTexts.CookieUsage
 - uid: TGBot.Texts.UserTexts.DownloadFailed
   name: DownloadFailed
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_DownloadFailed

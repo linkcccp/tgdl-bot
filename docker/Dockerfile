@@ -49,6 +49,7 @@ ENV TGDL_CONFIG=/opt/tgdl-bot/config.conf \
     TGDL_LOCAL_API_URL=http://127.0.0.1:8081 \
     TGDL_DOWNLOAD_TMP=/var/lib/tgdl-bot/tmp \
     TGDL_YTDLP_PATH=/opt/tgdl-bot/bin/yt-dlp \
-    TGDL_FFMPEG_PATH=/opt/tgdl-bot/bin/ffmpeg
+    TGDL_FFMPEG_PATH=/opt/tgdl-bot/bin/ffmpeg \
+    TGDL_COOKIE_STORE_DIR=/opt/tgdl-bot/cookies
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]

@@ -1,5 +1,6 @@
 using System.Globalization;
 using TGBot.Config;
+using TGBot.Cookie;
 using TGBot.Download;
 using TGBot.Logging;
 using TGBot.Messaging;
@@ -10,7 +11,7 @@ using TGBot.Update;
 namespace TGBot.Application;
 
 /// <summary>
-/// 指令处理器：/update、/status、/help。
+/// 指令处理器：/update、/status、/help、/cookie、/cookies。
 /// </summary>
 public sealed class CommandHandler
 {
@@ -19,6 +20,7 @@ public sealed class CommandHandler
     private readonly DownloadGate _gate;
     private readonly JobRegistry _registry;
     private readonly string _tempDir;
+    private readonly CookieService _cookies;
     private readonly AppConfig _config;
     private readonly IProcessRunner _runner;
     private readonly IAppLogger _logger;
@@ -35,6 +37,7 @@ public sealed class CommandHandler
     /// <param name="gate">并发闸门。</param>
     /// <param name="registry">任务注册表。</param>
     /// <param name="tempDir">临时目录（用于磁盘空间显示）。</param>
+    /// <param name="cookies">cookies 服务。</param>
     /// <param name="config">配置。</param>
     /// <param name="runner">进程运行器。</param>
     /// <param name="logger">日志器。</param>
@@ -44,6 +47,7 @@ public sealed class CommandHandler
         DownloadGate gate,
         JobRegistry registry,
         string tempDir,
+        CookieService cookies,
         AppConfig config,
         IProcessRunner runner,
         IAppLogger logger)
@@ -53,6 +57,7 @@ public sealed class CommandHandler
         _gate = gate;
         _registry = registry;
         _tempDir = tempDir;
+        _cookies = cookies;
         _config = config;
         _runner = runner;
         _logger = logger;
@@ -79,10 +84,65 @@ public sealed class CommandHandler
             case "/update":
                 await HandleUpdateAsync(msg, cancellationToken).ConfigureAwait(false);
                 break;
+            case "/cookie":
+                await HandleCookieCommandAsync(msg, commandText, cancellationToken).ConfigureAwait(false);
+                break;
+            case "/cookies":
+                await HandleCookiesListAsync(msg, cancellationToken).ConfigureAwait(false);
+                break;
             default:
                 await SendToAsync(msg, UserTexts.UnknownCommand, cancellationToken).ConfigureAwait(false);
                 break;
         }
+    }
+
+    private async Task HandleCookieCommandAsync(InboundMessage msg, string commandText, CancellationToken cancellationToken)
+    {
+        var parts = commandText.Split(' ', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        if (parts.Length < 2)
+        {
+            await SendToAsync(msg, string.Format(UserTexts.CookieUsage, _cookies.SiteListText()), cancellationToken).ConfigureAwait(false);
+            return;
+        }
+
+        var siteKey = parts[1].ToLowerInvariant();
+        var isClear = parts.Length >= 3 && parts[2].Equals("clear", StringComparison.OrdinalIgnoreCase);
+
+        if (isClear)
+        {
+            var site = _cookies.ResolveSite(siteKey);
+            if (site is null)
+            {
+                await SendToAsync(msg, string.Format(UserTexts.CookieUnknownSite, siteKey, _cookies.SiteListText()), cancellationToken).ConfigureAwait(false);
+                return;
+            }
+
+            _cookies.Clear(site.Key);
+            await SendToAsync(msg, string.Format(UserTexts.CookieDeleted, site.DisplayName), cancellationToken).ConfigureAwait(false);
+            return;
+        }
+
+        var begin = _cookies.BeginPendingUpload(msg.ChatId, siteKey);
+        if (begin is null)
+        {
+            await SendToAsync(msg, string.Format(UserTexts.CookieUnknownSite, siteKey, _cookies.SiteListText()), cancellationToken).ConfigureAwait(false);
+            return;
+        }
+
+        await SendToAsync(msg, string.Format(UserTexts.CookiePrompt, begin.DisplayName), cancellationToken).ConfigureAwait(false);
+    }
+
+    private async Task HandleCookiesListAsync(InboundMessage msg, CancellationToken cancellationToken)
+    {
+        var statuses = _cookies.List();
+        if (statuses.Count == 0)
+        {
+            await SendToAsync(msg, UserTexts.CookieNone, cancellationToken).ConfigureAwait(false);
+            return;
+        }
+
+        var lines = statuses.Select(s => $"  {s.DisplayName}（{s.Key}）：{(s.Has ? "✓ 已保存" : "无")}");
+        await SendToAsync(msg, string.Format(UserTexts.CookieListTemplate, string.Join("\n", lines)), cancellationToken).ConfigureAwait(false);
     }
 
     private async Task HandleUpdateAsync(InboundMessage msg, CancellationToken cancellationToken)

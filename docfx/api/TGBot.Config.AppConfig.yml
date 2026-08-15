@@ -10,6 +10,7 @@ items:
   - TGBot.Config.AppConfig.AllowedUserIds
   - TGBot.Config.AppConfig.AlsoSendMediaToRequester
   - TGBot.Config.AppConfig.BotToken
+  - TGBot.Config.AppConfig.CookieStoreDir
   - TGBot.Config.AppConfig.DownloadRetries
   - TGBot.Config.AppConfig.DownloadTempDir
   - TGBot.Config.AppConfig.DownloadTimeoutSeconds
@@ -26,7 +27,9 @@ items:
   - TGBot.Config.AppConfig.UpdateFfmpeg
   - TGBot.Config.AppConfig.UpdateYtDlp
   - TGBot.Config.AppConfig.UploadRetries
+  - TGBot.Config.AppConfig.YtDlpExtraArgs
   - TGBot.Config.AppConfig.YtDlpPath
+  - TGBot.Config.AppConfig.YtDlpProxy
   langs:
   - csharp
   - vb
@@ -280,6 +283,99 @@ items:
       type: System.String
     content.vb: Public Property FfmpegPath As String
   overload: TGBot.Config.AppConfig.FfmpegPath*
+- uid: TGBot.Config.AppConfig.CookieStoreDir
+  commentId: P:TGBot.Config.AppConfig.CookieStoreDir
+  id: CookieStoreDir
+  parent: TGBot.Config.AppConfig
+  langs:
+  - csharp
+  - vb
+  name: CookieStoreDir
+  nameWithType: AppConfig.CookieStoreDir
+  fullName: TGBot.Config.AppConfig.CookieStoreDir
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieStoreDir
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 32
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config
+  summary: cookies 存储目录（各站点 cookie 文件，按域名自动选用）。
+  example: []
+  syntax:
+    content: public string CookieStoreDir { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CookieStoreDir As String
+  overload: TGBot.Config.AppConfig.CookieStoreDir*
+- uid: TGBot.Config.AppConfig.YtDlpProxy
+  commentId: P:TGBot.Config.AppConfig.YtDlpProxy
+  id: YtDlpProxy
+  parent: TGBot.Config.AppConfig
+  langs:
+  - csharp
+  - vb
+  name: YtDlpProxy
+  nameWithType: AppConfig.YtDlpProxy
+  fullName: TGBot.Config.AppConfig.YtDlpProxy
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: YtDlpProxy
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 35
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config
+  summary: yt-dlp 使用的 HTTP(S) 代理地址，为空表示不使用。
+  example: []
+  syntax:
+    content: public string YtDlpProxy { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property YtDlpProxy As String
+  overload: TGBot.Config.AppConfig.YtDlpProxy*
+- uid: TGBot.Config.AppConfig.YtDlpExtraArgs
+  commentId: P:TGBot.Config.AppConfig.YtDlpExtraArgs
+  id: YtDlpExtraArgs
+  parent: TGBot.Config.AppConfig
+  langs:
+  - csharp
+  - vb
+  name: YtDlpExtraArgs
+  nameWithType: AppConfig.YtDlpExtraArgs
+  fullName: TGBot.Config.AppConfig.YtDlpExtraArgs
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: YtDlpExtraArgs
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 38
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config
+  summary: 附加 yt-dlp 参数（按空白拆分），如 <code>--extractor-args youtube:player_client=android</code>。
+  example: []
+  syntax:
+    content: public string YtDlpExtraArgs { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property YtDlpExtraArgs As String
+  overload: TGBot.Config.AppConfig.YtDlpExtraArgs*
 - uid: TGBot.Config.AppConfig.MaxConcurrentDownloads
   commentId: P:TGBot.Config.AppConfig.MaxConcurrentDownloads
   id: MaxConcurrentDownloads
@@ -298,7 +394,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MaxConcurrentDownloads
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 32
+    startLine: 41
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -329,7 +425,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LogLevel
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 35
+    startLine: 44
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -360,7 +456,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LogFile
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 38
+    startLine: 47
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -391,7 +487,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadRetries
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 41
+    startLine: 50
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -422,7 +518,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadTimeoutSeconds
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 44
+    startLine: 53
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -453,7 +549,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadRetries
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 47
+    startLine: 56
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -484,7 +580,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ExtractAudio
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 50
+    startLine: 59
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -515,7 +611,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AlsoSendMediaToRequester
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 53
+    startLine: 62
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -546,7 +642,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AllowPrivateUrls
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 56
+    startLine: 65
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -577,7 +673,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MaxMediaSizeBytes
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 59
+    startLine: 68
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -608,7 +704,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AllowPlaylists
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 62
+    startLine: 71
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -639,7 +735,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MergeFormat
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 65
+    startLine: 74
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -670,7 +766,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateYtDlp
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 68
+    startLine: 77
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -701,7 +797,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateFfmpeg
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 71
+    startLine: 80
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -732,7 +828,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SourcePath
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 74
+    startLine: 83
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -1140,6 +1236,24 @@ references:
   name: FfmpegPath
   nameWithType: AppConfig.FfmpegPath
   fullName: TGBot.Config.AppConfig.FfmpegPath
+- uid: TGBot.Config.AppConfig.CookieStoreDir*
+  commentId: Overload:TGBot.Config.AppConfig.CookieStoreDir
+  href: TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_CookieStoreDir
+  name: CookieStoreDir
+  nameWithType: AppConfig.CookieStoreDir
+  fullName: TGBot.Config.AppConfig.CookieStoreDir
+- uid: TGBot.Config.AppConfig.YtDlpProxy*
+  commentId: Overload:TGBot.Config.AppConfig.YtDlpProxy
+  href: TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_YtDlpProxy
+  name: YtDlpProxy
+  nameWithType: AppConfig.YtDlpProxy
+  fullName: TGBot.Config.AppConfig.YtDlpProxy
+- uid: TGBot.Config.AppConfig.YtDlpExtraArgs*
+  commentId: Overload:TGBot.Config.AppConfig.YtDlpExtraArgs
+  href: TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_YtDlpExtraArgs
+  name: YtDlpExtraArgs
+  nameWithType: AppConfig.YtDlpExtraArgs
+  fullName: TGBot.Config.AppConfig.YtDlpExtraArgs
 - uid: TGBot.Config.AppConfig.MaxConcurrentDownloads*
   commentId: Overload:TGBot.Config.AppConfig.MaxConcurrentDownloads
   href: TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_MaxConcurrentDownloads

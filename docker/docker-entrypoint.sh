@@ -17,6 +17,7 @@ SEED_DIR="$INSTALL_DIR/seed-bin"
 BIN_DIR="$INSTALL_DIR/bin"
 API_DATA_DIR="$INSTALL_DIR/api-data"
 TMP_DIR="${TGDL_DOWNLOAD_TMP:-/var/lib/tgdl-bot/tmp}"
+COOKIE_DIR="${TGDL_COOKIE_STORE_DIR:-/opt/tgdl-bot/cookies}"
 RUN_USER=tgdl-bot
 
 log()  { printf '\033[1;32m[INFO ]\033[0m %s\n' "$*"; }
@@ -30,7 +31,7 @@ require() {
 }
 
 # ---------- 1. 目录与卷权限（挂载卷可能为空且 root 属主） ----------
-mkdir -p "$BIN_DIR" "$API_DATA_DIR" "$TMP_DIR"
+mkdir -p "$BIN_DIR" "$API_DATA_DIR" "$TMP_DIR" "$COOKIE_DIR"
 chown -R "$RUN_USER":"$RUN_USER" "$INSTALL_DIR" /var/lib/tgdl-bot 2>/dev/null || true
 
 # ---------- 2. 种子 yt-dlp/ffmpeg 到 bin 卷（首启） ----------
@@ -71,6 +72,9 @@ else
         [[ "${TGDL_ALLOW_PLAYLISTS:-}" =~ ^(true|false)$ ]]    && printf 'AllowPlaylists = %s\n' "$TGDL_ALLOW_PLAYLISTS"
         [[ "${TGDL_UPDATE_YTDLP:-}" =~ ^(true|false)$ ]]       && printf 'UpdateYtDlp = %s\n' "$TGDL_UPDATE_YTDLP"
         [[ "${TGDL_UPDATE_FFMPEG:-}" =~ ^(true|false)$ ]]      && printf 'UpdateFfmpeg = %s\n' "$TGDL_UPDATE_FFMPEG"
+        [[ -n "${TGDL_COOKIE_STORE_DIR:-}" ]] && printf 'CookieStoreDir = %s\n' "$TGDL_COOKIE_STORE_DIR"
+        [[ -n "${TGDL_YTDLP_PROXY:-}" ]]     && printf 'YtDlpProxy = %s\n' "$TGDL_YTDLP_PROXY"
+        [[ -n "${TGDL_YTDLP_EXTRA_ARGS:-}" ]] && printf 'YtDlpExtraArgs = %s\n' "$TGDL_YTDLP_EXTRA_ARGS"
     } > "$CONFIG_FILE"
     chown "$RUN_USER":"$RUN_USER" "$CONFIG_FILE" 2>/dev/null || true
     log "已根据环境变量生成配置：${CONFIG_FILE}"

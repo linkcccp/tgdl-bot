@@ -5,6 +5,7 @@ items:
   id: DownloadFailureReason
   parent: TGBot.Download
   children:
+  - TGBot.Download.DownloadFailureReason.AuthRequired
   - TGBot.Download.DownloadFailureReason.Cancelled
   - TGBot.Download.DownloadFailureReason.Failed
   - TGBot.Download.DownloadFailureReason.NoDiskSpace
@@ -171,6 +172,34 @@ items:
   example: []
   syntax:
     content: Cancelled = 4
+    return:
+      type: TGBot.Download.DownloadFailureReason
+- uid: TGBot.Download.DownloadFailureReason.AuthRequired
+  commentId: F:TGBot.Download.DownloadFailureReason.AuthRequired
+  id: AuthRequired
+  parent: TGBot.Download.DownloadFailureReason
+  langs:
+  - csharp
+  - vb
+  name: AuthRequired
+  nameWithType: DownloadFailureReason.AuthRequired
+  fullName: TGBot.Download.DownloadFailureReason.AuthRequired
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Download/DownloadException.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AuthRequired
+    path: ../src/TGBot/Download/DownloadException.cs
+    startLine: 23
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 目标站点要求登录/认证（如 YouTube 机器人检测），配置 cookies 后可解决。
+  example: []
+  syntax:
+    content: AuthRequired = 5
     return:
       type: TGBot.Download.DownloadFailureReason
 references:

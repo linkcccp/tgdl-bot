@@ -20,7 +20,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AppHost
     path: ../src/TGBot/Application/AppHost.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
@@ -61,7 +61,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RunAsync
     path: ../src/TGBot/Application/AppHost.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application

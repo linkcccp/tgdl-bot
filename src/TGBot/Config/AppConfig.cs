@@ -29,6 +29,15 @@ public sealed class AppConfig
     /// <summary>ffmpeg 二进制绝对路径。</summary>
     public string FfmpegPath { get; init; } = string.Empty;
 
+    /// <summary>cookies 存储目录（各站点 cookie 文件，按域名自动选用）。</summary>
+    public string CookieStoreDir { get; init; } = string.Empty;
+
+    /// <summary>yt-dlp 使用的 HTTP(S) 代理地址，为空表示不使用。</summary>
+    public string YtDlpProxy { get; init; } = string.Empty;
+
+    /// <summary>附加 yt-dlp 参数（按空白拆分），如 <c>--extractor-args youtube:player_client=android</c>。</summary>
+    public string YtDlpExtraArgs { get; init; } = string.Empty;
+
     /// <summary>最大并发下载任务数。</summary>
     public int MaxConcurrentDownloads { get; init; } = 2;
 

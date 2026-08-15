@@ -8,6 +8,7 @@ services:
       - tgdl-data:/opt/tgdl-bot/api-data
       - tgdl-tmp:/var/lib/tgdl-bot/tmp
       - tgdl-bin:/opt/tgdl-bot/bin
+      - tgdl-cookies:/opt/tgdl-bot/cookies
     # 可选：内存限制（默认不设，容器整体约 150-250MB）
     # mem_limit: 512m
 
@@ -15,3 +16,4 @@ volumes:
   tgdl-data:
   tgdl-tmp:
   tgdl-bin:
+  tgdl-cookies:

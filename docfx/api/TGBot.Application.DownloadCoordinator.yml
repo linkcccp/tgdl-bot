@@ -5,7 +5,7 @@ items:
   id: DownloadCoordinator
   parent: TGBot.Application
   children:
-  - TGBot.Application.DownloadCoordinator.#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
+  - TGBot.Application.DownloadCoordinator.#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
   - TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)
   langs:
   - csharp
@@ -21,7 +21,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadCoordinator
     path: ../src/TGBot/Application/DownloadCoordinator.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
@@ -39,16 +39,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Application.DownloadCoordinator.#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
-  commentId: M:TGBot.Application.DownloadCoordinator.#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
-  id: '#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)'
+- uid: TGBot.Application.DownloadCoordinator.#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
+  commentId: M:TGBot.Application.DownloadCoordinator.#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
+  id: '#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)'
   parent: TGBot.Application.DownloadCoordinator
   langs:
   - csharp
   - vb
-  name: DownloadCoordinator(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, AppConfig, IAppLogger)
-  nameWithType: DownloadCoordinator.DownloadCoordinator(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, AppConfig, IAppLogger)
-  fullName: TGBot.Application.DownloadCoordinator.DownloadCoordinator(TGBot.Download.IDownloader, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, TGBot.Security.TempDirManager, TGBot.Messaging.UploadService, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
+  name: DownloadCoordinator(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger)
+  nameWithType: DownloadCoordinator.DownloadCoordinator(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger)
+  fullName: TGBot.Application.DownloadCoordinator.DownloadCoordinator(TGBot.Download.IDownloader, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, TGBot.Security.TempDirManager, TGBot.Messaging.UploadService, TGBot.Messaging.ITelegramClient, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
   type: Constructor
   source:
     remote:
@@ -57,14 +57,14 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Application/DownloadCoordinator.cs
-    startLine: 34
+    startLine: 37
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
   summary: 初始化 <xref href="TGBot.Application.DownloadCoordinator" data-throw-if-not-resolved="false"></xref>。
   example: []
   syntax:
-    content: public DownloadCoordinator(IDownloader downloader, DownloadGate gate, JobRegistry registry, TempDirManager tempDir, UploadService upload, ITelegramClient client, AppConfig config, IAppLogger logger)
+    content: public DownloadCoordinator(IDownloader downloader, DownloadGate gate, JobRegistry registry, TempDirManager tempDir, UploadService upload, ITelegramClient client, CookieService cookies, AppConfig config, IAppLogger logger)
     parameters:
     - id: downloader
       type: TGBot.Download.IDownloader
@@ -84,17 +84,20 @@ items:
     - id: client
       type: TGBot.Messaging.ITelegramClient
       description: Telegram 客户端。
+    - id: cookies
+      type: TGBot.Cookie.CookieService
+      description: cookies 服务（按域名解析站点 cookie）。
     - id: config
       type: TGBot.Config.AppConfig
       description: 配置。
     - id: logger
       type: TGBot.Logging.IAppLogger
       description: 日志器。
-    content.vb: Public Sub New(downloader As IDownloader, gate As DownloadGate, registry As JobRegistry, tempDir As TempDirManager, upload As UploadService, client As ITelegramClient, config As AppConfig, logger As IAppLogger)
+    content.vb: Public Sub New(downloader As IDownloader, gate As DownloadGate, registry As JobRegistry, tempDir As TempDirManager, upload As UploadService, client As ITelegramClient, cookies As CookieService, config As AppConfig, logger As IAppLogger)
   overload: TGBot.Application.DownloadCoordinator.#ctor*
-  nameWithType.vb: DownloadCoordinator.New(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, AppConfig, IAppLogger)
-  fullName.vb: TGBot.Application.DownloadCoordinator.New(TGBot.Download.IDownloader, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, TGBot.Security.TempDirManager, TGBot.Messaging.UploadService, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
-  name.vb: New(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, AppConfig, IAppLogger)
+  nameWithType.vb: DownloadCoordinator.New(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger)
+  fullName.vb: TGBot.Application.DownloadCoordinator.New(TGBot.Download.IDownloader, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, TGBot.Security.TempDirManager, TGBot.Messaging.UploadService, TGBot.Messaging.ITelegramClient, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
+  name.vb: New(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger)
 - uid: TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)
   commentId: M:TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)
   id: EnqueueAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)
@@ -113,7 +116,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: EnqueueAsync
     path: ../src/TGBot/Application/DownloadCoordinator.cs
-    startLine: 61
+    startLine: 66
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
@@ -384,7 +387,7 @@ references:
   fullName: TGBot.Application.DownloadCoordinator
 - uid: TGBot.Application.DownloadCoordinator.#ctor*
   commentId: Overload:TGBot.Application.DownloadCoordinator.#ctor
-  href: TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator__ctor_TGBot_Download_IDownloader_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_TGBot_Security_TempDirManager_TGBot_Messaging_UploadService_TGBot_Messaging_ITelegramClient_TGBot_Config_AppConfig_TGBot_Logging_IAppLogger_
+  href: TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator__ctor_TGBot_Download_IDownloader_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_TGBot_Security_TempDirManager_TGBot_Messaging_UploadService_TGBot_Messaging_ITelegramClient_TGBot_Cookie_CookieService_TGBot_Config_AppConfig_TGBot_Logging_IAppLogger_
   name: DownloadCoordinator
   nameWithType: DownloadCoordinator.DownloadCoordinator
   fullName: TGBot.Application.DownloadCoordinator.DownloadCoordinator
@@ -433,6 +436,13 @@ references:
   name: ITelegramClient
   nameWithType: ITelegramClient
   fullName: TGBot.Messaging.ITelegramClient
+- uid: TGBot.Cookie.CookieService
+  commentId: T:TGBot.Cookie.CookieService
+  parent: TGBot.Cookie
+  href: TGBot.Cookie.CookieService.html
+  name: CookieService
+  nameWithType: CookieService
+  fullName: TGBot.Cookie.CookieService
 - uid: TGBot.Config.AppConfig
   commentId: T:TGBot.Config.AppConfig
   parent: TGBot.Config
@@ -513,6 +523,28 @@ references:
   - uid: TGBot.Messaging
     name: Messaging
     href: TGBot.Messaging.html
+- uid: TGBot.Cookie
+  commentId: N:TGBot.Cookie
+  href: TGBot.html
+  name: TGBot.Cookie
+  nameWithType: TGBot.Cookie
+  fullName: TGBot.Cookie
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Cookie
+    name: Cookie
+    href: TGBot.Cookie.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Cookie
+    name: Cookie
+    href: TGBot.Cookie.html
 - uid: TGBot.Config
   commentId: N:TGBot.Config
   href: TGBot.html

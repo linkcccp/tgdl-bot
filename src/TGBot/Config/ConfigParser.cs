@@ -34,6 +34,9 @@ public static class ConfigParser
         ["TempDir"] = "DownloadTempDir",
         ["YtDlpPath"] = "YtDlpPath",
         ["FfmpegPath"] = "FfmpegPath",
+        ["CookieStoreDir"] = "CookieStoreDir",
+        ["YtDlpProxy"] = "YtDlpProxy",
+        ["YtDlpExtraArgs"] = "YtDlpExtraArgs",
         ["MaxConcurrentDownloads"] = "MaxConcurrentDownloads",
         ["Concurrency"] = "MaxConcurrentDownloads",
         ["LogLevel"] = "LogLevel",
@@ -132,6 +135,9 @@ public static class ConfigParser
             DownloadTempDir = GetString(values, "DownloadTempDir"),
             YtDlpPath = GetString(values, "YtDlpPath"),
             FfmpegPath = GetString(values, "FfmpegPath"),
+            CookieStoreDir = GetString(values, "CookieStoreDir"),
+            YtDlpProxy = GetString(values, "YtDlpProxy"),
+            YtDlpExtraArgs = GetString(values, "YtDlpExtraArgs"),
             MaxConcurrentDownloads = GetInt(values, "MaxConcurrentDownloads", 2),
             LogLevel = GetLogLevel(values, "LogLevel", Logging.LogLevel.Info),
             LogFile = string.IsNullOrEmpty(GetString(values, "LogFile")) ? null : GetString(values, "LogFile"),
@@ -218,6 +224,21 @@ public static class ConfigParser
         if (c.MergeFormat.Length == 0 || c.MergeFormat.Length > 10)
         {
             throw new ConfigParseException("配置项 MergeFormat 非法。");
+        }
+
+        if (c.YtDlpExtraArgs.Length > 512)
+        {
+            throw new ConfigParseException("配置项 YtDlpExtraArgs 长度超过限制。");
+        }
+
+        if (c.YtDlpProxy.Length > 512)
+        {
+            throw new ConfigParseException("配置项 YtDlpProxy 长度超过限制。");
+        }
+
+        if (c.CookieStoreDir.Length > 512)
+        {
+            throw new ConfigParseException("配置项 CookieStoreDir 长度超过限制。");
         }
     }
 

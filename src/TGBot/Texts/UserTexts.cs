@@ -65,10 +65,68 @@ public static class UserTexts
     /// <summary>帮助文本。</summary>
     public const string Help =
         "可用指令：\n"
-        + "/update - 检查并更新 ffmpeg 与 yt-dlp\n"
-        + "/status - 查看运行状态与版本\n"
-        + "/help   - 显示本帮助\n\n"
+        + "/update    - 检查并更新 ffmpeg 与 yt-dlp\n"
+        + "/cookie    - 上传指定站点的 cookies（如 /cookie youtube）\n"
+        + "/cookies   - 查看各站点 cookies 状态\n"
+        + "/status    - 查看运行状态与版本\n"
+        + "/help      - 显示本帮助\n\n"
         + "直接发送视频/音乐链接即可触发下载。";
+
+    /// <summary>目标站点要求认证提示。</summary>
+    public const string AuthRequired =
+        "目标站点要求登录/认证（如 YouTube 机器人检测）。请通过 /cookie 上传该站点的 cookies 后重试。";
+
+    /// <summary>cookie 使用说明。</summary>
+    public const string CookieUsage =
+        "用法：\n"
+        + "/cookie <站点> - 开始上传该站点 cookies，然后发送 cookies 文件\n"
+        + "/cookie <站点> clear - 删除该站点 cookies\n"
+        + "/cookies - 查看各站点状态\n\n"
+        + "可用站点：{0}";
+
+    /// <summary>开始上传提示。参数：站点显示名。</summary>
+    public const string CookiePrompt =
+        "请发送 cookies 文件（用于 {0}）。\n文件应为 Netscape 格式的 cookies.txt（≤1MB，浏览器导出）。";
+
+    /// <summary>保存成功提示。参数：站点显示名、站点键。</summary>
+    public const string CookieSaved =
+        "{0} 的 cookies 已保存（站点键：{1}），下载该站点链接时将自动使用。";
+
+    /// <summary>保存成功但格式可疑提示。参数：站点显示名、站点键。</summary>
+    public const string CookieSavedSuspicious =
+        "{0} 的 cookies 已保存（站点键：{1}），但文件格式不像标准 cookies.txt，若下载仍失败请重新导出。";
+
+    /// <summary>保存失败提示。</summary>
+    public const string CookieSaveFailed =
+        "cookies 保存失败，请稍后重试。";
+
+    /// <summary>删除成功提示。参数：站点显示名。</summary>
+    public const string CookieDeleted =
+        "{0} 的 cookies 已删除。";
+
+    /// <summary>无任何站点 cookie 提示。</summary>
+    public const string CookieNone =
+        "当前没有任何站点的 cookies。发送 /cookie <站点> 开始上传。";
+
+    /// <summary>cookie 列表模板。参数：站点键/状态行。</summary>
+    public const string CookieListTemplate =
+        "各站点 cookies 状态：\n{0}\n\n/cookie <站点> 上传，/cookie <站点> clear 删除。";
+
+    /// <summary>未知站点提示。参数：站点键、可用站点。</summary>
+    public const string CookieUnknownSite =
+        "未知站点：{0}。可用站点：{1}";
+
+    /// <summary>cookies 文件过大提示。</summary>
+    public const string CookieFileTooLarge =
+        "cookies 文件过大（限制 1MB），请重新导出。";
+
+    /// <summary>cookies 文件无效提示。</summary>
+    public const string CookieInvalidFile =
+        "cookies 文件无效，请发送文本格式的 cookies.txt。";
+
+    /// <summary>上传超时提示。</summary>
+    public const string CookieExpired =
+        "上传等待超时，请重新发送 /cookie <站点> 后再发文件。";
 
     /// <summary>更新无需执行提示。</summary>
     public const string UpdateNotNeeded =

@@ -83,6 +83,7 @@ if [[ "$started" -eq 0 ]] || ! docker inspect tgdl-bot >/dev/null 2>&1; then
         -v tgdl-data:/opt/tgdl-bot/api-data \
         -v tgdl-tmp:/var/lib/tgdl-bot/tmp \
         -v tgdl-bin:/opt/tgdl-bot/bin \
+        -v tgdl-cookies:/opt/tgdl-bot/cookies \
         "$IMAGE" || die "容器启动失败，请检查配置后重试。"
 fi
 

@@ -60,6 +60,13 @@ public sealed class FakeTelegramClient : ITelegramClient
 
     public Task DropPendingUpdatesAsync(CancellationToken cancellationToken) => Task.CompletedTask;
 
+    public Task DownloadFileAsync(string fileId, string destinationPath, CancellationToken cancellationToken)
+    {
+        // 生成一个合法的最小 cookies 文本，便于 cookie 上传流程测试。
+        File.WriteAllText(destinationPath, "# Netscape HTTP Cookie File\n");
+        return Task.CompletedTask;
+    }
+
     public async Task RunLongPollingAsync(
         Func<InboundMessage, CancellationToken, Task> onUpdate,
         Func<Exception, CancellationToken, Task> onPollError,
@@ -160,12 +167,18 @@ public class MessageRouterTests
         var registry = new JobRegistry();
         var tempDir = new TempDirManager(config.DownloadTempDir, logger);
         var upload = new UploadService(client, 0, false, logger);
-        coordinator = new DownloadCoordinator(downloader, gate, registry, tempDir, upload, client, config, logger);
+        var cookieStore = new TGBot.Cookie.CookieStore(Path.Combine(config.DownloadTempDir, "cookies"), logger);
+        var cookieService = new TGBot.Cookie.CookieService(
+            new TGBot.Cookie.SiteCookieRegistry(new TGBot.Cookie.CookieSite[] { new TGBot.Cookie.YoutubeCookieSite(), new TGBot.Cookie.TwitterCookieSite() }),
+            cookieStore,
+            client,
+            logger);
+        coordinator = new DownloadCoordinator(downloader, gate, registry, tempDir, upload, client, cookieService, config, logger);
         access ??= new AccessControlService(config.AllowedUserIds, config.TargetChannelIds);
         var urlValidator = new UrlValidator(new FakeResolverAlwaysPublic());
         var runner = new SystemProcessRunner();
-        var commands = new CommandHandler(client, new FakeUpdater(), gate, registry, config.DownloadTempDir, config, runner, logger);
-        return new MessageRouter(access, urlValidator, coordinator, commands, client, config, logger);
+        var commands = new CommandHandler(client, new FakeUpdater(), gate, registry, config.DownloadTempDir, cookieService, config, runner, logger);
+        return new MessageRouter(access, urlValidator, coordinator, commands, cookieService, client, config, logger);
     }
 
     private static InboundMessage Dm(long userId, string text) => new()

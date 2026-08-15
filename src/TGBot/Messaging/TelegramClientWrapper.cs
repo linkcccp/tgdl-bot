@@ -102,10 +102,28 @@ public sealed class TelegramClientWrapper : ITelegramClient
         var commands = new[]
         {
             new BotCommand { Command = "update", Description = "检查并更新 ffmpeg 与 yt-dlp" },
+            new BotCommand { Command = "cookie", Description = "上传指定站点的 cookies" },
+            new BotCommand { Command = "cookies", Description = "查看各站点 cookies 状态" },
             new BotCommand { Command = "status", Description = "查看运行状态与版本" },
             new BotCommand { Command = "help", Description = "显示帮助" },
         };
         await _client.SetMyCommands(commands: commands, cancellationToken: cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <inheritdoc />
+    public async Task DownloadFileAsync(string fileId, string destinationPath, CancellationToken cancellationToken)
+    {
+        var file = await _client.GetFile(fileId, cancellationToken).ConfigureAwait(false);
+
+        // --local 模式下 getFile 直接返回服务器本地绝对路径，直接复制（零额外传输）。
+        if (!string.IsNullOrEmpty(file.FilePath) && File.Exists(file.FilePath))
+        {
+            File.Copy(file.FilePath, destinationPath, overwrite: true);
+            return;
+        }
+
+        await using var fs = new FileStream(destinationPath, FileMode.Create, FileAccess.Write, FileShare.None, FileBufferSize, useAsync: true);
+        await _client.DownloadFile(file, fs, cancellationToken).ConfigureAwait(false);
     }
 
     /// <inheritdoc />
@@ -144,6 +162,9 @@ public sealed class TelegramClientWrapper : ITelegramClient
                 Text = m.Text,
                 Caption = m.Caption,
                 TriggerMessageId = m.MessageId,
+                DocumentFileId = m.Document?.FileId,
+                DocumentFileName = m.Document?.FileName,
+                DocumentSizeBytes = m.Document?.FileSize,
             };
         }
 

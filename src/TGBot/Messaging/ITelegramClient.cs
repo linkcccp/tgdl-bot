@@ -36,6 +36,21 @@ public sealed class InboundMessage
     public int TriggerMessageId { get; init; }
 
     /// <summary>
+    /// 文档文件 ID（消息携带文档时非空）。
+    /// </summary>
+    public string? DocumentFileId { get; init; }
+
+    /// <summary>
+    /// 文档文件名（可为空）。
+    /// </summary>
+    public string? DocumentFileName { get; init; }
+
+    /// <summary>
+    /// 文档文件字节数（可为空）。
+    /// </summary>
+    public long? DocumentSizeBytes { get; init; }
+
+    /// <summary>
     /// 用于提取 URL 的完整文本（文本 + 说明）。
     /// </summary>
     public string UrlSearchText => string.IsNullOrEmpty(Text)
@@ -123,6 +138,14 @@ public interface ITelegramClient
     /// <param name="caption">说明（可空）。</param>
     /// <param name="cancellationToken">取消令牌。</param>
     Task SendDocumentAsync(long chatId, string filePath, string fileName, string? caption, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// 下载文件到本地路径（--local 模式下优先复制服务器本地文件）。
+    /// </summary>
+    /// <param name="fileId">Telegram 文件 ID。</param>
+    /// <param name="destinationPath">目标路径。</param>
+    /// <param name="cancellationToken">取消令牌。</param>
+    Task DownloadFileAsync(string fileId, string destinationPath, CancellationToken cancellationToken);
 
     /// <summary>
     /// 设置机器人指令菜单。

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Namespace TGBot.Cookie | TGBot API 文档 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Namespace TGBot.Cookie | TGBot API 文档 ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="TGBot.Cookie">
+
+  <h1 id="TGBot_Cookie" data-uid="TGBot.Cookie" class="text-break">Namespace TGBot.Cookie</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">
+Classes
+</h3>
+      <h4><a class="xref" href="TGBot.Cookie.BilibiliCookieSite.html">BilibiliCookieSite</a></h4>
+      <section><p>哔哩哔哩。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.CookieService.html">CookieService</a></h4>
+      <section><p>cookies 服务：待上传状态管理、从 Telegram 下载并校验落盘、按 URL 域名解析 cookie 文件。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.CookieSite.html">CookieSite</a></h4>
+      <section><p>站点抽象：一个站点对应一套 cookies 文件，并声明其匹配的域名。</p>
+<p>新增站点 = 继承本抽象并注册到 <a class="xref" href="TGBot.Cookie.SiteCookieRegistry.html">SiteCookieRegistry</a>，命令与存储零改动。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.CookieSiteUtil.html">CookieSiteUtil</a></h4>
+      <section><p>通用站点辅助。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.CookieStatus.html">CookieStatus</a></h4>
+      <section><p>站点 cookie 状态（用于列表展示）。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.CookieStore.html">CookieStore</a></h4>
+      <section><p>cookies 持久化存储：<code>&lt;storeDir&gt;/&lt;siteKey&gt;.txt</code>，文件 0600、目录 0700。</p>
+<p>站点键仅允许 <code>[a-z0-9_-]</code>，杜绝路径穿越；不使用用户提供的文件名。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.CookieUploadResult.html">CookieUploadResult</a></h4>
+      <section><p>cookie 上传结果。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.DailymotionCookieSite.html">DailymotionCookieSite</a></h4>
+      <section><p>Dailymotion。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.DouyinCookieSite.html">DouyinCookieSite</a></h4>
+      <section><p>抖音。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.FacebookCookieSite.html">FacebookCookieSite</a></h4>
+      <section><p>Facebook。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.InstagramCookieSite.html">InstagramCookieSite</a></h4>
+      <section><p>Instagram。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.RedditCookieSite.html">RedditCookieSite</a></h4>
+      <section><p>Reddit。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.SiteCookieRegistry.html">SiteCookieRegistry</a></h4>
+      <section><p>站点注册表：把规范化主机名 / 站点键映射到 <a class="xref" href="TGBot.Cookie.CookieSite.html">CookieSite</a>。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.SoundcloudCookieSite.html">SoundcloudCookieSite</a></h4>
+      <section><p>SoundCloud。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.TiktokCookieSite.html">TiktokCookieSite</a></h4>
+      <section><p>TikTok。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.TwitchCookieSite.html">TwitchCookieSite</a></h4>
+      <section><p>Twitch。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.TwitterCookieSite.html">TwitterCookieSite</a></h4>
+      <section><p>X（推特）。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.VimeoCookieSite.html">VimeoCookieSite</a></h4>
+      <section><p>Vimeo。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.WeiboCookieSite.html">WeiboCookieSite</a></h4>
+      <section><p>微博。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.XiaohongshuCookieSite.html">XiaohongshuCookieSite</a></h4>
+      <section><p>小红书。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Cookie.YoutubeCookieSite.html">YoutubeCookieSite</a></h4>
+      <section><p>YouTube。</p>
+</section>
+
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      tgdl-bot — .NET Telegram 下载 Bot
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

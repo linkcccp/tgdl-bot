@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using TGBot.Access;
 using TGBot.Config;
+using TGBot.Cookie;
 using TGBot.Download;
 using TGBot.Logging;
 using TGBot.Messaging;
@@ -63,12 +64,38 @@ public static class AppHost
             var tempDir = new TempDirManager(config.DownloadTempDir, logger);
             tempDir.Initialize();
 
+            var cookieStore = new CookieStore(
+                string.IsNullOrEmpty(config.CookieStoreDir) ? Path.Combine(config.DownloadTempDir, "cookies") : config.CookieStoreDir,
+                logger);
+            cookieStore.Initialize();
+            var cookieService = new CookieService(
+                new SiteCookieRegistry(new TGBot.Cookie.CookieSite[]
+                {
+                    new TGBot.Cookie.YoutubeCookieSite(),
+                    new TGBot.Cookie.TwitterCookieSite(),
+                    new TGBot.Cookie.InstagramCookieSite(),
+                    new TGBot.Cookie.TiktokCookieSite(),
+                    new TGBot.Cookie.TwitchCookieSite(),
+                    new TGBot.Cookie.FacebookCookieSite(),
+                    new TGBot.Cookie.BilibiliCookieSite(),
+                    new TGBot.Cookie.DouyinCookieSite(),
+                    new TGBot.Cookie.XiaohongshuCookieSite(),
+                    new TGBot.Cookie.WeiboCookieSite(),
+                    new TGBot.Cookie.SoundcloudCookieSite(),
+                    new TGBot.Cookie.VimeoCookieSite(),
+                    new TGBot.Cookie.DailymotionCookieSite(),
+                    new TGBot.Cookie.RedditCookieSite(),
+                }),
+                cookieStore,
+                client,
+                logger);
+
             var access = new AccessControlService(config.AllowedUserIds, config.TargetChannelIds);
             var urlValidator = new UrlValidator(new DnsHostResolver());
             var upload = new UploadService(client, config.UploadRetries, config.AlsoSendMediaToRequester, logger);
-            var coordinator = new DownloadCoordinator(downloader, gate, registry, tempDir, upload, client, config, logger);
-            var commands = new CommandHandler(client, updater, gate, registry, config.DownloadTempDir, config, runner, logger);
-            var router = new MessageRouter(access, urlValidator, coordinator, commands, client, config, logger);
+            var coordinator = new DownloadCoordinator(downloader, gate, registry, tempDir, upload, client, cookieService, config, logger);
+            var commands = new CommandHandler(client, updater, gate, registry, config.DownloadTempDir, cookieService, config, runner, logger);
+            var router = new MessageRouter(access, urlValidator, coordinator, commands, cookieService, client, config, logger);
             var bot = new BotService(client, router, logger);
 
             logger.Info("正在启动（本地 Bot API Server 模式）…");
