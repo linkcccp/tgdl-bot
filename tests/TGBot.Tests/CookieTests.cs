@@ -171,19 +171,19 @@ public class CookieServiceTests : IDisposable
     }
 
     [Fact]
-    public void ResolveCookieFile_OnlyWhenSaved()
+    public async Task ResolveCookieFile_OnlyWhenSaved()
     {
         Assert.Null(_service.ResolveCookieFile("https://x.com/someone/status/1"));
         Assert.NotNull(_service.BeginPendingUpload(1000, "twitter"));
-        _service.ConsumePendingAsync(1000, "f", 10, CancellationToken.None).GetAwaiter().GetResult();
+        await _service.ConsumePendingAsync(1000, "f", 10, CancellationToken.None);
         Assert.NotNull(_service.ResolveCookieFile("https://x.com/someone/status/1"));
     }
 
     [Fact]
-    public void Clear_RemovesCookie()
+    public async Task Clear_RemovesCookie()
     {
         _service.BeginPendingUpload(1000, "youtube");
-        _service.ConsumePendingAsync(1000, "f", 10, CancellationToken.None).GetAwaiter().GetResult();
+        await _service.ConsumePendingAsync(1000, "f", 10, CancellationToken.None);
         Assert.True(_service.Clear("youtube"));
         Assert.Null(_service.ResolveCookieFile("https://youtube.com/watch?v=1"));
     }

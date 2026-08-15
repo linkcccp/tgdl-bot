@@ -22,7 +22,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadException
     path: ../src/TGBot/Download/DownloadException.cs
-    startLine: 29
+    startLine: 32
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -70,7 +70,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Reason
     path: ../src/TGBot/Download/DownloadException.cs
-    startLine: 34
+    startLine: 37
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -101,7 +101,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UserMessage
     path: ../src/TGBot/Download/DownloadException.cs
-    startLine: 39
+    startLine: 42
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -132,7 +132,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Download/DownloadException.cs
-    startLine: 47
+    startLine: 50
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download

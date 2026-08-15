@@ -90,7 +90,7 @@ docker logs -f tgdl-bot
 | `TGDL_SEND_TO_REQUESTER` | 否 | 私聊请求者是否也收媒体 |
 | `TGDL_ALLOW_PRIVATE_URLS` | 否 | 允许私网 URL（默认否，SSRF 防护） |
 | `TGDL_ALLOW_PLAYLISTS` | 否 | 允许播放列表 |
-| `TGDL_MERGE_FORMAT` | 否 | 合并容器，默认 mp4 |
+| `TGDL_MERGE_FORMAT` | 否 | 合并容器（`/` 分隔候选，默认 `mp4/mkv`，封装不了自动退 mkv） |
 | `TGDL_MAX_MEDIA_SIZE` | 否 | 可上传最大字节数（默认接近 2GB） |
 | `TGDL_UPDATE_YTDLP` / `TGDL_UPDATE_FFMPEG` | 否 | 是否参与 /update |
 

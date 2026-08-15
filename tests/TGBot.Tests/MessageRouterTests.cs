@@ -273,7 +273,7 @@ public class MessageRouterTests
         }, CancellationToken.None);
 
         await Task.Delay(300);
-        Assert.Empty(client.Messages.Where(m => m.Text.Contains("未获得授权", StringComparison.Ordinal)));
+        Assert.DoesNotContain(client.Messages, m => m.Text.Contains("未获得授权", StringComparison.Ordinal));
     }
 
     [Fact]

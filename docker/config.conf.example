@@ -61,8 +61,8 @@ AllowPrivateUrls = false
 # 是否允许下载播放列表（默认关闭）
 AllowPlaylists = false
 
-# ffmpeg 合并/转封装容器格式（默认 mp4，Telegram 兼容性最好）
-MergeFormat = mp4
+# ffmpeg 合并/转封装容器格式（可用 / 分隔的候选列表，优先 mp4，封装不了自动退 mkv）
+MergeFormat = mp4/mkv
 
 # 是否在 /update 时更新 yt-dlp 与 ffmpeg
 UpdateYtDlp = true

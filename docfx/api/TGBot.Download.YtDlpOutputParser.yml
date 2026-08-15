@@ -7,6 +7,7 @@ items:
   children:
   - TGBot.Download.YtDlpOutputParser.FileMarker
   - TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage(System.String)
+  - TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage(System.String)
   - TGBot.Download.YtDlpOutputParser.IsTooLargeMessage(System.String)
   - TGBot.Download.YtDlpOutputParser.MetaMarker
   - TGBot.Download.YtDlpOutputParser.ParseMeta(System.String)
@@ -246,6 +247,44 @@ items:
   nameWithType.vb: YtDlpOutputParser.IsAuthRequiredMessage(String)
   fullName.vb: TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage(String)
   name.vb: IsAuthRequiredMessage(String)
+- uid: TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage(System.String)
+  commentId: M:TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage(System.String)
+  id: IsFormatUnavailableMessage(System.String)
+  parent: TGBot.Download.YtDlpOutputParser
+  langs:
+  - csharp
+  - vb
+  name: IsFormatUnavailableMessage(string)
+  nameWithType: YtDlpOutputParser.IsFormatUnavailableMessage(string)
+  fullName: TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage(string)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Download/YtDlpOutputParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: IsFormatUnavailableMessage
+    path: ../src/TGBot/Download/YtDlpOutputParser.cs
+    startLine: 106
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 判断输出是否表示可用格式不足（如 Requested format is not available）。
+  example: []
+  syntax:
+    content: public static bool IsFormatUnavailableMessage(string text)
+    parameters:
+    - id: text
+      type: System.String
+      description: 输出文本（含错误）。
+    return:
+      type: System.Boolean
+      description: 格式不足时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。
+    content.vb: Public Shared Function IsFormatUnavailableMessage(text As String) As Boolean
+  overload: TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage*
+  nameWithType.vb: YtDlpOutputParser.IsFormatUnavailableMessage(String)
+  fullName.vb: TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage(String)
+  name.vb: IsFormatUnavailableMessage(String)
 - uid: TGBot.Download.YtDlpOutputParser.ParseMeta(System.String)
   commentId: M:TGBot.Download.YtDlpOutputParser.ParseMeta(System.String)
   id: ParseMeta(System.String)
@@ -264,7 +303,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseMeta
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
-    startLine: 106
+    startLine: 114
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -591,6 +630,12 @@ references:
   name: IsAuthRequiredMessage
   nameWithType: YtDlpOutputParser.IsAuthRequiredMessage
   fullName: TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage
+- uid: TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage*
+  commentId: Overload:TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage
+  href: TGBot.Download.YtDlpOutputParser.html#TGBot_Download_YtDlpOutputParser_IsFormatUnavailableMessage_System_String_
+  name: IsFormatUnavailableMessage
+  nameWithType: YtDlpOutputParser.IsFormatUnavailableMessage
+  fullName: TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage
 - uid: TGBot.Download.YtDlpOutputParser.ParseMeta*
   commentId: Overload:TGBot.Download.YtDlpOutputParser.ParseMeta
   href: TGBot.Download.YtDlpOutputParser.html#TGBot_Download_YtDlpOutputParser_ParseMeta_System_String_

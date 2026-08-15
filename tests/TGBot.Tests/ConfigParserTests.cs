@@ -164,7 +164,7 @@ public class ConfigParserTests
         Assert.Equal(3, result.Config.DownloadRetries);
         Assert.False(result.Config.ExtractAudio);
         Assert.True(result.Config.UpdateYtDlp);
-        Assert.Equal("mp4", result.Config.MergeFormat);
+        Assert.Equal("mp4/mkv", result.Config.MergeFormat);
         Assert.Null(result.Config.LogFile);
     }
 

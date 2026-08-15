@@ -100,6 +100,14 @@ public static class YtDlpOutputParser
     }
 
     /// <summary>
+    /// 判断输出是否表示可用格式不足（如 Requested format is not available）。
+    /// </summary>
+    /// <param name="text">输出文本（含错误）。</param>
+    /// <returns>格式不足时返回 <see langword="true"/>。</returns>
+    public static bool IsFormatUnavailableMessage(string text)
+        => text.Contains("requested format is not available", StringComparison.OrdinalIgnoreCase);
+
+    /// <summary>
     /// 从元数据行提取标题、时长与文件大小。
     /// </summary>
     /// <param name="line">形如 <c>META\x1fid\x1f标题\x1fext\x1fduration\x1fsize_approx\x1fsize</c> 的行。</param>

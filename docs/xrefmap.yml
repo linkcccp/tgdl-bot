@@ -2089,6 +2089,12 @@ references:
   commentId: F:TGBot.Download.DownloadFailureReason.Failed
   fullName: TGBot.Download.DownloadFailureReason.Failed
   nameWithType: DownloadFailureReason.Failed
+- uid: TGBot.Download.DownloadFailureReason.FormatUnavailable
+  name: FormatUnavailable
+  href: api/TGBot.Download.DownloadFailureReason.html#TGBot_Download_DownloadFailureReason_FormatUnavailable
+  commentId: F:TGBot.Download.DownloadFailureReason.FormatUnavailable
+  fullName: TGBot.Download.DownloadFailureReason.FormatUnavailable
+  nameWithType: DownloadFailureReason.FormatUnavailable
 - uid: TGBot.Download.DownloadFailureReason.NoDiskSpace
   name: NoDiskSpace
   href: api/TGBot.Download.DownloadFailureReason.html#TGBot_Download_DownloadFailureReason_NoDiskSpace
@@ -2726,6 +2732,22 @@ references:
   isSpec: "True"
   fullName: TGBot.Download.YtDlpOutputParser.IsAuthRequiredMessage
   nameWithType: YtDlpOutputParser.IsAuthRequiredMessage
+- uid: TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage(System.String)
+  name: IsFormatUnavailableMessage(string)
+  href: api/TGBot.Download.YtDlpOutputParser.html#TGBot_Download_YtDlpOutputParser_IsFormatUnavailableMessage_System_String_
+  commentId: M:TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage(System.String)
+  name.vb: IsFormatUnavailableMessage(String)
+  fullName: TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage(string)
+  fullName.vb: TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage(String)
+  nameWithType: YtDlpOutputParser.IsFormatUnavailableMessage(string)
+  nameWithType.vb: YtDlpOutputParser.IsFormatUnavailableMessage(String)
+- uid: TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage*
+  name: IsFormatUnavailableMessage
+  href: api/TGBot.Download.YtDlpOutputParser.html#TGBot_Download_YtDlpOutputParser_IsFormatUnavailableMessage_
+  commentId: Overload:TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage
+  isSpec: "True"
+  fullName: TGBot.Download.YtDlpOutputParser.IsFormatUnavailableMessage
+  nameWithType: YtDlpOutputParser.IsFormatUnavailableMessage
 - uid: TGBot.Download.YtDlpOutputParser.IsTooLargeMessage(System.String)
   name: IsTooLargeMessage(string)
   href: api/TGBot.Download.YtDlpOutputParser.html#TGBot_Download_YtDlpOutputParser_IsTooLargeMessage_System_String_
@@ -4360,6 +4382,12 @@ references:
   commentId: F:TGBot.Texts.UserTexts.FileTooLarge
   fullName: TGBot.Texts.UserTexts.FileTooLarge
   nameWithType: UserTexts.FileTooLarge
+- uid: TGBot.Texts.UserTexts.FormatUnavailable
+  name: FormatUnavailable
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_FormatUnavailable
+  commentId: F:TGBot.Texts.UserTexts.FormatUnavailable
+  fullName: TGBot.Texts.UserTexts.FormatUnavailable
+  nameWithType: UserTexts.FormatUnavailable
 - uid: TGBot.Texts.UserTexts.Help
   name: Help
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_Help

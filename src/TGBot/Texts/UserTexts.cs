@@ -76,6 +76,10 @@ public static class UserTexts
     public const string AuthRequired =
         "目标站点要求登录/认证（如 YouTube 机器人检测）。请通过 /cookie 上传该站点的 cookies 后重试。";
 
+    /// <summary>可用格式不足提示。</summary>
+    public const string FormatUnavailable =
+        "该视频可用格式不足，无法按当前配置下载（可能仅限登录/地区，或编码无法封装）。";
+
     /// <summary>cookie 使用说明。</summary>
     public const string CookieUsage =
         "用法：\n"

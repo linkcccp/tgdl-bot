@@ -198,6 +198,14 @@ public sealed class YtDlpDownloader : IDownloader
                     $"站点要求认证：{detail}");
             }
 
+            if (YtDlpOutputParser.IsFormatUnavailableMessage(detail))
+            {
+                throw new DownloadException(
+                    DownloadFailureReason.FormatUnavailable,
+                    UserTexts.FormatUnavailable,
+                    $"可用格式不足：{detail}");
+            }
+
             throw new DownloadException(
                 DownloadFailureReason.Failed,
                 UserTexts.DownloadFailed,

@@ -23,7 +23,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MetaLine
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
-    startLine: 148
+    startLine: 156
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -61,7 +61,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
-    startLine: 148
+    startLine: 156
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -102,7 +102,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Title
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
-    startLine: 148
+    startLine: 156
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -133,7 +133,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DurationSeconds
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
-    startLine: 148
+    startLine: 156
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -164,7 +164,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SizeBytes
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
-    startLine: 148
+    startLine: 156
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download

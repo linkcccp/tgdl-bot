@@ -22,6 +22,9 @@ public enum DownloadFailureReason
 
     /// <summary>目标站点要求登录/认证（如 YouTube 机器人检测），配置 cookies 后可解决。</summary>
     AuthRequired,
+
+    /// <summary>可用格式不足或无法按当前配置封装（如仅 VP9/Opus 无法合入 mp4）。</summary>
+    FormatUnavailable,
 }
 
 /// <summary>

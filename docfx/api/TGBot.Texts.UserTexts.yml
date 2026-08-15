@@ -22,6 +22,7 @@ items:
   - TGBot.Texts.UserTexts.DownloadProgress
   - TGBot.Texts.UserTexts.Downloading
   - TGBot.Texts.UserTexts.FileTooLarge
+  - TGBot.Texts.UserTexts.FormatUnavailable
   - TGBot.Texts.UserTexts.Help
   - TGBot.Texts.UserTexts.NoDiskSpace
   - TGBot.Texts.UserTexts.NoValidUrl
@@ -540,6 +541,35 @@ items:
     return:
       type: System.String
     content.vb: Public Const AuthRequired As String = "目标站点要求登录/认证（如 YouTube 机器人检测）。请通过 /cookie 上传该站点的 cookies 后重试。"
+- uid: TGBot.Texts.UserTexts.FormatUnavailable
+  commentId: F:TGBot.Texts.UserTexts.FormatUnavailable
+  id: FormatUnavailable
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: FormatUnavailable
+  nameWithType: UserTexts.FormatUnavailable
+  fullName: TGBot.Texts.UserTexts.FormatUnavailable
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: FormatUnavailable
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 79
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 可用格式不足提示。
+  example: []
+  syntax:
+    content: public const string FormatUnavailable = "该视频可用格式不足，无法按当前配置下载（可能仅限登录/地区，或编码无法封装）。"
+    return:
+      type: System.String
+    content.vb: Public Const FormatUnavailable As String = "该视频可用格式不足，无法按当前配置下载（可能仅限登录/地区，或编码无法封装）。"
 - uid: TGBot.Texts.UserTexts.CookieUsage
   commentId: F:TGBot.Texts.UserTexts.CookieUsage
   id: CookieUsage
@@ -558,7 +588,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieUsage
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 79
+    startLine: 83
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -587,7 +617,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookiePrompt
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 87
+    startLine: 91
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -616,7 +646,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieSaved
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 91
+    startLine: 95
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -645,7 +675,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieSavedSuspicious
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 95
+    startLine: 99
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -674,7 +704,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieSaveFailed
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 99
+    startLine: 103
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -703,7 +733,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieDeleted
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 103
+    startLine: 107
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -732,7 +762,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieNone
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 107
+    startLine: 111
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -761,7 +791,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieListTemplate
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 111
+    startLine: 115
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -790,7 +820,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieUnknownSite
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 115
+    startLine: 119
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -819,7 +849,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieFileTooLarge
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 119
+    startLine: 123
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -848,7 +878,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieInvalidFile
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 123
+    startLine: 127
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -877,7 +907,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieExpired
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 127
+    startLine: 131
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -906,7 +936,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateNotNeeded
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 131
+    startLine: 135
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -935,7 +965,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateDone
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 135
+    startLine: 139
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -964,7 +994,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdatePartialDone
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 139
+    startLine: 143
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -993,7 +1023,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateFailed
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 143
+    startLine: 147
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -1022,7 +1052,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateDenied
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 147
+    startLine: 151
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
@@ -1051,7 +1081,7 @@ items:
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: StatusTemplate
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 151
+    startLine: 155
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts

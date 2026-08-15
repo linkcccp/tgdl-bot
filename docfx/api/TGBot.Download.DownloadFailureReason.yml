@@ -8,6 +8,7 @@ items:
   - TGBot.Download.DownloadFailureReason.AuthRequired
   - TGBot.Download.DownloadFailureReason.Cancelled
   - TGBot.Download.DownloadFailureReason.Failed
+  - TGBot.Download.DownloadFailureReason.FormatUnavailable
   - TGBot.Download.DownloadFailureReason.NoDiskSpace
   - TGBot.Download.DownloadFailureReason.Timeout
   - TGBot.Download.DownloadFailureReason.TooLarge
@@ -200,6 +201,34 @@ items:
   example: []
   syntax:
     content: AuthRequired = 5
+    return:
+      type: TGBot.Download.DownloadFailureReason
+- uid: TGBot.Download.DownloadFailureReason.FormatUnavailable
+  commentId: F:TGBot.Download.DownloadFailureReason.FormatUnavailable
+  id: FormatUnavailable
+  parent: TGBot.Download.DownloadFailureReason
+  langs:
+  - csharp
+  - vb
+  name: FormatUnavailable
+  nameWithType: DownloadFailureReason.FormatUnavailable
+  fullName: TGBot.Download.DownloadFailureReason.FormatUnavailable
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Download/DownloadException.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: FormatUnavailable
+    path: ../src/TGBot/Download/DownloadException.cs
+    startLine: 26
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Download
+  summary: 可用格式不足或无法按当前配置封装（如仅 VP9/Opus 无法合入 mp4）。
+  example: []
+  syntax:
+    content: FormatUnavailable = 6
     return:
       type: TGBot.Download.DownloadFailureReason
 references:

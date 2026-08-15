@@ -71,8 +71,8 @@ public sealed class AppConfig
     /// <summary>是否允许下载播放列表（false 时添加 --no-playlist）。</summary>
     public bool AllowPlaylists { get; init; }
 
-    /// <summary>ffmpeg 合并/转封装容器格式（默认 mp4，Telegram 兼容性最好）。</summary>
-    public string MergeFormat { get; init; } = "mp4";
+    /// <summary>ffmpeg 合并/转封装容器格式（可用 <c>/</c> 分隔的候选列表，如 <c>mp4/mkv</c>）。</summary>
+    public string MergeFormat { get; init; } = "mp4/mkv";
 
     /// <summary>是否在 /update 时更新 yt-dlp。</summary>
     public bool UpdateYtDlp { get; init; } = true;

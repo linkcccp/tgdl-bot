@@ -149,7 +149,7 @@ public static class ConfigParser
             AllowPrivateUrls = GetBool(values, "AllowPrivateUrls", false),
             MaxMediaSizeBytes = GetLong(values, "MaxMediaSizeBytes", 1_900_000_000L),
             AllowPlaylists = GetBool(values, "AllowPlaylists", false),
-            MergeFormat = GetString(values, "MergeFormat", "mp4"),
+            MergeFormat = GetString(values, "MergeFormat", "mp4/mkv"),
             UpdateYtDlp = GetBool(values, "UpdateYtDlp", true),
             UpdateFfmpeg = GetBool(values, "UpdateFfmpeg", true),
         };
@@ -221,9 +221,10 @@ public static class ConfigParser
             throw new ConfigParseException("配置项 MaxMediaSizeBytes 必须在 1MB 到 2GB 之间。");
         }
 
-        if (c.MergeFormat.Length == 0 || c.MergeFormat.Length > 10)
+        if (c.MergeFormat.Length == 0 || c.MergeFormat.Length > 30 ||
+            !c.MergeFormat.All(ch => char.IsLetterOrDigit(ch) || ch == '/'))
         {
-            throw new ConfigParseException("配置项 MergeFormat 非法。");
+            throw new ConfigParseException("配置项 MergeFormat 非法（应为 mp4/mkv 等格式列表）。");
         }
 
         if (c.YtDlpExtraArgs.Length > 512)

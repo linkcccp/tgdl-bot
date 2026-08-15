@@ -739,7 +739,7 @@ items:
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
-  summary: ffmpeg 合并/转封装容器格式（默认 mp4，Telegram 兼容性最好）。
+  summary: ffmpeg 合并/转封装容器格式（可用 <code>/</code> 分隔的候选列表，如 <code>mp4/mkv</code>）。
   example: []
   syntax:
     content: public string MergeFormat { get; init; }

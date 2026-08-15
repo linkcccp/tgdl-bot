@@ -171,6 +171,7 @@ public sealed class DownloadCoordinator
 
         var attempts = _config.DownloadRetries + 1;
         var lastError = string.Empty;
+        var mergeFallbackTried = false;
 
         for (var attempt = 1; attempt <= attempts; attempt++)
         {
@@ -188,6 +189,19 @@ public sealed class DownloadCoordinator
                     or DownloadFailureReason.Cancelled
                     or DownloadFailureReason.AuthRequired)
             {
+                throw;
+            }
+            catch (DownloadException ex) when (ex.Reason == DownloadFailureReason.FormatUnavailable)
+            {
+                // 格式不足（如仅 VP9/Opus 无法合入 mp4）：换 mkv 回退一次，避免用相同参数盲目重试
+                if (!mergeFallbackTried)
+                {
+                    mergeFallbackTried = true;
+                    options = options with { MergeFormat = "mkv" };
+                    _logger.Warn($"可用格式不足，改用 mkv 重试：{MaskUrl(url)}");
+                    continue;
+                }
+
                 throw;
             }
             catch (DownloadException ex)
