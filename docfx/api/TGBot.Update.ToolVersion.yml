@@ -20,8 +20,12 @@ items:
   fullName: TGBot.Update.ToolVersion
   type: Class
   source:
+    remote:
+      path: src/TGBot/Update/ToolVersion.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ToolVersion
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolVersion.cs
+    path: ../src/TGBot/Update/ToolVersion.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -53,8 +57,12 @@ items:
   fullName: TGBot.Update.ToolVersion.ToolVersion(System.Collections.Generic.IReadOnlyList<int>, string?)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Update/ToolVersion.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolVersion.cs
+    path: ../src/TGBot/Update/ToolVersion.cs
     startLine: 16
   assemblies:
   - tgdl-bot
@@ -87,8 +95,12 @@ items:
   fullName: TGBot.Update.ToolVersion.Raw
   type: Property
   source:
+    remote:
+      path: src/TGBot/Update/ToolVersion.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Raw
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolVersion.cs
+    path: ../src/TGBot/Update/ToolVersion.cs
     startLine: 25
   assemblies:
   - tgdl-bot
@@ -114,8 +126,12 @@ items:
   fullName: TGBot.Update.ToolVersion.Suffix
   type: Property
   source:
+    remote:
+      path: src/TGBot/Update/ToolVersion.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Suffix
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolVersion.cs
+    path: ../src/TGBot/Update/ToolVersion.cs
     startLine: 30
   assemblies:
   - tgdl-bot
@@ -141,8 +157,12 @@ items:
   fullName: TGBot.Update.ToolVersion.TryParse(string?, out TGBot.Update.ToolVersion)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/ToolVersion.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TryParse
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolVersion.cs
+    path: ../src/TGBot/Update/ToolVersion.cs
     startLine: 38
   assemblies:
   - tgdl-bot
@@ -178,8 +198,12 @@ items:
   fullName: TGBot.Update.ToolVersion.Parse(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/ToolVersion.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Parse
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolVersion.cs
+    path: ../src/TGBot/Update/ToolVersion.cs
     startLine: 107
   assemblies:
   - tgdl-bot
@@ -216,8 +240,12 @@ items:
   fullName: TGBot.Update.ToolVersion.CompareTo(TGBot.Update.ToolVersion?)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/ToolVersion.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CompareTo
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolVersion.cs
+    path: ../src/TGBot/Update/ToolVersion.cs
     startLine: 122
   assemblies:
   - tgdl-bot
@@ -252,8 +280,12 @@ items:
   fullName: TGBot.Update.ToolVersion.ToString()
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/ToolVersion.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ToString
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolVersion.cs
+    path: ../src/TGBot/Update/ToolVersion.cs
     startLine: 144
   assemblies:
   - tgdl-bot

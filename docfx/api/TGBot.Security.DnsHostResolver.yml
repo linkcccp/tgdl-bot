@@ -14,8 +14,12 @@ items:
   fullName: TGBot.Security.DnsHostResolver
   type: Class
   source:
+    remote:
+      path: src/TGBot/Security/HostResolver.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DnsHostResolver
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/HostResolver.cs
+    path: ../src/TGBot/Security/HostResolver.cs
     startLine: 21
   assemblies:
   - tgdl-bot
@@ -48,8 +52,12 @@ items:
   fullName: TGBot.Security.DnsHostResolver.ResolveAsync(string, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Security/HostResolver.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ResolveAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/HostResolver.cs
+    path: ../src/TGBot/Security/HostResolver.cs
     startLine: 24
   assemblies:
   - tgdl-bot

@@ -18,8 +18,12 @@ items:
   fullName: TGBot.Security.TempDirManager
   type: Class
   source:
+    remote:
+      path: src/TGBot/Security/TempDirManager.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TempDirManager
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/TempDirManager.cs
+    path: ../src/TGBot/Security/TempDirManager.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -50,8 +54,12 @@ items:
   fullName: TGBot.Security.TempDirManager.TempDirManager(string, TGBot.Logging.IAppLogger)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Security/TempDirManager.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/TempDirManager.cs
+    path: ../src/TGBot/Security/TempDirManager.cs
     startLine: 17
   assemblies:
   - tgdl-bot
@@ -84,8 +92,12 @@ items:
   fullName: TGBot.Security.TempDirManager.Root
   type: Property
   source:
+    remote:
+      path: src/TGBot/Security/TempDirManager.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Root
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/TempDirManager.cs
+    path: ../src/TGBot/Security/TempDirManager.cs
     startLine: 26
   assemblies:
   - tgdl-bot
@@ -111,8 +123,12 @@ items:
   fullName: TGBot.Security.TempDirManager.Initialize()
   type: Method
   source:
+    remote:
+      path: src/TGBot/Security/TempDirManager.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Initialize
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/TempDirManager.cs
+    path: ../src/TGBot/Security/TempDirManager.cs
     startLine: 32
   assemblies:
   - tgdl-bot
@@ -139,8 +155,12 @@ items:
   fullName: TGBot.Security.TempDirManager.CreateJobDirectory()
   type: Method
   source:
+    remote:
+      path: src/TGBot/Security/TempDirManager.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CreateJobDirectory
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/TempDirManager.cs
+    path: ../src/TGBot/Security/TempDirManager.cs
     startLine: 57
   assemblies:
   - tgdl-bot
@@ -166,8 +186,12 @@ items:
   fullName: TGBot.Security.TempDirManager.CleanupJobDirectory(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Security/TempDirManager.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CleanupJobDirectory
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/TempDirManager.cs
+    path: ../src/TGBot/Security/TempDirManager.cs
     startLine: 73
   assemblies:
   - tgdl-bot

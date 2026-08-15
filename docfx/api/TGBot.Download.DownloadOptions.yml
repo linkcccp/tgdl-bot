@@ -23,8 +23,12 @@ items:
   fullName: TGBot.Download.DownloadOptions
   type: Class
   source:
+    remote:
+      path: src/TGBot/Download/DownloadOptions.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadOptions
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadOptions.cs
+    path: ../src/TGBot/Download/DownloadOptions.cs
     startLine: 14
   assemblies:
   - tgdl-bot
@@ -57,8 +61,12 @@ items:
   fullName: TGBot.Download.DownloadOptions.DownloadOptions(string, string, string, string?, string, bool, bool, long, System.TimeSpan)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Download/DownloadOptions.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadOptions.cs
+    path: ../src/TGBot/Download/DownloadOptions.cs
     startLine: 14
   assemblies:
   - tgdl-bot
@@ -112,8 +120,12 @@ items:
   fullName: TGBot.Download.DownloadOptions.Url
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadOptions.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Url
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadOptions.cs
+    path: ../src/TGBot/Download/DownloadOptions.cs
     startLine: 15
   assemblies:
   - tgdl-bot
@@ -139,8 +151,12 @@ items:
   fullName: TGBot.Download.DownloadOptions.JobDir
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadOptions.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: JobDir
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadOptions.cs
+    path: ../src/TGBot/Download/DownloadOptions.cs
     startLine: 16
   assemblies:
   - tgdl-bot
@@ -166,8 +182,12 @@ items:
   fullName: TGBot.Download.DownloadOptions.YtDlpPath
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadOptions.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpPath
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadOptions.cs
+    path: ../src/TGBot/Download/DownloadOptions.cs
     startLine: 17
   assemblies:
   - tgdl-bot
@@ -193,8 +213,12 @@ items:
   fullName: TGBot.Download.DownloadOptions.FfmpegDir
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadOptions.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FfmpegDir
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadOptions.cs
+    path: ../src/TGBot/Download/DownloadOptions.cs
     startLine: 18
   assemblies:
   - tgdl-bot
@@ -220,8 +244,12 @@ items:
   fullName: TGBot.Download.DownloadOptions.MergeFormat
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadOptions.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MergeFormat
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadOptions.cs
+    path: ../src/TGBot/Download/DownloadOptions.cs
     startLine: 19
   assemblies:
   - tgdl-bot
@@ -247,8 +275,12 @@ items:
   fullName: TGBot.Download.DownloadOptions.ExtractAudio
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadOptions.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ExtractAudio
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadOptions.cs
+    path: ../src/TGBot/Download/DownloadOptions.cs
     startLine: 20
   assemblies:
   - tgdl-bot
@@ -274,8 +306,12 @@ items:
   fullName: TGBot.Download.DownloadOptions.AllowPlaylists
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadOptions.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AllowPlaylists
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadOptions.cs
+    path: ../src/TGBot/Download/DownloadOptions.cs
     startLine: 21
   assemblies:
   - tgdl-bot
@@ -301,8 +337,12 @@ items:
   fullName: TGBot.Download.DownloadOptions.MaxSizeBytes
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadOptions.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MaxSizeBytes
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadOptions.cs
+    path: ../src/TGBot/Download/DownloadOptions.cs
     startLine: 22
   assemblies:
   - tgdl-bot
@@ -328,8 +368,12 @@ items:
   fullName: TGBot.Download.DownloadOptions.Timeout
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadOptions.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Timeout
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadOptions.cs
+    path: ../src/TGBot/Download/DownloadOptions.cs
     startLine: 23
   assemblies:
   - tgdl-bot

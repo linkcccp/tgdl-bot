@@ -15,8 +15,12 @@ items:
   fullName: TGBot.Application.CommandHandler
   type: Class
   source:
+    remote:
+      path: src/TGBot/Application/CommandHandler.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CommandHandler
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Application/CommandHandler.cs
+    path: ../src/TGBot/Application/CommandHandler.cs
     startLine: 14
   assemblies:
   - tgdl-bot
@@ -47,8 +51,12 @@ items:
   fullName: TGBot.Application.CommandHandler.CommandHandler(TGBot.Messaging.ITelegramClient, TGBot.Update.IUpdater, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, string, TGBot.Config.AppConfig, TGBot.Update.IProcessRunner, TGBot.Logging.IAppLogger)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Application/CommandHandler.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Application/CommandHandler.cs
+    path: ../src/TGBot/Application/CommandHandler.cs
     startLine: 40
   assemblies:
   - tgdl-bot
@@ -99,8 +107,12 @@ items:
   fullName: TGBot.Application.CommandHandler.HandleAsync(TGBot.Messaging.InboundMessage, string, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Application/CommandHandler.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: HandleAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Application/CommandHandler.cs
+    path: ../src/TGBot/Application/CommandHandler.cs
     startLine: 67
   assemblies:
   - tgdl-bot

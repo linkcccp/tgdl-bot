@@ -378,7 +378,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "TGBot.Download.YtDlpDownloader",
-      "Summary": "<p sourcefile=\"api/TGBot.Download.YtDlpDownloader.yml\" sourcestartlinenumber=\"1\">通过 <xref href=\"System.Diagnostics.Process.Start\" data-throw-if-not-resolved=\"false\"></xref> 调用系统安装的 yt-dlp 二进制实现下载。</p>\n<p>不内嵌 yt-dlp/ffmpeg，使用 <code>ArgumentList</code> 避免 shell 注入。</p>\n"
+      "Summary": "<p sourcefile=\"api/TGBot.Download.YtDlpDownloader.yml\" sourcestartlinenumber=\"1\">通过 <xref href=\"System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)\" data-throw-if-not-resolved=\"false\"></xref> 调用系统安装的 yt-dlp 二进制实现下载。</p>\n<p>不内嵌 yt-dlp/ffmpeg，使用 <code>ArgumentList</code> 避免 shell 注入。</p>\n"
     },
     {
       "type": "ManagedReference",

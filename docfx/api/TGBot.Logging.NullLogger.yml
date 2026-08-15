@@ -21,8 +21,12 @@ items:
   fullName: TGBot.Logging.NullLogger
   type: Class
   source:
+    remote:
+      path: src/TGBot/Logging/NullLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NullLogger
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/NullLogger.cs
+    path: ../src/TGBot/Logging/NullLogger.cs
     startLine: 5
   assemblies:
   - tgdl-bot
@@ -56,8 +60,12 @@ items:
   fullName: TGBot.Logging.NullLogger.Instance
   type: Field
   source:
+    remote:
+      path: src/TGBot/Logging/NullLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Instance
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/NullLogger.cs
+    path: ../src/TGBot/Logging/NullLogger.cs
     startLine: 10
   assemblies:
   - tgdl-bot
@@ -81,8 +89,12 @@ items:
   fullName: TGBot.Logging.NullLogger.Log(TGBot.Logging.LogLevel, string, System.Exception?)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/NullLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Log
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/NullLogger.cs
+    path: ../src/TGBot/Logging/NullLogger.cs
     startLine: 17
   assemblies:
   - tgdl-bot
@@ -120,8 +132,12 @@ items:
   fullName: TGBot.Logging.NullLogger.Trace(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/NullLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Trace
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/NullLogger.cs
+    path: ../src/TGBot/Logging/NullLogger.cs
     startLine: 22
   assemblies:
   - tgdl-bot
@@ -153,8 +169,12 @@ items:
   fullName: TGBot.Logging.NullLogger.Debug(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/NullLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Debug
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/NullLogger.cs
+    path: ../src/TGBot/Logging/NullLogger.cs
     startLine: 27
   assemblies:
   - tgdl-bot
@@ -186,8 +206,12 @@ items:
   fullName: TGBot.Logging.NullLogger.Info(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/NullLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Info
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/NullLogger.cs
+    path: ../src/TGBot/Logging/NullLogger.cs
     startLine: 32
   assemblies:
   - tgdl-bot
@@ -219,8 +243,12 @@ items:
   fullName: TGBot.Logging.NullLogger.Warn(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/NullLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Warn
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/NullLogger.cs
+    path: ../src/TGBot/Logging/NullLogger.cs
     startLine: 37
   assemblies:
   - tgdl-bot
@@ -252,8 +280,12 @@ items:
   fullName: TGBot.Logging.NullLogger.Error(string, System.Exception?)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/NullLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Error
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/NullLogger.cs
+    path: ../src/TGBot/Logging/NullLogger.cs
     startLine: 42
   assemblies:
   - tgdl-bot
@@ -288,8 +320,12 @@ items:
   fullName: TGBot.Logging.NullLogger.Dispose()
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/NullLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Dispose
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/NullLogger.cs
+    path: ../src/TGBot/Logging/NullLogger.cs
     startLine: 47
   assemblies:
   - tgdl-bot

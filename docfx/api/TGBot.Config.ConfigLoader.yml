@@ -17,8 +17,12 @@ items:
   fullName: TGBot.Config.ConfigLoader
   type: Class
   source:
+    remote:
+      path: src/TGBot/Config/ConfigLoader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigLoader
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigLoader.cs
+    path: ../src/TGBot/Config/ConfigLoader.cs
     startLine: 22
   assemblies:
   - tgdl-bot
@@ -56,8 +60,12 @@ items:
   fullName: TGBot.Config.ConfigLoader.EnvVarName
   type: Field
   source:
+    remote:
+      path: src/TGBot/Config/ConfigLoader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: EnvVarName
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigLoader.cs
+    path: ../src/TGBot/Config/ConfigLoader.cs
     startLine: 25
   assemblies:
   - tgdl-bot
@@ -81,8 +89,12 @@ items:
   fullName: TGBot.Config.ConfigLoader.DefaultFileName
   type: Field
   source:
+    remote:
+      path: src/TGBot/Config/ConfigLoader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DefaultFileName
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigLoader.cs
+    path: ../src/TGBot/Config/ConfigLoader.cs
     startLine: 28
   assemblies:
   - tgdl-bot
@@ -106,8 +118,12 @@ items:
   fullName: TGBot.Config.ConfigLoader.Locate(string?)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Config/ConfigLoader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Locate
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigLoader.cs
+    path: ../src/TGBot/Config/ConfigLoader.cs
     startLine: 36
   assemblies:
   - tgdl-bot
@@ -144,8 +160,12 @@ items:
   fullName: TGBot.Config.ConfigLoader.Load(string?)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Config/ConfigLoader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Load
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigLoader.cs
+    path: ../src/TGBot/Config/ConfigLoader.cs
     startLine: 80
   assemblies:
   - tgdl-bot

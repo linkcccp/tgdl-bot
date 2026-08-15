@@ -16,8 +16,12 @@ items:
   fullName: TGBot.Config.ConfigParseResult
   type: Class
   source:
+    remote:
+      path: src/TGBot/Config/ConfigParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigParseResult
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigParser.cs
+    path: ../src/TGBot/Config/ConfigParser.cs
     startLine: 11
   assemblies:
   - tgdl-bot
@@ -50,8 +54,12 @@ items:
   fullName: TGBot.Config.ConfigParseResult.ConfigParseResult(TGBot.Config.AppConfig, System.Collections.Generic.IReadOnlyList<string>)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Config/ConfigParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigParser.cs
+    path: ../src/TGBot/Config/ConfigParser.cs
     startLine: 11
   assemblies:
   - tgdl-bot
@@ -84,8 +92,12 @@ items:
   fullName: TGBot.Config.ConfigParseResult.Config
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/ConfigParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Config
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigParser.cs
+    path: ../src/TGBot/Config/ConfigParser.cs
     startLine: 11
   assemblies:
   - tgdl-bot
@@ -111,8 +123,12 @@ items:
   fullName: TGBot.Config.ConfigParseResult.Warnings
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/ConfigParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Warnings
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigParser.cs
+    path: ../src/TGBot/Config/ConfigParser.cs
     startLine: 11
   assemblies:
   - tgdl-bot

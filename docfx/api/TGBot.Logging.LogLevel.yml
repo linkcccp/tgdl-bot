@@ -18,8 +18,12 @@ items:
   fullName: TGBot.Logging.LogLevel
   type: Enum
   source:
+    remote:
+      path: src/TGBot/Logging/LogLevel.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LogLevel
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/LogLevel.cs
+    path: ../src/TGBot/Logging/LogLevel.cs
     startLine: 5
   assemblies:
   - tgdl-bot
@@ -41,8 +45,12 @@ items:
   fullName: TGBot.Logging.LogLevel.Trace
   type: Field
   source:
+    remote:
+      path: src/TGBot/Logging/LogLevel.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Trace
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/LogLevel.cs
+    path: ../src/TGBot/Logging/LogLevel.cs
     startLine: 8
   assemblies:
   - tgdl-bot
@@ -65,8 +73,12 @@ items:
   fullName: TGBot.Logging.LogLevel.Debug
   type: Field
   source:
+    remote:
+      path: src/TGBot/Logging/LogLevel.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Debug
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/LogLevel.cs
+    path: ../src/TGBot/Logging/LogLevel.cs
     startLine: 11
   assemblies:
   - tgdl-bot
@@ -89,8 +101,12 @@ items:
   fullName: TGBot.Logging.LogLevel.Info
   type: Field
   source:
+    remote:
+      path: src/TGBot/Logging/LogLevel.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Info
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/LogLevel.cs
+    path: ../src/TGBot/Logging/LogLevel.cs
     startLine: 14
   assemblies:
   - tgdl-bot
@@ -113,8 +129,12 @@ items:
   fullName: TGBot.Logging.LogLevel.Warn
   type: Field
   source:
+    remote:
+      path: src/TGBot/Logging/LogLevel.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Warn
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/LogLevel.cs
+    path: ../src/TGBot/Logging/LogLevel.cs
     startLine: 17
   assemblies:
   - tgdl-bot
@@ -137,8 +157,12 @@ items:
   fullName: TGBot.Logging.LogLevel.Error
   type: Field
   source:
+    remote:
+      path: src/TGBot/Logging/LogLevel.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Error
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/LogLevel.cs
+    path: ../src/TGBot/Logging/LogLevel.cs
     startLine: 20
   assemblies:
   - tgdl-bot

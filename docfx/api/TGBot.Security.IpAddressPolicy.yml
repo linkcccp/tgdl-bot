@@ -14,8 +14,12 @@ items:
   fullName: TGBot.Security.IpAddressPolicy
   type: Class
   source:
+    remote:
+      path: src/TGBot/Security/HostResolver.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IpAddressPolicy
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/HostResolver.cs
+    path: ../src/TGBot/Security/HostResolver.cs
     startLine: 41
   assemblies:
   - tgdl-bot
@@ -47,8 +51,12 @@ items:
   fullName: TGBot.Security.IpAddressPolicy.IsPrivateOrLoopback(System.Net.IPAddress)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Security/HostResolver.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsPrivateOrLoopback
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/HostResolver.cs
+    path: ../src/TGBot/Security/HostResolver.cs
     startLine: 48
   assemblies:
   - tgdl-bot

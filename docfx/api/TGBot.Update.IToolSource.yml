@@ -16,8 +16,12 @@ items:
   fullName: TGBot.Update.IToolSource
   type: Interface
   source:
+    remote:
+      path: src/TGBot/Update/ToolSource.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IToolSource
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolSource.cs
+    path: ../src/TGBot/Update/ToolSource.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -42,8 +46,12 @@ items:
   fullName: TGBot.Update.IToolSource.Name
   type: Property
   source:
+    remote:
+      path: src/TGBot/Update/ToolSource.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Name
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolSource.cs
+    path: ../src/TGBot/Update/ToolSource.cs
     startLine: 12
   assemblies:
   - tgdl-bot
@@ -69,8 +77,12 @@ items:
   fullName: TGBot.Update.IToolSource.GetLatestVersionAsync(System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/ToolSource.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetLatestVersionAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolSource.cs
+    path: ../src/TGBot/Update/ToolSource.cs
     startLine: 19
   assemblies:
   - tgdl-bot
@@ -100,8 +112,12 @@ items:
   fullName: TGBot.Update.IToolSource.DownloadBinaryAsync(string, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/ToolSource.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadBinaryAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolSource.cs
+    path: ../src/TGBot/Update/ToolSource.cs
     startLine: 27
   assemblies:
   - tgdl-bot

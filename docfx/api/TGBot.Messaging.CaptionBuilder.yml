@@ -15,8 +15,12 @@ items:
   fullName: TGBot.Messaging.CaptionBuilder
   type: Class
   source:
+    remote:
+      path: src/TGBot/Messaging/CaptionBuilder.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CaptionBuilder
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/CaptionBuilder.cs
+    path: ../src/TGBot/Messaging/CaptionBuilder.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -48,8 +52,12 @@ items:
   fullName: TGBot.Messaging.CaptionBuilder.Build(string, string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/CaptionBuilder.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Build
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/CaptionBuilder.cs
+    path: ../src/TGBot/Messaging/CaptionBuilder.cs
     startLine: 17
   assemblies:
   - tgdl-bot
@@ -85,8 +93,12 @@ items:
   fullName: TGBot.Messaging.CaptionBuilder.Sanitize(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/CaptionBuilder.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Sanitize
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/CaptionBuilder.cs
+    path: ../src/TGBot/Messaging/CaptionBuilder.cs
     startLine: 28
   assemblies:
   - tgdl-bot

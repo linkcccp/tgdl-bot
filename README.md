@@ -84,7 +84,6 @@ dotnet publish src/TGBot/TGBot.csproj -c Release -r linux-x64 \
 | --- | --- | --- |
 | `BotToken` | 是 | @BotFather 创建 bot 后获得 |
 | `LocalApiBaseUrl` | 是 | 本地 Bot API Server 地址，如 `http://127.0.0.1:8081` |
-| `TelegramApiId` / `TelegramApiHash` | 是 | 本地 Bot API Server 启动凭据（my.telegram.org） |
 | `TargetChannelIds` | 是 | 目标频道/群组 ID（逗号分隔，负数），结果推送对象 + 群组白名单 |
 | `AllowedUserIds` | 是 | 私聊白名单用户 ID（逗号分隔） |
 | `DownloadTempDir` | 是 | 下载临时目录 |

@@ -17,8 +17,12 @@ items:
   fullName: TGBot.Update.ToolUpdateStatus
   type: Enum
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ToolUpdateStatus
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 5
   assemblies:
   - tgdl-bot
@@ -40,8 +44,12 @@ items:
   fullName: TGBot.Update.ToolUpdateStatus.NotConfigured
   type: Field
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NotConfigured
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 8
   assemblies:
   - tgdl-bot
@@ -64,8 +72,12 @@ items:
   fullName: TGBot.Update.ToolUpdateStatus.AlreadyUpToDate
   type: Field
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AlreadyUpToDate
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 11
   assemblies:
   - tgdl-bot
@@ -88,8 +100,12 @@ items:
   fullName: TGBot.Update.ToolUpdateStatus.Updated
   type: Field
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Updated
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 14
   assemblies:
   - tgdl-bot
@@ -112,8 +128,12 @@ items:
   fullName: TGBot.Update.ToolUpdateStatus.Failed
   type: Field
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Failed
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 17
   assemblies:
   - tgdl-bot

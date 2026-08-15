@@ -15,8 +15,12 @@ items:
   fullName: TGBot.Update.UriVersionParser
   type: Class
   source:
+    remote:
+      path: src/TGBot/Update/UriVersionParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UriVersionParser
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UriVersionParser.cs
+    path: ../src/TGBot/Update/UriVersionParser.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -48,8 +52,12 @@ items:
   fullName: TGBot.Update.UriVersionParser.ParseGitHubRedirectLocation(string?)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/UriVersionParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseGitHubRedirectLocation
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UriVersionParser.cs
+    path: ../src/TGBot/Update/UriVersionParser.cs
     startLine: 15
   assemblies:
   - tgdl-bot
@@ -85,8 +93,12 @@ items:
   fullName: TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage(string?)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/UriVersionParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseJohnVanSickleReleasePage
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UriVersionParser.cs
+    path: ../src/TGBot/Update/UriVersionParser.cs
     startLine: 31
   assemblies:
   - tgdl-bot

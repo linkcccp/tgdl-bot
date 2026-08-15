@@ -14,8 +14,12 @@ items:
   fullName: TGBot.Config.ConfigParser
   type: Class
   source:
+    remote:
+      path: src/TGBot/Config/ConfigParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigParser
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigParser.cs
+    path: ../src/TGBot/Config/ConfigParser.cs
     startLine: 18
   assemblies:
   - tgdl-bot
@@ -53,9 +57,13 @@ items:
   fullName: TGBot.Config.ConfigParser.Parse(string, string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Config/ConfigParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Parse
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigParser.cs
-    startLine: 70
+    path: ../src/TGBot/Config/ConfigParser.cs
+    startLine: 65
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config

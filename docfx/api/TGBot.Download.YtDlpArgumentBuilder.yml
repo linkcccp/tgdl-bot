@@ -14,8 +14,12 @@ items:
   fullName: TGBot.Download.YtDlpArgumentBuilder
   type: Class
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpArgumentBuilder.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpArgumentBuilder
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpArgumentBuilder.cs
+    path: ../src/TGBot/Download/YtDlpArgumentBuilder.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -53,8 +57,12 @@ items:
   fullName: TGBot.Download.YtDlpArgumentBuilder.Build(TGBot.Download.DownloadOptions)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpArgumentBuilder.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Build
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpArgumentBuilder.cs
+    path: ../src/TGBot/Download/YtDlpArgumentBuilder.cs
     startLine: 14
   assemblies:
   - tgdl-bot

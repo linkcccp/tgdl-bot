@@ -17,8 +17,12 @@ items:
   fullName: TGBot.Update.FfmpegToolSource
   type: Class
   source:
+    remote:
+      path: src/TGBot/Update/ToolSource.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FfmpegToolSource
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolSource.cs
+    path: ../src/TGBot/Update/ToolSource.cs
     startLine: 95
   assemblies:
   - tgdl-bot
@@ -57,8 +61,12 @@ items:
   fullName: TGBot.Update.FfmpegToolSource.FfmpegToolSource(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Update/ToolSource.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolSource.cs
+    path: ../src/TGBot/Update/ToolSource.cs
     startLine: 108
   assemblies:
   - tgdl-bot
@@ -91,8 +99,12 @@ items:
   fullName: TGBot.Update.FfmpegToolSource.Name
   type: Property
   source:
+    remote:
+      path: src/TGBot/Update/ToolSource.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Name
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolSource.cs
+    path: ../src/TGBot/Update/ToolSource.cs
     startLine: 117
   assemblies:
   - tgdl-bot
@@ -120,8 +132,12 @@ items:
   fullName: TGBot.Update.FfmpegToolSource.GetLatestVersionAsync(System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/ToolSource.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetLatestVersionAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolSource.cs
+    path: ../src/TGBot/Update/ToolSource.cs
     startLine: 120
   assemblies:
   - tgdl-bot
@@ -153,8 +169,12 @@ items:
   fullName: TGBot.Update.FfmpegToolSource.DownloadBinaryAsync(string, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/ToolSource.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadBinaryAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ToolSource.cs
+    path: ../src/TGBot/Update/ToolSource.cs
     startLine: 127
   assemblies:
   - tgdl-bot

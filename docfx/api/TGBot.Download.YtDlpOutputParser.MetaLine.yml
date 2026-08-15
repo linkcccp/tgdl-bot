@@ -17,8 +17,12 @@ items:
   fullName: TGBot.Download.YtDlpOutputParser.MetaLine
   type: Class
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpOutputParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MetaLine
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpOutputParser.cs
+    path: ../src/TGBot/Download/YtDlpOutputParser.cs
     startLine: 115
   assemblies:
   - tgdl-bot
@@ -51,8 +55,12 @@ items:
   fullName: TGBot.Download.YtDlpOutputParser.MetaLine.MetaLine(string, int?, long?)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpOutputParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpOutputParser.cs
+    path: ../src/TGBot/Download/YtDlpOutputParser.cs
     startLine: 115
   assemblies:
   - tgdl-bot
@@ -88,8 +96,12 @@ items:
   fullName: TGBot.Download.YtDlpOutputParser.MetaLine.Title
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpOutputParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Title
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpOutputParser.cs
+    path: ../src/TGBot/Download/YtDlpOutputParser.cs
     startLine: 115
   assemblies:
   - tgdl-bot
@@ -115,8 +127,12 @@ items:
   fullName: TGBot.Download.YtDlpOutputParser.MetaLine.DurationSeconds
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpOutputParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DurationSeconds
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpOutputParser.cs
+    path: ../src/TGBot/Download/YtDlpOutputParser.cs
     startLine: 115
   assemblies:
   - tgdl-bot
@@ -142,8 +158,12 @@ items:
   fullName: TGBot.Download.YtDlpOutputParser.MetaLine.SizeBytes
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpOutputParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SizeBytes
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpOutputParser.cs
+    path: ../src/TGBot/Download/YtDlpOutputParser.cs
     startLine: 115
   assemblies:
   - tgdl-bot

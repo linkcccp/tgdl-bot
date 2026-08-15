@@ -21,8 +21,12 @@ items:
   fullName: TGBot.Logging.ConsoleLogger
   type: Class
   source:
+    remote:
+      path: src/TGBot/Logging/ConsoleLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConsoleLogger
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/ConsoleLogger.cs
+    path: ../src/TGBot/Logging/ConsoleLogger.cs
     startLine: 8
   assemblies:
   - tgdl-bot
@@ -60,8 +64,12 @@ items:
   fullName: TGBot.Logging.ConsoleLogger.ConsoleLogger(TGBot.Logging.LogLevel, string?)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Logging/ConsoleLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/ConsoleLogger.cs
+    path: ../src/TGBot/Logging/ConsoleLogger.cs
     startLine: 21
   assemblies:
   - tgdl-bot
@@ -98,8 +106,12 @@ items:
   fullName: TGBot.Logging.ConsoleLogger.Log(TGBot.Logging.LogLevel, string, System.Exception?)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/ConsoleLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Log
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/ConsoleLogger.cs
+    path: ../src/TGBot/Logging/ConsoleLogger.cs
     startLine: 38
   assemblies:
   - tgdl-bot
@@ -137,8 +149,12 @@ items:
   fullName: TGBot.Logging.ConsoleLogger.Trace(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/ConsoleLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Trace
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/ConsoleLogger.cs
+    path: ../src/TGBot/Logging/ConsoleLogger.cs
     startLine: 54
   assemblies:
   - tgdl-bot
@@ -170,8 +186,12 @@ items:
   fullName: TGBot.Logging.ConsoleLogger.Debug(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/ConsoleLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Debug
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/ConsoleLogger.cs
+    path: ../src/TGBot/Logging/ConsoleLogger.cs
     startLine: 57
   assemblies:
   - tgdl-bot
@@ -203,8 +223,12 @@ items:
   fullName: TGBot.Logging.ConsoleLogger.Info(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/ConsoleLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Info
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/ConsoleLogger.cs
+    path: ../src/TGBot/Logging/ConsoleLogger.cs
     startLine: 60
   assemblies:
   - tgdl-bot
@@ -236,8 +260,12 @@ items:
   fullName: TGBot.Logging.ConsoleLogger.Warn(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/ConsoleLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Warn
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/ConsoleLogger.cs
+    path: ../src/TGBot/Logging/ConsoleLogger.cs
     startLine: 63
   assemblies:
   - tgdl-bot
@@ -269,8 +297,12 @@ items:
   fullName: TGBot.Logging.ConsoleLogger.Error(string, System.Exception?)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/ConsoleLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Error
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/ConsoleLogger.cs
+    path: ../src/TGBot/Logging/ConsoleLogger.cs
     startLine: 66
   assemblies:
   - tgdl-bot
@@ -305,8 +337,12 @@ items:
   fullName: TGBot.Logging.ConsoleLogger.Dispose()
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/ConsoleLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Dispose
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/ConsoleLogger.cs
+    path: ../src/TGBot/Logging/ConsoleLogger.cs
     startLine: 83
   assemblies:
   - tgdl-bot

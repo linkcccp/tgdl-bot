@@ -16,8 +16,12 @@ items:
   fullName: TGBot.Messaging.UploadResult
   type: Class
   source:
+    remote:
+      path: src/TGBot/Messaging/UploadService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadResult
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/UploadService.cs
+    path: ../src/TGBot/Messaging/UploadService.cs
     startLine: 11
   assemblies:
   - tgdl-bot
@@ -50,8 +54,12 @@ items:
   fullName: TGBot.Messaging.UploadResult.UploadResult(int, System.Collections.Generic.IReadOnlyList<long>)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Messaging/UploadService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/UploadService.cs
+    path: ../src/TGBot/Messaging/UploadService.cs
     startLine: 11
   assemblies:
   - tgdl-bot
@@ -84,8 +92,12 @@ items:
   fullName: TGBot.Messaging.UploadResult.SuccessCount
   type: Property
   source:
+    remote:
+      path: src/TGBot/Messaging/UploadService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SuccessCount
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/UploadService.cs
+    path: ../src/TGBot/Messaging/UploadService.cs
     startLine: 11
   assemblies:
   - tgdl-bot
@@ -111,8 +123,12 @@ items:
   fullName: TGBot.Messaging.UploadResult.FailedChats
   type: Property
   source:
+    remote:
+      path: src/TGBot/Messaging/UploadService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FailedChats
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/UploadService.cs
+    path: ../src/TGBot/Messaging/UploadService.cs
     startLine: 11
   assemblies:
   - tgdl-bot

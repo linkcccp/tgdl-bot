@@ -23,8 +23,12 @@ items:
   fullName: TGBot.Messaging.TelegramClientWrapper
   type: Class
   source:
+    remote:
+      path: src/TGBot/Messaging/TelegramClientWrapper.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TelegramClientWrapper
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/TelegramClientWrapper.cs
+    path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
     startLine: 10
   assemblies:
   - tgdl-bot
@@ -57,8 +61,12 @@ items:
   fullName: TGBot.Messaging.TelegramClientWrapper.TelegramClientWrapper(string, string, System.Net.Http.HttpClient, System.Threading.CancellationToken)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Messaging/TelegramClientWrapper.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/TelegramClientWrapper.cs
+    path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
     startLine: 27
   assemblies:
   - tgdl-bot
@@ -97,8 +105,12 @@ items:
   fullName: TGBot.Messaging.TelegramClientWrapper.GetBotUsernameAsync(System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/TelegramClientWrapper.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetBotUsernameAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/TelegramClientWrapper.cs
+    path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
     startLine: 34
   assemblies:
   - tgdl-bot
@@ -130,8 +142,12 @@ items:
   fullName: TGBot.Messaging.TelegramClientWrapper.SendMessageAsync(long, string, int, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/TelegramClientWrapper.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendMessageAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/TelegramClientWrapper.cs
+    path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
     startLine: 41
   assemblies:
   - tgdl-bot
@@ -174,8 +190,12 @@ items:
   fullName: TGBot.Messaging.TelegramClientWrapper.SendChatActionAsync(long, TGBot.Messaging.BotChatAction, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/TelegramClientWrapper.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendChatActionAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/TelegramClientWrapper.cs
+    path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
     startLine: 50
   assemblies:
   - tgdl-bot
@@ -215,8 +235,12 @@ items:
   fullName: TGBot.Messaging.TelegramClientWrapper.SendVideoAsync(long, string, string, string?, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/TelegramClientWrapper.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendVideoAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/TelegramClientWrapper.cs
+    path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
     startLine: 63
   assemblies:
   - tgdl-bot
@@ -262,8 +286,12 @@ items:
   fullName: TGBot.Messaging.TelegramClientWrapper.SendAudioAsync(long, string, string, string?, string?, string?, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/TelegramClientWrapper.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendAudioAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/TelegramClientWrapper.cs
+    path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
     startLine: 75
   assemblies:
   - tgdl-bot
@@ -315,8 +343,12 @@ items:
   fullName: TGBot.Messaging.TelegramClientWrapper.SendDocumentAsync(long, string, string, string?, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/TelegramClientWrapper.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendDocumentAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/TelegramClientWrapper.cs
+    path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
     startLine: 88
   assemblies:
   - tgdl-bot
@@ -362,8 +394,12 @@ items:
   fullName: TGBot.Messaging.TelegramClientWrapper.SetCommandsAsync(System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/TelegramClientWrapper.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SetCommandsAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/TelegramClientWrapper.cs
+    path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
     startLine: 99
   assemblies:
   - tgdl-bot
@@ -394,8 +430,12 @@ items:
   fullName: TGBot.Messaging.TelegramClientWrapper.DropPendingUpdatesAsync(System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/TelegramClientWrapper.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DropPendingUpdatesAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/TelegramClientWrapper.cs
+    path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
     startLine: 111
   assemblies:
   - tgdl-bot
@@ -426,8 +466,12 @@ items:
   fullName: TGBot.Messaging.TelegramClientWrapper.RunLongPollingAsync(System.Func<TGBot.Messaging.InboundMessage, System.Threading.CancellationToken, System.Threading.Tasks.Task>, System.Func<System.Exception, System.Threading.CancellationToken, System.Threading.Tasks.Task>, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/TelegramClientWrapper.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RunLongPollingAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/TelegramClientWrapper.cs
+    path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
     startLine: 117
   assemblies:
   - tgdl-bot

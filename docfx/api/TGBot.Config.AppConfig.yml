@@ -23,8 +23,6 @@ items:
   - TGBot.Config.AppConfig.MergeFormat
   - TGBot.Config.AppConfig.SourcePath
   - TGBot.Config.AppConfig.TargetChannelIds
-  - TGBot.Config.AppConfig.TelegramApiHash
-  - TGBot.Config.AppConfig.TelegramApiId
   - TGBot.Config.AppConfig.UpdateFfmpeg
   - TGBot.Config.AppConfig.UpdateYtDlp
   - TGBot.Config.AppConfig.UploadRetries
@@ -37,8 +35,12 @@ items:
   fullName: TGBot.Config.AppConfig
   type: Class
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AppConfig
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
+    path: ../src/TGBot/Config/AppConfig.cs
     startLine: 8
   assemblies:
   - tgdl-bot
@@ -73,8 +75,12 @@ items:
   fullName: TGBot.Config.AppConfig.BotToken
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: BotToken
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
+    path: ../src/TGBot/Config/AppConfig.cs
     startLine: 11
   assemblies:
   - tgdl-bot
@@ -100,8 +106,12 @@ items:
   fullName: TGBot.Config.AppConfig.LocalApiBaseUrl
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LocalApiBaseUrl
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
+    path: ../src/TGBot/Config/AppConfig.cs
     startLine: 14
   assemblies:
   - tgdl-bot
@@ -115,60 +125,6 @@ items:
       type: System.String
     content.vb: Public Property LocalApiBaseUrl As String
   overload: TGBot.Config.AppConfig.LocalApiBaseUrl*
-- uid: TGBot.Config.AppConfig.TelegramApiId
-  commentId: P:TGBot.Config.AppConfig.TelegramApiId
-  id: TelegramApiId
-  parent: TGBot.Config.AppConfig
-  langs:
-  - csharp
-  - vb
-  name: TelegramApiId
-  nameWithType: AppConfig.TelegramApiId
-  fullName: TGBot.Config.AppConfig.TelegramApiId
-  type: Property
-  source:
-    id: TelegramApiId
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 17
-  assemblies:
-  - tgdl-bot
-  namespace: TGBot.Config
-  summary: Telegram API ID（本地 Bot API Server 使用）。
-  example: []
-  syntax:
-    content: public long TelegramApiId { get; init; }
-    parameters: []
-    return:
-      type: System.Int64
-    content.vb: Public Property TelegramApiId As Long
-  overload: TGBot.Config.AppConfig.TelegramApiId*
-- uid: TGBot.Config.AppConfig.TelegramApiHash
-  commentId: P:TGBot.Config.AppConfig.TelegramApiHash
-  id: TelegramApiHash
-  parent: TGBot.Config.AppConfig
-  langs:
-  - csharp
-  - vb
-  name: TelegramApiHash
-  nameWithType: AppConfig.TelegramApiHash
-  fullName: TGBot.Config.AppConfig.TelegramApiHash
-  type: Property
-  source:
-    id: TelegramApiHash
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 20
-  assemblies:
-  - tgdl-bot
-  namespace: TGBot.Config
-  summary: Telegram API Hash（本地 Bot API Server 使用）。
-  example: []
-  syntax:
-    content: public string TelegramApiHash { get; init; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property TelegramApiHash As String
-  overload: TGBot.Config.AppConfig.TelegramApiHash*
 - uid: TGBot.Config.AppConfig.TargetChannelIds
   commentId: P:TGBot.Config.AppConfig.TargetChannelIds
   id: TargetChannelIds
@@ -181,9 +137,13 @@ items:
   fullName: TGBot.Config.AppConfig.TargetChannelIds
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TargetChannelIds
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 23
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -208,9 +168,13 @@ items:
   fullName: TGBot.Config.AppConfig.AllowedUserIds
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AllowedUserIds
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 26
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 20
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -235,9 +199,13 @@ items:
   fullName: TGBot.Config.AppConfig.DownloadTempDir
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadTempDir
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 29
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 23
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -262,9 +230,13 @@ items:
   fullName: TGBot.Config.AppConfig.YtDlpPath
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpPath
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 32
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 26
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -289,9 +261,13 @@ items:
   fullName: TGBot.Config.AppConfig.FfmpegPath
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FfmpegPath
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 35
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 29
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -316,9 +292,13 @@ items:
   fullName: TGBot.Config.AppConfig.MaxConcurrentDownloads
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MaxConcurrentDownloads
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 38
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 32
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -343,9 +323,13 @@ items:
   fullName: TGBot.Config.AppConfig.LogLevel
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LogLevel
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 41
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 35
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -370,9 +354,13 @@ items:
   fullName: TGBot.Config.AppConfig.LogFile
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LogFile
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 44
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 38
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -397,9 +385,13 @@ items:
   fullName: TGBot.Config.AppConfig.DownloadRetries
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadRetries
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 47
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 41
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -424,9 +416,13 @@ items:
   fullName: TGBot.Config.AppConfig.DownloadTimeoutSeconds
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadTimeoutSeconds
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 50
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 44
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -451,9 +447,13 @@ items:
   fullName: TGBot.Config.AppConfig.UploadRetries
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadRetries
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 53
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 47
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -478,9 +478,13 @@ items:
   fullName: TGBot.Config.AppConfig.ExtractAudio
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ExtractAudio
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 56
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 50
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -505,9 +509,13 @@ items:
   fullName: TGBot.Config.AppConfig.AlsoSendMediaToRequester
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AlsoSendMediaToRequester
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 59
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 53
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -532,9 +540,13 @@ items:
   fullName: TGBot.Config.AppConfig.AllowPrivateUrls
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AllowPrivateUrls
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 62
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 56
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -559,9 +571,13 @@ items:
   fullName: TGBot.Config.AppConfig.MaxMediaSizeBytes
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MaxMediaSizeBytes
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 65
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 59
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -586,9 +602,13 @@ items:
   fullName: TGBot.Config.AppConfig.AllowPlaylists
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AllowPlaylists
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 68
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 62
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -613,9 +633,13 @@ items:
   fullName: TGBot.Config.AppConfig.MergeFormat
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MergeFormat
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 71
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 65
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -640,9 +664,13 @@ items:
   fullName: TGBot.Config.AppConfig.UpdateYtDlp
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateYtDlp
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 74
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 68
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -667,9 +695,13 @@ items:
   fullName: TGBot.Config.AppConfig.UpdateFfmpeg
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateFfmpeg
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 77
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 71
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -694,9 +726,13 @@ items:
   fullName: TGBot.Config.AppConfig.SourcePath
   type: Property
   source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SourcePath
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/AppConfig.cs
-    startLine: 80
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 74
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -974,29 +1010,6 @@ references:
   name: LocalApiBaseUrl
   nameWithType: AppConfig.LocalApiBaseUrl
   fullName: TGBot.Config.AppConfig.LocalApiBaseUrl
-- uid: TGBot.Config.AppConfig.TelegramApiId*
-  commentId: Overload:TGBot.Config.AppConfig.TelegramApiId
-  href: TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_TelegramApiId
-  name: TelegramApiId
-  nameWithType: AppConfig.TelegramApiId
-  fullName: TGBot.Config.AppConfig.TelegramApiId
-- uid: System.Int64
-  commentId: T:System.Int64
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int64
-  name: long
-  nameWithType: long
-  fullName: long
-  nameWithType.vb: Long
-  fullName.vb: Long
-  name.vb: Long
-- uid: TGBot.Config.AppConfig.TelegramApiHash*
-  commentId: Overload:TGBot.Config.AppConfig.TelegramApiHash
-  href: TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_TelegramApiHash
-  name: TelegramApiHash
-  nameWithType: AppConfig.TelegramApiHash
-  fullName: TGBot.Config.AppConfig.TelegramApiHash
 - uid: TGBot.Config.AppConfig.TargetChannelIds*
   commentId: Overload:TGBot.Config.AppConfig.TargetChannelIds
   href: TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_TargetChannelIds
@@ -1238,6 +1251,17 @@ references:
   name: MaxMediaSizeBytes
   nameWithType: AppConfig.MaxMediaSizeBytes
   fullName: TGBot.Config.AppConfig.MaxMediaSizeBytes
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
 - uid: TGBot.Config.AppConfig.AllowPlaylists*
   commentId: Overload:TGBot.Config.AppConfig.AllowPlaylists
   href: TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_AllowPlaylists

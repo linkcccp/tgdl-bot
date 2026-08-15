@@ -11,10 +11,9 @@ BotToken = 123456789:AAAA-BBBB_ccccdddd_eeeee
 # 必须与 telegram-bot-api 服务监听端口一致
 LocalApiBaseUrl = http://127.0.0.1:8081
 
-# Telegram API ID 与 API Hash（本地 Bot API Server 启动时需要，见 deploy/api.env）
+# 注意：Telegram API ID / API Hash 不在此配置（bot 不使用），
+# 它们只需填在 /opt/tgdl-bot/api.env（本地 Bot API Server 凭据）
 # 获取：https://my.telegram.org  →  API development tools
-TelegramApiId = 123456
-TelegramApiHash = abcdef0123456789abcdef0123456789
 
 # 目标频道/群组 ID 白名单（逗号分隔，支持负数）
 # 下载结果会推送到这些会话；只有列在这里的频道/群组内的链接才会被处理

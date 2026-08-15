@@ -14,8 +14,12 @@ items:
   fullName: TGBot.Security.IHostResolver
   type: Interface
   source:
+    remote:
+      path: src/TGBot/Security/HostResolver.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IHostResolver
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/HostResolver.cs
+    path: ../src/TGBot/Security/HostResolver.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -39,8 +43,12 @@ items:
   fullName: TGBot.Security.IHostResolver.ResolveAsync(string, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Security/HostResolver.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ResolveAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/HostResolver.cs
+    path: ../src/TGBot/Security/HostResolver.cs
     startLine: 15
   assemblies:
   - tgdl-bot

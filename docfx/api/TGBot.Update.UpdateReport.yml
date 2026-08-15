@@ -16,8 +16,12 @@ items:
   fullName: TGBot.Update.UpdateReport
   type: Class
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateReport
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 37
   assemblies:
   - tgdl-bot
@@ -50,8 +54,12 @@ items:
   fullName: TGBot.Update.UpdateReport.UpdateReport(System.Collections.Generic.IReadOnlyList<TGBot.Update.ToolUpdateResult>)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 37
   assemblies:
   - tgdl-bot
@@ -81,8 +89,12 @@ items:
   fullName: TGBot.Update.UpdateReport.Tools
   type: Property
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Tools
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 37
   assemblies:
   - tgdl-bot
@@ -108,8 +120,12 @@ items:
   fullName: TGBot.Update.UpdateReport.HasFailures
   type: Property
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: HasFailures
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 42
   assemblies:
   - tgdl-bot

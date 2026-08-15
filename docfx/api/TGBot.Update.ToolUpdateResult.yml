@@ -18,8 +18,12 @@ items:
   fullName: TGBot.Update.ToolUpdateResult
   type: Class
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ToolUpdateResult
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 27
   assemblies:
   - tgdl-bot
@@ -52,8 +56,12 @@ items:
   fullName: TGBot.Update.ToolUpdateResult.ToolUpdateResult(string, TGBot.Update.ToolVersion?, TGBot.Update.ToolVersion?, TGBot.Update.ToolUpdateStatus)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 27
   assemblies:
   - tgdl-bot
@@ -92,8 +100,12 @@ items:
   fullName: TGBot.Update.ToolUpdateResult.Tool
   type: Property
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Tool
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 28
   assemblies:
   - tgdl-bot
@@ -119,8 +131,12 @@ items:
   fullName: TGBot.Update.ToolUpdateResult.LocalVersion
   type: Property
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LocalVersion
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 29
   assemblies:
   - tgdl-bot
@@ -146,8 +162,12 @@ items:
   fullName: TGBot.Update.ToolUpdateResult.LatestVersion
   type: Property
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LatestVersion
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 30
   assemblies:
   - tgdl-bot
@@ -173,8 +193,12 @@ items:
   fullName: TGBot.Update.ToolUpdateResult.Status
   type: Property
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Status
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 31
   assemblies:
   - tgdl-bot

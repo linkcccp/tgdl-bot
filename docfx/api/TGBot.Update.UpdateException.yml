@@ -15,8 +15,12 @@ items:
   fullName: TGBot.Update.UpdateException
   type: Class
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateException
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 48
   assemblies:
   - tgdl-bot
@@ -59,8 +63,12 @@ items:
   fullName: TGBot.Update.UpdateException.UserMessage
   type: Property
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UserMessage
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 53
   assemblies:
   - tgdl-bot
@@ -86,8 +94,12 @@ items:
   fullName: TGBot.Update.UpdateException.UpdateException(string, string?)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/UpdateResult.cs
+    path: ../src/TGBot/Update/UpdateResult.cs
     startLine: 60
   assemblies:
   - tgdl-bot

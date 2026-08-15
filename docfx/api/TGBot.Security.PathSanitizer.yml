@@ -16,8 +16,12 @@ items:
   fullName: TGBot.Security.PathSanitizer
   type: Class
   source:
+    remote:
+      path: src/TGBot/Security/PathSanitizer.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: PathSanitizer
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/PathSanitizer.cs
+    path: ../src/TGBot/Security/PathSanitizer.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -49,8 +53,12 @@ items:
   fullName: TGBot.Security.PathSanitizer.SanitizeFileName(string?, int)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Security/PathSanitizer.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SanitizeFileName
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/PathSanitizer.cs
+    path: ../src/TGBot/Security/PathSanitizer.cs
     startLine: 17
   assemblies:
   - tgdl-bot
@@ -86,8 +94,12 @@ items:
   fullName: TGBot.Security.PathSanitizer.IsWithinDirectory(string, string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Security/PathSanitizer.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsWithinDirectory
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/PathSanitizer.cs
+    path: ../src/TGBot/Security/PathSanitizer.cs
     startLine: 62
   assemblies:
   - tgdl-bot
@@ -123,8 +135,12 @@ items:
   fullName: TGBot.Security.PathSanitizer.IsSymbolicLink(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Security/PathSanitizer.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsSymbolicLink
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/PathSanitizer.cs
+    path: ../src/TGBot/Security/PathSanitizer.cs
     startLine: 84
   assemblies:
   - tgdl-bot

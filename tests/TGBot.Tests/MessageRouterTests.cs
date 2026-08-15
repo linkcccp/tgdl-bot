@@ -148,8 +148,6 @@ public class MessageRouterTests
         {
             BotToken = "123:abc",
             LocalApiBaseUrl = "http://127.0.0.1:8081",
-            TelegramApiId = 1,
-            TelegramApiHash = "x",
             TargetChannelIds = new long[] { -100111 },
             AllowedUserIds = new long[] { 1000 },
             DownloadTempDir = Path.Combine(Path.GetTempPath(), "tgdl-rt-" + Guid.NewGuid().ToString("N")[..6]),

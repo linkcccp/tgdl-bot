@@ -14,8 +14,12 @@ items:
   fullName: TGBot.Security.DiskUtil
   type: Class
   source:
+    remote:
+      path: src/TGBot/Security/DiskUtil.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DiskUtil
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/DiskUtil.cs
+    path: ../src/TGBot/Security/DiskUtil.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -47,8 +51,12 @@ items:
   fullName: TGBot.Security.DiskUtil.GetFreeSpaceBytes(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Security/DiskUtil.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetFreeSpaceBytes
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/DiskUtil.cs
+    path: ../src/TGBot/Security/DiskUtil.cs
     startLine: 14
   assemblies:
   - tgdl-bot

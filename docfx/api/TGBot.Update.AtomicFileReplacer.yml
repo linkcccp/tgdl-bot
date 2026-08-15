@@ -15,8 +15,12 @@ items:
   fullName: TGBot.Update.AtomicFileReplacer
   type: Class
   source:
+    remote:
+      path: src/TGBot/Update/AtomicFileReplacer.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AtomicFileReplacer
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/AtomicFileReplacer.cs
+    path: ../src/TGBot/Update/AtomicFileReplacer.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -48,8 +52,12 @@ items:
   fullName: TGBot.Update.AtomicFileReplacer.Replace(string, string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/AtomicFileReplacer.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Replace
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/AtomicFileReplacer.cs
+    path: ../src/TGBot/Update/AtomicFileReplacer.cs
     startLine: 17
   assemblies:
   - tgdl-bot
@@ -93,8 +101,12 @@ items:
   fullName: TGBot.Update.AtomicFileReplacer.Sha256(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/AtomicFileReplacer.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Sha256
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/AtomicFileReplacer.cs
+    path: ../src/TGBot/Update/AtomicFileReplacer.cs
     startLine: 77
   assemblies:
   - tgdl-bot

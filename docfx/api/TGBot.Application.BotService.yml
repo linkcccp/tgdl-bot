@@ -15,8 +15,12 @@ items:
   fullName: TGBot.Application.BotService
   type: Class
   source:
+    remote:
+      path: src/TGBot/Application/BotService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: BotService
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Application/BotService.cs
+    path: ../src/TGBot/Application/BotService.cs
     startLine: 8
   assemblies:
   - tgdl-bot
@@ -47,8 +51,12 @@ items:
   fullName: TGBot.Application.BotService.BotService(TGBot.Messaging.ITelegramClient, TGBot.Application.MessageRouter, TGBot.Logging.IAppLogger)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Application/BotService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Application/BotService.cs
+    path: ../src/TGBot/Application/BotService.cs
     startLine: 20
   assemblies:
   - tgdl-bot
@@ -84,8 +92,12 @@ items:
   fullName: TGBot.Application.BotService.RunAsync(System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Application/BotService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RunAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Application/BotService.cs
+    path: ../src/TGBot/Application/BotService.cs
     startLine: 31
   assemblies:
   - tgdl-bot

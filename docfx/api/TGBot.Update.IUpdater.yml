@@ -14,8 +14,12 @@ items:
   fullName: TGBot.Update.IUpdater
   type: Interface
   source:
+    remote:
+      path: src/TGBot/Update/Updater.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IUpdater
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/Updater.cs
+    path: ../src/TGBot/Update/Updater.cs
     startLine: 5
   assemblies:
   - tgdl-bot
@@ -39,8 +43,12 @@ items:
   fullName: TGBot.Update.IUpdater.UpdateAsync(bool, bool, System.Action<string>?, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/Updater.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/Updater.cs
+    path: ../src/TGBot/Update/Updater.cs
     startLine: 15
   assemblies:
   - tgdl-bot

@@ -15,8 +15,12 @@ items:
   fullName: TGBot.Update.BinaryVersionParser
   type: Class
   source:
+    remote:
+      path: src/TGBot/Update/BinaryVersionParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: BinaryVersionParser
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/BinaryVersionParser.cs
+    path: ../src/TGBot/Update/BinaryVersionParser.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -48,8 +52,12 @@ items:
   fullName: TGBot.Update.BinaryVersionParser.ParseYtDlp(string?)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/BinaryVersionParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseYtDlp
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/BinaryVersionParser.cs
+    path: ../src/TGBot/Update/BinaryVersionParser.cs
     startLine: 16
   assemblies:
   - tgdl-bot
@@ -82,8 +90,12 @@ items:
   fullName: TGBot.Update.BinaryVersionParser.ParseFfmpeg(string?)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/BinaryVersionParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseFfmpeg
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/BinaryVersionParser.cs
+    path: ../src/TGBot/Update/BinaryVersionParser.cs
     startLine: 26
   assemblies:
   - tgdl-bot

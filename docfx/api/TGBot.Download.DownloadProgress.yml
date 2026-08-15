@@ -16,8 +16,12 @@ items:
   fullName: TGBot.Download.DownloadProgress
   type: Class
   source:
+    remote:
+      path: src/TGBot/Download/IDownloader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadProgress
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/IDownloader.cs
+    path: ../src/TGBot/Download/IDownloader.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -50,8 +54,12 @@ items:
   fullName: TGBot.Download.DownloadProgress.DownloadProgress(double?, string?)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Download/IDownloader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/IDownloader.cs
+    path: ../src/TGBot/Download/IDownloader.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -84,8 +92,12 @@ items:
   fullName: TGBot.Download.DownloadProgress.Percent
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/IDownloader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Percent
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/IDownloader.cs
+    path: ../src/TGBot/Download/IDownloader.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -111,8 +123,12 @@ items:
   fullName: TGBot.Download.DownloadProgress.SpeedText
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/IDownloader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SpeedText
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/IDownloader.cs
+    path: ../src/TGBot/Download/IDownloader.cs
     startLine: 7
   assemblies:
   - tgdl-bot

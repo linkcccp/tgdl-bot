@@ -22,8 +22,12 @@ items:
   fullName: TGBot.Messaging.ITelegramClient
   type: Interface
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ITelegramClient
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 68
   assemblies:
   - tgdl-bot
@@ -47,8 +51,12 @@ items:
   fullName: TGBot.Messaging.ITelegramClient.GetBotUsernameAsync(System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetBotUsernameAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 75
   assemblies:
   - tgdl-bot
@@ -78,8 +86,12 @@ items:
   fullName: TGBot.Messaging.ITelegramClient.SendMessageAsync(long, string, int, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendMessageAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 84
   assemblies:
   - tgdl-bot
@@ -120,8 +132,12 @@ items:
   fullName: TGBot.Messaging.ITelegramClient.SendChatActionAsync(long, TGBot.Messaging.BotChatAction, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendChatActionAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 92
   assemblies:
   - tgdl-bot
@@ -159,8 +175,12 @@ items:
   fullName: TGBot.Messaging.ITelegramClient.SendVideoAsync(long, string, string, string?, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendVideoAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 102
   assemblies:
   - tgdl-bot
@@ -204,8 +224,12 @@ items:
   fullName: TGBot.Messaging.ITelegramClient.SendAudioAsync(long, string, string, string?, string?, string?, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendAudioAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 114
   assemblies:
   - tgdl-bot
@@ -255,8 +279,12 @@ items:
   fullName: TGBot.Messaging.ITelegramClient.SendDocumentAsync(long, string, string, string?, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendDocumentAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 124
   assemblies:
   - tgdl-bot
@@ -300,8 +328,12 @@ items:
   fullName: TGBot.Messaging.ITelegramClient.SetCommandsAsync(System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SetCommandsAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 130
   assemblies:
   - tgdl-bot
@@ -330,8 +362,12 @@ items:
   fullName: TGBot.Messaging.ITelegramClient.DropPendingUpdatesAsync(System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DropPendingUpdatesAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 136
   assemblies:
   - tgdl-bot
@@ -360,8 +396,12 @@ items:
   fullName: TGBot.Messaging.ITelegramClient.RunLongPollingAsync(System.Func<TGBot.Messaging.InboundMessage, System.Threading.CancellationToken, System.Threading.Tasks.Task>, System.Func<System.Exception, System.Threading.CancellationToken, System.Threading.Tasks.Task>, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RunLongPollingAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 145
   assemblies:
   - tgdl-bot

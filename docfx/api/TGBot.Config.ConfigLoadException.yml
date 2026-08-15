@@ -14,8 +14,12 @@ items:
   fullName: TGBot.Config.ConfigLoadException
   type: Class
   source:
+    remote:
+      path: src/TGBot/Config/ConfigLoader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigLoadException
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigLoader.cs
+    path: ../src/TGBot/Config/ConfigLoader.cs
     startLine: 5
   assemblies:
   - tgdl-bot
@@ -58,8 +62,12 @@ items:
   fullName: TGBot.Config.ConfigLoadException.ConfigLoadException(string)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Config/ConfigLoader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Config/ConfigLoader.cs
+    path: ../src/TGBot/Config/ConfigLoader.cs
     startLine: 11
   assemblies:
   - tgdl-bot

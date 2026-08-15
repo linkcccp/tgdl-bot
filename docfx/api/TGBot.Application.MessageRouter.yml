@@ -15,8 +15,12 @@ items:
   fullName: TGBot.Application.MessageRouter
   type: Class
   source:
+    remote:
+      path: src/TGBot/Application/MessageRouter.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MessageRouter
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Application/MessageRouter.cs
+    path: ../src/TGBot/Application/MessageRouter.cs
     startLine: 13
   assemblies:
   - tgdl-bot
@@ -47,8 +51,12 @@ items:
   fullName: TGBot.Application.MessageRouter.MessageRouter(TGBot.Access.AccessControlService, TGBot.Security.UrlValidator, TGBot.Application.DownloadCoordinator, TGBot.Application.CommandHandler, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Application/MessageRouter.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Application/MessageRouter.cs
+    path: ../src/TGBot/Application/MessageRouter.cs
     startLine: 33
   assemblies:
   - tgdl-bot
@@ -96,8 +104,12 @@ items:
   fullName: TGBot.Application.MessageRouter.HandleAsync(TGBot.Messaging.InboundMessage, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Application/MessageRouter.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: HandleAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Application/MessageRouter.cs
+    path: ../src/TGBot/Application/MessageRouter.cs
     startLine: 56
   assemblies:
   - tgdl-bot

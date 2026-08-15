@@ -100,7 +100,7 @@ Classes
 不经过 shell，从根本上杜绝命令注入。</p>
 </section>
       <h4><a class="xref" href="TGBot.Download.YtDlpDownloader.html">YtDlpDownloader</a></h4>
-      <section><p>通过 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.process.start#system-diagnostics-process-start">Start()</a> 调用系统安装的 yt-dlp 二进制实现下载。</p>
+      <section><p>通过 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.process.start#system-diagnostics-process-start(system-diagnostics-processstartinfo)">Start(ProcessStartInfo)</a> 调用系统安装的 yt-dlp 二进制实现下载。</p>
 <p>不内嵌 yt-dlp/ffmpeg，使用 <code>ArgumentList</code> 避免 shell 注入。</p>
 </section>
       <h4><a class="xref" href="TGBot.Download.YtDlpOutputParser.html">YtDlpOutputParser</a></h4>

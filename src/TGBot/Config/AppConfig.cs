@@ -14,12 +14,6 @@ public sealed class AppConfig
     /// <summary>本地 Telegram Bot API Server 地址（--local 模式）。</summary>
     public string LocalApiBaseUrl { get; init; } = string.Empty;
 
-    /// <summary>Telegram API ID（本地 Bot API Server 使用）。</summary>
-    public long TelegramApiId { get; init; }
-
-    /// <summary>Telegram API Hash（本地 Bot API Server 使用）。</summary>
-    public string TelegramApiHash { get; init; } = string.Empty;
-
     /// <summary>目标频道/群组 ID 白名单，下载结果推送到这些会话。</summary>
     public IReadOnlyList<long> TargetChannelIds { get; init; } = Array.Empty<long>();
 

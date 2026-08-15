@@ -20,8 +20,12 @@ items:
   fullName: TGBot.Messaging.InboundMessage
   type: Class
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: InboundMessage
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 5
   assemblies:
   - tgdl-bot
@@ -52,8 +56,12 @@ items:
   fullName: TGBot.Messaging.InboundMessage.ChatId
   type: Property
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ChatId
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 10
   assemblies:
   - tgdl-bot
@@ -79,8 +87,12 @@ items:
   fullName: TGBot.Messaging.InboundMessage.IsPrivate
   type: Property
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsPrivate
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 15
   assemblies:
   - tgdl-bot
@@ -106,8 +118,12 @@ items:
   fullName: TGBot.Messaging.InboundMessage.SenderUserId
   type: Property
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SenderUserId
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 20
   assemblies:
   - tgdl-bot
@@ -133,8 +149,12 @@ items:
   fullName: TGBot.Messaging.InboundMessage.Text
   type: Property
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Text
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 25
   assemblies:
   - tgdl-bot
@@ -160,8 +180,12 @@ items:
   fullName: TGBot.Messaging.InboundMessage.Caption
   type: Property
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Caption
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 30
   assemblies:
   - tgdl-bot
@@ -187,8 +211,12 @@ items:
   fullName: TGBot.Messaging.InboundMessage.TriggerMessageId
   type: Property
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TriggerMessageId
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 35
   assemblies:
   - tgdl-bot
@@ -214,8 +242,12 @@ items:
   fullName: TGBot.Messaging.InboundMessage.UrlSearchText
   type: Property
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlSearchText
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 40
   assemblies:
   - tgdl-bot

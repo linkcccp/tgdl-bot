@@ -19,8 +19,12 @@ items:
   fullName: TGBot.Logging.IAppLogger
   type: Interface
   source:
+    remote:
+      path: src/TGBot/Logging/IAppLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IAppLogger
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/IAppLogger.cs
+    path: ../src/TGBot/Logging/IAppLogger.cs
     startLine: 5
   assemblies:
   - tgdl-bot
@@ -47,8 +51,12 @@ items:
   fullName: TGBot.Logging.IAppLogger.Log(TGBot.Logging.LogLevel, string, System.Exception?)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/IAppLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Log
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/IAppLogger.cs
+    path: ../src/TGBot/Logging/IAppLogger.cs
     startLine: 13
   assemblies:
   - tgdl-bot
@@ -84,8 +92,12 @@ items:
   fullName: TGBot.Logging.IAppLogger.Trace(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/IAppLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Trace
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/IAppLogger.cs
+    path: ../src/TGBot/Logging/IAppLogger.cs
     startLine: 19
   assemblies:
   - tgdl-bot
@@ -115,8 +127,12 @@ items:
   fullName: TGBot.Logging.IAppLogger.Debug(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/IAppLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Debug
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/IAppLogger.cs
+    path: ../src/TGBot/Logging/IAppLogger.cs
     startLine: 25
   assemblies:
   - tgdl-bot
@@ -146,8 +162,12 @@ items:
   fullName: TGBot.Logging.IAppLogger.Info(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/IAppLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Info
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/IAppLogger.cs
+    path: ../src/TGBot/Logging/IAppLogger.cs
     startLine: 31
   assemblies:
   - tgdl-bot
@@ -177,8 +197,12 @@ items:
   fullName: TGBot.Logging.IAppLogger.Warn(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/IAppLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Warn
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/IAppLogger.cs
+    path: ../src/TGBot/Logging/IAppLogger.cs
     startLine: 37
   assemblies:
   - tgdl-bot
@@ -208,8 +232,12 @@ items:
   fullName: TGBot.Logging.IAppLogger.Error(string, System.Exception?)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Logging/IAppLogger.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Error
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Logging/IAppLogger.cs
+    path: ../src/TGBot/Logging/IAppLogger.cs
     startLine: 44
   assemblies:
   - tgdl-bot

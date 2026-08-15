@@ -18,8 +18,12 @@ items:
   fullName: TGBot.Access.AccessDecision
   type: Class
   source:
+    remote:
+      path: src/TGBot/Access/AccessControlService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessDecision
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    path: ../src/TGBot/Access/AccessControlService.cs
     startLine: 21
   assemblies:
   - tgdl-bot
@@ -52,8 +56,12 @@ items:
   fullName: TGBot.Access.AccessDecision.AccessDecision(bool, string?)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Access/AccessControlService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    path: ../src/TGBot/Access/AccessControlService.cs
     startLine: 21
   assemblies:
   - tgdl-bot
@@ -86,8 +94,12 @@ items:
   fullName: TGBot.Access.AccessDecision.Allowed
   type: Property
   source:
+    remote:
+      path: src/TGBot/Access/AccessControlService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Allowed
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    path: ../src/TGBot/Access/AccessControlService.cs
     startLine: 21
   assemblies:
   - tgdl-bot
@@ -113,8 +125,12 @@ items:
   fullName: TGBot.Access.AccessDecision.Reason
   type: Property
   source:
+    remote:
+      path: src/TGBot/Access/AccessControlService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Reason
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    path: ../src/TGBot/Access/AccessControlService.cs
     startLine: 21
   assemblies:
   - tgdl-bot
@@ -140,8 +156,12 @@ items:
   fullName: TGBot.Access.AccessDecision.Allow
   type: Field
   source:
+    remote:
+      path: src/TGBot/Access/AccessControlService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Allow
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    path: ../src/TGBot/Access/AccessControlService.cs
     startLine: 26
   assemblies:
   - tgdl-bot
@@ -165,8 +185,12 @@ items:
   fullName: TGBot.Access.AccessDecision.Deny(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Access/AccessControlService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Deny
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    path: ../src/TGBot/Access/AccessControlService.cs
     startLine: 32
   assemblies:
   - tgdl-bot

@@ -12,8 +12,6 @@ public class ConfigParserTests
     private const string ValidBase = """
         BotToken = 123456:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij
         LocalApiBaseUrl = http://127.0.0.1:8081
-        TelegramApiId = 123456
-        TelegramApiHash = abcdef0123456789abcdef0123456789
         TargetChannelIds = -1001234567890, 200
         AllowedUserIds = 111, 222, 333
         DownloadTempDir = /tmp/tgdl
@@ -28,12 +26,28 @@ public class ConfigParserTests
 
         Assert.Equal("123456:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij", result.Config.BotToken);
         Assert.Equal("http://127.0.0.1:8081", result.Config.LocalApiBaseUrl);
-        Assert.Equal(123456, result.Config.TelegramApiId);
         Assert.Equal(new long[] { -1001234567890, 200 }, result.Config.TargetChannelIds);
         Assert.Equal(new long[] { 111, 222, 333 }, result.Config.AllowedUserIds);
         Assert.Equal("/tmp/tgdl", result.Config.DownloadTempDir);
         Assert.Equal(LogLevel.Info, result.Config.LogLevel);
         Assert.Equal(2, result.Config.MaxConcurrentDownloads);
+    }
+
+    [Fact]
+    public void Parse_ConfigWithoutApiCredentials_Loads()
+    {
+        // TelegramApiId/Hash 已从 config.conf 移除，由 api.env 单独提供
+        var result = ConfigParser.Parse(Build(ValidBase), "x.conf");
+        Assert.NotNull(result.Config);
+    }
+
+    [Fact]
+    public void Parse_LegacyApiCredentialsInConfig_AreIgnoredAsWarning()
+    {
+        var text = Build(ValidBase + "\nTelegramApiId = 123456\nTelegramApiHash = abc");
+        var result = ConfigParser.Parse(text, "x.conf");
+        Assert.Contains(result.Warnings, w => w.Contains("TelegramApiId", StringComparison.Ordinal));
+        Assert.Contains(result.Warnings, w => w.Contains("TelegramApiHash", StringComparison.Ordinal));
     }
 
     [Fact]
@@ -194,8 +208,6 @@ public class ConfigLoaderFileTests : IDisposable
         File.WriteAllText(path, """
             BotToken = 123456:AAAA
             LocalApiBaseUrl = http://127.0.0.1:8081
-            TelegramApiId = 42
-            TelegramApiHash = hash
             TargetChannelIds = -100111
             AllowedUserIds = 1000
             DownloadTempDir = /tmp/x

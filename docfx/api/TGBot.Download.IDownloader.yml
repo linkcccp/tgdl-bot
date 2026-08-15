@@ -14,8 +14,12 @@ items:
   fullName: TGBot.Download.IDownloader
   type: Interface
   source:
+    remote:
+      path: src/TGBot/Download/IDownloader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IDownloader
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/IDownloader.cs
+    path: ../src/TGBot/Download/IDownloader.cs
     startLine: 12
   assemblies:
   - tgdl-bot
@@ -39,8 +43,12 @@ items:
   fullName: TGBot.Download.IDownloader.DownloadAsync(TGBot.Download.DownloadOptions, System.Action<TGBot.Download.DownloadProgress>?, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Download/IDownloader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/IDownloader.cs
+    path: ../src/TGBot/Download/IDownloader.cs
     startLine: 22
   assemblies:
   - tgdl-bot

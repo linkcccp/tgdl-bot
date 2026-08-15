@@ -21,8 +21,12 @@ items:
   fullName: TGBot.Download.DownloadedMedia
   type: Class
   source:
+    remote:
+      path: src/TGBot/Download/DownloadedMedia.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadedMedia
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadedMedia.cs
+    path: ../src/TGBot/Download/DownloadedMedia.cs
     startLine: 5
   assemblies:
   - tgdl-bot
@@ -53,8 +57,12 @@ items:
   fullName: TGBot.Download.DownloadedMedia.FilePath
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadedMedia.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FilePath
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadedMedia.cs
+    path: ../src/TGBot/Download/DownloadedMedia.cs
     startLine: 10
   assemblies:
   - tgdl-bot
@@ -80,8 +88,12 @@ items:
   fullName: TGBot.Download.DownloadedMedia.Title
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadedMedia.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Title
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadedMedia.cs
+    path: ../src/TGBot/Download/DownloadedMedia.cs
     startLine: 15
   assemblies:
   - tgdl-bot
@@ -107,8 +119,12 @@ items:
   fullName: TGBot.Download.DownloadedMedia.RawTitle
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadedMedia.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RawTitle
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadedMedia.cs
+    path: ../src/TGBot/Download/DownloadedMedia.cs
     startLine: 20
   assemblies:
   - tgdl-bot
@@ -134,8 +150,12 @@ items:
   fullName: TGBot.Download.DownloadedMedia.Extension
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadedMedia.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Extension
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadedMedia.cs
+    path: ../src/TGBot/Download/DownloadedMedia.cs
     startLine: 25
   assemblies:
   - tgdl-bot
@@ -161,8 +181,12 @@ items:
   fullName: TGBot.Download.DownloadedMedia.SizeBytes
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadedMedia.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SizeBytes
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadedMedia.cs
+    path: ../src/TGBot/Download/DownloadedMedia.cs
     startLine: 30
   assemblies:
   - tgdl-bot
@@ -188,8 +212,12 @@ items:
   fullName: TGBot.Download.DownloadedMedia.DurationSeconds
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadedMedia.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DurationSeconds
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadedMedia.cs
+    path: ../src/TGBot/Download/DownloadedMedia.cs
     startLine: 35
   assemblies:
   - tgdl-bot
@@ -215,8 +243,12 @@ items:
   fullName: TGBot.Download.DownloadedMedia.IsAudio
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadedMedia.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsAudio
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadedMedia.cs
+    path: ../src/TGBot/Download/DownloadedMedia.cs
     startLine: 40
   assemblies:
   - tgdl-bot
@@ -242,8 +274,12 @@ items:
   fullName: TGBot.Download.DownloadedMedia.SourceUrl
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadedMedia.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SourceUrl
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadedMedia.cs
+    path: ../src/TGBot/Download/DownloadedMedia.cs
     startLine: 45
   assemblies:
   - tgdl-bot

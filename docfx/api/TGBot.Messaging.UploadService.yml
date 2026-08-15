@@ -15,8 +15,12 @@ items:
   fullName: TGBot.Messaging.UploadService
   type: Class
   source:
+    remote:
+      path: src/TGBot/Messaging/UploadService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadService
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/UploadService.cs
+    path: ../src/TGBot/Messaging/UploadService.cs
     startLine: 16
   assemblies:
   - tgdl-bot
@@ -47,8 +51,12 @@ items:
   fullName: TGBot.Messaging.UploadService.UploadService(TGBot.Messaging.ITelegramClient, int, bool, TGBot.Logging.IAppLogger)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Messaging/UploadService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/UploadService.cs
+    path: ../src/TGBot/Messaging/UploadService.cs
     startLine: 35
   assemblies:
   - tgdl-bot
@@ -87,8 +95,12 @@ items:
   fullName: TGBot.Messaging.UploadService.UploadAsync(TGBot.Download.DownloadedMedia, System.Collections.Generic.IReadOnlyList<long>, long?, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Messaging/UploadService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/UploadService.cs
+    path: ../src/TGBot/Messaging/UploadService.cs
     startLine: 51
   assemblies:
   - tgdl-bot

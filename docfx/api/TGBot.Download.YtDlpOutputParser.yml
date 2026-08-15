@@ -19,8 +19,12 @@ items:
   fullName: TGBot.Download.YtDlpOutputParser
   type: Class
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpOutputParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpOutputParser
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpOutputParser.cs
+    path: ../src/TGBot/Download/YtDlpOutputParser.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -52,8 +56,12 @@ items:
   fullName: TGBot.Download.YtDlpOutputParser.ProgressMarker
   type: Field
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpOutputParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ProgressMarker
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpOutputParser.cs
+    path: ../src/TGBot/Download/YtDlpOutputParser.cs
     startLine: 12
   assemblies:
   - tgdl-bot
@@ -77,8 +85,12 @@ items:
   fullName: TGBot.Download.YtDlpOutputParser.MetaMarker
   type: Field
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpOutputParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MetaMarker
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpOutputParser.cs
+    path: ../src/TGBot/Download/YtDlpOutputParser.cs
     startLine: 17
   assemblies:
   - tgdl-bot
@@ -102,8 +114,12 @@ items:
   fullName: TGBot.Download.YtDlpOutputParser.FileMarker
   type: Field
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpOutputParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FileMarker
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpOutputParser.cs
+    path: ../src/TGBot/Download/YtDlpOutputParser.cs
     startLine: 22
   assemblies:
   - tgdl-bot
@@ -127,8 +143,12 @@ items:
   fullName: TGBot.Download.YtDlpOutputParser.ParseProgress(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpOutputParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseProgress
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpOutputParser.cs
+    path: ../src/TGBot/Download/YtDlpOutputParser.cs
     startLine: 29
   assemblies:
   - tgdl-bot
@@ -161,8 +181,12 @@ items:
   fullName: TGBot.Download.YtDlpOutputParser.IsTooLargeMessage(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpOutputParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsTooLargeMessage
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpOutputParser.cs
+    path: ../src/TGBot/Download/YtDlpOutputParser.cs
     startLine: 63
   assemblies:
   - tgdl-bot
@@ -195,8 +219,12 @@ items:
   fullName: TGBot.Download.YtDlpOutputParser.ParseMeta(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpOutputParser.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseMeta
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpOutputParser.cs
+    path: ../src/TGBot/Download/YtDlpOutputParser.cs
     startLine: 73
   assemblies:
   - tgdl-bot

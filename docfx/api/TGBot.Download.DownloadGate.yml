@@ -17,8 +17,12 @@ items:
   fullName: TGBot.Download.DownloadGate
   type: Class
   source:
+    remote:
+      path: src/TGBot/Download/DownloadGate.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadGate
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadGate.cs
+    path: ../src/TGBot/Download/DownloadGate.cs
     startLine: 6
   assemblies:
   - tgdl-bot
@@ -54,8 +58,12 @@ items:
   fullName: TGBot.Download.DownloadGate.DownloadGate(int)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Download/DownloadGate.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadGate.cs
+    path: ../src/TGBot/Download/DownloadGate.cs
     startLine: 16
   assemblies:
   - tgdl-bot
@@ -89,8 +97,12 @@ items:
   fullName: TGBot.Download.DownloadGate.DisposeAsync()
   type: Method
   source:
+    remote:
+      path: src/TGBot/Download/DownloadGate.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DisposeAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadGate.cs
+    path: ../src/TGBot/Download/DownloadGate.cs
     startLine: 28
   assemblies:
   - tgdl-bot
@@ -121,8 +133,12 @@ items:
   fullName: TGBot.Download.DownloadGate.AcquireDownloadAsync(System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Download/DownloadGate.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AcquireDownloadAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadGate.cs
+    path: ../src/TGBot/Download/DownloadGate.cs
     startLine: 39
   assemblies:
   - tgdl-bot
@@ -152,8 +168,12 @@ items:
   fullName: TGBot.Download.DownloadGate.AcquireExclusiveAsync(System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Download/DownloadGate.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AcquireExclusiveAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadGate.cs
+    path: ../src/TGBot/Download/DownloadGate.cs
     startLine: 50
   assemblies:
   - tgdl-bot

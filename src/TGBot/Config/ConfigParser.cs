@@ -30,10 +30,6 @@ public static class ConfigParser
         ["Token"] = "BotToken",
         ["LocalApiBaseUrl"] = "LocalApiBaseUrl",
         ["LocalApiUrl"] = "LocalApiBaseUrl",
-        ["ApiId"] = "TelegramApiId",
-        ["TelegramApiId"] = "TelegramApiId",
-        ["TelegramApiHash"] = "TelegramApiHash",
-        ["ApiHash"] = "TelegramApiHash",
         ["DownloadTempDir"] = "DownloadTempDir",
         ["TempDir"] = "DownloadTempDir",
         ["YtDlpPath"] = "YtDlpPath",
@@ -57,8 +53,7 @@ public static class ConfigParser
 
     private static readonly string[] RequiredKeys =
     {
-        "BotToken", "LocalApiBaseUrl", "TelegramApiId", "TelegramApiHash",
-        "TargetChannelIds", "AllowedUserIds", "DownloadTempDir",
+        "BotToken", "LocalApiBaseUrl", "TargetChannelIds", "AllowedUserIds", "DownloadTempDir",
     };
 
     /// <summary>
@@ -132,8 +127,6 @@ public static class ConfigParser
             SourcePath = sourcePath,
             BotToken = values["BotToken"],
             LocalApiBaseUrl = NormalizeBaseUrl(GetString(values, "LocalApiBaseUrl"), "LocalApiBaseUrl"),
-            TelegramApiId = GetLong(values, "TelegramApiId"),
-            TelegramApiHash = GetString(values, "TelegramApiHash"),
             TargetChannelIds = GetLongList(values, "TargetChannelIds"),
             AllowedUserIds = GetLongList(values, "AllowedUserIds"),
             DownloadTempDir = GetString(values, "DownloadTempDir"),
@@ -185,16 +178,6 @@ public static class ConfigParser
         if (c.BotToken.Length == 0 || c.BotToken.Length > 200)
         {
             throw new ConfigParseException("配置项 BotToken 为空或长度非法。");
-        }
-
-        if (c.TelegramApiId <= 0)
-        {
-            throw new ConfigParseException("配置项 TelegramApiId 必须为正整数。");
-        }
-
-        if (c.TelegramApiHash.Length == 0 || c.TelegramApiHash.Length > 128)
-        {
-            throw new ConfigParseException("配置项 TelegramApiHash 为空或长度非法。");
         }
 
         if (c.TargetChannelIds.Count == 0)

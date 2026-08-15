@@ -7,7 +7,7 @@ using TGBot.Texts;
 namespace TGBot.Download;
 
 /// <summary>
-/// 通过 <see cref="Process.Start"/> 调用系统安装的 yt-dlp 二进制实现下载。
+/// 通过 <see cref="System.Diagnostics.Process.Start(ProcessStartInfo)"/> 调用系统安装的 yt-dlp 二进制实现下载。
 /// <para>不内嵌 yt-dlp/ffmpeg，使用 <c>ArgumentList</c> 避免 shell 注入。</para>
 /// </summary>
 public sealed class YtDlpDownloader : IDownloader

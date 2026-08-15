@@ -17,8 +17,12 @@ items:
   fullName: TGBot.Messaging.BotChatAction
   type: Enum
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: BotChatAction
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 50
   assemblies:
   - tgdl-bot
@@ -40,8 +44,12 @@ items:
   fullName: TGBot.Messaging.BotChatAction.Typing
   type: Field
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Typing
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 53
   assemblies:
   - tgdl-bot
@@ -64,8 +72,12 @@ items:
   fullName: TGBot.Messaging.BotChatAction.UploadVideo
   type: Field
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadVideo
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 56
   assemblies:
   - tgdl-bot
@@ -88,8 +100,12 @@ items:
   fullName: TGBot.Messaging.BotChatAction.UploadAudio
   type: Field
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadAudio
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 59
   assemblies:
   - tgdl-bot
@@ -112,8 +128,12 @@ items:
   fullName: TGBot.Messaging.BotChatAction.UploadDocument
   type: Field
   source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadDocument
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Messaging/ITelegramClient.cs
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
     startLine: 62
   assemblies:
   - tgdl-bot

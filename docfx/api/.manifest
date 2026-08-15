@@ -47,8 +47,6 @@
   "TGBot.Config.AppConfig.MergeFormat": "TGBot.Config.AppConfig.yml",
   "TGBot.Config.AppConfig.SourcePath": "TGBot.Config.AppConfig.yml",
   "TGBot.Config.AppConfig.TargetChannelIds": "TGBot.Config.AppConfig.yml",
-  "TGBot.Config.AppConfig.TelegramApiHash": "TGBot.Config.AppConfig.yml",
-  "TGBot.Config.AppConfig.TelegramApiId": "TGBot.Config.AppConfig.yml",
   "TGBot.Config.AppConfig.UpdateFfmpeg": "TGBot.Config.AppConfig.yml",
   "TGBot.Config.AppConfig.UpdateYtDlp": "TGBot.Config.AppConfig.yml",
   "TGBot.Config.AppConfig.UploadRetries": "TGBot.Config.AppConfig.yml",

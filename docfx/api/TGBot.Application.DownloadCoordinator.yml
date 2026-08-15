@@ -15,8 +15,12 @@ items:
   fullName: TGBot.Application.DownloadCoordinator
   type: Class
   source:
+    remote:
+      path: src/TGBot/Application/DownloadCoordinator.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadCoordinator
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Application/DownloadCoordinator.cs
+    path: ../src/TGBot/Application/DownloadCoordinator.cs
     startLine: 12
   assemblies:
   - tgdl-bot
@@ -47,8 +51,12 @@ items:
   fullName: TGBot.Application.DownloadCoordinator.DownloadCoordinator(TGBot.Download.IDownloader, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, TGBot.Security.TempDirManager, TGBot.Messaging.UploadService, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Application/DownloadCoordinator.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Application/DownloadCoordinator.cs
+    path: ../src/TGBot/Application/DownloadCoordinator.cs
     startLine: 34
   assemblies:
   - tgdl-bot
@@ -99,8 +107,12 @@ items:
   fullName: TGBot.Application.DownloadCoordinator.EnqueueAsync(TGBot.Messaging.InboundMessage, string, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Application/DownloadCoordinator.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: EnqueueAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Application/DownloadCoordinator.cs
+    path: ../src/TGBot/Application/DownloadCoordinator.cs
     startLine: 61
   assemblies:
   - tgdl-bot

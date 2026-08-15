@@ -20,8 +20,12 @@ items:
   fullName: TGBot.Download.JobRegistry
   type: Class
   source:
+    remote:
+      path: src/TGBot/Download/JobRegistry.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: JobRegistry
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/JobRegistry.cs
+    path: ../src/TGBot/Download/JobRegistry.cs
     startLine: 5
   assemblies:
   - tgdl-bot
@@ -52,8 +56,12 @@ items:
   fullName: TGBot.Download.JobRegistry.Running
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/JobRegistry.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Running
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/JobRegistry.cs
+    path: ../src/TGBot/Download/JobRegistry.cs
     startLine: 15
   assemblies:
   - tgdl-bot
@@ -79,8 +87,12 @@ items:
   fullName: TGBot.Download.JobRegistry.Queued
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/JobRegistry.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Queued
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/JobRegistry.cs
+    path: ../src/TGBot/Download/JobRegistry.cs
     startLine: 20
   assemblies:
   - tgdl-bot
@@ -106,8 +118,12 @@ items:
   fullName: TGBot.Download.JobRegistry.TryReserveUrl(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Download/JobRegistry.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TryReserveUrl
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/JobRegistry.cs
+    path: ../src/TGBot/Download/JobRegistry.cs
     startLine: 27
   assemblies:
   - tgdl-bot
@@ -140,8 +156,12 @@ items:
   fullName: TGBot.Download.JobRegistry.ReleaseUrl(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Download/JobRegistry.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ReleaseUrl
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/JobRegistry.cs
+    path: ../src/TGBot/Download/JobRegistry.cs
     startLine: 39
   assemblies:
   - tgdl-bot
@@ -171,8 +191,12 @@ items:
   fullName: TGBot.Download.JobRegistry.OnEnqueue()
   type: Method
   source:
+    remote:
+      path: src/TGBot/Download/JobRegistry.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: OnEnqueue
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/JobRegistry.cs
+    path: ../src/TGBot/Download/JobRegistry.cs
     startLine: 50
   assemblies:
   - tgdl-bot
@@ -195,8 +219,12 @@ items:
   fullName: TGBot.Download.JobRegistry.OnStart()
   type: Method
   source:
+    remote:
+      path: src/TGBot/Download/JobRegistry.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: OnStart
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/JobRegistry.cs
+    path: ../src/TGBot/Download/JobRegistry.cs
     startLine: 55
   assemblies:
   - tgdl-bot
@@ -219,8 +247,12 @@ items:
   fullName: TGBot.Download.JobRegistry.OnFinish()
   type: Method
   source:
+    remote:
+      path: src/TGBot/Download/JobRegistry.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: OnFinish
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/JobRegistry.cs
+    path: ../src/TGBot/Download/JobRegistry.cs
     startLine: 64
   assemblies:
   - tgdl-bot

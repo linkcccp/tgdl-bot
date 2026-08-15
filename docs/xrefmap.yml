@@ -571,32 +571,6 @@ references:
   isSpec: "True"
   fullName: TGBot.Config.AppConfig.TargetChannelIds
   nameWithType: AppConfig.TargetChannelIds
-- uid: TGBot.Config.AppConfig.TelegramApiHash
-  name: TelegramApiHash
-  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_TelegramApiHash
-  commentId: P:TGBot.Config.AppConfig.TelegramApiHash
-  fullName: TGBot.Config.AppConfig.TelegramApiHash
-  nameWithType: AppConfig.TelegramApiHash
-- uid: TGBot.Config.AppConfig.TelegramApiHash*
-  name: TelegramApiHash
-  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_TelegramApiHash_
-  commentId: Overload:TGBot.Config.AppConfig.TelegramApiHash
-  isSpec: "True"
-  fullName: TGBot.Config.AppConfig.TelegramApiHash
-  nameWithType: AppConfig.TelegramApiHash
-- uid: TGBot.Config.AppConfig.TelegramApiId
-  name: TelegramApiId
-  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_TelegramApiId
-  commentId: P:TGBot.Config.AppConfig.TelegramApiId
-  fullName: TGBot.Config.AppConfig.TelegramApiId
-  nameWithType: AppConfig.TelegramApiId
-- uid: TGBot.Config.AppConfig.TelegramApiId*
-  name: TelegramApiId
-  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_TelegramApiId_
-  commentId: Overload:TGBot.Config.AppConfig.TelegramApiId
-  isSpec: "True"
-  fullName: TGBot.Config.AppConfig.TelegramApiId
-  nameWithType: AppConfig.TelegramApiId
 - uid: TGBot.Config.AppConfig.UpdateFfmpeg
   name: UpdateFfmpeg
   href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_UpdateFfmpeg

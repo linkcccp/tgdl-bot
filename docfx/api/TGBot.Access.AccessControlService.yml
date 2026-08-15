@@ -15,8 +15,12 @@ items:
   fullName: TGBot.Access.AccessControlService
   type: Class
   source:
+    remote:
+      path: src/TGBot/Access/AccessControlService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessControlService
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    path: ../src/TGBot/Access/AccessControlService.cs
     startLine: 42
   assemblies:
   - tgdl-bot
@@ -51,8 +55,12 @@ items:
   fullName: TGBot.Access.AccessControlService.AccessControlService(System.Collections.Generic.IEnumerable<long>, System.Collections.Generic.IEnumerable<long>)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Access/AccessControlService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    path: ../src/TGBot/Access/AccessControlService.cs
     startLine: 52
   assemblies:
   - tgdl-bot
@@ -85,8 +93,12 @@ items:
   fullName: TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea, long?, long)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Access/AccessControlService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Evaluate
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    path: ../src/TGBot/Access/AccessControlService.cs
     startLine: 65
   assemblies:
   - tgdl-bot

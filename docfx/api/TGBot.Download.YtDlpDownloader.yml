@@ -15,14 +15,18 @@ items:
   fullName: TGBot.Download.YtDlpDownloader
   type: Class
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpDownloader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpDownloader
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpDownloader.cs
+    path: ../src/TGBot/Download/YtDlpDownloader.cs
     startLine: 12
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
   summary: >-
-    通过 <xref href="System.Diagnostics.Process.Start" data-throw-if-not-resolved="false"></xref> 调用系统安装的 yt-dlp 二进制实现下载。
+    通过 <xref href="System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)" data-throw-if-not-resolved="false"></xref> 调用系统安装的 yt-dlp 二进制实现下载。
 
 
     <p>不内嵌 yt-dlp/ffmpeg，使用 <code>ArgumentList</code> 避免 shell 注入。</p>
@@ -53,8 +57,12 @@ items:
   fullName: TGBot.Download.YtDlpDownloader.YtDlpDownloader(TGBot.Logging.IAppLogger)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpDownloader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpDownloader.cs
+    path: ../src/TGBot/Download/YtDlpDownloader.cs
     startLine: 30
   assemblies:
   - tgdl-bot
@@ -84,8 +92,12 @@ items:
   fullName: TGBot.Download.YtDlpDownloader.DownloadAsync(TGBot.Download.DownloadOptions, System.Action<TGBot.Download.DownloadProgress>?, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Download/YtDlpDownloader.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/YtDlpDownloader.cs
+    path: ../src/TGBot/Download/YtDlpDownloader.cs
     startLine: 36
   assemblies:
   - tgdl-bot
@@ -119,26 +131,34 @@ items:
   fullName.vb: TGBot.Download.YtDlpDownloader.DownloadAsync(TGBot.Download.DownloadOptions, System.Action(Of TGBot.Download.DownloadProgress), System.Threading.CancellationToken)
   name.vb: DownloadAsync(DownloadOptions, Action(Of DownloadProgress), CancellationToken)
 references:
-- uid: System.Diagnostics.Process.Start
-  commentId: M:System.Diagnostics.Process.Start
+- uid: System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)
+  commentId: M:System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process.start#system-diagnostics-process-start
-  name: Start()
-  nameWithType: Process.Start()
-  fullName: System.Diagnostics.Process.Start()
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process.start#system-diagnostics-process-start(system-diagnostics-processstartinfo)
+  name: Start(ProcessStartInfo)
+  nameWithType: Process.Start(ProcessStartInfo)
+  fullName: System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)
   spec.csharp:
-  - uid: System.Diagnostics.Process.Start
+  - uid: System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)
     name: Start
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process.start#system-diagnostics-process-start
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process.start#system-diagnostics-process-start(system-diagnostics-processstartinfo)
   - name: (
+  - uid: System.Diagnostics.ProcessStartInfo
+    name: ProcessStartInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.processstartinfo
   - name: )
   spec.vb:
-  - uid: System.Diagnostics.Process.Start
+  - uid: System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)
     name: Start
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process.start#system-diagnostics-process-start
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process.start#system-diagnostics-process-start(system-diagnostics-processstartinfo)
   - name: (
+  - uid: System.Diagnostics.ProcessStartInfo
+    name: ProcessStartInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.processstartinfo
   - name: )
 - uid: TGBot.Download
   commentId: N:TGBot.Download

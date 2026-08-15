@@ -16,8 +16,12 @@ items:
   fullName: TGBot.Download.DownloadException
   type: Class
   source:
+    remote:
+      path: src/TGBot/Download/DownloadException.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadException
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    path: ../src/TGBot/Download/DownloadException.cs
     startLine: 26
   assemblies:
   - tgdl-bot
@@ -60,8 +64,12 @@ items:
   fullName: TGBot.Download.DownloadException.Reason
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadException.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Reason
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    path: ../src/TGBot/Download/DownloadException.cs
     startLine: 31
   assemblies:
   - tgdl-bot
@@ -87,8 +95,12 @@ items:
   fullName: TGBot.Download.DownloadException.UserMessage
   type: Property
   source:
+    remote:
+      path: src/TGBot/Download/DownloadException.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UserMessage
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    path: ../src/TGBot/Download/DownloadException.cs
     startLine: 36
   assemblies:
   - tgdl-bot
@@ -114,8 +126,12 @@ items:
   fullName: TGBot.Download.DownloadException.DownloadException(TGBot.Download.DownloadFailureReason, string, string?)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Download/DownloadException.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    path: ../src/TGBot/Download/DownloadException.cs
     startLine: 44
   assemblies:
   - tgdl-bot

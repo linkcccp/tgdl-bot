@@ -16,8 +16,12 @@ items:
   fullName: TGBot.Security.UrlValidator
   type: Class
   source:
+    remote:
+      path: src/TGBot/Security/UrlValidator.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlValidator
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/UrlValidator.cs
+    path: ../src/TGBot/Security/UrlValidator.cs
     startLine: 24
   assemblies:
   - tgdl-bot
@@ -52,8 +56,12 @@ items:
   fullName: TGBot.Security.UrlValidator.UrlValidator(TGBot.Security.IHostResolver)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Security/UrlValidator.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/UrlValidator.cs
+    path: ../src/TGBot/Security/UrlValidator.cs
     startLine: 37
   assemblies:
   - tgdl-bot
@@ -83,8 +91,12 @@ items:
   fullName: TGBot.Security.UrlValidator.ExtractCandidates(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Security/UrlValidator.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ExtractCandidates
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/UrlValidator.cs
+    path: ../src/TGBot/Security/UrlValidator.cs
     startLine: 47
   assemblies:
   - tgdl-bot
@@ -117,8 +129,12 @@ items:
   fullName: TGBot.Security.UrlValidator.ValidateAsync(string, bool, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Security/UrlValidator.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ValidateAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/UrlValidator.cs
+    path: ../src/TGBot/Security/UrlValidator.cs
     startLine: 70
   assemblies:
   - tgdl-bot

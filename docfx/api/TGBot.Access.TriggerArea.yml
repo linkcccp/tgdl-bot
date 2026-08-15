@@ -15,8 +15,12 @@ items:
   fullName: TGBot.Access.TriggerArea
   type: Enum
   source:
+    remote:
+      path: src/TGBot/Access/AccessControlService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TriggerArea
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    path: ../src/TGBot/Access/AccessControlService.cs
     startLine: 7
   assemblies:
   - tgdl-bot
@@ -38,8 +42,12 @@ items:
   fullName: TGBot.Access.TriggerArea.Private
   type: Field
   source:
+    remote:
+      path: src/TGBot/Access/AccessControlService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Private
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    path: ../src/TGBot/Access/AccessControlService.cs
     startLine: 10
   assemblies:
   - tgdl-bot
@@ -62,8 +70,12 @@ items:
   fullName: TGBot.Access.TriggerArea.GroupOrChannel
   type: Field
   source:
+    remote:
+      path: src/TGBot/Access/AccessControlService.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GroupOrChannel
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Access/AccessControlService.cs
+    path: ../src/TGBot/Access/AccessControlService.cs
     startLine: 13
   assemblies:
   - tgdl-bot

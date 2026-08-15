@@ -18,8 +18,12 @@ items:
   fullName: TGBot.Security.UrlValidationResult
   type: Class
   source:
+    remote:
+      path: src/TGBot/Security/UrlValidator.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlValidationResult
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/UrlValidator.cs
+    path: ../src/TGBot/Security/UrlValidator.cs
     startLine: 11
   assemblies:
   - tgdl-bot
@@ -52,8 +56,12 @@ items:
   fullName: TGBot.Security.UrlValidationResult.UrlValidationResult(bool, string, string)
   type: Constructor
   source:
+    remote:
+      path: src/TGBot/Security/UrlValidator.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/UrlValidator.cs
+    path: ../src/TGBot/Security/UrlValidator.cs
     startLine: 11
   assemblies:
   - tgdl-bot
@@ -89,8 +97,12 @@ items:
   fullName: TGBot.Security.UrlValidationResult.IsValid
   type: Property
   source:
+    remote:
+      path: src/TGBot/Security/UrlValidator.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsValid
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/UrlValidator.cs
+    path: ../src/TGBot/Security/UrlValidator.cs
     startLine: 11
   assemblies:
   - tgdl-bot
@@ -116,8 +128,12 @@ items:
   fullName: TGBot.Security.UrlValidationResult.NormalizedUrl
   type: Property
   source:
+    remote:
+      path: src/TGBot/Security/UrlValidator.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NormalizedUrl
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/UrlValidator.cs
+    path: ../src/TGBot/Security/UrlValidator.cs
     startLine: 11
   assemblies:
   - tgdl-bot
@@ -143,8 +159,12 @@ items:
   fullName: TGBot.Security.UrlValidationResult.Error
   type: Property
   source:
+    remote:
+      path: src/TGBot/Security/UrlValidator.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Error
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/UrlValidator.cs
+    path: ../src/TGBot/Security/UrlValidator.cs
     startLine: 11
   assemblies:
   - tgdl-bot
@@ -170,8 +190,12 @@ items:
   fullName: TGBot.Security.UrlValidationResult.Fail(string)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Security/UrlValidator.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Fail
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Security/UrlValidator.cs
+    path: ../src/TGBot/Security/UrlValidator.cs
     startLine: 17
   assemblies:
   - tgdl-bot

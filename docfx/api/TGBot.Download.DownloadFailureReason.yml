@@ -18,8 +18,12 @@ items:
   fullName: TGBot.Download.DownloadFailureReason
   type: Enum
   source:
+    remote:
+      path: src/TGBot/Download/DownloadException.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadFailureReason
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    path: ../src/TGBot/Download/DownloadException.cs
     startLine: 5
   assemblies:
   - tgdl-bot
@@ -41,8 +45,12 @@ items:
   fullName: TGBot.Download.DownloadFailureReason.Failed
   type: Field
   source:
+    remote:
+      path: src/TGBot/Download/DownloadException.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Failed
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    path: ../src/TGBot/Download/DownloadException.cs
     startLine: 8
   assemblies:
   - tgdl-bot
@@ -65,8 +73,12 @@ items:
   fullName: TGBot.Download.DownloadFailureReason.TooLarge
   type: Field
   source:
+    remote:
+      path: src/TGBot/Download/DownloadException.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TooLarge
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    path: ../src/TGBot/Download/DownloadException.cs
     startLine: 11
   assemblies:
   - tgdl-bot
@@ -89,8 +101,12 @@ items:
   fullName: TGBot.Download.DownloadFailureReason.NoDiskSpace
   type: Field
   source:
+    remote:
+      path: src/TGBot/Download/DownloadException.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NoDiskSpace
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    path: ../src/TGBot/Download/DownloadException.cs
     startLine: 14
   assemblies:
   - tgdl-bot
@@ -113,8 +129,12 @@ items:
   fullName: TGBot.Download.DownloadFailureReason.Timeout
   type: Field
   source:
+    remote:
+      path: src/TGBot/Download/DownloadException.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Timeout
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    path: ../src/TGBot/Download/DownloadException.cs
     startLine: 17
   assemblies:
   - tgdl-bot
@@ -137,8 +157,12 @@ items:
   fullName: TGBot.Download.DownloadFailureReason.Cancelled
   type: Field
   source:
+    remote:
+      path: src/TGBot/Download/DownloadException.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Cancelled
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Download/DownloadException.cs
+    path: ../src/TGBot/Download/DownloadException.cs
     startLine: 20
   assemblies:
   - tgdl-bot

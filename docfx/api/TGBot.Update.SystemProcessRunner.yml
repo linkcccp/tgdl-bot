@@ -14,8 +14,12 @@ items:
   fullName: TGBot.Update.SystemProcessRunner
   type: Class
   source:
+    remote:
+      path: src/TGBot/Update/ProcessRunner.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SystemProcessRunner
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ProcessRunner.cs
+    path: ../src/TGBot/Update/ProcessRunner.cs
     startLine: 32
   assemblies:
   - tgdl-bot
@@ -48,8 +52,12 @@ items:
   fullName: TGBot.Update.SystemProcessRunner.RunAsync(string, System.Collections.Generic.IReadOnlyList<string>, string?, System.TimeSpan, System.Threading.CancellationToken)
   type: Method
   source:
+    remote:
+      path: src/TGBot/Update/ProcessRunner.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RunAsync
-    path: /home/yarch/source/tgdl-bot/src/TGBot/Update/ProcessRunner.cs
+    path: ../src/TGBot/Update/ProcessRunner.cs
     startLine: 35
   assemblies:
   - tgdl-bot
