@@ -34,6 +34,7 @@ jobs:
 
       # telegram-bot-api 预编译二进制来自 fork（linkcccp/telegram-bot-api）：
       # fork 由 auto-sync 工作流自动同步上游并构建 x64/arm64 发布到其 Release。
+      # 下载后校验 ELF 魔数并重试，防止瞬时坏响应。
       - name: Download telegram-bot-api (fork latest 预编译)
         shell: bash
         run: |
@@ -46,7 +47,13 @@ jobs:
             url="$(printf '%s' "$JSON" | jq -r --arg n "$asset" '.assets[] | select(.name==$n) | .browser_download_url' | head -n1)"
             [[ -n "$url" ]] || { echo "错误：${TBA_REPO} latest Release 缺少资产 ${asset}"; exit 1; }
             mkdir -p "docker/dist/${arch}"
-            curl -fsSL --retry 3 -o "docker/dist/${arch}/telegram-bot-api" "$url"
+            ok=0
+            for i in 1 2 3 4 5; do
+              curl -fsSL --retry 3 -o "docker/dist/${arch}/telegram-bot-api" "$url" || { sleep 5; continue; }
+              if [[ "$(head -c4 "docker/dist/${arch}/telegram-bot-api" 2>/dev/null | od -An -tx1 | tr -d ' \n')" == "7f454c46" ]]; then ok=1; break; fi
+              rm -f "docker/dist/${arch}/telegram-bot-api"; sleep 5
+            done
+            [[ "$ok" -eq 1 ]] || { echo "错误：${asset} 下载校验失败（非 ELF）"; exit 1; }
             chmod +x "docker/dist/${arch}/telegram-bot-api"
             echo "${asset}: $(stat -c%s "docker/dist/${arch}/telegram-bot-api") bytes"
           done
@@ -66,14 +73,24 @@ jobs:
           set -euo pipefail
           for pair in "amd64:amd64" "arm64:arm64"; do
             arch="${pair%%:*}"; jv="${pair##*:}"
-            curl -fsSL --retry 3 -A "Mozilla/5.0" -o "/tmp/ff-${arch}.tar.xz" \
-              "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-${jv}-static.tar.xz"
-            mkdir -p "/tmp/ff-${arch}"
+            url="https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-${jv}-static.tar.xz"
+            # 校验 xz 魔数并重试，防止瞬时坏响应（200 但内容错误时 curl 不会自动重试）
+            ok=0
+            for i in 1 2 3 4 5; do
+              curl -fsSL --retry 3 -A "Mozilla/5.0" -o "/tmp/ff-${arch}.tar.xz" "$url" || { sleep 5; continue; }
+              if [[ "$(head -c6 "/tmp/ff-${arch}.tar.xz" 2>/dev/null | od -An -tx1 | tr -d ' \n')" == "fd377a585a00" ]]; then ok=1; break; fi
+              rm -f "/tmp/ff-${arch}.tar.xz"; sleep 5
+            done
+            [[ "$ok" -eq 1 ]] || { echo "错误：ffmpeg ${arch} 下载校验失败（非 xz）"; exit 1; }
+            rm -rf "/tmp/ff-${arch}"; mkdir -p "/tmp/ff-${arch}"
             tar -xf "/tmp/ff-${arch}.tar.xz" -C "/tmp/ff-${arch}"
             mkdir -p "docker/dist/${arch}"
-            cp "$(find "/tmp/ff-${arch}" -name ffmpeg -type f | head -n1)" "docker/dist/${arch}/ffmpeg"
+            FF="$(find "/tmp/ff-${arch}" -name ffmpeg -type f | head -n1)"
+            [[ -n "$FF" && -f "$FF" ]] || { echo "错误：ffmpeg ${arch} 解压产物缺失"; exit 1; }
+            cp "$FF" "docker/dist/${arch}/ffmpeg"
             chmod +x "docker/dist/${arch}/ffmpeg"
-            echo "ffmpeg(${arch}): $(docker/dist/${arch}/ffmpeg -version 2>/dev/null | head -n1 || true)"
+            docker/dist/${arch}/ffmpeg -version >/dev/null 2>&1 || { echo "错误：ffmpeg ${arch} 不可执行"; exit 1; }
+            echo "ffmpeg(${arch}): $(docker/dist/${arch}/ffmpeg -version 2>/dev/null | head -n1)"
           done
 
       - name: Download yt-dlp (跨架构通用)
@@ -81,9 +98,15 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p docker/dist
-          curl -fsSL --retry 3 -o docker/dist/yt-dlp \
-            "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp"
-          chmod +x docker/dist/yt-dlp
+          ok=0
+          for i in 1 2 3 4 5; do
+            curl -fsSL --retry 3 -o docker/dist/yt-dlp \
+              "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp" || { sleep 5; continue; }
+            chmod +x docker/dist/yt-dlp
+            if docker/dist/yt-dlp --version >/dev/null 2>&1; then ok=1; break; fi
+            rm -f docker/dist/yt-dlp; sleep 5
+          done
+          [[ "$ok" -eq 1 ]] || { echo "错误：yt-dlp 下载校验失败"; exit 1; }
           echo "yt-dlp: $(docker/dist/yt-dlp --version)"
 
       - name: Set up Docker Buildx
