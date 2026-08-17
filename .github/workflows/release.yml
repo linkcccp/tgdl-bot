@@ -158,7 +158,7 @@ jobs:
       # build-args 仅显式传 DISTARCH（自命名，buildx 不自动注入，值为 matrix.distarch）；
       # TARGETARCH 由 buildx 按 platforms 自动注入标准值（amd64/arm64），无需也不应显式传。
       - name: Build & push image (${{ matrix.platform }})
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: docker
           file: docker/Dockerfile
