@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class CommandHandler | TGBot API 文档 ">
     
-    <meta name="description" content="指令处理器：/update、/status、/help、/cookie、/cookies。">
+    <meta name="description" content="指令处理器：/update、/status、/help、/cookie、/cookies、/language、/config、/access。">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -71,7 +71,7 @@
 
 
   <h1 id="TGBot_Application_CommandHandler" data-uid="TGBot.Application.CommandHandler" class="text-break">Class CommandHandler</h1>
-  <div class="markdown level0 summary"><p>指令处理器：/update、/status、/help、/cookie、/cookies。</p>
+  <div class="markdown level0 summary"><p>指令处理器：/update、/status、/help、/cookie、/cookies、/language、/config、/access。</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -110,19 +110,19 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Application_CommandHandler__ctor_TGBot_Messaging_ITelegramClient_TGBot_Update_IUpdater_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_System_String_TGBot_Cookie_CookieService_TGBot_Config_AppConfig_TGBot_Update_IProcessRunner_TGBot_Logging_IAppLogger_.md&amp;value=---%0Auid%3A%20TGBot.Application.CommandHandler.%23ctor(TGBot.Messaging.ITelegramClient%2CTGBot.Update.IUpdater%2CTGBot.Download.DownloadGate%2CTGBot.Download.JobRegistry%2CSystem.String%2CTGBot.Cookie.CookieService%2CTGBot.Config.AppConfig%2CTGBot.Update.IProcessRunner%2CTGBot.Logging.IAppLogger)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Application_CommandHandler__ctor_TGBot_Messaging_ITelegramClient_TGBot_Update_IUpdater_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_System_String_TGBot_Cookie_CookieService_TGBot_Config_AppConfig_TGBot_Update_IProcessRunner_TGBot_Logging_IAppLogger_TGBot_Texts_I18n_II18n_TGBot_Texts_I18n_UserLanguageStore_TGBot_Config_Overlay_OverlayStore_TGBot_Config_Overlay_PendingNotifyStore_System_Action_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Nullable_System_TimeSpan__.md&amp;value=---%0Auid%3A%20TGBot.Application.CommandHandler.%23ctor(TGBot.Messaging.ITelegramClient%2CTGBot.Update.IUpdater%2CTGBot.Download.DownloadGate%2CTGBot.Download.JobRegistry%2CSystem.String%2CTGBot.Cookie.CookieService%2CTGBot.Config.AppConfig%2CTGBot.Update.IProcessRunner%2CTGBot.Logging.IAppLogger%2CTGBot.Texts.I18n.II18n%2CTGBot.Texts.I18n.UserLanguageStore%2CTGBot.Config.Overlay.OverlayStore%2CTGBot.Config.Overlay.PendingNotifyStore%2CSystem.Action%2CSystem.Collections.Generic.IReadOnlyDictionary%7BSystem.String%2CSystem.String%7D%2CSystem.Nullable%7BSystem.TimeSpan%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Application/CommandHandler.cs/#L44">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Application/CommandHandler.cs/#L74">View Source</a>
   </span>
   <a id="TGBot_Application_CommandHandler__ctor_" data-uid="TGBot.Application.CommandHandler.#ctor*"></a>
-  <h4 id="TGBot_Application_CommandHandler__ctor_TGBot_Messaging_ITelegramClient_TGBot_Update_IUpdater_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_System_String_TGBot_Cookie_CookieService_TGBot_Config_AppConfig_TGBot_Update_IProcessRunner_TGBot_Logging_IAppLogger_" data-uid="TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger)">CommandHandler(ITelegramClient, IUpdater, DownloadGate, JobRegistry, string, CookieService, AppConfig, IProcessRunner, IAppLogger)</h4>
+  <h4 id="TGBot_Application_CommandHandler__ctor_TGBot_Messaging_ITelegramClient_TGBot_Update_IUpdater_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_System_String_TGBot_Cookie_CookieService_TGBot_Config_AppConfig_TGBot_Update_IProcessRunner_TGBot_Logging_IAppLogger_TGBot_Texts_I18n_II18n_TGBot_Texts_I18n_UserLanguageStore_TGBot_Config_Overlay_OverlayStore_TGBot_Config_Overlay_PendingNotifyStore_System_Action_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Nullable_System_TimeSpan__" data-uid="TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n,TGBot.Texts.I18n.UserLanguageStore,TGBot.Config.Overlay.OverlayStore,TGBot.Config.Overlay.PendingNotifyStore,System.Action,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Nullable{System.TimeSpan})">CommandHandler(ITelegramClient, IUpdater, DownloadGate, JobRegistry, string, CookieService, AppConfig, IProcessRunner, IAppLogger, II18n, UserLanguageStore, OverlayStore, PendingNotifyStore, Action, IReadOnlyDictionary&lt;string, string&gt;?, TimeSpan?)</h4>
   <div class="markdown level1 summary"><p>初始化 <a class="xref" href="TGBot.Application.CommandHandler.html">CommandHandler</a>。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CommandHandler(ITelegramClient client, IUpdater updater, DownloadGate gate, JobRegistry registry, string tempDir, CookieService cookies, AppConfig config, IProcessRunner runner, IAppLogger logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public CommandHandler(ITelegramClient client, IUpdater updater, DownloadGate gate, JobRegistry registry, string tempDir, CookieService cookies, AppConfig config, IProcessRunner runner, IAppLogger logger, II18n i18n, UserLanguageStore languageStore, OverlayStore overlayStore, PendingNotifyStore notifyStore, Action restartTrigger, IReadOnlyDictionary&lt;string, string&gt;? configRawValues = null, TimeSpan? restartThrottleWindow = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -173,7 +173,7 @@
       <tr>
         <td><a class="xref" href="TGBot.Config.AppConfig.html">AppConfig</a></td>
         <td><span class="parametername">config</span></td>
-        <td><p>配置。</p>
+        <td><p>生效配置（已应用 overlay）。</p>
 </td>
       </tr>
       <tr>
@@ -188,16 +188,120 @@
         <td><p>日志器。</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="TGBot.Texts.I18n.II18n.html">II18n</a></td>
+        <td><span class="parametername">i18n</span></td>
+        <td><p>国际化服务。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="TGBot.Texts.I18n.UserLanguageStore.html">UserLanguageStore</a></td>
+        <td><span class="parametername">languageStore</span></td>
+        <td><p>用户语言存储（/language 命令）。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="TGBot.Config.Overlay.OverlayStore.html">OverlayStore</a></td>
+        <td><span class="parametername">overlayStore</span></td>
+        <td><p>overlay 存储（/config、/access 读写）。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="TGBot.Config.Overlay.PendingNotifyStore.html">PendingNotifyStore</a></td>
+        <td><span class="parametername">notifyStore</span></td>
+        <td><p>重启通知存储（变更后先同步写盘再触发重启）。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></td>
+        <td><span class="parametername">restartTrigger</span></td>
+        <td><p>重启触发器（优雅退出，容器 unless-stopped 自动拉起）。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td><span class="parametername">configRawValues</span></td>
+        <td><p>config.conf 原始键值（/config list 标注来源；可为空）。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a>?</td>
+        <td><span class="parametername">restartThrottleWindow</span></td>
+        <td><p>重启节流窗口（默认 <a class="xref" href="TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler_DefaultRestartThrottleWindow">DefaultRestartThrottleWindow</a>；测试可注入短窗口）。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Application_CommandHandler_DefaultRestartThrottleWindow.md&amp;value=---%0Auid%3A%20TGBot.Application.CommandHandler.DefaultRestartThrottleWindow%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Application/CommandHandler.cs/#L43">View Source</a>
+  </span>
+  <h4 id="TGBot_Application_CommandHandler_DefaultRestartThrottleWindow" data-uid="TGBot.Application.CommandHandler.DefaultRestartThrottleWindow">DefaultRestartThrottleWindow</h4>
+  <div class="markdown level1 summary"><p>配置变更触发重启的节流窗口：窗口内多次变更合并为一次重启（防白名单用户 DoS）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly TimeSpan DefaultRestartThrottleWindow</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Application_CommandHandler_LanguagePromptTimeout.md&amp;value=---%0Auid%3A%20TGBot.Application.CommandHandler.LanguagePromptTimeout%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Application/CommandHandler.cs/#L50">View Source</a>
+  </span>
+  <h4 id="TGBot_Application_CommandHandler_LanguagePromptTimeout" data-uid="TGBot.Application.CommandHandler.LanguagePromptTimeout">LanguagePromptTimeout</h4>
+  <div class="markdown level1 summary"><p>语言选择键盘的有效期（超时未点仅丢弃回调，不打扰）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly TimeSpan LanguagePromptTimeout</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Application_CommandHandler_HandleAsync_TGBot_Messaging_InboundMessage_System_String_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Application.CommandHandler.HandleAsync(TGBot.Messaging.InboundMessage%2CSystem.String%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Application_CommandHandler_HandleAsync_TGBot_Messaging_InboundMessage_System_String_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Application.CommandHandler.HandleAsync(TGBot.Messaging.InboundMessage%2CSystem.String%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Application/CommandHandler.cs/#L73">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Application/CommandHandler.cs/#L117">View Source</a>
   </span>
   <a id="TGBot_Application_CommandHandler_HandleAsync_" data-uid="TGBot.Application.CommandHandler.HandleAsync*"></a>
   <h4 id="TGBot_Application_CommandHandler_HandleAsync_TGBot_Messaging_InboundMessage_System_String_System_Threading_CancellationToken_" data-uid="TGBot.Application.CommandHandler.HandleAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)">HandleAsync(InboundMessage, string, CancellationToken)</h4>
@@ -253,6 +357,218 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Application_CommandHandler_HandleLanguageCallbackAsync_TGBot_Messaging_InboundMessage_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Application.CommandHandler.HandleLanguageCallbackAsync(TGBot.Messaging.InboundMessage%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Application/CommandHandler.cs/#L433">View Source</a>
+  </span>
+  <a id="TGBot_Application_CommandHandler_HandleLanguageCallbackAsync_" data-uid="TGBot.Application.CommandHandler.HandleLanguageCallbackAsync*"></a>
+  <h4 id="TGBot_Application_CommandHandler_HandleLanguageCallbackAsync_TGBot_Messaging_InboundMessage_System_Threading_CancellationToken_" data-uid="TGBot.Application.CommandHandler.HandleLanguageCallbackAsync(TGBot.Messaging.InboundMessage,System.Threading.CancellationToken)">HandleLanguageCallbackAsync(InboundMessage, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>处理 <code>lang:</code> 回调：仅点击者本人生效、弹窗未超时则写入语言存储并回执确认。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task HandleLanguageCallbackAsync(InboundMessage msg, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="TGBot.Messaging.InboundMessage.html">InboundMessage</a></td>
+        <td><span class="parametername">msg</span></td>
+        <td><p>回调消息（<code>CallbackData</code> 形如 <code>lang:zh</code>）。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>取消令牌。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>完成异步操作。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Application_CommandHandler_IsLanguagePromptValid_System_Int64_.md&amp;value=---%0Auid%3A%20TGBot.Application.CommandHandler.IsLanguagePromptValid(System.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Application/CommandHandler.cs/#L465">View Source</a>
+  </span>
+  <a id="TGBot_Application_CommandHandler_IsLanguagePromptValid_" data-uid="TGBot.Application.CommandHandler.IsLanguagePromptValid*"></a>
+  <h4 id="TGBot_Application_CommandHandler_IsLanguagePromptValid_System_Int64_" data-uid="TGBot.Application.CommandHandler.IsLanguagePromptValid(System.Int64)">IsLanguagePromptValid(long)</h4>
+  <div class="markdown level1 summary"><p>校验语言回调是否仍然有效（本进程内弹过窗且未超时）；过期项顺带移除，防字典无界增长。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsLanguagePromptValid(long userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>点击者用户 ID。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>有效返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Application_CommandHandler_PromptLanguageAsync_TGBot_Messaging_InboundMessage_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Application.CommandHandler.PromptLanguageAsync(TGBot.Messaging.InboundMessage%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Application/CommandHandler.cs/#L410">View Source</a>
+  </span>
+  <a id="TGBot_Application_CommandHandler_PromptLanguageAsync_" data-uid="TGBot.Application.CommandHandler.PromptLanguageAsync*"></a>
+  <h4 id="TGBot_Application_CommandHandler_PromptLanguageAsync_TGBot_Messaging_InboundMessage_System_Threading_CancellationToken_" data-uid="TGBot.Application.CommandHandler.PromptLanguageAsync(TGBot.Messaging.InboundMessage,System.Threading.CancellationToken)">PromptLanguageAsync(InboundMessage, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>向用户发送语言选择键盘（首次弹窗与 /language 共用）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task PromptLanguageAsync(InboundMessage msg, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="TGBot.Messaging.InboundMessage.html">InboundMessage</a></td>
+        <td><span class="parametername">msg</span></td>
+        <td><p>目标消息（其会话与语言决定文案）。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>取消令牌。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>完成异步操作。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Application_CommandHandler_RegisterLanguagePrompt_System_Int64_.md&amp;value=---%0Auid%3A%20TGBot.Application.CommandHandler.RegisterLanguagePrompt(System.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Application/CommandHandler.cs/#L401">View Source</a>
+  </span>
+  <a id="TGBot_Application_CommandHandler_RegisterLanguagePrompt_" data-uid="TGBot.Application.CommandHandler.RegisterLanguagePrompt*"></a>
+  <h4 id="TGBot_Application_CommandHandler_RegisterLanguagePrompt_System_Int64_" data-uid="TGBot.Application.CommandHandler.RegisterLanguagePrompt(System.Int64)">RegisterLanguagePrompt(long)</h4>
+  <div class="markdown level1 summary"><p>登记一次语言选择弹窗（内存去重：同一用户重复触发仅首次生效）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RegisterLanguagePrompt(long userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>用户 ID。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>首次登记返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；已弹过返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 
 </article>
           </div>
@@ -262,10 +578,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Application_CommandHandler.md&amp;value=---%0Auid%3A%20TGBot.Application.CommandHandler%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Application_CommandHandler.md&amp;value=---%0Auid%3A%20TGBot.Application.CommandHandler%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Application/CommandHandler.cs/#L16" class="contribution-link">View Source</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Application/CommandHandler.cs/#L22" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -76,7 +76,9 @@
 Classes
 </h3>
       <h4><a class="xref" href="TGBot.Texts.UserTexts.html">UserTexts</a></h4>
-      <section><p>面向 Telegram 用户的中文提示文案。</p>
+      <section><p>面向 Telegram 用户的文案<strong>资源键</strong>容器（中英双语，实际文案见 <code>Texts/I18n/Resources</code>）。</p>
+<p>i18n 迁移后本类仅承载键名常量（消除魔法字符串）；实际文案由
+<a class="xref" href="TGBot.Texts.I18n.II18n.html#TGBot_Texts_I18n_II18n_Get_System_String_System_String_System_Object___">Get(string, string, params object[])</a> 按消息语言渲染，键缺失回退 en，再缺失回退键名本身。</p>
 <p>所有文案均不含内部实现细节（堆栈、路径、配置值等），遵循零信任原则。</p>
 </section>
 

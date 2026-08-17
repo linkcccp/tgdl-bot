@@ -1,0 +1,36 @@
+# NOTICE
+
+tgdl-bot — Third-Party Notices / 第三方组件声明
+
+本项目本身以 **GNU General Public License v3.0**（GPL-3.0-only）发布，见 [LICENSE](LICENSE)。
+以下为项目引用/内置的第三方组件及其许可声明，仅供透明性参考：
+进程级调用（`Process.ArgumentList` 方式执行 yt-dlp/ffmpeg）不构成衍生作品，
+各组件仍保留其自身的许可与版权。
+
+## 运行时依赖（NuGet）
+
+| 组件 | 版本 | 许可 |
+| --- | --- | --- |
+| Telegram.Bot | 22.x（见 src/TGBot/TGBot.csproj） | MIT License |
+
+## 镜像内置组件（Docker 沙盒内）
+
+| 组件 | 来源 | 许可 |
+| --- | --- | --- |
+| telegram-bot-api | fork [linkcccp/telegram-bot-api](https://github.com/linkcccp/telegram-bot-api)（预编译 Release，本地 Bot API Server，--local 模式；fork 与上游 [tdlib/telegram-bot-api](https://github.com/tdlib/telegram-bot-api) 均为 Boost 许可） | Boost Software License 1.0 |
+| yt-dlp | [yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp)（官方 Release 静态版） | The Unlicense |
+| ffmpeg | [johnvansickle.com/ffmpeg](https://johnvansickle.com/ffmpeg/) 静态构建（x86_64），默认 `--enable-gpl` | GPL（启用 `--enable-gpl` 时含 GPL 组件） |
+| deno | [denoland/deno](https://github.com/denoland/deno)（yt-dlp YouTube 提取所需 JS 运行时） | MIT License |
+| .NET Runtime | 随自包含单文件发布（`PublishSingleFile`） | MIT License |
+
+## 构建与文档工具（开发环境，不随镜像分发）
+
+| 组件 | 许可 |
+| --- | --- |
+| docfx | MIT License |
+
+## 说明
+
+- 以上组件以各自原始许可条款分发；本仓库不修改其源代码（telegram-bot-api 仅以预编译二进制形式内置）。
+- 各组件完整许可文本请参见其上游仓库。
+- 本项目不存储、检索或分发任何媒体内容，仅提供下载工具。

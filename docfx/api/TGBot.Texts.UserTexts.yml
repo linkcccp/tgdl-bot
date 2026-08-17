@@ -5,18 +5,55 @@ items:
   id: UserTexts
   parent: TGBot.Texts
   children:
+  - TGBot.Texts.UserTexts.AccessAdded
+  - TGBot.Texts.UserTexts.AccessAlreadyAdded
+  - TGBot.Texts.UserTexts.AccessInvalidId
+  - TGBot.Texts.UserTexts.AccessListLine
+  - TGBot.Texts.UserTexts.AccessListTemplate
+  - TGBot.Texts.UserTexts.AccessNotFound
+  - TGBot.Texts.UserTexts.AccessRemoved
+  - TGBot.Texts.UserTexts.AccessRemovedFromConfig
+  - TGBot.Texts.UserTexts.AccessSourceConfig
+  - TGBot.Texts.UserTexts.AccessSourceOverlay
+  - TGBot.Texts.UserTexts.AccessTypeChannel
+  - TGBot.Texts.UserTexts.AccessTypeUser
+  - TGBot.Texts.UserTexts.AccessUsage
   - TGBot.Texts.UserTexts.AudioBundleDone
   - TGBot.Texts.UserTexts.AuthRequired
+  - TGBot.Texts.UserTexts.Busy
+  - TGBot.Texts.UserTexts.CaptionSource
+  - TGBot.Texts.UserTexts.CaptionTitle
+  - TGBot.Texts.UserTexts.CommandPrivateOnly
+  - TGBot.Texts.UserTexts.ConfigApplied
+  - TGBot.Texts.UserTexts.ConfigListLine
+  - TGBot.Texts.UserTexts.ConfigListTemplate
+  - TGBot.Texts.UserTexts.ConfigLockedKey
+  - TGBot.Texts.UserTexts.ConfigNoChange
+  - TGBot.Texts.UserTexts.ConfigNotOverridden
+  - TGBot.Texts.UserTexts.ConfigRejected
+  - TGBot.Texts.UserTexts.ConfigResetAllApplied
+  - TGBot.Texts.UserTexts.ConfigResetApplied
+  - TGBot.Texts.UserTexts.ConfigRiskWarning
+  - TGBot.Texts.UserTexts.ConfigSaveFailed
+  - TGBot.Texts.UserTexts.ConfigSetApplied
+  - TGBot.Texts.UserTexts.ConfigSourceConfig
+  - TGBot.Texts.UserTexts.ConfigSourceDefault
+  - TGBot.Texts.UserTexts.ConfigSourceOverlay
+  - TGBot.Texts.UserTexts.ConfigUnknownKey
+  - TGBot.Texts.UserTexts.ConfigUsage
   - TGBot.Texts.UserTexts.CookieDeleted
   - TGBot.Texts.UserTexts.CookieExpired
   - TGBot.Texts.UserTexts.CookieFileTooLarge
   - TGBot.Texts.UserTexts.CookieInvalidFile
+  - TGBot.Texts.UserTexts.CookieListLine
   - TGBot.Texts.UserTexts.CookieListTemplate
   - TGBot.Texts.UserTexts.CookieNone
   - TGBot.Texts.UserTexts.CookiePrompt
   - TGBot.Texts.UserTexts.CookieSaveFailed
   - TGBot.Texts.UserTexts.CookieSaved
   - TGBot.Texts.UserTexts.CookieSavedSuspicious
+  - TGBot.Texts.UserTexts.CookieStateNone
+  - TGBot.Texts.UserTexts.CookieStateSaved
   - TGBot.Texts.UserTexts.CookieUnknownSite
   - TGBot.Texts.UserTexts.CookieUsage
   - TGBot.Texts.UserTexts.DownloadFailed
@@ -25,25 +62,57 @@ items:
   - TGBot.Texts.UserTexts.FileTooLarge
   - TGBot.Texts.UserTexts.FormatUnavailable
   - TGBot.Texts.UserTexts.Help
+  - TGBot.Texts.UserTexts.LanguageNameEn
+  - TGBot.Texts.UserTexts.LanguageNameZh
+  - TGBot.Texts.UserTexts.LanguagePrompt
+  - TGBot.Texts.UserTexts.LanguageSaved
+  - TGBot.Texts.UserTexts.MenuAccess
+  - TGBot.Texts.UserTexts.MenuConfig
+  - TGBot.Texts.UserTexts.MenuCookie
+  - TGBot.Texts.UserTexts.MenuCookies
+  - TGBot.Texts.UserTexts.MenuHelp
+  - TGBot.Texts.UserTexts.MenuLanguage
+  - TGBot.Texts.UserTexts.MenuStatus
+  - TGBot.Texts.UserTexts.MenuUpdate
   - TGBot.Texts.UserTexts.ModeAudioButton
   - TGBot.Texts.UserTexts.ModeChoice
   - TGBot.Texts.UserTexts.ModeVideoButton
   - TGBot.Texts.UserTexts.NoDiskSpace
   - TGBot.Texts.UserTexts.NoValidUrl
+  - TGBot.Texts.UserTexts.PartialFailures
   - TGBot.Texts.UserTexts.Queued
+  - TGBot.Texts.UserTexts.StatusBotVersion
   - TGBot.Texts.UserTexts.StatusTemplate
   - TGBot.Texts.UserTexts.UnauthorizedGroup
   - TGBot.Texts.UserTexts.UnauthorizedPrivate
+  - TGBot.Texts.UserTexts.Unknown
   - TGBot.Texts.UserTexts.UnknownCommand
   - TGBot.Texts.UserTexts.UntrustedUrl
-  - TGBot.Texts.UserTexts.UpdateDenied
-  - TGBot.Texts.UserTexts.UpdateDone
+  - TGBot.Texts.UserTexts.UpdateDoneHeader
   - TGBot.Texts.UserTexts.UpdateFailed
+  - TGBot.Texts.UserTexts.UpdateFailedDownload
+  - TGBot.Texts.UserTexts.UpdateFailedLatestVersion
+  - TGBot.Texts.UserTexts.UpdateFailedLocalVersion
+  - TGBot.Texts.UserTexts.UpdateFailedReplace
+  - TGBot.Texts.UserTexts.UpdateLineFailed
+  - TGBot.Texts.UserTexts.UpdateLineNotConfigured
+  - TGBot.Texts.UserTexts.UpdateLineUpToDate
+  - TGBot.Texts.UserTexts.UpdateLineUpdated
   - TGBot.Texts.UserTexts.UpdateNotNeeded
-  - TGBot.Texts.UserTexts.UpdatePartialDone
   - TGBot.Texts.UserTexts.UploadDone
-  - TGBot.Texts.UserTexts.UploadFailed
   - TGBot.Texts.UserTexts.Uploading
+  - TGBot.Texts.UserTexts.UptimeDays
+  - TGBot.Texts.UserTexts.UptimeHours
+  - TGBot.Texts.UserTexts.UptimeMinutes
+  - TGBot.Texts.UserTexts.UrlEmpty
+  - TGBot.Texts.UserTexts.UrlInvalidChar
+  - TGBot.Texts.UserTexts.UrlInvalidFormat
+  - TGBot.Texts.UserTexts.UrlInvalidHost
+  - TGBot.Texts.UserTexts.UrlInvalidHostChar
+  - TGBot.Texts.UserTexts.UrlSchemeNotAllowed
+  - TGBot.Texts.UserTexts.UrlTooLong
+  - TGBot.Texts.UserTexts.UrlUserInfo
+  - TGBot.Texts.UserTexts.ValueEmpty
   langs:
   - csharp
   - vb
@@ -54,17 +123,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UserTexts
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 6
+    startLine: 11
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: >-
-    面向 Telegram 用户的中文提示文案。
+    面向 Telegram 用户的文案**资源键**容器（中英双语，实际文案见 <code>Texts/I18n/Resources</code>）。
 
+
+    <p>i18n 迁移后本类仅承载键名常量（消除魔法字符串）；实际文案由
+
+    <xref href="TGBot.Texts.I18n.II18n.Get(System.String%2cSystem.String%2cSystem.Object%5b%5d)" data-throw-if-not-resolved="false"></xref> 按消息语言渲染，键缺失回退 en，再缺失回退键名本身。</p>
 
     <p>所有文案均不含内部实现细节（堆栈、路径、配置值等），遵循零信任原则。</p>
   example: []
@@ -95,21 +168,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UnauthorizedPrivate
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 9
+    startLine: 14
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 私聊用户未在白名单时的拒绝提示。
   example: []
   syntax:
-    content: public const string UnauthorizedPrivate = "抱歉，您不在允许使用本服务的名单中，无法处理您发送的内容。"
+    content: public const string UnauthorizedPrivate = "UnauthorizedPrivate"
     return:
       type: System.String
-    content.vb: Public Const UnauthorizedPrivate As String = "抱歉，您不在允许使用本服务的名单中，无法处理您发送的内容。"
+    content.vb: Public Const UnauthorizedPrivate As String = "UnauthorizedPrivate"
 - uid: TGBot.Texts.UserTexts.UnauthorizedGroup
   commentId: F:TGBot.Texts.UserTexts.UnauthorizedGroup
   id: UnauthorizedGroup
@@ -124,21 +197,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UnauthorizedGroup
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 13
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 频道/群组未在白名单时的拒绝提示。
   example: []
   syntax:
-    content: public const string UnauthorizedGroup = "抱歉，本频道/群组未获得授权，无法在此处理链接。"
+    content: public const string UnauthorizedGroup = "UnauthorizedGroup"
     return:
       type: System.String
-    content.vb: Public Const UnauthorizedGroup As String = "抱歉，本频道/群组未获得授权，无法在此处理链接。"
+    content.vb: Public Const UnauthorizedGroup As String = "UnauthorizedGroup"
 - uid: TGBot.Texts.UserTexts.NoValidUrl
   commentId: F:TGBot.Texts.UserTexts.NoValidUrl
   id: NoValidUrl
@@ -153,21 +226,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NoValidUrl
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 消息中没有有效链接时的提示。
   example: []
   syntax:
-    content: public const string NoValidUrl = "消息中未找到有效的视频/音乐链接，请发送 http/https 链接。"
+    content: public const string NoValidUrl = "NoValidUrl"
     return:
       type: System.String
-    content.vb: Public Const NoValidUrl As String = "消息中未找到有效的视频/音乐链接，请发送 http/https 链接。"
+    content.vb: Public Const NoValidUrl As String = "NoValidUrl"
 - uid: TGBot.Texts.UserTexts.UntrustedUrl
   commentId: F:TGBot.Texts.UserTexts.UntrustedUrl
   id: UntrustedUrl
@@ -182,21 +255,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UntrustedUrl
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 链接指向私网地址时的提示。
   example: []
   syntax:
-    content: public const string UntrustedUrl = "链接指向的地址不受信任，已拒绝下载。"
+    content: public const string UntrustedUrl = "UntrustedUrl"
     return:
       type: System.String
-    content.vb: Public Const UntrustedUrl As String = "链接指向的地址不受信任，已拒绝下载。"
+    content.vb: Public Const UntrustedUrl As String = "UntrustedUrl"
 - uid: TGBot.Texts.UserTexts.Queued
   commentId: F:TGBot.Texts.UserTexts.Queued
   id: Queued
@@ -211,21 +284,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Queued
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 下载排队提示。参数依次为：队列位置。
   example: []
   syntax:
-    content: public const string Queued = "已收到，正在排队处理（队列位置：{0}）。"
+    content: public const string Queued = "Queued"
     return:
       type: System.String
-    content.vb: Public Const Queued As String = "已收到，正在排队处理（队列位置：{0}）。"
+    content.vb: Public Const Queued As String = "Queued"
 - uid: TGBot.Texts.UserTexts.Downloading
   commentId: F:TGBot.Texts.UserTexts.Downloading
   id: Downloading
@@ -240,7 +313,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Downloading
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -251,10 +324,10 @@ items:
   summary: 开始下载提示。
   example: []
   syntax:
-    content: public const string Downloading = "开始下载…"
+    content: public const string Downloading = "Downloading"
     return:
       type: System.String
-    content.vb: Public Const Downloading As String = "开始下载…"
+    content.vb: Public Const Downloading As String = "Downloading"
 - uid: TGBot.Texts.UserTexts.DownloadProgress
   commentId: F:TGBot.Texts.UserTexts.DownloadProgress
   id: DownloadProgress
@@ -269,21 +342,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadProgress
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 33
+    startLine: 32
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 下载进度提示。参数依次为：百分比、速度。
   example: []
   syntax:
-    content: public const string DownloadProgress = "下载中：{0}%（{1}）"
+    content: public const string DownloadProgress = "DownloadProgress"
     return:
       type: System.String
-    content.vb: Public Const DownloadProgress As String = "下载中：{0}%（{1}）"
+    content.vb: Public Const DownloadProgress As String = "DownloadProgress"
 - uid: TGBot.Texts.UserTexts.Uploading
   commentId: F:TGBot.Texts.UserTexts.Uploading
   id: Uploading
@@ -298,21 +371,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Uploading
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 37
+    startLine: 35
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 开始上传提示。
   example: []
   syntax:
-    content: public const string Uploading = "下载完成，正在上传到目标频道/群组…"
+    content: public const string Uploading = "Uploading"
     return:
       type: System.String
-    content.vb: Public Const Uploading As String = "下载完成，正在上传到目标频道/群组…"
+    content.vb: Public Const Uploading As String = "Uploading"
 - uid: TGBot.Texts.UserTexts.UploadDone
   commentId: F:TGBot.Texts.UserTexts.UploadDone
   id: UploadDone
@@ -327,21 +400,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadDone
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 41
+    startLine: 38
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 上传成功提示。参数依次为：目标会话数量。
   example: []
   syntax:
-    content: public const string UploadDone = "已完成，已推送至 {0} 个目标会话。"
+    content: public const string UploadDone = "UploadDone"
     return:
       type: System.String
-    content.vb: Public Const UploadDone As String = "已完成，已推送至 {0} 个目标会话。"
+    content.vb: Public Const UploadDone As String = "UploadDone"
 - uid: TGBot.Texts.UserTexts.DownloadFailed
   commentId: F:TGBot.Texts.UserTexts.DownloadFailed
   id: DownloadFailed
@@ -356,50 +429,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadFailed
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 45
+    startLine: 41
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 下载失败提示。
   example: []
   syntax:
-    content: public const string DownloadFailed = "下载失败，请稍后重试，或检查链接是否有效。"
+    content: public const string DownloadFailed = "DownloadFailed"
     return:
       type: System.String
-    content.vb: Public Const DownloadFailed As String = "下载失败，请稍后重试，或检查链接是否有效。"
-- uid: TGBot.Texts.UserTexts.UploadFailed
-  commentId: F:TGBot.Texts.UserTexts.UploadFailed
-  id: UploadFailed
-  parent: TGBot.Texts.UserTexts
-  langs:
-  - csharp
-  - vb
-  name: UploadFailed
-  nameWithType: UserTexts.UploadFailed
-  fullName: TGBot.Texts.UserTexts.UploadFailed
-  type: Field
-  source:
-    remote:
-      path: src/TGBot/Texts/UserTexts.cs
-      branch: main
-      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
-    id: UploadFailed
-    path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 49
-  assemblies:
-  - tgdl-bot
-  namespace: TGBot.Texts
-  summary: 上传失败提示。
-  example: []
-  syntax:
-    content: public const string UploadFailed = "上传失败，请稍后重试。"
-    return:
-      type: System.String
-    content.vb: Public Const UploadFailed As String = "上传失败，请稍后重试。"
+    content.vb: Public Const DownloadFailed As String = "DownloadFailed"
 - uid: TGBot.Texts.UserTexts.FileTooLarge
   commentId: F:TGBot.Texts.UserTexts.FileTooLarge
   id: FileTooLarge
@@ -414,21 +458,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FileTooLarge
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 53
+    startLine: 44
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 文件过大提示。
   example: []
   syntax:
-    content: public const string FileTooLarge = "文件过大，超出上传限制（约 2GB），已取消该任务。"
+    content: public const string FileTooLarge = "FileTooLarge"
     return:
       type: System.String
-    content.vb: Public Const FileTooLarge As String = "文件过大，超出上传限制（约 2GB），已取消该任务。"
+    content.vb: Public Const FileTooLarge As String = "FileTooLarge"
 - uid: TGBot.Texts.UserTexts.NoDiskSpace
   commentId: F:TGBot.Texts.UserTexts.NoDiskSpace
   id: NoDiskSpace
@@ -443,21 +487,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NoDiskSpace
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 57
+    startLine: 47
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 磁盘空间不足提示。
   example: []
   syntax:
-    content: public const string NoDiskSpace = "服务器磁盘空间不足，已取消该任务，请稍后重试。"
+    content: public const string NoDiskSpace = "NoDiskSpace"
     return:
       type: System.String
-    content.vb: Public Const NoDiskSpace As String = "服务器磁盘空间不足，已取消该任务，请稍后重试。"
+    content.vb: Public Const NoDiskSpace As String = "NoDiskSpace"
 - uid: TGBot.Texts.UserTexts.UnknownCommand
   commentId: F:TGBot.Texts.UserTexts.UnknownCommand
   id: UnknownCommand
@@ -472,21 +516,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UnknownCommand
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 61
+    startLine: 50
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 未知指令提示。
   example: []
   syntax:
-    content: public const string UnknownCommand = "未知指令。发送 /help 查看可用指令。"
+    content: public const string UnknownCommand = "UnknownCommand"
     return:
       type: System.String
-    content.vb: Public Const UnknownCommand As String = "未知指令。发送 /help 查看可用指令。"
+    content.vb: Public Const UnknownCommand As String = "UnknownCommand"
 - uid: TGBot.Texts.UserTexts.Help
   commentId: F:TGBot.Texts.UserTexts.Help
   id: Help
@@ -501,21 +545,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Help
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 65
+    startLine: 53
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 帮助文本。
   example: []
   syntax:
-    content: public const string Help = "可用指令：\n/update    - 检查并更新 ffmpeg 与 yt-dlp\n/cookie    - 上传指定站点的 cookies（如 /cookie youtube）\n/cookies   - 查看各站点 cookies 状态\n/status    - 查看运行状态与版本\n/help      - 显示本帮助\n\n直接发送视频/音乐链接即可触发下载。"
+    content: public const string Help = "Help"
     return:
       type: System.String
-    content.vb: Public Const Help As String = "可用指令：" & vbLf & "/update    - 检查并更新 ffmpeg 与 yt-dlp" & vbLf & "/cookie    - 上传指定站点的 cookies（如 /cookie youtube）" & vbLf & "/cookies   - 查看各站点 cookies 状态" & vbLf & "/status    - 查看运行状态与版本" & vbLf & "/help      - 显示本帮助" & vbLf & vbLf & "直接发送视频/音乐链接即可触发下载。"
+    content.vb: Public Const Help As String = "Help"
 - uid: TGBot.Texts.UserTexts.AuthRequired
   commentId: F:TGBot.Texts.UserTexts.AuthRequired
   id: AuthRequired
@@ -530,21 +574,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AuthRequired
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 75
+    startLine: 56
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 目标站点要求认证提示。
   example: []
   syntax:
-    content: public const string AuthRequired = "目标站点要求登录/认证（如 YouTube 机器人检测）。请通过 /cookie 上传该站点的 cookies 后重试。"
+    content: public const string AuthRequired = "AuthRequired"
     return:
       type: System.String
-    content.vb: Public Const AuthRequired As String = "目标站点要求登录/认证（如 YouTube 机器人检测）。请通过 /cookie 上传该站点的 cookies 后重试。"
+    content.vb: Public Const AuthRequired As String = "AuthRequired"
 - uid: TGBot.Texts.UserTexts.FormatUnavailable
   commentId: F:TGBot.Texts.UserTexts.FormatUnavailable
   id: FormatUnavailable
@@ -559,21 +603,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FormatUnavailable
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 79
+    startLine: 59
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 可用格式不足提示。
   example: []
   syntax:
-    content: public const string FormatUnavailable = "该视频可用格式不足，无法按当前配置下载（可能仅限登录/地区，或编码无法封装）。"
+    content: public const string FormatUnavailable = "FormatUnavailable"
     return:
       type: System.String
-    content.vb: Public Const FormatUnavailable As String = "该视频可用格式不足，无法按当前配置下载（可能仅限登录/地区，或编码无法封装）。"
+    content.vb: Public Const FormatUnavailable As String = "FormatUnavailable"
 - uid: TGBot.Texts.UserTexts.ModeChoice
   commentId: F:TGBot.Texts.UserTexts.ModeChoice
   id: ModeChoice
@@ -588,21 +632,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ModeChoice
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 83
+    startLine: 62
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 下载模式选择提示。
   example: []
   syntax:
-    content: public const string ModeChoice = "该链接含视频和音频，请选择下载方式："
+    content: public const string ModeChoice = "ModeChoice"
     return:
       type: System.String
-    content.vb: Public Const ModeChoice As String = "该链接含视频和音频，请选择下载方式："
+    content.vb: Public Const ModeChoice As String = "ModeChoice"
 - uid: TGBot.Texts.UserTexts.ModeVideoButton
   commentId: F:TGBot.Texts.UserTexts.ModeVideoButton
   id: ModeVideoButton
@@ -617,21 +661,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ModeVideoButton
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 87
+    startLine: 65
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 视频+音频按钮。
   example: []
   syntax:
-    content: "public const string ModeVideoButton = \"\U0001F3AC 视频+音频\""
+    content: public const string ModeVideoButton = "ModeVideoButton"
     return:
       type: System.String
-    content.vb: "Public Const ModeVideoButton As String = \"\U0001F3AC 视频+音频\""
+    content.vb: Public Const ModeVideoButton As String = "ModeVideoButton"
 - uid: TGBot.Texts.UserTexts.ModeAudioButton
   commentId: F:TGBot.Texts.UserTexts.ModeAudioButton
   id: ModeAudioButton
@@ -646,21 +690,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ModeAudioButton
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 90
+    startLine: 68
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 仅音频按钮。
   example: []
   syntax:
-    content: "public const string ModeAudioButton = \"\U0001F3B5 仅音频\""
+    content: public const string ModeAudioButton = "ModeAudioButton"
     return:
       type: System.String
-    content.vb: "Public Const ModeAudioButton As String = \"\U0001F3B5 仅音频\""
+    content.vb: Public Const ModeAudioButton As String = "ModeAudioButton"
 - uid: TGBot.Texts.UserTexts.AudioBundleDone
   commentId: F:TGBot.Texts.UserTexts.AudioBundleDone
   id: AudioBundleDone
@@ -675,21 +719,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AudioBundleDone
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 93
+    startLine: 71
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 仅音频任务完成提示。参数：flac 文件名、mp3 文件名。
   example: []
   syntax:
-    content: public const string AudioBundleDone = "已推送最高音质音频：\n{0}（无损）\n{1}（流式播放）"
+    content: public const string AudioBundleDone = "AudioBundleDone"
     return:
       type: System.String
-    content.vb: Public Const AudioBundleDone As String = "已推送最高音质音频：" & vbLf & "{0}（无损）" & vbLf & "{1}（流式播放）"
+    content.vb: Public Const AudioBundleDone As String = "AudioBundleDone"
 - uid: TGBot.Texts.UserTexts.CookieUsage
   commentId: F:TGBot.Texts.UserTexts.CookieUsage
   id: CookieUsage
@@ -704,21 +748,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieUsage
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 97
+    startLine: 74
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
-  summary: cookie 使用说明。
+  summary: cookie 使用说明。参数：可用站点列表。
   example: []
   syntax:
-    content: public const string CookieUsage = "用法：\n/cookie <站点> - 开始上传该站点 cookies，然后发送 cookies 文件\n/cookie <站点> clear - 删除该站点 cookies\n/cookies - 查看各站点状态\n\n可用站点：{0}"
+    content: public const string CookieUsage = "CookieUsage"
     return:
       type: System.String
-    content.vb: Public Const CookieUsage As String = "用法：" & vbLf & "/cookie <站点> - 开始上传该站点 cookies，然后发送 cookies 文件" & vbLf & "/cookie <站点> clear - 删除该站点 cookies" & vbLf & "/cookies - 查看各站点状态" & vbLf & vbLf & "可用站点：{0}"
+    content.vb: Public Const CookieUsage As String = "CookieUsage"
 - uid: TGBot.Texts.UserTexts.CookiePrompt
   commentId: F:TGBot.Texts.UserTexts.CookiePrompt
   id: CookiePrompt
@@ -733,21 +777,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookiePrompt
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 105
+    startLine: 77
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 开始上传提示。参数：站点显示名。
   example: []
   syntax:
-    content: public const string CookiePrompt = "请发送 cookies 文件（用于 {0}）。\n文件应为 Netscape 格式的 cookies.txt（≤1MB，浏览器导出）。"
+    content: public const string CookiePrompt = "CookiePrompt"
     return:
       type: System.String
-    content.vb: Public Const CookiePrompt As String = "请发送 cookies 文件（用于 {0}）。" & vbLf & "文件应为 Netscape 格式的 cookies.txt（≤1MB，浏览器导出）。"
+    content.vb: Public Const CookiePrompt As String = "CookiePrompt"
 - uid: TGBot.Texts.UserTexts.CookieSaved
   commentId: F:TGBot.Texts.UserTexts.CookieSaved
   id: CookieSaved
@@ -762,21 +806,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieSaved
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 109
+    startLine: 80
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 保存成功提示。参数：站点显示名、站点键。
   example: []
   syntax:
-    content: public const string CookieSaved = "{0} 的 cookies 已保存（站点键：{1}），下载该站点链接时将自动使用。"
+    content: public const string CookieSaved = "CookieSaved"
     return:
       type: System.String
-    content.vb: Public Const CookieSaved As String = "{0} 的 cookies 已保存（站点键：{1}），下载该站点链接时将自动使用。"
+    content.vb: Public Const CookieSaved As String = "CookieSaved"
 - uid: TGBot.Texts.UserTexts.CookieSavedSuspicious
   commentId: F:TGBot.Texts.UserTexts.CookieSavedSuspicious
   id: CookieSavedSuspicious
@@ -791,21 +835,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieSavedSuspicious
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 113
+    startLine: 83
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 保存成功但格式可疑提示。参数：站点显示名、站点键。
   example: []
   syntax:
-    content: public const string CookieSavedSuspicious = "{0} 的 cookies 已保存（站点键：{1}），但文件格式不像标准 cookies.txt，若下载仍失败请重新导出。"
+    content: public const string CookieSavedSuspicious = "CookieSavedSuspicious"
     return:
       type: System.String
-    content.vb: Public Const CookieSavedSuspicious As String = "{0} 的 cookies 已保存（站点键：{1}），但文件格式不像标准 cookies.txt，若下载仍失败请重新导出。"
+    content.vb: Public Const CookieSavedSuspicious As String = "CookieSavedSuspicious"
 - uid: TGBot.Texts.UserTexts.CookieSaveFailed
   commentId: F:TGBot.Texts.UserTexts.CookieSaveFailed
   id: CookieSaveFailed
@@ -820,21 +864,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieSaveFailed
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 117
+    startLine: 86
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 保存失败提示。
   example: []
   syntax:
-    content: public const string CookieSaveFailed = "cookies 保存失败，请稍后重试。"
+    content: public const string CookieSaveFailed = "CookieSaveFailed"
     return:
       type: System.String
-    content.vb: Public Const CookieSaveFailed As String = "cookies 保存失败，请稍后重试。"
+    content.vb: Public Const CookieSaveFailed As String = "CookieSaveFailed"
 - uid: TGBot.Texts.UserTexts.CookieDeleted
   commentId: F:TGBot.Texts.UserTexts.CookieDeleted
   id: CookieDeleted
@@ -849,21 +893,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieDeleted
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 121
+    startLine: 89
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 删除成功提示。参数：站点显示名。
   example: []
   syntax:
-    content: public const string CookieDeleted = "{0} 的 cookies 已删除。"
+    content: public const string CookieDeleted = "CookieDeleted"
     return:
       type: System.String
-    content.vb: Public Const CookieDeleted As String = "{0} 的 cookies 已删除。"
+    content.vb: Public Const CookieDeleted As String = "CookieDeleted"
 - uid: TGBot.Texts.UserTexts.CookieNone
   commentId: F:TGBot.Texts.UserTexts.CookieNone
   id: CookieNone
@@ -878,21 +922,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieNone
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 125
+    startLine: 92
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 无任何站点 cookie 提示。
   example: []
   syntax:
-    content: public const string CookieNone = "当前没有任何站点的 cookies。发送 /cookie <站点> 开始上传。"
+    content: public const string CookieNone = "CookieNone"
     return:
       type: System.String
-    content.vb: Public Const CookieNone As String = "当前没有任何站点的 cookies。发送 /cookie <站点> 开始上传。"
+    content.vb: Public Const CookieNone As String = "CookieNone"
 - uid: TGBot.Texts.UserTexts.CookieListTemplate
   commentId: F:TGBot.Texts.UserTexts.CookieListTemplate
   id: CookieListTemplate
@@ -907,21 +951,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieListTemplate
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 129
+    startLine: 95
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: cookie 列表模板。参数：站点键/状态行。
   example: []
   syntax:
-    content: public const string CookieListTemplate = "各站点 cookies 状态：\n{0}\n\n/cookie <站点> 上传，/cookie <站点> clear 删除。"
+    content: public const string CookieListTemplate = "CookieListTemplate"
     return:
       type: System.String
-    content.vb: Public Const CookieListTemplate As String = "各站点 cookies 状态：" & vbLf & "{0}" & vbLf & vbLf & "/cookie <站点> 上传，/cookie <站点> clear 删除。"
+    content.vb: Public Const CookieListTemplate As String = "CookieListTemplate"
 - uid: TGBot.Texts.UserTexts.CookieUnknownSite
   commentId: F:TGBot.Texts.UserTexts.CookieUnknownSite
   id: CookieUnknownSite
@@ -936,21 +980,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieUnknownSite
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 133
+    startLine: 98
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 未知站点提示。参数：站点键、可用站点。
   example: []
   syntax:
-    content: public const string CookieUnknownSite = "未知站点：{0}。可用站点：{1}"
+    content: public const string CookieUnknownSite = "CookieUnknownSite"
     return:
       type: System.String
-    content.vb: Public Const CookieUnknownSite As String = "未知站点：{0}。可用站点：{1}"
+    content.vb: Public Const CookieUnknownSite As String = "CookieUnknownSite"
 - uid: TGBot.Texts.UserTexts.CookieFileTooLarge
   commentId: F:TGBot.Texts.UserTexts.CookieFileTooLarge
   id: CookieFileTooLarge
@@ -965,21 +1009,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieFileTooLarge
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 137
+    startLine: 101
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: cookies 文件过大提示。
   example: []
   syntax:
-    content: public const string CookieFileTooLarge = "cookies 文件过大（限制 1MB），请重新导出。"
+    content: public const string CookieFileTooLarge = "CookieFileTooLarge"
     return:
       type: System.String
-    content.vb: Public Const CookieFileTooLarge As String = "cookies 文件过大（限制 1MB），请重新导出。"
+    content.vb: Public Const CookieFileTooLarge As String = "CookieFileTooLarge"
 - uid: TGBot.Texts.UserTexts.CookieInvalidFile
   commentId: F:TGBot.Texts.UserTexts.CookieInvalidFile
   id: CookieInvalidFile
@@ -994,21 +1038,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieInvalidFile
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 141
+    startLine: 104
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: cookies 文件无效提示。
   example: []
   syntax:
-    content: public const string CookieInvalidFile = "cookies 文件无效，请发送文本格式的 cookies.txt。"
+    content: public const string CookieInvalidFile = "CookieInvalidFile"
     return:
       type: System.String
-    content.vb: Public Const CookieInvalidFile As String = "cookies 文件无效，请发送文本格式的 cookies.txt。"
+    content.vb: Public Const CookieInvalidFile As String = "CookieInvalidFile"
 - uid: TGBot.Texts.UserTexts.CookieExpired
   commentId: F:TGBot.Texts.UserTexts.CookieExpired
   id: CookieExpired
@@ -1023,21 +1067,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieExpired
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 145
+    startLine: 107
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 上传超时提示。
   example: []
   syntax:
-    content: public const string CookieExpired = "上传等待超时，请重新发送 /cookie <站点> 后再发文件。"
+    content: public const string CookieExpired = "CookieExpired"
     return:
       type: System.String
-    content.vb: Public Const CookieExpired As String = "上传等待超时，请重新发送 /cookie <站点> 后再发文件。"
+    content.vb: Public Const CookieExpired As String = "CookieExpired"
 - uid: TGBot.Texts.UserTexts.UpdateNotNeeded
   commentId: F:TGBot.Texts.UserTexts.UpdateNotNeeded
   id: UpdateNotNeeded
@@ -1052,79 +1096,21 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateNotNeeded
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 149
+    startLine: 110
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 更新无需执行提示。
   example: []
   syntax:
-    content: public const string UpdateNotNeeded = "yt-dlp 与 ffmpeg 均为最新版本，无需更新。"
+    content: public const string UpdateNotNeeded = "UpdateNotNeeded"
     return:
       type: System.String
-    content.vb: Public Const UpdateNotNeeded As String = "yt-dlp 与 ffmpeg 均为最新版本，无需更新。"
-- uid: TGBot.Texts.UserTexts.UpdateDone
-  commentId: F:TGBot.Texts.UserTexts.UpdateDone
-  id: UpdateDone
-  parent: TGBot.Texts.UserTexts
-  langs:
-  - csharp
-  - vb
-  name: UpdateDone
-  nameWithType: UserTexts.UpdateDone
-  fullName: TGBot.Texts.UserTexts.UpdateDone
-  type: Field
-  source:
-    remote:
-      path: src/TGBot/Texts/UserTexts.cs
-      branch: main
-      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
-    id: UpdateDone
-    path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 153
-  assemblies:
-  - tgdl-bot
-  namespace: TGBot.Texts
-  summary: 更新完成提示。参数依次为：yt-dlp 旧版本、新版本、ffmpeg 旧版本、新版本。
-  example: []
-  syntax:
-    content: public const string UpdateDone = "更新完成：\nyt-dlp：{0} → {1}\nffmpeg：{2} → {3}"
-    return:
-      type: System.String
-    content.vb: Public Const UpdateDone As String = "更新完成：" & vbLf & "yt-dlp：{0} → {1}" & vbLf & "ffmpeg：{2} → {3}"
-- uid: TGBot.Texts.UserTexts.UpdatePartialDone
-  commentId: F:TGBot.Texts.UserTexts.UpdatePartialDone
-  id: UpdatePartialDone
-  parent: TGBot.Texts.UserTexts
-  langs:
-  - csharp
-  - vb
-  name: UpdatePartialDone
-  nameWithType: UserTexts.UpdatePartialDone
-  fullName: TGBot.Texts.UserTexts.UpdatePartialDone
-  type: Field
-  source:
-    remote:
-      path: src/TGBot/Texts/UserTexts.cs
-      branch: main
-      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
-    id: UpdatePartialDone
-    path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 157
-  assemblies:
-  - tgdl-bot
-  namespace: TGBot.Texts
-  summary: 更新部分完成提示（仅某个组件更新）。
-  example: []
-  syntax:
-    content: public const string UpdatePartialDone = "更新完成：\n{0}"
-    return:
-      type: System.String
-    content.vb: Public Const UpdatePartialDone As String = "更新完成：" & vbLf & "{0}"
+    content.vb: Public Const UpdateNotNeeded As String = "UpdateNotNeeded"
 - uid: TGBot.Texts.UserTexts.UpdateFailed
   commentId: F:TGBot.Texts.UserTexts.UpdateFailed
   id: UpdateFailed
@@ -1139,50 +1125,137 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateFailed
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 161
+    startLine: 113
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
   summary: 更新失败提示。
   example: []
   syntax:
-    content: public const string UpdateFailed = "更新失败，已回滚至原版本，请稍后重试。"
+    content: public const string UpdateFailed = "UpdateFailed"
     return:
       type: System.String
-    content.vb: Public Const UpdateFailed As String = "更新失败，已回滚至原版本，请稍后重试。"
-- uid: TGBot.Texts.UserTexts.UpdateDenied
-  commentId: F:TGBot.Texts.UserTexts.UpdateDenied
-  id: UpdateDenied
+    content.vb: Public Const UpdateFailed As String = "UpdateFailed"
+- uid: TGBot.Texts.UserTexts.UpdateFailedLocalVersion
+  commentId: F:TGBot.Texts.UserTexts.UpdateFailedLocalVersion
+  id: UpdateFailedLocalVersion
   parent: TGBot.Texts.UserTexts
   langs:
   - csharp
   - vb
-  name: UpdateDenied
-  nameWithType: UserTexts.UpdateDenied
-  fullName: TGBot.Texts.UserTexts.UpdateDenied
+  name: UpdateFailedLocalVersion
+  nameWithType: UserTexts.UpdateFailedLocalVersion
+  fullName: TGBot.Texts.UserTexts.UpdateFailedLocalVersion
   type: Field
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
-    id: UpdateDenied
+    id: UpdateFailedLocalVersion
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 165
+    startLine: 116
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
-  summary: 更新被拒绝提示（非白名单用户）。
+  summary: 更新失败提示：无法读取本地工具版本。
   example: []
   syntax:
-    content: public const string UpdateDenied = "您没有权限执行此操作。"
+    content: public const string UpdateFailedLocalVersion = "UpdateFailedLocalVersion"
     return:
       type: System.String
-    content.vb: Public Const UpdateDenied As String = "您没有权限执行此操作。"
+    content.vb: Public Const UpdateFailedLocalVersion As String = "UpdateFailedLocalVersion"
+- uid: TGBot.Texts.UserTexts.UpdateFailedLatestVersion
+  commentId: F:TGBot.Texts.UserTexts.UpdateFailedLatestVersion
+  id: UpdateFailedLatestVersion
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UpdateFailedLatestVersion
+  nameWithType: UserTexts.UpdateFailedLatestVersion
+  fullName: TGBot.Texts.UserTexts.UpdateFailedLatestVersion
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UpdateFailedLatestVersion
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 119
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 更新失败提示：无法获取最新版本信息。
+  example: []
+  syntax:
+    content: public const string UpdateFailedLatestVersion = "UpdateFailedLatestVersion"
+    return:
+      type: System.String
+    content.vb: Public Const UpdateFailedLatestVersion As String = "UpdateFailedLatestVersion"
+- uid: TGBot.Texts.UserTexts.UpdateFailedDownload
+  commentId: F:TGBot.Texts.UserTexts.UpdateFailedDownload
+  id: UpdateFailedDownload
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UpdateFailedDownload
+  nameWithType: UserTexts.UpdateFailedDownload
+  fullName: TGBot.Texts.UserTexts.UpdateFailedDownload
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UpdateFailedDownload
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 122
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 更新失败提示：新版本下载失败。
+  example: []
+  syntax:
+    content: public const string UpdateFailedDownload = "UpdateFailedDownload"
+    return:
+      type: System.String
+    content.vb: Public Const UpdateFailedDownload As String = "UpdateFailedDownload"
+- uid: TGBot.Texts.UserTexts.UpdateFailedReplace
+  commentId: F:TGBot.Texts.UserTexts.UpdateFailedReplace
+  id: UpdateFailedReplace
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UpdateFailedReplace
+  nameWithType: UserTexts.UpdateFailedReplace
+  fullName: TGBot.Texts.UserTexts.UpdateFailedReplace
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UpdateFailedReplace
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 125
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 更新失败提示：二进制替换失败（已回滚）。
+  example: []
+  syntax:
+    content: public const string UpdateFailedReplace = "UpdateFailedReplace"
+    return:
+      type: System.String
+    content.vb: Public Const UpdateFailedReplace As String = "UpdateFailedReplace"
 - uid: TGBot.Texts.UserTexts.StatusTemplate
   commentId: F:TGBot.Texts.UserTexts.StatusTemplate
   id: StatusTemplate
@@ -1197,22 +1270,2086 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: StatusTemplate
     path: ../src/TGBot/Texts/UserTexts.cs
-    startLine: 169
+    startLine: 128
   assemblies:
   - tgdl-bot
   namespace: TGBot.Texts
-  summary: 状态信息模板。参数依次为：运行时间、队列、进行中、yt-dlp 版本、ffmpeg 版本、可用磁盘空间。
+  summary: 状态信息模板。参数依次为：运行时间、进行中、排队、yt-dlp 版本、ffmpeg 版本、可用磁盘空间。
   example: []
   syntax:
-    content: public const string StatusTemplate = "运行状态：\n运行时间：{0}\n进行中任务：{1}\n排队任务：{2}\nyt-dlp：{3}\nffmpeg：{4}\n可用磁盘空间：{5}"
+    content: public const string StatusTemplate = "StatusTemplate"
     return:
       type: System.String
-    content.vb: Public Const StatusTemplate As String = "运行状态：" & vbLf & "运行时间：{0}" & vbLf & "进行中任务：{1}" & vbLf & "排队任务：{2}" & vbLf & "yt-dlp：{3}" & vbLf & "ffmpeg：{4}" & vbLf & "可用磁盘空间：{5}"
+    content.vb: Public Const StatusTemplate As String = "StatusTemplate"
+- uid: TGBot.Texts.UserTexts.StatusBotVersion
+  commentId: F:TGBot.Texts.UserTexts.StatusBotVersion
+  id: StatusBotVersion
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: StatusBotVersion
+  nameWithType: UserTexts.StatusBotVersion
+  fullName: TGBot.Texts.UserTexts.StatusBotVersion
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: StatusBotVersion
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 131
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 状态信息首行：bot 自身版本。参数：版本号（如 2.4.0）。
+  example: []
+  syntax:
+    content: public const string StatusBotVersion = "StatusBotVersion"
+    return:
+      type: System.String
+    content.vb: Public Const StatusBotVersion As String = "StatusBotVersion"
+- uid: TGBot.Texts.UserTexts.Busy
+  commentId: F:TGBot.Texts.UserTexts.Busy
+  id: Busy
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: Busy
+  nameWithType: UserTexts.Busy
+  fullName: TGBot.Texts.UserTexts.Busy
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Busy
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 134
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 链接正在处理中提示（URL 去重入队失败时）。
+  example: []
+  syntax:
+    content: public const string Busy = "Busy"
+    return:
+      type: System.String
+    content.vb: Public Const Busy As String = "Busy"
+- uid: TGBot.Texts.UserTexts.CommandPrivateOnly
+  commentId: F:TGBot.Texts.UserTexts.CommandPrivateOnly
+  id: CommandPrivateOnly
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CommandPrivateOnly
+  nameWithType: UserTexts.CommandPrivateOnly
+  fullName: TGBot.Texts.UserTexts.CommandPrivateOnly
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CommandPrivateOnly
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 137
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 指令仅限私聊提示。
+  example: []
+  syntax:
+    content: public const string CommandPrivateOnly = "CommandPrivateOnly"
+    return:
+      type: System.String
+    content.vb: Public Const CommandPrivateOnly As String = "CommandPrivateOnly"
+- uid: TGBot.Texts.UserTexts.PartialFailures
+  commentId: F:TGBot.Texts.UserTexts.PartialFailures
+  id: PartialFailures
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: PartialFailures
+  nameWithType: UserTexts.PartialFailures
+  fullName: TGBot.Texts.UserTexts.PartialFailures
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: PartialFailures
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 140
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 部分会话上传失败提示（附加在完成消息末尾）。
+  example: []
+  syntax:
+    content: public const string PartialFailures = "PartialFailures"
+    return:
+      type: System.String
+    content.vb: Public Const PartialFailures As String = "PartialFailures"
+- uid: TGBot.Texts.UserTexts.UpdateDoneHeader
+  commentId: F:TGBot.Texts.UserTexts.UpdateDoneHeader
+  id: UpdateDoneHeader
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UpdateDoneHeader
+  nameWithType: UserTexts.UpdateDoneHeader
+  fullName: TGBot.Texts.UserTexts.UpdateDoneHeader
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UpdateDoneHeader
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 143
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 更新完成标题行。
+  example: []
+  syntax:
+    content: public const string UpdateDoneHeader = "UpdateDoneHeader"
+    return:
+      type: System.String
+    content.vb: Public Const UpdateDoneHeader As String = "UpdateDoneHeader"
+- uid: TGBot.Texts.UserTexts.UpdateLineUpdated
+  commentId: F:TGBot.Texts.UserTexts.UpdateLineUpdated
+  id: UpdateLineUpdated
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UpdateLineUpdated
+  nameWithType: UserTexts.UpdateLineUpdated
+  fullName: TGBot.Texts.UserTexts.UpdateLineUpdated
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UpdateLineUpdated
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 146
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 更新结果行：工具名、旧版本、新版本。
+  example: []
+  syntax:
+    content: public const string UpdateLineUpdated = "UpdateLineUpdated"
+    return:
+      type: System.String
+    content.vb: Public Const UpdateLineUpdated As String = "UpdateLineUpdated"
+- uid: TGBot.Texts.UserTexts.UpdateLineUpToDate
+  commentId: F:TGBot.Texts.UserTexts.UpdateLineUpToDate
+  id: UpdateLineUpToDate
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UpdateLineUpToDate
+  nameWithType: UserTexts.UpdateLineUpToDate
+  fullName: TGBot.Texts.UserTexts.UpdateLineUpToDate
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UpdateLineUpToDate
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 149
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 更新结果行：工具名、当前版本（已是最新）。
+  example: []
+  syntax:
+    content: public const string UpdateLineUpToDate = "UpdateLineUpToDate"
+    return:
+      type: System.String
+    content.vb: Public Const UpdateLineUpToDate As String = "UpdateLineUpToDate"
+- uid: TGBot.Texts.UserTexts.UpdateLineNotConfigured
+  commentId: F:TGBot.Texts.UserTexts.UpdateLineNotConfigured
+  id: UpdateLineNotConfigured
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UpdateLineNotConfigured
+  nameWithType: UserTexts.UpdateLineNotConfigured
+  fullName: TGBot.Texts.UserTexts.UpdateLineNotConfigured
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UpdateLineNotConfigured
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 152
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 更新结果行：工具名（未配置安装路径）。
+  example: []
+  syntax:
+    content: public const string UpdateLineNotConfigured = "UpdateLineNotConfigured"
+    return:
+      type: System.String
+    content.vb: Public Const UpdateLineNotConfigured As String = "UpdateLineNotConfigured"
+- uid: TGBot.Texts.UserTexts.UpdateLineFailed
+  commentId: F:TGBot.Texts.UserTexts.UpdateLineFailed
+  id: UpdateLineFailed
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UpdateLineFailed
+  nameWithType: UserTexts.UpdateLineFailed
+  fullName: TGBot.Texts.UserTexts.UpdateLineFailed
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UpdateLineFailed
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 155
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 更新结果行：工具名（更新失败）。
+  example: []
+  syntax:
+    content: public const string UpdateLineFailed = "UpdateLineFailed"
+    return:
+      type: System.String
+    content.vb: Public Const UpdateLineFailed As String = "UpdateLineFailed"
+- uid: TGBot.Texts.UserTexts.CookieListLine
+  commentId: F:TGBot.Texts.UserTexts.CookieListLine
+  id: CookieListLine
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CookieListLine
+  nameWithType: UserTexts.CookieListLine
+  fullName: TGBot.Texts.UserTexts.CookieListLine
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieListLine
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 158
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: cookie 列表单行模板。参数：显示名、站点键、状态。
+  example: []
+  syntax:
+    content: public const string CookieListLine = "CookieListLine"
+    return:
+      type: System.String
+    content.vb: Public Const CookieListLine As String = "CookieListLine"
+- uid: TGBot.Texts.UserTexts.CookieStateSaved
+  commentId: F:TGBot.Texts.UserTexts.CookieStateSaved
+  id: CookieStateSaved
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CookieStateSaved
+  nameWithType: UserTexts.CookieStateSaved
+  fullName: TGBot.Texts.UserTexts.CookieStateSaved
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieStateSaved
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 161
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: cookie 已保存状态。
+  example: []
+  syntax:
+    content: public const string CookieStateSaved = "CookieStateSaved"
+    return:
+      type: System.String
+    content.vb: Public Const CookieStateSaved As String = "CookieStateSaved"
+- uid: TGBot.Texts.UserTexts.CookieStateNone
+  commentId: F:TGBot.Texts.UserTexts.CookieStateNone
+  id: CookieStateNone
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CookieStateNone
+  nameWithType: UserTexts.CookieStateNone
+  fullName: TGBot.Texts.UserTexts.CookieStateNone
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CookieStateNone
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 164
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: cookie 无状态。
+  example: []
+  syntax:
+    content: public const string CookieStateNone = "CookieStateNone"
+    return:
+      type: System.String
+    content.vb: Public Const CookieStateNone As String = "CookieStateNone"
+- uid: TGBot.Texts.UserTexts.Unknown
+  commentId: F:TGBot.Texts.UserTexts.Unknown
+  id: Unknown
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: Unknown
+  nameWithType: UserTexts.Unknown
+  fullName: TGBot.Texts.UserTexts.Unknown
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Unknown
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 167
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 未知值（版本、磁盘空间等）。
+  example: []
+  syntax:
+    content: public const string Unknown = "Unknown"
+    return:
+      type: System.String
+    content.vb: Public Const Unknown As String = "Unknown"
+- uid: TGBot.Texts.UserTexts.UptimeDays
+  commentId: F:TGBot.Texts.UserTexts.UptimeDays
+  id: UptimeDays
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UptimeDays
+  nameWithType: UserTexts.UptimeDays
+  fullName: TGBot.Texts.UserTexts.UptimeDays
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UptimeDays
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 170
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 运行时间：天数。参数：天数。
+  example: []
+  syntax:
+    content: public const string UptimeDays = "UptimeDays"
+    return:
+      type: System.String
+    content.vb: Public Const UptimeDays As String = "UptimeDays"
+- uid: TGBot.Texts.UserTexts.UptimeHours
+  commentId: F:TGBot.Texts.UserTexts.UptimeHours
+  id: UptimeHours
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UptimeHours
+  nameWithType: UserTexts.UptimeHours
+  fullName: TGBot.Texts.UserTexts.UptimeHours
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UptimeHours
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 173
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 运行时间：小时数。参数：小时数。
+  example: []
+  syntax:
+    content: public const string UptimeHours = "UptimeHours"
+    return:
+      type: System.String
+    content.vb: Public Const UptimeHours As String = "UptimeHours"
+- uid: TGBot.Texts.UserTexts.UptimeMinutes
+  commentId: F:TGBot.Texts.UserTexts.UptimeMinutes
+  id: UptimeMinutes
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UptimeMinutes
+  nameWithType: UserTexts.UptimeMinutes
+  fullName: TGBot.Texts.UserTexts.UptimeMinutes
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UptimeMinutes
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 176
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 运行时间：分钟数。参数：分钟数。
+  example: []
+  syntax:
+    content: public const string UptimeMinutes = "UptimeMinutes"
+    return:
+      type: System.String
+    content.vb: Public Const UptimeMinutes As String = "UptimeMinutes"
+- uid: TGBot.Texts.UserTexts.CaptionTitle
+  commentId: F:TGBot.Texts.UserTexts.CaptionTitle
+  id: CaptionTitle
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CaptionTitle
+  nameWithType: UserTexts.CaptionTitle
+  fullName: TGBot.Texts.UserTexts.CaptionTitle
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CaptionTitle
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 179
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 媒体说明标题行。参数：标题。
+  example: []
+  syntax:
+    content: public const string CaptionTitle = "CaptionTitle"
+    return:
+      type: System.String
+    content.vb: Public Const CaptionTitle As String = "CaptionTitle"
+- uid: TGBot.Texts.UserTexts.CaptionSource
+  commentId: F:TGBot.Texts.UserTexts.CaptionSource
+  id: CaptionSource
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: CaptionSource
+  nameWithType: UserTexts.CaptionSource
+  fullName: TGBot.Texts.UserTexts.CaptionSource
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CaptionSource
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 182
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 媒体说明来源行。参数：来源 URL。
+  example: []
+  syntax:
+    content: public const string CaptionSource = "CaptionSource"
+    return:
+      type: System.String
+    content.vb: Public Const CaptionSource As String = "CaptionSource"
+- uid: TGBot.Texts.UserTexts.LanguagePrompt
+  commentId: F:TGBot.Texts.UserTexts.LanguagePrompt
+  id: LanguagePrompt
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: LanguagePrompt
+  nameWithType: UserTexts.LanguagePrompt
+  fullName: TGBot.Texts.UserTexts.LanguagePrompt
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: LanguagePrompt
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 185
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 语言选择提示（首次私聊弹窗与 /language 命令）。
+  example: []
+  syntax:
+    content: public const string LanguagePrompt = "LanguagePrompt"
+    return:
+      type: System.String
+    content.vb: Public Const LanguagePrompt As String = "LanguagePrompt"
+- uid: TGBot.Texts.UserTexts.LanguageSaved
+  commentId: F:TGBot.Texts.UserTexts.LanguageSaved
+  id: LanguageSaved
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: LanguageSaved
+  nameWithType: UserTexts.LanguageSaved
+  fullName: TGBot.Texts.UserTexts.LanguageSaved
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: LanguageSaved
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 188
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 语言设置成功回执。参数：语言显示名。
+  example: []
+  syntax:
+    content: public const string LanguageSaved = "LanguageSaved"
+    return:
+      type: System.String
+    content.vb: Public Const LanguageSaved As String = "LanguageSaved"
+- uid: TGBot.Texts.UserTexts.LanguageNameZh
+  commentId: F:TGBot.Texts.UserTexts.LanguageNameZh
+  id: LanguageNameZh
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: LanguageNameZh
+  nameWithType: UserTexts.LanguageNameZh
+  fullName: TGBot.Texts.UserTexts.LanguageNameZh
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: LanguageNameZh
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 191
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 简体中文语言显示名（按钮文本，不翻译）。
+  example: []
+  syntax:
+    content: public const string LanguageNameZh = "LanguageNameZh"
+    return:
+      type: System.String
+    content.vb: Public Const LanguageNameZh As String = "LanguageNameZh"
+- uid: TGBot.Texts.UserTexts.LanguageNameEn
+  commentId: F:TGBot.Texts.UserTexts.LanguageNameEn
+  id: LanguageNameEn
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: LanguageNameEn
+  nameWithType: UserTexts.LanguageNameEn
+  fullName: TGBot.Texts.UserTexts.LanguageNameEn
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: LanguageNameEn
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 194
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: English 语言显示名（按钮文本，不翻译）。
+  example: []
+  syntax:
+    content: public const string LanguageNameEn = "LanguageNameEn"
+    return:
+      type: System.String
+    content.vb: Public Const LanguageNameEn As String = "LanguageNameEn"
+- uid: TGBot.Texts.UserTexts.ConfigUsage
+  commentId: F:TGBot.Texts.UserTexts.ConfigUsage
+  id: ConfigUsage
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigUsage
+  nameWithType: UserTexts.ConfigUsage
+  fullName: TGBot.Texts.UserTexts.ConfigUsage
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigUsage
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 197
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: /config 使用说明。
+  example: []
+  syntax:
+    content: public const string ConfigUsage = "ConfigUsage"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigUsage As String = "ConfigUsage"
+- uid: TGBot.Texts.UserTexts.ConfigListTemplate
+  commentId: F:TGBot.Texts.UserTexts.ConfigListTemplate
+  id: ConfigListTemplate
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigListTemplate
+  nameWithType: UserTexts.ConfigListTemplate
+  fullName: TGBot.Texts.UserTexts.ConfigListTemplate
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigListTemplate
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 200
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: /config list 模板。参数：键值行列表。
+  example: []
+  syntax:
+    content: public const string ConfigListTemplate = "ConfigListTemplate"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigListTemplate As String = "ConfigListTemplate"
+- uid: TGBot.Texts.UserTexts.ConfigListLine
+  commentId: F:TGBot.Texts.UserTexts.ConfigListLine
+  id: ConfigListLine
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigListLine
+  nameWithType: UserTexts.ConfigListLine
+  fullName: TGBot.Texts.UserTexts.ConfigListLine
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigListLine
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 203
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: /config list 单行。参数：键、生效值、来源。
+  example: []
+  syntax:
+    content: public const string ConfigListLine = "ConfigListLine"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigListLine As String = "ConfigListLine"
+- uid: TGBot.Texts.UserTexts.ConfigSourceOverlay
+  commentId: F:TGBot.Texts.UserTexts.ConfigSourceOverlay
+  id: ConfigSourceOverlay
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigSourceOverlay
+  nameWithType: UserTexts.ConfigSourceOverlay
+  fullName: TGBot.Texts.UserTexts.ConfigSourceOverlay
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigSourceOverlay
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 206
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 配置来源：overlay 覆盖。
+  example: []
+  syntax:
+    content: public const string ConfigSourceOverlay = "ConfigSourceOverlay"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigSourceOverlay As String = "ConfigSourceOverlay"
+- uid: TGBot.Texts.UserTexts.ConfigSourceConfig
+  commentId: F:TGBot.Texts.UserTexts.ConfigSourceConfig
+  id: ConfigSourceConfig
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigSourceConfig
+  nameWithType: UserTexts.ConfigSourceConfig
+  fullName: TGBot.Texts.UserTexts.ConfigSourceConfig
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigSourceConfig
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 209
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 配置来源：config.conf。
+  example: []
+  syntax:
+    content: public const string ConfigSourceConfig = "ConfigSourceConfig"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigSourceConfig As String = "ConfigSourceConfig"
+- uid: TGBot.Texts.UserTexts.ConfigSourceDefault
+  commentId: F:TGBot.Texts.UserTexts.ConfigSourceDefault
+  id: ConfigSourceDefault
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigSourceDefault
+  nameWithType: UserTexts.ConfigSourceDefault
+  fullName: TGBot.Texts.UserTexts.ConfigSourceDefault
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigSourceDefault
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 212
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 配置来源：内置默认值。
+  example: []
+  syntax:
+    content: public const string ConfigSourceDefault = "ConfigSourceDefault"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigSourceDefault As String = "ConfigSourceDefault"
+- uid: TGBot.Texts.UserTexts.ConfigSetApplied
+  commentId: F:TGBot.Texts.UserTexts.ConfigSetApplied
+  id: ConfigSetApplied
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigSetApplied
+  nameWithType: UserTexts.ConfigSetApplied
+  fullName: TGBot.Texts.UserTexts.ConfigSetApplied
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigSetApplied
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 215
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: /config set 回执。参数：键名。
+  example: []
+  syntax:
+    content: public const string ConfigSetApplied = "ConfigSetApplied"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigSetApplied As String = "ConfigSetApplied"
+- uid: TGBot.Texts.UserTexts.ConfigResetApplied
+  commentId: F:TGBot.Texts.UserTexts.ConfigResetApplied
+  id: ConfigResetApplied
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigResetApplied
+  nameWithType: UserTexts.ConfigResetApplied
+  fullName: TGBot.Texts.UserTexts.ConfigResetApplied
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigResetApplied
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 218
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: /config reset 回执。参数：键名。
+  example: []
+  syntax:
+    content: public const string ConfigResetApplied = "ConfigResetApplied"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigResetApplied As String = "ConfigResetApplied"
+- uid: TGBot.Texts.UserTexts.ConfigResetAllApplied
+  commentId: F:TGBot.Texts.UserTexts.ConfigResetAllApplied
+  id: ConfigResetAllApplied
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigResetAllApplied
+  nameWithType: UserTexts.ConfigResetAllApplied
+  fullName: TGBot.Texts.UserTexts.ConfigResetAllApplied
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigResetAllApplied
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 221
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: /config reset-all 回执。
+  example: []
+  syntax:
+    content: public const string ConfigResetAllApplied = "ConfigResetAllApplied"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigResetAllApplied As String = "ConfigResetAllApplied"
+- uid: TGBot.Texts.UserTexts.ConfigApplied
+  commentId: F:TGBot.Texts.UserTexts.ConfigApplied
+  id: ConfigApplied
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigApplied
+  nameWithType: UserTexts.ConfigApplied
+  fullName: TGBot.Texts.UserTexts.ConfigApplied
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigApplied
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 224
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 重启后生效通知（pending-notify）。参数：键名。
+  example: []
+  syntax:
+    content: public const string ConfigApplied = "ConfigApplied"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigApplied As String = "ConfigApplied"
+- uid: TGBot.Texts.UserTexts.ConfigRejected
+  commentId: F:TGBot.Texts.UserTexts.ConfigRejected
+  id: ConfigRejected
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigRejected
+  nameWithType: UserTexts.ConfigRejected
+  fullName: TGBot.Texts.UserTexts.ConfigRejected
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigRejected
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 227
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 配置校验失败。参数：双语错误文本。
+  example: []
+  syntax:
+    content: public const string ConfigRejected = "ConfigRejected"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigRejected As String = "ConfigRejected"
+- uid: TGBot.Texts.UserTexts.ConfigUnknownKey
+  commentId: F:TGBot.Texts.UserTexts.ConfigUnknownKey
+  id: ConfigUnknownKey
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigUnknownKey
+  nameWithType: UserTexts.ConfigUnknownKey
+  fullName: TGBot.Texts.UserTexts.ConfigUnknownKey
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigUnknownKey
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 230
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 未知配置键。参数：键名。
+  example: []
+  syntax:
+    content: public const string ConfigUnknownKey = "ConfigUnknownKey"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigUnknownKey As String = "ConfigUnknownKey"
+- uid: TGBot.Texts.UserTexts.ConfigLockedKey
+  commentId: F:TGBot.Texts.UserTexts.ConfigLockedKey
+  id: ConfigLockedKey
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigLockedKey
+  nameWithType: UserTexts.ConfigLockedKey
+  fullName: TGBot.Texts.UserTexts.ConfigLockedKey
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigLockedKey
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 233
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 安装锁键不可经 /config 修改。参数：键名。
+  example: []
+  syntax:
+    content: public const string ConfigLockedKey = "ConfigLockedKey"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigLockedKey As String = "ConfigLockedKey"
+- uid: TGBot.Texts.UserTexts.ConfigRiskWarning
+  commentId: F:TGBot.Texts.UserTexts.ConfigRiskWarning
+  id: ConfigRiskWarning
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigRiskWarning
+  nameWithType: UserTexts.ConfigRiskWarning
+  fullName: TGBot.Texts.UserTexts.ConfigRiskWarning
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigRiskWarning
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 236
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 连接/路径类键的风险警告（追加在 /config set 回执后）。
+  example: []
+  syntax:
+    content: public const string ConfigRiskWarning = "ConfigRiskWarning"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigRiskWarning As String = "ConfigRiskWarning"
+- uid: TGBot.Texts.UserTexts.ConfigNotOverridden
+  commentId: F:TGBot.Texts.UserTexts.ConfigNotOverridden
+  id: ConfigNotOverridden
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigNotOverridden
+  nameWithType: UserTexts.ConfigNotOverridden
+  fullName: TGBot.Texts.UserTexts.ConfigNotOverridden
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigNotOverridden
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 239
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 键未被覆盖，无需重置。参数：键名。
+  example: []
+  syntax:
+    content: public const string ConfigNotOverridden = "ConfigNotOverridden"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigNotOverridden As String = "ConfigNotOverridden"
+- uid: TGBot.Texts.UserTexts.ConfigNoChange
+  commentId: F:TGBot.Texts.UserTexts.ConfigNoChange
+  id: ConfigNoChange
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigNoChange
+  nameWithType: UserTexts.ConfigNoChange
+  fullName: TGBot.Texts.UserTexts.ConfigNoChange
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigNoChange
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 242
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 同值 set 已生效，无需重启。参数：键名。
+  example: []
+  syntax:
+    content: public const string ConfigNoChange = "ConfigNoChange"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigNoChange As String = "ConfigNoChange"
+- uid: TGBot.Texts.UserTexts.ConfigSaveFailed
+  commentId: F:TGBot.Texts.UserTexts.ConfigSaveFailed
+  id: ConfigSaveFailed
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ConfigSaveFailed
+  nameWithType: UserTexts.ConfigSaveFailed
+  fullName: TGBot.Texts.UserTexts.ConfigSaveFailed
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ConfigSaveFailed
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 245
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 配置/通知写入失败。
+  example: []
+  syntax:
+    content: public const string ConfigSaveFailed = "ConfigSaveFailed"
+    return:
+      type: System.String
+    content.vb: Public Const ConfigSaveFailed As String = "ConfigSaveFailed"
+- uid: TGBot.Texts.UserTexts.ValueEmpty
+  commentId: F:TGBot.Texts.UserTexts.ValueEmpty
+  id: ValueEmpty
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: ValueEmpty
+  nameWithType: UserTexts.ValueEmpty
+  fullName: TGBot.Texts.UserTexts.ValueEmpty
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ValueEmpty
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 248
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 空值的展示占位。
+  example: []
+  syntax:
+    content: public const string ValueEmpty = "ValueEmpty"
+    return:
+      type: System.String
+    content.vb: Public Const ValueEmpty As String = "ValueEmpty"
+- uid: TGBot.Texts.UserTexts.AccessUsage
+  commentId: F:TGBot.Texts.UserTexts.AccessUsage
+  id: AccessUsage
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: AccessUsage
+  nameWithType: UserTexts.AccessUsage
+  fullName: TGBot.Texts.UserTexts.AccessUsage
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AccessUsage
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 251
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: /access 使用说明。
+  example: []
+  syntax:
+    content: public const string AccessUsage = "AccessUsage"
+    return:
+      type: System.String
+    content.vb: Public Const AccessUsage As String = "AccessUsage"
+- uid: TGBot.Texts.UserTexts.AccessTypeUser
+  commentId: F:TGBot.Texts.UserTexts.AccessTypeUser
+  id: AccessTypeUser
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: AccessTypeUser
+  nameWithType: UserTexts.AccessTypeUser
+  fullName: TGBot.Texts.UserTexts.AccessTypeUser
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AccessTypeUser
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 254
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 条目类型：用户。
+  example: []
+  syntax:
+    content: public const string AccessTypeUser = "AccessTypeUser"
+    return:
+      type: System.String
+    content.vb: Public Const AccessTypeUser As String = "AccessTypeUser"
+- uid: TGBot.Texts.UserTexts.AccessTypeChannel
+  commentId: F:TGBot.Texts.UserTexts.AccessTypeChannel
+  id: AccessTypeChannel
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: AccessTypeChannel
+  nameWithType: UserTexts.AccessTypeChannel
+  fullName: TGBot.Texts.UserTexts.AccessTypeChannel
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AccessTypeChannel
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 257
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 条目类型：频道/群组。
+  example: []
+  syntax:
+    content: public const string AccessTypeChannel = "AccessTypeChannel"
+    return:
+      type: System.String
+    content.vb: Public Const AccessTypeChannel As String = "AccessTypeChannel"
+- uid: TGBot.Texts.UserTexts.AccessAdded
+  commentId: F:TGBot.Texts.UserTexts.AccessAdded
+  id: AccessAdded
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: AccessAdded
+  nameWithType: UserTexts.AccessAdded
+  fullName: TGBot.Texts.UserTexts.AccessAdded
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AccessAdded
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 260
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 添加成功（回执与重启通知共用）。参数：类型、ID。
+  example: []
+  syntax:
+    content: public const string AccessAdded = "AccessAdded"
+    return:
+      type: System.String
+    content.vb: Public Const AccessAdded As String = "AccessAdded"
+- uid: TGBot.Texts.UserTexts.AccessRemoved
+  commentId: F:TGBot.Texts.UserTexts.AccessRemoved
+  id: AccessRemoved
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: AccessRemoved
+  nameWithType: UserTexts.AccessRemoved
+  fullName: TGBot.Texts.UserTexts.AccessRemoved
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AccessRemoved
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 263
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 移除成功（回执与重启通知共用）。参数：类型、ID。
+  example: []
+  syntax:
+    content: public const string AccessRemoved = "AccessRemoved"
+    return:
+      type: System.String
+    content.vb: Public Const AccessRemoved As String = "AccessRemoved"
+- uid: TGBot.Texts.UserTexts.AccessAlreadyAdded
+  commentId: F:TGBot.Texts.UserTexts.AccessAlreadyAdded
+  id: AccessAlreadyAdded
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: AccessAlreadyAdded
+  nameWithType: UserTexts.AccessAlreadyAdded
+  fullName: TGBot.Texts.UserTexts.AccessAlreadyAdded
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AccessAlreadyAdded
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 266
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 已在列表中，无需重复添加。
+  example: []
+  syntax:
+    content: public const string AccessAlreadyAdded = "AccessAlreadyAdded"
+    return:
+      type: System.String
+    content.vb: Public Const AccessAlreadyAdded As String = "AccessAlreadyAdded"
+- uid: TGBot.Texts.UserTexts.AccessNotFound
+  commentId: F:TGBot.Texts.UserTexts.AccessNotFound
+  id: AccessNotFound
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: AccessNotFound
+  nameWithType: UserTexts.AccessNotFound
+  fullName: TGBot.Texts.UserTexts.AccessNotFound
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AccessNotFound
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 269
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 不在列表中。
+  example: []
+  syntax:
+    content: public const string AccessNotFound = "AccessNotFound"
+    return:
+      type: System.String
+    content.vb: Public Const AccessNotFound As String = "AccessNotFound"
+- uid: TGBot.Texts.UserTexts.AccessRemovedFromConfig
+  commentId: F:TGBot.Texts.UserTexts.AccessRemovedFromConfig
+  id: AccessRemovedFromConfig
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: AccessRemovedFromConfig
+  nameWithType: UserTexts.AccessRemovedFromConfig
+  fullName: TGBot.Texts.UserTexts.AccessRemovedFromConfig
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AccessRemovedFromConfig
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 272
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 条目来自安装配置，不可经 /access 删除。
+  example: []
+  syntax:
+    content: public const string AccessRemovedFromConfig = "AccessRemovedFromConfig"
+    return:
+      type: System.String
+    content.vb: Public Const AccessRemovedFromConfig As String = "AccessRemovedFromConfig"
+- uid: TGBot.Texts.UserTexts.AccessInvalidId
+  commentId: F:TGBot.Texts.UserTexts.AccessInvalidId
+  id: AccessInvalidId
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: AccessInvalidId
+  nameWithType: UserTexts.AccessInvalidId
+  fullName: TGBot.Texts.UserTexts.AccessInvalidId
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AccessInvalidId
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 275
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 无效 ID。参数：原始输入。
+  example: []
+  syntax:
+    content: public const string AccessInvalidId = "AccessInvalidId"
+    return:
+      type: System.String
+    content.vb: Public Const AccessInvalidId As String = "AccessInvalidId"
+- uid: TGBot.Texts.UserTexts.AccessListTemplate
+  commentId: F:TGBot.Texts.UserTexts.AccessListTemplate
+  id: AccessListTemplate
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: AccessListTemplate
+  nameWithType: UserTexts.AccessListTemplate
+  fullName: TGBot.Texts.UserTexts.AccessListTemplate
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AccessListTemplate
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 278
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: /access list 模板。参数：条目行列表。
+  example: []
+  syntax:
+    content: public const string AccessListTemplate = "AccessListTemplate"
+    return:
+      type: System.String
+    content.vb: Public Const AccessListTemplate As String = "AccessListTemplate"
+- uid: TGBot.Texts.UserTexts.AccessListLine
+  commentId: F:TGBot.Texts.UserTexts.AccessListLine
+  id: AccessListLine
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: AccessListLine
+  nameWithType: UserTexts.AccessListLine
+  fullName: TGBot.Texts.UserTexts.AccessListLine
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AccessListLine
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 281
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: /access list 单行。参数：类型、ID、来源。
+  example: []
+  syntax:
+    content: public const string AccessListLine = "AccessListLine"
+    return:
+      type: System.String
+    content.vb: Public Const AccessListLine As String = "AccessListLine"
+- uid: TGBot.Texts.UserTexts.AccessSourceConfig
+  commentId: F:TGBot.Texts.UserTexts.AccessSourceConfig
+  id: AccessSourceConfig
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: AccessSourceConfig
+  nameWithType: UserTexts.AccessSourceConfig
+  fullName: TGBot.Texts.UserTexts.AccessSourceConfig
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AccessSourceConfig
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 284
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 白名单来源：安装配置。
+  example: []
+  syntax:
+    content: public const string AccessSourceConfig = "AccessSourceConfig"
+    return:
+      type: System.String
+    content.vb: Public Const AccessSourceConfig As String = "AccessSourceConfig"
+- uid: TGBot.Texts.UserTexts.AccessSourceOverlay
+  commentId: F:TGBot.Texts.UserTexts.AccessSourceOverlay
+  id: AccessSourceOverlay
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: AccessSourceOverlay
+  nameWithType: UserTexts.AccessSourceOverlay
+  fullName: TGBot.Texts.UserTexts.AccessSourceOverlay
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AccessSourceOverlay
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 287
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 白名单来源：bot 添加。
+  example: []
+  syntax:
+    content: public const string AccessSourceOverlay = "AccessSourceOverlay"
+    return:
+      type: System.String
+    content.vb: Public Const AccessSourceOverlay As String = "AccessSourceOverlay"
+- uid: TGBot.Texts.UserTexts.UrlEmpty
+  commentId: F:TGBot.Texts.UserTexts.UrlEmpty
+  id: UrlEmpty
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UrlEmpty
+  nameWithType: UserTexts.UrlEmpty
+  fullName: TGBot.Texts.UserTexts.UrlEmpty
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UrlEmpty
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 290
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 链接为空。
+  example: []
+  syntax:
+    content: public const string UrlEmpty = "UrlEmpty"
+    return:
+      type: System.String
+    content.vb: Public Const UrlEmpty As String = "UrlEmpty"
+- uid: TGBot.Texts.UserTexts.UrlTooLong
+  commentId: F:TGBot.Texts.UserTexts.UrlTooLong
+  id: UrlTooLong
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UrlTooLong
+  nameWithType: UserTexts.UrlTooLong
+  fullName: TGBot.Texts.UserTexts.UrlTooLong
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UrlTooLong
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 293
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 链接过长。
+  example: []
+  syntax:
+    content: public const string UrlTooLong = "UrlTooLong"
+    return:
+      type: System.String
+    content.vb: Public Const UrlTooLong As String = "UrlTooLong"
+- uid: TGBot.Texts.UserTexts.UrlInvalidChar
+  commentId: F:TGBot.Texts.UserTexts.UrlInvalidChar
+  id: UrlInvalidChar
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UrlInvalidChar
+  nameWithType: UserTexts.UrlInvalidChar
+  fullName: TGBot.Texts.UserTexts.UrlInvalidChar
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UrlInvalidChar
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 296
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 链接包含非法字符。
+  example: []
+  syntax:
+    content: public const string UrlInvalidChar = "UrlInvalidChar"
+    return:
+      type: System.String
+    content.vb: Public Const UrlInvalidChar As String = "UrlInvalidChar"
+- uid: TGBot.Texts.UserTexts.UrlInvalidFormat
+  commentId: F:TGBot.Texts.UserTexts.UrlInvalidFormat
+  id: UrlInvalidFormat
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UrlInvalidFormat
+  nameWithType: UserTexts.UrlInvalidFormat
+  fullName: TGBot.Texts.UserTexts.UrlInvalidFormat
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UrlInvalidFormat
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 299
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 链接格式无效。
+  example: []
+  syntax:
+    content: public const string UrlInvalidFormat = "UrlInvalidFormat"
+    return:
+      type: System.String
+    content.vb: Public Const UrlInvalidFormat As String = "UrlInvalidFormat"
+- uid: TGBot.Texts.UserTexts.UrlSchemeNotAllowed
+  commentId: F:TGBot.Texts.UserTexts.UrlSchemeNotAllowed
+  id: UrlSchemeNotAllowed
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UrlSchemeNotAllowed
+  nameWithType: UserTexts.UrlSchemeNotAllowed
+  fullName: TGBot.Texts.UserTexts.UrlSchemeNotAllowed
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UrlSchemeNotAllowed
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 302
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 仅支持 http/https 链接。
+  example: []
+  syntax:
+    content: public const string UrlSchemeNotAllowed = "UrlSchemeNotAllowed"
+    return:
+      type: System.String
+    content.vb: Public Const UrlSchemeNotAllowed As String = "UrlSchemeNotAllowed"
+- uid: TGBot.Texts.UserTexts.UrlUserInfo
+  commentId: F:TGBot.Texts.UserTexts.UrlUserInfo
+  id: UrlUserInfo
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UrlUserInfo
+  nameWithType: UserTexts.UrlUserInfo
+  fullName: TGBot.Texts.UserTexts.UrlUserInfo
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UrlUserInfo
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 305
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 链接包含用户名信息。
+  example: []
+  syntax:
+    content: public const string UrlUserInfo = "UrlUserInfo"
+    return:
+      type: System.String
+    content.vb: Public Const UrlUserInfo As String = "UrlUserInfo"
+- uid: TGBot.Texts.UserTexts.UrlInvalidHost
+  commentId: F:TGBot.Texts.UserTexts.UrlInvalidHost
+  id: UrlInvalidHost
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UrlInvalidHost
+  nameWithType: UserTexts.UrlInvalidHost
+  fullName: TGBot.Texts.UserTexts.UrlInvalidHost
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UrlInvalidHost
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 308
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 链接主机名无效。
+  example: []
+  syntax:
+    content: public const string UrlInvalidHost = "UrlInvalidHost"
+    return:
+      type: System.String
+    content.vb: Public Const UrlInvalidHost As String = "UrlInvalidHost"
+- uid: TGBot.Texts.UserTexts.UrlInvalidHostChar
+  commentId: F:TGBot.Texts.UserTexts.UrlInvalidHostChar
+  id: UrlInvalidHostChar
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: UrlInvalidHostChar
+  nameWithType: UserTexts.UrlInvalidHostChar
+  fullName: TGBot.Texts.UserTexts.UrlInvalidHostChar
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UrlInvalidHostChar
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 311
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 链接主机名包含非法字符。
+  example: []
+  syntax:
+    content: public const string UrlInvalidHostChar = "UrlInvalidHostChar"
+    return:
+      type: System.String
+    content.vb: Public Const UrlInvalidHostChar As String = "UrlInvalidHostChar"
+- uid: TGBot.Texts.UserTexts.MenuUpdate
+  commentId: F:TGBot.Texts.UserTexts.MenuUpdate
+  id: MenuUpdate
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: MenuUpdate
+  nameWithType: UserTexts.MenuUpdate
+  fullName: TGBot.Texts.UserTexts.MenuUpdate
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: MenuUpdate
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 314
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 指令菜单：update。
+  example: []
+  syntax:
+    content: public const string MenuUpdate = "MenuUpdate"
+    return:
+      type: System.String
+    content.vb: Public Const MenuUpdate As String = "MenuUpdate"
+- uid: TGBot.Texts.UserTexts.MenuCookie
+  commentId: F:TGBot.Texts.UserTexts.MenuCookie
+  id: MenuCookie
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: MenuCookie
+  nameWithType: UserTexts.MenuCookie
+  fullName: TGBot.Texts.UserTexts.MenuCookie
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: MenuCookie
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 317
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 指令菜单：cookie。
+  example: []
+  syntax:
+    content: public const string MenuCookie = "MenuCookie"
+    return:
+      type: System.String
+    content.vb: Public Const MenuCookie As String = "MenuCookie"
+- uid: TGBot.Texts.UserTexts.MenuCookies
+  commentId: F:TGBot.Texts.UserTexts.MenuCookies
+  id: MenuCookies
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: MenuCookies
+  nameWithType: UserTexts.MenuCookies
+  fullName: TGBot.Texts.UserTexts.MenuCookies
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: MenuCookies
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 320
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 指令菜单：cookies。
+  example: []
+  syntax:
+    content: public const string MenuCookies = "MenuCookies"
+    return:
+      type: System.String
+    content.vb: Public Const MenuCookies As String = "MenuCookies"
+- uid: TGBot.Texts.UserTexts.MenuStatus
+  commentId: F:TGBot.Texts.UserTexts.MenuStatus
+  id: MenuStatus
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: MenuStatus
+  nameWithType: UserTexts.MenuStatus
+  fullName: TGBot.Texts.UserTexts.MenuStatus
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: MenuStatus
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 323
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 指令菜单：status。
+  example: []
+  syntax:
+    content: public const string MenuStatus = "MenuStatus"
+    return:
+      type: System.String
+    content.vb: Public Const MenuStatus As String = "MenuStatus"
+- uid: TGBot.Texts.UserTexts.MenuLanguage
+  commentId: F:TGBot.Texts.UserTexts.MenuLanguage
+  id: MenuLanguage
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: MenuLanguage
+  nameWithType: UserTexts.MenuLanguage
+  fullName: TGBot.Texts.UserTexts.MenuLanguage
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: MenuLanguage
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 326
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 指令菜单：language。
+  example: []
+  syntax:
+    content: public const string MenuLanguage = "MenuLanguage"
+    return:
+      type: System.String
+    content.vb: Public Const MenuLanguage As String = "MenuLanguage"
+- uid: TGBot.Texts.UserTexts.MenuConfig
+  commentId: F:TGBot.Texts.UserTexts.MenuConfig
+  id: MenuConfig
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: MenuConfig
+  nameWithType: UserTexts.MenuConfig
+  fullName: TGBot.Texts.UserTexts.MenuConfig
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: MenuConfig
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 329
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 指令菜单：config。
+  example: []
+  syntax:
+    content: public const string MenuConfig = "MenuConfig"
+    return:
+      type: System.String
+    content.vb: Public Const MenuConfig As String = "MenuConfig"
+- uid: TGBot.Texts.UserTexts.MenuAccess
+  commentId: F:TGBot.Texts.UserTexts.MenuAccess
+  id: MenuAccess
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: MenuAccess
+  nameWithType: UserTexts.MenuAccess
+  fullName: TGBot.Texts.UserTexts.MenuAccess
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: MenuAccess
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 332
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 指令菜单：access。
+  example: []
+  syntax:
+    content: public const string MenuAccess = "MenuAccess"
+    return:
+      type: System.String
+    content.vb: Public Const MenuAccess As String = "MenuAccess"
+- uid: TGBot.Texts.UserTexts.MenuHelp
+  commentId: F:TGBot.Texts.UserTexts.MenuHelp
+  id: MenuHelp
+  parent: TGBot.Texts.UserTexts
+  langs:
+  - csharp
+  - vb
+  name: MenuHelp
+  nameWithType: UserTexts.MenuHelp
+  fullName: TGBot.Texts.UserTexts.MenuHelp
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/UserTexts.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: MenuHelp
+    path: ../src/TGBot/Texts/UserTexts.cs
+    startLine: 335
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts
+  summary: 指令菜单：help。
+  example: []
+  syntax:
+    content: public const string MenuHelp = "MenuHelp"
+    return:
+      type: System.String
+    content.vb: Public Const MenuHelp As String = "MenuHelp"
 references:
+- uid: TGBot.Texts.I18n.II18n.Get(System.String,System.String,System.Object[])
+  commentId: M:TGBot.Texts.I18n.II18n.Get(System.String,System.String,System.Object[])
+  parent: TGBot.Texts.I18n.II18n
+  isExternal: true
+  href: TGBot.Texts.I18n.II18n.html#TGBot_Texts_I18n_II18n_Get_System_String_System_String_System_Object___
+  name: Get(string, string, params object[])
+  nameWithType: II18n.Get(string, string, params object[])
+  fullName: TGBot.Texts.I18n.II18n.Get(string, string, params object[])
+  nameWithType.vb: II18n.Get(String, String, ParamArray Object())
+  fullName.vb: TGBot.Texts.I18n.II18n.Get(String, String, ParamArray Object())
+  name.vb: Get(String, String, ParamArray Object())
+  spec.csharp:
+  - uid: TGBot.Texts.I18n.II18n.Get(System.String,System.String,System.Object[])
+    name: Get
+    href: TGBot.Texts.I18n.II18n.html#TGBot_Texts_I18n_II18n_Get_System_String_System_String_System_Object___
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: params
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: TGBot.Texts.I18n.II18n.Get(System.String,System.String,System.Object[])
+    name: Get
+    href: TGBot.Texts.I18n.II18n.html#TGBot_Texts_I18n_II18n_Get_System_String_System_String_System_Object___
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ParamArray
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
+  - name: )
+  - name: )
 - uid: TGBot.Texts
   commentId: N:TGBot.Texts
   href: TGBot.html
@@ -1465,6 +3602,13 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
+- uid: TGBot.Texts.I18n.II18n
+  commentId: T:TGBot.Texts.I18n.II18n
+  parent: TGBot.Texts.I18n
+  href: TGBot.Texts.I18n.II18n.html
+  name: II18n
+  nameWithType: II18n
+  fullName: TGBot.Texts.I18n.II18n
 - uid: System
   commentId: N:System
   isExternal: true
@@ -1472,6 +3616,36 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: TGBot.Texts.I18n
+  commentId: N:TGBot.Texts.I18n
+  href: TGBot.html
+  name: TGBot.Texts.I18n
+  nameWithType: TGBot.Texts.I18n
+  fullName: TGBot.Texts.I18n
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
 - uid: System.String
   commentId: T:System.String
   parent: System

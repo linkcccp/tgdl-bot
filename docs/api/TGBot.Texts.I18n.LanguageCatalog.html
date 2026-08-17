@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class LanguageCatalog | TGBot API 文档 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class LanguageCatalog | TGBot API 文档 ">
+    
+    <meta name="description" content="语言目录注册中心：内置 en/zh 嵌入式资源 + 运行时注册扩展语言。 开发者可通过  一行注册新语言（或提 PR 增加嵌入式资源）； 注册在  构造时合并生效（注册内容覆盖内置键）。">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="TGBot.Texts.I18n.LanguageCatalog">
+
+
+
+  <h1 id="TGBot_Texts_I18n_LanguageCatalog" data-uid="TGBot.Texts.I18n.LanguageCatalog" class="text-break">Class LanguageCatalog</h1>
+  <div class="markdown level0 summary"><p>语言目录注册中心：内置 <code>en</code>/<code>zh</code> 嵌入式资源 + 运行时注册扩展语言。</p>
+<p>开发者可通过 <a class="xref" href="TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_Register_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__">Register(string, IReadOnlyDictionary&lt;string, string&gt;)</a> 一行注册新语言（或提 PR 增加嵌入式资源）；
+注册在 <a class="xref" href="TGBot.Texts.I18n.I18nService.html">I18nService</a> 构造时合并生效（注册内容覆盖内置键）。</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">LanguageCatalog</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="TGBot.html">TGBot</a>.<a class="xref" href="TGBot.Texts.html">Texts</a>.<a class="xref" href="TGBot.Texts.I18n.html">I18n</a></h6>
+  <h6><strong>Assembly</strong>: tgdl-bot.dll</h6>
+  <h5 id="TGBot_Texts_I18n_LanguageCatalog_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class LanguageCatalog</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Texts_I18n_LanguageCatalog_BuiltinLanguages.md&amp;value=---%0Auid%3A%20TGBot.Texts.I18n.LanguageCatalog.BuiltinLanguages%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Texts/I18n/LanguageCatalog.cs/#L16">View Source</a>
+  </span>
+  <h4 id="TGBot_Texts_I18n_LanguageCatalog_BuiltinLanguages" data-uid="TGBot.Texts.I18n.LanguageCatalog.BuiltinLanguages">BuiltinLanguages</h4>
+  <div class="markdown level1 summary"><p>内置语言代码集合。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly IReadOnlyCollection&lt;string&gt; BuiltinLanguages</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Texts_I18n_LanguageCatalog_FallbackLanguage.md&amp;value=---%0Auid%3A%20TGBot.Texts.I18n.LanguageCatalog.FallbackLanguage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Texts/I18n/LanguageCatalog.cs/#L19">View Source</a>
+  </span>
+  <h4 id="TGBot_Texts_I18n_LanguageCatalog_FallbackLanguage" data-uid="TGBot.Texts.I18n.LanguageCatalog.FallbackLanguage">FallbackLanguage</h4>
+  <div class="markdown level1 summary"><p>缺键回退语言，恒为 <code>en</code>。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string FallbackLanguage = &quot;en&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Texts_I18n_LanguageCatalog_SupportedLanguages.md&amp;value=---%0Auid%3A%20TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Texts/I18n/LanguageCatalog.cs/#L27">View Source</a>
+  </span>
+  <a id="TGBot_Texts_I18n_LanguageCatalog_SupportedLanguages_" data-uid="TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages*"></a>
+  <h4 id="TGBot_Texts_I18n_LanguageCatalog_SupportedLanguages" data-uid="TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages">SupportedLanguages</h4>
+  <div class="markdown level1 summary"><p>全部可用语言：内置 <code>en</code>/<code>zh</code> + 已注册语言（去重）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;string&gt; SupportedLanguages { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Texts_I18n_LanguageCatalog_GetCatalog_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Texts.I18n.LanguageCatalog.GetCatalog(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Texts/I18n/LanguageCatalog.cs/#L86">View Source</a>
+  </span>
+  <a id="TGBot_Texts_I18n_LanguageCatalog_GetCatalog_" data-uid="TGBot.Texts.I18n.LanguageCatalog.GetCatalog*"></a>
+  <h4 id="TGBot_Texts_I18n_LanguageCatalog_GetCatalog_System_String_" data-uid="TGBot.Texts.I18n.LanguageCatalog.GetCatalog(System.String)">GetCatalog(string)</h4>
+  <div class="markdown level1 summary"><p>获取某语言的当前文案目录（内置 <code>en</code>/<code>zh</code> + 注册覆盖；用于工具与测试校验）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyDictionary&lt;string, string&gt;? GetCatalog(string lang)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">lang</span></td>
+        <td><p>语言代码。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td><p>文案目录；无该语言时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Texts_I18n_LanguageCatalog_NormalizeLanguageCode_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Texts/I18n/LanguageCatalog.cs/#L63">View Source</a>
+  </span>
+  <a id="TGBot_Texts_I18n_LanguageCatalog_NormalizeLanguageCode_" data-uid="TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode*"></a>
+  <h4 id="TGBot_Texts_I18n_LanguageCatalog_NormalizeLanguageCode_System_String_" data-uid="TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode(System.String)">NormalizeLanguageCode(string?)</h4>
+  <div class="markdown level1 summary"><p>将 BCP 47 语言标签归一化为内置语言代码。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string? NormalizeLanguageCode(string? bc47)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">bc47</span></td>
+        <td><p>BCP 47 语言标签（如 <code>zh-CN</code>/<code>zh-TW</code>/<code>zh-Hant</code>/<code>en-US</code>）。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>归一化语言代码（<code>zh</code>/<code>en</code>）；无法映射时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Texts_I18n_LanguageCatalog_Register_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__.md&amp;value=---%0Auid%3A%20TGBot.Texts.I18n.LanguageCatalog.Register(System.String%2CSystem.Collections.Generic.IReadOnlyDictionary%7BSystem.String%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Texts/I18n/LanguageCatalog.cs/#L36">View Source</a>
+  </span>
+  <a id="TGBot_Texts_I18n_LanguageCatalog_Register_" data-uid="TGBot.Texts.I18n.LanguageCatalog.Register*"></a>
+  <h4 id="TGBot_Texts_I18n_LanguageCatalog_Register_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__" data-uid="TGBot.Texts.I18n.LanguageCatalog.Register(System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})">Register(string, IReadOnlyDictionary&lt;string, string&gt;)</h4>
+  <div class="markdown level1 summary"><p>注册（覆盖或新增）一种语言的完整文案字典。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Register(string lang, IReadOnlyDictionary&lt;string, string&gt; entries)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">lang</span></td>
+        <td><p>语言代码（如 <code>fr</code>）；覆盖内置语言（<code>en</code>/<code>zh</code>）时以注册内容为准。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td><span class="parametername">entries</span></td>
+        <td><p>键 → 文案映射。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p><code class="paramref">lang</code> 为空或 <code class="paramref">entries</code> 为空时抛出。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Texts_I18n_LanguageCatalog_Unregister_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Texts.I18n.LanguageCatalog.Unregister(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Texts/I18n/LanguageCatalog.cs/#L55">View Source</a>
+  </span>
+  <a id="TGBot_Texts_I18n_LanguageCatalog_Unregister_" data-uid="TGBot.Texts.I18n.LanguageCatalog.Unregister*"></a>
+  <h4 id="TGBot_Texts_I18n_LanguageCatalog_Unregister_System_String_" data-uid="TGBot.Texts.I18n.LanguageCatalog.Unregister(System.String)">Unregister(string)</h4>
+  <div class="markdown level1 summary"><p>注销一种已注册语言（恢复内置文案；主要用于测试隔离）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Unregister(string lang)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">lang</span></td>
+        <td><p>语言代码。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Texts_I18n_LanguageCatalog.md&amp;value=---%0Auid%3A%20TGBot.Texts.I18n.LanguageCatalog%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Texts/I18n/LanguageCatalog.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      tgdl-bot — .NET Telegram 下载 Bot
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

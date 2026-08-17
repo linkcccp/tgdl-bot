@@ -1,12 +1,17 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 using TGBot.Logging;
 
 namespace TGBot.Config;
 
 /// <summary>
-/// 应用配置模型，由 <see cref="ConfigParser"/> 从 config.conf 解析得到。
+/// 应用配置模型，由 <see cref="ConfigParser"/> 从 config.conf 解析得到，
+/// 装配期再经 <see cref="TGBot.Config.Overlay.OverlayApplier"/> overlay 合并（record 的 with 语义，
+/// init-only 不可变，运行期不可热改）。
 /// <para>所有路径均为绝对路径（在加载阶段展开）。</para>
 /// </summary>
-public sealed class AppConfig
+public sealed record AppConfig
 {
     /// <summary>Bot Token，来自 @BotFather。</summary>
     public string BotToken { get; init; } = string.Empty;
@@ -43,6 +48,14 @@ public sealed class AppConfig
 
     /// <summary>非交互场景（channel/group 触发或选择超时）的默认下载模式：video（合并）或 audio（仅音频）。</summary>
     public string TgdlDefaultMode { get; init; } = "video";
+
+    /// <summary>Bot 全局默认语言：auto（跟随用户 language_code）/ en / zh；auto 的最终解析语言不落盘。</summary>
+    public string TgdlLanguage { get; init; } = "auto";
+
+    /// <summary>运行时状态目录（languages.json、config-overlay.json、access-overlay.json、pending-notify.json）。
+    /// 空时自动推导：容器内由 entrypoint 显式写入 /opt/tgdl-bot/api-data（tgdl-data 卷内持久），
+    /// 原生运行时为 DownloadTempDir 父目录。</summary>
+    public string StateDir { get; init; } = string.Empty;
 
     /// <summary>最大并发下载任务数。</summary>
     public int MaxConcurrentDownloads { get; init; } = 2;

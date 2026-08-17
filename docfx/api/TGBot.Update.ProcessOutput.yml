@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ProcessRunner.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ProcessOutput
     path: ../src/TGBot/Update/ProcessRunner.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -57,11 +57,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ProcessRunner.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Update/ProcessRunner.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -98,11 +98,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ProcessRunner.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ExitCode
     path: ../src/TGBot/Update/ProcessRunner.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -129,11 +129,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ProcessRunner.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: StdOut
     path: ../src/TGBot/Update/ProcessRunner.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -160,11 +160,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ProcessRunner.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: StdErr
     path: ../src/TGBot/Update/ProcessRunner.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update

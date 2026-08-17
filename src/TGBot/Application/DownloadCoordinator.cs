@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 using TGBot.Config;
 using TGBot.Cookie;
 using TGBot.Download;
@@ -5,6 +8,7 @@ using TGBot.Logging;
 using TGBot.Messaging;
 using TGBot.Security;
 using TGBot.Texts;
+using TGBot.Texts.I18n;
 
 namespace TGBot.Application;
 
@@ -21,6 +25,7 @@ public sealed class DownloadCoordinator
     private readonly ITelegramClient _client;
     private readonly CookieService _cookies;
     private readonly AppConfig _config;
+    private readonly II18n _i18n;
     private readonly IAppLogger _logger;
 
     /// <summary>
@@ -35,6 +40,7 @@ public sealed class DownloadCoordinator
     /// <param name="cookies">cookies 服务（按域名解析站点 cookie）。</param>
     /// <param name="config">配置。</param>
     /// <param name="logger">日志器。</param>
+    /// <param name="i18n">国际化服务（用户消息渲染）。</param>
     public DownloadCoordinator(
         IDownloader downloader,
         DownloadGate gate,
@@ -44,7 +50,8 @@ public sealed class DownloadCoordinator
         ITelegramClient client,
         CookieService cookies,
         AppConfig config,
-        IAppLogger logger)
+        IAppLogger logger,
+        II18n i18n)
     {
         _downloader = downloader;
         _gate = gate;
@@ -54,6 +61,7 @@ public sealed class DownloadCoordinator
         _client = client;
         _cookies = cookies;
         _config = config;
+        _i18n = i18n;
         _logger = logger;
     }
 
@@ -112,7 +120,7 @@ public sealed class DownloadCoordinator
         {
             if (requesterChatId is not null)
             {
-                await NotifyAsync(requesterChatId.Value, string.Format(UserTexts.Queued, position), CancellationToken.None);
+                await NotifyAsync(requesterChatId.Value, _i18n.Get(msg.Language, UserTexts.Queued, position), CancellationToken.None);
             }
 
             await using var slot = await _gate.AcquireDownloadAsync(CancellationToken.None).ConfigureAwait(false);
@@ -121,19 +129,19 @@ public sealed class DownloadCoordinator
             var jobDir = _tempDir.CreateJobDirectory();
             try
             {
-                await NotifyAsync(requesterChatId, UserTexts.Downloading, CancellationToken.None);
+                await NotifyAsync(requesterChatId, _i18n.Get(msg.Language, UserTexts.Downloading), CancellationToken.None);
                 await _client.SendChatActionAsync(msg.ChatId, mode == "audio" ? BotChatAction.UploadAudio : BotChatAction.UploadVideo, CancellationToken.None);
 
                 var mediaList = mode == "audio"
-                    ? await DownloadAudioWithRetriesAsync(url, jobDir, requesterChatId, CancellationToken.None)
-                    : await DownloadWithRetriesAsync(url, jobDir, requesterChatId, CancellationToken.None);
+                    ? await DownloadAudioWithRetriesAsync(url, jobDir, requesterChatId, msg.Language, CancellationToken.None)
+                    : await DownloadWithRetriesAsync(url, jobDir, requesterChatId, msg.Language, CancellationToken.None);
 
                 if (requesterChatId is not null)
                 {
-                    await NotifyAsync(requesterChatId.Value, UserTexts.Uploading, CancellationToken.None);
+                    await NotifyAsync(requesterChatId.Value, _i18n.Get(msg.Language, UserTexts.Uploading), CancellationToken.None);
                 }
 
-                var result = await _upload.UploadAsync(mediaList, _config.TargetChannelIds, requesterChatId, CancellationToken.None);
+                var result = await _upload.UploadAsync(mediaList, _config.TargetChannelIds, requesterChatId, msg.Language, CancellationToken.None);
 
                 if (result.FailedChats.Count > 0)
                 {
@@ -142,7 +150,7 @@ public sealed class DownloadCoordinator
 
                 if (requesterChatId is not null)
                 {
-                    var text = ComposeDoneText(mediaList, result);
+                    var text = ComposeDoneText(mediaList, result, msg.Language);
                     await NotifyAsync(requesterChatId.Value, text, CancellationToken.None);
                 }
             }
@@ -158,12 +166,12 @@ public sealed class DownloadCoordinator
         catch (DownloadException ex)
         {
             _logger.Warn($"任务失败：{MaskUrl(url)}，{ex.Message}");
-            await NotifyAsync(requesterChatId, ex.UserMessage, CancellationToken.None);
+            await NotifyAsync(requesterChatId, ReasonText(ex.Reason, msg.Language), CancellationToken.None);
         }
         catch (Exception ex)
         {
             _logger.Error($"任务异常：{MaskUrl(url)}", ex);
-            await NotifyAsync(requesterChatId, UserTexts.DownloadFailed, CancellationToken.None);
+            await NotifyAsync(requesterChatId, _i18n.Get(msg.Language, UserTexts.DownloadFailed), CancellationToken.None);
         }
         finally
         {
@@ -172,26 +180,44 @@ public sealed class DownloadCoordinator
         }
     }
 
-    private string ComposeDoneText(IReadOnlyList<DownloadedMedia> mediaList, UploadResult result)
+    /// <summary>
+    /// 按失败原因渲染用户提示（<see cref="DownloadException.UserMessage"/> 仅作内部日志，不直接发送）。
+    /// </summary>
+    /// <param name="reason">失败原因。</param>
+    /// <param name="lang">消息语言。</param>
+    /// <returns>用户提示。</returns>
+    private string ReasonText(DownloadFailureReason reason, string lang)
+        => reason switch
+        {
+            DownloadFailureReason.TooLarge => _i18n.Get(lang, UserTexts.FileTooLarge),
+            DownloadFailureReason.NoDiskSpace => _i18n.Get(lang, UserTexts.NoDiskSpace),
+            DownloadFailureReason.AuthRequired => _i18n.Get(lang, UserTexts.AuthRequired),
+            DownloadFailureReason.FormatUnavailable => _i18n.Get(lang, UserTexts.FormatUnavailable),
+            _ => _i18n.Get(lang, UserTexts.DownloadFailed),
+        };
+
+    private string ComposeDoneText(IReadOnlyList<DownloadedMedia> mediaList, UploadResult result, string lang)
     {
-        var suffix = result.FailedChats.Count > 0 ? " 部分会话失败，请查看日志。" : string.Empty;
+        var suffix = result.FailedChats.Count > 0 ? _i18n.Get(lang, UserTexts.PartialFailures) : string.Empty;
         if (mediaList.Count >= 2 && mediaList.All(m => m.IsAudio))
         {
             var flac = mediaList.FirstOrDefault(m => m.Extension == "flac");
             var mp3 = mediaList.FirstOrDefault(m => m.Extension == "mp3");
-            return string.Format(
+            return _i18n.Get(
+                lang,
                 UserTexts.AudioBundleDone,
                 flac is null ? "audio.flac" : $"{flac.Title}.flac",
                 mp3 is null ? "audio.mp3" : $"{mp3.Title}.mp3") + suffix;
         }
 
-        return UserTexts.UploadDone.Format(result.SuccessCount) + suffix;
+        return _i18n.Get(lang, UserTexts.UploadDone, result.SuccessCount) + suffix;
     }
 
     private async Task<IReadOnlyList<DownloadedMedia>> DownloadWithRetriesAsync(
         string url,
         string jobDir,
         long? requesterChatId,
+        string lang,
         CancellationToken shutdownToken)
     {
         var options = BuildOptions(url, jobDir);
@@ -205,7 +231,7 @@ public sealed class DownloadCoordinator
             {
                 var media = await _downloader.DownloadAsync(
                     options,
-                    p => OnProgress(p, requesterChatId),
+                    p => OnProgress(p, requesterChatId, lang),
                     shutdownToken).ConfigureAwait(false);
                 return new[] { media };
             }
@@ -255,13 +281,14 @@ public sealed class DownloadCoordinator
             }
         }
 
-        throw new DownloadException(DownloadFailureReason.Failed, UserTexts.DownloadFailed, lastError);
+        throw new DownloadException(DownloadFailureReason.Failed, _i18n.Get(lang, UserTexts.DownloadFailed), lastError);
     }
 
     private async Task<IReadOnlyList<DownloadedMedia>> DownloadAudioWithRetriesAsync(
         string url,
         string jobDir,
         long? requesterChatId,
+        string lang,
         CancellationToken shutdownToken)
     {
         var options = BuildOptions(url, jobDir);
@@ -274,7 +301,7 @@ public sealed class DownloadCoordinator
             {
                 return await _downloader.DownloadAudioBundleAsync(
                     options,
-                    p => OnProgress(p, requesterChatId),
+                    p => OnProgress(p, requesterChatId, lang),
                     shutdownToken).ConfigureAwait(false);
             }
             catch (DownloadException ex) when (
@@ -297,7 +324,7 @@ public sealed class DownloadCoordinator
             }
         }
 
-        throw new DownloadException(DownloadFailureReason.Failed, UserTexts.DownloadFailed, lastError);
+        throw new DownloadException(DownloadFailureReason.Failed, _i18n.Get(lang, UserTexts.DownloadFailed), lastError);
     }
 
     private DownloadOptions BuildOptions(string url, string jobDir)
@@ -327,7 +354,7 @@ public sealed class DownloadCoordinator
     private DateTime _lastProgressSent = DateTime.MinValue;
     private double _lastProgressPercent = -1;
 
-    private async void OnProgress(DownloadProgress p, long? requesterChatId)
+    private async void OnProgress(DownloadProgress p, long? requesterChatId, string lang)
     {
         if (requesterChatId is null || p.Percent is not { } percent)
         {
@@ -346,7 +373,7 @@ public sealed class DownloadCoordinator
         {
             await _client.SendMessageAsync(
                 requesterChatId.Value,
-                string.Format(UserTexts.DownloadProgress, percent.ToString("0.0", System.Globalization.CultureInfo.InvariantCulture), p.SpeedText ?? "未知"),
+                _i18n.Get(lang, UserTexts.DownloadProgress, percent.ToString("0.0", System.Globalization.CultureInfo.InvariantCulture), p.SpeedText ?? _i18n.Get(lang, UserTexts.Unknown)),
                 0,
                 null,
                 CancellationToken.None).ConfigureAwait(false);
@@ -386,18 +413,4 @@ public sealed class DownloadCoordinator
             return "<无效URL>";
         }
     }
-}
-
-/// <summary>
-/// 字符串格式化辅助。
-/// </summary>
-internal static class FormatExtensions
-{
-    /// <summary>
-    /// 格式化模板。
-    /// </summary>
-    /// <param name="template">模板。</param>
-    /// <param name="args">参数。</param>
-    /// <returns>格式化结果。</returns>
-    public static string Format(this string template, params object[] args) => string.Format(template, args);
 }

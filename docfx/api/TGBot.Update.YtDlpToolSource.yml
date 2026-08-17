@@ -5,7 +5,7 @@ items:
   id: YtDlpToolSource
   parent: TGBot.Update
   children:
-  - TGBot.Update.YtDlpToolSource.#ctor(System.Net.Http.HttpClient)
+  - TGBot.Update.YtDlpToolSource.#ctor(System.Net.Http.HttpClient,System.Func{System.Runtime.InteropServices.Architecture})
   - TGBot.Update.YtDlpToolSource.DownloadBinaryAsync(System.String,System.Threading.CancellationToken)
   - TGBot.Update.YtDlpToolSource.GetLatestVersionAsync(System.Threading.CancellationToken)
   - TGBot.Update.YtDlpToolSource.Name
@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpToolSource
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 33
+    startLine: 37
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -43,41 +43,44 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Update.YtDlpToolSource.#ctor(System.Net.Http.HttpClient)
-  commentId: M:TGBot.Update.YtDlpToolSource.#ctor(System.Net.Http.HttpClient)
-  id: '#ctor(System.Net.Http.HttpClient)'
+- uid: TGBot.Update.YtDlpToolSource.#ctor(System.Net.Http.HttpClient,System.Func{System.Runtime.InteropServices.Architecture})
+  commentId: M:TGBot.Update.YtDlpToolSource.#ctor(System.Net.Http.HttpClient,System.Func{System.Runtime.InteropServices.Architecture})
+  id: '#ctor(System.Net.Http.HttpClient,System.Func{System.Runtime.InteropServices.Architecture})'
   parent: TGBot.Update.YtDlpToolSource
   langs:
   - csharp
   - vb
-  name: YtDlpToolSource(HttpClient)
-  nameWithType: YtDlpToolSource.YtDlpToolSource(HttpClient)
-  fullName: TGBot.Update.YtDlpToolSource.YtDlpToolSource(System.Net.Http.HttpClient)
+  name: YtDlpToolSource(HttpClient, Func<Architecture>?)
+  nameWithType: YtDlpToolSource.YtDlpToolSource(HttpClient, Func<Architecture>?)
+  fullName: TGBot.Update.YtDlpToolSource.YtDlpToolSource(System.Net.Http.HttpClient, System.Func<System.Runtime.InteropServices.Architecture>?)
   type: Constructor
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 43
+    startLine: 47
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
   summary: 初始化 <xref href="TGBot.Update.YtDlpToolSource" data-throw-if-not-resolved="false"></xref>。
   example: []
   syntax:
-    content: public YtDlpToolSource(HttpClient http)
+    content: public YtDlpToolSource(HttpClient http, Func<Architecture>? archProvider = null)
     parameters:
     - id: http
       type: System.Net.Http.HttpClient
       description: 共享 HttpClient（自动跟随重定向，用于下载）。
-    content.vb: Public Sub New(http As HttpClient)
+    - id: archProvider
+      type: System.Func{System.Runtime.InteropServices.Architecture}
+      description: 进程架构提供器；默认取真实进程架构，测试可注入指定架构。
+    content.vb: Public Sub New(http As HttpClient, archProvider As Func(Of Architecture) = Nothing)
   overload: TGBot.Update.YtDlpToolSource.#ctor*
-  nameWithType.vb: YtDlpToolSource.New(HttpClient)
-  fullName.vb: TGBot.Update.YtDlpToolSource.New(System.Net.Http.HttpClient)
-  name.vb: New(HttpClient)
+  nameWithType.vb: YtDlpToolSource.New(HttpClient, Func(Of Architecture))
+  fullName.vb: TGBot.Update.YtDlpToolSource.New(System.Net.Http.HttpClient, System.Func(Of System.Runtime.InteropServices.Architecture))
+  name.vb: New(HttpClient, Func(Of Architecture))
 - uid: TGBot.Update.YtDlpToolSource.Name
   commentId: P:TGBot.Update.YtDlpToolSource.Name
   id: Name
@@ -92,11 +95,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Name
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 51
+    startLine: 56
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -125,11 +128,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetLatestVersionAsync
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 54
+    startLine: 59
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -162,11 +165,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadBinaryAsync
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 70
+    startLine: 75
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -442,7 +445,7 @@ references:
   fullName: TGBot.Update.YtDlpToolSource
 - uid: TGBot.Update.YtDlpToolSource.#ctor*
   commentId: Overload:TGBot.Update.YtDlpToolSource.#ctor
-  href: TGBot.Update.YtDlpToolSource.html#TGBot_Update_YtDlpToolSource__ctor_System_Net_Http_HttpClient_
+  href: TGBot.Update.YtDlpToolSource.html#TGBot_Update_YtDlpToolSource__ctor_System_Net_Http_HttpClient_System_Func_System_Runtime_InteropServices_Architecture__
   name: YtDlpToolSource
   nameWithType: YtDlpToolSource.YtDlpToolSource
   fullName: TGBot.Update.YtDlpToolSource.YtDlpToolSource
@@ -457,6 +460,41 @@ references:
   name: HttpClient
   nameWithType: HttpClient
   fullName: System.Net.Http.HttpClient
+- uid: System.Func{System.Runtime.InteropServices.Architecture}
+  commentId: T:System.Func{System.Runtime.InteropServices.Architecture}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Architecture>
+  nameWithType: Func<Architecture>
+  fullName: System.Func<System.Runtime.InteropServices.Architecture>
+  nameWithType.vb: Func(Of Architecture)
+  fullName.vb: System.Func(Of System.Runtime.InteropServices.Architecture)
+  name.vb: Func(Of Architecture)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Runtime.InteropServices.Architecture
+    name: Architecture
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices.architecture
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Runtime.InteropServices.Architecture
+    name: Architecture
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices.architecture
+  - name: )
 - uid: System.Net.Http
   commentId: N:System.Net.Http
   isExternal: true
@@ -494,6 +532,34 @@ references:
     name: Http
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.net.http
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
 - uid: TGBot.Update.YtDlpToolSource.Name*
   commentId: Overload:TGBot.Update.YtDlpToolSource.Name
   href: TGBot.Update.YtDlpToolSource.html#TGBot_Update_YtDlpToolSource_Name

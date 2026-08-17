@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: InlineButton
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -56,11 +56,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -94,11 +94,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Text
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -125,11 +125,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CallbackData
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging

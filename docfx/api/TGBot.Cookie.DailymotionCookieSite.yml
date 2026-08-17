@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/BuiltinSites.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DailymotionCookieSite
     path: ../src/TGBot/Cookie/BuiltinSites.cs
-    startLine: 171
+    startLine: 174
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -57,11 +57,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/BuiltinSites.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Key
     path: ../src/TGBot/Cookie/BuiltinSites.cs
-    startLine: 174
+    startLine: 177
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -89,11 +89,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/BuiltinSites.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DisplayName
     path: ../src/TGBot/Cookie/BuiltinSites.cs
-    startLine: 177
+    startLine: 180
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -121,11 +121,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/BuiltinSites.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Hosts
     path: ../src/TGBot/Cookie/BuiltinSites.cs
-    startLine: 180
+    startLine: 183
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie

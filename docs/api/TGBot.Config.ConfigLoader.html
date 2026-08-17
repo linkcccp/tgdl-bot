@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class ConfigLoader | TGBot API 文档 ">
     
-    <meta name="description" content="负责定位并读取 config.conf。 查找顺序：--config &amp;lt;path&amp;gt; 参数 → 环境变量 TGDL_CONFIG → 与程序二进制同目录 → 当前工作目录。若仍找不到则抛出 。">
+    <meta name="description" content="负责定位并读取 config.conf。 查找顺序：--config &amp;lt;path&amp;gt; 参数 → 环境变量 TGDL_CONFIG → 与程序二进制同目录 → 当前工作目录。若仍找不到则抛出 。 错误消息为中英双行并列（启动期无用户上下文）。">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -73,7 +73,8 @@
   <h1 id="TGBot_Config_ConfigLoader" data-uid="TGBot.Config.ConfigLoader" class="text-break">Class ConfigLoader</h1>
   <div class="markdown level0 summary"><p>负责定位并读取 config.conf。</p>
 <p>查找顺序：<code>--config &lt;path&gt;</code> 参数 → 环境变量 <code>TGDL_CONFIG</code> →
-与程序二进制同目录 → 当前工作目录。若仍找不到则抛出 <a class="xref" href="TGBot.Config.ConfigLoadException.html">ConfigLoadException</a>。</p>
+与程序二进制同目录 → 当前工作目录。若仍找不到则抛出 <a class="xref" href="TGBot.Config.ConfigLoadException.html">ConfigLoadException</a>。
+错误消息为中英双行并列（启动期无用户上下文）。</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -115,10 +116,10 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Config_ConfigLoader_DefaultFileName.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigLoader.DefaultFileName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Config_ConfigLoader_DefaultFileName.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigLoader.DefaultFileName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Config/ConfigLoader.cs/#L29">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Config/ConfigLoader.cs/#L33">View Source</a>
   </span>
   <h4 id="TGBot_Config_ConfigLoader_DefaultFileName" data-uid="TGBot.Config.ConfigLoader.DefaultFileName">DefaultFileName</h4>
   <div class="markdown level1 summary"><p>配置文件默认文件名。</p>
@@ -145,10 +146,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Config_ConfigLoader_EnvVarName.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigLoader.EnvVarName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Config_ConfigLoader_EnvVarName.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigLoader.EnvVarName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Config/ConfigLoader.cs/#L26">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Config/ConfigLoader.cs/#L30">View Source</a>
   </span>
   <h4 id="TGBot_Config_ConfigLoader_EnvVarName" data-uid="TGBot.Config.ConfigLoader.EnvVarName">EnvVarName</h4>
   <div class="markdown level1 summary"><p>环境变量名，用于指定配置文件路径。</p>
@@ -177,10 +178,10 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Config_ConfigLoader_Load_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigLoader.Load(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Config_ConfigLoader_Load_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigLoader.Load(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Config/ConfigLoader.cs/#L81">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Config/ConfigLoader.cs/#L86">View Source</a>
   </span>
   <a id="TGBot_Config_ConfigLoader_Load_" data-uid="TGBot.Config.ConfigLoader.Load*"></a>
   <h4 id="TGBot_Config_ConfigLoader_Load_System_String_" data-uid="TGBot.Config.ConfigLoader.Load(System.String)">Load(string?)</h4>
@@ -248,10 +249,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Config_ConfigLoader_Locate_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigLoader.Locate(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Config_ConfigLoader_Locate_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigLoader.Locate(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Config/ConfigLoader.cs/#L37">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Config/ConfigLoader.cs/#L41">View Source</a>
   </span>
   <a id="TGBot_Config_ConfigLoader_Locate_" data-uid="TGBot.Config.ConfigLoader.Locate*"></a>
   <h4 id="TGBot_Config_ConfigLoader_Locate_System_String_" data-uid="TGBot.Config.ConfigLoader.Locate(System.String)">Locate(string?)</h4>
@@ -321,10 +322,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Config_ConfigLoader.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigLoader%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Config_ConfigLoader.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigLoader%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Config/ConfigLoader.cs/#L23" class="contribution-link">View Source</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Config/ConfigLoader.cs/#L27" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

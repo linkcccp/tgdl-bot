@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 using System.Diagnostics;
 using System.Globalization;
 using TGBot.Logging;

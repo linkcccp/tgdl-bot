@@ -1,0 +1,91 @@
+name: Bug Report / 缺陷报告
+description: 报告一个缺陷（请先搜索是否已有相同 issue）。Report a bug (search existing issues first).
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢报告缺陷！请尽量提供完整信息，便于复现与定位。
+        Thanks for reporting a bug! Please fill in as much detail as possible.
+
+        **安全提醒 / Security note**：本表单是公开的，**切勿**粘贴 Bot Token、
+        API ID / API HASH、cookies 内容或会话凭据等敏感信息；漏洞请走
+        [SECURITY.md](https://github.com/linkcccp/tgdl-bot/blob/main/SECURITY.md) 渠道。
+  - type: input
+    id: version
+    attributes:
+      label: Version / 版本
+      description: 部署的版本（如 `v2.4.0`；Docker 部署可运行 `docker images ghcr.io/linkcccp/tgdl-bot` 查看，或私聊 bot 发 /status）。
+      placeholder: v2.4.0
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Deployment Environment / 部署环境
+      options:
+        - Docker（一键安装脚本 / one-command install）
+        - Docker（手动 compose / manual）
+        - 本机直接运行 / run on host
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS / 操作系统
+      description: Linux 发行版与版本（如 Ubuntu 22.04）；本机直接运行时还需附 .NET 版本。
+      placeholder: Ubuntu 22.04
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce / 复现步骤
+      description: 请给出触发问题的完整步骤（发送了什么链接/命令、bot 位于私聊还是群组等）。
+      placeholder: |
+        1. 部署 bot（…环境变量/配置）
+        2. 私聊发送 URL: https://…
+        3. 观察…
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior / 预期行为
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior / 实际行为
+      description: 实际发生了什么（报错信息、无响应、进程退出等）。
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / 日志
+      description: |
+        `docker logs tgdl-bot` 的相关输出（或本机运行的控制台日志）。
+        日志中已内置脱敏，但请复查**不要包含 Bot Token / API ID / API HASH / cookies**。
+        Relevant output of `docker logs tgdl-bot` (or console logs when run on host).
+        Logs are masked in-app, but please double-check for **no Bot Token / API ID / API HASH / cookies**.
+      render: shell
+  - type: textarea
+    id: cookies
+    attributes:
+      label: Cookies 相关问题 / Cookies-related Issues
+      description: |
+        仅当与站点登录/机器人检测有关时填写：是否上传过 cookies（`/cookie <site>`）、
+        上传的站点、是否按域名匹配。
+        Only when related to site login / bot detection: whether cookies were uploaded
+        (`/cookie <site>`), which site, and whether domain matching applied.
+      placeholder: "例如：YouTube 提示需要 cookies，已上传 /cookie youtube 仍失败…"
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist / 检查清单
+      options:
+        - label: 我已搜索现有 issue，无重复 / I searched existing issues for duplicates.
+        - label: 已确认使用最新版本（`latest` 镜像或最新 Release）/ Confirmed running the latest version.
+        - label: 已确认不是配置错误（对照 README 配置表）/ Confirmed it is not a configuration mistake (per README).
+        - label: 已确认不含敏感信息（token、cookies 等）/ Confirmed no sensitive info (tokens, cookies, etc.) included.

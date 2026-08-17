@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: src/TGBot/Security/PathSanitizer.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: PathSanitizer
     path: ../src/TGBot/Security/PathSanitizer.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security
@@ -55,11 +55,11 @@ items:
   source:
     remote:
       path: src/TGBot/Security/PathSanitizer.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SanitizeFileName
     path: ../src/TGBot/Security/PathSanitizer.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security
@@ -96,11 +96,11 @@ items:
   source:
     remote:
       path: src/TGBot/Security/PathSanitizer.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsWithinDirectory
     path: ../src/TGBot/Security/PathSanitizer.cs
-    startLine: 62
+    startLine: 65
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security
@@ -137,11 +137,11 @@ items:
   source:
     remote:
       path: src/TGBot/Security/PathSanitizer.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsSymbolicLink
     path: ../src/TGBot/Security/PathSanitizer.cs
-    startLine: 84
+    startLine: 87
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security

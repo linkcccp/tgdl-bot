@@ -20,11 +20,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/LogLevel.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LogLevel
     path: ../src/TGBot/Logging/LogLevel.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -47,11 +47,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/LogLevel.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Trace
     path: ../src/TGBot/Logging/LogLevel.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -75,11 +75,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/LogLevel.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Debug
     path: ../src/TGBot/Logging/LogLevel.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -103,11 +103,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/LogLevel.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Info
     path: ../src/TGBot/Logging/LogLevel.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -131,11 +131,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/LogLevel.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Warn
     path: ../src/TGBot/Logging/LogLevel.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -159,11 +159,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/LogLevel.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Error
     path: ../src/TGBot/Logging/LogLevel.cs
-    startLine: 20
+    startLine: 23
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging

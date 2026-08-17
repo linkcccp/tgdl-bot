@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 using TGBot.Access;
 using TGBot.Texts;
 using Xunit;
@@ -13,12 +16,12 @@ public class AccessControlTests
     private static readonly long[] TargetChats = { -100123, -100456 };
 
     private static AccessControlService Create()
-        => new(AllowedUsers, TargetChats);
+        => new(AllowedUsers, TargetChats, TestI18n.Instance);
 
     [Fact]
     public void Evaluate_PrivateWhitelistedUser_Allowed()
     {
-        Assert.True(Create().Evaluate(TriggerArea.Private, 100, 999).Allowed);
+        Assert.True(Create().Evaluate(TriggerArea.Private, 100, 999, "zh").Allowed);
     }
 
     [Theory]
@@ -27,7 +30,7 @@ public class AccessControlTests
     [InlineData(-5)]
     public void Evaluate_PrivateNonWhitelistedUser_Denied(long userId)
     {
-        var decision = Create().Evaluate(TriggerArea.Private, userId, 999);
+        var decision = Create().Evaluate(TriggerArea.Private, userId, 999, "zh");
         Assert.False(decision.Allowed);
         Assert.Contains("名单", decision.Reason, StringComparison.Ordinal);
     }
@@ -35,14 +38,14 @@ public class AccessControlTests
     [Fact]
     public void Evaluate_PrivateNullUser_Denied()
     {
-        Assert.False(Create().Evaluate(TriggerArea.Private, null, 999).Allowed);
+        Assert.False(Create().Evaluate(TriggerArea.Private, null, 999, "zh").Allowed);
     }
 
     [Fact]
     public void Evaluate_GroupWhitelistedChat_Allowed()
     {
-        Assert.True(Create().Evaluate(TriggerArea.GroupOrChannel, null, -100123).Allowed);
-        Assert.True(Create().Evaluate(TriggerArea.GroupOrChannel, 999, -100456).Allowed);
+        Assert.True(Create().Evaluate(TriggerArea.GroupOrChannel, null, -100123, "zh").Allowed);
+        Assert.True(Create().Evaluate(TriggerArea.GroupOrChannel, 999, -100456, "zh").Allowed);
     }
 
     [Theory]
@@ -51,7 +54,7 @@ public class AccessControlTests
     [InlineData(0)]
     public void Evaluate_GroupNonWhitelistedChat_Denied(long chatId)
     {
-        var decision = Create().Evaluate(TriggerArea.GroupOrChannel, null, chatId);
+        var decision = Create().Evaluate(TriggerArea.GroupOrChannel, null, chatId, "zh");
         Assert.False(decision.Allowed);
         Assert.Contains("未获得授权", decision.Reason, StringComparison.Ordinal);
     }
@@ -59,14 +62,14 @@ public class AccessControlTests
     [Fact]
     public void Evaluate_GroupChatAllowedEvenIfUserNotWhitelisted()
     {
-        var decision = Create().Evaluate(TriggerArea.GroupOrChannel, 999, -100123);
+        var decision = Create().Evaluate(TriggerArea.GroupOrChannel, 999, -100123, "zh");
         Assert.True(decision.Allowed);
     }
 
     [Fact]
     public void DenyReason_ContainsNoInternalDetails()
     {
-        var d = Create().Evaluate(TriggerArea.Private, 999, -100999);
+        var d = Create().Evaluate(TriggerArea.Private, 999, -100999, "zh");
         Assert.False(d.Reason!.Contains("AllowedUserIds", StringComparison.Ordinal));
         Assert.False(d.Reason!.Contains("config", StringComparison.OrdinalIgnoreCase));
     }

@@ -92,6 +92,12 @@ Classes
       <h4><a class="xref" href="TGBot.Update.SystemProcessRunner.html">SystemProcessRunner</a></h4>
       <section><p>基于 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.process">Process</a> 的真实进程运行器。</p>
 </section>
+      <h4><a class="xref" href="TGBot.Update.ToolArch.html">ToolArch</a></h4>
+      <section><p>工具二进制下载地址的架构映射（/update 运行期按进程架构选择对应架构的官方资产）。</p>
+<p>镜像按架构构建（seed-bin 与镜像一致），唯一在运行期下载外部二进制的是 /update，
+因此只有这里需要感知架构。URL/资产名均为第三方官方命名，保留原样并在注释中注明对应关系
+（amd64 即 x64、aarch64 即 arm64）。</p>
+</section>
       <h4><a class="xref" href="TGBot.Update.ToolUpdateResult.html">ToolUpdateResult</a></h4>
       <section><p>单个工具的更新结果。</p>
 </section>
@@ -130,6 +136,9 @@ Enums
 </h3>
       <h4><a class="xref" href="TGBot.Update.ToolUpdateStatus.html">ToolUpdateStatus</a></h4>
       <section><p>单个工具更新的状态。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Update.UpdateFailureReason.html">UpdateFailureReason</a></h4>
+      <section><p>更新失败原因分类，用于向用户给出准确提示而不泄露内部细节。</p>
 </section>
 
 

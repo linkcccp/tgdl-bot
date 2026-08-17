@@ -23,11 +23,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NullLogger
     path: ../src/TGBot/Logging/NullLogger.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -62,11 +62,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Instance
     path: ../src/TGBot/Logging/NullLogger.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -91,11 +91,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Log
     path: ../src/TGBot/Logging/NullLogger.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -134,11 +134,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Trace
     path: ../src/TGBot/Logging/NullLogger.cs
-    startLine: 22
+    startLine: 25
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -171,11 +171,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Debug
     path: ../src/TGBot/Logging/NullLogger.cs
-    startLine: 27
+    startLine: 30
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -208,11 +208,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Info
     path: ../src/TGBot/Logging/NullLogger.cs
-    startLine: 32
+    startLine: 35
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -245,11 +245,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Warn
     path: ../src/TGBot/Logging/NullLogger.cs
-    startLine: 37
+    startLine: 40
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -282,11 +282,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Error
     path: ../src/TGBot/Logging/NullLogger.cs
-    startLine: 42
+    startLine: 45
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -322,11 +322,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Dispose
     path: ../src/TGBot/Logging/NullLogger.cs
-    startLine: 47
+    startLine: 50
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging

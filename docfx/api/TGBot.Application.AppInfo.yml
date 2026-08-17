@@ -1,0 +1,446 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Application.AppInfo
+  commentId: T:TGBot.Application.AppInfo
+  id: AppInfo
+  parent: TGBot.Application
+  children:
+  - TGBot.Application.AppInfo.FallbackVersion
+  - TGBot.Application.AppInfo.Normalize(System.String)
+  - TGBot.Application.AppInfo.Version
+  langs:
+  - csharp
+  - vb
+  name: AppInfo
+  nameWithType: AppInfo
+  fullName: TGBot.Application.AppInfo
+  type: Class
+  source:
+    remote:
+      path: src/TGBot/Application/AppInfo.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AppInfo
+    path: ../src/TGBot/Application/AppInfo.cs
+    startLine: 13
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Application
+  summary: >-
+    应用自身版本信息的稳定读取入口（来源：<code>AssemblyInformationalVersion</code>，自动跟随 csproj
+
+    <code>Version</code> 属性）。
+
+
+    <p>发布版本由 CI 从 git tag（<code>vX.Y.Z</code>）剥离 <code>v</code> 后经
+
+    <code>dotnet publish -p:Version=X.Y.Z</code> 注入；本地构建使用 csproj 默认值 2.4.0。</p>
+  example: []
+  syntax:
+    content: public static class AppInfo
+    content.vb: Public Module AppInfo
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Application.AppInfo.FallbackVersion
+  commentId: F:TGBot.Application.AppInfo.FallbackVersion
+  id: FallbackVersion
+  parent: TGBot.Application.AppInfo
+  langs:
+  - csharp
+  - vb
+  name: FallbackVersion
+  nameWithType: AppInfo.FallbackVersion
+  fullName: TGBot.Application.AppInfo.FallbackVersion
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Application/AppInfo.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: FallbackVersion
+    path: ../src/TGBot/Application/AppInfo.cs
+    startLine: 16
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Application
+  summary: 版本信息缺失或无法解析时的兜底值（语义为"未设置版本号"）。
+  example: []
+  syntax:
+    content: public const string FallbackVersion = "0.0.0"
+    return:
+      type: System.String
+    content.vb: Public Const FallbackVersion As String = "0.0.0"
+- uid: TGBot.Application.AppInfo.Version
+  commentId: P:TGBot.Application.AppInfo.Version
+  id: Version
+  parent: TGBot.Application.AppInfo
+  langs:
+  - csharp
+  - vb
+  name: Version
+  nameWithType: AppInfo.Version
+  fullName: TGBot.Application.AppInfo.Version
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Application/AppInfo.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Version
+    path: ../src/TGBot/Application/AppInfo.cs
+    startLine: 23
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Application
+  summary: >-
+    规范化后的应用版本（如 <code>2.4.0</code>）。
+
+
+    <p>截断 <code>+commit</code> 后缀（SourceLink/确定性构建注入的 commit 信息）与可选 <code>v</code>
+
+    前缀，仅保留主版本；异常输入回退 <xref href="TGBot.Application.AppInfo.FallbackVersion" data-throw-if-not-resolved="false"></xref>，绝不抛异常。</p>
+  example: []
+  syntax:
+    content: public static string Version { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property Version As String
+  overload: TGBot.Application.AppInfo.Version*
+- uid: TGBot.Application.AppInfo.Normalize(System.String)
+  commentId: M:TGBot.Application.AppInfo.Normalize(System.String)
+  id: Normalize(System.String)
+  parent: TGBot.Application.AppInfo
+  langs:
+  - csharp
+  - vb
+  name: Normalize(string?)
+  nameWithType: AppInfo.Normalize(string?)
+  fullName: TGBot.Application.AppInfo.Normalize(string?)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Application/AppInfo.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Normalize
+    path: ../src/TGBot/Application/AppInfo.cs
+    startLine: 31
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Application
+  summary: 将 <code>AssemblyInformationalVersion</code> 原始值规范化为展示版本号。
+  example: []
+  syntax:
+    content: public static string Normalize(string? informationalVersion)
+    parameters:
+    - id: informationalVersion
+      type: System.String
+      description: 原始信息性版本（可为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>）。
+    return:
+      type: System.String
+      description: >-
+        截断 <code>+</code> 后缀、剥离 <code>v</code> 前缀并去除首尾空白后的版本；
+            空值/全后缀等异常输入返回 <xref href="TGBot.Application.AppInfo.FallbackVersion" data-throw-if-not-resolved="false"></xref>。
+    content.vb: Public Shared Function Normalize(informationalVersion As String) As String
+  overload: TGBot.Application.AppInfo.Normalize*
+  nameWithType.vb: AppInfo.Normalize(String)
+  fullName.vb: TGBot.Application.AppInfo.Normalize(String)
+  name.vb: Normalize(String)
+references:
+- uid: TGBot.Application
+  commentId: N:TGBot.Application
+  href: TGBot.html
+  name: TGBot.Application
+  nameWithType: TGBot.Application
+  fullName: TGBot.Application
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Application
+    name: Application
+    href: TGBot.Application.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Application
+    name: Application
+    href: TGBot.Application.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: TGBot.Application.AppInfo.FallbackVersion
+  commentId: F:TGBot.Application.AppInfo.FallbackVersion
+  href: TGBot.Application.AppInfo.html#TGBot_Application_AppInfo_FallbackVersion
+  name: FallbackVersion
+  nameWithType: AppInfo.FallbackVersion
+  fullName: TGBot.Application.AppInfo.FallbackVersion
+- uid: TGBot.Application.AppInfo.Version*
+  commentId: Overload:TGBot.Application.AppInfo.Version
+  href: TGBot.Application.AppInfo.html#TGBot_Application_AppInfo_Version
+  name: Version
+  nameWithType: AppInfo.Version
+  fullName: TGBot.Application.AppInfo.Version
+- uid: TGBot.Application.AppInfo.Normalize*
+  commentId: Overload:TGBot.Application.AppInfo.Normalize
+  href: TGBot.Application.AppInfo.html#TGBot_Application_AppInfo_Normalize_System_String_
+  name: Normalize
+  nameWithType: AppInfo.Normalize
+  fullName: TGBot.Application.AppInfo.Normalize

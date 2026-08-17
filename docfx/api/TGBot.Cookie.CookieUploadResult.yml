@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieUploadResult
     path: ../src/TGBot/Cookie/CookieService.cs
-    startLine: 12
+    startLine: 16
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -56,11 +56,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Cookie/CookieService.cs
-    startLine: 12
+    startLine: 16
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -74,7 +74,7 @@ items:
       description: 是否成功。
     - id: Message
       type: System.String
-      description: 面向用户的中文提示。
+      description: 面向用户的提示（已按消息语言渲染）。
     content.vb: Public Sub New(Success As Boolean, Message As String)
   overload: TGBot.Cookie.CookieUploadResult.#ctor*
   nameWithType.vb: CookieUploadResult.New(Boolean, String)
@@ -94,11 +94,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Success
     path: ../src/TGBot/Cookie/CookieService.cs
-    startLine: 12
+    startLine: 16
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -125,15 +125,15 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Message
     path: ../src/TGBot/Cookie/CookieService.cs
-    startLine: 12
+    startLine: 16
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
-  summary: 面向用户的中文提示。
+  summary: 面向用户的提示（已按消息语言渲染）。
   example: []
   syntax:
     content: public string Message { get; init; }

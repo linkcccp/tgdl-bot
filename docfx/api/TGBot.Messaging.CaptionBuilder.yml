@@ -5,7 +5,7 @@ items:
   id: CaptionBuilder
   parent: TGBot.Messaging
   children:
-  - TGBot.Messaging.CaptionBuilder.Build(System.String,System.String)
+  - TGBot.Messaging.CaptionBuilder.Build(TGBot.Texts.I18n.II18n,System.String,System.String,System.String)
   - TGBot.Messaging.CaptionBuilder.Sanitize(System.String)
   langs:
   - csharp
@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/CaptionBuilder.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CaptionBuilder
     path: ../src/TGBot/Messaging/CaptionBuilder.cs
-    startLine: 7
+    startLine: 12
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -40,33 +40,39 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Messaging.CaptionBuilder.Build(System.String,System.String)
-  commentId: M:TGBot.Messaging.CaptionBuilder.Build(System.String,System.String)
-  id: Build(System.String,System.String)
+- uid: TGBot.Messaging.CaptionBuilder.Build(TGBot.Texts.I18n.II18n,System.String,System.String,System.String)
+  commentId: M:TGBot.Messaging.CaptionBuilder.Build(TGBot.Texts.I18n.II18n,System.String,System.String,System.String)
+  id: Build(TGBot.Texts.I18n.II18n,System.String,System.String,System.String)
   parent: TGBot.Messaging.CaptionBuilder
   langs:
   - csharp
   - vb
-  name: Build(string, string)
-  nameWithType: CaptionBuilder.Build(string, string)
-  fullName: TGBot.Messaging.CaptionBuilder.Build(string, string)
+  name: Build(II18n, string, string, string)
+  nameWithType: CaptionBuilder.Build(II18n, string, string, string)
+  fullName: TGBot.Messaging.CaptionBuilder.Build(TGBot.Texts.I18n.II18n, string, string, string)
   type: Method
   source:
     remote:
       path: src/TGBot/Messaging/CaptionBuilder.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Build
     path: ../src/TGBot/Messaging/CaptionBuilder.cs
-    startLine: 17
+    startLine: 24
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
-  summary: 构建媒体说明：<code>标题：xxx\n\n来源：https://...</code>。
+  summary: 构建媒体说明：<code>标题：xxx\n\n来源：https://...</code>（文案按语言渲染）。
   example: []
   syntax:
-    content: public static string Build(string title, string sourceUrl)
+    content: public static string Build(II18n i18n, string lang, string title, string sourceUrl)
     parameters:
+    - id: i18n
+      type: TGBot.Texts.I18n.II18n
+      description: 国际化服务。
+    - id: lang
+      type: System.String
+      description: 语言代码。
     - id: title
       type: System.String
       description: 标题。
@@ -76,11 +82,11 @@ items:
     return:
       type: System.String
       description: 净化后的说明文本。
-    content.vb: Public Shared Function Build(title As String, sourceUrl As String) As String
+    content.vb: Public Shared Function Build(i18n As II18n, lang As String, title As String, sourceUrl As String) As String
   overload: TGBot.Messaging.CaptionBuilder.Build*
-  nameWithType.vb: CaptionBuilder.Build(String, String)
-  fullName.vb: TGBot.Messaging.CaptionBuilder.Build(String, String)
-  name.vb: Build(String, String)
+  nameWithType.vb: CaptionBuilder.Build(II18n, String, String, String)
+  fullName.vb: TGBot.Messaging.CaptionBuilder.Build(TGBot.Texts.I18n.II18n, String, String, String)
+  name.vb: Build(II18n, String, String, String)
 - uid: TGBot.Messaging.CaptionBuilder.Sanitize(System.String)
   commentId: M:TGBot.Messaging.CaptionBuilder.Sanitize(System.String)
   id: Sanitize(System.String)
@@ -95,11 +101,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/CaptionBuilder.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Sanitize
     path: ../src/TGBot/Messaging/CaptionBuilder.cs
-    startLine: 28
+    startLine: 35
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -381,10 +387,17 @@ references:
   fullName: System
 - uid: TGBot.Messaging.CaptionBuilder.Build*
   commentId: Overload:TGBot.Messaging.CaptionBuilder.Build
-  href: TGBot.Messaging.CaptionBuilder.html#TGBot_Messaging_CaptionBuilder_Build_System_String_System_String_
+  href: TGBot.Messaging.CaptionBuilder.html#TGBot_Messaging_CaptionBuilder_Build_TGBot_Texts_I18n_II18n_System_String_System_String_System_String_
   name: Build
   nameWithType: CaptionBuilder.Build
   fullName: TGBot.Messaging.CaptionBuilder.Build
+- uid: TGBot.Texts.I18n.II18n
+  commentId: T:TGBot.Texts.I18n.II18n
+  parent: TGBot.Texts.I18n
+  href: TGBot.Texts.I18n.II18n.html
+  name: II18n
+  nameWithType: II18n
+  fullName: TGBot.Texts.I18n.II18n
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -396,6 +409,36 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: TGBot.Texts.I18n
+  commentId: N:TGBot.Texts.I18n
+  href: TGBot.html
+  name: TGBot.Texts.I18n
+  nameWithType: TGBot.Texts.I18n
+  fullName: TGBot.Texts.I18n
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
 - uid: TGBot.Messaging.CaptionBuilder.Sanitize*
   commentId: Overload:TGBot.Messaging.CaptionBuilder.Sanitize
   href: TGBot.Messaging.CaptionBuilder.html#TGBot_Messaging_CaptionBuilder_Sanitize_System_String_

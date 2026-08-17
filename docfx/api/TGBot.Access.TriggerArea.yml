@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: src/TGBot/Access/AccessControlService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TriggerArea
     path: ../src/TGBot/Access/AccessControlService.cs
-    startLine: 7
+    startLine: 11
   assemblies:
   - tgdl-bot
   namespace: TGBot.Access
@@ -44,11 +44,11 @@ items:
   source:
     remote:
       path: src/TGBot/Access/AccessControlService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Private
     path: ../src/TGBot/Access/AccessControlService.cs
-    startLine: 10
+    startLine: 14
   assemblies:
   - tgdl-bot
   namespace: TGBot.Access
@@ -72,11 +72,11 @@ items:
   source:
     remote:
       path: src/TGBot/Access/AccessControlService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GroupOrChannel
     path: ../src/TGBot/Access/AccessControlService.cs
-    startLine: 13
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Access

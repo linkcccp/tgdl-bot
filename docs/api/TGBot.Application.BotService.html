@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class BotService | TGBot API 文档 ">
     
-    <meta name="description" content="Bot 服务：Long Polling 主循环，带异常兜底与重启退避。">
+    <meta name="description" content="Bot 服务：Long Polling 主循环，带异常兜底与重启退避。 就绪后、开始轮询前消费 pending-notify（重启生效通知，防重复发送）。">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -72,6 +72,7 @@
 
   <h1 id="TGBot_Application_BotService" data-uid="TGBot.Application.BotService" class="text-break">Class BotService</h1>
   <div class="markdown level0 summary"><p>Bot 服务：Long Polling 主循环，带异常兜底与重启退避。</p>
+<p>就绪后、开始轮询前消费 pending-notify（重启生效通知，防重复发送）。</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -110,19 +111,19 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Application_BotService__ctor_TGBot_Messaging_ITelegramClient_TGBot_Application_MessageRouter_TGBot_Logging_IAppLogger_.md&amp;value=---%0Auid%3A%20TGBot.Application.BotService.%23ctor(TGBot.Messaging.ITelegramClient%2CTGBot.Application.MessageRouter%2CTGBot.Logging.IAppLogger)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Application_BotService__ctor_TGBot_Messaging_ITelegramClient_TGBot_Application_MessageRouter_TGBot_Logging_IAppLogger_TGBot_Application_PendingNotifySender_.md&amp;value=---%0Auid%3A%20TGBot.Application.BotService.%23ctor(TGBot.Messaging.ITelegramClient%2CTGBot.Application.MessageRouter%2CTGBot.Logging.IAppLogger%2CTGBot.Application.PendingNotifySender)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Application/BotService.cs/#L21">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Application/BotService.cs/#L27">View Source</a>
   </span>
   <a id="TGBot_Application_BotService__ctor_" data-uid="TGBot.Application.BotService.#ctor*"></a>
-  <h4 id="TGBot_Application_BotService__ctor_TGBot_Messaging_ITelegramClient_TGBot_Application_MessageRouter_TGBot_Logging_IAppLogger_" data-uid="TGBot.Application.BotService.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Application.MessageRouter,TGBot.Logging.IAppLogger)">BotService(ITelegramClient, MessageRouter, IAppLogger)</h4>
+  <h4 id="TGBot_Application_BotService__ctor_TGBot_Messaging_ITelegramClient_TGBot_Application_MessageRouter_TGBot_Logging_IAppLogger_TGBot_Application_PendingNotifySender_" data-uid="TGBot.Application.BotService.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Application.MessageRouter,TGBot.Logging.IAppLogger,TGBot.Application.PendingNotifySender)">BotService(ITelegramClient, MessageRouter, IAppLogger, PendingNotifySender?)</h4>
   <div class="markdown level1 summary"><p>初始化 <a class="xref" href="TGBot.Application.BotService.html">BotService</a>。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BotService(ITelegramClient client, MessageRouter router, IAppLogger logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public BotService(ITelegramClient client, MessageRouter router, IAppLogger logger, PendingNotifySender? notifySender = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -152,16 +153,22 @@
         <td><p>日志器。</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="TGBot.Application.PendingNotifySender.html">PendingNotifySender</a></td>
+        <td><span class="parametername">notifySender</span></td>
+        <td><p>重启通知发送器（可为空，测试注入便利）。</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Application_BotService_RunAsync_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Application.BotService.RunAsync(System.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Application_BotService_RunAsync_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Application.BotService.RunAsync(System.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Application/BotService.cs/#L32">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Application/BotService.cs/#L39">View Source</a>
   </span>
   <a id="TGBot_Application_BotService_RunAsync_" data-uid="TGBot.Application.BotService.RunAsync*"></a>
   <h4 id="TGBot_Application_BotService_RunAsync_System_Threading_CancellationToken_" data-uid="TGBot.Application.BotService.RunAsync(System.Threading.CancellationToken)">RunAsync(CancellationToken)</h4>
@@ -214,10 +221,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Application_BotService.md&amp;value=---%0Auid%3A%20TGBot.Application.BotService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Application_BotService.md&amp;value=---%0Auid%3A%20TGBot.Application.BotService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Application/BotService.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Application/BotService.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

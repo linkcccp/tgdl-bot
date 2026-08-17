@@ -12,10 +12,12 @@ items:
   - TGBot.Update.IUpdater
   - TGBot.Update.ProcessOutput
   - TGBot.Update.SystemProcessRunner
+  - TGBot.Update.ToolArch
   - TGBot.Update.ToolUpdateResult
   - TGBot.Update.ToolUpdateStatus
   - TGBot.Update.ToolVersion
   - TGBot.Update.UpdateException
+  - TGBot.Update.UpdateFailureReason
   - TGBot.Update.UpdateReport
   - TGBot.Update.Updater
   - TGBot.Update.UriVersionParser
@@ -61,6 +63,12 @@ references:
   name: SystemProcessRunner
   nameWithType: SystemProcessRunner
   fullName: TGBot.Update.SystemProcessRunner
+- uid: TGBot.Update.ToolArch
+  commentId: T:TGBot.Update.ToolArch
+  href: TGBot.Update.ToolArch.html
+  name: ToolArch
+  nameWithType: ToolArch
+  fullName: TGBot.Update.ToolArch
 - uid: TGBot.Update.IToolSource
   commentId: T:TGBot.Update.IToolSource
   parent: TGBot.Update
@@ -119,6 +127,13 @@ references:
   name: UpdateReport
   nameWithType: UpdateReport
   fullName: TGBot.Update.UpdateReport
+- uid: TGBot.Update.UpdateFailureReason
+  commentId: T:TGBot.Update.UpdateFailureReason
+  parent: TGBot.Update
+  href: TGBot.Update.UpdateFailureReason.html
+  name: UpdateFailureReason
+  nameWithType: UpdateFailureReason
+  fullName: TGBot.Update.UpdateFailureReason
 - uid: TGBot.Update.UpdateException
   commentId: T:TGBot.Update.UpdateException
   href: TGBot.Update.UpdateException.html

@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ProcessRunner.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IProcessRunner
     path: ../src/TGBot/Update/ProcessRunner.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -45,11 +45,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ProcessRunner.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RunAsync
     path: ../src/TGBot/Update/ProcessRunner.cs
-    startLine: 26
+    startLine: 29
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update

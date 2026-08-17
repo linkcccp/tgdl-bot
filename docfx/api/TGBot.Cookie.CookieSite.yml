@@ -20,11 +20,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieSite.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieSite
     path: ../src/TGBot/Cookie/CookieSite.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -76,11 +76,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieSite.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Key
     path: ../src/TGBot/Cookie/CookieSite.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -107,11 +107,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieSite.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DisplayName
     path: ../src/TGBot/Cookie/CookieSite.cs
-    startLine: 16
+    startLine: 19
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -138,11 +138,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieSite.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Hosts
     path: ../src/TGBot/Cookie/CookieSite.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -169,11 +169,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieSite.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MatchedHosts
     path: ../src/TGBot/Cookie/CookieSite.cs
-    startLine: 26
+    startLine: 29
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -200,11 +200,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieSite.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Matches
     path: ../src/TGBot/Cookie/CookieSite.cs
-    startLine: 33
+    startLine: 36
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie

@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieSite.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieSiteUtil
     path: ../src/TGBot/Cookie/CookieSite.cs
-    startLine: 40
+    startLine: 43
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -53,11 +53,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieSite.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NormalizeHost
     path: ../src/TGBot/Cookie/CookieSite.cs
-    startLine: 47
+    startLine: 50
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie

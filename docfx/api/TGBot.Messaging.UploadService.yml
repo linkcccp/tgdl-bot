@@ -5,8 +5,8 @@ items:
   id: UploadService
   parent: TGBot.Messaging
   children:
-  - TGBot.Messaging.UploadService.#ctor(TGBot.Messaging.ITelegramClient,System.Int32,System.Boolean,TGBot.Logging.IAppLogger)
-  - TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
+  - TGBot.Messaging.UploadService.#ctor(TGBot.Messaging.ITelegramClient,System.Int32,System.Boolean,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n)
+  - TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/UploadService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadService
     path: ../src/TGBot/Messaging/UploadService.cs
-    startLine: 16
+    startLine: 20
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -39,32 +39,32 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Messaging.UploadService.#ctor(TGBot.Messaging.ITelegramClient,System.Int32,System.Boolean,TGBot.Logging.IAppLogger)
-  commentId: M:TGBot.Messaging.UploadService.#ctor(TGBot.Messaging.ITelegramClient,System.Int32,System.Boolean,TGBot.Logging.IAppLogger)
-  id: '#ctor(TGBot.Messaging.ITelegramClient,System.Int32,System.Boolean,TGBot.Logging.IAppLogger)'
+- uid: TGBot.Messaging.UploadService.#ctor(TGBot.Messaging.ITelegramClient,System.Int32,System.Boolean,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n)
+  commentId: M:TGBot.Messaging.UploadService.#ctor(TGBot.Messaging.ITelegramClient,System.Int32,System.Boolean,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n)
+  id: '#ctor(TGBot.Messaging.ITelegramClient,System.Int32,System.Boolean,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n)'
   parent: TGBot.Messaging.UploadService
   langs:
   - csharp
   - vb
-  name: UploadService(ITelegramClient, int, bool, IAppLogger)
-  nameWithType: UploadService.UploadService(ITelegramClient, int, bool, IAppLogger)
-  fullName: TGBot.Messaging.UploadService.UploadService(TGBot.Messaging.ITelegramClient, int, bool, TGBot.Logging.IAppLogger)
+  name: UploadService(ITelegramClient, int, bool, IAppLogger, II18n)
+  nameWithType: UploadService.UploadService(ITelegramClient, int, bool, IAppLogger, II18n)
+  fullName: TGBot.Messaging.UploadService.UploadService(TGBot.Messaging.ITelegramClient, int, bool, TGBot.Logging.IAppLogger, TGBot.Texts.I18n.II18n)
   type: Constructor
   source:
     remote:
       path: src/TGBot/Messaging/UploadService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Messaging/UploadService.cs
-    startLine: 35
+    startLine: 41
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
   summary: 初始化 <xref href="TGBot.Messaging.UploadService" data-throw-if-not-resolved="false"></xref>。
   example: []
   syntax:
-    content: public UploadService(ITelegramClient client, int maxRetries, bool alsoSendToRequester, IAppLogger logger)
+    content: public UploadService(ITelegramClient client, int maxRetries, bool alsoSendToRequester, IAppLogger logger, II18n i18n)
     parameters:
     - id: client
       type: TGBot.Messaging.ITelegramClient
@@ -78,37 +78,40 @@ items:
     - id: logger
       type: TGBot.Logging.IAppLogger
       description: 日志器。
-    content.vb: Public Sub New(client As ITelegramClient, maxRetries As Integer, alsoSendToRequester As Boolean, logger As IAppLogger)
+    - id: i18n
+      type: TGBot.Texts.I18n.II18n
+      description: 国际化服务（媒体说明文案渲染）。
+    content.vb: Public Sub New(client As ITelegramClient, maxRetries As Integer, alsoSendToRequester As Boolean, logger As IAppLogger, i18n As II18n)
   overload: TGBot.Messaging.UploadService.#ctor*
-  nameWithType.vb: UploadService.New(ITelegramClient, Integer, Boolean, IAppLogger)
-  fullName.vb: TGBot.Messaging.UploadService.New(TGBot.Messaging.ITelegramClient, Integer, Boolean, TGBot.Logging.IAppLogger)
-  name.vb: New(ITelegramClient, Integer, Boolean, IAppLogger)
-- uid: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
-  commentId: M:TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
-  id: UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
+  nameWithType.vb: UploadService.New(ITelegramClient, Integer, Boolean, IAppLogger, II18n)
+  fullName.vb: TGBot.Messaging.UploadService.New(TGBot.Messaging.ITelegramClient, Integer, Boolean, TGBot.Logging.IAppLogger, TGBot.Texts.I18n.II18n)
+  name.vb: New(ITelegramClient, Integer, Boolean, IAppLogger, II18n)
+- uid: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  commentId: M:TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  id: UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
   parent: TGBot.Messaging.UploadService
   langs:
   - csharp
   - vb
-  name: UploadAsync(IReadOnlyList<DownloadedMedia>, IReadOnlyList<long>, long?, CancellationToken)
-  nameWithType: UploadService.UploadAsync(IReadOnlyList<DownloadedMedia>, IReadOnlyList<long>, long?, CancellationToken)
-  fullName: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList<TGBot.Download.DownloadedMedia>, System.Collections.Generic.IReadOnlyList<long>, long?, System.Threading.CancellationToken)
+  name: UploadAsync(IReadOnlyList<DownloadedMedia>, IReadOnlyList<long>, long?, string, CancellationToken)
+  nameWithType: UploadService.UploadAsync(IReadOnlyList<DownloadedMedia>, IReadOnlyList<long>, long?, string, CancellationToken)
+  fullName: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList<TGBot.Download.DownloadedMedia>, System.Collections.Generic.IReadOnlyList<long>, long?, string, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
       path: src/TGBot/Messaging/UploadService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadAsync
     path: ../src/TGBot/Messaging/UploadService.cs
-    startLine: 51
+    startLine: 59
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
   summary: 将一组媒体上传到所有目标会话（同一任务可能含多个产物，如 flac+mp3）。
   example: []
   syntax:
-    content: public Task<UploadResult> UploadAsync(IReadOnlyList<DownloadedMedia> media, IReadOnlyList<long> targetChatIds, long? requesterChatId, CancellationToken cancellationToken)
+    content: public Task<UploadResult> UploadAsync(IReadOnlyList<DownloadedMedia> media, IReadOnlyList<long> targetChatIds, long? requesterChatId, string lang, CancellationToken cancellationToken)
     parameters:
     - id: media
       type: System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia}
@@ -119,17 +122,20 @@ items:
     - id: requesterChatId
       type: System.Nullable{System.Int64}
       description: 请求者会话 ID（私聊，可空）。
+    - id: lang
+      type: System.String
+      description: 触发消息的语言（媒体说明文案使用）。
     - id: cancellationToken
       type: System.Threading.CancellationToken
       description: 取消令牌。
     return:
       type: System.Threading.Tasks.Task{TGBot.Messaging.UploadResult}
       description: 上传结果。
-    content.vb: Public Function UploadAsync(media As IReadOnlyList(Of DownloadedMedia), targetChatIds As IReadOnlyList(Of Long), requesterChatId As Long?, cancellationToken As CancellationToken) As Task(Of UploadResult)
+    content.vb: Public Function UploadAsync(media As IReadOnlyList(Of DownloadedMedia), targetChatIds As IReadOnlyList(Of Long), requesterChatId As Long?, lang As String, cancellationToken As CancellationToken) As Task(Of UploadResult)
   overload: TGBot.Messaging.UploadService.UploadAsync*
-  nameWithType.vb: UploadService.UploadAsync(IReadOnlyList(Of DownloadedMedia), IReadOnlyList(Of Long), Long?, CancellationToken)
-  fullName.vb: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList(Of TGBot.Download.DownloadedMedia), System.Collections.Generic.IReadOnlyList(Of Long), Long?, System.Threading.CancellationToken)
-  name.vb: UploadAsync(IReadOnlyList(Of DownloadedMedia), IReadOnlyList(Of Long), Long?, CancellationToken)
+  nameWithType.vb: UploadService.UploadAsync(IReadOnlyList(Of DownloadedMedia), IReadOnlyList(Of Long), Long?, String, CancellationToken)
+  fullName.vb: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList(Of TGBot.Download.DownloadedMedia), System.Collections.Generic.IReadOnlyList(Of Long), Long?, String, System.Threading.CancellationToken)
+  name.vb: UploadAsync(IReadOnlyList(Of DownloadedMedia), IReadOnlyList(Of Long), Long?, String, CancellationToken)
 references:
 - uid: TGBot.Messaging
   commentId: N:TGBot.Messaging
@@ -375,7 +381,7 @@ references:
   fullName: TGBot.Messaging.UploadService
 - uid: TGBot.Messaging.UploadService.#ctor*
   commentId: Overload:TGBot.Messaging.UploadService.#ctor
-  href: TGBot.Messaging.UploadService.html#TGBot_Messaging_UploadService__ctor_TGBot_Messaging_ITelegramClient_System_Int32_System_Boolean_TGBot_Logging_IAppLogger_
+  href: TGBot.Messaging.UploadService.html#TGBot_Messaging_UploadService__ctor_TGBot_Messaging_ITelegramClient_System_Int32_System_Boolean_TGBot_Logging_IAppLogger_TGBot_Texts_I18n_II18n_
   name: UploadService
   nameWithType: UploadService.UploadService
   fullName: TGBot.Messaging.UploadService.UploadService
@@ -418,6 +424,13 @@ references:
   name: IAppLogger
   nameWithType: IAppLogger
   fullName: TGBot.Logging.IAppLogger
+- uid: TGBot.Texts.I18n.II18n
+  commentId: T:TGBot.Texts.I18n.II18n
+  parent: TGBot.Texts.I18n
+  href: TGBot.Texts.I18n.II18n.html
+  name: II18n
+  nameWithType: II18n
+  fullName: TGBot.Texts.I18n.II18n
 - uid: TGBot.Logging
   commentId: N:TGBot.Logging
   href: TGBot.html
@@ -440,9 +453,39 @@ references:
   - uid: TGBot.Logging
     name: Logging
     href: TGBot.Logging.html
+- uid: TGBot.Texts.I18n
+  commentId: N:TGBot.Texts.I18n
+  href: TGBot.html
+  name: TGBot.Texts.I18n
+  nameWithType: TGBot.Texts.I18n
+  fullName: TGBot.Texts.I18n
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
 - uid: TGBot.Messaging.UploadService.UploadAsync*
   commentId: Overload:TGBot.Messaging.UploadService.UploadAsync
-  href: TGBot.Messaging.UploadService.html#TGBot_Messaging_UploadService_UploadAsync_System_Collections_Generic_IReadOnlyList_TGBot_Download_DownloadedMedia__System_Collections_Generic_IReadOnlyList_System_Int64__System_Nullable_System_Int64__System_Threading_CancellationToken_
+  href: TGBot.Messaging.UploadService.html#TGBot_Messaging_UploadService_UploadAsync_System_Collections_Generic_IReadOnlyList_TGBot_Download_DownloadedMedia__System_Collections_Generic_IReadOnlyList_System_Int64__System_Nullable_System_Int64__System_String_System_Threading_CancellationToken_
   name: UploadAsync
   nameWithType: UploadService.UploadAsync
   fullName: TGBot.Messaging.UploadService.UploadAsync
@@ -537,6 +580,17 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int64
   - name: '?'
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: System.Threading.CancellationToken
   commentId: T:System.Threading.CancellationToken
   parent: System.Threading

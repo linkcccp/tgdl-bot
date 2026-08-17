@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class AppHost | TGBot API 文档 ">
     
-    <meta name="description" content="应用宿主：解析命令行参数、加载配置、装配各模块并启动 Bot 服务。 支持 --smoke-test 自检模式（验证配置与模块装配并输出内存占用，不连接网络）。">
+    <meta name="description" content="应用宿主：解析命令行参数、加载配置、装配各模块并启动 Bot 服务。 装配期完成 overlay 合并（config-overlay.json 逐键覆盖 + 白名单并集），StateDir 承载 languages.json / overlay / pending-notify 等运行时状态。支持 --smoke-test 自检模式。">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -72,7 +72,8 @@
 
   <h1 id="TGBot_Application_AppHost" data-uid="TGBot.Application.AppHost" class="text-break">Class AppHost</h1>
   <div class="markdown level0 summary"><p>应用宿主：解析命令行参数、加载配置、装配各模块并启动 Bot 服务。</p>
-<p>支持 <code>--smoke-test</code> 自检模式（验证配置与模块装配并输出内存占用，不连接网络）。</p>
+<p>装配期完成 overlay 合并（config-overlay.json 逐键覆盖 + 白名单并集），StateDir 承载
+languages.json / overlay / pending-notify 等运行时状态。支持 <code>--smoke-test</code> 自检模式。</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -114,10 +115,10 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Application_AppHost_RunAsync_System_String___.md&amp;value=---%0Auid%3A%20TGBot.Application.AppHost.RunAsync(System.String%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Application_AppHost_RunAsync_System_String___.md&amp;value=---%0Auid%3A%20TGBot.Application.AppHost.RunAsync(System.String%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Application/AppHost.cs/#L25">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Application/AppHost.cs/#L31">View Source</a>
   </span>
   <a id="TGBot_Application_AppHost_RunAsync_" data-uid="TGBot.Application.AppHost.RunAsync*"></a>
   <h4 id="TGBot_Application_AppHost_RunAsync_System_String___" data-uid="TGBot.Application.AppHost.RunAsync(System.String[])">RunAsync(string[])</h4>
@@ -171,10 +172,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Application_AppHost.md&amp;value=---%0Auid%3A%20TGBot.Application.AppHost%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Application_AppHost.md&amp;value=---%0Auid%3A%20TGBot.Application.AppHost%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Application/AppHost.cs/#L18" class="contribution-link">View Source</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Application/AppHost.cs/#L24" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

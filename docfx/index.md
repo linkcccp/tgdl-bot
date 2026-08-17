@@ -20,8 +20,8 @@
 
 ```bash
 dotnet tool install --global docfx
-docfx build docfx/docfx.json
-# 输出到 docs/ 目录，用浏览器打开 docs/index.html
+dotnet run --project tools/TgdlDocBuilder
+# 输出到 docs/ 目录，用浏览器打开 docs/index.html（--help 查看参数）
 ```
 
 本文档由 DocFX 从 XML 文档注释自动生成。

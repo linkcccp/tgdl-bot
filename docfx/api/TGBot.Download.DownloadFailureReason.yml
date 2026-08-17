@@ -22,11 +22,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadException.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadFailureReason
     path: ../src/TGBot/Download/DownloadException.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -49,11 +49,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadException.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Failed
     path: ../src/TGBot/Download/DownloadException.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -77,11 +77,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadException.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TooLarge
     path: ../src/TGBot/Download/DownloadException.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -105,11 +105,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadException.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NoDiskSpace
     path: ../src/TGBot/Download/DownloadException.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -133,11 +133,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadException.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Timeout
     path: ../src/TGBot/Download/DownloadException.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -161,11 +161,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadException.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Cancelled
     path: ../src/TGBot/Download/DownloadException.cs
-    startLine: 20
+    startLine: 23
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -189,11 +189,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadException.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AuthRequired
     path: ../src/TGBot/Download/DownloadException.cs
-    startLine: 23
+    startLine: 26
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -217,11 +217,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadException.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FormatUnavailable
     path: ../src/TGBot/Download/DownloadException.cs
-    startLine: 26
+    startLine: 29
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download

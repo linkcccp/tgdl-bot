@@ -1,7 +1,11 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 using System.Collections.Concurrent;
 using TGBot.Logging;
 using TGBot.Messaging;
 using TGBot.Texts;
+using TGBot.Texts.I18n;
 
 namespace TGBot.Cookie;
 
@@ -9,7 +13,7 @@ namespace TGBot.Cookie;
 /// cookie 上传结果。
 /// </summary>
 /// <param name="Success">是否成功。</param>
-/// <param name="Message">面向用户的中文提示。</param>
+/// <param name="Message">面向用户的提示（已按消息语言渲染）。</param>
 public sealed record CookieUploadResult(bool Success, string Message);
 
 /// <summary>
@@ -31,6 +35,7 @@ public sealed class CookieService
     private readonly SiteCookieRegistry _registry;
     private readonly CookieStore _store;
     private readonly ITelegramClient _client;
+    private readonly II18n _i18n;
     private readonly IAppLogger _logger;
     private readonly ConcurrentDictionary<long, PendingCookie> _pending = new();
 
@@ -43,11 +48,13 @@ public sealed class CookieService
     /// <param name="store">cookie 存储。</param>
     /// <param name="client">Telegram 客户端（用于下载上传的文件）。</param>
     /// <param name="logger">日志器。</param>
-    public CookieService(SiteCookieRegistry registry, CookieStore store, ITelegramClient client, IAppLogger logger)
+    /// <param name="i18n">国际化服务（结果消息渲染）。</param>
+    public CookieService(SiteCookieRegistry registry, CookieStore store, ITelegramClient client, IAppLogger logger, II18n i18n)
     {
         _registry = registry;
         _store = store;
         _client = client;
+        _i18n = i18n;
         _logger = logger;
     }
 
@@ -106,12 +113,14 @@ public sealed class CookieService
     /// <param name="chatId">私聊会话 ID。</param>
     /// <param name="fileId">Telegram 文件 ID。</param>
     /// <param name="sizeBytes">文件大小（可为空）。</param>
+    /// <param name="lang">消息语言（结果消息渲染）。</param>
     /// <param name="cancellationToken">取消令牌。</param>
     /// <returns>处理结果；该会话无待上传请求时返回 <see langword="null"/>。</returns>
     public async Task<CookieUploadResult?> ConsumePendingAsync(
         long chatId,
         string fileId,
         long? sizeBytes,
+        string lang,
         CancellationToken cancellationToken)
     {
         if (!_pending.TryRemove(chatId, out var pending))
@@ -121,18 +130,18 @@ public sealed class CookieService
 
         if (DateTime.UtcNow > pending.Expiry)
         {
-            return new CookieUploadResult(false, UserTexts.CookieExpired);
+            return new CookieUploadResult(false, _i18n.Get(lang, UserTexts.CookieExpired));
         }
 
         if (sizeBytes is > MaxCookieBytes)
         {
-            return new CookieUploadResult(false, UserTexts.CookieFileTooLarge);
+            return new CookieUploadResult(false, _i18n.Get(lang, UserTexts.CookieFileTooLarge));
         }
 
         var site = _registry.ResolveKey(pending.SiteKey);
         if (site is null)
         {
-            return new CookieUploadResult(false, string.Format(UserTexts.CookieUnknownSite, pending.SiteKey, SiteListText()));
+            return new CookieUploadResult(false, _i18n.Get(lang, UserTexts.CookieUnknownSite, pending.SiteKey, SiteListText()));
         }
 
         var tmp = Path.Combine(_store.RootDir, $".upload-{Guid.NewGuid():N}.tmp");
@@ -142,12 +151,12 @@ public sealed class CookieService
             var suspicious = ValidateFile(tmp);
             if (!_store.Save(site.Key, tmp))
             {
-                return new CookieUploadResult(false, UserTexts.CookieSaveFailed);
+                return new CookieUploadResult(false, _i18n.Get(lang, UserTexts.CookieSaveFailed));
             }
 
             _logger.Info($"已保存 {site.Key} cookies（{new FileInfo(tmp).Length} 字节）");
-            var text = suspicious ? UserTexts.CookieSavedSuspicious : UserTexts.CookieSaved;
-            return new CookieUploadResult(true, string.Format(text, site.DisplayName, site.Key));
+            var key = suspicious ? UserTexts.CookieSavedSuspicious : UserTexts.CookieSaved;
+            return new CookieUploadResult(true, _i18n.Get(lang, key, site.DisplayName, site.Key));
         }
         catch (OperationCanceledException)
         {
@@ -156,7 +165,7 @@ public sealed class CookieService
         catch (Exception ex)
         {
             _logger.Error("下载 cookies 文件失败", ex);
-            return new CookieUploadResult(false, UserTexts.CookieInvalidFile);
+            return new CookieUploadResult(false, _i18n.Get(lang, UserTexts.CookieInvalidFile));
         }
         finally
         {

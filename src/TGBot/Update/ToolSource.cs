@@ -1,3 +1,7 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
+using System.Runtime.InteropServices;
 using TGBot.Security;
 
 namespace TGBot.Update;
@@ -33,17 +37,18 @@ public interface IToolSource
 /// </summary>
 public sealed class YtDlpToolSource : IToolSource
 {
-    private const string LatestUrl = "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp";
-
     private readonly HttpClient _http;
+    private readonly Func<Architecture> _archProvider;
 
     /// <summary>
     /// 初始化 <see cref="YtDlpToolSource"/>。
     /// </summary>
     /// <param name="http">共享 HttpClient（自动跟随重定向，用于下载）。</param>
-    public YtDlpToolSource(HttpClient http)
+    /// <param name="archProvider">进程架构提供器；默认取真实进程架构，测试可注入指定架构。</param>
+    public YtDlpToolSource(HttpClient http, Func<Architecture>? archProvider = null)
     {
         _http = http;
+        _archProvider = archProvider ?? (() => RuntimeInformation.ProcessArchitecture);
     }
 
     /// <summary>
@@ -57,7 +62,7 @@ public sealed class YtDlpToolSource : IToolSource
         // 需要读取重定向的 Location 头来获取版本，因此必须禁用自动重定向。
         using var handler = new HttpClientHandler { AllowAutoRedirect = false };
         using var headClient = new HttpClient(handler);
-        using var request = new HttpRequestMessage(HttpMethod.Head, LatestUrl);
+        using var request = new HttpRequestMessage(HttpMethod.Head, ToolArch.YtDlpReleaseUrl(_archProvider()));
         using var response = await headClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
         if (response.StatusCode is System.Net.HttpStatusCode.Redirect or System.Net.HttpStatusCode.RedirectKeepVerb or System.Net.HttpStatusCode.Found)
         {
@@ -71,7 +76,7 @@ public sealed class YtDlpToolSource : IToolSource
     public async Task<string> DownloadBinaryAsync(string destinationDir, CancellationToken cancellationToken)
     {
         var tempPath = Path.Combine(destinationDir, $"yt-dlp-{Guid.NewGuid():N}");
-        using (var response = await _http.GetAsync(LatestUrl, HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false))
+        using (var response = await _http.GetAsync(ToolArch.YtDlpReleaseUrl(_archProvider()), HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false))
         {
             response.EnsureSuccessStatusCode();
             await using var stream = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
@@ -96,20 +101,22 @@ public sealed class YtDlpToolSource : IToolSource
 public sealed class FfmpegToolSource : IToolSource
 {
     private const string HomePageUrl = "https://johnvansickle.com/ffmpeg/";
-    private const string ReleaseUrl = "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz";
 
     private readonly HttpClient _http;
     private readonly IProcessRunner _runner;
+    private readonly Func<Architecture> _archProvider;
 
     /// <summary>
     /// 初始化 <see cref="FfmpegToolSource"/>。
     /// </summary>
     /// <param name="http">共享 HttpClient。</param>
     /// <param name="runner">进程运行器（用于解压）。</param>
-    public FfmpegToolSource(HttpClient http, IProcessRunner runner)
+    /// <param name="archProvider">进程架构提供器；默认取真实进程架构，测试可注入指定架构。</param>
+    public FfmpegToolSource(HttpClient http, IProcessRunner runner, Func<Architecture>? archProvider = null)
     {
         _http = http;
         _runner = runner;
+        _archProvider = archProvider ?? (() => RuntimeInformation.ProcessArchitecture);
     }
 
     /// <summary>
@@ -133,7 +140,7 @@ public sealed class FfmpegToolSource : IToolSource
 
         try
         {
-            using (var response = await _http.GetAsync(ReleaseUrl, HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false))
+            using (var response = await _http.GetAsync(ToolArch.FfmpegReleaseUrl(_archProvider()), HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false))
             {
                 response.EnsureSuccessStatusCode();
                 await using var stream = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);

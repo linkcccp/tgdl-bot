@@ -21,11 +21,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/IAppLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IAppLogger
     path: ../src/TGBot/Logging/IAppLogger.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -53,11 +53,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/IAppLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Log
     path: ../src/TGBot/Logging/IAppLogger.cs
-    startLine: 13
+    startLine: 16
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -94,11 +94,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/IAppLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Trace
     path: ../src/TGBot/Logging/IAppLogger.cs
-    startLine: 19
+    startLine: 22
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -129,11 +129,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/IAppLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Debug
     path: ../src/TGBot/Logging/IAppLogger.cs
-    startLine: 25
+    startLine: 28
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -164,11 +164,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/IAppLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Info
     path: ../src/TGBot/Logging/IAppLogger.cs
-    startLine: 31
+    startLine: 34
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -199,11 +199,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/IAppLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Warn
     path: ../src/TGBot/Logging/IAppLogger.cs
-    startLine: 37
+    startLine: 40
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging
@@ -234,11 +234,11 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/IAppLogger.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Error
     path: ../src/TGBot/Logging/IAppLogger.cs
-    startLine: 44
+    startLine: 47
   assemblies:
   - tgdl-bot
   namespace: TGBot.Logging

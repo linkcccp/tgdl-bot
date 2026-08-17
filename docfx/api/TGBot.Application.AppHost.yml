@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: src/TGBot/Application/AppHost.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AppHost
     path: ../src/TGBot/Application/AppHost.cs
-    startLine: 17
+    startLine: 23
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
@@ -28,7 +28,9 @@ items:
     应用宿主：解析命令行参数、加载配置、装配各模块并启动 Bot 服务。
 
 
-    <p>支持 <code>--smoke-test</code> 自检模式（验证配置与模块装配并输出内存占用，不连接网络）。</p>
+    <p>装配期完成 overlay 合并（config-overlay.json 逐键覆盖 + 白名单并集），StateDir 承载
+
+    languages.json / overlay / pending-notify 等运行时状态。支持 <code>--smoke-test</code> 自检模式。</p>
   example: []
   syntax:
     content: public static class AppHost
@@ -57,11 +59,11 @@ items:
   source:
     remote:
       path: src/TGBot/Application/AppHost.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RunAsync
     path: ../src/TGBot/Application/AppHost.cs
-    startLine: 24
+    startLine: 30
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application

@@ -76,7 +76,9 @@
 Classes
 </h3>
       <h4><a class="xref" href="TGBot.Config.AppConfig.html">AppConfig</a></h4>
-      <section><p>应用配置模型，由 <a class="xref" href="TGBot.Config.ConfigParser.html">ConfigParser</a> 从 config.conf 解析得到。</p>
+      <section><p>应用配置模型，由 <a class="xref" href="TGBot.Config.ConfigParser.html">ConfigParser</a> 从 config.conf 解析得到，
+装配期再经 <a class="xref" href="TGBot.Config.Overlay.OverlayApplier.html">OverlayApplier</a> overlay 合并（record 的 with 语义，
+init-only 不可变，运行期不可热改）。</p>
 <p>所有路径均为绝对路径（在加载阶段展开）。</p>
 </section>
       <h4><a class="xref" href="TGBot.Config.ConfigLoadException.html">ConfigLoadException</a></h4>
@@ -85,18 +87,20 @@ Classes
       <h4><a class="xref" href="TGBot.Config.ConfigLoader.html">ConfigLoader</a></h4>
       <section><p>负责定位并读取 config.conf。</p>
 <p>查找顺序：<code>--config &lt;path&gt;</code> 参数 → 环境变量 <code>TGDL_CONFIG</code> →
-与程序二进制同目录 → 当前工作目录。若仍找不到则抛出 <a class="xref" href="TGBot.Config.ConfigLoadException.html">ConfigLoadException</a>。</p>
+与程序二进制同目录 → 当前工作目录。若仍找不到则抛出 <a class="xref" href="TGBot.Config.ConfigLoadException.html">ConfigLoadException</a>。
+错误消息为中英双行并列（启动期无用户上下文）。</p>
 </section>
       <h4><a class="xref" href="TGBot.Config.ConfigParseException.html">ConfigParseException</a></h4>
       <section><p>配置解析错误。消息为面向用户的中文提示，不含内部实现细节。</p>
 </section>
       <h4><a class="xref" href="TGBot.Config.ConfigParseResult.html">ConfigParseResult</a></h4>
-      <section><p>解析结果，包含配置对象与解析过程中产生的警告。</p>
+      <section><p>解析结果，包含配置对象、解析警告与配置文件原始键值（供 /config list 标注来源）。</p>
 </section>
       <h4><a class="xref" href="TGBot.Config.ConfigParser.html">ConfigParser</a></h4>
       <section><p>config.conf 解析器。</p>
 <p>格式：每行 <code>键 = 值</code>，支持 <code>#</code>/<code>;</code> 注释、空行与 <code>[section]</code> 段头。
-解析失败抛出 <a class="xref" href="TGBot.Config.ConfigParseException.html">ConfigParseException</a>，消息为清晰的中文提示（含行号）。</p>
+解析失败抛出 <a class="xref" href="TGBot.Config.ConfigParseException.html">ConfigParseException</a>，消息为**中英双行并列**（启动期无用户上下文，双行最稳妥）。</p>
+<p>值校验单点：<a class="xref" href="TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_ValidateValue_System_String_System_String_">ValidateValue(string, string)</a>，/config set 与启动解析共用，禁止在其他模块重复实现规则。</p>
 </section>
 
 

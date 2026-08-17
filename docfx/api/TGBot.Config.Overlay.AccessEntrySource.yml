@@ -1,0 +1,126 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Config.Overlay.AccessEntrySource
+  commentId: T:TGBot.Config.Overlay.AccessEntrySource
+  id: AccessEntrySource
+  parent: TGBot.Config.Overlay
+  children:
+  - TGBot.Config.Overlay.AccessEntrySource.Config
+  - TGBot.Config.Overlay.AccessEntrySource.Overlay
+  langs:
+  - csharp
+  - vb
+  name: AccessEntrySource
+  nameWithType: AccessEntrySource
+  fullName: TGBot.Config.Overlay.AccessEntrySource
+  type: Enum
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/AccessListMerge.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AccessEntrySource
+    path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
+    startLine: 8
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 白名单条目的来源。
+  example: []
+  syntax:
+    content: public enum AccessEntrySource
+    content.vb: Public Enum AccessEntrySource
+- uid: TGBot.Config.Overlay.AccessEntrySource.Config
+  commentId: F:TGBot.Config.Overlay.AccessEntrySource.Config
+  id: Config
+  parent: TGBot.Config.Overlay.AccessEntrySource
+  langs:
+  - csharp
+  - vb
+  name: Config
+  nameWithType: AccessEntrySource.Config
+  fullName: TGBot.Config.Overlay.AccessEntrySource.Config
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/AccessListMerge.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Config
+    path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
+    startLine: 11
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 安装配置（config.conf），不可经 /access 删除。
+  example: []
+  syntax:
+    content: Config = 0
+    return:
+      type: TGBot.Config.Overlay.AccessEntrySource
+- uid: TGBot.Config.Overlay.AccessEntrySource.Overlay
+  commentId: F:TGBot.Config.Overlay.AccessEntrySource.Overlay
+  id: Overlay
+  parent: TGBot.Config.Overlay.AccessEntrySource
+  langs:
+  - csharp
+  - vb
+  name: Overlay
+  nameWithType: AccessEntrySource.Overlay
+  fullName: TGBot.Config.Overlay.AccessEntrySource.Overlay
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/AccessListMerge.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Overlay
+    path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
+    startLine: 14
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: bot 维护的 overlay 追加列表。
+  example: []
+  syntax:
+    content: Overlay = 1
+    return:
+      type: TGBot.Config.Overlay.AccessEntrySource
+references:
+- uid: TGBot.Config.Overlay
+  commentId: N:TGBot.Config.Overlay
+  href: TGBot.html
+  name: TGBot.Config.Overlay
+  nameWithType: TGBot.Config.Overlay
+  fullName: TGBot.Config.Overlay
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+  - name: .
+  - uid: TGBot.Config.Overlay
+    name: Overlay
+    href: TGBot.Config.Overlay.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+  - name: .
+  - uid: TGBot.Config.Overlay
+    name: Overlay
+    href: TGBot.Config.Overlay.html
+- uid: TGBot.Config.Overlay.AccessEntrySource
+  commentId: T:TGBot.Config.Overlay.AccessEntrySource
+  parent: TGBot.Config.Overlay
+  href: TGBot.Config.Overlay.AccessEntrySource.html
+  name: AccessEntrySource
+  nameWithType: AccessEntrySource
+  fullName: TGBot.Config.Overlay.AccessEntrySource

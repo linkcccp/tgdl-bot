@@ -77,19 +77,33 @@ Classes
 </h3>
       <h4><a class="xref" href="TGBot.Application.AppHost.html">AppHost</a></h4>
       <section><p>应用宿主：解析命令行参数、加载配置、装配各模块并启动 Bot 服务。</p>
-<p>支持 <code>--smoke-test</code> 自检模式（验证配置与模块装配并输出内存占用，不连接网络）。</p>
+<p>装配期完成 overlay 合并（config-overlay.json 逐键覆盖 + 白名单并集），StateDir 承载
+languages.json / overlay / pending-notify 等运行时状态。支持 <code>--smoke-test</code> 自检模式。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Application.AppInfo.html">AppInfo</a></h4>
+      <section><p>应用自身版本信息的稳定读取入口（来源：<code>AssemblyInformationalVersion</code>，自动跟随 csproj
+<code>Version</code> 属性）。</p>
+<p>发布版本由 CI 从 git tag（<code>vX.Y.Z</code>）剥离 <code>v</code> 后经
+<code>dotnet publish -p:Version=X.Y.Z</code> 注入；本地构建使用 csproj 默认值 2.4.0。</p>
 </section>
       <h4><a class="xref" href="TGBot.Application.BotService.html">BotService</a></h4>
       <section><p>Bot 服务：Long Polling 主循环，带异常兜底与重启退避。</p>
+<p>就绪后、开始轮询前消费 pending-notify（重启生效通知，防重复发送）。</p>
 </section>
       <h4><a class="xref" href="TGBot.Application.CommandHandler.html">CommandHandler</a></h4>
-      <section><p>指令处理器：/update、/status、/help、/cookie、/cookies。</p>
+      <section><p>指令处理器：/update、/status、/help、/cookie、/cookies、/language、/config、/access。</p>
 </section>
       <h4><a class="xref" href="TGBot.Application.DownloadCoordinator.html">DownloadCoordinator</a></h4>
       <section><p>下载协调器：负责排队、并发控制、模式（视频/音频）、重试、进度通知与临时文件清理。</p>
 </section>
       <h4><a class="xref" href="TGBot.Application.MessageRouter.html">MessageRouter</a></h4>
       <section><p>消息路由器：访问控制 → 指令 / 文件（cookies 上传）/ 链接校验与模式选择 → 下载任务入队。</p>
+<p>语言在消息入口解析一次（<a class="xref" href="TGBot.Texts.I18n.UserLanguageResolver.html">UserLanguageResolver</a>），随后随消息显式传播。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Application.PendingNotifySender.html">PendingNotifySender</a></h4>
+      <section><p>启动期消费 pending-notify：认领（rename .sending 防重复）→ 按存储语言渲染并发送 →
+成功删除 / 失败递增计数待下次启动重试（上限后丢弃）。</p>
+<p>发送时机：BotService 就绪后、开始轮询前，由 <a class="xref" href="TGBot.Application.BotService.html">BotService</a> 调用一次。</p>
 </section>
 
 

@@ -5,8 +5,9 @@ items:
   id: ConfigParseResult
   parent: TGBot.Config
   children:
-  - TGBot.Config.ConfigParseResult.#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String})
+  - TGBot.Config.ConfigParseResult.#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String},System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})
   - TGBot.Config.ConfigParseResult.Config
+  - TGBot.Config.ConfigParseResult.RawValues
   - TGBot.Config.ConfigParseResult.Warnings
   langs:
   - csharp
@@ -18,15 +19,15 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigParseResult
     path: ../src/TGBot/Config/ConfigParser.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
-  summary: 解析结果，包含配置对象与解析过程中产生的警告。
+  summary: 解析结果，包含配置对象、解析警告与配置文件原始键值（供 /config list 标注来源）。
   example: []
   syntax:
     content: 'public sealed record ConfigParseResult : IEquatable<ConfigParseResult>'
@@ -42,32 +43,32 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Config.ConfigParseResult.#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String})
-  commentId: M:TGBot.Config.ConfigParseResult.#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String})
-  id: '#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String})'
+- uid: TGBot.Config.ConfigParseResult.#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String},System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})
+  commentId: M:TGBot.Config.ConfigParseResult.#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String},System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})
+  id: '#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String},System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})'
   parent: TGBot.Config.ConfigParseResult
   langs:
   - csharp
   - vb
-  name: ConfigParseResult(AppConfig, IReadOnlyList<string>)
-  nameWithType: ConfigParseResult.ConfigParseResult(AppConfig, IReadOnlyList<string>)
-  fullName: TGBot.Config.ConfigParseResult.ConfigParseResult(TGBot.Config.AppConfig, System.Collections.Generic.IReadOnlyList<string>)
+  name: ConfigParseResult(AppConfig, IReadOnlyList<string>, IReadOnlyDictionary<string, string>)
+  nameWithType: ConfigParseResult.ConfigParseResult(AppConfig, IReadOnlyList<string>, IReadOnlyDictionary<string, string>)
+  fullName: TGBot.Config.ConfigParseResult.ConfigParseResult(TGBot.Config.AppConfig, System.Collections.Generic.IReadOnlyList<string>, System.Collections.Generic.IReadOnlyDictionary<string, string>)
   type: Constructor
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Config/ConfigParser.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
-  summary: 解析结果，包含配置对象与解析过程中产生的警告。
+  summary: 解析结果，包含配置对象、解析警告与配置文件原始键值（供 /config list 标注来源）。
   example: []
   syntax:
-    content: public ConfigParseResult(AppConfig Config, IReadOnlyList<string> Warnings)
+    content: public ConfigParseResult(AppConfig Config, IReadOnlyList<string> Warnings, IReadOnlyDictionary<string, string> RawValues)
     parameters:
     - id: Config
       type: TGBot.Config.AppConfig
@@ -75,11 +76,14 @@ items:
     - id: Warnings
       type: System.Collections.Generic.IReadOnlyList{System.String}
       description: 解析警告（如未知配置项）。
-    content.vb: Public Sub New(Config As AppConfig, Warnings As IReadOnlyList(Of String))
+    - id: RawValues
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+      description: 配置文件中出现的规范键 → 原始值（不含未写入文件的默认值）。
+    content.vb: Public Sub New(Config As AppConfig, Warnings As IReadOnlyList(Of String), RawValues As IReadOnlyDictionary(Of String, String))
   overload: TGBot.Config.ConfigParseResult.#ctor*
-  nameWithType.vb: ConfigParseResult.New(AppConfig, IReadOnlyList(Of String))
-  fullName.vb: TGBot.Config.ConfigParseResult.New(TGBot.Config.AppConfig, System.Collections.Generic.IReadOnlyList(Of String))
-  name.vb: New(AppConfig, IReadOnlyList(Of String))
+  nameWithType.vb: ConfigParseResult.New(AppConfig, IReadOnlyList(Of String), IReadOnlyDictionary(Of String, String))
+  fullName.vb: TGBot.Config.ConfigParseResult.New(TGBot.Config.AppConfig, System.Collections.Generic.IReadOnlyList(Of String), System.Collections.Generic.IReadOnlyDictionary(Of String, String))
+  name.vb: New(AppConfig, IReadOnlyList(Of String), IReadOnlyDictionary(Of String, String))
 - uid: TGBot.Config.ConfigParseResult.Config
   commentId: P:TGBot.Config.ConfigParseResult.Config
   id: Config
@@ -94,11 +98,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Config
     path: ../src/TGBot/Config/ConfigParser.cs
-    startLine: 11
+    startLine: 16
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -125,11 +129,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Warnings
     path: ../src/TGBot/Config/ConfigParser.cs
-    startLine: 11
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -142,6 +146,37 @@ items:
       type: System.Collections.Generic.IReadOnlyList{System.String}
     content.vb: Public Property Warnings As IReadOnlyList(Of String)
   overload: TGBot.Config.ConfigParseResult.Warnings*
+- uid: TGBot.Config.ConfigParseResult.RawValues
+  commentId: P:TGBot.Config.ConfigParseResult.RawValues
+  id: RawValues
+  parent: TGBot.Config.ConfigParseResult
+  langs:
+  - csharp
+  - vb
+  name: RawValues
+  nameWithType: ConfigParseResult.RawValues
+  fullName: TGBot.Config.ConfigParseResult.RawValues
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/ConfigParser.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: RawValues
+    path: ../src/TGBot/Config/ConfigParser.cs
+    startLine: 18
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config
+  summary: 配置文件中出现的规范键 → 原始值（不含未写入文件的默认值）。
+  example: []
+  syntax:
+    content: public IReadOnlyDictionary<string, string> RawValues { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+    content.vb: Public Property RawValues As IReadOnlyDictionary(Of String, String)
+  overload: TGBot.Config.ConfigParseResult.RawValues*
 references:
 - uid: TGBot.Config
   commentId: N:TGBot.Config
@@ -441,7 +476,7 @@ references:
   - name: )
 - uid: TGBot.Config.ConfigParseResult.#ctor*
   commentId: Overload:TGBot.Config.ConfigParseResult.#ctor
-  href: TGBot.Config.ConfigParseResult.html#TGBot_Config_ConfigParseResult__ctor_TGBot_Config_AppConfig_System_Collections_Generic_IReadOnlyList_System_String__
+  href: TGBot.Config.ConfigParseResult.html#TGBot_Config_ConfigParseResult__ctor_TGBot_Config_AppConfig_System_Collections_Generic_IReadOnlyList_System_String__System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__
   name: ConfigParseResult
   nameWithType: ConfigParseResult.ConfigParseResult
   fullName: TGBot.Config.ConfigParseResult.ConfigParseResult
@@ -484,6 +519,53 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: (
   - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<string, string>
+  nameWithType: IReadOnlyDictionary<string, string>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string, string>
+  nameWithType.vb: IReadOnlyDictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of String, String)
+  name.vb: IReadOnlyDictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
   - name: " "
   - uid: System.String
     name: String
@@ -555,6 +637,40 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.IReadOnlyDictionary`2
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<TKey, TValue>
+  nameWithType: IReadOnlyDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>
+  nameWithType.vb: IReadOnlyDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of TKey, TValue)
+  name.vb: IReadOnlyDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
 - uid: TGBot.Config.ConfigParseResult.Config*
   commentId: Overload:TGBot.Config.ConfigParseResult.Config
   href: TGBot.Config.ConfigParseResult.html#TGBot_Config_ConfigParseResult_Config
@@ -567,3 +683,9 @@ references:
   name: Warnings
   nameWithType: ConfigParseResult.Warnings
   fullName: TGBot.Config.ConfigParseResult.Warnings
+- uid: TGBot.Config.ConfigParseResult.RawValues*
+  commentId: Overload:TGBot.Config.ConfigParseResult.RawValues
+  href: TGBot.Config.ConfigParseResult.html#TGBot_Config_ConfigParseResult_RawValues
+  name: RawValues
+  nameWithType: ConfigParseResult.RawValues
+  fullName: TGBot.Config.ConfigParseResult.RawValues

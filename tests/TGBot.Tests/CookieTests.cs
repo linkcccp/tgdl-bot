@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 using TGBot.Application;
 using TGBot.Config;
 using TGBot.Cookie;
@@ -127,7 +130,8 @@ public class CookieServiceTests : IDisposable
             new SiteCookieRegistry(new CookieSite[] { new YoutubeCookieSite(), new TwitterCookieSite() }),
             store,
             _client,
-            NullLogger.Instance);
+            NullLogger.Instance,
+            TestI18n.Instance);
     }
 
     public void Dispose() => Directory.Delete(_dir, true);
@@ -137,7 +141,7 @@ public class CookieServiceTests : IDisposable
     {
         Assert.NotNull(_service.BeginPendingUpload(1000, "youtube"));
 
-        var result = await _service.ConsumePendingAsync(1000, "file1", 100, CancellationToken.None);
+        var result = await _service.ConsumePendingAsync(1000, "file1", 100, "zh", CancellationToken.None);
 
         Assert.NotNull(result);
         Assert.True(result!.Success);
@@ -150,7 +154,7 @@ public class CookieServiceTests : IDisposable
     [Fact]
     public async Task ConsumeWithoutPending_ReturnsNull()
     {
-        var result = await _service.ConsumePendingAsync(1000, "file1", 100, CancellationToken.None);
+        var result = await _service.ConsumePendingAsync(1000, "file1", 100, "zh", CancellationToken.None);
         Assert.Null(result);
     }
 
@@ -158,7 +162,7 @@ public class CookieServiceTests : IDisposable
     public async Task FileTooLarge_Rejected()
     {
         _service.BeginPendingUpload(1000, "youtube");
-        var result = await _service.ConsumePendingAsync(1000, "file1", 1_500_000, CancellationToken.None);
+        var result = await _service.ConsumePendingAsync(1000, "file1", 1_500_000, "zh", CancellationToken.None);
         Assert.NotNull(result);
         Assert.False(result!.Success);
         Assert.Contains("过大", result.Message, StringComparison.Ordinal);
@@ -175,7 +179,7 @@ public class CookieServiceTests : IDisposable
     {
         Assert.Null(_service.ResolveCookieFile("https://x.com/someone/status/1"));
         Assert.NotNull(_service.BeginPendingUpload(1000, "twitter"));
-        await _service.ConsumePendingAsync(1000, "f", 10, CancellationToken.None);
+        await _service.ConsumePendingAsync(1000, "f", 10, "zh", CancellationToken.None);
         Assert.NotNull(_service.ResolveCookieFile("https://x.com/someone/status/1"));
     }
 
@@ -183,7 +187,7 @@ public class CookieServiceTests : IDisposable
     public async Task Clear_RemovesCookie()
     {
         _service.BeginPendingUpload(1000, "youtube");
-        await _service.ConsumePendingAsync(1000, "f", 10, CancellationToken.None);
+        await _service.ConsumePendingAsync(1000, "f", 10, "zh", CancellationToken.None);
         Assert.True(_service.Clear("youtube"));
         Assert.Null(_service.ResolveCookieFile("https://youtube.com/watch?v=1"));
     }
@@ -309,13 +313,14 @@ public class AuthRequiredNoRetryTests : IDisposable
         var gate = new DownloadGate(2);
         var registry = new JobRegistry();
         var tempDir = new TempDirManager(_dir, logger);
-        var upload = new UploadService(client, 0, false, logger);
+        var upload = new UploadService(client, 0, false, logger, TestI18n.Instance);
         var cookieService = new CookieService(
             new SiteCookieRegistry(new CookieSite[] { new YoutubeCookieSite() }),
             new CookieStore(Path.Combine(_dir, "cookies"), logger),
             client,
-            logger);
-        var coordinator = new DownloadCoordinator(downloader, gate, registry, tempDir, upload, client, cookieService, config, logger);
+            logger,
+            TestI18n.Instance);
+        var coordinator = new DownloadCoordinator(downloader, gate, registry, tempDir, upload, client, cookieService, config, logger, TestI18n.Instance);
 
         var msg = new InboundMessage
         {
@@ -323,6 +328,7 @@ public class AuthRequiredNoRetryTests : IDisposable
             IsPrivate = true,
             SenderUserId = 1000,
             Text = "https://youtube.com/watch?v=1",
+            Language = "zh",
         };
         Assert.True(await coordinator.EnqueueAsync(msg, "https://youtube.com/watch?v=1", "video", CancellationToken.None));
 

@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: src/TGBot/Security/DiskUtil.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DiskUtil
     path: ../src/TGBot/Security/DiskUtil.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security
@@ -53,11 +53,11 @@ items:
   source:
     remote:
       path: src/TGBot/Security/DiskUtil.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetFreeSpaceBytes
     path: ../src/TGBot/Security/DiskUtil.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security

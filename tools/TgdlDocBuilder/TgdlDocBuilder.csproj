@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <!-- 内部开发工具：不生成 API 文档、不进发布镜像，故不开 GenerateDocumentationFile（无 CS1591 约束） -->
+  </PropertyGroup>
+
+  <!-- 零第三方依赖：进程编排仅用 BCL（System.Diagnostics / System.IO） -->
+
+</Project>

@@ -6,7 +6,7 @@ items:
   parent: TGBot.Security
   children:
   - TGBot.Security.UrlValidationResult.#ctor(System.Boolean,System.String,System.String)
-  - TGBot.Security.UrlValidationResult.Error
+  - TGBot.Security.UrlValidationResult.ErrorKey
   - TGBot.Security.UrlValidationResult.Fail(System.String)
   - TGBot.Security.UrlValidationResult.IsValid
   - TGBot.Security.UrlValidationResult.NormalizedUrl
@@ -20,11 +20,11 @@ items:
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlValidationResult
     path: ../src/TGBot/Security/UrlValidator.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security
@@ -58,18 +58,18 @@ items:
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Security/UrlValidator.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security
   summary: URL 校验结果。
   example: []
   syntax:
-    content: public UrlValidationResult(bool IsValid, string NormalizedUrl, string Error)
+    content: public UrlValidationResult(bool IsValid, string NormalizedUrl, string ErrorKey)
     parameters:
     - id: IsValid
       type: System.Boolean
@@ -77,10 +77,10 @@ items:
     - id: NormalizedUrl
       type: System.String
       description: 规范化后的 URL（仅校验通过时有意义）。
-    - id: Error
+    - id: ErrorKey
       type: System.String
-      description: 面向用户的中文错误提示（校验失败时非空）。
-    content.vb: Public Sub New(IsValid As Boolean, NormalizedUrl As String, [Error] As String)
+      description: 面向用户的错误**资源键**（见 <code>Texts/I18n/Resources</code>，由调用方按消息语言渲染；校验失败时非空）。
+    content.vb: Public Sub New(IsValid As Boolean, NormalizedUrl As String, ErrorKey As String)
   overload: TGBot.Security.UrlValidationResult.#ctor*
   nameWithType.vb: UrlValidationResult.New(Boolean, String, String)
   fullName.vb: TGBot.Security.UrlValidationResult.New(Boolean, String, String)
@@ -99,11 +99,11 @@ items:
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsValid
     path: ../src/TGBot/Security/UrlValidator.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security
@@ -130,11 +130,11 @@ items:
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NormalizedUrl
     path: ../src/TGBot/Security/UrlValidator.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security
@@ -147,37 +147,37 @@ items:
       type: System.String
     content.vb: Public Property NormalizedUrl As String
   overload: TGBot.Security.UrlValidationResult.NormalizedUrl*
-- uid: TGBot.Security.UrlValidationResult.Error
-  commentId: P:TGBot.Security.UrlValidationResult.Error
-  id: Error
+- uid: TGBot.Security.UrlValidationResult.ErrorKey
+  commentId: P:TGBot.Security.UrlValidationResult.ErrorKey
+  id: ErrorKey
   parent: TGBot.Security.UrlValidationResult
   langs:
   - csharp
   - vb
-  name: Error
-  nameWithType: UrlValidationResult.Error
-  fullName: TGBot.Security.UrlValidationResult.Error
+  name: ErrorKey
+  nameWithType: UrlValidationResult.ErrorKey
+  fullName: TGBot.Security.UrlValidationResult.ErrorKey
   type: Property
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
-    id: Error
+    id: ErrorKey
     path: ../src/TGBot/Security/UrlValidator.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security
-  summary: 面向用户的中文错误提示（校验失败时非空）。
+  summary: 面向用户的错误**资源键**（见 <code>Texts/I18n/Resources</code>，由调用方按消息语言渲染；校验失败时非空）。
   example: []
   syntax:
-    content: public string Error { get; init; }
+    content: public string ErrorKey { get; init; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property [Error] As String
-  overload: TGBot.Security.UrlValidationResult.Error*
+    content.vb: Public Property ErrorKey As String
+  overload: TGBot.Security.UrlValidationResult.ErrorKey*
 - uid: TGBot.Security.UrlValidationResult.Fail(System.String)
   commentId: M:TGBot.Security.UrlValidationResult.Fail(System.String)
   id: Fail(System.String)
@@ -192,25 +192,25 @@ items:
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Fail
     path: ../src/TGBot/Security/UrlValidator.cs
-    startLine: 17
+    startLine: 21
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security
   summary: 校验失败的结果。
   example: []
   syntax:
-    content: public static UrlValidationResult Fail(string error)
+    content: public static UrlValidationResult Fail(string errorKey)
     parameters:
-    - id: error
+    - id: errorKey
       type: System.String
-      description: 错误提示。
+      description: 错误资源键。
     return:
       type: TGBot.Security.UrlValidationResult
-    content.vb: Public Shared Function Fail([error] As String) As UrlValidationResult
+    content.vb: Public Shared Function Fail(errorKey As String) As UrlValidationResult
   overload: TGBot.Security.UrlValidationResult.Fail*
   nameWithType.vb: UrlValidationResult.Fail(String)
   fullName.vb: TGBot.Security.UrlValidationResult.Fail(String)
@@ -555,12 +555,12 @@ references:
   name: NormalizedUrl
   nameWithType: UrlValidationResult.NormalizedUrl
   fullName: TGBot.Security.UrlValidationResult.NormalizedUrl
-- uid: TGBot.Security.UrlValidationResult.Error*
-  commentId: Overload:TGBot.Security.UrlValidationResult.Error
-  href: TGBot.Security.UrlValidationResult.html#TGBot_Security_UrlValidationResult_Error
-  name: Error
-  nameWithType: UrlValidationResult.Error
-  fullName: TGBot.Security.UrlValidationResult.Error
+- uid: TGBot.Security.UrlValidationResult.ErrorKey*
+  commentId: Overload:TGBot.Security.UrlValidationResult.ErrorKey
+  href: TGBot.Security.UrlValidationResult.html#TGBot_Security_UrlValidationResult_ErrorKey
+  name: ErrorKey
+  nameWithType: UrlValidationResult.ErrorKey
+  fullName: TGBot.Security.UrlValidationResult.ErrorKey
 - uid: TGBot.Security.UrlValidationResult.Fail*
   commentId: Overload:TGBot.Security.UrlValidationResult.Fail
   href: TGBot.Security.UrlValidationResult.html#TGBot_Security_UrlValidationResult_Fail_System_String_

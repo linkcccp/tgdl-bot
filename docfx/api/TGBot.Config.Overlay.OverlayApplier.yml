@@ -1,0 +1,627 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Config.Overlay.OverlayApplier
+  commentId: T:TGBot.Config.Overlay.OverlayApplier
+  id: OverlayApplier
+  parent: TGBot.Config.Overlay
+  children:
+  - TGBot.Config.Overlay.OverlayApplier.Apply(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Collections.Generic.IReadOnlyList{System.String}@)
+  langs:
+  - csharp
+  - vb
+  name: OverlayApplier
+  nameWithType: OverlayApplier
+  fullName: TGBot.Config.Overlay.OverlayApplier
+  type: Class
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/OverlayApplier.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: OverlayApplier
+    path: ../src/TGBot/Config/Overlay/OverlayApplier.cs
+    startLine: 15
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: >-
+    将 config-overlay.json 显式逐键覆盖到 <xref href="TGBot.Config.AppConfig" data-throw-if-not-resolved="false"></xref>（with 语义，禁用反射，编译期安全）。
+
+
+    <p>仅覆盖 <xref href="TGBot.Config.ConfigParser.MutableKeys" data-throw-if-not-resolved="false"></xref> 白名单键；BotToken、安装白名单两键与 StateDir 拒绝
+
+    （StateDir 为安装锁键：状态目录不应由 bot 远程改动，overlay 自身始终以 config.conf 推导的目录读取）；
+
+    非法值/未知键跳过并产生警告（overlay 由 /config 经 <xref href="TGBot.Config.ConfigParser.ValidateValue(System.String%2cSystem.String)" data-throw-if-not-resolved="false"></xref> 写入，
+
+    手工改动时防御）。</p>
+  example: []
+  syntax:
+    content: public static class OverlayApplier
+    content.vb: Public Module OverlayApplier
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Config.Overlay.OverlayApplier.Apply(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Collections.Generic.IReadOnlyList{System.String}@)
+  commentId: M:TGBot.Config.Overlay.OverlayApplier.Apply(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Collections.Generic.IReadOnlyList{System.String}@)
+  id: Apply(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Collections.Generic.IReadOnlyList{System.String}@)
+  parent: TGBot.Config.Overlay.OverlayApplier
+  langs:
+  - csharp
+  - vb
+  name: Apply(AppConfig, IReadOnlyDictionary<string, string>, out IReadOnlyList<string>)
+  nameWithType: OverlayApplier.Apply(AppConfig, IReadOnlyDictionary<string, string>, out IReadOnlyList<string>)
+  fullName: TGBot.Config.Overlay.OverlayApplier.Apply(TGBot.Config.AppConfig, System.Collections.Generic.IReadOnlyDictionary<string, string>, out System.Collections.Generic.IReadOnlyList<string>)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/OverlayApplier.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Apply
+    path: ../src/TGBot/Config/Overlay/OverlayApplier.cs
+    startLine: 24
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 应用配置覆盖，返回新配置实例（未覆盖项与 <code class="paramref">baseConfig</code> 相同）。
+  example: []
+  syntax:
+    content: public static AppConfig Apply(AppConfig baseConfig, IReadOnlyDictionary<string, string> overlay, out IReadOnlyList<string> warnings)
+    parameters:
+    - id: baseConfig
+      type: TGBot.Config.AppConfig
+      description: 基础配置（config.conf 解析结果）。
+    - id: overlay
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+      description: 覆盖条目（键 → 字符串值，键可为别名）。
+    - id: warnings
+      type: System.Collections.Generic.IReadOnlyList{System.String}
+      description: 被跳过的条目说明（未知键 / 锁键 / 非法值）。
+    return:
+      type: TGBot.Config.AppConfig
+      description: 覆盖后的新配置。
+    content.vb: Public Shared Function Apply(baseConfig As AppConfig, overlay As IReadOnlyDictionary(Of String, String), warnings As IReadOnlyList(Of String)) As AppConfig
+  overload: TGBot.Config.Overlay.OverlayApplier.Apply*
+  nameWithType.vb: OverlayApplier.Apply(AppConfig, IReadOnlyDictionary(Of String, String), IReadOnlyList(Of String))
+  fullName.vb: TGBot.Config.Overlay.OverlayApplier.Apply(TGBot.Config.AppConfig, System.Collections.Generic.IReadOnlyDictionary(Of String, String), System.Collections.Generic.IReadOnlyList(Of String))
+  name.vb: Apply(AppConfig, IReadOnlyDictionary(Of String, String), IReadOnlyList(Of String))
+references:
+- uid: TGBot.Config.AppConfig
+  commentId: T:TGBot.Config.AppConfig
+  parent: TGBot.Config
+  href: TGBot.Config.AppConfig.html
+  name: AppConfig
+  nameWithType: AppConfig
+  fullName: TGBot.Config.AppConfig
+- uid: TGBot.Config.ConfigParser.MutableKeys
+  commentId: F:TGBot.Config.ConfigParser.MutableKeys
+  href: TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_MutableKeys
+  name: MutableKeys
+  nameWithType: ConfigParser.MutableKeys
+  fullName: TGBot.Config.ConfigParser.MutableKeys
+- uid: TGBot.Config.ConfigParser.ValidateValue(System.String,System.String)
+  commentId: M:TGBot.Config.ConfigParser.ValidateValue(System.String,System.String)
+  isExternal: true
+  href: TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_ValidateValue_System_String_System_String_
+  name: ValidateValue(string, string)
+  nameWithType: ConfigParser.ValidateValue(string, string)
+  fullName: TGBot.Config.ConfigParser.ValidateValue(string, string)
+  nameWithType.vb: ConfigParser.ValidateValue(String, String)
+  fullName.vb: TGBot.Config.ConfigParser.ValidateValue(String, String)
+  name.vb: ValidateValue(String, String)
+  spec.csharp:
+  - uid: TGBot.Config.ConfigParser.ValidateValue(System.String,System.String)
+    name: ValidateValue
+    href: TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_ValidateValue_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: TGBot.Config.ConfigParser.ValidateValue(System.String,System.String)
+    name: ValidateValue
+    href: TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_ValidateValue_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: TGBot.Config.Overlay
+  commentId: N:TGBot.Config.Overlay
+  href: TGBot.html
+  name: TGBot.Config.Overlay
+  nameWithType: TGBot.Config.Overlay
+  fullName: TGBot.Config.Overlay
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+  - name: .
+  - uid: TGBot.Config.Overlay
+    name: Overlay
+    href: TGBot.Config.Overlay.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+  - name: .
+  - uid: TGBot.Config.Overlay
+    name: Overlay
+    href: TGBot.Config.Overlay.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: TGBot.Config
+  commentId: N:TGBot.Config
+  href: TGBot.html
+  name: TGBot.Config
+  nameWithType: TGBot.Config
+  fullName: TGBot.Config
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TGBot.Config.Overlay.OverlayApplier.Apply*
+  commentId: Overload:TGBot.Config.Overlay.OverlayApplier.Apply
+  href: TGBot.Config.Overlay.OverlayApplier.html#TGBot_Config_Overlay_OverlayApplier_Apply_TGBot_Config_AppConfig_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Collections_Generic_IReadOnlyList_System_String___
+  name: Apply
+  nameWithType: OverlayApplier.Apply
+  fullName: TGBot.Config.Overlay.OverlayApplier.Apply
+- uid: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<string, string>
+  nameWithType: IReadOnlyDictionary<string, string>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string, string>
+  nameWithType.vb: IReadOnlyDictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of String, String)
+  name.vb: IReadOnlyDictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList{System.String}
+  commentId: T:System.Collections.Generic.IReadOnlyList{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<string>
+  nameWithType: IReadOnlyList<string>
+  fullName: System.Collections.Generic.IReadOnlyList<string>
+  nameWithType.vb: IReadOnlyList(Of String)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of String)
+  name.vb: IReadOnlyList(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyDictionary`2
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<TKey, TValue>
+  nameWithType: IReadOnlyDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>
+  nameWithType.vb: IReadOnlyDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of TKey, TValue)
+  name.vb: IReadOnlyDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

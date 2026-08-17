@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateReport
     path: ../src/TGBot/Update/UpdateResult.cs
-    startLine: 37
+    startLine: 40
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -56,11 +56,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Update/UpdateResult.cs
-    startLine: 37
+    startLine: 40
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -91,11 +91,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Tools
     path: ../src/TGBot/Update/UpdateResult.cs
-    startLine: 37
+    startLine: 40
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -122,11 +122,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: HasFailures
     path: ../src/TGBot/Update/UpdateResult.cs
-    startLine: 42
+    startLine: 45
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update

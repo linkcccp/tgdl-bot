@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/BuiltinSites.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SoundcloudCookieSite
     path: ../src/TGBot/Cookie/BuiltinSites.cs
-    startLine: 143
+    startLine: 146
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -57,11 +57,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/BuiltinSites.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Key
     path: ../src/TGBot/Cookie/BuiltinSites.cs
-    startLine: 146
+    startLine: 149
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -89,11 +89,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/BuiltinSites.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DisplayName
     path: ../src/TGBot/Cookie/BuiltinSites.cs
-    startLine: 149
+    startLine: 152
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -121,11 +121,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/BuiltinSites.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Hosts
     path: ../src/TGBot/Cookie/BuiltinSites.cs
-    startLine: 152
+    startLine: 155
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie

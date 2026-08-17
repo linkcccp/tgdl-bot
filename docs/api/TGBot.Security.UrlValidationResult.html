@@ -114,10 +114,10 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Security_UrlValidationResult__ctor_System_Boolean_System_String_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Security.UrlValidationResult.%23ctor(System.Boolean%2CSystem.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Security_UrlValidationResult__ctor_System_Boolean_System_String_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Security.UrlValidationResult.%23ctor(System.Boolean%2CSystem.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Security/UrlValidator.cs/#L12">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Security/UrlValidator.cs/#L16">View Source</a>
   </span>
   <a id="TGBot_Security_UrlValidationResult__ctor_" data-uid="TGBot.Security.UrlValidationResult.#ctor*"></a>
   <h4 id="TGBot_Security_UrlValidationResult__ctor_System_Boolean_System_String_System_String_" data-uid="TGBot.Security.UrlValidationResult.#ctor(System.Boolean,System.String,System.String)">UrlValidationResult(bool, string, string)</h4>
@@ -126,7 +126,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public UrlValidationResult(bool IsValid, string NormalizedUrl, string Error)</code></pre>
+    <pre><code class="lang-csharp hljs">public UrlValidationResult(bool IsValid, string NormalizedUrl, string ErrorKey)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -152,8 +152,8 @@
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">Error</span></td>
-        <td><p>面向用户的中文错误提示（校验失败时非空）。</p>
+        <td><span class="parametername">ErrorKey</span></td>
+        <td><p>面向用户的错误<strong>资源键</strong>（见 <code>Texts/I18n/Resources</code>，由调用方按消息语言渲染；校验失败时非空）。</p>
 </td>
       </tr>
     </tbody>
@@ -162,19 +162,19 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Security_UrlValidationResult_Error.md&amp;value=---%0Auid%3A%20TGBot.Security.UrlValidationResult.Error%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Security_UrlValidationResult_ErrorKey.md&amp;value=---%0Auid%3A%20TGBot.Security.UrlValidationResult.ErrorKey%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Security/UrlValidator.cs/#L12">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Security/UrlValidator.cs/#L16">View Source</a>
   </span>
-  <a id="TGBot_Security_UrlValidationResult_Error_" data-uid="TGBot.Security.UrlValidationResult.Error*"></a>
-  <h4 id="TGBot_Security_UrlValidationResult_Error" data-uid="TGBot.Security.UrlValidationResult.Error">Error</h4>
-  <div class="markdown level1 summary"><p>面向用户的中文错误提示（校验失败时非空）。</p>
+  <a id="TGBot_Security_UrlValidationResult_ErrorKey_" data-uid="TGBot.Security.UrlValidationResult.ErrorKey*"></a>
+  <h4 id="TGBot_Security_UrlValidationResult_ErrorKey" data-uid="TGBot.Security.UrlValidationResult.ErrorKey">ErrorKey</h4>
+  <div class="markdown level1 summary"><p>面向用户的错误<strong>资源键</strong>（见 <code>Texts/I18n/Resources</code>，由调用方按消息语言渲染；校验失败时非空）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Error { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string ErrorKey { get; init; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -193,10 +193,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Security_UrlValidationResult_IsValid.md&amp;value=---%0Auid%3A%20TGBot.Security.UrlValidationResult.IsValid%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Security_UrlValidationResult_IsValid.md&amp;value=---%0Auid%3A%20TGBot.Security.UrlValidationResult.IsValid%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Security/UrlValidator.cs/#L12">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Security/UrlValidator.cs/#L16">View Source</a>
   </span>
   <a id="TGBot_Security_UrlValidationResult_IsValid_" data-uid="TGBot.Security.UrlValidationResult.IsValid*"></a>
   <h4 id="TGBot_Security_UrlValidationResult_IsValid" data-uid="TGBot.Security.UrlValidationResult.IsValid">IsValid</h4>
@@ -224,10 +224,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Security_UrlValidationResult_NormalizedUrl.md&amp;value=---%0Auid%3A%20TGBot.Security.UrlValidationResult.NormalizedUrl%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Security_UrlValidationResult_NormalizedUrl.md&amp;value=---%0Auid%3A%20TGBot.Security.UrlValidationResult.NormalizedUrl%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Security/UrlValidator.cs/#L12">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Security/UrlValidator.cs/#L16">View Source</a>
   </span>
   <a id="TGBot_Security_UrlValidationResult_NormalizedUrl_" data-uid="TGBot.Security.UrlValidationResult.NormalizedUrl*"></a>
   <h4 id="TGBot_Security_UrlValidationResult_NormalizedUrl" data-uid="TGBot.Security.UrlValidationResult.NormalizedUrl">NormalizedUrl</h4>
@@ -257,10 +257,10 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Security_UrlValidationResult_Fail_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Security.UrlValidationResult.Fail(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Security_UrlValidationResult_Fail_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Security.UrlValidationResult.Fail(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Security/UrlValidator.cs/#L18">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Security/UrlValidator.cs/#L22">View Source</a>
   </span>
   <a id="TGBot_Security_UrlValidationResult_Fail_" data-uid="TGBot.Security.UrlValidationResult.Fail*"></a>
   <h4 id="TGBot_Security_UrlValidationResult_Fail_System_String_" data-uid="TGBot.Security.UrlValidationResult.Fail(System.String)">Fail(string)</h4>
@@ -269,7 +269,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static UrlValidationResult Fail(string error)</code></pre>
+    <pre><code class="lang-csharp hljs">public static UrlValidationResult Fail(string errorKey)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -283,8 +283,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">error</span></td>
-        <td><p>错误提示。</p>
+        <td><span class="parametername">errorKey</span></td>
+        <td><p>错误资源键。</p>
 </td>
       </tr>
     </tbody>
@@ -317,10 +317,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Security_UrlValidationResult.md&amp;value=---%0Auid%3A%20TGBot.Security.UrlValidationResult%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Security_UrlValidationResult.md&amp;value=---%0Auid%3A%20TGBot.Security.UrlValidationResult%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Security/UrlValidator.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Security/UrlValidator.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

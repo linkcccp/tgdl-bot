@@ -5,7 +5,7 @@ items:
   id: TelegramClientWrapper
   parent: TGBot.Messaging
   children:
-  - TGBot.Messaging.TelegramClientWrapper.#ctor(System.String,System.String,System.Net.Http.HttpClient,System.Threading.CancellationToken)
+  - TGBot.Messaging.TelegramClientWrapper.#ctor(System.String,System.String,System.Net.Http.HttpClient,System.Threading.CancellationToken,TGBot.Texts.I18n.II18n,System.String)
   - TGBot.Messaging.TelegramClientWrapper.DownloadFileAsync(System.String,System.String,System.Threading.CancellationToken)
   - TGBot.Messaging.TelegramClientWrapper.DropPendingUpdatesAsync(System.Threading.CancellationToken)
   - TGBot.Messaging.TelegramClientWrapper.GetBotUsernameAsync(System.Threading.CancellationToken)
@@ -26,11 +26,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/TelegramClientWrapper.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TelegramClientWrapper
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 11
+    startLine: 16
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -50,32 +50,32 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Messaging.TelegramClientWrapper.#ctor(System.String,System.String,System.Net.Http.HttpClient,System.Threading.CancellationToken)
-  commentId: M:TGBot.Messaging.TelegramClientWrapper.#ctor(System.String,System.String,System.Net.Http.HttpClient,System.Threading.CancellationToken)
-  id: '#ctor(System.String,System.String,System.Net.Http.HttpClient,System.Threading.CancellationToken)'
+- uid: TGBot.Messaging.TelegramClientWrapper.#ctor(System.String,System.String,System.Net.Http.HttpClient,System.Threading.CancellationToken,TGBot.Texts.I18n.II18n,System.String)
+  commentId: M:TGBot.Messaging.TelegramClientWrapper.#ctor(System.String,System.String,System.Net.Http.HttpClient,System.Threading.CancellationToken,TGBot.Texts.I18n.II18n,System.String)
+  id: '#ctor(System.String,System.String,System.Net.Http.HttpClient,System.Threading.CancellationToken,TGBot.Texts.I18n.II18n,System.String)'
   parent: TGBot.Messaging.TelegramClientWrapper
   langs:
   - csharp
   - vb
-  name: TelegramClientWrapper(string, string, HttpClient, CancellationToken)
-  nameWithType: TelegramClientWrapper.TelegramClientWrapper(string, string, HttpClient, CancellationToken)
-  fullName: TGBot.Messaging.TelegramClientWrapper.TelegramClientWrapper(string, string, System.Net.Http.HttpClient, System.Threading.CancellationToken)
+  name: TelegramClientWrapper(string, string, HttpClient, CancellationToken, II18n, string)
+  nameWithType: TelegramClientWrapper.TelegramClientWrapper(string, string, HttpClient, CancellationToken, II18n, string)
+  fullName: TGBot.Messaging.TelegramClientWrapper.TelegramClientWrapper(string, string, System.Net.Http.HttpClient, System.Threading.CancellationToken, TGBot.Texts.I18n.II18n, string)
   type: Constructor
   source:
     remote:
       path: src/TGBot/Messaging/TelegramClientWrapper.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 28
+    startLine: 37
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
   summary: 初始化 <xref href="TGBot.Messaging.TelegramClientWrapper" data-throw-if-not-resolved="false"></xref>。
   example: []
   syntax:
-    content: public TelegramClientWrapper(string token, string baseUrl, HttpClient http, CancellationToken cancellationToken)
+    content: public TelegramClientWrapper(string token, string baseUrl, HttpClient http, CancellationToken cancellationToken, II18n i18n, string menuLanguage)
     parameters:
     - id: token
       type: System.String
@@ -89,11 +89,17 @@ items:
     - id: cancellationToken
       type: System.Threading.CancellationToken
       description: 初始化取消令牌。
-    content.vb: Public Sub New(token As String, baseUrl As String, http As HttpClient, cancellationToken As CancellationToken)
+    - id: i18n
+      type: TGBot.Texts.I18n.II18n
+      description: 国际化服务（指令菜单文案渲染）。
+    - id: menuLanguage
+      type: System.String
+      description: 指令菜单语言（全局默认语言，auto 已解析为 en）。
+    content.vb: Public Sub New(token As String, baseUrl As String, http As HttpClient, cancellationToken As CancellationToken, i18n As II18n, menuLanguage As String)
   overload: TGBot.Messaging.TelegramClientWrapper.#ctor*
-  nameWithType.vb: TelegramClientWrapper.New(String, String, HttpClient, CancellationToken)
-  fullName.vb: TGBot.Messaging.TelegramClientWrapper.New(String, String, System.Net.Http.HttpClient, System.Threading.CancellationToken)
-  name.vb: New(String, String, HttpClient, CancellationToken)
+  nameWithType.vb: TelegramClientWrapper.New(String, String, HttpClient, CancellationToken, II18n, String)
+  fullName.vb: TGBot.Messaging.TelegramClientWrapper.New(String, String, System.Net.Http.HttpClient, System.Threading.CancellationToken, TGBot.Texts.I18n.II18n, String)
+  name.vb: New(String, String, HttpClient, CancellationToken, II18n, String)
 - uid: TGBot.Messaging.TelegramClientWrapper.GetBotUsernameAsync(System.Threading.CancellationToken)
   commentId: M:TGBot.Messaging.TelegramClientWrapper.GetBotUsernameAsync(System.Threading.CancellationToken)
   id: GetBotUsernameAsync(System.Threading.CancellationToken)
@@ -108,11 +114,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/TelegramClientWrapper.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetBotUsernameAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 35
+    startLine: 52
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -145,11 +151,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/TelegramClientWrapper.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendMessageAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 42
+    startLine: 59
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -196,11 +202,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/TelegramClientWrapper.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendChatActionAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 58
+    startLine: 75
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -241,11 +247,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/TelegramClientWrapper.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendVideoAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 71
+    startLine: 88
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -292,11 +298,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/TelegramClientWrapper.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendAudioAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 83
+    startLine: 100
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -349,11 +355,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/TelegramClientWrapper.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendDocumentAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 96
+    startLine: 113
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -400,11 +406,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/TelegramClientWrapper.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SetCommandsAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 107
+    startLine: 124
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -436,11 +442,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/TelegramClientWrapper.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadFileAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 121
+    startLine: 141
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -481,11 +487,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/TelegramClientWrapper.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DropPendingUpdatesAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 137
+    startLine: 157
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -517,11 +523,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/TelegramClientWrapper.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RunLongPollingAsync
     path: ../src/TGBot/Messaging/TelegramClientWrapper.cs
-    startLine: 143
+    startLine: 163
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -800,7 +806,7 @@ references:
   fullName: TGBot.Messaging.TelegramClientWrapper
 - uid: TGBot.Messaging.TelegramClientWrapper.#ctor*
   commentId: Overload:TGBot.Messaging.TelegramClientWrapper.#ctor
-  href: TGBot.Messaging.TelegramClientWrapper.html#TGBot_Messaging_TelegramClientWrapper__ctor_System_String_System_String_System_Net_Http_HttpClient_System_Threading_CancellationToken_
+  href: TGBot.Messaging.TelegramClientWrapper.html#TGBot_Messaging_TelegramClientWrapper__ctor_System_String_System_String_System_Net_Http_HttpClient_System_Threading_CancellationToken_TGBot_Texts_I18n_II18n_System_String_
   name: TelegramClientWrapper
   nameWithType: TelegramClientWrapper.TelegramClientWrapper
   fullName: TGBot.Messaging.TelegramClientWrapper.TelegramClientWrapper
@@ -834,6 +840,13 @@ references:
   name: CancellationToken
   nameWithType: CancellationToken
   fullName: System.Threading.CancellationToken
+- uid: TGBot.Texts.I18n.II18n
+  commentId: T:TGBot.Texts.I18n.II18n
+  parent: TGBot.Texts.I18n
+  href: TGBot.Texts.I18n.II18n.html
+  name: II18n
+  nameWithType: II18n
+  fullName: TGBot.Texts.I18n.II18n
 - uid: System.Net.Http
   commentId: N:System.Net.Http
   isExternal: true
@@ -898,6 +911,36 @@ references:
     name: Threading
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: TGBot.Texts.I18n
+  commentId: N:TGBot.Texts.I18n
+  href: TGBot.html
+  name: TGBot.Texts.I18n
+  nameWithType: TGBot.Texts.I18n
+  fullName: TGBot.Texts.I18n
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
 - uid: TGBot.Messaging.TelegramClientWrapper.GetBotUsernameAsync*
   commentId: Overload:TGBot.Messaging.TelegramClientWrapper.GetBotUsernameAsync
   href: TGBot.Messaging.TelegramClientWrapper.html#TGBot_Messaging_TelegramClientWrapper_GetBotUsernameAsync_System_Threading_CancellationToken_

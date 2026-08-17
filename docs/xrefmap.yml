@@ -13,15 +13,15 @@ references:
   commentId: T:TGBot.Access.AccessControlService
   fullName: TGBot.Access.AccessControlService
   nameWithType: AccessControlService
-- uid: TGBot.Access.AccessControlService.#ctor(System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64})
-  name: AccessControlService(IEnumerable<long>, IEnumerable<long>)
-  href: api/TGBot.Access.AccessControlService.html#TGBot_Access_AccessControlService__ctor_System_Collections_Generic_IEnumerable_System_Int64__System_Collections_Generic_IEnumerable_System_Int64__
-  commentId: M:TGBot.Access.AccessControlService.#ctor(System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64})
-  name.vb: New(IEnumerable(Of Long), IEnumerable(Of Long))
-  fullName: TGBot.Access.AccessControlService.AccessControlService(System.Collections.Generic.IEnumerable<long>, System.Collections.Generic.IEnumerable<long>)
-  fullName.vb: TGBot.Access.AccessControlService.New(System.Collections.Generic.IEnumerable(Of Long), System.Collections.Generic.IEnumerable(Of Long))
-  nameWithType: AccessControlService.AccessControlService(IEnumerable<long>, IEnumerable<long>)
-  nameWithType.vb: AccessControlService.New(IEnumerable(Of Long), IEnumerable(Of Long))
+- uid: TGBot.Access.AccessControlService.#ctor(System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64},TGBot.Texts.I18n.II18n)
+  name: AccessControlService(IEnumerable<long>, IEnumerable<long>, II18n)
+  href: api/TGBot.Access.AccessControlService.html#TGBot_Access_AccessControlService__ctor_System_Collections_Generic_IEnumerable_System_Int64__System_Collections_Generic_IEnumerable_System_Int64__TGBot_Texts_I18n_II18n_
+  commentId: M:TGBot.Access.AccessControlService.#ctor(System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64},TGBot.Texts.I18n.II18n)
+  name.vb: New(IEnumerable(Of Long), IEnumerable(Of Long), II18n)
+  fullName: TGBot.Access.AccessControlService.AccessControlService(System.Collections.Generic.IEnumerable<long>, System.Collections.Generic.IEnumerable<long>, TGBot.Texts.I18n.II18n)
+  fullName.vb: TGBot.Access.AccessControlService.New(System.Collections.Generic.IEnumerable(Of Long), System.Collections.Generic.IEnumerable(Of Long), TGBot.Texts.I18n.II18n)
+  nameWithType: AccessControlService.AccessControlService(IEnumerable<long>, IEnumerable<long>, II18n)
+  nameWithType.vb: AccessControlService.New(IEnumerable(Of Long), IEnumerable(Of Long), II18n)
 - uid: TGBot.Access.AccessControlService.#ctor*
   name: AccessControlService
   href: api/TGBot.Access.AccessControlService.html#TGBot_Access_AccessControlService__ctor_
@@ -32,15 +32,15 @@ references:
   fullName.vb: TGBot.Access.AccessControlService.New
   nameWithType: AccessControlService.AccessControlService
   nameWithType.vb: AccessControlService.New
-- uid: TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea,System.Nullable{System.Int64},System.Int64)
-  name: Evaluate(TriggerArea, long?, long)
-  href: api/TGBot.Access.AccessControlService.html#TGBot_Access_AccessControlService_Evaluate_TGBot_Access_TriggerArea_System_Nullable_System_Int64__System_Int64_
-  commentId: M:TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea,System.Nullable{System.Int64},System.Int64)
-  name.vb: Evaluate(TriggerArea, Long?, Long)
-  fullName: TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea, long?, long)
-  fullName.vb: TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea, Long?, Long)
-  nameWithType: AccessControlService.Evaluate(TriggerArea, long?, long)
-  nameWithType.vb: AccessControlService.Evaluate(TriggerArea, Long?, Long)
+- uid: TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea,System.Nullable{System.Int64},System.Int64,System.String)
+  name: Evaluate(TriggerArea, long?, long, string)
+  href: api/TGBot.Access.AccessControlService.html#TGBot_Access_AccessControlService_Evaluate_TGBot_Access_TriggerArea_System_Nullable_System_Int64__System_Int64_System_String_
+  commentId: M:TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea,System.Nullable{System.Int64},System.Int64,System.String)
+  name.vb: Evaluate(TriggerArea, Long?, Long, String)
+  fullName: TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea, long?, long, string)
+  fullName.vb: TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea, Long?, Long, String)
+  nameWithType: AccessControlService.Evaluate(TriggerArea, long?, long, string)
+  nameWithType.vb: AccessControlService.Evaluate(TriggerArea, Long?, Long, String)
 - uid: TGBot.Access.AccessControlService.Evaluate*
   name: Evaluate
   href: api/TGBot.Access.AccessControlService.html#TGBot_Access_AccessControlService_Evaluate_
@@ -167,21 +167,62 @@ references:
   isSpec: "True"
   fullName: TGBot.Application.AppHost.RunAsync
   nameWithType: AppHost.RunAsync
+- uid: TGBot.Application.AppInfo
+  name: AppInfo
+  href: api/TGBot.Application.AppInfo.html
+  commentId: T:TGBot.Application.AppInfo
+  fullName: TGBot.Application.AppInfo
+  nameWithType: AppInfo
+- uid: TGBot.Application.AppInfo.FallbackVersion
+  name: FallbackVersion
+  href: api/TGBot.Application.AppInfo.html#TGBot_Application_AppInfo_FallbackVersion
+  commentId: F:TGBot.Application.AppInfo.FallbackVersion
+  fullName: TGBot.Application.AppInfo.FallbackVersion
+  nameWithType: AppInfo.FallbackVersion
+- uid: TGBot.Application.AppInfo.Normalize(System.String)
+  name: Normalize(string?)
+  href: api/TGBot.Application.AppInfo.html#TGBot_Application_AppInfo_Normalize_System_String_
+  commentId: M:TGBot.Application.AppInfo.Normalize(System.String)
+  name.vb: Normalize(String)
+  fullName: TGBot.Application.AppInfo.Normalize(string?)
+  fullName.vb: TGBot.Application.AppInfo.Normalize(String)
+  nameWithType: AppInfo.Normalize(string?)
+  nameWithType.vb: AppInfo.Normalize(String)
+- uid: TGBot.Application.AppInfo.Normalize*
+  name: Normalize
+  href: api/TGBot.Application.AppInfo.html#TGBot_Application_AppInfo_Normalize_
+  commentId: Overload:TGBot.Application.AppInfo.Normalize
+  isSpec: "True"
+  fullName: TGBot.Application.AppInfo.Normalize
+  nameWithType: AppInfo.Normalize
+- uid: TGBot.Application.AppInfo.Version
+  name: Version
+  href: api/TGBot.Application.AppInfo.html#TGBot_Application_AppInfo_Version
+  commentId: P:TGBot.Application.AppInfo.Version
+  fullName: TGBot.Application.AppInfo.Version
+  nameWithType: AppInfo.Version
+- uid: TGBot.Application.AppInfo.Version*
+  name: Version
+  href: api/TGBot.Application.AppInfo.html#TGBot_Application_AppInfo_Version_
+  commentId: Overload:TGBot.Application.AppInfo.Version
+  isSpec: "True"
+  fullName: TGBot.Application.AppInfo.Version
+  nameWithType: AppInfo.Version
 - uid: TGBot.Application.BotService
   name: BotService
   href: api/TGBot.Application.BotService.html
   commentId: T:TGBot.Application.BotService
   fullName: TGBot.Application.BotService
   nameWithType: BotService
-- uid: TGBot.Application.BotService.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Application.MessageRouter,TGBot.Logging.IAppLogger)
-  name: BotService(ITelegramClient, MessageRouter, IAppLogger)
-  href: api/TGBot.Application.BotService.html#TGBot_Application_BotService__ctor_TGBot_Messaging_ITelegramClient_TGBot_Application_MessageRouter_TGBot_Logging_IAppLogger_
-  commentId: M:TGBot.Application.BotService.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Application.MessageRouter,TGBot.Logging.IAppLogger)
-  name.vb: New(ITelegramClient, MessageRouter, IAppLogger)
-  fullName: TGBot.Application.BotService.BotService(TGBot.Messaging.ITelegramClient, TGBot.Application.MessageRouter, TGBot.Logging.IAppLogger)
-  fullName.vb: TGBot.Application.BotService.New(TGBot.Messaging.ITelegramClient, TGBot.Application.MessageRouter, TGBot.Logging.IAppLogger)
-  nameWithType: BotService.BotService(ITelegramClient, MessageRouter, IAppLogger)
-  nameWithType.vb: BotService.New(ITelegramClient, MessageRouter, IAppLogger)
+- uid: TGBot.Application.BotService.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Application.MessageRouter,TGBot.Logging.IAppLogger,TGBot.Application.PendingNotifySender)
+  name: BotService(ITelegramClient, MessageRouter, IAppLogger, PendingNotifySender?)
+  href: api/TGBot.Application.BotService.html#TGBot_Application_BotService__ctor_TGBot_Messaging_ITelegramClient_TGBot_Application_MessageRouter_TGBot_Logging_IAppLogger_TGBot_Application_PendingNotifySender_
+  commentId: M:TGBot.Application.BotService.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Application.MessageRouter,TGBot.Logging.IAppLogger,TGBot.Application.PendingNotifySender)
+  name.vb: New(ITelegramClient, MessageRouter, IAppLogger, PendingNotifySender)
+  fullName: TGBot.Application.BotService.BotService(TGBot.Messaging.ITelegramClient, TGBot.Application.MessageRouter, TGBot.Logging.IAppLogger, TGBot.Application.PendingNotifySender?)
+  fullName.vb: TGBot.Application.BotService.New(TGBot.Messaging.ITelegramClient, TGBot.Application.MessageRouter, TGBot.Logging.IAppLogger, TGBot.Application.PendingNotifySender)
+  nameWithType: BotService.BotService(ITelegramClient, MessageRouter, IAppLogger, PendingNotifySender?)
+  nameWithType.vb: BotService.New(ITelegramClient, MessageRouter, IAppLogger, PendingNotifySender)
 - uid: TGBot.Application.BotService.#ctor*
   name: BotService
   href: api/TGBot.Application.BotService.html#TGBot_Application_BotService__ctor_
@@ -211,15 +252,15 @@ references:
   commentId: T:TGBot.Application.CommandHandler
   fullName: TGBot.Application.CommandHandler
   nameWithType: CommandHandler
-- uid: TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger)
-  name: CommandHandler(ITelegramClient, IUpdater, DownloadGate, JobRegistry, string, CookieService, AppConfig, IProcessRunner, IAppLogger)
-  href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler__ctor_TGBot_Messaging_ITelegramClient_TGBot_Update_IUpdater_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_System_String_TGBot_Cookie_CookieService_TGBot_Config_AppConfig_TGBot_Update_IProcessRunner_TGBot_Logging_IAppLogger_
-  commentId: M:TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger)
-  name.vb: New(ITelegramClient, IUpdater, DownloadGate, JobRegistry, String, CookieService, AppConfig, IProcessRunner, IAppLogger)
-  fullName: TGBot.Application.CommandHandler.CommandHandler(TGBot.Messaging.ITelegramClient, TGBot.Update.IUpdater, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, string, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Update.IProcessRunner, TGBot.Logging.IAppLogger)
-  fullName.vb: TGBot.Application.CommandHandler.New(TGBot.Messaging.ITelegramClient, TGBot.Update.IUpdater, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, String, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Update.IProcessRunner, TGBot.Logging.IAppLogger)
-  nameWithType: CommandHandler.CommandHandler(ITelegramClient, IUpdater, DownloadGate, JobRegistry, string, CookieService, AppConfig, IProcessRunner, IAppLogger)
-  nameWithType.vb: CommandHandler.New(ITelegramClient, IUpdater, DownloadGate, JobRegistry, String, CookieService, AppConfig, IProcessRunner, IAppLogger)
+- uid: TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n,TGBot.Texts.I18n.UserLanguageStore,TGBot.Config.Overlay.OverlayStore,TGBot.Config.Overlay.PendingNotifyStore,System.Action,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Nullable{System.TimeSpan})
+  name: CommandHandler(ITelegramClient, IUpdater, DownloadGate, JobRegistry, string, CookieService, AppConfig, IProcessRunner, IAppLogger, II18n, UserLanguageStore, OverlayStore, PendingNotifyStore, Action, IReadOnlyDictionary<string, string>?, TimeSpan?)
+  href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler__ctor_TGBot_Messaging_ITelegramClient_TGBot_Update_IUpdater_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_System_String_TGBot_Cookie_CookieService_TGBot_Config_AppConfig_TGBot_Update_IProcessRunner_TGBot_Logging_IAppLogger_TGBot_Texts_I18n_II18n_TGBot_Texts_I18n_UserLanguageStore_TGBot_Config_Overlay_OverlayStore_TGBot_Config_Overlay_PendingNotifyStore_System_Action_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Nullable_System_TimeSpan__
+  commentId: M:TGBot.Application.CommandHandler.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Update.IUpdater,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,System.String,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Update.IProcessRunner,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n,TGBot.Texts.I18n.UserLanguageStore,TGBot.Config.Overlay.OverlayStore,TGBot.Config.Overlay.PendingNotifyStore,System.Action,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Nullable{System.TimeSpan})
+  name.vb: New(ITelegramClient, IUpdater, DownloadGate, JobRegistry, String, CookieService, AppConfig, IProcessRunner, IAppLogger, II18n, UserLanguageStore, OverlayStore, PendingNotifyStore, Action, IReadOnlyDictionary(Of String, String), TimeSpan?)
+  fullName: TGBot.Application.CommandHandler.CommandHandler(TGBot.Messaging.ITelegramClient, TGBot.Update.IUpdater, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, string, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Update.IProcessRunner, TGBot.Logging.IAppLogger, TGBot.Texts.I18n.II18n, TGBot.Texts.I18n.UserLanguageStore, TGBot.Config.Overlay.OverlayStore, TGBot.Config.Overlay.PendingNotifyStore, System.Action, System.Collections.Generic.IReadOnlyDictionary<string, string>?, System.TimeSpan?)
+  fullName.vb: TGBot.Application.CommandHandler.New(TGBot.Messaging.ITelegramClient, TGBot.Update.IUpdater, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, String, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Update.IProcessRunner, TGBot.Logging.IAppLogger, TGBot.Texts.I18n.II18n, TGBot.Texts.I18n.UserLanguageStore, TGBot.Config.Overlay.OverlayStore, TGBot.Config.Overlay.PendingNotifyStore, System.Action, System.Collections.Generic.IReadOnlyDictionary(Of String, String), System.TimeSpan?)
+  nameWithType: CommandHandler.CommandHandler(ITelegramClient, IUpdater, DownloadGate, JobRegistry, string, CookieService, AppConfig, IProcessRunner, IAppLogger, II18n, UserLanguageStore, OverlayStore, PendingNotifyStore, Action, IReadOnlyDictionary<string, string>?, TimeSpan?)
+  nameWithType.vb: CommandHandler.New(ITelegramClient, IUpdater, DownloadGate, JobRegistry, String, CookieService, AppConfig, IProcessRunner, IAppLogger, II18n, UserLanguageStore, OverlayStore, PendingNotifyStore, Action, IReadOnlyDictionary(Of String, String), TimeSpan?)
 - uid: TGBot.Application.CommandHandler.#ctor*
   name: CommandHandler
   href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler__ctor_
@@ -230,6 +271,12 @@ references:
   fullName.vb: TGBot.Application.CommandHandler.New
   nameWithType: CommandHandler.CommandHandler
   nameWithType.vb: CommandHandler.New
+- uid: TGBot.Application.CommandHandler.DefaultRestartThrottleWindow
+  name: DefaultRestartThrottleWindow
+  href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler_DefaultRestartThrottleWindow
+  commentId: F:TGBot.Application.CommandHandler.DefaultRestartThrottleWindow
+  fullName: TGBot.Application.CommandHandler.DefaultRestartThrottleWindow
+  nameWithType: CommandHandler.DefaultRestartThrottleWindow
 - uid: TGBot.Application.CommandHandler.HandleAsync(TGBot.Messaging.InboundMessage,System.String,System.Threading.CancellationToken)
   name: HandleAsync(InboundMessage, string, CancellationToken)
   href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler_HandleAsync_TGBot_Messaging_InboundMessage_System_String_System_Threading_CancellationToken_
@@ -246,21 +293,85 @@ references:
   isSpec: "True"
   fullName: TGBot.Application.CommandHandler.HandleAsync
   nameWithType: CommandHandler.HandleAsync
+- uid: TGBot.Application.CommandHandler.HandleLanguageCallbackAsync(TGBot.Messaging.InboundMessage,System.Threading.CancellationToken)
+  name: HandleLanguageCallbackAsync(InboundMessage, CancellationToken)
+  href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler_HandleLanguageCallbackAsync_TGBot_Messaging_InboundMessage_System_Threading_CancellationToken_
+  commentId: M:TGBot.Application.CommandHandler.HandleLanguageCallbackAsync(TGBot.Messaging.InboundMessage,System.Threading.CancellationToken)
+  fullName: TGBot.Application.CommandHandler.HandleLanguageCallbackAsync(TGBot.Messaging.InboundMessage, System.Threading.CancellationToken)
+  nameWithType: CommandHandler.HandleLanguageCallbackAsync(InboundMessage, CancellationToken)
+- uid: TGBot.Application.CommandHandler.HandleLanguageCallbackAsync*
+  name: HandleLanguageCallbackAsync
+  href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler_HandleLanguageCallbackAsync_
+  commentId: Overload:TGBot.Application.CommandHandler.HandleLanguageCallbackAsync
+  isSpec: "True"
+  fullName: TGBot.Application.CommandHandler.HandleLanguageCallbackAsync
+  nameWithType: CommandHandler.HandleLanguageCallbackAsync
+- uid: TGBot.Application.CommandHandler.IsLanguagePromptValid(System.Int64)
+  name: IsLanguagePromptValid(long)
+  href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler_IsLanguagePromptValid_System_Int64_
+  commentId: M:TGBot.Application.CommandHandler.IsLanguagePromptValid(System.Int64)
+  name.vb: IsLanguagePromptValid(Long)
+  fullName: TGBot.Application.CommandHandler.IsLanguagePromptValid(long)
+  fullName.vb: TGBot.Application.CommandHandler.IsLanguagePromptValid(Long)
+  nameWithType: CommandHandler.IsLanguagePromptValid(long)
+  nameWithType.vb: CommandHandler.IsLanguagePromptValid(Long)
+- uid: TGBot.Application.CommandHandler.IsLanguagePromptValid*
+  name: IsLanguagePromptValid
+  href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler_IsLanguagePromptValid_
+  commentId: Overload:TGBot.Application.CommandHandler.IsLanguagePromptValid
+  isSpec: "True"
+  fullName: TGBot.Application.CommandHandler.IsLanguagePromptValid
+  nameWithType: CommandHandler.IsLanguagePromptValid
+- uid: TGBot.Application.CommandHandler.LanguagePromptTimeout
+  name: LanguagePromptTimeout
+  href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler_LanguagePromptTimeout
+  commentId: F:TGBot.Application.CommandHandler.LanguagePromptTimeout
+  fullName: TGBot.Application.CommandHandler.LanguagePromptTimeout
+  nameWithType: CommandHandler.LanguagePromptTimeout
+- uid: TGBot.Application.CommandHandler.PromptLanguageAsync(TGBot.Messaging.InboundMessage,System.Threading.CancellationToken)
+  name: PromptLanguageAsync(InboundMessage, CancellationToken)
+  href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler_PromptLanguageAsync_TGBot_Messaging_InboundMessage_System_Threading_CancellationToken_
+  commentId: M:TGBot.Application.CommandHandler.PromptLanguageAsync(TGBot.Messaging.InboundMessage,System.Threading.CancellationToken)
+  fullName: TGBot.Application.CommandHandler.PromptLanguageAsync(TGBot.Messaging.InboundMessage, System.Threading.CancellationToken)
+  nameWithType: CommandHandler.PromptLanguageAsync(InboundMessage, CancellationToken)
+- uid: TGBot.Application.CommandHandler.PromptLanguageAsync*
+  name: PromptLanguageAsync
+  href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler_PromptLanguageAsync_
+  commentId: Overload:TGBot.Application.CommandHandler.PromptLanguageAsync
+  isSpec: "True"
+  fullName: TGBot.Application.CommandHandler.PromptLanguageAsync
+  nameWithType: CommandHandler.PromptLanguageAsync
+- uid: TGBot.Application.CommandHandler.RegisterLanguagePrompt(System.Int64)
+  name: RegisterLanguagePrompt(long)
+  href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler_RegisterLanguagePrompt_System_Int64_
+  commentId: M:TGBot.Application.CommandHandler.RegisterLanguagePrompt(System.Int64)
+  name.vb: RegisterLanguagePrompt(Long)
+  fullName: TGBot.Application.CommandHandler.RegisterLanguagePrompt(long)
+  fullName.vb: TGBot.Application.CommandHandler.RegisterLanguagePrompt(Long)
+  nameWithType: CommandHandler.RegisterLanguagePrompt(long)
+  nameWithType.vb: CommandHandler.RegisterLanguagePrompt(Long)
+- uid: TGBot.Application.CommandHandler.RegisterLanguagePrompt*
+  name: RegisterLanguagePrompt
+  href: api/TGBot.Application.CommandHandler.html#TGBot_Application_CommandHandler_RegisterLanguagePrompt_
+  commentId: Overload:TGBot.Application.CommandHandler.RegisterLanguagePrompt
+  isSpec: "True"
+  fullName: TGBot.Application.CommandHandler.RegisterLanguagePrompt
+  nameWithType: CommandHandler.RegisterLanguagePrompt
 - uid: TGBot.Application.DownloadCoordinator
   name: DownloadCoordinator
   href: api/TGBot.Application.DownloadCoordinator.html
   commentId: T:TGBot.Application.DownloadCoordinator
   fullName: TGBot.Application.DownloadCoordinator
   nameWithType: DownloadCoordinator
-- uid: TGBot.Application.DownloadCoordinator.#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
-  name: DownloadCoordinator(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger)
-  href: api/TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator__ctor_TGBot_Download_IDownloader_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_TGBot_Security_TempDirManager_TGBot_Messaging_UploadService_TGBot_Messaging_ITelegramClient_TGBot_Cookie_CookieService_TGBot_Config_AppConfig_TGBot_Logging_IAppLogger_
-  commentId: M:TGBot.Application.DownloadCoordinator.#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
-  name.vb: New(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger)
-  fullName: TGBot.Application.DownloadCoordinator.DownloadCoordinator(TGBot.Download.IDownloader, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, TGBot.Security.TempDirManager, TGBot.Messaging.UploadService, TGBot.Messaging.ITelegramClient, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
-  fullName.vb: TGBot.Application.DownloadCoordinator.New(TGBot.Download.IDownloader, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, TGBot.Security.TempDirManager, TGBot.Messaging.UploadService, TGBot.Messaging.ITelegramClient, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
-  nameWithType: DownloadCoordinator.DownloadCoordinator(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger)
-  nameWithType.vb: DownloadCoordinator.New(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger)
+- uid: TGBot.Application.DownloadCoordinator.#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n)
+  name: DownloadCoordinator(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger, II18n)
+  href: api/TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator__ctor_TGBot_Download_IDownloader_TGBot_Download_DownloadGate_TGBot_Download_JobRegistry_TGBot_Security_TempDirManager_TGBot_Messaging_UploadService_TGBot_Messaging_ITelegramClient_TGBot_Cookie_CookieService_TGBot_Config_AppConfig_TGBot_Logging_IAppLogger_TGBot_Texts_I18n_II18n_
+  commentId: M:TGBot.Application.DownloadCoordinator.#ctor(TGBot.Download.IDownloader,TGBot.Download.DownloadGate,TGBot.Download.JobRegistry,TGBot.Security.TempDirManager,TGBot.Messaging.UploadService,TGBot.Messaging.ITelegramClient,TGBot.Cookie.CookieService,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n)
+  name.vb: New(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger, II18n)
+  fullName: TGBot.Application.DownloadCoordinator.DownloadCoordinator(TGBot.Download.IDownloader, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, TGBot.Security.TempDirManager, TGBot.Messaging.UploadService, TGBot.Messaging.ITelegramClient, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger, TGBot.Texts.I18n.II18n)
+  fullName.vb: TGBot.Application.DownloadCoordinator.New(TGBot.Download.IDownloader, TGBot.Download.DownloadGate, TGBot.Download.JobRegistry, TGBot.Security.TempDirManager, TGBot.Messaging.UploadService, TGBot.Messaging.ITelegramClient, TGBot.Cookie.CookieService, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger, TGBot.Texts.I18n.II18n)
+  nameWithType: DownloadCoordinator.DownloadCoordinator(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger, II18n)
+  nameWithType.vb: DownloadCoordinator.New(IDownloader, DownloadGate, JobRegistry, TempDirManager, UploadService, ITelegramClient, CookieService, AppConfig, IAppLogger, II18n)
 - uid: TGBot.Application.DownloadCoordinator.#ctor*
   name: DownloadCoordinator
   href: api/TGBot.Application.DownloadCoordinator.html#TGBot_Application_DownloadCoordinator__ctor_
@@ -309,15 +420,15 @@ references:
   commentId: T:TGBot.Application.MessageRouter
   fullName: TGBot.Application.MessageRouter
   nameWithType: MessageRouter
-- uid: TGBot.Application.MessageRouter.#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Cookie.CookieService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
-  name: MessageRouter(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger)
-  href: api/TGBot.Application.MessageRouter.html#TGBot_Application_MessageRouter__ctor_TGBot_Access_AccessControlService_TGBot_Security_UrlValidator_TGBot_Application_DownloadCoordinator_TGBot_Application_CommandHandler_TGBot_Cookie_CookieService_TGBot_Messaging_ITelegramClient_TGBot_Config_AppConfig_TGBot_Logging_IAppLogger_
-  commentId: M:TGBot.Application.MessageRouter.#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Cookie.CookieService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger)
-  name.vb: New(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger)
-  fullName: TGBot.Application.MessageRouter.MessageRouter(TGBot.Access.AccessControlService, TGBot.Security.UrlValidator, TGBot.Application.DownloadCoordinator, TGBot.Application.CommandHandler, TGBot.Cookie.CookieService, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
-  fullName.vb: TGBot.Application.MessageRouter.New(TGBot.Access.AccessControlService, TGBot.Security.UrlValidator, TGBot.Application.DownloadCoordinator, TGBot.Application.CommandHandler, TGBot.Cookie.CookieService, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger)
-  nameWithType: MessageRouter.MessageRouter(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger)
-  nameWithType.vb: MessageRouter.New(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger)
+- uid: TGBot.Application.MessageRouter.#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Cookie.CookieService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n,TGBot.Texts.I18n.UserLanguageStore,TGBot.Texts.I18n.UserLanguageResolver)
+  name: MessageRouter(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger, II18n, UserLanguageStore, UserLanguageResolver)
+  href: api/TGBot.Application.MessageRouter.html#TGBot_Application_MessageRouter__ctor_TGBot_Access_AccessControlService_TGBot_Security_UrlValidator_TGBot_Application_DownloadCoordinator_TGBot_Application_CommandHandler_TGBot_Cookie_CookieService_TGBot_Messaging_ITelegramClient_TGBot_Config_AppConfig_TGBot_Logging_IAppLogger_TGBot_Texts_I18n_II18n_TGBot_Texts_I18n_UserLanguageStore_TGBot_Texts_I18n_UserLanguageResolver_
+  commentId: M:TGBot.Application.MessageRouter.#ctor(TGBot.Access.AccessControlService,TGBot.Security.UrlValidator,TGBot.Application.DownloadCoordinator,TGBot.Application.CommandHandler,TGBot.Cookie.CookieService,TGBot.Messaging.ITelegramClient,TGBot.Config.AppConfig,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n,TGBot.Texts.I18n.UserLanguageStore,TGBot.Texts.I18n.UserLanguageResolver)
+  name.vb: New(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger, II18n, UserLanguageStore, UserLanguageResolver)
+  fullName: TGBot.Application.MessageRouter.MessageRouter(TGBot.Access.AccessControlService, TGBot.Security.UrlValidator, TGBot.Application.DownloadCoordinator, TGBot.Application.CommandHandler, TGBot.Cookie.CookieService, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger, TGBot.Texts.I18n.II18n, TGBot.Texts.I18n.UserLanguageStore, TGBot.Texts.I18n.UserLanguageResolver)
+  fullName.vb: TGBot.Application.MessageRouter.New(TGBot.Access.AccessControlService, TGBot.Security.UrlValidator, TGBot.Application.DownloadCoordinator, TGBot.Application.CommandHandler, TGBot.Cookie.CookieService, TGBot.Messaging.ITelegramClient, TGBot.Config.AppConfig, TGBot.Logging.IAppLogger, TGBot.Texts.I18n.II18n, TGBot.Texts.I18n.UserLanguageStore, TGBot.Texts.I18n.UserLanguageResolver)
+  nameWithType: MessageRouter.MessageRouter(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger, II18n, UserLanguageStore, UserLanguageResolver)
+  nameWithType.vb: MessageRouter.New(AccessControlService, UrlValidator, DownloadCoordinator, CommandHandler, CookieService, ITelegramClient, AppConfig, IAppLogger, II18n, UserLanguageStore, UserLanguageResolver)
 - uid: TGBot.Application.MessageRouter.#ctor*
   name: MessageRouter
   href: api/TGBot.Application.MessageRouter.html#TGBot_Application_MessageRouter__ctor_
@@ -341,6 +452,44 @@ references:
   isSpec: "True"
   fullName: TGBot.Application.MessageRouter.HandleAsync
   nameWithType: MessageRouter.HandleAsync
+- uid: TGBot.Application.PendingNotifySender
+  name: PendingNotifySender
+  href: api/TGBot.Application.PendingNotifySender.html
+  commentId: T:TGBot.Application.PendingNotifySender
+  fullName: TGBot.Application.PendingNotifySender
+  nameWithType: PendingNotifySender
+- uid: TGBot.Application.PendingNotifySender.#ctor(TGBot.Config.Overlay.PendingNotifyStore,TGBot.Messaging.ITelegramClient,TGBot.Texts.I18n.II18n,TGBot.Logging.IAppLogger)
+  name: PendingNotifySender(PendingNotifyStore, ITelegramClient, II18n, IAppLogger)
+  href: api/TGBot.Application.PendingNotifySender.html#TGBot_Application_PendingNotifySender__ctor_TGBot_Config_Overlay_PendingNotifyStore_TGBot_Messaging_ITelegramClient_TGBot_Texts_I18n_II18n_TGBot_Logging_IAppLogger_
+  commentId: M:TGBot.Application.PendingNotifySender.#ctor(TGBot.Config.Overlay.PendingNotifyStore,TGBot.Messaging.ITelegramClient,TGBot.Texts.I18n.II18n,TGBot.Logging.IAppLogger)
+  name.vb: New(PendingNotifyStore, ITelegramClient, II18n, IAppLogger)
+  fullName: TGBot.Application.PendingNotifySender.PendingNotifySender(TGBot.Config.Overlay.PendingNotifyStore, TGBot.Messaging.ITelegramClient, TGBot.Texts.I18n.II18n, TGBot.Logging.IAppLogger)
+  fullName.vb: TGBot.Application.PendingNotifySender.New(TGBot.Config.Overlay.PendingNotifyStore, TGBot.Messaging.ITelegramClient, TGBot.Texts.I18n.II18n, TGBot.Logging.IAppLogger)
+  nameWithType: PendingNotifySender.PendingNotifySender(PendingNotifyStore, ITelegramClient, II18n, IAppLogger)
+  nameWithType.vb: PendingNotifySender.New(PendingNotifyStore, ITelegramClient, II18n, IAppLogger)
+- uid: TGBot.Application.PendingNotifySender.#ctor*
+  name: PendingNotifySender
+  href: api/TGBot.Application.PendingNotifySender.html#TGBot_Application_PendingNotifySender__ctor_
+  commentId: Overload:TGBot.Application.PendingNotifySender.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Application.PendingNotifySender.PendingNotifySender
+  fullName.vb: TGBot.Application.PendingNotifySender.New
+  nameWithType: PendingNotifySender.PendingNotifySender
+  nameWithType.vb: PendingNotifySender.New
+- uid: TGBot.Application.PendingNotifySender.SendPendingAsync(System.Threading.CancellationToken)
+  name: SendPendingAsync(CancellationToken)
+  href: api/TGBot.Application.PendingNotifySender.html#TGBot_Application_PendingNotifySender_SendPendingAsync_System_Threading_CancellationToken_
+  commentId: M:TGBot.Application.PendingNotifySender.SendPendingAsync(System.Threading.CancellationToken)
+  fullName: TGBot.Application.PendingNotifySender.SendPendingAsync(System.Threading.CancellationToken)
+  nameWithType: PendingNotifySender.SendPendingAsync(CancellationToken)
+- uid: TGBot.Application.PendingNotifySender.SendPendingAsync*
+  name: SendPendingAsync
+  href: api/TGBot.Application.PendingNotifySender.html#TGBot_Application_PendingNotifySender_SendPendingAsync_
+  commentId: Overload:TGBot.Application.PendingNotifySender.SendPendingAsync
+  isSpec: "True"
+  fullName: TGBot.Application.PendingNotifySender.SendPendingAsync
+  nameWithType: PendingNotifySender.SendPendingAsync
 - uid: TGBot.Config
   name: TGBot.Config
   href: api/TGBot.Config.html
@@ -587,6 +736,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Config.AppConfig.SourcePath
   nameWithType: AppConfig.SourcePath
+- uid: TGBot.Config.AppConfig.StateDir
+  name: StateDir
+  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_StateDir
+  commentId: P:TGBot.Config.AppConfig.StateDir
+  fullName: TGBot.Config.AppConfig.StateDir
+  nameWithType: AppConfig.StateDir
+- uid: TGBot.Config.AppConfig.StateDir*
+  name: StateDir
+  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_StateDir_
+  commentId: Overload:TGBot.Config.AppConfig.StateDir
+  isSpec: "True"
+  fullName: TGBot.Config.AppConfig.StateDir
+  nameWithType: AppConfig.StateDir
 - uid: TGBot.Config.AppConfig.TargetChannelIds
   name: TargetChannelIds
   href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_TargetChannelIds
@@ -613,6 +775,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Config.AppConfig.TgdlDefaultMode
   nameWithType: AppConfig.TgdlDefaultMode
+- uid: TGBot.Config.AppConfig.TgdlLanguage
+  name: TgdlLanguage
+  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_TgdlLanguage
+  commentId: P:TGBot.Config.AppConfig.TgdlLanguage
+  fullName: TGBot.Config.AppConfig.TgdlLanguage
+  nameWithType: AppConfig.TgdlLanguage
+- uid: TGBot.Config.AppConfig.TgdlLanguage*
+  name: TgdlLanguage
+  href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_TgdlLanguage_
+  commentId: Overload:TGBot.Config.AppConfig.TgdlLanguage
+  isSpec: "True"
+  fullName: TGBot.Config.AppConfig.TgdlLanguage
+  nameWithType: AppConfig.TgdlLanguage
 - uid: TGBot.Config.AppConfig.UpdateFfmpeg
   name: UpdateFfmpeg
   href: api/TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_UpdateFfmpeg
@@ -810,15 +985,15 @@ references:
   commentId: T:TGBot.Config.ConfigParseResult
   fullName: TGBot.Config.ConfigParseResult
   nameWithType: ConfigParseResult
-- uid: TGBot.Config.ConfigParseResult.#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String})
-  name: ConfigParseResult(AppConfig, IReadOnlyList<string>)
-  href: api/TGBot.Config.ConfigParseResult.html#TGBot_Config_ConfigParseResult__ctor_TGBot_Config_AppConfig_System_Collections_Generic_IReadOnlyList_System_String__
-  commentId: M:TGBot.Config.ConfigParseResult.#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String})
-  name.vb: New(AppConfig, IReadOnlyList(Of String))
-  fullName: TGBot.Config.ConfigParseResult.ConfigParseResult(TGBot.Config.AppConfig, System.Collections.Generic.IReadOnlyList<string>)
-  fullName.vb: TGBot.Config.ConfigParseResult.New(TGBot.Config.AppConfig, System.Collections.Generic.IReadOnlyList(Of String))
-  nameWithType: ConfigParseResult.ConfigParseResult(AppConfig, IReadOnlyList<string>)
-  nameWithType.vb: ConfigParseResult.New(AppConfig, IReadOnlyList(Of String))
+- uid: TGBot.Config.ConfigParseResult.#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String},System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})
+  name: ConfigParseResult(AppConfig, IReadOnlyList<string>, IReadOnlyDictionary<string, string>)
+  href: api/TGBot.Config.ConfigParseResult.html#TGBot_Config_ConfigParseResult__ctor_TGBot_Config_AppConfig_System_Collections_Generic_IReadOnlyList_System_String__System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__
+  commentId: M:TGBot.Config.ConfigParseResult.#ctor(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyList{System.String},System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})
+  name.vb: New(AppConfig, IReadOnlyList(Of String), IReadOnlyDictionary(Of String, String))
+  fullName: TGBot.Config.ConfigParseResult.ConfigParseResult(TGBot.Config.AppConfig, System.Collections.Generic.IReadOnlyList<string>, System.Collections.Generic.IReadOnlyDictionary<string, string>)
+  fullName.vb: TGBot.Config.ConfigParseResult.New(TGBot.Config.AppConfig, System.Collections.Generic.IReadOnlyList(Of String), System.Collections.Generic.IReadOnlyDictionary(Of String, String))
+  nameWithType: ConfigParseResult.ConfigParseResult(AppConfig, IReadOnlyList<string>, IReadOnlyDictionary<string, string>)
+  nameWithType.vb: ConfigParseResult.New(AppConfig, IReadOnlyList(Of String), IReadOnlyDictionary(Of String, String))
 - uid: TGBot.Config.ConfigParseResult.#ctor*
   name: ConfigParseResult
   href: api/TGBot.Config.ConfigParseResult.html#TGBot_Config_ConfigParseResult__ctor_
@@ -842,6 +1017,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Config.ConfigParseResult.Config
   nameWithType: ConfigParseResult.Config
+- uid: TGBot.Config.ConfigParseResult.RawValues
+  name: RawValues
+  href: api/TGBot.Config.ConfigParseResult.html#TGBot_Config_ConfigParseResult_RawValues
+  commentId: P:TGBot.Config.ConfigParseResult.RawValues
+  fullName: TGBot.Config.ConfigParseResult.RawValues
+  nameWithType: ConfigParseResult.RawValues
+- uid: TGBot.Config.ConfigParseResult.RawValues*
+  name: RawValues
+  href: api/TGBot.Config.ConfigParseResult.html#TGBot_Config_ConfigParseResult_RawValues_
+  commentId: Overload:TGBot.Config.ConfigParseResult.RawValues
+  isSpec: "True"
+  fullName: TGBot.Config.ConfigParseResult.RawValues
+  nameWithType: ConfigParseResult.RawValues
 - uid: TGBot.Config.ConfigParseResult.Warnings
   name: Warnings
   href: api/TGBot.Config.ConfigParseResult.html#TGBot_Config_ConfigParseResult_Warnings
@@ -861,6 +1049,50 @@ references:
   commentId: T:TGBot.Config.ConfigParser
   fullName: TGBot.Config.ConfigParser
   nameWithType: ConfigParser
+- uid: TGBot.Config.ConfigParser.DisplayValue(TGBot.Config.AppConfig,System.String)
+  name: DisplayValue(AppConfig, string)
+  href: api/TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_DisplayValue_TGBot_Config_AppConfig_System_String_
+  commentId: M:TGBot.Config.ConfigParser.DisplayValue(TGBot.Config.AppConfig,System.String)
+  name.vb: DisplayValue(AppConfig, String)
+  fullName: TGBot.Config.ConfigParser.DisplayValue(TGBot.Config.AppConfig, string)
+  fullName.vb: TGBot.Config.ConfigParser.DisplayValue(TGBot.Config.AppConfig, String)
+  nameWithType: ConfigParser.DisplayValue(AppConfig, string)
+  nameWithType.vb: ConfigParser.DisplayValue(AppConfig, String)
+- uid: TGBot.Config.ConfigParser.DisplayValue*
+  name: DisplayValue
+  href: api/TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_DisplayValue_
+  commentId: Overload:TGBot.Config.ConfigParser.DisplayValue
+  isSpec: "True"
+  fullName: TGBot.Config.ConfigParser.DisplayValue
+  nameWithType: ConfigParser.DisplayValue
+- uid: TGBot.Config.ConfigParser.LockedKeys
+  name: LockedKeys
+  href: api/TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_LockedKeys
+  commentId: F:TGBot.Config.ConfigParser.LockedKeys
+  fullName: TGBot.Config.ConfigParser.LockedKeys
+  nameWithType: ConfigParser.LockedKeys
+- uid: TGBot.Config.ConfigParser.MutableKeys
+  name: MutableKeys
+  href: api/TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_MutableKeys
+  commentId: F:TGBot.Config.ConfigParser.MutableKeys
+  fullName: TGBot.Config.ConfigParser.MutableKeys
+  nameWithType: ConfigParser.MutableKeys
+- uid: TGBot.Config.ConfigParser.NormalizeValue(System.String)
+  name: NormalizeValue(string)
+  href: api/TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_NormalizeValue_System_String_
+  commentId: M:TGBot.Config.ConfigParser.NormalizeValue(System.String)
+  name.vb: NormalizeValue(String)
+  fullName: TGBot.Config.ConfigParser.NormalizeValue(string)
+  fullName.vb: TGBot.Config.ConfigParser.NormalizeValue(String)
+  nameWithType: ConfigParser.NormalizeValue(string)
+  nameWithType.vb: ConfigParser.NormalizeValue(String)
+- uid: TGBot.Config.ConfigParser.NormalizeValue*
+  name: NormalizeValue
+  href: api/TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_NormalizeValue_
+  commentId: Overload:TGBot.Config.ConfigParser.NormalizeValue
+  isSpec: "True"
+  fullName: TGBot.Config.ConfigParser.NormalizeValue
+  nameWithType: ConfigParser.NormalizeValue
 - uid: TGBot.Config.ConfigParser.Parse(System.String,System.String)
   name: Parse(string, string)
   href: api/TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_Parse_System_String_System_String_
@@ -877,6 +1109,677 @@ references:
   isSpec: "True"
   fullName: TGBot.Config.ConfigParser.Parse
   nameWithType: ConfigParser.Parse
+- uid: TGBot.Config.ConfigParser.RequiresRiskWarning(System.String)
+  name: RequiresRiskWarning(string)
+  href: api/TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_RequiresRiskWarning_System_String_
+  commentId: M:TGBot.Config.ConfigParser.RequiresRiskWarning(System.String)
+  name.vb: RequiresRiskWarning(String)
+  fullName: TGBot.Config.ConfigParser.RequiresRiskWarning(string)
+  fullName.vb: TGBot.Config.ConfigParser.RequiresRiskWarning(String)
+  nameWithType: ConfigParser.RequiresRiskWarning(string)
+  nameWithType.vb: ConfigParser.RequiresRiskWarning(String)
+- uid: TGBot.Config.ConfigParser.RequiresRiskWarning*
+  name: RequiresRiskWarning
+  href: api/TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_RequiresRiskWarning_
+  commentId: Overload:TGBot.Config.ConfigParser.RequiresRiskWarning
+  isSpec: "True"
+  fullName: TGBot.Config.ConfigParser.RequiresRiskWarning
+  nameWithType: ConfigParser.RequiresRiskWarning
+- uid: TGBot.Config.ConfigParser.TryResolveKey(System.String,System.String@)
+  name: TryResolveKey(string, out string)
+  href: api/TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_TryResolveKey_System_String_System_String__
+  commentId: M:TGBot.Config.ConfigParser.TryResolveKey(System.String,System.String@)
+  name.vb: TryResolveKey(String, String)
+  fullName: TGBot.Config.ConfigParser.TryResolveKey(string, out string)
+  fullName.vb: TGBot.Config.ConfigParser.TryResolveKey(String, String)
+  nameWithType: ConfigParser.TryResolveKey(string, out string)
+  nameWithType.vb: ConfigParser.TryResolveKey(String, String)
+- uid: TGBot.Config.ConfigParser.TryResolveKey*
+  name: TryResolveKey
+  href: api/TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_TryResolveKey_
+  commentId: Overload:TGBot.Config.ConfigParser.TryResolveKey
+  isSpec: "True"
+  fullName: TGBot.Config.ConfigParser.TryResolveKey
+  nameWithType: ConfigParser.TryResolveKey
+- uid: TGBot.Config.ConfigParser.ValidateValue(System.String,System.String)
+  name: ValidateValue(string, string)
+  href: api/TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_ValidateValue_System_String_System_String_
+  commentId: M:TGBot.Config.ConfigParser.ValidateValue(System.String,System.String)
+  name.vb: ValidateValue(String, String)
+  fullName: TGBot.Config.ConfigParser.ValidateValue(string, string)
+  fullName.vb: TGBot.Config.ConfigParser.ValidateValue(String, String)
+  nameWithType: ConfigParser.ValidateValue(string, string)
+  nameWithType.vb: ConfigParser.ValidateValue(String, String)
+- uid: TGBot.Config.ConfigParser.ValidateValue*
+  name: ValidateValue
+  href: api/TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_ValidateValue_
+  commentId: Overload:TGBot.Config.ConfigParser.ValidateValue
+  isSpec: "True"
+  fullName: TGBot.Config.ConfigParser.ValidateValue
+  nameWithType: ConfigParser.ValidateValue
+- uid: TGBot.Config.Overlay
+  name: TGBot.Config.Overlay
+  href: api/TGBot.Config.Overlay.html
+  commentId: N:TGBot.Config.Overlay
+  fullName: TGBot.Config.Overlay
+  nameWithType: TGBot.Config.Overlay
+- uid: TGBot.Config.Overlay.AccessEntry
+  name: AccessEntry
+  href: api/TGBot.Config.Overlay.AccessEntry.html
+  commentId: T:TGBot.Config.Overlay.AccessEntry
+  fullName: TGBot.Config.Overlay.AccessEntry
+  nameWithType: AccessEntry
+- uid: TGBot.Config.Overlay.AccessEntry.#ctor(System.Int64,TGBot.Config.Overlay.AccessEntrySource)
+  name: AccessEntry(long, AccessEntrySource)
+  href: api/TGBot.Config.Overlay.AccessEntry.html#TGBot_Config_Overlay_AccessEntry__ctor_System_Int64_TGBot_Config_Overlay_AccessEntrySource_
+  commentId: M:TGBot.Config.Overlay.AccessEntry.#ctor(System.Int64,TGBot.Config.Overlay.AccessEntrySource)
+  name.vb: New(Long, AccessEntrySource)
+  fullName: TGBot.Config.Overlay.AccessEntry.AccessEntry(long, TGBot.Config.Overlay.AccessEntrySource)
+  fullName.vb: TGBot.Config.Overlay.AccessEntry.New(Long, TGBot.Config.Overlay.AccessEntrySource)
+  nameWithType: AccessEntry.AccessEntry(long, AccessEntrySource)
+  nameWithType.vb: AccessEntry.New(Long, AccessEntrySource)
+- uid: TGBot.Config.Overlay.AccessEntry.#ctor*
+  name: AccessEntry
+  href: api/TGBot.Config.Overlay.AccessEntry.html#TGBot_Config_Overlay_AccessEntry__ctor_
+  commentId: Overload:TGBot.Config.Overlay.AccessEntry.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Config.Overlay.AccessEntry.AccessEntry
+  fullName.vb: TGBot.Config.Overlay.AccessEntry.New
+  nameWithType: AccessEntry.AccessEntry
+  nameWithType.vb: AccessEntry.New
+- uid: TGBot.Config.Overlay.AccessEntry.Id
+  name: Id
+  href: api/TGBot.Config.Overlay.AccessEntry.html#TGBot_Config_Overlay_AccessEntry_Id
+  commentId: P:TGBot.Config.Overlay.AccessEntry.Id
+  fullName: TGBot.Config.Overlay.AccessEntry.Id
+  nameWithType: AccessEntry.Id
+- uid: TGBot.Config.Overlay.AccessEntry.Id*
+  name: Id
+  href: api/TGBot.Config.Overlay.AccessEntry.html#TGBot_Config_Overlay_AccessEntry_Id_
+  commentId: Overload:TGBot.Config.Overlay.AccessEntry.Id
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.AccessEntry.Id
+  nameWithType: AccessEntry.Id
+- uid: TGBot.Config.Overlay.AccessEntry.Source
+  name: Source
+  href: api/TGBot.Config.Overlay.AccessEntry.html#TGBot_Config_Overlay_AccessEntry_Source
+  commentId: P:TGBot.Config.Overlay.AccessEntry.Source
+  fullName: TGBot.Config.Overlay.AccessEntry.Source
+  nameWithType: AccessEntry.Source
+- uid: TGBot.Config.Overlay.AccessEntry.Source*
+  name: Source
+  href: api/TGBot.Config.Overlay.AccessEntry.html#TGBot_Config_Overlay_AccessEntry_Source_
+  commentId: Overload:TGBot.Config.Overlay.AccessEntry.Source
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.AccessEntry.Source
+  nameWithType: AccessEntry.Source
+- uid: TGBot.Config.Overlay.AccessEntrySource
+  name: AccessEntrySource
+  href: api/TGBot.Config.Overlay.AccessEntrySource.html
+  commentId: T:TGBot.Config.Overlay.AccessEntrySource
+  fullName: TGBot.Config.Overlay.AccessEntrySource
+  nameWithType: AccessEntrySource
+- uid: TGBot.Config.Overlay.AccessEntrySource.Config
+  name: Config
+  href: api/TGBot.Config.Overlay.AccessEntrySource.html#TGBot_Config_Overlay_AccessEntrySource_Config
+  commentId: F:TGBot.Config.Overlay.AccessEntrySource.Config
+  fullName: TGBot.Config.Overlay.AccessEntrySource.Config
+  nameWithType: AccessEntrySource.Config
+- uid: TGBot.Config.Overlay.AccessEntrySource.Overlay
+  name: Overlay
+  href: api/TGBot.Config.Overlay.AccessEntrySource.html#TGBot_Config_Overlay_AccessEntrySource_Overlay
+  commentId: F:TGBot.Config.Overlay.AccessEntrySource.Overlay
+  fullName: TGBot.Config.Overlay.AccessEntrySource.Overlay
+  nameWithType: AccessEntrySource.Overlay
+- uid: TGBot.Config.Overlay.AccessListMerge
+  name: AccessListMerge
+  href: api/TGBot.Config.Overlay.AccessListMerge.html
+  commentId: T:TGBot.Config.Overlay.AccessListMerge
+  fullName: TGBot.Config.Overlay.AccessListMerge
+  nameWithType: AccessListMerge
+- uid: TGBot.Config.Overlay.AccessListMerge.Merge(System.Collections.Generic.IReadOnlyList{System.Int64},System.Collections.Generic.IReadOnlyList{System.Int64},TGBot.Config.Overlay.AccessOverlayData)
+  name: Merge(IReadOnlyList<long>, IReadOnlyList<long>, AccessOverlayData)
+  href: api/TGBot.Config.Overlay.AccessListMerge.html#TGBot_Config_Overlay_AccessListMerge_Merge_System_Collections_Generic_IReadOnlyList_System_Int64__System_Collections_Generic_IReadOnlyList_System_Int64__TGBot_Config_Overlay_AccessOverlayData_
+  commentId: M:TGBot.Config.Overlay.AccessListMerge.Merge(System.Collections.Generic.IReadOnlyList{System.Int64},System.Collections.Generic.IReadOnlyList{System.Int64},TGBot.Config.Overlay.AccessOverlayData)
+  name.vb: Merge(IReadOnlyList(Of Long), IReadOnlyList(Of Long), AccessOverlayData)
+  fullName: TGBot.Config.Overlay.AccessListMerge.Merge(System.Collections.Generic.IReadOnlyList<long>, System.Collections.Generic.IReadOnlyList<long>, TGBot.Config.Overlay.AccessOverlayData)
+  fullName.vb: TGBot.Config.Overlay.AccessListMerge.Merge(System.Collections.Generic.IReadOnlyList(Of Long), System.Collections.Generic.IReadOnlyList(Of Long), TGBot.Config.Overlay.AccessOverlayData)
+  nameWithType: AccessListMerge.Merge(IReadOnlyList<long>, IReadOnlyList<long>, AccessOverlayData)
+  nameWithType.vb: AccessListMerge.Merge(IReadOnlyList(Of Long), IReadOnlyList(Of Long), AccessOverlayData)
+- uid: TGBot.Config.Overlay.AccessListMerge.Merge*
+  name: Merge
+  href: api/TGBot.Config.Overlay.AccessListMerge.html#TGBot_Config_Overlay_AccessListMerge_Merge_
+  commentId: Overload:TGBot.Config.Overlay.AccessListMerge.Merge
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.AccessListMerge.Merge
+  nameWithType: AccessListMerge.Merge
+- uid: TGBot.Config.Overlay.AccessListMergeResult
+  name: AccessListMergeResult
+  href: api/TGBot.Config.Overlay.AccessListMergeResult.html
+  commentId: T:TGBot.Config.Overlay.AccessListMergeResult
+  fullName: TGBot.Config.Overlay.AccessListMergeResult
+  nameWithType: AccessListMergeResult
+- uid: TGBot.Config.Overlay.AccessListMergeResult.#ctor(System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry},System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry})
+  name: AccessListMergeResult(IReadOnlyList<AccessEntry>, IReadOnlyList<AccessEntry>)
+  href: api/TGBot.Config.Overlay.AccessListMergeResult.html#TGBot_Config_Overlay_AccessListMergeResult__ctor_System_Collections_Generic_IReadOnlyList_TGBot_Config_Overlay_AccessEntry__System_Collections_Generic_IReadOnlyList_TGBot_Config_Overlay_AccessEntry__
+  commentId: M:TGBot.Config.Overlay.AccessListMergeResult.#ctor(System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry},System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry})
+  name.vb: New(IReadOnlyList(Of AccessEntry), IReadOnlyList(Of AccessEntry))
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.AccessListMergeResult(System.Collections.Generic.IReadOnlyList<TGBot.Config.Overlay.AccessEntry>, System.Collections.Generic.IReadOnlyList<TGBot.Config.Overlay.AccessEntry>)
+  fullName.vb: TGBot.Config.Overlay.AccessListMergeResult.New(System.Collections.Generic.IReadOnlyList(Of TGBot.Config.Overlay.AccessEntry), System.Collections.Generic.IReadOnlyList(Of TGBot.Config.Overlay.AccessEntry))
+  nameWithType: AccessListMergeResult.AccessListMergeResult(IReadOnlyList<AccessEntry>, IReadOnlyList<AccessEntry>)
+  nameWithType.vb: AccessListMergeResult.New(IReadOnlyList(Of AccessEntry), IReadOnlyList(Of AccessEntry))
+- uid: TGBot.Config.Overlay.AccessListMergeResult.#ctor*
+  name: AccessListMergeResult
+  href: api/TGBot.Config.Overlay.AccessListMergeResult.html#TGBot_Config_Overlay_AccessListMergeResult__ctor_
+  commentId: Overload:TGBot.Config.Overlay.AccessListMergeResult.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.AccessListMergeResult
+  fullName.vb: TGBot.Config.Overlay.AccessListMergeResult.New
+  nameWithType: AccessListMergeResult.AccessListMergeResult
+  nameWithType.vb: AccessListMergeResult.New
+- uid: TGBot.Config.Overlay.AccessListMergeResult.ChannelIds
+  name: ChannelIds
+  href: api/TGBot.Config.Overlay.AccessListMergeResult.html#TGBot_Config_Overlay_AccessListMergeResult_ChannelIds
+  commentId: P:TGBot.Config.Overlay.AccessListMergeResult.ChannelIds
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.ChannelIds
+  nameWithType: AccessListMergeResult.ChannelIds
+- uid: TGBot.Config.Overlay.AccessListMergeResult.ChannelIds*
+  name: ChannelIds
+  href: api/TGBot.Config.Overlay.AccessListMergeResult.html#TGBot_Config_Overlay_AccessListMergeResult_ChannelIds_
+  commentId: Overload:TGBot.Config.Overlay.AccessListMergeResult.ChannelIds
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.ChannelIds
+  nameWithType: AccessListMergeResult.ChannelIds
+- uid: TGBot.Config.Overlay.AccessListMergeResult.Channels
+  name: Channels
+  href: api/TGBot.Config.Overlay.AccessListMergeResult.html#TGBot_Config_Overlay_AccessListMergeResult_Channels
+  commentId: P:TGBot.Config.Overlay.AccessListMergeResult.Channels
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.Channels
+  nameWithType: AccessListMergeResult.Channels
+- uid: TGBot.Config.Overlay.AccessListMergeResult.Channels*
+  name: Channels
+  href: api/TGBot.Config.Overlay.AccessListMergeResult.html#TGBot_Config_Overlay_AccessListMergeResult_Channels_
+  commentId: Overload:TGBot.Config.Overlay.AccessListMergeResult.Channels
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.Channels
+  nameWithType: AccessListMergeResult.Channels
+- uid: TGBot.Config.Overlay.AccessListMergeResult.UserIds
+  name: UserIds
+  href: api/TGBot.Config.Overlay.AccessListMergeResult.html#TGBot_Config_Overlay_AccessListMergeResult_UserIds
+  commentId: P:TGBot.Config.Overlay.AccessListMergeResult.UserIds
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.UserIds
+  nameWithType: AccessListMergeResult.UserIds
+- uid: TGBot.Config.Overlay.AccessListMergeResult.UserIds*
+  name: UserIds
+  href: api/TGBot.Config.Overlay.AccessListMergeResult.html#TGBot_Config_Overlay_AccessListMergeResult_UserIds_
+  commentId: Overload:TGBot.Config.Overlay.AccessListMergeResult.UserIds
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.UserIds
+  nameWithType: AccessListMergeResult.UserIds
+- uid: TGBot.Config.Overlay.AccessListMergeResult.Users
+  name: Users
+  href: api/TGBot.Config.Overlay.AccessListMergeResult.html#TGBot_Config_Overlay_AccessListMergeResult_Users
+  commentId: P:TGBot.Config.Overlay.AccessListMergeResult.Users
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.Users
+  nameWithType: AccessListMergeResult.Users
+- uid: TGBot.Config.Overlay.AccessListMergeResult.Users*
+  name: Users
+  href: api/TGBot.Config.Overlay.AccessListMergeResult.html#TGBot_Config_Overlay_AccessListMergeResult_Users_
+  commentId: Overload:TGBot.Config.Overlay.AccessListMergeResult.Users
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.Users
+  nameWithType: AccessListMergeResult.Users
+- uid: TGBot.Config.Overlay.AccessOverlayData
+  name: AccessOverlayData
+  href: api/TGBot.Config.Overlay.AccessOverlayData.html
+  commentId: T:TGBot.Config.Overlay.AccessOverlayData
+  fullName: TGBot.Config.Overlay.AccessOverlayData
+  nameWithType: AccessOverlayData
+- uid: TGBot.Config.Overlay.AccessOverlayData.#ctor(System.Collections.Generic.IReadOnlyList{System.Int64},System.Collections.Generic.IReadOnlyList{System.Int64})
+  name: AccessOverlayData(IReadOnlyList<long>, IReadOnlyList<long>)
+  href: api/TGBot.Config.Overlay.AccessOverlayData.html#TGBot_Config_Overlay_AccessOverlayData__ctor_System_Collections_Generic_IReadOnlyList_System_Int64__System_Collections_Generic_IReadOnlyList_System_Int64__
+  commentId: M:TGBot.Config.Overlay.AccessOverlayData.#ctor(System.Collections.Generic.IReadOnlyList{System.Int64},System.Collections.Generic.IReadOnlyList{System.Int64})
+  name.vb: New(IReadOnlyList(Of Long), IReadOnlyList(Of Long))
+  fullName: TGBot.Config.Overlay.AccessOverlayData.AccessOverlayData(System.Collections.Generic.IReadOnlyList<long>, System.Collections.Generic.IReadOnlyList<long>)
+  fullName.vb: TGBot.Config.Overlay.AccessOverlayData.New(System.Collections.Generic.IReadOnlyList(Of Long), System.Collections.Generic.IReadOnlyList(Of Long))
+  nameWithType: AccessOverlayData.AccessOverlayData(IReadOnlyList<long>, IReadOnlyList<long>)
+  nameWithType.vb: AccessOverlayData.New(IReadOnlyList(Of Long), IReadOnlyList(Of Long))
+- uid: TGBot.Config.Overlay.AccessOverlayData.#ctor*
+  name: AccessOverlayData
+  href: api/TGBot.Config.Overlay.AccessOverlayData.html#TGBot_Config_Overlay_AccessOverlayData__ctor_
+  commentId: Overload:TGBot.Config.Overlay.AccessOverlayData.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Config.Overlay.AccessOverlayData.AccessOverlayData
+  fullName.vb: TGBot.Config.Overlay.AccessOverlayData.New
+  nameWithType: AccessOverlayData.AccessOverlayData
+  nameWithType.vb: AccessOverlayData.New
+- uid: TGBot.Config.Overlay.AccessOverlayData.Empty
+  name: Empty
+  href: api/TGBot.Config.Overlay.AccessOverlayData.html#TGBot_Config_Overlay_AccessOverlayData_Empty
+  commentId: F:TGBot.Config.Overlay.AccessOverlayData.Empty
+  fullName: TGBot.Config.Overlay.AccessOverlayData.Empty
+  nameWithType: AccessOverlayData.Empty
+- uid: TGBot.Config.Overlay.AccessOverlayData.ExtraAllowedUsers
+  name: ExtraAllowedUsers
+  href: api/TGBot.Config.Overlay.AccessOverlayData.html#TGBot_Config_Overlay_AccessOverlayData_ExtraAllowedUsers
+  commentId: P:TGBot.Config.Overlay.AccessOverlayData.ExtraAllowedUsers
+  fullName: TGBot.Config.Overlay.AccessOverlayData.ExtraAllowedUsers
+  nameWithType: AccessOverlayData.ExtraAllowedUsers
+- uid: TGBot.Config.Overlay.AccessOverlayData.ExtraAllowedUsers*
+  name: ExtraAllowedUsers
+  href: api/TGBot.Config.Overlay.AccessOverlayData.html#TGBot_Config_Overlay_AccessOverlayData_ExtraAllowedUsers_
+  commentId: Overload:TGBot.Config.Overlay.AccessOverlayData.ExtraAllowedUsers
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.AccessOverlayData.ExtraAllowedUsers
+  nameWithType: AccessOverlayData.ExtraAllowedUsers
+- uid: TGBot.Config.Overlay.AccessOverlayData.ExtraTargetChannels
+  name: ExtraTargetChannels
+  href: api/TGBot.Config.Overlay.AccessOverlayData.html#TGBot_Config_Overlay_AccessOverlayData_ExtraTargetChannels
+  commentId: P:TGBot.Config.Overlay.AccessOverlayData.ExtraTargetChannels
+  fullName: TGBot.Config.Overlay.AccessOverlayData.ExtraTargetChannels
+  nameWithType: AccessOverlayData.ExtraTargetChannels
+- uid: TGBot.Config.Overlay.AccessOverlayData.ExtraTargetChannels*
+  name: ExtraTargetChannels
+  href: api/TGBot.Config.Overlay.AccessOverlayData.html#TGBot_Config_Overlay_AccessOverlayData_ExtraTargetChannels_
+  commentId: Overload:TGBot.Config.Overlay.AccessOverlayData.ExtraTargetChannels
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.AccessOverlayData.ExtraTargetChannels
+  nameWithType: AccessOverlayData.ExtraTargetChannels
+- uid: TGBot.Config.Overlay.OverlayApplier
+  name: OverlayApplier
+  href: api/TGBot.Config.Overlay.OverlayApplier.html
+  commentId: T:TGBot.Config.Overlay.OverlayApplier
+  fullName: TGBot.Config.Overlay.OverlayApplier
+  nameWithType: OverlayApplier
+- uid: TGBot.Config.Overlay.OverlayApplier.Apply(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Collections.Generic.IReadOnlyList{System.String}@)
+  name: Apply(AppConfig, IReadOnlyDictionary<string, string>, out IReadOnlyList<string>)
+  href: api/TGBot.Config.Overlay.OverlayApplier.html#TGBot_Config_Overlay_OverlayApplier_Apply_TGBot_Config_AppConfig_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Collections_Generic_IReadOnlyList_System_String___
+  commentId: M:TGBot.Config.Overlay.OverlayApplier.Apply(TGBot.Config.AppConfig,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Collections.Generic.IReadOnlyList{System.String}@)
+  name.vb: Apply(AppConfig, IReadOnlyDictionary(Of String, String), IReadOnlyList(Of String))
+  fullName: TGBot.Config.Overlay.OverlayApplier.Apply(TGBot.Config.AppConfig, System.Collections.Generic.IReadOnlyDictionary<string, string>, out System.Collections.Generic.IReadOnlyList<string>)
+  fullName.vb: TGBot.Config.Overlay.OverlayApplier.Apply(TGBot.Config.AppConfig, System.Collections.Generic.IReadOnlyDictionary(Of String, String), System.Collections.Generic.IReadOnlyList(Of String))
+  nameWithType: OverlayApplier.Apply(AppConfig, IReadOnlyDictionary<string, string>, out IReadOnlyList<string>)
+  nameWithType.vb: OverlayApplier.Apply(AppConfig, IReadOnlyDictionary(Of String, String), IReadOnlyList(Of String))
+- uid: TGBot.Config.Overlay.OverlayApplier.Apply*
+  name: Apply
+  href: api/TGBot.Config.Overlay.OverlayApplier.html#TGBot_Config_Overlay_OverlayApplier_Apply_
+  commentId: Overload:TGBot.Config.Overlay.OverlayApplier.Apply
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.OverlayApplier.Apply
+  nameWithType: OverlayApplier.Apply
+- uid: TGBot.Config.Overlay.OverlayStore
+  name: OverlayStore
+  href: api/TGBot.Config.Overlay.OverlayStore.html
+  commentId: T:TGBot.Config.Overlay.OverlayStore
+  fullName: TGBot.Config.Overlay.OverlayStore
+  nameWithType: OverlayStore
+- uid: TGBot.Config.Overlay.OverlayStore.#ctor(System.String,TGBot.Logging.IAppLogger)
+  name: OverlayStore(string, IAppLogger?)
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore__ctor_System_String_TGBot_Logging_IAppLogger_
+  commentId: M:TGBot.Config.Overlay.OverlayStore.#ctor(System.String,TGBot.Logging.IAppLogger)
+  name.vb: New(String, IAppLogger)
+  fullName: TGBot.Config.Overlay.OverlayStore.OverlayStore(string, TGBot.Logging.IAppLogger?)
+  fullName.vb: TGBot.Config.Overlay.OverlayStore.New(String, TGBot.Logging.IAppLogger)
+  nameWithType: OverlayStore.OverlayStore(string, IAppLogger?)
+  nameWithType.vb: OverlayStore.New(String, IAppLogger)
+- uid: TGBot.Config.Overlay.OverlayStore.#ctor*
+  name: OverlayStore
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore__ctor_
+  commentId: Overload:TGBot.Config.Overlay.OverlayStore.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Config.Overlay.OverlayStore.OverlayStore
+  fullName.vb: TGBot.Config.Overlay.OverlayStore.New
+  nameWithType: OverlayStore.OverlayStore
+  nameWithType.vb: OverlayStore.New
+- uid: TGBot.Config.Overlay.OverlayStore.AccessFileName
+  name: AccessFileName
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_AccessFileName
+  commentId: F:TGBot.Config.Overlay.OverlayStore.AccessFileName
+  fullName: TGBot.Config.Overlay.OverlayStore.AccessFileName
+  nameWithType: OverlayStore.AccessFileName
+- uid: TGBot.Config.Overlay.OverlayStore.AddAccessChannel(System.Int64)
+  name: AddAccessChannel(long)
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_AddAccessChannel_System_Int64_
+  commentId: M:TGBot.Config.Overlay.OverlayStore.AddAccessChannel(System.Int64)
+  name.vb: AddAccessChannel(Long)
+  fullName: TGBot.Config.Overlay.OverlayStore.AddAccessChannel(long)
+  fullName.vb: TGBot.Config.Overlay.OverlayStore.AddAccessChannel(Long)
+  nameWithType: OverlayStore.AddAccessChannel(long)
+  nameWithType.vb: OverlayStore.AddAccessChannel(Long)
+- uid: TGBot.Config.Overlay.OverlayStore.AddAccessChannel*
+  name: AddAccessChannel
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_AddAccessChannel_
+  commentId: Overload:TGBot.Config.Overlay.OverlayStore.AddAccessChannel
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.OverlayStore.AddAccessChannel
+  nameWithType: OverlayStore.AddAccessChannel
+- uid: TGBot.Config.Overlay.OverlayStore.AddAccessUser(System.Int64)
+  name: AddAccessUser(long)
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_AddAccessUser_System_Int64_
+  commentId: M:TGBot.Config.Overlay.OverlayStore.AddAccessUser(System.Int64)
+  name.vb: AddAccessUser(Long)
+  fullName: TGBot.Config.Overlay.OverlayStore.AddAccessUser(long)
+  fullName.vb: TGBot.Config.Overlay.OverlayStore.AddAccessUser(Long)
+  nameWithType: OverlayStore.AddAccessUser(long)
+  nameWithType.vb: OverlayStore.AddAccessUser(Long)
+- uid: TGBot.Config.Overlay.OverlayStore.AddAccessUser*
+  name: AddAccessUser
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_AddAccessUser_
+  commentId: Overload:TGBot.Config.Overlay.OverlayStore.AddAccessUser
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.OverlayStore.AddAccessUser
+  nameWithType: OverlayStore.AddAccessUser
+- uid: TGBot.Config.Overlay.OverlayStore.ClearConfig
+  name: ClearConfig()
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_ClearConfig
+  commentId: M:TGBot.Config.Overlay.OverlayStore.ClearConfig
+  fullName: TGBot.Config.Overlay.OverlayStore.ClearConfig()
+  nameWithType: OverlayStore.ClearConfig()
+- uid: TGBot.Config.Overlay.OverlayStore.ClearConfig*
+  name: ClearConfig
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_ClearConfig_
+  commentId: Overload:TGBot.Config.Overlay.OverlayStore.ClearConfig
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.OverlayStore.ClearConfig
+  nameWithType: OverlayStore.ClearConfig
+- uid: TGBot.Config.Overlay.OverlayStore.ConfigFileName
+  name: ConfigFileName
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_ConfigFileName
+  commentId: F:TGBot.Config.Overlay.OverlayStore.ConfigFileName
+  fullName: TGBot.Config.Overlay.OverlayStore.ConfigFileName
+  nameWithType: OverlayStore.ConfigFileName
+- uid: TGBot.Config.Overlay.OverlayStore.LoadAccess
+  name: LoadAccess()
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_LoadAccess
+  commentId: M:TGBot.Config.Overlay.OverlayStore.LoadAccess
+  fullName: TGBot.Config.Overlay.OverlayStore.LoadAccess()
+  nameWithType: OverlayStore.LoadAccess()
+- uid: TGBot.Config.Overlay.OverlayStore.LoadAccess*
+  name: LoadAccess
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_LoadAccess_
+  commentId: Overload:TGBot.Config.Overlay.OverlayStore.LoadAccess
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.OverlayStore.LoadAccess
+  nameWithType: OverlayStore.LoadAccess
+- uid: TGBot.Config.Overlay.OverlayStore.LoadConfig
+  name: LoadConfig()
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_LoadConfig
+  commentId: M:TGBot.Config.Overlay.OverlayStore.LoadConfig
+  fullName: TGBot.Config.Overlay.OverlayStore.LoadConfig()
+  nameWithType: OverlayStore.LoadConfig()
+- uid: TGBot.Config.Overlay.OverlayStore.LoadConfig*
+  name: LoadConfig
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_LoadConfig_
+  commentId: Overload:TGBot.Config.Overlay.OverlayStore.LoadConfig
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.OverlayStore.LoadConfig
+  nameWithType: OverlayStore.LoadConfig
+- uid: TGBot.Config.Overlay.OverlayStore.RemoveAccessChannel(System.Int64)
+  name: RemoveAccessChannel(long)
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_RemoveAccessChannel_System_Int64_
+  commentId: M:TGBot.Config.Overlay.OverlayStore.RemoveAccessChannel(System.Int64)
+  name.vb: RemoveAccessChannel(Long)
+  fullName: TGBot.Config.Overlay.OverlayStore.RemoveAccessChannel(long)
+  fullName.vb: TGBot.Config.Overlay.OverlayStore.RemoveAccessChannel(Long)
+  nameWithType: OverlayStore.RemoveAccessChannel(long)
+  nameWithType.vb: OverlayStore.RemoveAccessChannel(Long)
+- uid: TGBot.Config.Overlay.OverlayStore.RemoveAccessChannel*
+  name: RemoveAccessChannel
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_RemoveAccessChannel_
+  commentId: Overload:TGBot.Config.Overlay.OverlayStore.RemoveAccessChannel
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.OverlayStore.RemoveAccessChannel
+  nameWithType: OverlayStore.RemoveAccessChannel
+- uid: TGBot.Config.Overlay.OverlayStore.RemoveAccessUser(System.Int64)
+  name: RemoveAccessUser(long)
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_RemoveAccessUser_System_Int64_
+  commentId: M:TGBot.Config.Overlay.OverlayStore.RemoveAccessUser(System.Int64)
+  name.vb: RemoveAccessUser(Long)
+  fullName: TGBot.Config.Overlay.OverlayStore.RemoveAccessUser(long)
+  fullName.vb: TGBot.Config.Overlay.OverlayStore.RemoveAccessUser(Long)
+  nameWithType: OverlayStore.RemoveAccessUser(long)
+  nameWithType.vb: OverlayStore.RemoveAccessUser(Long)
+- uid: TGBot.Config.Overlay.OverlayStore.RemoveAccessUser*
+  name: RemoveAccessUser
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_RemoveAccessUser_
+  commentId: Overload:TGBot.Config.Overlay.OverlayStore.RemoveAccessUser
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.OverlayStore.RemoveAccessUser
+  nameWithType: OverlayStore.RemoveAccessUser
+- uid: TGBot.Config.Overlay.OverlayStore.RemoveConfigKey(System.String)
+  name: RemoveConfigKey(string)
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_RemoveConfigKey_System_String_
+  commentId: M:TGBot.Config.Overlay.OverlayStore.RemoveConfigKey(System.String)
+  name.vb: RemoveConfigKey(String)
+  fullName: TGBot.Config.Overlay.OverlayStore.RemoveConfigKey(string)
+  fullName.vb: TGBot.Config.Overlay.OverlayStore.RemoveConfigKey(String)
+  nameWithType: OverlayStore.RemoveConfigKey(string)
+  nameWithType.vb: OverlayStore.RemoveConfigKey(String)
+- uid: TGBot.Config.Overlay.OverlayStore.RemoveConfigKey*
+  name: RemoveConfigKey
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_RemoveConfigKey_
+  commentId: Overload:TGBot.Config.Overlay.OverlayStore.RemoveConfigKey
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.OverlayStore.RemoveConfigKey
+  nameWithType: OverlayStore.RemoveConfigKey
+- uid: TGBot.Config.Overlay.OverlayStore.SetConfigValue(System.String,System.String)
+  name: SetConfigValue(string, string)
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_SetConfigValue_System_String_System_String_
+  commentId: M:TGBot.Config.Overlay.OverlayStore.SetConfigValue(System.String,System.String)
+  name.vb: SetConfigValue(String, String)
+  fullName: TGBot.Config.Overlay.OverlayStore.SetConfigValue(string, string)
+  fullName.vb: TGBot.Config.Overlay.OverlayStore.SetConfigValue(String, String)
+  nameWithType: OverlayStore.SetConfigValue(string, string)
+  nameWithType.vb: OverlayStore.SetConfigValue(String, String)
+- uid: TGBot.Config.Overlay.OverlayStore.SetConfigValue*
+  name: SetConfigValue
+  href: api/TGBot.Config.Overlay.OverlayStore.html#TGBot_Config_Overlay_OverlayStore_SetConfigValue_
+  commentId: Overload:TGBot.Config.Overlay.OverlayStore.SetConfigValue
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.OverlayStore.SetConfigValue
+  nameWithType: OverlayStore.SetConfigValue
+- uid: TGBot.Config.Overlay.PendingNotify
+  name: PendingNotify
+  href: api/TGBot.Config.Overlay.PendingNotify.html
+  commentId: T:TGBot.Config.Overlay.PendingNotify
+  fullName: TGBot.Config.Overlay.PendingNotify
+  nameWithType: PendingNotify
+- uid: TGBot.Config.Overlay.PendingNotify.#ctor(System.Int64,System.String,System.Collections.Generic.IReadOnlyList{System.String},System.String,System.String,System.Int32)
+  name: PendingNotify(long, string, IReadOnlyList<string>, string, string, int)
+  href: api/TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify__ctor_System_Int64_System_String_System_Collections_Generic_IReadOnlyList_System_String__System_String_System_String_System_Int32_
+  commentId: M:TGBot.Config.Overlay.PendingNotify.#ctor(System.Int64,System.String,System.Collections.Generic.IReadOnlyList{System.String},System.String,System.String,System.Int32)
+  name.vb: New(Long, String, IReadOnlyList(Of String), String, String, Integer)
+  fullName: TGBot.Config.Overlay.PendingNotify.PendingNotify(long, string, System.Collections.Generic.IReadOnlyList<string>, string, string, int)
+  fullName.vb: TGBot.Config.Overlay.PendingNotify.New(Long, String, System.Collections.Generic.IReadOnlyList(Of String), String, String, Integer)
+  nameWithType: PendingNotify.PendingNotify(long, string, IReadOnlyList<string>, string, string, int)
+  nameWithType.vb: PendingNotify.New(Long, String, IReadOnlyList(Of String), String, String, Integer)
+- uid: TGBot.Config.Overlay.PendingNotify.#ctor*
+  name: PendingNotify
+  href: api/TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify__ctor_
+  commentId: Overload:TGBot.Config.Overlay.PendingNotify.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Config.Overlay.PendingNotify.PendingNotify
+  fullName.vb: TGBot.Config.Overlay.PendingNotify.New
+  nameWithType: PendingNotify.PendingNotify
+  nameWithType.vb: PendingNotify.New
+- uid: TGBot.Config.Overlay.PendingNotify.Args
+  name: Args
+  href: api/TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_Args
+  commentId: P:TGBot.Config.Overlay.PendingNotify.Args
+  fullName: TGBot.Config.Overlay.PendingNotify.Args
+  nameWithType: PendingNotify.Args
+- uid: TGBot.Config.Overlay.PendingNotify.Args*
+  name: Args
+  href: api/TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_Args_
+  commentId: Overload:TGBot.Config.Overlay.PendingNotify.Args
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.PendingNotify.Args
+  nameWithType: PendingNotify.Args
+- uid: TGBot.Config.Overlay.PendingNotify.Attempts
+  name: Attempts
+  href: api/TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_Attempts
+  commentId: P:TGBot.Config.Overlay.PendingNotify.Attempts
+  fullName: TGBot.Config.Overlay.PendingNotify.Attempts
+  nameWithType: PendingNotify.Attempts
+- uid: TGBot.Config.Overlay.PendingNotify.Attempts*
+  name: Attempts
+  href: api/TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_Attempts_
+  commentId: Overload:TGBot.Config.Overlay.PendingNotify.Attempts
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.PendingNotify.Attempts
+  nameWithType: PendingNotify.Attempts
+- uid: TGBot.Config.Overlay.PendingNotify.ChatId
+  name: ChatId
+  href: api/TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_ChatId
+  commentId: P:TGBot.Config.Overlay.PendingNotify.ChatId
+  fullName: TGBot.Config.Overlay.PendingNotify.ChatId
+  nameWithType: PendingNotify.ChatId
+- uid: TGBot.Config.Overlay.PendingNotify.ChatId*
+  name: ChatId
+  href: api/TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_ChatId_
+  commentId: Overload:TGBot.Config.Overlay.PendingNotify.ChatId
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.PendingNotify.ChatId
+  nameWithType: PendingNotify.ChatId
+- uid: TGBot.Config.Overlay.PendingNotify.CreatedAt
+  name: CreatedAt
+  href: api/TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_CreatedAt
+  commentId: P:TGBot.Config.Overlay.PendingNotify.CreatedAt
+  fullName: TGBot.Config.Overlay.PendingNotify.CreatedAt
+  nameWithType: PendingNotify.CreatedAt
+- uid: TGBot.Config.Overlay.PendingNotify.CreatedAt*
+  name: CreatedAt
+  href: api/TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_CreatedAt_
+  commentId: Overload:TGBot.Config.Overlay.PendingNotify.CreatedAt
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.PendingNotify.CreatedAt
+  nameWithType: PendingNotify.CreatedAt
+- uid: TGBot.Config.Overlay.PendingNotify.Lang
+  name: Lang
+  href: api/TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_Lang
+  commentId: P:TGBot.Config.Overlay.PendingNotify.Lang
+  fullName: TGBot.Config.Overlay.PendingNotify.Lang
+  nameWithType: PendingNotify.Lang
+- uid: TGBot.Config.Overlay.PendingNotify.Lang*
+  name: Lang
+  href: api/TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_Lang_
+  commentId: Overload:TGBot.Config.Overlay.PendingNotify.Lang
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.PendingNotify.Lang
+  nameWithType: PendingNotify.Lang
+- uid: TGBot.Config.Overlay.PendingNotify.TextKey
+  name: TextKey
+  href: api/TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_TextKey
+  commentId: P:TGBot.Config.Overlay.PendingNotify.TextKey
+  fullName: TGBot.Config.Overlay.PendingNotify.TextKey
+  nameWithType: PendingNotify.TextKey
+- uid: TGBot.Config.Overlay.PendingNotify.TextKey*
+  name: TextKey
+  href: api/TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_TextKey_
+  commentId: Overload:TGBot.Config.Overlay.PendingNotify.TextKey
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.PendingNotify.TextKey
+  nameWithType: PendingNotify.TextKey
+- uid: TGBot.Config.Overlay.PendingNotifyStore
+  name: PendingNotifyStore
+  href: api/TGBot.Config.Overlay.PendingNotifyStore.html
+  commentId: T:TGBot.Config.Overlay.PendingNotifyStore
+  fullName: TGBot.Config.Overlay.PendingNotifyStore
+  nameWithType: PendingNotifyStore
+- uid: TGBot.Config.Overlay.PendingNotifyStore.#ctor(System.String,TGBot.Logging.IAppLogger)
+  name: PendingNotifyStore(string, IAppLogger?)
+  href: api/TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore__ctor_System_String_TGBot_Logging_IAppLogger_
+  commentId: M:TGBot.Config.Overlay.PendingNotifyStore.#ctor(System.String,TGBot.Logging.IAppLogger)
+  name.vb: New(String, IAppLogger)
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.PendingNotifyStore(string, TGBot.Logging.IAppLogger?)
+  fullName.vb: TGBot.Config.Overlay.PendingNotifyStore.New(String, TGBot.Logging.IAppLogger)
+  nameWithType: PendingNotifyStore.PendingNotifyStore(string, IAppLogger?)
+  nameWithType.vb: PendingNotifyStore.New(String, IAppLogger)
+- uid: TGBot.Config.Overlay.PendingNotifyStore.#ctor*
+  name: PendingNotifyStore
+  href: api/TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore__ctor_
+  commentId: Overload:TGBot.Config.Overlay.PendingNotifyStore.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.PendingNotifyStore
+  fullName.vb: TGBot.Config.Overlay.PendingNotifyStore.New
+  nameWithType: PendingNotifyStore.PendingNotifyStore
+  nameWithType.vb: PendingNotifyStore.New
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Claim
+  name: Claim()
+  href: api/TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_Claim
+  commentId: M:TGBot.Config.Overlay.PendingNotifyStore.Claim
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Claim()
+  nameWithType: PendingNotifyStore.Claim()
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Claim*
+  name: Claim
+  href: api/TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_Claim_
+  commentId: Overload:TGBot.Config.Overlay.PendingNotifyStore.Claim
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Claim
+  nameWithType: PendingNotifyStore.Claim
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Fail
+  name: Fail()
+  href: api/TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_Fail
+  commentId: M:TGBot.Config.Overlay.PendingNotifyStore.Fail
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Fail()
+  nameWithType: PendingNotifyStore.Fail()
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Fail*
+  name: Fail
+  href: api/TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_Fail_
+  commentId: Overload:TGBot.Config.Overlay.PendingNotifyStore.Fail
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Fail
+  nameWithType: PendingNotifyStore.Fail
+- uid: TGBot.Config.Overlay.PendingNotifyStore.FileName
+  name: FileName
+  href: api/TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_FileName
+  commentId: F:TGBot.Config.Overlay.PendingNotifyStore.FileName
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.FileName
+  nameWithType: PendingNotifyStore.FileName
+- uid: TGBot.Config.Overlay.PendingNotifyStore.MaxAttempts
+  name: MaxAttempts
+  href: api/TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_MaxAttempts
+  commentId: F:TGBot.Config.Overlay.PendingNotifyStore.MaxAttempts
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.MaxAttempts
+  nameWithType: PendingNotifyStore.MaxAttempts
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Save(TGBot.Config.Overlay.PendingNotify)
+  name: Save(PendingNotify)
+  href: api/TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_Save_TGBot_Config_Overlay_PendingNotify_
+  commentId: M:TGBot.Config.Overlay.PendingNotifyStore.Save(TGBot.Config.Overlay.PendingNotify)
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Save(TGBot.Config.Overlay.PendingNotify)
+  nameWithType: PendingNotifyStore.Save(PendingNotify)
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Save*
+  name: Save
+  href: api/TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_Save_
+  commentId: Overload:TGBot.Config.Overlay.PendingNotifyStore.Save
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Save
+  nameWithType: PendingNotifyStore.Save
+- uid: TGBot.Config.Overlay.PendingNotifyStore.SendingFileName
+  name: SendingFileName
+  href: api/TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_SendingFileName
+  commentId: F:TGBot.Config.Overlay.PendingNotifyStore.SendingFileName
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.SendingFileName
+  nameWithType: PendingNotifyStore.SendingFileName
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Succeed
+  name: Succeed()
+  href: api/TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_Succeed
+  commentId: M:TGBot.Config.Overlay.PendingNotifyStore.Succeed
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Succeed()
+  nameWithType: PendingNotifyStore.Succeed()
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Succeed*
+  name: Succeed
+  href: api/TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_Succeed_
+  commentId: Overload:TGBot.Config.Overlay.PendingNotifyStore.Succeed
+  isSpec: "True"
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Succeed
+  nameWithType: PendingNotifyStore.Succeed
 - uid: TGBot.Cookie
   name: TGBot.Cookie
   href: api/TGBot.Cookie.html
@@ -934,15 +1837,15 @@ references:
   commentId: T:TGBot.Cookie.CookieService
   fullName: TGBot.Cookie.CookieService
   nameWithType: CookieService
-- uid: TGBot.Cookie.CookieService.#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger)
-  name: CookieService(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
-  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService__ctor_TGBot_Cookie_SiteCookieRegistry_TGBot_Cookie_CookieStore_TGBot_Messaging_ITelegramClient_TGBot_Logging_IAppLogger_
-  commentId: M:TGBot.Cookie.CookieService.#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger)
-  name.vb: New(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
-  fullName: TGBot.Cookie.CookieService.CookieService(TGBot.Cookie.SiteCookieRegistry, TGBot.Cookie.CookieStore, TGBot.Messaging.ITelegramClient, TGBot.Logging.IAppLogger)
-  fullName.vb: TGBot.Cookie.CookieService.New(TGBot.Cookie.SiteCookieRegistry, TGBot.Cookie.CookieStore, TGBot.Messaging.ITelegramClient, TGBot.Logging.IAppLogger)
-  nameWithType: CookieService.CookieService(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
-  nameWithType.vb: CookieService.New(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
+- uid: TGBot.Cookie.CookieService.#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n)
+  name: CookieService(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger, II18n)
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService__ctor_TGBot_Cookie_SiteCookieRegistry_TGBot_Cookie_CookieStore_TGBot_Messaging_ITelegramClient_TGBot_Logging_IAppLogger_TGBot_Texts_I18n_II18n_
+  commentId: M:TGBot.Cookie.CookieService.#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n)
+  name.vb: New(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger, II18n)
+  fullName: TGBot.Cookie.CookieService.CookieService(TGBot.Cookie.SiteCookieRegistry, TGBot.Cookie.CookieStore, TGBot.Messaging.ITelegramClient, TGBot.Logging.IAppLogger, TGBot.Texts.I18n.II18n)
+  fullName.vb: TGBot.Cookie.CookieService.New(TGBot.Cookie.SiteCookieRegistry, TGBot.Cookie.CookieStore, TGBot.Messaging.ITelegramClient, TGBot.Logging.IAppLogger, TGBot.Texts.I18n.II18n)
+  nameWithType: CookieService.CookieService(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger, II18n)
+  nameWithType.vb: CookieService.New(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger, II18n)
 - uid: TGBot.Cookie.CookieService.#ctor*
   name: CookieService
   href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService__ctor_
@@ -985,15 +1888,15 @@ references:
   isSpec: "True"
   fullName: TGBot.Cookie.CookieService.Clear
   nameWithType: CookieService.Clear
-- uid: TGBot.Cookie.CookieService.ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.Threading.CancellationToken)
-  name: ConsumePendingAsync(long, string, long?, CancellationToken)
-  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_ConsumePendingAsync_System_Int64_System_String_System_Nullable_System_Int64__System_Threading_CancellationToken_
-  commentId: M:TGBot.Cookie.CookieService.ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.Threading.CancellationToken)
-  name.vb: ConsumePendingAsync(Long, String, Long?, CancellationToken)
-  fullName: TGBot.Cookie.CookieService.ConsumePendingAsync(long, string, long?, System.Threading.CancellationToken)
-  fullName.vb: TGBot.Cookie.CookieService.ConsumePendingAsync(Long, String, Long?, System.Threading.CancellationToken)
-  nameWithType: CookieService.ConsumePendingAsync(long, string, long?, CancellationToken)
-  nameWithType.vb: CookieService.ConsumePendingAsync(Long, String, Long?, CancellationToken)
+- uid: TGBot.Cookie.CookieService.ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  name: ConsumePendingAsync(long, string, long?, string, CancellationToken)
+  href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_ConsumePendingAsync_System_Int64_System_String_System_Nullable_System_Int64__System_String_System_Threading_CancellationToken_
+  commentId: M:TGBot.Cookie.CookieService.ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  name.vb: ConsumePendingAsync(Long, String, Long?, String, CancellationToken)
+  fullName: TGBot.Cookie.CookieService.ConsumePendingAsync(long, string, long?, string, System.Threading.CancellationToken)
+  fullName.vb: TGBot.Cookie.CookieService.ConsumePendingAsync(Long, String, Long?, String, System.Threading.CancellationToken)
+  nameWithType: CookieService.ConsumePendingAsync(long, string, long?, string, CancellationToken)
+  nameWithType.vb: CookieService.ConsumePendingAsync(Long, String, Long?, String, CancellationToken)
 - uid: TGBot.Cookie.CookieService.ConsumePendingAsync*
   name: ConsumePendingAsync
   href: api/TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_ConsumePendingAsync_
@@ -3680,15 +4583,15 @@ references:
   commentId: T:TGBot.Messaging.CaptionBuilder
   fullName: TGBot.Messaging.CaptionBuilder
   nameWithType: CaptionBuilder
-- uid: TGBot.Messaging.CaptionBuilder.Build(System.String,System.String)
-  name: Build(string, string)
-  href: api/TGBot.Messaging.CaptionBuilder.html#TGBot_Messaging_CaptionBuilder_Build_System_String_System_String_
-  commentId: M:TGBot.Messaging.CaptionBuilder.Build(System.String,System.String)
-  name.vb: Build(String, String)
-  fullName: TGBot.Messaging.CaptionBuilder.Build(string, string)
-  fullName.vb: TGBot.Messaging.CaptionBuilder.Build(String, String)
-  nameWithType: CaptionBuilder.Build(string, string)
-  nameWithType.vb: CaptionBuilder.Build(String, String)
+- uid: TGBot.Messaging.CaptionBuilder.Build(TGBot.Texts.I18n.II18n,System.String,System.String,System.String)
+  name: Build(II18n, string, string, string)
+  href: api/TGBot.Messaging.CaptionBuilder.html#TGBot_Messaging_CaptionBuilder_Build_TGBot_Texts_I18n_II18n_System_String_System_String_System_String_
+  commentId: M:TGBot.Messaging.CaptionBuilder.Build(TGBot.Texts.I18n.II18n,System.String,System.String,System.String)
+  name.vb: Build(II18n, String, String, String)
+  fullName: TGBot.Messaging.CaptionBuilder.Build(TGBot.Texts.I18n.II18n, string, string, string)
+  fullName.vb: TGBot.Messaging.CaptionBuilder.Build(TGBot.Texts.I18n.II18n, String, String, String)
+  nameWithType: CaptionBuilder.Build(II18n, string, string, string)
+  nameWithType.vb: CaptionBuilder.Build(II18n, String, String, String)
 - uid: TGBot.Messaging.CaptionBuilder.Build*
   name: Build
   href: api/TGBot.Messaging.CaptionBuilder.html#TGBot_Messaging_CaptionBuilder_Build_
@@ -3979,6 +4882,32 @@ references:
   isSpec: "True"
   fullName: TGBot.Messaging.InboundMessage.IsPrivate
   nameWithType: InboundMessage.IsPrivate
+- uid: TGBot.Messaging.InboundMessage.Language
+  name: Language
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_Language
+  commentId: P:TGBot.Messaging.InboundMessage.Language
+  fullName: TGBot.Messaging.InboundMessage.Language
+  nameWithType: InboundMessage.Language
+- uid: TGBot.Messaging.InboundMessage.Language*
+  name: Language
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_Language_
+  commentId: Overload:TGBot.Messaging.InboundMessage.Language
+  isSpec: "True"
+  fullName: TGBot.Messaging.InboundMessage.Language
+  nameWithType: InboundMessage.Language
+- uid: TGBot.Messaging.InboundMessage.LanguageCode
+  name: LanguageCode
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_LanguageCode
+  commentId: P:TGBot.Messaging.InboundMessage.LanguageCode
+  fullName: TGBot.Messaging.InboundMessage.LanguageCode
+  nameWithType: InboundMessage.LanguageCode
+- uid: TGBot.Messaging.InboundMessage.LanguageCode*
+  name: LanguageCode
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_LanguageCode_
+  commentId: Overload:TGBot.Messaging.InboundMessage.LanguageCode
+  isSpec: "True"
+  fullName: TGBot.Messaging.InboundMessage.LanguageCode
+  nameWithType: InboundMessage.LanguageCode
 - uid: TGBot.Messaging.InboundMessage.SenderUserId
   name: SenderUserId
   href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_SenderUserId
@@ -4031,6 +4960,22 @@ references:
   isSpec: "True"
   fullName: TGBot.Messaging.InboundMessage.UrlSearchText
   nameWithType: InboundMessage.UrlSearchText
+- uid: TGBot.Messaging.InboundMessage.WithLanguage(System.String)
+  name: WithLanguage(string)
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_WithLanguage_System_String_
+  commentId: M:TGBot.Messaging.InboundMessage.WithLanguage(System.String)
+  name.vb: WithLanguage(String)
+  fullName: TGBot.Messaging.InboundMessage.WithLanguage(string)
+  fullName.vb: TGBot.Messaging.InboundMessage.WithLanguage(String)
+  nameWithType: InboundMessage.WithLanguage(string)
+  nameWithType.vb: InboundMessage.WithLanguage(String)
+- uid: TGBot.Messaging.InboundMessage.WithLanguage*
+  name: WithLanguage
+  href: api/TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_WithLanguage_
+  commentId: Overload:TGBot.Messaging.InboundMessage.WithLanguage
+  isSpec: "True"
+  fullName: TGBot.Messaging.InboundMessage.WithLanguage
+  nameWithType: InboundMessage.WithLanguage
 - uid: TGBot.Messaging.InlineButton
   name: InlineButton
   href: api/TGBot.Messaging.InlineButton.html
@@ -4088,15 +5033,15 @@ references:
   commentId: T:TGBot.Messaging.TelegramClientWrapper
   fullName: TGBot.Messaging.TelegramClientWrapper
   nameWithType: TelegramClientWrapper
-- uid: TGBot.Messaging.TelegramClientWrapper.#ctor(System.String,System.String,System.Net.Http.HttpClient,System.Threading.CancellationToken)
-  name: TelegramClientWrapper(string, string, HttpClient, CancellationToken)
-  href: api/TGBot.Messaging.TelegramClientWrapper.html#TGBot_Messaging_TelegramClientWrapper__ctor_System_String_System_String_System_Net_Http_HttpClient_System_Threading_CancellationToken_
-  commentId: M:TGBot.Messaging.TelegramClientWrapper.#ctor(System.String,System.String,System.Net.Http.HttpClient,System.Threading.CancellationToken)
-  name.vb: New(String, String, HttpClient, CancellationToken)
-  fullName: TGBot.Messaging.TelegramClientWrapper.TelegramClientWrapper(string, string, System.Net.Http.HttpClient, System.Threading.CancellationToken)
-  fullName.vb: TGBot.Messaging.TelegramClientWrapper.New(String, String, System.Net.Http.HttpClient, System.Threading.CancellationToken)
-  nameWithType: TelegramClientWrapper.TelegramClientWrapper(string, string, HttpClient, CancellationToken)
-  nameWithType.vb: TelegramClientWrapper.New(String, String, HttpClient, CancellationToken)
+- uid: TGBot.Messaging.TelegramClientWrapper.#ctor(System.String,System.String,System.Net.Http.HttpClient,System.Threading.CancellationToken,TGBot.Texts.I18n.II18n,System.String)
+  name: TelegramClientWrapper(string, string, HttpClient, CancellationToken, II18n, string)
+  href: api/TGBot.Messaging.TelegramClientWrapper.html#TGBot_Messaging_TelegramClientWrapper__ctor_System_String_System_String_System_Net_Http_HttpClient_System_Threading_CancellationToken_TGBot_Texts_I18n_II18n_System_String_
+  commentId: M:TGBot.Messaging.TelegramClientWrapper.#ctor(System.String,System.String,System.Net.Http.HttpClient,System.Threading.CancellationToken,TGBot.Texts.I18n.II18n,System.String)
+  name.vb: New(String, String, HttpClient, CancellationToken, II18n, String)
+  fullName: TGBot.Messaging.TelegramClientWrapper.TelegramClientWrapper(string, string, System.Net.Http.HttpClient, System.Threading.CancellationToken, TGBot.Texts.I18n.II18n, string)
+  fullName.vb: TGBot.Messaging.TelegramClientWrapper.New(String, String, System.Net.Http.HttpClient, System.Threading.CancellationToken, TGBot.Texts.I18n.II18n, String)
+  nameWithType: TelegramClientWrapper.TelegramClientWrapper(string, string, HttpClient, CancellationToken, II18n, string)
+  nameWithType.vb: TelegramClientWrapper.New(String, String, HttpClient, CancellationToken, II18n, String)
 - uid: TGBot.Messaging.TelegramClientWrapper.#ctor*
   name: TelegramClientWrapper
   href: api/TGBot.Messaging.TelegramClientWrapper.html#TGBot_Messaging_TelegramClientWrapper__ctor_
@@ -4315,15 +5260,15 @@ references:
   commentId: T:TGBot.Messaging.UploadService
   fullName: TGBot.Messaging.UploadService
   nameWithType: UploadService
-- uid: TGBot.Messaging.UploadService.#ctor(TGBot.Messaging.ITelegramClient,System.Int32,System.Boolean,TGBot.Logging.IAppLogger)
-  name: UploadService(ITelegramClient, int, bool, IAppLogger)
-  href: api/TGBot.Messaging.UploadService.html#TGBot_Messaging_UploadService__ctor_TGBot_Messaging_ITelegramClient_System_Int32_System_Boolean_TGBot_Logging_IAppLogger_
-  commentId: M:TGBot.Messaging.UploadService.#ctor(TGBot.Messaging.ITelegramClient,System.Int32,System.Boolean,TGBot.Logging.IAppLogger)
-  name.vb: New(ITelegramClient, Integer, Boolean, IAppLogger)
-  fullName: TGBot.Messaging.UploadService.UploadService(TGBot.Messaging.ITelegramClient, int, bool, TGBot.Logging.IAppLogger)
-  fullName.vb: TGBot.Messaging.UploadService.New(TGBot.Messaging.ITelegramClient, Integer, Boolean, TGBot.Logging.IAppLogger)
-  nameWithType: UploadService.UploadService(ITelegramClient, int, bool, IAppLogger)
-  nameWithType.vb: UploadService.New(ITelegramClient, Integer, Boolean, IAppLogger)
+- uid: TGBot.Messaging.UploadService.#ctor(TGBot.Messaging.ITelegramClient,System.Int32,System.Boolean,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n)
+  name: UploadService(ITelegramClient, int, bool, IAppLogger, II18n)
+  href: api/TGBot.Messaging.UploadService.html#TGBot_Messaging_UploadService__ctor_TGBot_Messaging_ITelegramClient_System_Int32_System_Boolean_TGBot_Logging_IAppLogger_TGBot_Texts_I18n_II18n_
+  commentId: M:TGBot.Messaging.UploadService.#ctor(TGBot.Messaging.ITelegramClient,System.Int32,System.Boolean,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n)
+  name.vb: New(ITelegramClient, Integer, Boolean, IAppLogger, II18n)
+  fullName: TGBot.Messaging.UploadService.UploadService(TGBot.Messaging.ITelegramClient, int, bool, TGBot.Logging.IAppLogger, TGBot.Texts.I18n.II18n)
+  fullName.vb: TGBot.Messaging.UploadService.New(TGBot.Messaging.ITelegramClient, Integer, Boolean, TGBot.Logging.IAppLogger, TGBot.Texts.I18n.II18n)
+  nameWithType: UploadService.UploadService(ITelegramClient, int, bool, IAppLogger, II18n)
+  nameWithType.vb: UploadService.New(ITelegramClient, Integer, Boolean, IAppLogger, II18n)
 - uid: TGBot.Messaging.UploadService.#ctor*
   name: UploadService
   href: api/TGBot.Messaging.UploadService.html#TGBot_Messaging_UploadService__ctor_
@@ -4334,15 +5279,15 @@ references:
   fullName.vb: TGBot.Messaging.UploadService.New
   nameWithType: UploadService.UploadService
   nameWithType.vb: UploadService.New
-- uid: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
-  name: UploadAsync(IReadOnlyList<DownloadedMedia>, IReadOnlyList<long>, long?, CancellationToken)
-  href: api/TGBot.Messaging.UploadService.html#TGBot_Messaging_UploadService_UploadAsync_System_Collections_Generic_IReadOnlyList_TGBot_Download_DownloadedMedia__System_Collections_Generic_IReadOnlyList_System_Int64__System_Nullable_System_Int64__System_Threading_CancellationToken_
-  commentId: M:TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)
-  name.vb: UploadAsync(IReadOnlyList(Of DownloadedMedia), IReadOnlyList(Of Long), Long?, CancellationToken)
-  fullName: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList<TGBot.Download.DownloadedMedia>, System.Collections.Generic.IReadOnlyList<long>, long?, System.Threading.CancellationToken)
-  fullName.vb: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList(Of TGBot.Download.DownloadedMedia), System.Collections.Generic.IReadOnlyList(Of Long), Long?, System.Threading.CancellationToken)
-  nameWithType: UploadService.UploadAsync(IReadOnlyList<DownloadedMedia>, IReadOnlyList<long>, long?, CancellationToken)
-  nameWithType.vb: UploadService.UploadAsync(IReadOnlyList(Of DownloadedMedia), IReadOnlyList(Of Long), Long?, CancellationToken)
+- uid: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  name: UploadAsync(IReadOnlyList<DownloadedMedia>, IReadOnlyList<long>, long?, string, CancellationToken)
+  href: api/TGBot.Messaging.UploadService.html#TGBot_Messaging_UploadService_UploadAsync_System_Collections_Generic_IReadOnlyList_TGBot_Download_DownloadedMedia__System_Collections_Generic_IReadOnlyList_System_Int64__System_Nullable_System_Int64__System_String_System_Threading_CancellationToken_
+  commentId: M:TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList{TGBot.Download.DownloadedMedia},System.Collections.Generic.IReadOnlyList{System.Int64},System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  name.vb: UploadAsync(IReadOnlyList(Of DownloadedMedia), IReadOnlyList(Of Long), Long?, String, CancellationToken)
+  fullName: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList<TGBot.Download.DownloadedMedia>, System.Collections.Generic.IReadOnlyList<long>, long?, string, System.Threading.CancellationToken)
+  fullName.vb: TGBot.Messaging.UploadService.UploadAsync(System.Collections.Generic.IReadOnlyList(Of TGBot.Download.DownloadedMedia), System.Collections.Generic.IReadOnlyList(Of Long), Long?, String, System.Threading.CancellationToken)
+  nameWithType: UploadService.UploadAsync(IReadOnlyList<DownloadedMedia>, IReadOnlyList<long>, long?, string, CancellationToken)
+  nameWithType.vb: UploadService.UploadAsync(IReadOnlyList(Of DownloadedMedia), IReadOnlyList(Of Long), Long?, String, CancellationToken)
 - uid: TGBot.Messaging.UploadService.UploadAsync*
   name: UploadAsync
   href: api/TGBot.Messaging.UploadService.html#TGBot_Messaging_UploadService_UploadAsync_
@@ -4600,19 +5545,19 @@ references:
   fullName.vb: TGBot.Security.UrlValidationResult.New
   nameWithType: UrlValidationResult.UrlValidationResult
   nameWithType.vb: UrlValidationResult.New
-- uid: TGBot.Security.UrlValidationResult.Error
-  name: Error
-  href: api/TGBot.Security.UrlValidationResult.html#TGBot_Security_UrlValidationResult_Error
-  commentId: P:TGBot.Security.UrlValidationResult.Error
-  fullName: TGBot.Security.UrlValidationResult.Error
-  nameWithType: UrlValidationResult.Error
-- uid: TGBot.Security.UrlValidationResult.Error*
-  name: Error
-  href: api/TGBot.Security.UrlValidationResult.html#TGBot_Security_UrlValidationResult_Error_
-  commentId: Overload:TGBot.Security.UrlValidationResult.Error
+- uid: TGBot.Security.UrlValidationResult.ErrorKey
+  name: ErrorKey
+  href: api/TGBot.Security.UrlValidationResult.html#TGBot_Security_UrlValidationResult_ErrorKey
+  commentId: P:TGBot.Security.UrlValidationResult.ErrorKey
+  fullName: TGBot.Security.UrlValidationResult.ErrorKey
+  nameWithType: UrlValidationResult.ErrorKey
+- uid: TGBot.Security.UrlValidationResult.ErrorKey*
+  name: ErrorKey
+  href: api/TGBot.Security.UrlValidationResult.html#TGBot_Security_UrlValidationResult_ErrorKey_
+  commentId: Overload:TGBot.Security.UrlValidationResult.ErrorKey
   isSpec: "True"
-  fullName: TGBot.Security.UrlValidationResult.Error
-  nameWithType: UrlValidationResult.Error
+  fullName: TGBot.Security.UrlValidationResult.ErrorKey
+  nameWithType: UrlValidationResult.ErrorKey
 - uid: TGBot.Security.UrlValidationResult.Fail(System.String)
   name: Fail(string)
   href: api/TGBot.Security.UrlValidationResult.html#TGBot_Security_UrlValidationResult_Fail_System_String_
@@ -4718,12 +5663,491 @@ references:
   commentId: N:TGBot.Texts
   fullName: TGBot.Texts
   nameWithType: TGBot.Texts
+- uid: TGBot.Texts.I18n
+  name: TGBot.Texts.I18n
+  href: api/TGBot.Texts.I18n.html
+  commentId: N:TGBot.Texts.I18n
+  fullName: TGBot.Texts.I18n
+  nameWithType: TGBot.Texts.I18n
+- uid: TGBot.Texts.I18n.BotLanguage
+  name: BotLanguage
+  href: api/TGBot.Texts.I18n.BotLanguage.html
+  commentId: T:TGBot.Texts.I18n.BotLanguage
+  fullName: TGBot.Texts.I18n.BotLanguage
+  nameWithType: BotLanguage
+- uid: TGBot.Texts.I18n.BotLanguage.En
+  name: En
+  href: api/TGBot.Texts.I18n.BotLanguage.html#TGBot_Texts_I18n_BotLanguage_En
+  commentId: F:TGBot.Texts.I18n.BotLanguage.En
+  fullName: TGBot.Texts.I18n.BotLanguage.En
+  nameWithType: BotLanguage.En
+- uid: TGBot.Texts.I18n.BotLanguage.Zh
+  name: Zh
+  href: api/TGBot.Texts.I18n.BotLanguage.html#TGBot_Texts_I18n_BotLanguage_Zh
+  commentId: F:TGBot.Texts.I18n.BotLanguage.Zh
+  fullName: TGBot.Texts.I18n.BotLanguage.Zh
+  nameWithType: BotLanguage.Zh
+- uid: TGBot.Texts.I18n.BotLanguageExtensions
+  name: BotLanguageExtensions
+  href: api/TGBot.Texts.I18n.BotLanguageExtensions.html
+  commentId: T:TGBot.Texts.I18n.BotLanguageExtensions
+  fullName: TGBot.Texts.I18n.BotLanguageExtensions
+  nameWithType: BotLanguageExtensions
+- uid: TGBot.Texts.I18n.BotLanguageExtensions.Code(TGBot.Texts.I18n.BotLanguage)
+  name: Code(BotLanguage)
+  href: api/TGBot.Texts.I18n.BotLanguageExtensions.html#TGBot_Texts_I18n_BotLanguageExtensions_Code_TGBot_Texts_I18n_BotLanguage_
+  commentId: M:TGBot.Texts.I18n.BotLanguageExtensions.Code(TGBot.Texts.I18n.BotLanguage)
+  fullName: TGBot.Texts.I18n.BotLanguageExtensions.Code(TGBot.Texts.I18n.BotLanguage)
+  nameWithType: BotLanguageExtensions.Code(BotLanguage)
+- uid: TGBot.Texts.I18n.BotLanguageExtensions.Code*
+  name: Code
+  href: api/TGBot.Texts.I18n.BotLanguageExtensions.html#TGBot_Texts_I18n_BotLanguageExtensions_Code_
+  commentId: Overload:TGBot.Texts.I18n.BotLanguageExtensions.Code
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.BotLanguageExtensions.Code
+  nameWithType: BotLanguageExtensions.Code
+- uid: TGBot.Texts.I18n.BotLanguageExtensions.TryParseCode(System.String,TGBot.Texts.I18n.BotLanguage@)
+  name: TryParseCode(string?, out BotLanguage)
+  href: api/TGBot.Texts.I18n.BotLanguageExtensions.html#TGBot_Texts_I18n_BotLanguageExtensions_TryParseCode_System_String_TGBot_Texts_I18n_BotLanguage__
+  commentId: M:TGBot.Texts.I18n.BotLanguageExtensions.TryParseCode(System.String,TGBot.Texts.I18n.BotLanguage@)
+  name.vb: TryParseCode(String, BotLanguage)
+  fullName: TGBot.Texts.I18n.BotLanguageExtensions.TryParseCode(string?, out TGBot.Texts.I18n.BotLanguage)
+  fullName.vb: TGBot.Texts.I18n.BotLanguageExtensions.TryParseCode(String, TGBot.Texts.I18n.BotLanguage)
+  nameWithType: BotLanguageExtensions.TryParseCode(string?, out BotLanguage)
+  nameWithType.vb: BotLanguageExtensions.TryParseCode(String, BotLanguage)
+- uid: TGBot.Texts.I18n.BotLanguageExtensions.TryParseCode*
+  name: TryParseCode
+  href: api/TGBot.Texts.I18n.BotLanguageExtensions.html#TGBot_Texts_I18n_BotLanguageExtensions_TryParseCode_
+  commentId: Overload:TGBot.Texts.I18n.BotLanguageExtensions.TryParseCode
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.BotLanguageExtensions.TryParseCode
+  nameWithType: BotLanguageExtensions.TryParseCode
+- uid: TGBot.Texts.I18n.I18nService
+  name: I18nService
+  href: api/TGBot.Texts.I18n.I18nService.html
+  commentId: T:TGBot.Texts.I18n.I18nService
+  fullName: TGBot.Texts.I18n.I18nService
+  nameWithType: I18nService
+- uid: TGBot.Texts.I18n.I18nService.#ctor(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}}})
+  name: I18nService(string?, IEnumerable<KeyValuePair<string, IReadOnlyDictionary<string, string>>>?)
+  href: api/TGBot.Texts.I18n.I18nService.html#TGBot_Texts_I18n_I18nService__ctor_System_String_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String____
+  commentId: M:TGBot.Texts.I18n.I18nService.#ctor(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}}})
+  name.vb: New(String, IEnumerable(Of KeyValuePair(Of String, IReadOnlyDictionary(Of String, String))))
+  fullName: TGBot.Texts.I18n.I18nService.I18nService(string?, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, System.Collections.Generic.IReadOnlyDictionary<string, string>>>?)
+  fullName.vb: TGBot.Texts.I18n.I18nService.New(String, System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of String, System.Collections.Generic.IReadOnlyDictionary(Of String, String))))
+  nameWithType: I18nService.I18nService(string?, IEnumerable<KeyValuePair<string, IReadOnlyDictionary<string, string>>>?)
+  nameWithType.vb: I18nService.New(String, IEnumerable(Of KeyValuePair(Of String, IReadOnlyDictionary(Of String, String))))
+- uid: TGBot.Texts.I18n.I18nService.#ctor*
+  name: I18nService
+  href: api/TGBot.Texts.I18n.I18nService.html#TGBot_Texts_I18n_I18nService__ctor_
+  commentId: Overload:TGBot.Texts.I18n.I18nService.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Texts.I18n.I18nService.I18nService
+  fullName.vb: TGBot.Texts.I18n.I18nService.New
+  nameWithType: I18nService.I18nService
+  nameWithType.vb: I18nService.New
+- uid: TGBot.Texts.I18n.I18nService.CatalogFor(System.String)
+  name: CatalogFor(string)
+  href: api/TGBot.Texts.I18n.I18nService.html#TGBot_Texts_I18n_I18nService_CatalogFor_System_String_
+  commentId: M:TGBot.Texts.I18n.I18nService.CatalogFor(System.String)
+  name.vb: CatalogFor(String)
+  fullName: TGBot.Texts.I18n.I18nService.CatalogFor(string)
+  fullName.vb: TGBot.Texts.I18n.I18nService.CatalogFor(String)
+  nameWithType: I18nService.CatalogFor(string)
+  nameWithType.vb: I18nService.CatalogFor(String)
+- uid: TGBot.Texts.I18n.I18nService.CatalogFor*
+  name: CatalogFor
+  href: api/TGBot.Texts.I18n.I18nService.html#TGBot_Texts_I18n_I18nService_CatalogFor_
+  commentId: Overload:TGBot.Texts.I18n.I18nService.CatalogFor
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.I18nService.CatalogFor
+  nameWithType: I18nService.CatalogFor
+- uid: TGBot.Texts.I18n.I18nService.Get(System.String,System.String,System.Object[])
+  name: Get(string, string, params object[])
+  href: api/TGBot.Texts.I18n.I18nService.html#TGBot_Texts_I18n_I18nService_Get_System_String_System_String_System_Object___
+  commentId: M:TGBot.Texts.I18n.I18nService.Get(System.String,System.String,System.Object[])
+  name.vb: Get(String, String, ParamArray Object())
+  fullName: TGBot.Texts.I18n.I18nService.Get(string, string, params object[])
+  fullName.vb: TGBot.Texts.I18n.I18nService.Get(String, String, ParamArray Object())
+  nameWithType: I18nService.Get(string, string, params object[])
+  nameWithType.vb: I18nService.Get(String, String, ParamArray Object())
+- uid: TGBot.Texts.I18n.I18nService.Get*
+  name: Get
+  href: api/TGBot.Texts.I18n.I18nService.html#TGBot_Texts_I18n_I18nService_Get_
+  commentId: Overload:TGBot.Texts.I18n.I18nService.Get
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.I18nService.Get
+  nameWithType: I18nService.Get
+- uid: TGBot.Texts.I18n.I18nService.T(System.String,System.Object[])
+  name: T(string, params object[])
+  href: api/TGBot.Texts.I18n.I18nService.html#TGBot_Texts_I18n_I18nService_T_System_String_System_Object___
+  commentId: M:TGBot.Texts.I18n.I18nService.T(System.String,System.Object[])
+  name.vb: T(String, ParamArray Object())
+  fullName: TGBot.Texts.I18n.I18nService.T(string, params object[])
+  fullName.vb: TGBot.Texts.I18n.I18nService.T(String, ParamArray Object())
+  nameWithType: I18nService.T(string, params object[])
+  nameWithType.vb: I18nService.T(String, ParamArray Object())
+- uid: TGBot.Texts.I18n.I18nService.T*
+  name: T
+  href: api/TGBot.Texts.I18n.I18nService.html#TGBot_Texts_I18n_I18nService_T_
+  commentId: Overload:TGBot.Texts.I18n.I18nService.T
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.I18nService.T
+  nameWithType: I18nService.T
+- uid: TGBot.Texts.I18n.II18n
+  name: II18n
+  href: api/TGBot.Texts.I18n.II18n.html
+  commentId: T:TGBot.Texts.I18n.II18n
+  fullName: TGBot.Texts.I18n.II18n
+  nameWithType: II18n
+- uid: TGBot.Texts.I18n.II18n.Get(System.String,System.String,System.Object[])
+  name: Get(string, string, params object[])
+  href: api/TGBot.Texts.I18n.II18n.html#TGBot_Texts_I18n_II18n_Get_System_String_System_String_System_Object___
+  commentId: M:TGBot.Texts.I18n.II18n.Get(System.String,System.String,System.Object[])
+  name.vb: Get(String, String, ParamArray Object())
+  fullName: TGBot.Texts.I18n.II18n.Get(string, string, params object[])
+  fullName.vb: TGBot.Texts.I18n.II18n.Get(String, String, ParamArray Object())
+  nameWithType: II18n.Get(string, string, params object[])
+  nameWithType.vb: II18n.Get(String, String, ParamArray Object())
+- uid: TGBot.Texts.I18n.II18n.Get*
+  name: Get
+  href: api/TGBot.Texts.I18n.II18n.html#TGBot_Texts_I18n_II18n_Get_
+  commentId: Overload:TGBot.Texts.I18n.II18n.Get
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.II18n.Get
+  nameWithType: II18n.Get
+- uid: TGBot.Texts.I18n.II18n.T(System.String,System.Object[])
+  name: T(string, params object[])
+  href: api/TGBot.Texts.I18n.II18n.html#TGBot_Texts_I18n_II18n_T_System_String_System_Object___
+  commentId: M:TGBot.Texts.I18n.II18n.T(System.String,System.Object[])
+  name.vb: T(String, ParamArray Object())
+  fullName: TGBot.Texts.I18n.II18n.T(string, params object[])
+  fullName.vb: TGBot.Texts.I18n.II18n.T(String, ParamArray Object())
+  nameWithType: II18n.T(string, params object[])
+  nameWithType.vb: II18n.T(String, ParamArray Object())
+- uid: TGBot.Texts.I18n.II18n.T*
+  name: T
+  href: api/TGBot.Texts.I18n.II18n.html#TGBot_Texts_I18n_II18n_T_
+  commentId: Overload:TGBot.Texts.I18n.II18n.T
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.II18n.T
+  nameWithType: II18n.T
+- uid: TGBot.Texts.I18n.LanguageCatalog
+  name: LanguageCatalog
+  href: api/TGBot.Texts.I18n.LanguageCatalog.html
+  commentId: T:TGBot.Texts.I18n.LanguageCatalog
+  fullName: TGBot.Texts.I18n.LanguageCatalog
+  nameWithType: LanguageCatalog
+- uid: TGBot.Texts.I18n.LanguageCatalog.BuiltinLanguages
+  name: BuiltinLanguages
+  href: api/TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_BuiltinLanguages
+  commentId: F:TGBot.Texts.I18n.LanguageCatalog.BuiltinLanguages
+  fullName: TGBot.Texts.I18n.LanguageCatalog.BuiltinLanguages
+  nameWithType: LanguageCatalog.BuiltinLanguages
+- uid: TGBot.Texts.I18n.LanguageCatalog.FallbackLanguage
+  name: FallbackLanguage
+  href: api/TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_FallbackLanguage
+  commentId: F:TGBot.Texts.I18n.LanguageCatalog.FallbackLanguage
+  fullName: TGBot.Texts.I18n.LanguageCatalog.FallbackLanguage
+  nameWithType: LanguageCatalog.FallbackLanguage
+- uid: TGBot.Texts.I18n.LanguageCatalog.GetCatalog(System.String)
+  name: GetCatalog(string)
+  href: api/TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_GetCatalog_System_String_
+  commentId: M:TGBot.Texts.I18n.LanguageCatalog.GetCatalog(System.String)
+  name.vb: GetCatalog(String)
+  fullName: TGBot.Texts.I18n.LanguageCatalog.GetCatalog(string)
+  fullName.vb: TGBot.Texts.I18n.LanguageCatalog.GetCatalog(String)
+  nameWithType: LanguageCatalog.GetCatalog(string)
+  nameWithType.vb: LanguageCatalog.GetCatalog(String)
+- uid: TGBot.Texts.I18n.LanguageCatalog.GetCatalog*
+  name: GetCatalog
+  href: api/TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_GetCatalog_
+  commentId: Overload:TGBot.Texts.I18n.LanguageCatalog.GetCatalog
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.LanguageCatalog.GetCatalog
+  nameWithType: LanguageCatalog.GetCatalog
+- uid: TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode(System.String)
+  name: NormalizeLanguageCode(string?)
+  href: api/TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_NormalizeLanguageCode_System_String_
+  commentId: M:TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode(System.String)
+  name.vb: NormalizeLanguageCode(String)
+  fullName: TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode(string?)
+  fullName.vb: TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode(String)
+  nameWithType: LanguageCatalog.NormalizeLanguageCode(string?)
+  nameWithType.vb: LanguageCatalog.NormalizeLanguageCode(String)
+- uid: TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode*
+  name: NormalizeLanguageCode
+  href: api/TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_NormalizeLanguageCode_
+  commentId: Overload:TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode
+  nameWithType: LanguageCatalog.NormalizeLanguageCode
+- uid: TGBot.Texts.I18n.LanguageCatalog.Register(System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})
+  name: Register(string, IReadOnlyDictionary<string, string>)
+  href: api/TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_Register_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__
+  commentId: M:TGBot.Texts.I18n.LanguageCatalog.Register(System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})
+  name.vb: Register(String, IReadOnlyDictionary(Of String, String))
+  fullName: TGBot.Texts.I18n.LanguageCatalog.Register(string, System.Collections.Generic.IReadOnlyDictionary<string, string>)
+  fullName.vb: TGBot.Texts.I18n.LanguageCatalog.Register(String, System.Collections.Generic.IReadOnlyDictionary(Of String, String))
+  nameWithType: LanguageCatalog.Register(string, IReadOnlyDictionary<string, string>)
+  nameWithType.vb: LanguageCatalog.Register(String, IReadOnlyDictionary(Of String, String))
+- uid: TGBot.Texts.I18n.LanguageCatalog.Register*
+  name: Register
+  href: api/TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_Register_
+  commentId: Overload:TGBot.Texts.I18n.LanguageCatalog.Register
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.LanguageCatalog.Register
+  nameWithType: LanguageCatalog.Register
+- uid: TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages
+  name: SupportedLanguages
+  href: api/TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_SupportedLanguages
+  commentId: P:TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages
+  fullName: TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages
+  nameWithType: LanguageCatalog.SupportedLanguages
+- uid: TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages*
+  name: SupportedLanguages
+  href: api/TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_SupportedLanguages_
+  commentId: Overload:TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages
+  nameWithType: LanguageCatalog.SupportedLanguages
+- uid: TGBot.Texts.I18n.LanguageCatalog.Unregister(System.String)
+  name: Unregister(string)
+  href: api/TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_Unregister_System_String_
+  commentId: M:TGBot.Texts.I18n.LanguageCatalog.Unregister(System.String)
+  name.vb: Unregister(String)
+  fullName: TGBot.Texts.I18n.LanguageCatalog.Unregister(string)
+  fullName.vb: TGBot.Texts.I18n.LanguageCatalog.Unregister(String)
+  nameWithType: LanguageCatalog.Unregister(string)
+  nameWithType.vb: LanguageCatalog.Unregister(String)
+- uid: TGBot.Texts.I18n.LanguageCatalog.Unregister*
+  name: Unregister
+  href: api/TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_Unregister_
+  commentId: Overload:TGBot.Texts.I18n.LanguageCatalog.Unregister
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.LanguageCatalog.Unregister
+  nameWithType: LanguageCatalog.Unregister
+- uid: TGBot.Texts.I18n.UserLanguageResolver
+  name: UserLanguageResolver
+  href: api/TGBot.Texts.I18n.UserLanguageResolver.html
+  commentId: T:TGBot.Texts.I18n.UserLanguageResolver
+  fullName: TGBot.Texts.I18n.UserLanguageResolver
+  nameWithType: UserLanguageResolver
+- uid: TGBot.Texts.I18n.UserLanguageResolver.#ctor(TGBot.Texts.I18n.UserLanguageStore,System.Func{TGBot.Messaging.InboundMessage,System.String},System.String)
+  name: UserLanguageResolver(UserLanguageStore, Func<InboundMessage, string?>, string)
+  href: api/TGBot.Texts.I18n.UserLanguageResolver.html#TGBot_Texts_I18n_UserLanguageResolver__ctor_TGBot_Texts_I18n_UserLanguageStore_System_Func_TGBot_Messaging_InboundMessage_System_String__System_String_
+  commentId: M:TGBot.Texts.I18n.UserLanguageResolver.#ctor(TGBot.Texts.I18n.UserLanguageStore,System.Func{TGBot.Messaging.InboundMessage,System.String},System.String)
+  name.vb: New(UserLanguageStore, Func(Of InboundMessage, String), String)
+  fullName: TGBot.Texts.I18n.UserLanguageResolver.UserLanguageResolver(TGBot.Texts.I18n.UserLanguageStore, System.Func<TGBot.Messaging.InboundMessage, string?>, string)
+  fullName.vb: TGBot.Texts.I18n.UserLanguageResolver.New(TGBot.Texts.I18n.UserLanguageStore, System.Func(Of TGBot.Messaging.InboundMessage, String), String)
+  nameWithType: UserLanguageResolver.UserLanguageResolver(UserLanguageStore, Func<InboundMessage, string?>, string)
+  nameWithType.vb: UserLanguageResolver.New(UserLanguageStore, Func(Of InboundMessage, String), String)
+- uid: TGBot.Texts.I18n.UserLanguageResolver.#ctor*
+  name: UserLanguageResolver
+  href: api/TGBot.Texts.I18n.UserLanguageResolver.html#TGBot_Texts_I18n_UserLanguageResolver__ctor_
+  commentId: Overload:TGBot.Texts.I18n.UserLanguageResolver.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Texts.I18n.UserLanguageResolver.UserLanguageResolver
+  fullName.vb: TGBot.Texts.I18n.UserLanguageResolver.New
+  nameWithType: UserLanguageResolver.UserLanguageResolver
+  nameWithType.vb: UserLanguageResolver.New
+- uid: TGBot.Texts.I18n.UserLanguageResolver.Auto
+  name: Auto
+  href: api/TGBot.Texts.I18n.UserLanguageResolver.html#TGBot_Texts_I18n_UserLanguageResolver_Auto
+  commentId: F:TGBot.Texts.I18n.UserLanguageResolver.Auto
+  fullName: TGBot.Texts.I18n.UserLanguageResolver.Auto
+  nameWithType: UserLanguageResolver.Auto
+- uid: TGBot.Texts.I18n.UserLanguageResolver.Resolve(TGBot.Messaging.InboundMessage)
+  name: Resolve(InboundMessage)
+  href: api/TGBot.Texts.I18n.UserLanguageResolver.html#TGBot_Texts_I18n_UserLanguageResolver_Resolve_TGBot_Messaging_InboundMessage_
+  commentId: M:TGBot.Texts.I18n.UserLanguageResolver.Resolve(TGBot.Messaging.InboundMessage)
+  fullName: TGBot.Texts.I18n.UserLanguageResolver.Resolve(TGBot.Messaging.InboundMessage)
+  nameWithType: UserLanguageResolver.Resolve(InboundMessage)
+- uid: TGBot.Texts.I18n.UserLanguageResolver.Resolve*
+  name: Resolve
+  href: api/TGBot.Texts.I18n.UserLanguageResolver.html#TGBot_Texts_I18n_UserLanguageResolver_Resolve_
+  commentId: Overload:TGBot.Texts.I18n.UserLanguageResolver.Resolve
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.UserLanguageResolver.Resolve
+  nameWithType: UserLanguageResolver.Resolve
+- uid: TGBot.Texts.I18n.UserLanguageStore
+  name: UserLanguageStore
+  href: api/TGBot.Texts.I18n.UserLanguageStore.html
+  commentId: T:TGBot.Texts.I18n.UserLanguageStore
+  fullName: TGBot.Texts.I18n.UserLanguageStore
+  nameWithType: UserLanguageStore
+- uid: TGBot.Texts.I18n.UserLanguageStore.#ctor(System.String,TGBot.Logging.IAppLogger)
+  name: UserLanguageStore(string, IAppLogger?)
+  href: api/TGBot.Texts.I18n.UserLanguageStore.html#TGBot_Texts_I18n_UserLanguageStore__ctor_System_String_TGBot_Logging_IAppLogger_
+  commentId: M:TGBot.Texts.I18n.UserLanguageStore.#ctor(System.String,TGBot.Logging.IAppLogger)
+  name.vb: New(String, IAppLogger)
+  fullName: TGBot.Texts.I18n.UserLanguageStore.UserLanguageStore(string, TGBot.Logging.IAppLogger?)
+  fullName.vb: TGBot.Texts.I18n.UserLanguageStore.New(String, TGBot.Logging.IAppLogger)
+  nameWithType: UserLanguageStore.UserLanguageStore(string, IAppLogger?)
+  nameWithType.vb: UserLanguageStore.New(String, IAppLogger)
+- uid: TGBot.Texts.I18n.UserLanguageStore.#ctor*
+  name: UserLanguageStore
+  href: api/TGBot.Texts.I18n.UserLanguageStore.html#TGBot_Texts_I18n_UserLanguageStore__ctor_
+  commentId: Overload:TGBot.Texts.I18n.UserLanguageStore.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TGBot.Texts.I18n.UserLanguageStore.UserLanguageStore
+  fullName.vb: TGBot.Texts.I18n.UserLanguageStore.New
+  nameWithType: UserLanguageStore.UserLanguageStore
+  nameWithType.vb: UserLanguageStore.New
+- uid: TGBot.Texts.I18n.UserLanguageStore.FileName
+  name: FileName
+  href: api/TGBot.Texts.I18n.UserLanguageStore.html#TGBot_Texts_I18n_UserLanguageStore_FileName
+  commentId: F:TGBot.Texts.I18n.UserLanguageStore.FileName
+  fullName: TGBot.Texts.I18n.UserLanguageStore.FileName
+  nameWithType: UserLanguageStore.FileName
+- uid: TGBot.Texts.I18n.UserLanguageStore.Get(System.Int64)
+  name: Get(long)
+  href: api/TGBot.Texts.I18n.UserLanguageStore.html#TGBot_Texts_I18n_UserLanguageStore_Get_System_Int64_
+  commentId: M:TGBot.Texts.I18n.UserLanguageStore.Get(System.Int64)
+  name.vb: Get(Long)
+  fullName: TGBot.Texts.I18n.UserLanguageStore.Get(long)
+  fullName.vb: TGBot.Texts.I18n.UserLanguageStore.Get(Long)
+  nameWithType: UserLanguageStore.Get(long)
+  nameWithType.vb: UserLanguageStore.Get(Long)
+- uid: TGBot.Texts.I18n.UserLanguageStore.Get*
+  name: Get
+  href: api/TGBot.Texts.I18n.UserLanguageStore.html#TGBot_Texts_I18n_UserLanguageStore_Get_
+  commentId: Overload:TGBot.Texts.I18n.UserLanguageStore.Get
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.UserLanguageStore.Get
+  nameWithType: UserLanguageStore.Get
+- uid: TGBot.Texts.I18n.UserLanguageStore.Has(System.Int64)
+  name: Has(long)
+  href: api/TGBot.Texts.I18n.UserLanguageStore.html#TGBot_Texts_I18n_UserLanguageStore_Has_System_Int64_
+  commentId: M:TGBot.Texts.I18n.UserLanguageStore.Has(System.Int64)
+  name.vb: Has(Long)
+  fullName: TGBot.Texts.I18n.UserLanguageStore.Has(long)
+  fullName.vb: TGBot.Texts.I18n.UserLanguageStore.Has(Long)
+  nameWithType: UserLanguageStore.Has(long)
+  nameWithType.vb: UserLanguageStore.Has(Long)
+- uid: TGBot.Texts.I18n.UserLanguageStore.Has*
+  name: Has
+  href: api/TGBot.Texts.I18n.UserLanguageStore.html#TGBot_Texts_I18n_UserLanguageStore_Has_
+  commentId: Overload:TGBot.Texts.I18n.UserLanguageStore.Has
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.UserLanguageStore.Has
+  nameWithType: UserLanguageStore.Has
+- uid: TGBot.Texts.I18n.UserLanguageStore.Load
+  name: Load()
+  href: api/TGBot.Texts.I18n.UserLanguageStore.html#TGBot_Texts_I18n_UserLanguageStore_Load
+  commentId: M:TGBot.Texts.I18n.UserLanguageStore.Load
+  fullName: TGBot.Texts.I18n.UserLanguageStore.Load()
+  nameWithType: UserLanguageStore.Load()
+- uid: TGBot.Texts.I18n.UserLanguageStore.Load*
+  name: Load
+  href: api/TGBot.Texts.I18n.UserLanguageStore.html#TGBot_Texts_I18n_UserLanguageStore_Load_
+  commentId: Overload:TGBot.Texts.I18n.UserLanguageStore.Load
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.UserLanguageStore.Load
+  nameWithType: UserLanguageStore.Load
+- uid: TGBot.Texts.I18n.UserLanguageStore.Set(System.Int64,System.String)
+  name: Set(long, string)
+  href: api/TGBot.Texts.I18n.UserLanguageStore.html#TGBot_Texts_I18n_UserLanguageStore_Set_System_Int64_System_String_
+  commentId: M:TGBot.Texts.I18n.UserLanguageStore.Set(System.Int64,System.String)
+  name.vb: Set(Long, String)
+  fullName: TGBot.Texts.I18n.UserLanguageStore.Set(long, string)
+  fullName.vb: TGBot.Texts.I18n.UserLanguageStore.Set(Long, String)
+  nameWithType: UserLanguageStore.Set(long, string)
+  nameWithType.vb: UserLanguageStore.Set(Long, String)
+- uid: TGBot.Texts.I18n.UserLanguageStore.Set*
+  name: Set
+  href: api/TGBot.Texts.I18n.UserLanguageStore.html#TGBot_Texts_I18n_UserLanguageStore_Set_
+  commentId: Overload:TGBot.Texts.I18n.UserLanguageStore.Set
+  isSpec: "True"
+  fullName: TGBot.Texts.I18n.UserLanguageStore.Set
+  nameWithType: UserLanguageStore.Set
 - uid: TGBot.Texts.UserTexts
   name: UserTexts
   href: api/TGBot.Texts.UserTexts.html
   commentId: T:TGBot.Texts.UserTexts
   fullName: TGBot.Texts.UserTexts
   nameWithType: UserTexts
+- uid: TGBot.Texts.UserTexts.AccessAdded
+  name: AccessAdded
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AccessAdded
+  commentId: F:TGBot.Texts.UserTexts.AccessAdded
+  fullName: TGBot.Texts.UserTexts.AccessAdded
+  nameWithType: UserTexts.AccessAdded
+- uid: TGBot.Texts.UserTexts.AccessAlreadyAdded
+  name: AccessAlreadyAdded
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AccessAlreadyAdded
+  commentId: F:TGBot.Texts.UserTexts.AccessAlreadyAdded
+  fullName: TGBot.Texts.UserTexts.AccessAlreadyAdded
+  nameWithType: UserTexts.AccessAlreadyAdded
+- uid: TGBot.Texts.UserTexts.AccessInvalidId
+  name: AccessInvalidId
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AccessInvalidId
+  commentId: F:TGBot.Texts.UserTexts.AccessInvalidId
+  fullName: TGBot.Texts.UserTexts.AccessInvalidId
+  nameWithType: UserTexts.AccessInvalidId
+- uid: TGBot.Texts.UserTexts.AccessListLine
+  name: AccessListLine
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AccessListLine
+  commentId: F:TGBot.Texts.UserTexts.AccessListLine
+  fullName: TGBot.Texts.UserTexts.AccessListLine
+  nameWithType: UserTexts.AccessListLine
+- uid: TGBot.Texts.UserTexts.AccessListTemplate
+  name: AccessListTemplate
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AccessListTemplate
+  commentId: F:TGBot.Texts.UserTexts.AccessListTemplate
+  fullName: TGBot.Texts.UserTexts.AccessListTemplate
+  nameWithType: UserTexts.AccessListTemplate
+- uid: TGBot.Texts.UserTexts.AccessNotFound
+  name: AccessNotFound
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AccessNotFound
+  commentId: F:TGBot.Texts.UserTexts.AccessNotFound
+  fullName: TGBot.Texts.UserTexts.AccessNotFound
+  nameWithType: UserTexts.AccessNotFound
+- uid: TGBot.Texts.UserTexts.AccessRemoved
+  name: AccessRemoved
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AccessRemoved
+  commentId: F:TGBot.Texts.UserTexts.AccessRemoved
+  fullName: TGBot.Texts.UserTexts.AccessRemoved
+  nameWithType: UserTexts.AccessRemoved
+- uid: TGBot.Texts.UserTexts.AccessRemovedFromConfig
+  name: AccessRemovedFromConfig
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AccessRemovedFromConfig
+  commentId: F:TGBot.Texts.UserTexts.AccessRemovedFromConfig
+  fullName: TGBot.Texts.UserTexts.AccessRemovedFromConfig
+  nameWithType: UserTexts.AccessRemovedFromConfig
+- uid: TGBot.Texts.UserTexts.AccessSourceConfig
+  name: AccessSourceConfig
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AccessSourceConfig
+  commentId: F:TGBot.Texts.UserTexts.AccessSourceConfig
+  fullName: TGBot.Texts.UserTexts.AccessSourceConfig
+  nameWithType: UserTexts.AccessSourceConfig
+- uid: TGBot.Texts.UserTexts.AccessSourceOverlay
+  name: AccessSourceOverlay
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AccessSourceOverlay
+  commentId: F:TGBot.Texts.UserTexts.AccessSourceOverlay
+  fullName: TGBot.Texts.UserTexts.AccessSourceOverlay
+  nameWithType: UserTexts.AccessSourceOverlay
+- uid: TGBot.Texts.UserTexts.AccessTypeChannel
+  name: AccessTypeChannel
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AccessTypeChannel
+  commentId: F:TGBot.Texts.UserTexts.AccessTypeChannel
+  fullName: TGBot.Texts.UserTexts.AccessTypeChannel
+  nameWithType: UserTexts.AccessTypeChannel
+- uid: TGBot.Texts.UserTexts.AccessTypeUser
+  name: AccessTypeUser
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AccessTypeUser
+  commentId: F:TGBot.Texts.UserTexts.AccessTypeUser
+  fullName: TGBot.Texts.UserTexts.AccessTypeUser
+  nameWithType: UserTexts.AccessTypeUser
+- uid: TGBot.Texts.UserTexts.AccessUsage
+  name: AccessUsage
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AccessUsage
+  commentId: F:TGBot.Texts.UserTexts.AccessUsage
+  fullName: TGBot.Texts.UserTexts.AccessUsage
+  nameWithType: UserTexts.AccessUsage
 - uid: TGBot.Texts.UserTexts.AudioBundleDone
   name: AudioBundleDone
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_AudioBundleDone
@@ -4736,6 +6160,132 @@ references:
   commentId: F:TGBot.Texts.UserTexts.AuthRequired
   fullName: TGBot.Texts.UserTexts.AuthRequired
   nameWithType: UserTexts.AuthRequired
+- uid: TGBot.Texts.UserTexts.Busy
+  name: Busy
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_Busy
+  commentId: F:TGBot.Texts.UserTexts.Busy
+  fullName: TGBot.Texts.UserTexts.Busy
+  nameWithType: UserTexts.Busy
+- uid: TGBot.Texts.UserTexts.CaptionSource
+  name: CaptionSource
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CaptionSource
+  commentId: F:TGBot.Texts.UserTexts.CaptionSource
+  fullName: TGBot.Texts.UserTexts.CaptionSource
+  nameWithType: UserTexts.CaptionSource
+- uid: TGBot.Texts.UserTexts.CaptionTitle
+  name: CaptionTitle
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CaptionTitle
+  commentId: F:TGBot.Texts.UserTexts.CaptionTitle
+  fullName: TGBot.Texts.UserTexts.CaptionTitle
+  nameWithType: UserTexts.CaptionTitle
+- uid: TGBot.Texts.UserTexts.CommandPrivateOnly
+  name: CommandPrivateOnly
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CommandPrivateOnly
+  commentId: F:TGBot.Texts.UserTexts.CommandPrivateOnly
+  fullName: TGBot.Texts.UserTexts.CommandPrivateOnly
+  nameWithType: UserTexts.CommandPrivateOnly
+- uid: TGBot.Texts.UserTexts.ConfigApplied
+  name: ConfigApplied
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigApplied
+  commentId: F:TGBot.Texts.UserTexts.ConfigApplied
+  fullName: TGBot.Texts.UserTexts.ConfigApplied
+  nameWithType: UserTexts.ConfigApplied
+- uid: TGBot.Texts.UserTexts.ConfigListLine
+  name: ConfigListLine
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigListLine
+  commentId: F:TGBot.Texts.UserTexts.ConfigListLine
+  fullName: TGBot.Texts.UserTexts.ConfigListLine
+  nameWithType: UserTexts.ConfigListLine
+- uid: TGBot.Texts.UserTexts.ConfigListTemplate
+  name: ConfigListTemplate
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigListTemplate
+  commentId: F:TGBot.Texts.UserTexts.ConfigListTemplate
+  fullName: TGBot.Texts.UserTexts.ConfigListTemplate
+  nameWithType: UserTexts.ConfigListTemplate
+- uid: TGBot.Texts.UserTexts.ConfigLockedKey
+  name: ConfigLockedKey
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigLockedKey
+  commentId: F:TGBot.Texts.UserTexts.ConfigLockedKey
+  fullName: TGBot.Texts.UserTexts.ConfigLockedKey
+  nameWithType: UserTexts.ConfigLockedKey
+- uid: TGBot.Texts.UserTexts.ConfigNoChange
+  name: ConfigNoChange
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigNoChange
+  commentId: F:TGBot.Texts.UserTexts.ConfigNoChange
+  fullName: TGBot.Texts.UserTexts.ConfigNoChange
+  nameWithType: UserTexts.ConfigNoChange
+- uid: TGBot.Texts.UserTexts.ConfigNotOverridden
+  name: ConfigNotOverridden
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigNotOverridden
+  commentId: F:TGBot.Texts.UserTexts.ConfigNotOverridden
+  fullName: TGBot.Texts.UserTexts.ConfigNotOverridden
+  nameWithType: UserTexts.ConfigNotOverridden
+- uid: TGBot.Texts.UserTexts.ConfigRejected
+  name: ConfigRejected
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigRejected
+  commentId: F:TGBot.Texts.UserTexts.ConfigRejected
+  fullName: TGBot.Texts.UserTexts.ConfigRejected
+  nameWithType: UserTexts.ConfigRejected
+- uid: TGBot.Texts.UserTexts.ConfigResetAllApplied
+  name: ConfigResetAllApplied
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigResetAllApplied
+  commentId: F:TGBot.Texts.UserTexts.ConfigResetAllApplied
+  fullName: TGBot.Texts.UserTexts.ConfigResetAllApplied
+  nameWithType: UserTexts.ConfigResetAllApplied
+- uid: TGBot.Texts.UserTexts.ConfigResetApplied
+  name: ConfigResetApplied
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigResetApplied
+  commentId: F:TGBot.Texts.UserTexts.ConfigResetApplied
+  fullName: TGBot.Texts.UserTexts.ConfigResetApplied
+  nameWithType: UserTexts.ConfigResetApplied
+- uid: TGBot.Texts.UserTexts.ConfigRiskWarning
+  name: ConfigRiskWarning
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigRiskWarning
+  commentId: F:TGBot.Texts.UserTexts.ConfigRiskWarning
+  fullName: TGBot.Texts.UserTexts.ConfigRiskWarning
+  nameWithType: UserTexts.ConfigRiskWarning
+- uid: TGBot.Texts.UserTexts.ConfigSaveFailed
+  name: ConfigSaveFailed
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigSaveFailed
+  commentId: F:TGBot.Texts.UserTexts.ConfigSaveFailed
+  fullName: TGBot.Texts.UserTexts.ConfigSaveFailed
+  nameWithType: UserTexts.ConfigSaveFailed
+- uid: TGBot.Texts.UserTexts.ConfigSetApplied
+  name: ConfigSetApplied
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigSetApplied
+  commentId: F:TGBot.Texts.UserTexts.ConfigSetApplied
+  fullName: TGBot.Texts.UserTexts.ConfigSetApplied
+  nameWithType: UserTexts.ConfigSetApplied
+- uid: TGBot.Texts.UserTexts.ConfigSourceConfig
+  name: ConfigSourceConfig
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigSourceConfig
+  commentId: F:TGBot.Texts.UserTexts.ConfigSourceConfig
+  fullName: TGBot.Texts.UserTexts.ConfigSourceConfig
+  nameWithType: UserTexts.ConfigSourceConfig
+- uid: TGBot.Texts.UserTexts.ConfigSourceDefault
+  name: ConfigSourceDefault
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigSourceDefault
+  commentId: F:TGBot.Texts.UserTexts.ConfigSourceDefault
+  fullName: TGBot.Texts.UserTexts.ConfigSourceDefault
+  nameWithType: UserTexts.ConfigSourceDefault
+- uid: TGBot.Texts.UserTexts.ConfigSourceOverlay
+  name: ConfigSourceOverlay
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigSourceOverlay
+  commentId: F:TGBot.Texts.UserTexts.ConfigSourceOverlay
+  fullName: TGBot.Texts.UserTexts.ConfigSourceOverlay
+  nameWithType: UserTexts.ConfigSourceOverlay
+- uid: TGBot.Texts.UserTexts.ConfigUnknownKey
+  name: ConfigUnknownKey
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigUnknownKey
+  commentId: F:TGBot.Texts.UserTexts.ConfigUnknownKey
+  fullName: TGBot.Texts.UserTexts.ConfigUnknownKey
+  nameWithType: UserTexts.ConfigUnknownKey
+- uid: TGBot.Texts.UserTexts.ConfigUsage
+  name: ConfigUsage
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ConfigUsage
+  commentId: F:TGBot.Texts.UserTexts.ConfigUsage
+  fullName: TGBot.Texts.UserTexts.ConfigUsage
+  nameWithType: UserTexts.ConfigUsage
 - uid: TGBot.Texts.UserTexts.CookieDeleted
   name: CookieDeleted
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieDeleted
@@ -4760,6 +6310,12 @@ references:
   commentId: F:TGBot.Texts.UserTexts.CookieInvalidFile
   fullName: TGBot.Texts.UserTexts.CookieInvalidFile
   nameWithType: UserTexts.CookieInvalidFile
+- uid: TGBot.Texts.UserTexts.CookieListLine
+  name: CookieListLine
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieListLine
+  commentId: F:TGBot.Texts.UserTexts.CookieListLine
+  fullName: TGBot.Texts.UserTexts.CookieListLine
+  nameWithType: UserTexts.CookieListLine
 - uid: TGBot.Texts.UserTexts.CookieListTemplate
   name: CookieListTemplate
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieListTemplate
@@ -4796,6 +6352,18 @@ references:
   commentId: F:TGBot.Texts.UserTexts.CookieSavedSuspicious
   fullName: TGBot.Texts.UserTexts.CookieSavedSuspicious
   nameWithType: UserTexts.CookieSavedSuspicious
+- uid: TGBot.Texts.UserTexts.CookieStateNone
+  name: CookieStateNone
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieStateNone
+  commentId: F:TGBot.Texts.UserTexts.CookieStateNone
+  fullName: TGBot.Texts.UserTexts.CookieStateNone
+  nameWithType: UserTexts.CookieStateNone
+- uid: TGBot.Texts.UserTexts.CookieStateSaved
+  name: CookieStateSaved
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieStateSaved
+  commentId: F:TGBot.Texts.UserTexts.CookieStateSaved
+  fullName: TGBot.Texts.UserTexts.CookieStateSaved
+  nameWithType: UserTexts.CookieStateSaved
 - uid: TGBot.Texts.UserTexts.CookieUnknownSite
   name: CookieUnknownSite
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_CookieUnknownSite
@@ -4844,6 +6412,78 @@ references:
   commentId: F:TGBot.Texts.UserTexts.Help
   fullName: TGBot.Texts.UserTexts.Help
   nameWithType: UserTexts.Help
+- uid: TGBot.Texts.UserTexts.LanguageNameEn
+  name: LanguageNameEn
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_LanguageNameEn
+  commentId: F:TGBot.Texts.UserTexts.LanguageNameEn
+  fullName: TGBot.Texts.UserTexts.LanguageNameEn
+  nameWithType: UserTexts.LanguageNameEn
+- uid: TGBot.Texts.UserTexts.LanguageNameZh
+  name: LanguageNameZh
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_LanguageNameZh
+  commentId: F:TGBot.Texts.UserTexts.LanguageNameZh
+  fullName: TGBot.Texts.UserTexts.LanguageNameZh
+  nameWithType: UserTexts.LanguageNameZh
+- uid: TGBot.Texts.UserTexts.LanguagePrompt
+  name: LanguagePrompt
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_LanguagePrompt
+  commentId: F:TGBot.Texts.UserTexts.LanguagePrompt
+  fullName: TGBot.Texts.UserTexts.LanguagePrompt
+  nameWithType: UserTexts.LanguagePrompt
+- uid: TGBot.Texts.UserTexts.LanguageSaved
+  name: LanguageSaved
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_LanguageSaved
+  commentId: F:TGBot.Texts.UserTexts.LanguageSaved
+  fullName: TGBot.Texts.UserTexts.LanguageSaved
+  nameWithType: UserTexts.LanguageSaved
+- uid: TGBot.Texts.UserTexts.MenuAccess
+  name: MenuAccess
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_MenuAccess
+  commentId: F:TGBot.Texts.UserTexts.MenuAccess
+  fullName: TGBot.Texts.UserTexts.MenuAccess
+  nameWithType: UserTexts.MenuAccess
+- uid: TGBot.Texts.UserTexts.MenuConfig
+  name: MenuConfig
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_MenuConfig
+  commentId: F:TGBot.Texts.UserTexts.MenuConfig
+  fullName: TGBot.Texts.UserTexts.MenuConfig
+  nameWithType: UserTexts.MenuConfig
+- uid: TGBot.Texts.UserTexts.MenuCookie
+  name: MenuCookie
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_MenuCookie
+  commentId: F:TGBot.Texts.UserTexts.MenuCookie
+  fullName: TGBot.Texts.UserTexts.MenuCookie
+  nameWithType: UserTexts.MenuCookie
+- uid: TGBot.Texts.UserTexts.MenuCookies
+  name: MenuCookies
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_MenuCookies
+  commentId: F:TGBot.Texts.UserTexts.MenuCookies
+  fullName: TGBot.Texts.UserTexts.MenuCookies
+  nameWithType: UserTexts.MenuCookies
+- uid: TGBot.Texts.UserTexts.MenuHelp
+  name: MenuHelp
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_MenuHelp
+  commentId: F:TGBot.Texts.UserTexts.MenuHelp
+  fullName: TGBot.Texts.UserTexts.MenuHelp
+  nameWithType: UserTexts.MenuHelp
+- uid: TGBot.Texts.UserTexts.MenuLanguage
+  name: MenuLanguage
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_MenuLanguage
+  commentId: F:TGBot.Texts.UserTexts.MenuLanguage
+  fullName: TGBot.Texts.UserTexts.MenuLanguage
+  nameWithType: UserTexts.MenuLanguage
+- uid: TGBot.Texts.UserTexts.MenuStatus
+  name: MenuStatus
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_MenuStatus
+  commentId: F:TGBot.Texts.UserTexts.MenuStatus
+  fullName: TGBot.Texts.UserTexts.MenuStatus
+  nameWithType: UserTexts.MenuStatus
+- uid: TGBot.Texts.UserTexts.MenuUpdate
+  name: MenuUpdate
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_MenuUpdate
+  commentId: F:TGBot.Texts.UserTexts.MenuUpdate
+  fullName: TGBot.Texts.UserTexts.MenuUpdate
+  nameWithType: UserTexts.MenuUpdate
 - uid: TGBot.Texts.UserTexts.ModeAudioButton
   name: ModeAudioButton
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ModeAudioButton
@@ -4874,12 +6514,24 @@ references:
   commentId: F:TGBot.Texts.UserTexts.NoValidUrl
   fullName: TGBot.Texts.UserTexts.NoValidUrl
   nameWithType: UserTexts.NoValidUrl
+- uid: TGBot.Texts.UserTexts.PartialFailures
+  name: PartialFailures
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_PartialFailures
+  commentId: F:TGBot.Texts.UserTexts.PartialFailures
+  fullName: TGBot.Texts.UserTexts.PartialFailures
+  nameWithType: UserTexts.PartialFailures
 - uid: TGBot.Texts.UserTexts.Queued
   name: Queued
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_Queued
   commentId: F:TGBot.Texts.UserTexts.Queued
   fullName: TGBot.Texts.UserTexts.Queued
   nameWithType: UserTexts.Queued
+- uid: TGBot.Texts.UserTexts.StatusBotVersion
+  name: StatusBotVersion
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_StatusBotVersion
+  commentId: F:TGBot.Texts.UserTexts.StatusBotVersion
+  fullName: TGBot.Texts.UserTexts.StatusBotVersion
+  nameWithType: UserTexts.StatusBotVersion
 - uid: TGBot.Texts.UserTexts.StatusTemplate
   name: StatusTemplate
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_StatusTemplate
@@ -4898,6 +6550,12 @@ references:
   commentId: F:TGBot.Texts.UserTexts.UnauthorizedPrivate
   fullName: TGBot.Texts.UserTexts.UnauthorizedPrivate
   nameWithType: UserTexts.UnauthorizedPrivate
+- uid: TGBot.Texts.UserTexts.Unknown
+  name: Unknown
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_Unknown
+  commentId: F:TGBot.Texts.UserTexts.Unknown
+  fullName: TGBot.Texts.UserTexts.Unknown
+  nameWithType: UserTexts.Unknown
 - uid: TGBot.Texts.UserTexts.UnknownCommand
   name: UnknownCommand
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UnknownCommand
@@ -4910,54 +6568,156 @@ references:
   commentId: F:TGBot.Texts.UserTexts.UntrustedUrl
   fullName: TGBot.Texts.UserTexts.UntrustedUrl
   nameWithType: UserTexts.UntrustedUrl
-- uid: TGBot.Texts.UserTexts.UpdateDenied
-  name: UpdateDenied
-  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UpdateDenied
-  commentId: F:TGBot.Texts.UserTexts.UpdateDenied
-  fullName: TGBot.Texts.UserTexts.UpdateDenied
-  nameWithType: UserTexts.UpdateDenied
-- uid: TGBot.Texts.UserTexts.UpdateDone
-  name: UpdateDone
-  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UpdateDone
-  commentId: F:TGBot.Texts.UserTexts.UpdateDone
-  fullName: TGBot.Texts.UserTexts.UpdateDone
-  nameWithType: UserTexts.UpdateDone
+- uid: TGBot.Texts.UserTexts.UpdateDoneHeader
+  name: UpdateDoneHeader
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UpdateDoneHeader
+  commentId: F:TGBot.Texts.UserTexts.UpdateDoneHeader
+  fullName: TGBot.Texts.UserTexts.UpdateDoneHeader
+  nameWithType: UserTexts.UpdateDoneHeader
 - uid: TGBot.Texts.UserTexts.UpdateFailed
   name: UpdateFailed
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UpdateFailed
   commentId: F:TGBot.Texts.UserTexts.UpdateFailed
   fullName: TGBot.Texts.UserTexts.UpdateFailed
   nameWithType: UserTexts.UpdateFailed
+- uid: TGBot.Texts.UserTexts.UpdateFailedDownload
+  name: UpdateFailedDownload
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UpdateFailedDownload
+  commentId: F:TGBot.Texts.UserTexts.UpdateFailedDownload
+  fullName: TGBot.Texts.UserTexts.UpdateFailedDownload
+  nameWithType: UserTexts.UpdateFailedDownload
+- uid: TGBot.Texts.UserTexts.UpdateFailedLatestVersion
+  name: UpdateFailedLatestVersion
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UpdateFailedLatestVersion
+  commentId: F:TGBot.Texts.UserTexts.UpdateFailedLatestVersion
+  fullName: TGBot.Texts.UserTexts.UpdateFailedLatestVersion
+  nameWithType: UserTexts.UpdateFailedLatestVersion
+- uid: TGBot.Texts.UserTexts.UpdateFailedLocalVersion
+  name: UpdateFailedLocalVersion
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UpdateFailedLocalVersion
+  commentId: F:TGBot.Texts.UserTexts.UpdateFailedLocalVersion
+  fullName: TGBot.Texts.UserTexts.UpdateFailedLocalVersion
+  nameWithType: UserTexts.UpdateFailedLocalVersion
+- uid: TGBot.Texts.UserTexts.UpdateFailedReplace
+  name: UpdateFailedReplace
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UpdateFailedReplace
+  commentId: F:TGBot.Texts.UserTexts.UpdateFailedReplace
+  fullName: TGBot.Texts.UserTexts.UpdateFailedReplace
+  nameWithType: UserTexts.UpdateFailedReplace
+- uid: TGBot.Texts.UserTexts.UpdateLineFailed
+  name: UpdateLineFailed
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UpdateLineFailed
+  commentId: F:TGBot.Texts.UserTexts.UpdateLineFailed
+  fullName: TGBot.Texts.UserTexts.UpdateLineFailed
+  nameWithType: UserTexts.UpdateLineFailed
+- uid: TGBot.Texts.UserTexts.UpdateLineNotConfigured
+  name: UpdateLineNotConfigured
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UpdateLineNotConfigured
+  commentId: F:TGBot.Texts.UserTexts.UpdateLineNotConfigured
+  fullName: TGBot.Texts.UserTexts.UpdateLineNotConfigured
+  nameWithType: UserTexts.UpdateLineNotConfigured
+- uid: TGBot.Texts.UserTexts.UpdateLineUpToDate
+  name: UpdateLineUpToDate
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UpdateLineUpToDate
+  commentId: F:TGBot.Texts.UserTexts.UpdateLineUpToDate
+  fullName: TGBot.Texts.UserTexts.UpdateLineUpToDate
+  nameWithType: UserTexts.UpdateLineUpToDate
+- uid: TGBot.Texts.UserTexts.UpdateLineUpdated
+  name: UpdateLineUpdated
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UpdateLineUpdated
+  commentId: F:TGBot.Texts.UserTexts.UpdateLineUpdated
+  fullName: TGBot.Texts.UserTexts.UpdateLineUpdated
+  nameWithType: UserTexts.UpdateLineUpdated
 - uid: TGBot.Texts.UserTexts.UpdateNotNeeded
   name: UpdateNotNeeded
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UpdateNotNeeded
   commentId: F:TGBot.Texts.UserTexts.UpdateNotNeeded
   fullName: TGBot.Texts.UserTexts.UpdateNotNeeded
   nameWithType: UserTexts.UpdateNotNeeded
-- uid: TGBot.Texts.UserTexts.UpdatePartialDone
-  name: UpdatePartialDone
-  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UpdatePartialDone
-  commentId: F:TGBot.Texts.UserTexts.UpdatePartialDone
-  fullName: TGBot.Texts.UserTexts.UpdatePartialDone
-  nameWithType: UserTexts.UpdatePartialDone
 - uid: TGBot.Texts.UserTexts.UploadDone
   name: UploadDone
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UploadDone
   commentId: F:TGBot.Texts.UserTexts.UploadDone
   fullName: TGBot.Texts.UserTexts.UploadDone
   nameWithType: UserTexts.UploadDone
-- uid: TGBot.Texts.UserTexts.UploadFailed
-  name: UploadFailed
-  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UploadFailed
-  commentId: F:TGBot.Texts.UserTexts.UploadFailed
-  fullName: TGBot.Texts.UserTexts.UploadFailed
-  nameWithType: UserTexts.UploadFailed
 - uid: TGBot.Texts.UserTexts.Uploading
   name: Uploading
   href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_Uploading
   commentId: F:TGBot.Texts.UserTexts.Uploading
   fullName: TGBot.Texts.UserTexts.Uploading
   nameWithType: UserTexts.Uploading
+- uid: TGBot.Texts.UserTexts.UptimeDays
+  name: UptimeDays
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UptimeDays
+  commentId: F:TGBot.Texts.UserTexts.UptimeDays
+  fullName: TGBot.Texts.UserTexts.UptimeDays
+  nameWithType: UserTexts.UptimeDays
+- uid: TGBot.Texts.UserTexts.UptimeHours
+  name: UptimeHours
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UptimeHours
+  commentId: F:TGBot.Texts.UserTexts.UptimeHours
+  fullName: TGBot.Texts.UserTexts.UptimeHours
+  nameWithType: UserTexts.UptimeHours
+- uid: TGBot.Texts.UserTexts.UptimeMinutes
+  name: UptimeMinutes
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UptimeMinutes
+  commentId: F:TGBot.Texts.UserTexts.UptimeMinutes
+  fullName: TGBot.Texts.UserTexts.UptimeMinutes
+  nameWithType: UserTexts.UptimeMinutes
+- uid: TGBot.Texts.UserTexts.UrlEmpty
+  name: UrlEmpty
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UrlEmpty
+  commentId: F:TGBot.Texts.UserTexts.UrlEmpty
+  fullName: TGBot.Texts.UserTexts.UrlEmpty
+  nameWithType: UserTexts.UrlEmpty
+- uid: TGBot.Texts.UserTexts.UrlInvalidChar
+  name: UrlInvalidChar
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UrlInvalidChar
+  commentId: F:TGBot.Texts.UserTexts.UrlInvalidChar
+  fullName: TGBot.Texts.UserTexts.UrlInvalidChar
+  nameWithType: UserTexts.UrlInvalidChar
+- uid: TGBot.Texts.UserTexts.UrlInvalidFormat
+  name: UrlInvalidFormat
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UrlInvalidFormat
+  commentId: F:TGBot.Texts.UserTexts.UrlInvalidFormat
+  fullName: TGBot.Texts.UserTexts.UrlInvalidFormat
+  nameWithType: UserTexts.UrlInvalidFormat
+- uid: TGBot.Texts.UserTexts.UrlInvalidHost
+  name: UrlInvalidHost
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UrlInvalidHost
+  commentId: F:TGBot.Texts.UserTexts.UrlInvalidHost
+  fullName: TGBot.Texts.UserTexts.UrlInvalidHost
+  nameWithType: UserTexts.UrlInvalidHost
+- uid: TGBot.Texts.UserTexts.UrlInvalidHostChar
+  name: UrlInvalidHostChar
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UrlInvalidHostChar
+  commentId: F:TGBot.Texts.UserTexts.UrlInvalidHostChar
+  fullName: TGBot.Texts.UserTexts.UrlInvalidHostChar
+  nameWithType: UserTexts.UrlInvalidHostChar
+- uid: TGBot.Texts.UserTexts.UrlSchemeNotAllowed
+  name: UrlSchemeNotAllowed
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UrlSchemeNotAllowed
+  commentId: F:TGBot.Texts.UserTexts.UrlSchemeNotAllowed
+  fullName: TGBot.Texts.UserTexts.UrlSchemeNotAllowed
+  nameWithType: UserTexts.UrlSchemeNotAllowed
+- uid: TGBot.Texts.UserTexts.UrlTooLong
+  name: UrlTooLong
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UrlTooLong
+  commentId: F:TGBot.Texts.UserTexts.UrlTooLong
+  fullName: TGBot.Texts.UserTexts.UrlTooLong
+  nameWithType: UserTexts.UrlTooLong
+- uid: TGBot.Texts.UserTexts.UrlUserInfo
+  name: UrlUserInfo
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_UrlUserInfo
+  commentId: F:TGBot.Texts.UserTexts.UrlUserInfo
+  fullName: TGBot.Texts.UserTexts.UrlUserInfo
+  nameWithType: UserTexts.UrlUserInfo
+- uid: TGBot.Texts.UserTexts.ValueEmpty
+  name: ValueEmpty
+  href: api/TGBot.Texts.UserTexts.html#TGBot_Texts_UserTexts_ValueEmpty
+  commentId: F:TGBot.Texts.UserTexts.ValueEmpty
+  fullName: TGBot.Texts.UserTexts.ValueEmpty
+  nameWithType: UserTexts.ValueEmpty
 - uid: TGBot.Update
   name: TGBot.Update
   href: api/TGBot.Update.html
@@ -5046,15 +6806,15 @@ references:
   commentId: T:TGBot.Update.FfmpegToolSource
   fullName: TGBot.Update.FfmpegToolSource
   nameWithType: FfmpegToolSource
-- uid: TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner)
-  name: FfmpegToolSource(HttpClient, IProcessRunner)
-  href: api/TGBot.Update.FfmpegToolSource.html#TGBot_Update_FfmpegToolSource__ctor_System_Net_Http_HttpClient_TGBot_Update_IProcessRunner_
-  commentId: M:TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner)
-  name.vb: New(HttpClient, IProcessRunner)
-  fullName: TGBot.Update.FfmpegToolSource.FfmpegToolSource(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner)
-  fullName.vb: TGBot.Update.FfmpegToolSource.New(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner)
-  nameWithType: FfmpegToolSource.FfmpegToolSource(HttpClient, IProcessRunner)
-  nameWithType.vb: FfmpegToolSource.New(HttpClient, IProcessRunner)
+- uid: TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture})
+  name: FfmpegToolSource(HttpClient, IProcessRunner, Func<Architecture>?)
+  href: api/TGBot.Update.FfmpegToolSource.html#TGBot_Update_FfmpegToolSource__ctor_System_Net_Http_HttpClient_TGBot_Update_IProcessRunner_System_Func_System_Runtime_InteropServices_Architecture__
+  commentId: M:TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture})
+  name.vb: New(HttpClient, IProcessRunner, Func(Of Architecture))
+  fullName: TGBot.Update.FfmpegToolSource.FfmpegToolSource(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner, System.Func<System.Runtime.InteropServices.Architecture>?)
+  fullName.vb: TGBot.Update.FfmpegToolSource.New(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner, System.Func(Of System.Runtime.InteropServices.Architecture))
+  nameWithType: FfmpegToolSource.FfmpegToolSource(HttpClient, IProcessRunner, Func<Architecture>?)
+  nameWithType.vb: FfmpegToolSource.New(HttpClient, IProcessRunner, Func(Of Architecture))
 - uid: TGBot.Update.FfmpegToolSource.#ctor*
   name: FfmpegToolSource
   href: api/TGBot.Update.FfmpegToolSource.html#TGBot_Update_FfmpegToolSource__ctor_
@@ -5285,6 +7045,38 @@ references:
   isSpec: "True"
   fullName: TGBot.Update.SystemProcessRunner.RunAsync
   nameWithType: SystemProcessRunner.RunAsync
+- uid: TGBot.Update.ToolArch
+  name: ToolArch
+  href: api/TGBot.Update.ToolArch.html
+  commentId: T:TGBot.Update.ToolArch
+  fullName: TGBot.Update.ToolArch
+  nameWithType: ToolArch
+- uid: TGBot.Update.ToolArch.FfmpegReleaseUrl(System.Runtime.InteropServices.Architecture)
+  name: FfmpegReleaseUrl(Architecture)
+  href: api/TGBot.Update.ToolArch.html#TGBot_Update_ToolArch_FfmpegReleaseUrl_System_Runtime_InteropServices_Architecture_
+  commentId: M:TGBot.Update.ToolArch.FfmpegReleaseUrl(System.Runtime.InteropServices.Architecture)
+  fullName: TGBot.Update.ToolArch.FfmpegReleaseUrl(System.Runtime.InteropServices.Architecture)
+  nameWithType: ToolArch.FfmpegReleaseUrl(Architecture)
+- uid: TGBot.Update.ToolArch.FfmpegReleaseUrl*
+  name: FfmpegReleaseUrl
+  href: api/TGBot.Update.ToolArch.html#TGBot_Update_ToolArch_FfmpegReleaseUrl_
+  commentId: Overload:TGBot.Update.ToolArch.FfmpegReleaseUrl
+  isSpec: "True"
+  fullName: TGBot.Update.ToolArch.FfmpegReleaseUrl
+  nameWithType: ToolArch.FfmpegReleaseUrl
+- uid: TGBot.Update.ToolArch.YtDlpReleaseUrl(System.Runtime.InteropServices.Architecture)
+  name: YtDlpReleaseUrl(Architecture)
+  href: api/TGBot.Update.ToolArch.html#TGBot_Update_ToolArch_YtDlpReleaseUrl_System_Runtime_InteropServices_Architecture_
+  commentId: M:TGBot.Update.ToolArch.YtDlpReleaseUrl(System.Runtime.InteropServices.Architecture)
+  fullName: TGBot.Update.ToolArch.YtDlpReleaseUrl(System.Runtime.InteropServices.Architecture)
+  nameWithType: ToolArch.YtDlpReleaseUrl(Architecture)
+- uid: TGBot.Update.ToolArch.YtDlpReleaseUrl*
+  name: YtDlpReleaseUrl
+  href: api/TGBot.Update.ToolArch.html#TGBot_Update_ToolArch_YtDlpReleaseUrl_
+  commentId: Overload:TGBot.Update.ToolArch.YtDlpReleaseUrl
+  isSpec: "True"
+  fullName: TGBot.Update.ToolArch.YtDlpReleaseUrl
+  nameWithType: ToolArch.YtDlpReleaseUrl
 - uid: TGBot.Update.ToolUpdateResult
   name: ToolUpdateResult
   href: api/TGBot.Update.ToolUpdateResult.html
@@ -5510,15 +7302,15 @@ references:
   commentId: T:TGBot.Update.UpdateException
   fullName: TGBot.Update.UpdateException
   nameWithType: UpdateException
-- uid: TGBot.Update.UpdateException.#ctor(System.String,System.String)
-  name: UpdateException(string, string?)
-  href: api/TGBot.Update.UpdateException.html#TGBot_Update_UpdateException__ctor_System_String_System_String_
-  commentId: M:TGBot.Update.UpdateException.#ctor(System.String,System.String)
-  name.vb: New(String, String)
-  fullName: TGBot.Update.UpdateException.UpdateException(string, string?)
-  fullName.vb: TGBot.Update.UpdateException.New(String, String)
-  nameWithType: UpdateException.UpdateException(string, string?)
-  nameWithType.vb: UpdateException.New(String, String)
+- uid: TGBot.Update.UpdateException.#ctor(TGBot.Update.UpdateFailureReason,System.String)
+  name: UpdateException(UpdateFailureReason, string)
+  href: api/TGBot.Update.UpdateException.html#TGBot_Update_UpdateException__ctor_TGBot_Update_UpdateFailureReason_System_String_
+  commentId: M:TGBot.Update.UpdateException.#ctor(TGBot.Update.UpdateFailureReason,System.String)
+  name.vb: New(UpdateFailureReason, String)
+  fullName: TGBot.Update.UpdateException.UpdateException(TGBot.Update.UpdateFailureReason, string)
+  fullName.vb: TGBot.Update.UpdateException.New(TGBot.Update.UpdateFailureReason, String)
+  nameWithType: UpdateException.UpdateException(UpdateFailureReason, string)
+  nameWithType.vb: UpdateException.New(UpdateFailureReason, String)
 - uid: TGBot.Update.UpdateException.#ctor*
   name: UpdateException
   href: api/TGBot.Update.UpdateException.html#TGBot_Update_UpdateException__ctor_
@@ -5529,19 +7321,55 @@ references:
   fullName.vb: TGBot.Update.UpdateException.New
   nameWithType: UpdateException.UpdateException
   nameWithType.vb: UpdateException.New
-- uid: TGBot.Update.UpdateException.UserMessage
-  name: UserMessage
-  href: api/TGBot.Update.UpdateException.html#TGBot_Update_UpdateException_UserMessage
-  commentId: P:TGBot.Update.UpdateException.UserMessage
-  fullName: TGBot.Update.UpdateException.UserMessage
-  nameWithType: UpdateException.UserMessage
-- uid: TGBot.Update.UpdateException.UserMessage*
-  name: UserMessage
-  href: api/TGBot.Update.UpdateException.html#TGBot_Update_UpdateException_UserMessage_
-  commentId: Overload:TGBot.Update.UpdateException.UserMessage
+- uid: TGBot.Update.UpdateException.Reason
+  name: Reason
+  href: api/TGBot.Update.UpdateException.html#TGBot_Update_UpdateException_Reason
+  commentId: P:TGBot.Update.UpdateException.Reason
+  fullName: TGBot.Update.UpdateException.Reason
+  nameWithType: UpdateException.Reason
+- uid: TGBot.Update.UpdateException.Reason*
+  name: Reason
+  href: api/TGBot.Update.UpdateException.html#TGBot_Update_UpdateException_Reason_
+  commentId: Overload:TGBot.Update.UpdateException.Reason
   isSpec: "True"
-  fullName: TGBot.Update.UpdateException.UserMessage
-  nameWithType: UpdateException.UserMessage
+  fullName: TGBot.Update.UpdateException.Reason
+  nameWithType: UpdateException.Reason
+- uid: TGBot.Update.UpdateFailureReason
+  name: UpdateFailureReason
+  href: api/TGBot.Update.UpdateFailureReason.html
+  commentId: T:TGBot.Update.UpdateFailureReason
+  fullName: TGBot.Update.UpdateFailureReason
+  nameWithType: UpdateFailureReason
+- uid: TGBot.Update.UpdateFailureReason.DownloadFailed
+  name: DownloadFailed
+  href: api/TGBot.Update.UpdateFailureReason.html#TGBot_Update_UpdateFailureReason_DownloadFailed
+  commentId: F:TGBot.Update.UpdateFailureReason.DownloadFailed
+  fullName: TGBot.Update.UpdateFailureReason.DownloadFailed
+  nameWithType: UpdateFailureReason.DownloadFailed
+- uid: TGBot.Update.UpdateFailureReason.Failed
+  name: Failed
+  href: api/TGBot.Update.UpdateFailureReason.html#TGBot_Update_UpdateFailureReason_Failed
+  commentId: F:TGBot.Update.UpdateFailureReason.Failed
+  fullName: TGBot.Update.UpdateFailureReason.Failed
+  nameWithType: UpdateFailureReason.Failed
+- uid: TGBot.Update.UpdateFailureReason.LatestVersionUnavailable
+  name: LatestVersionUnavailable
+  href: api/TGBot.Update.UpdateFailureReason.html#TGBot_Update_UpdateFailureReason_LatestVersionUnavailable
+  commentId: F:TGBot.Update.UpdateFailureReason.LatestVersionUnavailable
+  fullName: TGBot.Update.UpdateFailureReason.LatestVersionUnavailable
+  nameWithType: UpdateFailureReason.LatestVersionUnavailable
+- uid: TGBot.Update.UpdateFailureReason.LocalVersionUnavailable
+  name: LocalVersionUnavailable
+  href: api/TGBot.Update.UpdateFailureReason.html#TGBot_Update_UpdateFailureReason_LocalVersionUnavailable
+  commentId: F:TGBot.Update.UpdateFailureReason.LocalVersionUnavailable
+  fullName: TGBot.Update.UpdateFailureReason.LocalVersionUnavailable
+  nameWithType: UpdateFailureReason.LocalVersionUnavailable
+- uid: TGBot.Update.UpdateFailureReason.ReplaceFailed
+  name: ReplaceFailed
+  href: api/TGBot.Update.UpdateFailureReason.html#TGBot_Update_UpdateFailureReason_ReplaceFailed
+  commentId: F:TGBot.Update.UpdateFailureReason.ReplaceFailed
+  fullName: TGBot.Update.UpdateFailureReason.ReplaceFailed
+  nameWithType: UpdateFailureReason.ReplaceFailed
 - uid: TGBot.Update.UpdateReport
   name: UpdateReport
   href: api/TGBot.Update.UpdateReport.html
@@ -5678,15 +7506,15 @@ references:
   commentId: T:TGBot.Update.YtDlpToolSource
   fullName: TGBot.Update.YtDlpToolSource
   nameWithType: YtDlpToolSource
-- uid: TGBot.Update.YtDlpToolSource.#ctor(System.Net.Http.HttpClient)
-  name: YtDlpToolSource(HttpClient)
-  href: api/TGBot.Update.YtDlpToolSource.html#TGBot_Update_YtDlpToolSource__ctor_System_Net_Http_HttpClient_
-  commentId: M:TGBot.Update.YtDlpToolSource.#ctor(System.Net.Http.HttpClient)
-  name.vb: New(HttpClient)
-  fullName: TGBot.Update.YtDlpToolSource.YtDlpToolSource(System.Net.Http.HttpClient)
-  fullName.vb: TGBot.Update.YtDlpToolSource.New(System.Net.Http.HttpClient)
-  nameWithType: YtDlpToolSource.YtDlpToolSource(HttpClient)
-  nameWithType.vb: YtDlpToolSource.New(HttpClient)
+- uid: TGBot.Update.YtDlpToolSource.#ctor(System.Net.Http.HttpClient,System.Func{System.Runtime.InteropServices.Architecture})
+  name: YtDlpToolSource(HttpClient, Func<Architecture>?)
+  href: api/TGBot.Update.YtDlpToolSource.html#TGBot_Update_YtDlpToolSource__ctor_System_Net_Http_HttpClient_System_Func_System_Runtime_InteropServices_Architecture__
+  commentId: M:TGBot.Update.YtDlpToolSource.#ctor(System.Net.Http.HttpClient,System.Func{System.Runtime.InteropServices.Architecture})
+  name.vb: New(HttpClient, Func(Of Architecture))
+  fullName: TGBot.Update.YtDlpToolSource.YtDlpToolSource(System.Net.Http.HttpClient, System.Func<System.Runtime.InteropServices.Architecture>?)
+  fullName.vb: TGBot.Update.YtDlpToolSource.New(System.Net.Http.HttpClient, System.Func(Of System.Runtime.InteropServices.Architecture))
+  nameWithType: YtDlpToolSource.YtDlpToolSource(HttpClient, Func<Architecture>?)
+  nameWithType.vb: YtDlpToolSource.New(HttpClient, Func(Of Architecture))
 - uid: TGBot.Update.YtDlpToolSource.#ctor*
   name: YtDlpToolSource
   href: api/TGBot.Update.YtDlpToolSource.html#TGBot_Update_YtDlpToolSource__ctor_

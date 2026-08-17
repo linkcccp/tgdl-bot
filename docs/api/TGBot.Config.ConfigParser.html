@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class ConfigParser | TGBot API 文档 ">
     
-    <meta name="description" content="config.conf 解析器。 格式：每行 键 = 值，支持 #/; 注释、空行与 [section] 段头。 解析失败抛出 ，消息为清晰的中文提示（含行号）。">
+    <meta name="description" content="config.conf 解析器。 格式：每行 键 = 值，支持 #/; 注释、空行与 [section] 段头。 解析失败抛出 ，消息为**中英双行并列**（启动期无用户上下文，双行最稳妥）。 值校验单点：，/config set 与启动解析共用，禁止在其他模块重复实现规则。">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -73,7 +73,8 @@
   <h1 id="TGBot_Config_ConfigParser" data-uid="TGBot.Config.ConfigParser" class="text-break">Class ConfigParser</h1>
   <div class="markdown level0 summary"><p>config.conf 解析器。</p>
 <p>格式：每行 <code>键 = 值</code>，支持 <code>#</code>/<code>;</code> 注释、空行与 <code>[section]</code> 段头。
-解析失败抛出 <a class="xref" href="TGBot.Config.ConfigParseException.html">ConfigParseException</a>，消息为清晰的中文提示（含行号）。</p>
+解析失败抛出 <a class="xref" href="TGBot.Config.ConfigParseException.html">ConfigParseException</a>，消息为**中英双行并列**（启动期无用户上下文，双行最稳妥）。</p>
+<p>值校验单点：<a class="xref" href="TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_ValidateValue_System_String_System_String_">ValidateValue(string, string)</a>，/config set 与启动解析共用，禁止在其他模块重复实现规则。</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -111,14 +112,187 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static class ConfigParser</code></pre>
   </div>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Config_ConfigParser_LockedKeys.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigParser.LockedKeys%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Config/ConfigParser.cs/#L81">View Source</a>
+  </span>
+  <h4 id="TGBot_Config_ConfigParser_LockedKeys" data-uid="TGBot.Config.ConfigParser.LockedKeys">LockedKeys</h4>
+  <div class="markdown level1 summary"><p>安装配置锁键：不允许经 /config 或 overlay 修改。</p>
+<p>含 StateDir：状态目录（languages/overlay/pending-notify）不应由 bot 远程改动，
+避免配置与状态目录分裂（overlay 自身始终以 config.conf 推导的目录读取）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly IReadOnlyCollection&lt;string&gt; LockedKeys</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Config_ConfigParser_MutableKeys.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigParser.MutableKeys%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Config/ConfigParser.cs/#L84">View Source</a>
+  </span>
+  <h4 id="TGBot_Config_ConfigParser_MutableKeys" data-uid="TGBot.Config.ConfigParser.MutableKeys">MutableKeys</h4>
+  <div class="markdown level1 summary"><p>可通过 /config 修改的键（全部配置键去除安装锁键，按名称排序）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly IReadOnlyCollection&lt;string&gt; MutableKeys</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Config_ConfigParser_Parse_System_String_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigParser.Parse(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Config_ConfigParser_DisplayValue_TGBot_Config_AppConfig_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigParser.DisplayValue(TGBot.Config.AppConfig%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Config/ConfigParser.cs/#L72">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Config/ConfigParser.cs/#L188">View Source</a>
+  </span>
+  <a id="TGBot_Config_ConfigParser_DisplayValue_" data-uid="TGBot.Config.ConfigParser.DisplayValue*"></a>
+  <h4 id="TGBot_Config_ConfigParser_DisplayValue_TGBot_Config_AppConfig_System_String_" data-uid="TGBot.Config.ConfigParser.DisplayValue(TGBot.Config.AppConfig,System.String)">DisplayValue(AppConfig, string)</h4>
+  <div class="markdown level1 summary"><p>取配置生效值的可读字符串（/config list 展示用；空值返回空串，由调用方决定占位显示）。</p>
+<p>敏感键脱敏：<code>LocalApiBaseUrl</code> 的 userinfo 与查询串凭据、<code>YtDlpProxy</code> 的 userinfo
+均以 <code>***</code> 遮蔽，避免回显泄露（对齐 AppHost.MaskToken 先例）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string DisplayValue(AppConfig config, string canonicalKey)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="TGBot.Config.AppConfig.html">AppConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>生效配置（已应用 overlay）。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">canonicalKey</span></td>
+        <td><p>规范键名。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>值的字符串形式（敏感部分已脱敏）。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Config_ConfigParser_NormalizeValue_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigParser.NormalizeValue(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Config/ConfigParser.cs/#L123">View Source</a>
+  </span>
+  <a id="TGBot_Config_ConfigParser_NormalizeValue_" data-uid="TGBot.Config.ConfigParser.NormalizeValue*"></a>
+  <h4 id="TGBot_Config_ConfigParser_NormalizeValue_System_String_" data-uid="TGBot.Config.ConfigParser.NormalizeValue(System.String)">NormalizeValue(string)</h4>
+  <div class="markdown level1 summary"><p>归一化配置值：去除首尾空白与包围引号（与 config.conf 解析一致）。</p>
+<p>落盘/应用前必须先归一化，否则含引号的值会导致重启后解析错乱（单一来源）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string NormalizeValue(string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>原始值。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>归一化后的值。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Config_ConfigParser_Parse_System_String_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigParser.Parse(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Config/ConfigParser.cs/#L260">View Source</a>
   </span>
   <a id="TGBot_Config_ConfigParser_Parse_" data-uid="TGBot.Config.ConfigParser.Parse*"></a>
   <h4 id="TGBot_Config_ConfigParser_Parse_System_String_System_String_" data-uid="TGBot.Config.ConfigParser.Parse(System.String,System.String)">Parse(string, string)</h4>
@@ -180,7 +354,169 @@
     <tbody>
       <tr>
         <td><a class="xref" href="TGBot.Config.ConfigParseException.html">ConfigParseException</a></td>
-        <td><p>配置缺失、格式错误或值非法时抛出。</p>
+        <td><p>配置缺失、格式错误或值非法时抛出（中英双行）。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Config_ConfigParser_RequiresRiskWarning_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigParser.RequiresRiskWarning(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Config/ConfigParser.cs/#L95">View Source</a>
+  </span>
+  <a id="TGBot_Config_ConfigParser_RequiresRiskWarning_" data-uid="TGBot.Config.ConfigParser.RequiresRiskWarning*"></a>
+  <h4 id="TGBot_Config_ConfigParser_RequiresRiskWarning_System_String_" data-uid="TGBot.Config.ConfigParser.RequiresRiskWarning(System.String)">RequiresRiskWarning(string)</h4>
+  <div class="markdown level1 summary"><p>判断键是否为连接/路径类（改错可能导致无法连接或启动失败，/config set 需回显风险警告）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool RequiresRiskWarning(string canonicalKey)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">canonicalKey</span></td>
+        <td><p>规范键名。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>属于风险类返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Config_ConfigParser_TryResolveKey_System_String_System_String__.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigParser.TryResolveKey(System.String%2CSystem.String%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Config/ConfigParser.cs/#L105">View Source</a>
+  </span>
+  <a id="TGBot_Config_ConfigParser_TryResolveKey_" data-uid="TGBot.Config.ConfigParser.TryResolveKey*"></a>
+  <h4 id="TGBot_Config_ConfigParser_TryResolveKey_System_String_System_String__" data-uid="TGBot.Config.ConfigParser.TryResolveKey(System.String,System.String@)">TryResolveKey(string, out string)</h4>
+  <div class="markdown level1 summary"><p>将键名（别名或规范名）解析为规范键名（大小写不敏感，与 subcommand 解析一致）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryResolveKey(string key, out string canonical)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>键名。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">canonical</span></td>
+        <td><p>解析出的规范键名。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>已知键返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Config_ConfigParser_ValidateValue_System_String_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigParser.ValidateValue(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Config/ConfigParser.cs/#L131">View Source</a>
+  </span>
+  <a id="TGBot_Config_ConfigParser_ValidateValue_" data-uid="TGBot.Config.ConfigParser.ValidateValue*"></a>
+  <h4 id="TGBot_Config_ConfigParser_ValidateValue_System_String_System_String_" data-uid="TGBot.Config.ConfigParser.ValidateValue(System.String,System.String)">ValidateValue(string, string)</h4>
+  <div class="markdown level1 summary"><p>单点值校验：/config set 与启动解析共用。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string? ValidateValue(string key, string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>键名（支持别名，大小写不敏感）。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>原始值（校验前经 <a class="xref" href="TGBot.Config.ConfigParser.html#TGBot_Config_ConfigParser_NormalizeValue_System_String_">NormalizeValue(string)</a> 归一化）。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>校验通过返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>；否则返回中英双行的错误文本。</p>
 </td>
       </tr>
     </tbody>
@@ -194,10 +530,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Config_ConfigParser.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigParser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Config_ConfigParser.md&amp;value=---%0Auid%3A%20TGBot.Config.ConfigParser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Config/ConfigParser.cs/#L19" class="contribution-link">View Source</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Config/ConfigParser.cs/#L27" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

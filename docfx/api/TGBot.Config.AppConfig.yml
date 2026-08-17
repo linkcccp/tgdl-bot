@@ -23,8 +23,10 @@ items:
   - TGBot.Config.AppConfig.MaxMediaSizeBytes
   - TGBot.Config.AppConfig.MergeFormat
   - TGBot.Config.AppConfig.SourcePath
+  - TGBot.Config.AppConfig.StateDir
   - TGBot.Config.AppConfig.TargetChannelIds
   - TGBot.Config.AppConfig.TgdlDefaultMode
+  - TGBot.Config.AppConfig.TgdlLanguage
   - TGBot.Config.AppConfig.UpdateFfmpeg
   - TGBot.Config.AppConfig.UpdateYtDlp
   - TGBot.Config.AppConfig.UploadRetries
@@ -42,25 +44,31 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AppConfig
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 8
+    startLine: 13
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
   summary: >-
-    应用配置模型，由 <xref href="TGBot.Config.ConfigParser" data-throw-if-not-resolved="false"></xref> 从 config.conf 解析得到。
+    应用配置模型，由 <xref href="TGBot.Config.ConfigParser" data-throw-if-not-resolved="false"></xref> 从 config.conf 解析得到，
+
+    装配期再经 <xref href="TGBot.Config.Overlay.OverlayApplier" data-throw-if-not-resolved="false"></xref> overlay 合并（record 的 with 语义，
+
+    init-only 不可变，运行期不可热改）。
 
 
     <p>所有路径均为绝对路径（在加载阶段展开）。</p>
   example: []
   syntax:
-    content: public sealed class AppConfig
-    content.vb: Public NotInheritable Class AppConfig
+    content: 'public sealed record AppConfig : IEquatable<AppConfig>'
+    content.vb: Public NotInheritable Class AppConfig Implements IEquatable(Of AppConfig)
   inheritance:
   - System.Object
+  implements:
+  - System.IEquatable{TGBot.Config.AppConfig}
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -82,11 +90,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: BotToken
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 11
+    startLine: 16
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -113,11 +121,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LocalApiBaseUrl
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 14
+    startLine: 19
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -144,11 +152,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TargetChannelIds
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 17
+    startLine: 22
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -175,11 +183,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AllowedUserIds
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 20
+    startLine: 25
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -206,11 +214,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadTempDir
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 23
+    startLine: 28
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -237,11 +245,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpPath
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -268,11 +276,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FfmpegPath
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 29
+    startLine: 34
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -299,11 +307,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieStoreDir
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 32
+    startLine: 37
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -330,11 +338,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpProxy
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 35
+    startLine: 40
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -361,11 +369,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpExtraArgs
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 38
+    startLine: 43
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -392,11 +400,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpYoutubePlayerClients
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 41
+    startLine: 46
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -423,11 +431,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TgdlDefaultMode
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 44
+    startLine: 49
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -440,6 +448,71 @@ items:
       type: System.String
     content.vb: Public Property TgdlDefaultMode As String
   overload: TGBot.Config.AppConfig.TgdlDefaultMode*
+- uid: TGBot.Config.AppConfig.TgdlLanguage
+  commentId: P:TGBot.Config.AppConfig.TgdlLanguage
+  id: TgdlLanguage
+  parent: TGBot.Config.AppConfig
+  langs:
+  - csharp
+  - vb
+  name: TgdlLanguage
+  nameWithType: AppConfig.TgdlLanguage
+  fullName: TGBot.Config.AppConfig.TgdlLanguage
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: TgdlLanguage
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 52
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config
+  summary: Bot 全局默认语言：auto（跟随用户 language_code）/ en / zh；auto 的最终解析语言不落盘。
+  example: []
+  syntax:
+    content: public string TgdlLanguage { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property TgdlLanguage As String
+  overload: TGBot.Config.AppConfig.TgdlLanguage*
+- uid: TGBot.Config.AppConfig.StateDir
+  commentId: P:TGBot.Config.AppConfig.StateDir
+  id: StateDir
+  parent: TGBot.Config.AppConfig
+  langs:
+  - csharp
+  - vb
+  name: StateDir
+  nameWithType: AppConfig.StateDir
+  fullName: TGBot.Config.AppConfig.StateDir
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/AppConfig.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: StateDir
+    path: ../src/TGBot/Config/AppConfig.cs
+    startLine: 57
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config
+  summary: >-
+    运行时状态目录（languages.json、config-overlay.json、access-overlay.json、pending-notify.json）。
+        空时自动推导：容器内由 entrypoint 显式写入 /opt/tgdl-bot/api-data（tgdl-data 卷内持久），
+        原生运行时为 DownloadTempDir 父目录。
+  example: []
+  syntax:
+    content: public string StateDir { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property StateDir As String
+  overload: TGBot.Config.AppConfig.StateDir*
 - uid: TGBot.Config.AppConfig.MaxConcurrentDownloads
   commentId: P:TGBot.Config.AppConfig.MaxConcurrentDownloads
   id: MaxConcurrentDownloads
@@ -454,11 +527,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MaxConcurrentDownloads
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 47
+    startLine: 60
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -485,11 +558,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LogLevel
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 50
+    startLine: 63
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -516,11 +589,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LogFile
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 53
+    startLine: 66
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -547,11 +620,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadRetries
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 56
+    startLine: 69
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -578,11 +651,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadTimeoutSeconds
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 59
+    startLine: 72
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -609,11 +682,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadRetries
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 62
+    startLine: 75
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -640,11 +713,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ExtractAudio
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 65
+    startLine: 78
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -671,11 +744,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AlsoSendMediaToRequester
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 68
+    startLine: 81
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -702,11 +775,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AllowPrivateUrls
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 71
+    startLine: 84
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -733,11 +806,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MaxMediaSizeBytes
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 74
+    startLine: 87
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -764,11 +837,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AllowPlaylists
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 77
+    startLine: 90
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -795,11 +868,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MergeFormat
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 80
+    startLine: 93
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -826,11 +899,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateYtDlp
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 83
+    startLine: 96
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -857,11 +930,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateFfmpeg
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 86
+    startLine: 99
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -888,11 +961,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/AppConfig.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SourcePath
     path: ../src/TGBot/Config/AppConfig.cs
-    startLine: 89
+    startLine: 102
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -912,6 +985,12 @@ references:
   name: ConfigParser
   nameWithType: ConfigParser
   fullName: TGBot.Config.ConfigParser
+- uid: TGBot.Config.Overlay.OverlayApplier
+  commentId: T:TGBot.Config.Overlay.OverlayApplier
+  href: TGBot.Config.Overlay.OverlayApplier.html
+  name: OverlayApplier
+  nameWithType: OverlayApplier
+  fullName: TGBot.Config.Overlay.OverlayApplier
 - uid: TGBot.Config
   commentId: N:TGBot.Config
   href: TGBot.html
@@ -945,6 +1024,39 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: System.IEquatable{TGBot.Config.AppConfig}
+  commentId: T:System.IEquatable{TGBot.Config.AppConfig}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<AppConfig>
+  nameWithType: IEquatable<AppConfig>
+  fullName: System.IEquatable<TGBot.Config.AppConfig>
+  nameWithType.vb: IEquatable(Of AppConfig)
+  fullName.vb: System.IEquatable(Of TGBot.Config.AppConfig)
+  name.vb: IEquatable(Of AppConfig)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: TGBot.Config.AppConfig
+    name: AppConfig
+    href: TGBot.Config.AppConfig.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Config.AppConfig
+    name: AppConfig
+    href: TGBot.Config.AppConfig.html
+  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -1147,6 +1259,34 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: TGBot.Config.AppConfig.BotToken*
   commentId: Overload:TGBot.Config.AppConfig.BotToken
   href: TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_BotToken
@@ -1330,6 +1470,18 @@ references:
   name: TgdlDefaultMode
   nameWithType: AppConfig.TgdlDefaultMode
   fullName: TGBot.Config.AppConfig.TgdlDefaultMode
+- uid: TGBot.Config.AppConfig.TgdlLanguage*
+  commentId: Overload:TGBot.Config.AppConfig.TgdlLanguage
+  href: TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_TgdlLanguage
+  name: TgdlLanguage
+  nameWithType: AppConfig.TgdlLanguage
+  fullName: TGBot.Config.AppConfig.TgdlLanguage
+- uid: TGBot.Config.AppConfig.StateDir*
+  commentId: Overload:TGBot.Config.AppConfig.StateDir
+  href: TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_StateDir
+  name: StateDir
+  nameWithType: AppConfig.StateDir
+  fullName: TGBot.Config.AppConfig.StateDir
 - uid: TGBot.Config.AppConfig.MaxConcurrentDownloads*
   commentId: Overload:TGBot.Config.AppConfig.MaxConcurrentDownloads
   href: TGBot.Config.AppConfig.html#TGBot_Config_AppConfig_MaxConcurrentDownloads

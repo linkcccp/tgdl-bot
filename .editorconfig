@@ -1,0 +1,31 @@
+# 编码风格配置（EditorConfig）：统一各编辑器/IDE 的格式行为，
+# 避免跨平台、跨工具的格式噪音。仓库现有代码均为 LF + 4 空格缩进。
+
+root = true
+
+# 全局基础规范
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# C# / 项目文件：与现有代码一致（LF + 4 空格）
+[*.{cs,csproj,slnx}]
+end_of_line = lf
+indent_style = space
+indent_size = 4
+
+# Shell 脚本：必须 LF（CRLF 会导致脚本首行解释异常）
+[*.sh]
+end_of_line = lf
+
+# Markdown：保留行尾两空格硬换行语义，不裁剪尾部空白
+[*.md]
+trim_trailing_whitespace = false
+
+# YAML 工作流：现有 release.yml 等均为 2 空格缩进
+[*.{yml,yaml}]
+indent_size = 2

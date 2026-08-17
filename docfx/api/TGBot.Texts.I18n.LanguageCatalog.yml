@@ -1,0 +1,866 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Texts.I18n.LanguageCatalog
+  commentId: T:TGBot.Texts.I18n.LanguageCatalog
+  id: LanguageCatalog
+  parent: TGBot.Texts.I18n
+  children:
+  - TGBot.Texts.I18n.LanguageCatalog.BuiltinLanguages
+  - TGBot.Texts.I18n.LanguageCatalog.FallbackLanguage
+  - TGBot.Texts.I18n.LanguageCatalog.GetCatalog(System.String)
+  - TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode(System.String)
+  - TGBot.Texts.I18n.LanguageCatalog.Register(System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})
+  - TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages
+  - TGBot.Texts.I18n.LanguageCatalog.Unregister(System.String)
+  langs:
+  - csharp
+  - vb
+  name: LanguageCatalog
+  nameWithType: LanguageCatalog
+  fullName: TGBot.Texts.I18n.LanguageCatalog
+  type: Class
+  source:
+    remote:
+      path: src/TGBot/Texts/I18n/LanguageCatalog.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: LanguageCatalog
+    path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs
+    startLine: 12
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts.I18n
+  summary: >-
+    语言目录注册中心：内置 <code>en</code>/<code>zh</code> 嵌入式资源 + 运行时注册扩展语言。
+
+
+    <p>开发者可通过 <xref href="TGBot.Texts.I18n.LanguageCatalog.Register(System.String%2cSystem.Collections.Generic.IReadOnlyDictionary%7bSystem.String%2cSystem.String%7d)" data-throw-if-not-resolved="false"></xref> 一行注册新语言（或提 PR 增加嵌入式资源）；
+
+    注册在 <xref href="TGBot.Texts.I18n.I18nService" data-throw-if-not-resolved="false"></xref> 构造时合并生效（注册内容覆盖内置键）。</p>
+  example: []
+  syntax:
+    content: public static class LanguageCatalog
+    content.vb: Public Module LanguageCatalog
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Texts.I18n.LanguageCatalog.BuiltinLanguages
+  commentId: F:TGBot.Texts.I18n.LanguageCatalog.BuiltinLanguages
+  id: BuiltinLanguages
+  parent: TGBot.Texts.I18n.LanguageCatalog
+  langs:
+  - csharp
+  - vb
+  name: BuiltinLanguages
+  nameWithType: LanguageCatalog.BuiltinLanguages
+  fullName: TGBot.Texts.I18n.LanguageCatalog.BuiltinLanguages
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/I18n/LanguageCatalog.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: BuiltinLanguages
+    path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs
+    startLine: 15
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts.I18n
+  summary: 内置语言代码集合。
+  example: []
+  syntax:
+    content: public static readonly IReadOnlyCollection<string> BuiltinLanguages
+    return:
+      type: System.Collections.Generic.IReadOnlyCollection{System.String}
+    content.vb: Public Shared ReadOnly BuiltinLanguages As IReadOnlyCollection(Of String)
+- uid: TGBot.Texts.I18n.LanguageCatalog.FallbackLanguage
+  commentId: F:TGBot.Texts.I18n.LanguageCatalog.FallbackLanguage
+  id: FallbackLanguage
+  parent: TGBot.Texts.I18n.LanguageCatalog
+  langs:
+  - csharp
+  - vb
+  name: FallbackLanguage
+  nameWithType: LanguageCatalog.FallbackLanguage
+  fullName: TGBot.Texts.I18n.LanguageCatalog.FallbackLanguage
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Texts/I18n/LanguageCatalog.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: FallbackLanguage
+    path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs
+    startLine: 18
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts.I18n
+  summary: 缺键回退语言，恒为 <code>en</code>。
+  example: []
+  syntax:
+    content: public const string FallbackLanguage = "en"
+    return:
+      type: System.String
+    content.vb: Public Const FallbackLanguage As String = "en"
+- uid: TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages
+  commentId: P:TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages
+  id: SupportedLanguages
+  parent: TGBot.Texts.I18n.LanguageCatalog
+  langs:
+  - csharp
+  - vb
+  name: SupportedLanguages
+  nameWithType: LanguageCatalog.SupportedLanguages
+  fullName: TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Texts/I18n/LanguageCatalog.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: SupportedLanguages
+    path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs
+    startLine: 26
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts.I18n
+  summary: 全部可用语言：内置 <code>en</code>/<code>zh</code> + 已注册语言（去重）。
+  example: []
+  syntax:
+    content: public static IReadOnlyCollection<string> SupportedLanguages { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyCollection{System.String}
+    content.vb: Public Shared ReadOnly Property SupportedLanguages As IReadOnlyCollection(Of String)
+  overload: TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages*
+- uid: TGBot.Texts.I18n.LanguageCatalog.Register(System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})
+  commentId: M:TGBot.Texts.I18n.LanguageCatalog.Register(System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})
+  id: Register(System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})
+  parent: TGBot.Texts.I18n.LanguageCatalog
+  langs:
+  - csharp
+  - vb
+  name: Register(string, IReadOnlyDictionary<string, string>)
+  nameWithType: LanguageCatalog.Register(string, IReadOnlyDictionary<string, string>)
+  fullName: TGBot.Texts.I18n.LanguageCatalog.Register(string, System.Collections.Generic.IReadOnlyDictionary<string, string>)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Texts/I18n/LanguageCatalog.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Register
+    path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs
+    startLine: 35
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts.I18n
+  summary: 注册（覆盖或新增）一种语言的完整文案字典。
+  example: []
+  syntax:
+    content: public static void Register(string lang, IReadOnlyDictionary<string, string> entries)
+    parameters:
+    - id: lang
+      type: System.String
+      description: 语言代码（如 <code>fr</code>）；覆盖内置语言（<code>en</code>/<code>zh</code>）时以注册内容为准。
+    - id: entries
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+      description: 键 → 文案映射。
+    content.vb: Public Shared Sub Register(lang As String, entries As IReadOnlyDictionary(Of String, String))
+  overload: TGBot.Texts.I18n.LanguageCatalog.Register*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: <code class="paramref">lang</code> 为空或 <code class="paramref">entries</code> 为空时抛出。
+  nameWithType.vb: LanguageCatalog.Register(String, IReadOnlyDictionary(Of String, String))
+  fullName.vb: TGBot.Texts.I18n.LanguageCatalog.Register(String, System.Collections.Generic.IReadOnlyDictionary(Of String, String))
+  name.vb: Register(String, IReadOnlyDictionary(Of String, String))
+- uid: TGBot.Texts.I18n.LanguageCatalog.Unregister(System.String)
+  commentId: M:TGBot.Texts.I18n.LanguageCatalog.Unregister(System.String)
+  id: Unregister(System.String)
+  parent: TGBot.Texts.I18n.LanguageCatalog
+  langs:
+  - csharp
+  - vb
+  name: Unregister(string)
+  nameWithType: LanguageCatalog.Unregister(string)
+  fullName: TGBot.Texts.I18n.LanguageCatalog.Unregister(string)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Texts/I18n/LanguageCatalog.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Unregister
+    path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs
+    startLine: 54
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts.I18n
+  summary: 注销一种已注册语言（恢复内置文案；主要用于测试隔离）。
+  example: []
+  syntax:
+    content: public static void Unregister(string lang)
+    parameters:
+    - id: lang
+      type: System.String
+      description: 语言代码。
+    content.vb: Public Shared Sub Unregister(lang As String)
+  overload: TGBot.Texts.I18n.LanguageCatalog.Unregister*
+  nameWithType.vb: LanguageCatalog.Unregister(String)
+  fullName.vb: TGBot.Texts.I18n.LanguageCatalog.Unregister(String)
+  name.vb: Unregister(String)
+- uid: TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode(System.String)
+  commentId: M:TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode(System.String)
+  id: NormalizeLanguageCode(System.String)
+  parent: TGBot.Texts.I18n.LanguageCatalog
+  langs:
+  - csharp
+  - vb
+  name: NormalizeLanguageCode(string?)
+  nameWithType: LanguageCatalog.NormalizeLanguageCode(string?)
+  fullName: TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode(string?)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Texts/I18n/LanguageCatalog.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: NormalizeLanguageCode
+    path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs
+    startLine: 62
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts.I18n
+  summary: 将 BCP 47 语言标签归一化为内置语言代码。
+  example: []
+  syntax:
+    content: public static string? NormalizeLanguageCode(string? bc47)
+    parameters:
+    - id: bc47
+      type: System.String
+      description: BCP 47 语言标签（如 <code>zh-CN</code>/<code>zh-TW</code>/<code>zh-Hant</code>/<code>en-US</code>）。
+    return:
+      type: System.String
+      description: 归一化语言代码（<code>zh</code>/<code>en</code>）；无法映射时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Public Shared Function NormalizeLanguageCode(bc47 As String) As String
+  overload: TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode*
+  nameWithType.vb: LanguageCatalog.NormalizeLanguageCode(String)
+  fullName.vb: TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode(String)
+  name.vb: NormalizeLanguageCode(String)
+- uid: TGBot.Texts.I18n.LanguageCatalog.GetCatalog(System.String)
+  commentId: M:TGBot.Texts.I18n.LanguageCatalog.GetCatalog(System.String)
+  id: GetCatalog(System.String)
+  parent: TGBot.Texts.I18n.LanguageCatalog
+  langs:
+  - csharp
+  - vb
+  name: GetCatalog(string)
+  nameWithType: LanguageCatalog.GetCatalog(string)
+  fullName: TGBot.Texts.I18n.LanguageCatalog.GetCatalog(string)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Texts/I18n/LanguageCatalog.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: GetCatalog
+    path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs
+    startLine: 85
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Texts.I18n
+  summary: 获取某语言的当前文案目录（内置 <code>en</code>/<code>zh</code> + 注册覆盖；用于工具与测试校验）。
+  example: []
+  syntax:
+    content: public static IReadOnlyDictionary<string, string>? GetCatalog(string lang)
+    parameters:
+    - id: lang
+      type: System.String
+      description: 语言代码。
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+      description: 文案目录；无该语言时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Public Shared Function GetCatalog(lang As String) As IReadOnlyDictionary(Of String, String)
+  overload: TGBot.Texts.I18n.LanguageCatalog.GetCatalog*
+  nameWithType.vb: LanguageCatalog.GetCatalog(String)
+  fullName.vb: TGBot.Texts.I18n.LanguageCatalog.GetCatalog(String)
+  name.vb: GetCatalog(String)
+references:
+- uid: TGBot.Texts.I18n.LanguageCatalog.Register(System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})
+  commentId: M:TGBot.Texts.I18n.LanguageCatalog.Register(System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})
+  isExternal: true
+  href: TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_Register_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__
+  name: Register(string, IReadOnlyDictionary<string, string>)
+  nameWithType: LanguageCatalog.Register(string, IReadOnlyDictionary<string, string>)
+  fullName: TGBot.Texts.I18n.LanguageCatalog.Register(string, System.Collections.Generic.IReadOnlyDictionary<string, string>)
+  nameWithType.vb: LanguageCatalog.Register(String, IReadOnlyDictionary(Of String, String))
+  fullName.vb: TGBot.Texts.I18n.LanguageCatalog.Register(String, System.Collections.Generic.IReadOnlyDictionary(Of String, String))
+  name.vb: Register(String, IReadOnlyDictionary(Of String, String))
+  spec.csharp:
+  - uid: TGBot.Texts.I18n.LanguageCatalog.Register(System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})
+    name: Register
+    href: TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_Register_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: TGBot.Texts.I18n.LanguageCatalog.Register(System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})
+    name: Register
+    href: TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_Register_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: TGBot.Texts.I18n.I18nService
+  commentId: T:TGBot.Texts.I18n.I18nService
+  href: TGBot.Texts.I18n.I18nService.html
+  name: I18nService
+  nameWithType: I18nService
+  fullName: TGBot.Texts.I18n.I18nService
+- uid: TGBot.Texts.I18n
+  commentId: N:TGBot.Texts.I18n
+  href: TGBot.html
+  name: TGBot.Texts.I18n
+  nameWithType: TGBot.Texts.I18n
+  fullName: TGBot.Texts.I18n
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IReadOnlyCollection{System.String}
+  commentId: T:System.Collections.Generic.IReadOnlyCollection{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyCollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  name: IReadOnlyCollection<string>
+  nameWithType: IReadOnlyCollection<string>
+  fullName: System.Collections.Generic.IReadOnlyCollection<string>
+  nameWithType.vb: IReadOnlyCollection(Of String)
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of String)
+  name.vb: IReadOnlyCollection(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyCollection`1
+  commentId: T:System.Collections.Generic.IReadOnlyCollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  name: IReadOnlyCollection<T>
+  nameWithType: IReadOnlyCollection<T>
+  fullName: System.Collections.Generic.IReadOnlyCollection<T>
+  nameWithType.vb: IReadOnlyCollection(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of T)
+  name.vb: IReadOnlyCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages*
+  commentId: Overload:TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages
+  href: TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_SupportedLanguages
+  name: SupportedLanguages
+  nameWithType: LanguageCatalog.SupportedLanguages
+  fullName: TGBot.Texts.I18n.LanguageCatalog.SupportedLanguages
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: TGBot.Texts.I18n.LanguageCatalog.Register*
+  commentId: Overload:TGBot.Texts.I18n.LanguageCatalog.Register
+  href: TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_Register_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__
+  name: Register
+  nameWithType: LanguageCatalog.Register
+  fullName: TGBot.Texts.I18n.LanguageCatalog.Register
+- uid: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<string, string>
+  nameWithType: IReadOnlyDictionary<string, string>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string, string>
+  nameWithType.vb: IReadOnlyDictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of String, String)
+  name.vb: IReadOnlyDictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyDictionary`2
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<TKey, TValue>
+  nameWithType: IReadOnlyDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>
+  nameWithType.vb: IReadOnlyDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of TKey, TValue)
+  name.vb: IReadOnlyDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: TGBot.Texts.I18n.LanguageCatalog.Unregister*
+  commentId: Overload:TGBot.Texts.I18n.LanguageCatalog.Unregister
+  href: TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_Unregister_System_String_
+  name: Unregister
+  nameWithType: LanguageCatalog.Unregister
+  fullName: TGBot.Texts.I18n.LanguageCatalog.Unregister
+- uid: TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode*
+  commentId: Overload:TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode
+  href: TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_NormalizeLanguageCode_System_String_
+  name: NormalizeLanguageCode
+  nameWithType: LanguageCatalog.NormalizeLanguageCode
+  fullName: TGBot.Texts.I18n.LanguageCatalog.NormalizeLanguageCode
+- uid: TGBot.Texts.I18n.LanguageCatalog.GetCatalog*
+  commentId: Overload:TGBot.Texts.I18n.LanguageCatalog.GetCatalog
+  href: TGBot.Texts.I18n.LanguageCatalog.html#TGBot_Texts_I18n_LanguageCatalog_GetCatalog_System_String_
+  name: GetCatalog
+  nameWithType: LanguageCatalog.GetCatalog
+  fullName: TGBot.Texts.I18n.LanguageCatalog.GetCatalog

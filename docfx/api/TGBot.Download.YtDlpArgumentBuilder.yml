@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpArgumentBuilder.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpArgumentBuilder
     path: ../src/TGBot/Download/YtDlpArgumentBuilder.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -60,11 +60,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpArgumentBuilder.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Build
     path: ../src/TGBot/Download/YtDlpArgumentBuilder.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -95,11 +95,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpArgumentBuilder.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsYoutubeUrl
     path: ../src/TGBot/Download/YtDlpArgumentBuilder.cs
-    startLine: 115
+    startLine: 118
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 namespace TGBot.Config;
 
 /// <summary>
@@ -8,7 +11,7 @@ public sealed class ConfigLoadException : Exception
     /// <summary>
     /// 初始化 <see cref="ConfigLoadException"/>。
     /// </summary>
-    /// <param name="message">中文错误提示。</param>
+    /// <param name="message">中英双行错误提示。</param>
     public ConfigLoadException(string message)
         : base(message)
     {
@@ -18,7 +21,8 @@ public sealed class ConfigLoadException : Exception
 /// <summary>
 /// 负责定位并读取 config.conf。
 /// <para>查找顺序：<c>--config &lt;path&gt;</c> 参数 → 环境变量 <c>TGDL_CONFIG</c> →
-/// 与程序二进制同目录 → 当前工作目录。若仍找不到则抛出 <see cref="ConfigLoadException"/>。</para>
+/// 与程序二进制同目录 → 当前工作目录。若仍找不到则抛出 <see cref="ConfigLoadException"/>。
+/// 错误消息为中英双行并列（启动期无用户上下文）。</para>
 /// </summary>
 public static class ConfigLoader
 {
@@ -67,8 +71,9 @@ public static class ConfigLoader
             }
         }
 
-        throw new ConfigLoadException(
-            $"错误：找不到配置文件 {DefaultFileName}。请创建该文件，或通过 --config <路径> / 环境变量 {EnvVarName} 指定。");
+        throw new ConfigLoadException(Bi(
+            $"找不到配置文件 {DefaultFileName}。请创建该文件，或通过 --config <路径> / 环境变量 {EnvVarName} 指定。",
+            $"Config file {DefaultFileName} not found. Create it, or specify it via --config <path> / env {EnvVarName}."));
     }
 
     /// <summary>
@@ -88,14 +93,20 @@ public static class ConfigLoader
         }
         catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
         {
-            throw new ConfigLoadException($"错误：无法读取配置文件 {path}：{ex.Message}");
+            throw new ConfigLoadException(Bi(
+                $"无法读取配置文件 {path}：{ex.Message}",
+                $"Cannot read config file {path}: {ex.Message}"));
         }
 
         if (content.Length > 128 * 1024)
         {
-            throw new ConfigParseException($"错误：配置文件 {path} 过大（超过 128KB）。");
+            throw new ConfigParseException(Bi(
+                $"配置文件 {path} 过大（超过 128KB）。",
+                $"Config file {path} is too large (over 128KB)."));
         }
 
         return ConfigParser.Parse(content, path);
     }
+
+    private static string Bi(string zh, string en) => $"配置错误：{zh}。\nConfig error: {en}.";
 }

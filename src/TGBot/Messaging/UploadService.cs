@@ -1,6 +1,10 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 using TGBot.Download;
 using TGBot.Logging;
 using TGBot.Security;
+using TGBot.Texts.I18n;
 
 namespace TGBot.Messaging;
 
@@ -24,6 +28,7 @@ public sealed class UploadService
     private readonly ITelegramClient _client;
     private readonly int _maxRetries;
     private readonly bool _alsoSendToRequester;
+    private readonly II18n _i18n;
     private readonly IAppLogger _logger;
 
     /// <summary>
@@ -33,11 +38,13 @@ public sealed class UploadService
     /// <param name="maxRetries">上传失败重试次数。</param>
     /// <param name="alsoSendToRequester">是否将媒体同时发送给私聊请求者。</param>
     /// <param name="logger">日志器。</param>
-    public UploadService(ITelegramClient client, int maxRetries, bool alsoSendToRequester, IAppLogger logger)
+    /// <param name="i18n">国际化服务（媒体说明文案渲染）。</param>
+    public UploadService(ITelegramClient client, int maxRetries, bool alsoSendToRequester, IAppLogger logger, II18n i18n)
     {
         _client = client;
         _maxRetries = maxRetries;
         _alsoSendToRequester = alsoSendToRequester;
+        _i18n = i18n;
         _logger = logger;
     }
 
@@ -47,12 +54,14 @@ public sealed class UploadService
     /// <param name="media">下载产物列表。</param>
     /// <param name="targetChatIds">目标会话 ID 列表。</param>
     /// <param name="requesterChatId">请求者会话 ID（私聊，可空）。</param>
+    /// <param name="lang">触发消息的语言（媒体说明文案使用）。</param>
     /// <param name="cancellationToken">取消令牌。</param>
     /// <returns>上传结果。</returns>
     public async Task<UploadResult> UploadAsync(
         IReadOnlyList<DownloadedMedia> media,
         IReadOnlyList<long> targetChatIds,
         long? requesterChatId,
+        string lang,
         CancellationToken cancellationToken)
     {
         var failures = new List<long>();
@@ -60,7 +69,7 @@ public sealed class UploadService
 
         foreach (var chatId in targetChatIds)
         {
-            if (await SendMediaListAsync(media, chatId, cancellationToken).ConfigureAwait(false))
+            if (await SendMediaListAsync(media, chatId, lang, cancellationToken).ConfigureAwait(false))
             {
                 success++;
             }
@@ -73,7 +82,7 @@ public sealed class UploadService
         if (_alsoSendToRequester && requesterChatId is { } requester &&
             !targetChatIds.Contains(requester))
         {
-            if (await SendMediaListAsync(media, requester, cancellationToken).ConfigureAwait(false))
+            if (await SendMediaListAsync(media, requester, lang, cancellationToken).ConfigureAwait(false))
             {
                 success++;
             }
@@ -82,11 +91,11 @@ public sealed class UploadService
         return new UploadResult(success, failures);
     }
 
-    private async Task<bool> SendMediaListAsync(IReadOnlyList<DownloadedMedia> media, long chatId, CancellationToken cancellationToken)
+    private async Task<bool> SendMediaListAsync(IReadOnlyList<DownloadedMedia> media, long chatId, string lang, CancellationToken cancellationToken)
     {
         foreach (var item in media)
         {
-            if (!await SendToChatAsync(item, chatId, cancellationToken).ConfigureAwait(false))
+            if (!await SendToChatAsync(item, chatId, lang, cancellationToken).ConfigureAwait(false))
             {
                 return false;
             }
@@ -95,14 +104,14 @@ public sealed class UploadService
         return true;
     }
 
-    private async Task<bool> SendToChatAsync(DownloadedMedia media, long chatId, CancellationToken cancellationToken)
+    private async Task<bool> SendToChatAsync(DownloadedMedia media, long chatId, string lang, CancellationToken cancellationToken)
     {
         var attempts = _maxRetries + 1;
         for (var i = 0; i < attempts; i++)
         {
             try
             {
-                var caption = CaptionBuilder.Build(media.RawTitle ?? media.Title, media.SourceUrl);
+                var caption = CaptionBuilder.Build(_i18n, lang, media.RawTitle ?? media.Title, media.SourceUrl);
                 var fileName = $"{media.Title}.{media.Extension}";
 
                 await _client.SendChatActionAsync(chatId, MediaAction(media), cancellationToken).ConfigureAwait(false);

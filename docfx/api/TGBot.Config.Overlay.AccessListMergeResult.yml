@@ -1,0 +1,679 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Config.Overlay.AccessListMergeResult
+  commentId: T:TGBot.Config.Overlay.AccessListMergeResult
+  id: AccessListMergeResult
+  parent: TGBot.Config.Overlay
+  children:
+  - TGBot.Config.Overlay.AccessListMergeResult.#ctor(System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry},System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry})
+  - TGBot.Config.Overlay.AccessListMergeResult.ChannelIds
+  - TGBot.Config.Overlay.AccessListMergeResult.Channels
+  - TGBot.Config.Overlay.AccessListMergeResult.UserIds
+  - TGBot.Config.Overlay.AccessListMergeResult.Users
+  langs:
+  - csharp
+  - vb
+  name: AccessListMergeResult
+  nameWithType: AccessListMergeResult
+  fullName: TGBot.Config.Overlay.AccessListMergeResult
+  type: Class
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/AccessListMerge.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: AccessListMergeResult
+    path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
+    startLine: 29
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 合并结果：带来源标注的列表 + 去重后的 ID 集合（供 <code>AccessControlService</code> 使用）。
+  example: []
+  syntax:
+    content: 'public sealed record AccessListMergeResult : IEquatable<AccessListMergeResult>'
+    content.vb: Public NotInheritable Class AccessListMergeResult Implements IEquatable(Of AccessListMergeResult)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{TGBot.Config.Overlay.AccessListMergeResult}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Config.Overlay.AccessListMergeResult.#ctor(System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry},System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry})
+  commentId: M:TGBot.Config.Overlay.AccessListMergeResult.#ctor(System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry},System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry})
+  id: '#ctor(System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry},System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry})'
+  parent: TGBot.Config.Overlay.AccessListMergeResult
+  langs:
+  - csharp
+  - vb
+  name: AccessListMergeResult(IReadOnlyList<AccessEntry>, IReadOnlyList<AccessEntry>)
+  nameWithType: AccessListMergeResult.AccessListMergeResult(IReadOnlyList<AccessEntry>, IReadOnlyList<AccessEntry>)
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.AccessListMergeResult(System.Collections.Generic.IReadOnlyList<TGBot.Config.Overlay.AccessEntry>, System.Collections.Generic.IReadOnlyList<TGBot.Config.Overlay.AccessEntry>)
+  type: Constructor
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/AccessListMerge.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: .ctor
+    path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
+    startLine: 29
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 合并结果：带来源标注的列表 + 去重后的 ID 集合（供 <code>AccessControlService</code> 使用）。
+  example: []
+  syntax:
+    content: public AccessListMergeResult(IReadOnlyList<AccessEntry> Users, IReadOnlyList<AccessEntry> Channels)
+    parameters:
+    - id: Users
+      type: System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry}
+      description: 用户条目（升序，config 来源优先标注）。
+    - id: Channels
+      type: System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry}
+      description: 频道/群组条目（升序，config 来源优先标注）。
+    content.vb: Public Sub New(Users As IReadOnlyList(Of AccessEntry), Channels As IReadOnlyList(Of AccessEntry))
+  overload: TGBot.Config.Overlay.AccessListMergeResult.#ctor*
+  nameWithType.vb: AccessListMergeResult.New(IReadOnlyList(Of AccessEntry), IReadOnlyList(Of AccessEntry))
+  fullName.vb: TGBot.Config.Overlay.AccessListMergeResult.New(System.Collections.Generic.IReadOnlyList(Of TGBot.Config.Overlay.AccessEntry), System.Collections.Generic.IReadOnlyList(Of TGBot.Config.Overlay.AccessEntry))
+  name.vb: New(IReadOnlyList(Of AccessEntry), IReadOnlyList(Of AccessEntry))
+- uid: TGBot.Config.Overlay.AccessListMergeResult.Users
+  commentId: P:TGBot.Config.Overlay.AccessListMergeResult.Users
+  id: Users
+  parent: TGBot.Config.Overlay.AccessListMergeResult
+  langs:
+  - csharp
+  - vb
+  name: Users
+  nameWithType: AccessListMergeResult.Users
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.Users
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/AccessListMerge.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Users
+    path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
+    startLine: 30
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 用户条目（升序，config 来源优先标注）。
+  example: []
+  syntax:
+    content: public IReadOnlyList<AccessEntry> Users { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry}
+    content.vb: Public Property Users As IReadOnlyList(Of AccessEntry)
+  overload: TGBot.Config.Overlay.AccessListMergeResult.Users*
+- uid: TGBot.Config.Overlay.AccessListMergeResult.Channels
+  commentId: P:TGBot.Config.Overlay.AccessListMergeResult.Channels
+  id: Channels
+  parent: TGBot.Config.Overlay.AccessListMergeResult
+  langs:
+  - csharp
+  - vb
+  name: Channels
+  nameWithType: AccessListMergeResult.Channels
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.Channels
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/AccessListMerge.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Channels
+    path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
+    startLine: 31
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 频道/群组条目（升序，config 来源优先标注）。
+  example: []
+  syntax:
+    content: public IReadOnlyList<AccessEntry> Channels { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry}
+    content.vb: Public Property Channels As IReadOnlyList(Of AccessEntry)
+  overload: TGBot.Config.Overlay.AccessListMergeResult.Channels*
+- uid: TGBot.Config.Overlay.AccessListMergeResult.UserIds
+  commentId: P:TGBot.Config.Overlay.AccessListMergeResult.UserIds
+  id: UserIds
+  parent: TGBot.Config.Overlay.AccessListMergeResult
+  langs:
+  - csharp
+  - vb
+  name: UserIds
+  nameWithType: AccessListMergeResult.UserIds
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.UserIds
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/AccessListMerge.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UserIds
+    path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
+    startLine: 34
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 去重后的用户 ID。
+  example: []
+  syntax:
+    content: public IReadOnlyList<long> UserIds { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{System.Int64}
+    content.vb: Public ReadOnly Property UserIds As IReadOnlyList(Of Long)
+  overload: TGBot.Config.Overlay.AccessListMergeResult.UserIds*
+- uid: TGBot.Config.Overlay.AccessListMergeResult.ChannelIds
+  commentId: P:TGBot.Config.Overlay.AccessListMergeResult.ChannelIds
+  id: ChannelIds
+  parent: TGBot.Config.Overlay.AccessListMergeResult
+  langs:
+  - csharp
+  - vb
+  name: ChannelIds
+  nameWithType: AccessListMergeResult.ChannelIds
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.ChannelIds
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/AccessListMerge.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ChannelIds
+    path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
+    startLine: 37
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 去重后的频道/群组 ID。
+  example: []
+  syntax:
+    content: public IReadOnlyList<long> ChannelIds { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{System.Int64}
+    content.vb: Public ReadOnly Property ChannelIds As IReadOnlyList(Of Long)
+  overload: TGBot.Config.Overlay.AccessListMergeResult.ChannelIds*
+references:
+- uid: TGBot.Config.Overlay
+  commentId: N:TGBot.Config.Overlay
+  href: TGBot.html
+  name: TGBot.Config.Overlay
+  nameWithType: TGBot.Config.Overlay
+  fullName: TGBot.Config.Overlay
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+  - name: .
+  - uid: TGBot.Config.Overlay
+    name: Overlay
+    href: TGBot.Config.Overlay.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+  - name: .
+  - uid: TGBot.Config.Overlay
+    name: Overlay
+    href: TGBot.Config.Overlay.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{TGBot.Config.Overlay.AccessListMergeResult}
+  commentId: T:System.IEquatable{TGBot.Config.Overlay.AccessListMergeResult}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<AccessListMergeResult>
+  nameWithType: IEquatable<AccessListMergeResult>
+  fullName: System.IEquatable<TGBot.Config.Overlay.AccessListMergeResult>
+  nameWithType.vb: IEquatable(Of AccessListMergeResult)
+  fullName.vb: System.IEquatable(Of TGBot.Config.Overlay.AccessListMergeResult)
+  name.vb: IEquatable(Of AccessListMergeResult)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: TGBot.Config.Overlay.AccessListMergeResult
+    name: AccessListMergeResult
+    href: TGBot.Config.Overlay.AccessListMergeResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Config.Overlay.AccessListMergeResult
+    name: AccessListMergeResult
+    href: TGBot.Config.Overlay.AccessListMergeResult.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: TGBot.Config.Overlay.AccessListMergeResult.#ctor*
+  commentId: Overload:TGBot.Config.Overlay.AccessListMergeResult.#ctor
+  href: TGBot.Config.Overlay.AccessListMergeResult.html#TGBot_Config_Overlay_AccessListMergeResult__ctor_System_Collections_Generic_IReadOnlyList_TGBot_Config_Overlay_AccessEntry__System_Collections_Generic_IReadOnlyList_TGBot_Config_Overlay_AccessEntry__
+  name: AccessListMergeResult
+  nameWithType: AccessListMergeResult.AccessListMergeResult
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.AccessListMergeResult
+  nameWithType.vb: AccessListMergeResult.New
+  fullName.vb: TGBot.Config.Overlay.AccessListMergeResult.New
+  name.vb: New
+- uid: System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry}
+  commentId: T:System.Collections.Generic.IReadOnlyList{TGBot.Config.Overlay.AccessEntry}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<AccessEntry>
+  nameWithType: IReadOnlyList<AccessEntry>
+  fullName: System.Collections.Generic.IReadOnlyList<TGBot.Config.Overlay.AccessEntry>
+  nameWithType.vb: IReadOnlyList(Of AccessEntry)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of TGBot.Config.Overlay.AccessEntry)
+  name.vb: IReadOnlyList(Of AccessEntry)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: TGBot.Config.Overlay.AccessEntry
+    name: AccessEntry
+    href: TGBot.Config.Overlay.AccessEntry.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Config.Overlay.AccessEntry
+    name: AccessEntry
+    href: TGBot.Config.Overlay.AccessEntry.html
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: TGBot.Config.Overlay.AccessListMergeResult.Users*
+  commentId: Overload:TGBot.Config.Overlay.AccessListMergeResult.Users
+  href: TGBot.Config.Overlay.AccessListMergeResult.html#TGBot_Config_Overlay_AccessListMergeResult_Users
+  name: Users
+  nameWithType: AccessListMergeResult.Users
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.Users
+- uid: TGBot.Config.Overlay.AccessListMergeResult.Channels*
+  commentId: Overload:TGBot.Config.Overlay.AccessListMergeResult.Channels
+  href: TGBot.Config.Overlay.AccessListMergeResult.html#TGBot_Config_Overlay_AccessListMergeResult_Channels
+  name: Channels
+  nameWithType: AccessListMergeResult.Channels
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.Channels
+- uid: TGBot.Config.Overlay.AccessListMergeResult.UserIds*
+  commentId: Overload:TGBot.Config.Overlay.AccessListMergeResult.UserIds
+  href: TGBot.Config.Overlay.AccessListMergeResult.html#TGBot_Config_Overlay_AccessListMergeResult_UserIds
+  name: UserIds
+  nameWithType: AccessListMergeResult.UserIds
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.UserIds
+- uid: System.Collections.Generic.IReadOnlyList{System.Int64}
+  commentId: T:System.Collections.Generic.IReadOnlyList{System.Int64}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<long>
+  nameWithType: IReadOnlyList<long>
+  fullName: System.Collections.Generic.IReadOnlyList<long>
+  nameWithType.vb: IReadOnlyList(Of Long)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Long)
+  name.vb: IReadOnlyList(Of Long)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: System.Int64
+    name: long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int64
+    name: Long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: )
+- uid: TGBot.Config.Overlay.AccessListMergeResult.ChannelIds*
+  commentId: Overload:TGBot.Config.Overlay.AccessListMergeResult.ChannelIds
+  href: TGBot.Config.Overlay.AccessListMergeResult.html#TGBot_Config_Overlay_AccessListMergeResult_ChannelIds
+  name: ChannelIds
+  nameWithType: AccessListMergeResult.ChannelIds
+  fullName: TGBot.Config.Overlay.AccessListMergeResult.ChannelIds

@@ -23,11 +23,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpFormatPicker.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FormatInfo
     path: ../src/TGBot/Download/YtDlpFormatPicker.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -61,11 +61,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpFormatPicker.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Download/YtDlpFormatPicker.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -114,11 +114,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpFormatPicker.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FormatId
     path: ../src/TGBot/Download/YtDlpFormatPicker.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -145,11 +145,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpFormatPicker.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Vcodec
     path: ../src/TGBot/Download/YtDlpFormatPicker.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -176,11 +176,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpFormatPicker.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Acodec
     path: ../src/TGBot/Download/YtDlpFormatPicker.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -207,11 +207,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpFormatPicker.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Height
     path: ../src/TGBot/Download/YtDlpFormatPicker.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -238,11 +238,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpFormatPicker.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Tbr
     path: ../src/TGBot/Download/YtDlpFormatPicker.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -269,11 +269,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpFormatPicker.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Abr
     path: ../src/TGBot/Download/YtDlpFormatPicker.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -300,11 +300,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpFormatPicker.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: HasDrm
     path: ../src/TGBot/Download/YtDlpFormatPicker.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download

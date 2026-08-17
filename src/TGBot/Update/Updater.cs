@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 namespace TGBot.Update;
 
 /// <summary>
@@ -104,7 +107,7 @@ public sealed class Updater : IUpdater
         }
         catch (Exception ex)
         {
-            throw new UpdateException("无法读取本地工具版本，请检查安装路径。", $"{name} 本地版本查询失败：{ex.Message}");
+            throw new UpdateException(UpdateFailureReason.LocalVersionUnavailable, $"{name} 本地版本查询失败：{ex.Message}");
         }
 
         ToolVersion? latest;
@@ -115,12 +118,12 @@ public sealed class Updater : IUpdater
         }
         catch (Exception ex)
         {
-            throw new UpdateException("无法获取最新版本信息，请稍后重试。", $"{name} 最新版本查询失败：{ex.Message}");
+            throw new UpdateException(UpdateFailureReason.LatestVersionUnavailable, $"{name} 最新版本查询失败：{ex.Message}");
         }
 
         if (latest is null)
         {
-            throw new UpdateException("无法获取最新版本信息，请稍后重试。", $"{name} 返回空版本");
+            throw new UpdateException(UpdateFailureReason.LatestVersionUnavailable, $"{name} 返回空版本");
         }
 
         if (localVersion is not null && localVersion.CompareTo(latest) >= 0)
@@ -137,7 +140,7 @@ public sealed class Updater : IUpdater
         }
         catch (Exception ex)
         {
-            throw new UpdateException($"{name} 下载失败，请稍后重试。", $"{name} 下载失败：{ex.Message}");
+            throw new UpdateException(UpdateFailureReason.DownloadFailed, $"{name} 下载失败：{ex.Message}");
         }
 
         try
@@ -157,7 +160,7 @@ public sealed class Updater : IUpdater
         }
         catch (Exception ex)
         {
-            throw new UpdateException($"{name} 替换失败，已回滚至原版本。", $"{name} 原子替换失败：{ex.Message}");
+            throw new UpdateException(UpdateFailureReason.ReplaceFailed, $"{name} 原子替换失败：{ex.Message}");
         }
     }
 

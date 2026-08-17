@@ -1,178 +1,337 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 namespace TGBot.Texts;
 
 /// <summary>
-/// 面向 Telegram 用户的中文提示文案。
+/// 面向 Telegram 用户的文案**资源键**容器（中英双语，实际文案见 <c>Texts/I18n/Resources</c>）。
+/// <para>i18n 迁移后本类仅承载键名常量（消除魔法字符串）；实际文案由
+/// <see cref="TGBot.Texts.I18n.II18n.Get"/> 按消息语言渲染，键缺失回退 en，再缺失回退键名本身。</para>
 /// <para>所有文案均不含内部实现细节（堆栈、路径、配置值等），遵循零信任原则。</para>
 /// </summary>
 public static class UserTexts
 {
     /// <summary>私聊用户未在白名单时的拒绝提示。</summary>
-    public const string UnauthorizedPrivate =
-        "抱歉，您不在允许使用本服务的名单中，无法处理您发送的内容。";
+    public const string UnauthorizedPrivate = "UnauthorizedPrivate";
 
     /// <summary>频道/群组未在白名单时的拒绝提示。</summary>
-    public const string UnauthorizedGroup =
-        "抱歉，本频道/群组未获得授权，无法在此处理链接。";
+    public const string UnauthorizedGroup = "UnauthorizedGroup";
 
     /// <summary>消息中没有有效链接时的提示。</summary>
-    public const string NoValidUrl =
-        "消息中未找到有效的视频/音乐链接，请发送 http/https 链接。";
+    public const string NoValidUrl = "NoValidUrl";
 
     /// <summary>链接指向私网地址时的提示。</summary>
-    public const string UntrustedUrl =
-        "链接指向的地址不受信任，已拒绝下载。";
+    public const string UntrustedUrl = "UntrustedUrl";
 
     /// <summary>下载排队提示。参数依次为：队列位置。</summary>
-    public const string Queued =
-        "已收到，正在排队处理（队列位置：{0}）。";
+    public const string Queued = "Queued";
 
     /// <summary>开始下载提示。</summary>
-    public const string Downloading =
-        "开始下载…";
+    public const string Downloading = "Downloading";
 
     /// <summary>下载进度提示。参数依次为：百分比、速度。</summary>
-    public const string DownloadProgress =
-        "下载中：{0}%（{1}）";
+    public const string DownloadProgress = "DownloadProgress";
 
     /// <summary>开始上传提示。</summary>
-    public const string Uploading =
-        "下载完成，正在上传到目标频道/群组…";
+    public const string Uploading = "Uploading";
 
     /// <summary>上传成功提示。参数依次为：目标会话数量。</summary>
-    public const string UploadDone =
-        "已完成，已推送至 {0} 个目标会话。";
+    public const string UploadDone = "UploadDone";
 
     /// <summary>下载失败提示。</summary>
-    public const string DownloadFailed =
-        "下载失败，请稍后重试，或检查链接是否有效。";
-
-    /// <summary>上传失败提示。</summary>
-    public const string UploadFailed =
-        "上传失败，请稍后重试。";
+    public const string DownloadFailed = "DownloadFailed";
 
     /// <summary>文件过大提示。</summary>
-    public const string FileTooLarge =
-        "文件过大，超出上传限制（约 2GB），已取消该任务。";
+    public const string FileTooLarge = "FileTooLarge";
 
     /// <summary>磁盘空间不足提示。</summary>
-    public const string NoDiskSpace =
-        "服务器磁盘空间不足，已取消该任务，请稍后重试。";
+    public const string NoDiskSpace = "NoDiskSpace";
 
     /// <summary>未知指令提示。</summary>
-    public const string UnknownCommand =
-        "未知指令。发送 /help 查看可用指令。";
+    public const string UnknownCommand = "UnknownCommand";
 
     /// <summary>帮助文本。</summary>
-    public const string Help =
-        "可用指令：\n"
-        + "/update    - 检查并更新 ffmpeg 与 yt-dlp\n"
-        + "/cookie    - 上传指定站点的 cookies（如 /cookie youtube）\n"
-        + "/cookies   - 查看各站点 cookies 状态\n"
-        + "/status    - 查看运行状态与版本\n"
-        + "/help      - 显示本帮助\n\n"
-        + "直接发送视频/音乐链接即可触发下载。";
+    public const string Help = "Help";
 
     /// <summary>目标站点要求认证提示。</summary>
-    public const string AuthRequired =
-        "目标站点要求登录/认证（如 YouTube 机器人检测）。请通过 /cookie 上传该站点的 cookies 后重试。";
+    public const string AuthRequired = "AuthRequired";
 
     /// <summary>可用格式不足提示。</summary>
-    public const string FormatUnavailable =
-        "该视频可用格式不足，无法按当前配置下载（可能仅限登录/地区，或编码无法封装）。";
+    public const string FormatUnavailable = "FormatUnavailable";
 
     /// <summary>下载模式选择提示。</summary>
-    public const string ModeChoice =
-        "该链接含视频和音频，请选择下载方式：";
+    public const string ModeChoice = "ModeChoice";
 
     /// <summary>视频+音频按钮。</summary>
-    public const string ModeVideoButton = "🎬 视频+音频";
+    public const string ModeVideoButton = "ModeVideoButton";
 
     /// <summary>仅音频按钮。</summary>
-    public const string ModeAudioButton = "🎵 仅音频";
+    public const string ModeAudioButton = "ModeAudioButton";
 
     /// <summary>仅音频任务完成提示。参数：flac 文件名、mp3 文件名。</summary>
-    public const string AudioBundleDone =
-        "已推送最高音质音频：\n{0}（无损）\n{1}（流式播放）";
+    public const string AudioBundleDone = "AudioBundleDone";
 
-    /// <summary>cookie 使用说明。</summary>
-    public const string CookieUsage =
-        "用法：\n"
-        + "/cookie <站点> - 开始上传该站点 cookies，然后发送 cookies 文件\n"
-        + "/cookie <站点> clear - 删除该站点 cookies\n"
-        + "/cookies - 查看各站点状态\n\n"
-        + "可用站点：{0}";
+    /// <summary>cookie 使用说明。参数：可用站点列表。</summary>
+    public const string CookieUsage = "CookieUsage";
 
     /// <summary>开始上传提示。参数：站点显示名。</summary>
-    public const string CookiePrompt =
-        "请发送 cookies 文件（用于 {0}）。\n文件应为 Netscape 格式的 cookies.txt（≤1MB，浏览器导出）。";
+    public const string CookiePrompt = "CookiePrompt";
 
     /// <summary>保存成功提示。参数：站点显示名、站点键。</summary>
-    public const string CookieSaved =
-        "{0} 的 cookies 已保存（站点键：{1}），下载该站点链接时将自动使用。";
+    public const string CookieSaved = "CookieSaved";
 
     /// <summary>保存成功但格式可疑提示。参数：站点显示名、站点键。</summary>
-    public const string CookieSavedSuspicious =
-        "{0} 的 cookies 已保存（站点键：{1}），但文件格式不像标准 cookies.txt，若下载仍失败请重新导出。";
+    public const string CookieSavedSuspicious = "CookieSavedSuspicious";
 
     /// <summary>保存失败提示。</summary>
-    public const string CookieSaveFailed =
-        "cookies 保存失败，请稍后重试。";
+    public const string CookieSaveFailed = "CookieSaveFailed";
 
     /// <summary>删除成功提示。参数：站点显示名。</summary>
-    public const string CookieDeleted =
-        "{0} 的 cookies 已删除。";
+    public const string CookieDeleted = "CookieDeleted";
 
     /// <summary>无任何站点 cookie 提示。</summary>
-    public const string CookieNone =
-        "当前没有任何站点的 cookies。发送 /cookie <站点> 开始上传。";
+    public const string CookieNone = "CookieNone";
 
     /// <summary>cookie 列表模板。参数：站点键/状态行。</summary>
-    public const string CookieListTemplate =
-        "各站点 cookies 状态：\n{0}\n\n/cookie <站点> 上传，/cookie <站点> clear 删除。";
+    public const string CookieListTemplate = "CookieListTemplate";
 
     /// <summary>未知站点提示。参数：站点键、可用站点。</summary>
-    public const string CookieUnknownSite =
-        "未知站点：{0}。可用站点：{1}";
+    public const string CookieUnknownSite = "CookieUnknownSite";
 
     /// <summary>cookies 文件过大提示。</summary>
-    public const string CookieFileTooLarge =
-        "cookies 文件过大（限制 1MB），请重新导出。";
+    public const string CookieFileTooLarge = "CookieFileTooLarge";
 
     /// <summary>cookies 文件无效提示。</summary>
-    public const string CookieInvalidFile =
-        "cookies 文件无效，请发送文本格式的 cookies.txt。";
+    public const string CookieInvalidFile = "CookieInvalidFile";
 
     /// <summary>上传超时提示。</summary>
-    public const string CookieExpired =
-        "上传等待超时，请重新发送 /cookie <站点> 后再发文件。";
+    public const string CookieExpired = "CookieExpired";
 
     /// <summary>更新无需执行提示。</summary>
-    public const string UpdateNotNeeded =
-        "yt-dlp 与 ffmpeg 均为最新版本，无需更新。";
-
-    /// <summary>更新完成提示。参数依次为：yt-dlp 旧版本、新版本、ffmpeg 旧版本、新版本。</summary>
-    public const string UpdateDone =
-        "更新完成：\nyt-dlp：{0} → {1}\nffmpeg：{2} → {3}";
-
-    /// <summary>更新部分完成提示（仅某个组件更新）。</summary>
-    public const string UpdatePartialDone =
-        "更新完成：\n{0}";
+    public const string UpdateNotNeeded = "UpdateNotNeeded";
 
     /// <summary>更新失败提示。</summary>
-    public const string UpdateFailed =
-        "更新失败，已回滚至原版本，请稍后重试。";
+    public const string UpdateFailed = "UpdateFailed";
 
-    /// <summary>更新被拒绝提示（非白名单用户）。</summary>
-    public const string UpdateDenied =
-        "您没有权限执行此操作。";
+    /// <summary>更新失败提示：无法读取本地工具版本。</summary>
+    public const string UpdateFailedLocalVersion = "UpdateFailedLocalVersion";
 
-    /// <summary>状态信息模板。参数依次为：运行时间、队列、进行中、yt-dlp 版本、ffmpeg 版本、可用磁盘空间。</summary>
-    public const string StatusTemplate =
-        "运行状态：\n"
-        + "运行时间：{0}\n"
-        + "进行中任务：{1}\n"
-        + "排队任务：{2}\n"
-        + "yt-dlp：{3}\n"
-        + "ffmpeg：{4}\n"
-        + "可用磁盘空间：{5}";
+    /// <summary>更新失败提示：无法获取最新版本信息。</summary>
+    public const string UpdateFailedLatestVersion = "UpdateFailedLatestVersion";
+
+    /// <summary>更新失败提示：新版本下载失败。</summary>
+    public const string UpdateFailedDownload = "UpdateFailedDownload";
+
+    /// <summary>更新失败提示：二进制替换失败（已回滚）。</summary>
+    public const string UpdateFailedReplace = "UpdateFailedReplace";
+
+    /// <summary>状态信息模板。参数依次为：运行时间、进行中、排队、yt-dlp 版本、ffmpeg 版本、可用磁盘空间。</summary>
+    public const string StatusTemplate = "StatusTemplate";
+
+    /// <summary>状态信息首行：bot 自身版本。参数：版本号（如 2.4.0）。</summary>
+    public const string StatusBotVersion = "StatusBotVersion";
+
+    /// <summary>链接正在处理中提示（URL 去重入队失败时）。</summary>
+    public const string Busy = "Busy";
+
+    /// <summary>指令仅限私聊提示。</summary>
+    public const string CommandPrivateOnly = "CommandPrivateOnly";
+
+    /// <summary>部分会话上传失败提示（附加在完成消息末尾）。</summary>
+    public const string PartialFailures = "PartialFailures";
+
+    /// <summary>更新完成标题行。</summary>
+    public const string UpdateDoneHeader = "UpdateDoneHeader";
+
+    /// <summary>更新结果行：工具名、旧版本、新版本。</summary>
+    public const string UpdateLineUpdated = "UpdateLineUpdated";
+
+    /// <summary>更新结果行：工具名、当前版本（已是最新）。</summary>
+    public const string UpdateLineUpToDate = "UpdateLineUpToDate";
+
+    /// <summary>更新结果行：工具名（未配置安装路径）。</summary>
+    public const string UpdateLineNotConfigured = "UpdateLineNotConfigured";
+
+    /// <summary>更新结果行：工具名（更新失败）。</summary>
+    public const string UpdateLineFailed = "UpdateLineFailed";
+
+    /// <summary>cookie 列表单行模板。参数：显示名、站点键、状态。</summary>
+    public const string CookieListLine = "CookieListLine";
+
+    /// <summary>cookie 已保存状态。</summary>
+    public const string CookieStateSaved = "CookieStateSaved";
+
+    /// <summary>cookie 无状态。</summary>
+    public const string CookieStateNone = "CookieStateNone";
+
+    /// <summary>未知值（版本、磁盘空间等）。</summary>
+    public const string Unknown = "Unknown";
+
+    /// <summary>运行时间：天数。参数：天数。</summary>
+    public const string UptimeDays = "UptimeDays";
+
+    /// <summary>运行时间：小时数。参数：小时数。</summary>
+    public const string UptimeHours = "UptimeHours";
+
+    /// <summary>运行时间：分钟数。参数：分钟数。</summary>
+    public const string UptimeMinutes = "UptimeMinutes";
+
+    /// <summary>媒体说明标题行。参数：标题。</summary>
+    public const string CaptionTitle = "CaptionTitle";
+
+    /// <summary>媒体说明来源行。参数：来源 URL。</summary>
+    public const string CaptionSource = "CaptionSource";
+
+    /// <summary>语言选择提示（首次私聊弹窗与 /language 命令）。</summary>
+    public const string LanguagePrompt = "LanguagePrompt";
+
+    /// <summary>语言设置成功回执。参数：语言显示名。</summary>
+    public const string LanguageSaved = "LanguageSaved";
+
+    /// <summary>简体中文语言显示名（按钮文本，不翻译）。</summary>
+    public const string LanguageNameZh = "LanguageNameZh";
+
+    /// <summary>English 语言显示名（按钮文本，不翻译）。</summary>
+    public const string LanguageNameEn = "LanguageNameEn";
+
+    /// <summary>/config 使用说明。</summary>
+    public const string ConfigUsage = "ConfigUsage";
+
+    /// <summary>/config list 模板。参数：键值行列表。</summary>
+    public const string ConfigListTemplate = "ConfigListTemplate";
+
+    /// <summary>/config list 单行。参数：键、生效值、来源。</summary>
+    public const string ConfigListLine = "ConfigListLine";
+
+    /// <summary>配置来源：overlay 覆盖。</summary>
+    public const string ConfigSourceOverlay = "ConfigSourceOverlay";
+
+    /// <summary>配置来源：config.conf。</summary>
+    public const string ConfigSourceConfig = "ConfigSourceConfig";
+
+    /// <summary>配置来源：内置默认值。</summary>
+    public const string ConfigSourceDefault = "ConfigSourceDefault";
+
+    /// <summary>/config set 回执。参数：键名。</summary>
+    public const string ConfigSetApplied = "ConfigSetApplied";
+
+    /// <summary>/config reset 回执。参数：键名。</summary>
+    public const string ConfigResetApplied = "ConfigResetApplied";
+
+    /// <summary>/config reset-all 回执。</summary>
+    public const string ConfigResetAllApplied = "ConfigResetAllApplied";
+
+    /// <summary>重启后生效通知（pending-notify）。参数：键名。</summary>
+    public const string ConfigApplied = "ConfigApplied";
+
+    /// <summary>配置校验失败。参数：双语错误文本。</summary>
+    public const string ConfigRejected = "ConfigRejected";
+
+    /// <summary>未知配置键。参数：键名。</summary>
+    public const string ConfigUnknownKey = "ConfigUnknownKey";
+
+    /// <summary>安装锁键不可经 /config 修改。参数：键名。</summary>
+    public const string ConfigLockedKey = "ConfigLockedKey";
+
+    /// <summary>连接/路径类键的风险警告（追加在 /config set 回执后）。</summary>
+    public const string ConfigRiskWarning = "ConfigRiskWarning";
+
+    /// <summary>键未被覆盖，无需重置。参数：键名。</summary>
+    public const string ConfigNotOverridden = "ConfigNotOverridden";
+
+    /// <summary>同值 set 已生效，无需重启。参数：键名。</summary>
+    public const string ConfigNoChange = "ConfigNoChange";
+
+    /// <summary>配置/通知写入失败。</summary>
+    public const string ConfigSaveFailed = "ConfigSaveFailed";
+
+    /// <summary>空值的展示占位。</summary>
+    public const string ValueEmpty = "ValueEmpty";
+
+    /// <summary>/access 使用说明。</summary>
+    public const string AccessUsage = "AccessUsage";
+
+    /// <summary>条目类型：用户。</summary>
+    public const string AccessTypeUser = "AccessTypeUser";
+
+    /// <summary>条目类型：频道/群组。</summary>
+    public const string AccessTypeChannel = "AccessTypeChannel";
+
+    /// <summary>添加成功（回执与重启通知共用）。参数：类型、ID。</summary>
+    public const string AccessAdded = "AccessAdded";
+
+    /// <summary>移除成功（回执与重启通知共用）。参数：类型、ID。</summary>
+    public const string AccessRemoved = "AccessRemoved";
+
+    /// <summary>已在列表中，无需重复添加。</summary>
+    public const string AccessAlreadyAdded = "AccessAlreadyAdded";
+
+    /// <summary>不在列表中。</summary>
+    public const string AccessNotFound = "AccessNotFound";
+
+    /// <summary>条目来自安装配置，不可经 /access 删除。</summary>
+    public const string AccessRemovedFromConfig = "AccessRemovedFromConfig";
+
+    /// <summary>无效 ID。参数：原始输入。</summary>
+    public const string AccessInvalidId = "AccessInvalidId";
+
+    /// <summary>/access list 模板。参数：条目行列表。</summary>
+    public const string AccessListTemplate = "AccessListTemplate";
+
+    /// <summary>/access list 单行。参数：类型、ID、来源。</summary>
+    public const string AccessListLine = "AccessListLine";
+
+    /// <summary>白名单来源：安装配置。</summary>
+    public const string AccessSourceConfig = "AccessSourceConfig";
+
+    /// <summary>白名单来源：bot 添加。</summary>
+    public const string AccessSourceOverlay = "AccessSourceOverlay";
+
+    /// <summary>链接为空。</summary>
+    public const string UrlEmpty = "UrlEmpty";
+
+    /// <summary>链接过长。</summary>
+    public const string UrlTooLong = "UrlTooLong";
+
+    /// <summary>链接包含非法字符。</summary>
+    public const string UrlInvalidChar = "UrlInvalidChar";
+
+    /// <summary>链接格式无效。</summary>
+    public const string UrlInvalidFormat = "UrlInvalidFormat";
+
+    /// <summary>仅支持 http/https 链接。</summary>
+    public const string UrlSchemeNotAllowed = "UrlSchemeNotAllowed";
+
+    /// <summary>链接包含用户名信息。</summary>
+    public const string UrlUserInfo = "UrlUserInfo";
+
+    /// <summary>链接主机名无效。</summary>
+    public const string UrlInvalidHost = "UrlInvalidHost";
+
+    /// <summary>链接主机名包含非法字符。</summary>
+    public const string UrlInvalidHostChar = "UrlInvalidHostChar";
+
+    /// <summary>指令菜单：update。</summary>
+    public const string MenuUpdate = "MenuUpdate";
+
+    /// <summary>指令菜单：cookie。</summary>
+    public const string MenuCookie = "MenuCookie";
+
+    /// <summary>指令菜单：cookies。</summary>
+    public const string MenuCookies = "MenuCookies";
+
+    /// <summary>指令菜单：status。</summary>
+    public const string MenuStatus = "MenuStatus";
+
+    /// <summary>指令菜单：language。</summary>
+    public const string MenuLanguage = "MenuLanguage";
+
+    /// <summary>指令菜单：config。</summary>
+    public const string MenuConfig = "MenuConfig";
+
+    /// <summary>指令菜单：access。</summary>
+    public const string MenuAccess = "MenuAccess";
+
+    /// <summary>指令菜单：help。</summary>
+    public const string MenuHelp = "MenuHelp";
 }

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 using TGBot.Logging;
 using TGBot.Messaging;
 
@@ -5,12 +8,14 @@ namespace TGBot.Application;
 
 /// <summary>
 /// Bot 服务：Long Polling 主循环，带异常兜底与重启退避。
+/// <para>就绪后、开始轮询前消费 pending-notify（重启生效通知，防重复发送）。</para>
 /// </summary>
 public sealed class BotService
 {
     private readonly ITelegramClient _client;
     private readonly MessageRouter _router;
     private readonly IAppLogger _logger;
+    private readonly PendingNotifySender? _notifySender;
 
     /// <summary>
     /// 初始化 <see cref="BotService"/>。
@@ -18,11 +23,13 @@ public sealed class BotService
     /// <param name="client">Telegram 客户端。</param>
     /// <param name="router">消息路由器。</param>
     /// <param name="logger">日志器。</param>
-    public BotService(ITelegramClient client, MessageRouter router, IAppLogger logger)
+    /// <param name="notifySender">重启通知发送器（可为空，测试注入便利）。</param>
+    public BotService(ITelegramClient client, MessageRouter router, IAppLogger logger, PendingNotifySender? notifySender = null)
     {
         _client = client;
         _router = router;
         _logger = logger;
+        _notifySender = notifySender;
     }
 
     /// <summary>
@@ -32,6 +39,12 @@ public sealed class BotService
     public async Task RunAsync(CancellationToken cancellationToken)
     {
         await PrepareAsync(cancellationToken).ConfigureAwait(false);
+
+        // 就绪后、开始轮询前消费重启通知（防重复：rename .sending 原子认领）。
+        if (_notifySender is not null)
+        {
+            await _notifySender.SendPendingAsync(cancellationToken).ConfigureAwait(false);
+        }
 
         while (!cancellationToken.IsCancellationRequested)
         {

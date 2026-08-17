@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 using System.Collections.Concurrent;
 using TGBot.Access;
 using TGBot.Config;
@@ -7,11 +10,13 @@ using TGBot.Logging;
 using TGBot.Messaging;
 using TGBot.Security;
 using TGBot.Texts;
+using TGBot.Texts.I18n;
 
 namespace TGBot.Application;
 
 /// <summary>
 /// 消息路由器：访问控制 → 指令 / 文件（cookies 上传）/ 链接校验与模式选择 → 下载任务入队。
+/// <para>语言在消息入口解析一次（<see cref="UserLanguageResolver"/>），随后随消息显式传播。</para>
 /// </summary>
 public sealed class MessageRouter
 {
@@ -25,10 +30,13 @@ public sealed class MessageRouter
     private readonly CookieService _cookies;
     private readonly ITelegramClient _client;
     private readonly AppConfig _config;
+    private readonly II18n _i18n;
+    private readonly UserLanguageStore _languageStore;
+    private readonly UserLanguageResolver _languageResolver;
     private readonly IAppLogger _logger;
     private readonly ConcurrentDictionary<string, PendingChoice> _pendingChoices = new();
 
-    private sealed record PendingChoice(long ChatId, long? SenderUserId, string Url, int TriggerMessageId, string DefaultMode);
+    private sealed record PendingChoice(long ChatId, long? SenderUserId, string Url, int TriggerMessageId, string DefaultMode, string Language);
 
     /// <summary>
     /// 初始化 <see cref="MessageRouter"/>。
@@ -41,6 +49,9 @@ public sealed class MessageRouter
     /// <param name="client">Telegram 客户端。</param>
     /// <param name="config">配置。</param>
     /// <param name="logger">日志器。</param>
+    /// <param name="i18n">国际化服务。</param>
+    /// <param name="languageStore">用户语言存储（首次弹窗判定）。</param>
+    /// <param name="languageResolver">用户语言解析器（解析链）。</param>
     public MessageRouter(
         AccessControlService access,
         UrlValidator urlValidator,
@@ -49,7 +60,10 @@ public sealed class MessageRouter
         CookieService cookies,
         ITelegramClient client,
         AppConfig config,
-        IAppLogger logger)
+        IAppLogger logger,
+        II18n i18n,
+        UserLanguageStore languageStore,
+        UserLanguageResolver languageResolver)
     {
         _access = access;
         _urlValidator = urlValidator;
@@ -58,6 +72,9 @@ public sealed class MessageRouter
         _cookies = cookies;
         _client = client;
         _config = config;
+        _i18n = i18n;
+        _languageStore = languageStore;
+        _languageResolver = languageResolver;
         _logger = logger;
     }
 
@@ -68,10 +85,23 @@ public sealed class MessageRouter
     /// <param name="cancellationToken">取消令牌。</param>
     public async Task HandleAsync(InboundMessage msg, CancellationToken cancellationToken)
     {
+        // 语言入口解析一次，随消息流动（显式传播，拒绝隐式上下文）。
+        var lang = _languageResolver.Resolve(msg);
+        if (!string.Equals(msg.Language, lang, StringComparison.Ordinal))
+        {
+            msg = msg.WithLanguage(lang);
+        }
+
         if (msg.IsCallback)
         {
             await HandleCallbackAsync(msg, cancellationToken).ConfigureAwait(false);
             return;
+        }
+
+        // 首次私聊自动弹语言选择（去重防并发重复弹窗）。
+        if (msg.IsPrivate)
+        {
+            await MaybePromptLanguageAsync(msg, cancellationToken).ConfigureAwait(false);
         }
 
         var text = msg.Text?.Trim();
@@ -95,7 +125,18 @@ public sealed class MessageRouter
     private async Task HandleCallbackAsync(InboundMessage msg, CancellationToken cancellationToken)
     {
         var data = msg.CallbackData;
-        if (string.IsNullOrEmpty(data) || !data.StartsWith(CallbackPrefix, StringComparison.Ordinal))
+        if (string.IsNullOrEmpty(data))
+        {
+            return;
+        }
+
+        if (data.StartsWith("lang:", StringComparison.Ordinal))
+        {
+            await _commands.HandleLanguageCallbackAsync(msg, cancellationToken).ConfigureAwait(false);
+            return;
+        }
+
+        if (!data.StartsWith(CallbackPrefix, StringComparison.Ordinal))
         {
             return;
         }
@@ -131,21 +172,25 @@ public sealed class MessageRouter
             SenderUserId = pending.SenderUserId,
             Text = pending.Url,
             TriggerMessageId = pending.TriggerMessageId,
+            Language = pending.Language,
         };
 
         var enqueued = await _coordinator.EnqueueAsync(jobMsg, pending.Url, mode, cancellationToken).ConfigureAwait(false);
         if (!enqueued)
         {
-            await SendToAsync(msg, "该链接正在处理中，请稍候。", cancellationToken).ConfigureAwait(false);
+            await SendToAsync(msg, _i18n.Get(msg.Language, UserTexts.Busy), cancellationToken).ConfigureAwait(false);
         }
     }
 
     private async Task HandleCookieFileAsync(InboundMessage msg, CancellationToken cancellationToken)
     {
+        // 调用方已保证 DocumentFileId 非空（仅文件消息进入此路径）。
+        var fileId = msg.DocumentFileId!;
         var result = await _cookies.ConsumePendingAsync(
             msg.ChatId,
-            msg.DocumentFileId,
+            fileId,
             msg.DocumentSizeBytes,
+            msg.Language,
             cancellationToken).ConfigureAwait(false);
 
         // 无待上传请求时静默忽略普通文件消息
@@ -159,15 +204,15 @@ public sealed class MessageRouter
     {
         if (!msg.IsPrivate)
         {
-            var decision = _access.Evaluate(TriggerArea.Private, msg.SenderUserId, msg.ChatId);
-            await SendDeniedOrNoteAsync(msg, decision, "该指令仅支持在私聊中使用。", cancellationToken).ConfigureAwait(false);
+            var decision = _access.Evaluate(TriggerArea.Private, msg.SenderUserId, msg.ChatId, msg.Language);
+            await SendDeniedOrNoteAsync(msg, decision, _i18n.Get(msg.Language, UserTexts.CommandPrivateOnly), cancellationToken).ConfigureAwait(false);
             return;
         }
 
-        var access = _access.Evaluate(TriggerArea.Private, msg.SenderUserId, msg.ChatId);
+        var access = _access.Evaluate(TriggerArea.Private, msg.SenderUserId, msg.ChatId, msg.Language);
         if (!access.Allowed)
         {
-            await SendToAsync(msg, access.Reason ?? UserTexts.UnauthorizedPrivate, cancellationToken).ConfigureAwait(false);
+            await SendToAsync(msg, access.Reason ?? _i18n.Get(msg.Language, UserTexts.UnauthorizedPrivate), cancellationToken).ConfigureAwait(false);
             return;
         }
 
@@ -177,7 +222,7 @@ public sealed class MessageRouter
     private async Task HandleUrlAsync(InboundMessage msg, CancellationToken cancellationToken)
     {
         var area = msg.IsPrivate ? TriggerArea.Private : TriggerArea.GroupOrChannel;
-        var decision = _access.Evaluate(area, msg.SenderUserId, msg.ChatId);
+        var decision = _access.Evaluate(area, msg.SenderUserId, msg.ChatId, msg.Language);
 
         var candidates = UrlValidator.ExtractCandidates(msg.UrlSearchText);
         if (!decision.Allowed)
@@ -195,7 +240,7 @@ public sealed class MessageRouter
         {
             if (msg.IsPrivate)
             {
-                await SendToAsync(msg, UserTexts.NoValidUrl, cancellationToken).ConfigureAwait(false);
+                await SendToAsync(msg, _i18n.Get(msg.Language, UserTexts.NoValidUrl), cancellationToken).ConfigureAwait(false);
             }
 
             return;
@@ -207,7 +252,8 @@ public sealed class MessageRouter
             var result = await _urlValidator.ValidateAsync(candidate, _config.AllowPrivateUrls, cancellationToken).ConfigureAwait(false);
             if (!result.IsValid)
             {
-                lastError = result.Error;
+                // ErrorKey 为资源键，按消息语言渲染（UrlValidator 保持 i18n 无关、可单测）。
+                lastError = _i18n.Get(msg.Language, result.ErrorKey);
                 continue;
             }
 
@@ -231,7 +277,7 @@ public sealed class MessageRouter
             return;
         }
 
-        await SendToAsync(msg, lastError ?? UserTexts.NoValidUrl, cancellationToken).ConfigureAwait(false);
+        await SendToAsync(msg, lastError ?? _i18n.Get(msg.Language, UserTexts.NoValidUrl), cancellationToken).ConfigureAwait(false);
     }
 
     private async Task EnqueueOrNotifyAsync(InboundMessage msg, string url, string mode, CancellationToken cancellationToken)
@@ -239,22 +285,22 @@ public sealed class MessageRouter
         var enqueued = await _coordinator.EnqueueAsync(msg, url, mode, cancellationToken).ConfigureAwait(false);
         if (!enqueued && msg.IsPrivate)
         {
-            await SendToAsync(msg, "该链接正在处理中，请稍候。", cancellationToken).ConfigureAwait(false);
+            await SendToAsync(msg, _i18n.Get(msg.Language, UserTexts.Busy), cancellationToken).ConfigureAwait(false);
         }
     }
 
     private async Task PromptModeAsync(InboundMessage msg, string url, CancellationToken cancellationToken)
     {
         var token = Guid.NewGuid().ToString("N");
-        var pending = new PendingChoice(msg.ChatId, msg.SenderUserId, url, msg.TriggerMessageId, _config.TgdlDefaultMode);
+        var pending = new PendingChoice(msg.ChatId, msg.SenderUserId, url, msg.TriggerMessageId, _config.TgdlDefaultMode, msg.Language);
         _pendingChoices[token] = pending;
 
         var keyboard = new[]
         {
-            new InlineButton(UserTexts.ModeVideoButton, $"{CallbackPrefix}{token}:video"),
-            new InlineButton(UserTexts.ModeAudioButton, $"{CallbackPrefix}{token}:audio"),
+            new InlineButton(_i18n.Get(msg.Language, UserTexts.ModeVideoButton), $"{CallbackPrefix}{token}:video"),
+            new InlineButton(_i18n.Get(msg.Language, UserTexts.ModeAudioButton), $"{CallbackPrefix}{token}:audio"),
         };
-        await SendToAsync(msg, UserTexts.ModeChoice, keyboard, cancellationToken).ConfigureAwait(false);
+        await SendToAsync(msg, _i18n.Get(msg.Language, UserTexts.ModeChoice), keyboard, cancellationToken).ConfigureAwait(false);
 
         // 超时未选择 → 回退默认模式
         _ = Task.Run(async () =>
@@ -277,6 +323,7 @@ public sealed class MessageRouter
                     SenderUserId = expired.SenderUserId,
                     Text = expired.Url,
                     TriggerMessageId = expired.TriggerMessageId,
+                    Language = expired.Language,
                 };
                 _logger.Info($"下载选择超时，回退默认模式（{expired.DefaultMode}）：{MaskUrl(expired.Url)}");
                 try
@@ -291,6 +338,28 @@ public sealed class MessageRouter
         }, CancellationToken.None);
     }
 
+    private async Task MaybePromptLanguageAsync(InboundMessage msg, CancellationToken cancellationToken)
+    {
+        if (msg.SenderUserId is not { } userId || _languageStore.Has(userId))
+        {
+            return;
+        }
+
+        // 仅在授权用户处触发：未授权用户的拒绝回复已足够，不额外弹语言选择（避免无谓打扰）。
+        if (!_access.Evaluate(TriggerArea.Private, msg.SenderUserId, msg.ChatId, msg.Language).Allowed)
+        {
+            return;
+        }
+
+        // 内存 TryAdd 去重：防并发重复弹窗（设计文档遗留问题 3）。
+        if (!_commands.RegisterLanguagePrompt(userId))
+        {
+            return;
+        }
+
+        await _commands.PromptLanguageAsync(msg, cancellationToken).ConfigureAwait(false);
+    }
+
     private async Task SendDeniedOrNoteAsync(InboundMessage msg, AccessDecision decision, string note, CancellationToken cancellationToken)
     {
         if (decision.Allowed)
@@ -299,7 +368,7 @@ public sealed class MessageRouter
         }
         else
         {
-            await SendToAsync(msg, decision.Reason ?? UserTexts.UnauthorizedPrivate, cancellationToken).ConfigureAwait(false);
+            await SendToAsync(msg, decision.Reason ?? _i18n.Get(msg.Language, UserTexts.UnauthorizedPrivate), cancellationToken).ConfigureAwait(false);
         }
     }
 

@@ -5,10 +5,10 @@ items:
   id: CookieService
   parent: TGBot.Cookie
   children:
-  - TGBot.Cookie.CookieService.#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger)
+  - TGBot.Cookie.CookieService.#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n)
   - TGBot.Cookie.CookieService.BeginPendingUpload(System.Int64,System.String)
   - TGBot.Cookie.CookieService.Clear(System.String)
-  - TGBot.Cookie.CookieService.ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.Threading.CancellationToken)
+  - TGBot.Cookie.CookieService.ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
   - TGBot.Cookie.CookieService.List
   - TGBot.Cookie.CookieService.ResolveCookieFile(System.String)
   - TGBot.Cookie.CookieService.ResolveSite(System.String)
@@ -24,11 +24,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieService
     path: ../src/TGBot/Cookie/CookieService.cs
-    startLine: 25
+    startLine: 29
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -46,32 +46,32 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Cookie.CookieService.#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger)
-  commentId: M:TGBot.Cookie.CookieService.#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger)
-  id: '#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger)'
+- uid: TGBot.Cookie.CookieService.#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n)
+  commentId: M:TGBot.Cookie.CookieService.#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n)
+  id: '#ctor(TGBot.Cookie.SiteCookieRegistry,TGBot.Cookie.CookieStore,TGBot.Messaging.ITelegramClient,TGBot.Logging.IAppLogger,TGBot.Texts.I18n.II18n)'
   parent: TGBot.Cookie.CookieService
   langs:
   - csharp
   - vb
-  name: CookieService(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
-  nameWithType: CookieService.CookieService(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
-  fullName: TGBot.Cookie.CookieService.CookieService(TGBot.Cookie.SiteCookieRegistry, TGBot.Cookie.CookieStore, TGBot.Messaging.ITelegramClient, TGBot.Logging.IAppLogger)
+  name: CookieService(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger, II18n)
+  nameWithType: CookieService.CookieService(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger, II18n)
+  fullName: TGBot.Cookie.CookieService.CookieService(TGBot.Cookie.SiteCookieRegistry, TGBot.Cookie.CookieStore, TGBot.Messaging.ITelegramClient, TGBot.Logging.IAppLogger, TGBot.Texts.I18n.II18n)
   type: Constructor
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Cookie/CookieService.cs
-    startLine: 45
+    startLine: 51
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
   summary: 初始化 <xref href="TGBot.Cookie.CookieService" data-throw-if-not-resolved="false"></xref>。
   example: []
   syntax:
-    content: public CookieService(SiteCookieRegistry registry, CookieStore store, ITelegramClient client, IAppLogger logger)
+    content: public CookieService(SiteCookieRegistry registry, CookieStore store, ITelegramClient client, IAppLogger logger, II18n i18n)
     parameters:
     - id: registry
       type: TGBot.Cookie.SiteCookieRegistry
@@ -85,11 +85,14 @@ items:
     - id: logger
       type: TGBot.Logging.IAppLogger
       description: 日志器。
-    content.vb: Public Sub New(registry As SiteCookieRegistry, store As CookieStore, client As ITelegramClient, logger As IAppLogger)
+    - id: i18n
+      type: TGBot.Texts.I18n.II18n
+      description: 国际化服务（结果消息渲染）。
+    content.vb: Public Sub New(registry As SiteCookieRegistry, store As CookieStore, client As ITelegramClient, logger As IAppLogger, i18n As II18n)
   overload: TGBot.Cookie.CookieService.#ctor*
-  nameWithType.vb: CookieService.New(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
-  fullName.vb: TGBot.Cookie.CookieService.New(TGBot.Cookie.SiteCookieRegistry, TGBot.Cookie.CookieStore, TGBot.Messaging.ITelegramClient, TGBot.Logging.IAppLogger)
-  name.vb: New(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger)
+  nameWithType.vb: CookieService.New(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger, II18n)
+  fullName.vb: TGBot.Cookie.CookieService.New(TGBot.Cookie.SiteCookieRegistry, TGBot.Cookie.CookieStore, TGBot.Messaging.ITelegramClient, TGBot.Logging.IAppLogger, TGBot.Texts.I18n.II18n)
+  name.vb: New(SiteCookieRegistry, CookieStore, ITelegramClient, IAppLogger, II18n)
 - uid: TGBot.Cookie.CookieService.Sites
   commentId: P:TGBot.Cookie.CookieService.Sites
   id: Sites
@@ -104,11 +107,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Sites
     path: ../src/TGBot/Cookie/CookieService.cs
-    startLine: 56
+    startLine: 63
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -135,11 +138,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ResolveSite
     path: ../src/TGBot/Cookie/CookieService.cs
-    startLine: 63
+    startLine: 70
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -173,11 +176,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ResolveCookieFile
     path: ../src/TGBot/Cookie/CookieService.cs
-    startLine: 70
+    startLine: 77
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -211,11 +214,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: BeginPendingUpload
     path: ../src/TGBot/Cookie/CookieService.cs
-    startLine: 90
+    startLine: 97
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -238,32 +241,32 @@ items:
   nameWithType.vb: CookieService.BeginPendingUpload(Long, String)
   fullName.vb: TGBot.Cookie.CookieService.BeginPendingUpload(Long, String)
   name.vb: BeginPendingUpload(Long, String)
-- uid: TGBot.Cookie.CookieService.ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.Threading.CancellationToken)
-  commentId: M:TGBot.Cookie.CookieService.ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.Threading.CancellationToken)
-  id: ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.Threading.CancellationToken)
+- uid: TGBot.Cookie.CookieService.ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  commentId: M:TGBot.Cookie.CookieService.ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  id: ConsumePendingAsync(System.Int64,System.String,System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
   parent: TGBot.Cookie.CookieService
   langs:
   - csharp
   - vb
-  name: ConsumePendingAsync(long, string, long?, CancellationToken)
-  nameWithType: CookieService.ConsumePendingAsync(long, string, long?, CancellationToken)
-  fullName: TGBot.Cookie.CookieService.ConsumePendingAsync(long, string, long?, System.Threading.CancellationToken)
+  name: ConsumePendingAsync(long, string, long?, string, CancellationToken)
+  nameWithType: CookieService.ConsumePendingAsync(long, string, long?, string, CancellationToken)
+  fullName: TGBot.Cookie.CookieService.ConsumePendingAsync(long, string, long?, string, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConsumePendingAsync
     path: ../src/TGBot/Cookie/CookieService.cs
-    startLine: 110
+    startLine: 118
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
   summary: 消费待上传：收到文件消息时调用，下载、校验并保存为该站点 cookie。
   example: []
   syntax:
-    content: public Task<CookieUploadResult?> ConsumePendingAsync(long chatId, string fileId, long? sizeBytes, CancellationToken cancellationToken)
+    content: public Task<CookieUploadResult?> ConsumePendingAsync(long chatId, string fileId, long? sizeBytes, string lang, CancellationToken cancellationToken)
     parameters:
     - id: chatId
       type: System.Int64
@@ -274,17 +277,20 @@ items:
     - id: sizeBytes
       type: System.Nullable{System.Int64}
       description: 文件大小（可为空）。
+    - id: lang
+      type: System.String
+      description: 消息语言（结果消息渲染）。
     - id: cancellationToken
       type: System.Threading.CancellationToken
       description: 取消令牌。
     return:
       type: System.Threading.Tasks.Task{TGBot.Cookie.CookieUploadResult}
       description: 处理结果；该会话无待上传请求时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
-    content.vb: Public Function ConsumePendingAsync(chatId As Long, fileId As String, sizeBytes As Long?, cancellationToken As CancellationToken) As Task(Of CookieUploadResult)
+    content.vb: Public Function ConsumePendingAsync(chatId As Long, fileId As String, sizeBytes As Long?, lang As String, cancellationToken As CancellationToken) As Task(Of CookieUploadResult)
   overload: TGBot.Cookie.CookieService.ConsumePendingAsync*
-  nameWithType.vb: CookieService.ConsumePendingAsync(Long, String, Long?, CancellationToken)
-  fullName.vb: TGBot.Cookie.CookieService.ConsumePendingAsync(Long, String, Long?, System.Threading.CancellationToken)
-  name.vb: ConsumePendingAsync(Long, String, Long?, CancellationToken)
+  nameWithType.vb: CookieService.ConsumePendingAsync(Long, String, Long?, String, CancellationToken)
+  fullName.vb: TGBot.Cookie.CookieService.ConsumePendingAsync(Long, String, Long?, String, System.Threading.CancellationToken)
+  name.vb: ConsumePendingAsync(Long, String, Long?, String, CancellationToken)
 - uid: TGBot.Cookie.CookieService.List
   commentId: M:TGBot.Cookie.CookieService.List
   id: List
@@ -299,11 +305,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: List
     path: ../src/TGBot/Cookie/CookieService.cs
-    startLine: 177
+    startLine: 186
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -330,11 +336,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Clear
     path: ../src/TGBot/Cookie/CookieService.cs
-    startLine: 190
+    startLine: 199
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -368,11 +374,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SiteListText
     path: ../src/TGBot/Cookie/CookieService.cs
-    startLine: 200
+    startLine: 209
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -630,7 +636,7 @@ references:
   fullName: TGBot.Cookie.CookieService
 - uid: TGBot.Cookie.CookieService.#ctor*
   commentId: Overload:TGBot.Cookie.CookieService.#ctor
-  href: TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService__ctor_TGBot_Cookie_SiteCookieRegistry_TGBot_Cookie_CookieStore_TGBot_Messaging_ITelegramClient_TGBot_Logging_IAppLogger_
+  href: TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService__ctor_TGBot_Cookie_SiteCookieRegistry_TGBot_Cookie_CookieStore_TGBot_Messaging_ITelegramClient_TGBot_Logging_IAppLogger_TGBot_Texts_I18n_II18n_
   name: CookieService
   nameWithType: CookieService.CookieService
   fullName: TGBot.Cookie.CookieService.CookieService
@@ -665,6 +671,13 @@ references:
   name: IAppLogger
   nameWithType: IAppLogger
   fullName: TGBot.Logging.IAppLogger
+- uid: TGBot.Texts.I18n.II18n
+  commentId: T:TGBot.Texts.I18n.II18n
+  parent: TGBot.Texts.I18n
+  href: TGBot.Texts.I18n.II18n.html
+  name: II18n
+  nameWithType: II18n
+  fullName: TGBot.Texts.I18n.II18n
 - uid: TGBot.Messaging
   commentId: N:TGBot.Messaging
   href: TGBot.html
@@ -709,6 +722,36 @@ references:
   - uid: TGBot.Logging
     name: Logging
     href: TGBot.Logging.html
+- uid: TGBot.Texts.I18n
+  commentId: N:TGBot.Texts.I18n
+  href: TGBot.html
+  name: TGBot.Texts.I18n
+  nameWithType: TGBot.Texts.I18n
+  fullName: TGBot.Texts.I18n
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
 - uid: TGBot.Cookie.CookieService.Sites*
   commentId: Overload:TGBot.Cookie.CookieService.Sites
   href: TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_Sites
@@ -862,7 +905,7 @@ references:
   name.vb: Long
 - uid: TGBot.Cookie.CookieService.ConsumePendingAsync*
   commentId: Overload:TGBot.Cookie.CookieService.ConsumePendingAsync
-  href: TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_ConsumePendingAsync_System_Int64_System_String_System_Nullable_System_Int64__System_Threading_CancellationToken_
+  href: TGBot.Cookie.CookieService.html#TGBot_Cookie_CookieService_ConsumePendingAsync_System_Int64_System_String_System_Nullable_System_Int64__System_String_System_Threading_CancellationToken_
   name: ConsumePendingAsync
   nameWithType: CookieService.ConsumePendingAsync
   fullName: TGBot.Cookie.CookieService.ConsumePendingAsync

@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UriVersionParser.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UriVersionParser
     path: ../src/TGBot/Update/UriVersionParser.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -54,11 +54,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UriVersionParser.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseGitHubRedirectLocation
     path: ../src/TGBot/Update/UriVersionParser.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -95,11 +95,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UriVersionParser.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseJohnVanSickleReleasePage
     path: ../src/TGBot/Update/UriVersionParser.cs
-    startLine: 31
+    startLine: 34
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update

@@ -20,11 +20,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ToolUpdateResult
     path: ../src/TGBot/Update/UpdateResult.cs
-    startLine: 27
+    startLine: 30
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -58,11 +58,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Update/UpdateResult.cs
-    startLine: 27
+    startLine: 30
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -102,11 +102,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Tool
     path: ../src/TGBot/Update/UpdateResult.cs
-    startLine: 28
+    startLine: 31
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -133,11 +133,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LocalVersion
     path: ../src/TGBot/Update/UpdateResult.cs
-    startLine: 29
+    startLine: 32
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -164,11 +164,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LatestVersion
     path: ../src/TGBot/Update/UpdateResult.cs
-    startLine: 30
+    startLine: 33
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -195,11 +195,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Status
     path: ../src/TGBot/Update/UpdateResult.cs
-    startLine: 31
+    startLine: 34
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update

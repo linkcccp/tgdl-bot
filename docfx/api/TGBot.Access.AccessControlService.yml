@@ -5,8 +5,8 @@ items:
   id: AccessControlService
   parent: TGBot.Access
   children:
-  - TGBot.Access.AccessControlService.#ctor(System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64})
-  - TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea,System.Nullable{System.Int64},System.Int64)
+  - TGBot.Access.AccessControlService.#ctor(System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64},TGBot.Texts.I18n.II18n)
+  - TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea,System.Nullable{System.Int64},System.Int64,System.String)
   langs:
   - csharp
   - vb
@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: src/TGBot/Access/AccessControlService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessControlService
     path: ../src/TGBot/Access/AccessControlService.cs
-    startLine: 42
+    startLine: 46
   assemblies:
   - tgdl-bot
   namespace: TGBot.Access
@@ -43,32 +43,32 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Access.AccessControlService.#ctor(System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64})
-  commentId: M:TGBot.Access.AccessControlService.#ctor(System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64})
-  id: '#ctor(System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64})'
+- uid: TGBot.Access.AccessControlService.#ctor(System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64},TGBot.Texts.I18n.II18n)
+  commentId: M:TGBot.Access.AccessControlService.#ctor(System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64},TGBot.Texts.I18n.II18n)
+  id: '#ctor(System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64},TGBot.Texts.I18n.II18n)'
   parent: TGBot.Access.AccessControlService
   langs:
   - csharp
   - vb
-  name: AccessControlService(IEnumerable<long>, IEnumerable<long>)
-  nameWithType: AccessControlService.AccessControlService(IEnumerable<long>, IEnumerable<long>)
-  fullName: TGBot.Access.AccessControlService.AccessControlService(System.Collections.Generic.IEnumerable<long>, System.Collections.Generic.IEnumerable<long>)
+  name: AccessControlService(IEnumerable<long>, IEnumerable<long>, II18n)
+  nameWithType: AccessControlService.AccessControlService(IEnumerable<long>, IEnumerable<long>, II18n)
+  fullName: TGBot.Access.AccessControlService.AccessControlService(System.Collections.Generic.IEnumerable<long>, System.Collections.Generic.IEnumerable<long>, TGBot.Texts.I18n.II18n)
   type: Constructor
   source:
     remote:
       path: src/TGBot/Access/AccessControlService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Access/AccessControlService.cs
-    startLine: 52
+    startLine: 58
   assemblies:
   - tgdl-bot
   namespace: TGBot.Access
   summary: 初始化 <xref href="TGBot.Access.AccessControlService" data-throw-if-not-resolved="false"></xref>。
   example: []
   syntax:
-    content: public AccessControlService(IEnumerable<long> allowedUserIds, IEnumerable<long> targetChannelIds)
+    content: public AccessControlService(IEnumerable<long> allowedUserIds, IEnumerable<long> targetChannelIds, II18n i18n)
     parameters:
     - id: allowedUserIds
       type: System.Collections.Generic.IEnumerable{System.Int64}
@@ -76,37 +76,40 @@ items:
     - id: targetChannelIds
       type: System.Collections.Generic.IEnumerable{System.Int64}
       description: 允许的频道/群组 ID 集合。
-    content.vb: Public Sub New(allowedUserIds As IEnumerable(Of Long), targetChannelIds As IEnumerable(Of Long))
+    - id: i18n
+      type: TGBot.Texts.I18n.II18n
+      description: 国际化服务（拒绝文案渲染）。
+    content.vb: Public Sub New(allowedUserIds As IEnumerable(Of Long), targetChannelIds As IEnumerable(Of Long), i18n As II18n)
   overload: TGBot.Access.AccessControlService.#ctor*
-  nameWithType.vb: AccessControlService.New(IEnumerable(Of Long), IEnumerable(Of Long))
-  fullName.vb: TGBot.Access.AccessControlService.New(System.Collections.Generic.IEnumerable(Of Long), System.Collections.Generic.IEnumerable(Of Long))
-  name.vb: New(IEnumerable(Of Long), IEnumerable(Of Long))
-- uid: TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea,System.Nullable{System.Int64},System.Int64)
-  commentId: M:TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea,System.Nullable{System.Int64},System.Int64)
-  id: Evaluate(TGBot.Access.TriggerArea,System.Nullable{System.Int64},System.Int64)
+  nameWithType.vb: AccessControlService.New(IEnumerable(Of Long), IEnumerable(Of Long), II18n)
+  fullName.vb: TGBot.Access.AccessControlService.New(System.Collections.Generic.IEnumerable(Of Long), System.Collections.Generic.IEnumerable(Of Long), TGBot.Texts.I18n.II18n)
+  name.vb: New(IEnumerable(Of Long), IEnumerable(Of Long), II18n)
+- uid: TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea,System.Nullable{System.Int64},System.Int64,System.String)
+  commentId: M:TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea,System.Nullable{System.Int64},System.Int64,System.String)
+  id: Evaluate(TGBot.Access.TriggerArea,System.Nullable{System.Int64},System.Int64,System.String)
   parent: TGBot.Access.AccessControlService
   langs:
   - csharp
   - vb
-  name: Evaluate(TriggerArea, long?, long)
-  nameWithType: AccessControlService.Evaluate(TriggerArea, long?, long)
-  fullName: TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea, long?, long)
+  name: Evaluate(TriggerArea, long?, long, string)
+  nameWithType: AccessControlService.Evaluate(TriggerArea, long?, long, string)
+  fullName: TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea, long?, long, string)
   type: Method
   source:
     remote:
       path: src/TGBot/Access/AccessControlService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Evaluate
     path: ../src/TGBot/Access/AccessControlService.cs
-    startLine: 65
+    startLine: 73
   assemblies:
   - tgdl-bot
   namespace: TGBot.Access
   summary: 判定是否允许触发。
   example: []
   syntax:
-    content: public AccessDecision Evaluate(TriggerArea area, long? userId, long chatId)
+    content: public AccessDecision Evaluate(TriggerArea area, long? userId, long chatId, string lang)
     parameters:
     - id: area
       type: TGBot.Access.TriggerArea
@@ -117,14 +120,17 @@ items:
     - id: chatId
       type: System.Int64
       description: 会话 ID。
+    - id: lang
+      type: System.String
+      description: 调用方语言（拒绝文案渲染）。
     return:
       type: TGBot.Access.AccessDecision
       description: 判定结果。
-    content.vb: Public Function Evaluate(area As TriggerArea, userId As Long?, chatId As Long) As AccessDecision
+    content.vb: Public Function Evaluate(area As TriggerArea, userId As Long?, chatId As Long, lang As String) As AccessDecision
   overload: TGBot.Access.AccessControlService.Evaluate*
-  nameWithType.vb: AccessControlService.Evaluate(TriggerArea, Long?, Long)
-  fullName.vb: TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea, Long?, Long)
-  name.vb: Evaluate(TriggerArea, Long?, Long)
+  nameWithType.vb: AccessControlService.Evaluate(TriggerArea, Long?, Long, String)
+  fullName.vb: TGBot.Access.AccessControlService.Evaluate(TGBot.Access.TriggerArea, Long?, Long, String)
+  name.vb: Evaluate(TriggerArea, Long?, Long, String)
 references:
 - uid: TGBot.Access
   commentId: N:TGBot.Access
@@ -370,7 +376,7 @@ references:
   fullName: TGBot.Access.AccessControlService
 - uid: TGBot.Access.AccessControlService.#ctor*
   commentId: Overload:TGBot.Access.AccessControlService.#ctor
-  href: TGBot.Access.AccessControlService.html#TGBot_Access_AccessControlService__ctor_System_Collections_Generic_IEnumerable_System_Int64__System_Collections_Generic_IEnumerable_System_Int64__
+  href: TGBot.Access.AccessControlService.html#TGBot_Access_AccessControlService__ctor_System_Collections_Generic_IEnumerable_System_Int64__System_Collections_Generic_IEnumerable_System_Int64__TGBot_Texts_I18n_II18n_
   name: AccessControlService
   nameWithType: AccessControlService.AccessControlService
   fullName: TGBot.Access.AccessControlService.AccessControlService
@@ -412,6 +418,13 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int64
   - name: )
+- uid: TGBot.Texts.I18n.II18n
+  commentId: T:TGBot.Texts.I18n.II18n
+  parent: TGBot.Texts.I18n
+  href: TGBot.Texts.I18n.II18n.html
+  name: II18n
+  nameWithType: II18n
+  fullName: TGBot.Texts.I18n.II18n
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
@@ -477,9 +490,39 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: TGBot.Texts.I18n
+  commentId: N:TGBot.Texts.I18n
+  href: TGBot.html
+  name: TGBot.Texts.I18n
+  nameWithType: TGBot.Texts.I18n
+  fullName: TGBot.Texts.I18n
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
 - uid: TGBot.Access.AccessControlService.Evaluate*
   commentId: Overload:TGBot.Access.AccessControlService.Evaluate
-  href: TGBot.Access.AccessControlService.html#TGBot_Access_AccessControlService_Evaluate_TGBot_Access_TriggerArea_System_Nullable_System_Int64__System_Int64_
+  href: TGBot.Access.AccessControlService.html#TGBot_Access_AccessControlService_Evaluate_TGBot_Access_TriggerArea_System_Nullable_System_Int64__System_Int64_System_String_
   name: Evaluate
   nameWithType: AccessControlService.Evaluate
   fullName: TGBot.Access.AccessControlService.Evaluate
@@ -524,6 +567,17 @@ references:
   nameWithType.vb: Long
   fullName.vb: Long
   name.vb: Long
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: TGBot.Access.AccessDecision
   commentId: T:TGBot.Access.AccessDecision
   parent: TGBot.Access

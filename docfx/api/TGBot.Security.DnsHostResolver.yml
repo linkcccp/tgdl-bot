@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: src/TGBot/Security/HostResolver.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DnsHostResolver
     path: ../src/TGBot/Security/HostResolver.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security
@@ -54,11 +54,11 @@ items:
   source:
     remote:
       path: src/TGBot/Security/HostResolver.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ResolveAsync
     path: ../src/TGBot/Security/HostResolver.cs
-    startLine: 24
+    startLine: 27
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security

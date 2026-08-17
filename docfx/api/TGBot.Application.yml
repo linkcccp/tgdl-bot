@@ -5,10 +5,12 @@ items:
   id: TGBot.Application
   children:
   - TGBot.Application.AppHost
+  - TGBot.Application.AppInfo
   - TGBot.Application.BotService
   - TGBot.Application.CommandHandler
   - TGBot.Application.DownloadCoordinator
   - TGBot.Application.MessageRouter
+  - TGBot.Application.PendingNotifySender
   langs:
   - csharp
   - vb
@@ -25,6 +27,12 @@ references:
   name: AppHost
   nameWithType: AppHost
   fullName: TGBot.Application.AppHost
+- uid: TGBot.Application.AppInfo
+  commentId: T:TGBot.Application.AppInfo
+  href: TGBot.Application.AppInfo.html
+  name: AppInfo
+  nameWithType: AppInfo
+  fullName: TGBot.Application.AppInfo
 - uid: TGBot.Application.BotService
   commentId: T:TGBot.Application.BotService
   href: TGBot.Application.BotService.html
@@ -52,6 +60,13 @@ references:
   name: MessageRouter
   nameWithType: MessageRouter
   fullName: TGBot.Application.MessageRouter
+- uid: TGBot.Application.PendingNotifySender
+  commentId: T:TGBot.Application.PendingNotifySender
+  parent: TGBot.Application
+  href: TGBot.Application.PendingNotifySender.html
+  name: PendingNotifySender
+  nameWithType: PendingNotifySender
+  fullName: TGBot.Application.PendingNotifySender
 - uid: TGBot.Application
   commentId: N:TGBot.Application
   href: TGBot.html

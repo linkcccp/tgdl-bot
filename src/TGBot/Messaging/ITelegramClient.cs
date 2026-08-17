@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 namespace TGBot.Messaging;
 
 /// <summary>
@@ -66,6 +69,40 @@ public sealed class InboundMessage
     /// 回调数据（IsCallback 为 true 时非空）。
     /// </summary>
     public string? CallbackData { get; init; }
+
+    /// <summary>
+    /// 消息语言（入口由 <see cref="TGBot.Texts.I18n.UserLanguageResolver"/> 按解析链填充；
+    /// Wrapper 先以 <c>User.language_code</c> 归一化作为初值）。所有回复/通知均使用该语言渲染。
+    /// </summary>
+    public string Language { get; init; } = "en";
+
+    /// <summary>
+    /// Telegram 原始 <c>User.language_code</c>（仅发送方携带时非空）；
+    /// 供 <see cref="TGBot.Texts.I18n.UserLanguageResolver"/> 做前缀映射。
+    /// </summary>
+    public string? LanguageCode { get; init; }
+
+    /// <summary>
+    /// 生成语言已更新的新消息实例（其余字段原样复制）。
+    /// </summary>
+    /// <param name="language">新的语言代码。</param>
+    /// <returns>新消息实例。</returns>
+    public InboundMessage WithLanguage(string language) => new()
+    {
+        ChatId = ChatId,
+        IsPrivate = IsPrivate,
+        SenderUserId = SenderUserId,
+        Text = Text,
+        Caption = Caption,
+        TriggerMessageId = TriggerMessageId,
+        DocumentFileId = DocumentFileId,
+        DocumentFileName = DocumentFileName,
+        DocumentSizeBytes = DocumentSizeBytes,
+        IsCallback = IsCallback,
+        CallbackData = CallbackData,
+        Language = language,
+        LanguageCode = LanguageCode,
+    };
 
     /// <summary>
     /// 用于提取 URL 的完整文本（文本 + 说明）。

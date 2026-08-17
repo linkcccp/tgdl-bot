@@ -13,10 +13,13 @@ items:
   - TGBot.Messaging.InboundMessage.DocumentSizeBytes
   - TGBot.Messaging.InboundMessage.IsCallback
   - TGBot.Messaging.InboundMessage.IsPrivate
+  - TGBot.Messaging.InboundMessage.Language
+  - TGBot.Messaging.InboundMessage.LanguageCode
   - TGBot.Messaging.InboundMessage.SenderUserId
   - TGBot.Messaging.InboundMessage.Text
   - TGBot.Messaging.InboundMessage.TriggerMessageId
   - TGBot.Messaging.InboundMessage.UrlSearchText
+  - TGBot.Messaging.InboundMessage.WithLanguage(System.String)
   langs:
   - csharp
   - vb
@@ -27,11 +30,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: InboundMessage
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 12
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -63,11 +66,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ChatId
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -94,11 +97,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsPrivate
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 22
+    startLine: 25
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -125,11 +128,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SenderUserId
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 27
+    startLine: 30
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -156,11 +159,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Text
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 32
+    startLine: 35
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -187,11 +190,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Caption
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 37
+    startLine: 40
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -218,11 +221,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TriggerMessageId
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 42
+    startLine: 45
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -249,11 +252,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DocumentFileId
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 47
+    startLine: 50
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -280,11 +283,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DocumentFileName
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 52
+    startLine: 55
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -311,11 +314,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DocumentSizeBytes
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 57
+    startLine: 60
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -342,11 +345,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsCallback
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 62
+    startLine: 65
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -373,11 +376,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CallbackData
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 67
+    startLine: 70
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -390,6 +393,112 @@ items:
       type: System.String
     content.vb: Public Property CallbackData As String
   overload: TGBot.Messaging.InboundMessage.CallbackData*
+- uid: TGBot.Messaging.InboundMessage.Language
+  commentId: P:TGBot.Messaging.InboundMessage.Language
+  id: Language
+  parent: TGBot.Messaging.InboundMessage
+  langs:
+  - csharp
+  - vb
+  name: Language
+  nameWithType: InboundMessage.Language
+  fullName: TGBot.Messaging.InboundMessage.Language
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Language
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 76
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: >-
+    消息语言（入口由 <xref href="TGBot.Texts.I18n.UserLanguageResolver" data-throw-if-not-resolved="false"></xref> 按解析链填充；
+
+    Wrapper 先以 <code>User.language_code</code> 归一化作为初值）。所有回复/通知均使用该语言渲染。
+  example: []
+  syntax:
+    content: public string Language { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Language As String
+  overload: TGBot.Messaging.InboundMessage.Language*
+- uid: TGBot.Messaging.InboundMessage.LanguageCode
+  commentId: P:TGBot.Messaging.InboundMessage.LanguageCode
+  id: LanguageCode
+  parent: TGBot.Messaging.InboundMessage
+  langs:
+  - csharp
+  - vb
+  name: LanguageCode
+  nameWithType: InboundMessage.LanguageCode
+  fullName: TGBot.Messaging.InboundMessage.LanguageCode
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: LanguageCode
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 82
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: >-
+    Telegram 原始 <code>User.language_code</code>（仅发送方携带时非空）；
+
+    供 <xref href="TGBot.Texts.I18n.UserLanguageResolver" data-throw-if-not-resolved="false"></xref> 做前缀映射。
+  example: []
+  syntax:
+    content: public string? LanguageCode { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property LanguageCode As String
+  overload: TGBot.Messaging.InboundMessage.LanguageCode*
+- uid: TGBot.Messaging.InboundMessage.WithLanguage(System.String)
+  commentId: M:TGBot.Messaging.InboundMessage.WithLanguage(System.String)
+  id: WithLanguage(System.String)
+  parent: TGBot.Messaging.InboundMessage
+  langs:
+  - csharp
+  - vb
+  name: WithLanguage(string)
+  nameWithType: InboundMessage.WithLanguage(string)
+  fullName: TGBot.Messaging.InboundMessage.WithLanguage(string)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Messaging/ITelegramClient.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: WithLanguage
+    path: ../src/TGBot/Messaging/ITelegramClient.cs
+    startLine: 89
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Messaging
+  summary: 生成语言已更新的新消息实例（其余字段原样复制）。
+  example: []
+  syntax:
+    content: public InboundMessage WithLanguage(string language)
+    parameters:
+    - id: language
+      type: System.String
+      description: 新的语言代码。
+    return:
+      type: TGBot.Messaging.InboundMessage
+      description: 新消息实例。
+    content.vb: Public Function WithLanguage(language As String) As InboundMessage
+  overload: TGBot.Messaging.InboundMessage.WithLanguage*
+  nameWithType.vb: InboundMessage.WithLanguage(String)
+  fullName.vb: TGBot.Messaging.InboundMessage.WithLanguage(String)
+  name.vb: WithLanguage(String)
 - uid: TGBot.Messaging.InboundMessage.UrlSearchText
   commentId: P:TGBot.Messaging.InboundMessage.UrlSearchText
   id: UrlSearchText
@@ -404,11 +513,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlSearchText
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 72
+    startLine: 109
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -818,6 +927,68 @@ references:
   name: CallbackData
   nameWithType: InboundMessage.CallbackData
   fullName: TGBot.Messaging.InboundMessage.CallbackData
+- uid: TGBot.Texts.I18n.UserLanguageResolver
+  commentId: T:TGBot.Texts.I18n.UserLanguageResolver
+  parent: TGBot.Texts.I18n
+  href: TGBot.Texts.I18n.UserLanguageResolver.html
+  name: UserLanguageResolver
+  nameWithType: UserLanguageResolver
+  fullName: TGBot.Texts.I18n.UserLanguageResolver
+- uid: TGBot.Messaging.InboundMessage.Language*
+  commentId: Overload:TGBot.Messaging.InboundMessage.Language
+  href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_Language
+  name: Language
+  nameWithType: InboundMessage.Language
+  fullName: TGBot.Messaging.InboundMessage.Language
+- uid: TGBot.Texts.I18n
+  commentId: N:TGBot.Texts.I18n
+  href: TGBot.html
+  name: TGBot.Texts.I18n
+  nameWithType: TGBot.Texts.I18n
+  fullName: TGBot.Texts.I18n
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
+- uid: TGBot.Messaging.InboundMessage.LanguageCode*
+  commentId: Overload:TGBot.Messaging.InboundMessage.LanguageCode
+  href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_LanguageCode
+  name: LanguageCode
+  nameWithType: InboundMessage.LanguageCode
+  fullName: TGBot.Messaging.InboundMessage.LanguageCode
+- uid: TGBot.Messaging.InboundMessage.WithLanguage*
+  commentId: Overload:TGBot.Messaging.InboundMessage.WithLanguage
+  href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_WithLanguage_System_String_
+  name: WithLanguage
+  nameWithType: InboundMessage.WithLanguage
+  fullName: TGBot.Messaging.InboundMessage.WithLanguage
+- uid: TGBot.Messaging.InboundMessage
+  commentId: T:TGBot.Messaging.InboundMessage
+  parent: TGBot.Messaging
+  href: TGBot.Messaging.InboundMessage.html
+  name: InboundMessage
+  nameWithType: InboundMessage
+  fullName: TGBot.Messaging.InboundMessage
 - uid: TGBot.Messaging.InboundMessage.UrlSearchText*
   commentId: Overload:TGBot.Messaging.InboundMessage.UrlSearchText
   href: TGBot.Messaging.InboundMessage.html#TGBot_Messaging_InboundMessage_UrlSearchText

@@ -1,0 +1,767 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Config.Overlay.PendingNotify
+  commentId: T:TGBot.Config.Overlay.PendingNotify
+  id: PendingNotify
+  parent: TGBot.Config.Overlay
+  children:
+  - TGBot.Config.Overlay.PendingNotify.#ctor(System.Int64,System.String,System.Collections.Generic.IReadOnlyList{System.String},System.String,System.String,System.Int32)
+  - TGBot.Config.Overlay.PendingNotify.Args
+  - TGBot.Config.Overlay.PendingNotify.Attempts
+  - TGBot.Config.Overlay.PendingNotify.ChatId
+  - TGBot.Config.Overlay.PendingNotify.CreatedAt
+  - TGBot.Config.Overlay.PendingNotify.Lang
+  - TGBot.Config.Overlay.PendingNotify.TextKey
+  langs:
+  - csharp
+  - vb
+  name: PendingNotify
+  nameWithType: PendingNotify
+  fullName: TGBot.Config.Overlay.PendingNotify
+  type: Class
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: PendingNotify
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 17
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 重启后待发送的通知（/config、/access 变更后由新进程消费）。
+  example: []
+  syntax:
+    content: 'public sealed record PendingNotify : IEquatable<PendingNotify>'
+    content.vb: Public NotInheritable Class PendingNotify Implements IEquatable(Of PendingNotify)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{TGBot.Config.Overlay.PendingNotify}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Config.Overlay.PendingNotify.#ctor(System.Int64,System.String,System.Collections.Generic.IReadOnlyList{System.String},System.String,System.String,System.Int32)
+  commentId: M:TGBot.Config.Overlay.PendingNotify.#ctor(System.Int64,System.String,System.Collections.Generic.IReadOnlyList{System.String},System.String,System.String,System.Int32)
+  id: '#ctor(System.Int64,System.String,System.Collections.Generic.IReadOnlyList{System.String},System.String,System.String,System.Int32)'
+  parent: TGBot.Config.Overlay.PendingNotify
+  langs:
+  - csharp
+  - vb
+  name: PendingNotify(long, string, IReadOnlyList<string>, string, string, int)
+  nameWithType: PendingNotify.PendingNotify(long, string, IReadOnlyList<string>, string, string, int)
+  fullName: TGBot.Config.Overlay.PendingNotify.PendingNotify(long, string, System.Collections.Generic.IReadOnlyList<string>, string, string, int)
+  type: Constructor
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: .ctor
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 17
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 重启后待发送的通知（/config、/access 变更后由新进程消费）。
+  example: []
+  syntax:
+    content: public PendingNotify(long ChatId, string TextKey, IReadOnlyList<string> Args, string Lang, string CreatedAt, int Attempts)
+    parameters:
+    - id: ChatId
+      type: System.Int64
+      description: 待通知的会话（发起变更的用户 chatId）。
+    - id: TextKey
+      type: System.String
+      description: 文案资源键。
+    - id: Args
+      type: System.Collections.Generic.IReadOnlyList{System.String}
+      description: 占位符参数。
+    - id: Lang
+      type: System.String
+      description: 渲染语言（变更时用户的语言）。
+    - id: CreatedAt
+      type: System.String
+      description: 创建时间（ISO 8601）。
+    - id: Attempts
+      type: System.Int32
+      description: 已失败发送次数。
+    content.vb: Public Sub New(ChatId As Long, TextKey As String, Args As IReadOnlyList(Of String), Lang As String, CreatedAt As String, Attempts As Integer)
+  overload: TGBot.Config.Overlay.PendingNotify.#ctor*
+  nameWithType.vb: PendingNotify.New(Long, String, IReadOnlyList(Of String), String, String, Integer)
+  fullName.vb: TGBot.Config.Overlay.PendingNotify.New(Long, String, System.Collections.Generic.IReadOnlyList(Of String), String, String, Integer)
+  name.vb: New(Long, String, IReadOnlyList(Of String), String, String, Integer)
+- uid: TGBot.Config.Overlay.PendingNotify.ChatId
+  commentId: P:TGBot.Config.Overlay.PendingNotify.ChatId
+  id: ChatId
+  parent: TGBot.Config.Overlay.PendingNotify
+  langs:
+  - csharp
+  - vb
+  name: ChatId
+  nameWithType: PendingNotify.ChatId
+  fullName: TGBot.Config.Overlay.PendingNotify.ChatId
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ChatId
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 18
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 待通知的会话（发起变更的用户 chatId）。
+  example: []
+  syntax:
+    content: public long ChatId { get; init; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property ChatId As Long
+  overload: TGBot.Config.Overlay.PendingNotify.ChatId*
+- uid: TGBot.Config.Overlay.PendingNotify.TextKey
+  commentId: P:TGBot.Config.Overlay.PendingNotify.TextKey
+  id: TextKey
+  parent: TGBot.Config.Overlay.PendingNotify
+  langs:
+  - csharp
+  - vb
+  name: TextKey
+  nameWithType: PendingNotify.TextKey
+  fullName: TGBot.Config.Overlay.PendingNotify.TextKey
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: TextKey
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 19
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 文案资源键。
+  example: []
+  syntax:
+    content: public string TextKey { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property TextKey As String
+  overload: TGBot.Config.Overlay.PendingNotify.TextKey*
+- uid: TGBot.Config.Overlay.PendingNotify.Args
+  commentId: P:TGBot.Config.Overlay.PendingNotify.Args
+  id: Args
+  parent: TGBot.Config.Overlay.PendingNotify
+  langs:
+  - csharp
+  - vb
+  name: Args
+  nameWithType: PendingNotify.Args
+  fullName: TGBot.Config.Overlay.PendingNotify.Args
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Args
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 20
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 占位符参数。
+  example: []
+  syntax:
+    content: public IReadOnlyList<string> Args { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{System.String}
+    content.vb: Public Property Args As IReadOnlyList(Of String)
+  overload: TGBot.Config.Overlay.PendingNotify.Args*
+- uid: TGBot.Config.Overlay.PendingNotify.Lang
+  commentId: P:TGBot.Config.Overlay.PendingNotify.Lang
+  id: Lang
+  parent: TGBot.Config.Overlay.PendingNotify
+  langs:
+  - csharp
+  - vb
+  name: Lang
+  nameWithType: PendingNotify.Lang
+  fullName: TGBot.Config.Overlay.PendingNotify.Lang
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Lang
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 21
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 渲染语言（变更时用户的语言）。
+  example: []
+  syntax:
+    content: public string Lang { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Lang As String
+  overload: TGBot.Config.Overlay.PendingNotify.Lang*
+- uid: TGBot.Config.Overlay.PendingNotify.CreatedAt
+  commentId: P:TGBot.Config.Overlay.PendingNotify.CreatedAt
+  id: CreatedAt
+  parent: TGBot.Config.Overlay.PendingNotify
+  langs:
+  - csharp
+  - vb
+  name: CreatedAt
+  nameWithType: PendingNotify.CreatedAt
+  fullName: TGBot.Config.Overlay.PendingNotify.CreatedAt
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: CreatedAt
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 22
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 创建时间（ISO 8601）。
+  example: []
+  syntax:
+    content: public string CreatedAt { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CreatedAt As String
+  overload: TGBot.Config.Overlay.PendingNotify.CreatedAt*
+- uid: TGBot.Config.Overlay.PendingNotify.Attempts
+  commentId: P:TGBot.Config.Overlay.PendingNotify.Attempts
+  id: Attempts
+  parent: TGBot.Config.Overlay.PendingNotify
+  langs:
+  - csharp
+  - vb
+  name: Attempts
+  nameWithType: PendingNotify.Attempts
+  fullName: TGBot.Config.Overlay.PendingNotify.Attempts
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Attempts
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 23
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 已失败发送次数。
+  example: []
+  syntax:
+    content: public int Attempts { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Attempts As Integer
+  overload: TGBot.Config.Overlay.PendingNotify.Attempts*
+references:
+- uid: TGBot.Config.Overlay
+  commentId: N:TGBot.Config.Overlay
+  href: TGBot.html
+  name: TGBot.Config.Overlay
+  nameWithType: TGBot.Config.Overlay
+  fullName: TGBot.Config.Overlay
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+  - name: .
+  - uid: TGBot.Config.Overlay
+    name: Overlay
+    href: TGBot.Config.Overlay.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+  - name: .
+  - uid: TGBot.Config.Overlay
+    name: Overlay
+    href: TGBot.Config.Overlay.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{TGBot.Config.Overlay.PendingNotify}
+  commentId: T:System.IEquatable{TGBot.Config.Overlay.PendingNotify}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<PendingNotify>
+  nameWithType: IEquatable<PendingNotify>
+  fullName: System.IEquatable<TGBot.Config.Overlay.PendingNotify>
+  nameWithType.vb: IEquatable(Of PendingNotify)
+  fullName.vb: System.IEquatable(Of TGBot.Config.Overlay.PendingNotify)
+  name.vb: IEquatable(Of PendingNotify)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: TGBot.Config.Overlay.PendingNotify
+    name: PendingNotify
+    href: TGBot.Config.Overlay.PendingNotify.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TGBot.Config.Overlay.PendingNotify
+    name: PendingNotify
+    href: TGBot.Config.Overlay.PendingNotify.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: TGBot.Config.Overlay.PendingNotify.#ctor*
+  commentId: Overload:TGBot.Config.Overlay.PendingNotify.#ctor
+  href: TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify__ctor_System_Int64_System_String_System_Collections_Generic_IReadOnlyList_System_String__System_String_System_String_System_Int32_
+  name: PendingNotify
+  nameWithType: PendingNotify.PendingNotify
+  fullName: TGBot.Config.Overlay.PendingNotify.PendingNotify
+  nameWithType.vb: PendingNotify.New
+  fullName.vb: TGBot.Config.Overlay.PendingNotify.New
+  name.vb: New
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Collections.Generic.IReadOnlyList{System.String}
+  commentId: T:System.Collections.Generic.IReadOnlyList{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<string>
+  nameWithType: IReadOnlyList<string>
+  fullName: System.Collections.Generic.IReadOnlyList<string>
+  nameWithType.vb: IReadOnlyList(Of String)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of String)
+  name.vb: IReadOnlyList(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: TGBot.Config.Overlay.PendingNotify.ChatId*
+  commentId: Overload:TGBot.Config.Overlay.PendingNotify.ChatId
+  href: TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_ChatId
+  name: ChatId
+  nameWithType: PendingNotify.ChatId
+  fullName: TGBot.Config.Overlay.PendingNotify.ChatId
+- uid: TGBot.Config.Overlay.PendingNotify.TextKey*
+  commentId: Overload:TGBot.Config.Overlay.PendingNotify.TextKey
+  href: TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_TextKey
+  name: TextKey
+  nameWithType: PendingNotify.TextKey
+  fullName: TGBot.Config.Overlay.PendingNotify.TextKey
+- uid: TGBot.Config.Overlay.PendingNotify.Args*
+  commentId: Overload:TGBot.Config.Overlay.PendingNotify.Args
+  href: TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_Args
+  name: Args
+  nameWithType: PendingNotify.Args
+  fullName: TGBot.Config.Overlay.PendingNotify.Args
+- uid: TGBot.Config.Overlay.PendingNotify.Lang*
+  commentId: Overload:TGBot.Config.Overlay.PendingNotify.Lang
+  href: TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_Lang
+  name: Lang
+  nameWithType: PendingNotify.Lang
+  fullName: TGBot.Config.Overlay.PendingNotify.Lang
+- uid: TGBot.Config.Overlay.PendingNotify.CreatedAt*
+  commentId: Overload:TGBot.Config.Overlay.PendingNotify.CreatedAt
+  href: TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_CreatedAt
+  name: CreatedAt
+  nameWithType: PendingNotify.CreatedAt
+  fullName: TGBot.Config.Overlay.PendingNotify.CreatedAt
+- uid: TGBot.Config.Overlay.PendingNotify.Attempts*
+  commentId: Overload:TGBot.Config.Overlay.PendingNotify.Attempts
+  href: TGBot.Config.Overlay.PendingNotify.html#TGBot_Config_Overlay_PendingNotify_Attempts
+  name: Attempts
+  nameWithType: PendingNotify.Attempts
+  fullName: TGBot.Config.Overlay.PendingNotify.Attempts

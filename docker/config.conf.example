@@ -84,3 +84,10 @@ YtDlpYoutubePlayerClients = android,ios,web_embedded,tv
 
 # 非交互场景（频道/群组发链接、或私聊选择超时）的默认下载模式：video（合并）/ audio（仅音频）
 # TgdlDefaultMode = video
+
+# Bot 全局默认语言：auto（跟随用户 language_code）/ en / zh；缺省 auto
+TgdlLanguage = auto
+
+# 运行时状态目录（languages.json、config-overlay.json、access-overlay.json、pending-notify.json）
+# 容器内默认 /opt/tgdl-bot/api-data（tgdl-data 卷内，跨镜像重建持久；一般无需改动）
+StateDir = /opt/tgdl-bot/api-data

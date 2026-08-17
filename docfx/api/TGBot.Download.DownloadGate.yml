@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadGate.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadGate
     path: ../src/TGBot/Download/DownloadGate.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -60,11 +60,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadGate.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Download/DownloadGate.cs
-    startLine: 16
+    startLine: 19
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -99,11 +99,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadGate.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DisposeAsync
     path: ../src/TGBot/Download/DownloadGate.cs
-    startLine: 28
+    startLine: 31
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -135,11 +135,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadGate.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AcquireDownloadAsync
     path: ../src/TGBot/Download/DownloadGate.cs
-    startLine: 39
+    startLine: 42
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -170,11 +170,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadGate.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AcquireExclusiveAsync
     path: ../src/TGBot/Download/DownloadGate.cs
-    startLine: 50
+    startLine: 53
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download

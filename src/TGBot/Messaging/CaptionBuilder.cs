@@ -1,4 +1,9 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 using System.Text;
+using TGBot.Texts;
+using TGBot.Texts.I18n;
 
 namespace TGBot.Messaging;
 
@@ -10,14 +15,16 @@ public static class CaptionBuilder
     private const int MaxLength = 1000;
 
     /// <summary>
-    /// 构建媒体说明：<c>标题：xxx\n\n来源：https://...</c>。
+    /// 构建媒体说明：<c>标题：xxx\n\n来源：https://...</c>（文案按语言渲染）。
     /// </summary>
+    /// <param name="i18n">国际化服务。</param>
+    /// <param name="lang">语言代码。</param>
     /// <param name="title">标题。</param>
     /// <param name="sourceUrl">来源 URL。</param>
     /// <returns>净化后的说明文本。</returns>
-    public static string Build(string title, string sourceUrl)
+    public static string Build(II18n i18n, string lang, string title, string sourceUrl)
     {
-        var text = $"标题：{title}\n\n来源：{sourceUrl}";
+        var text = $"{i18n.Get(lang, UserTexts.CaptionTitle, title)}\n\n{i18n.Get(lang, UserTexts.CaptionSource, sourceUrl)}";
         return Sanitize(text);
     }
 

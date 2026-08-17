@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 using System.Net;
 using TGBot.Security;
 using Xunit;
@@ -101,7 +104,7 @@ public class UrlValidatorTests
     {
         var result = await Create("example.com").ValidateAsync(url, false, CancellationToken.None);
         Assert.False(result.IsValid);
-        Assert.NotEmpty(result.Error);
+        Assert.NotEmpty(result.ErrorKey);
     }
 
     [Theory]

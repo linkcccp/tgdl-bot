@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/UploadService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadResult
     path: ../src/TGBot/Messaging/UploadService.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -56,11 +56,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/UploadService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Messaging/UploadService.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -94,11 +94,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/UploadService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SuccessCount
     path: ../src/TGBot/Messaging/UploadService.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -125,11 +125,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/UploadService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FailedChats
     path: ../src/TGBot/Messaging/UploadService.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging

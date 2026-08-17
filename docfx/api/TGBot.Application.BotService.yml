@@ -5,7 +5,7 @@ items:
   id: BotService
   parent: TGBot.Application
   children:
-  - TGBot.Application.BotService.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Application.MessageRouter,TGBot.Logging.IAppLogger)
+  - TGBot.Application.BotService.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Application.MessageRouter,TGBot.Logging.IAppLogger,TGBot.Application.PendingNotifySender)
   - TGBot.Application.BotService.RunAsync(System.Threading.CancellationToken)
   langs:
   - csharp
@@ -17,15 +17,19 @@ items:
   source:
     remote:
       path: src/TGBot/Application/BotService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: BotService
     path: ../src/TGBot/Application/BotService.cs
-    startLine: 8
+    startLine: 12
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
-  summary: Bot 服务：Long Polling 主循环，带异常兜底与重启退避。
+  summary: >-
+    Bot 服务：Long Polling 主循环，带异常兜底与重启退避。
+
+
+    <p>就绪后、开始轮询前消费 pending-notify（重启生效通知，防重复发送）。</p>
   example: []
   syntax:
     content: public sealed class BotService
@@ -39,32 +43,32 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Application.BotService.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Application.MessageRouter,TGBot.Logging.IAppLogger)
-  commentId: M:TGBot.Application.BotService.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Application.MessageRouter,TGBot.Logging.IAppLogger)
-  id: '#ctor(TGBot.Messaging.ITelegramClient,TGBot.Application.MessageRouter,TGBot.Logging.IAppLogger)'
+- uid: TGBot.Application.BotService.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Application.MessageRouter,TGBot.Logging.IAppLogger,TGBot.Application.PendingNotifySender)
+  commentId: M:TGBot.Application.BotService.#ctor(TGBot.Messaging.ITelegramClient,TGBot.Application.MessageRouter,TGBot.Logging.IAppLogger,TGBot.Application.PendingNotifySender)
+  id: '#ctor(TGBot.Messaging.ITelegramClient,TGBot.Application.MessageRouter,TGBot.Logging.IAppLogger,TGBot.Application.PendingNotifySender)'
   parent: TGBot.Application.BotService
   langs:
   - csharp
   - vb
-  name: BotService(ITelegramClient, MessageRouter, IAppLogger)
-  nameWithType: BotService.BotService(ITelegramClient, MessageRouter, IAppLogger)
-  fullName: TGBot.Application.BotService.BotService(TGBot.Messaging.ITelegramClient, TGBot.Application.MessageRouter, TGBot.Logging.IAppLogger)
+  name: BotService(ITelegramClient, MessageRouter, IAppLogger, PendingNotifySender?)
+  nameWithType: BotService.BotService(ITelegramClient, MessageRouter, IAppLogger, PendingNotifySender?)
+  fullName: TGBot.Application.BotService.BotService(TGBot.Messaging.ITelegramClient, TGBot.Application.MessageRouter, TGBot.Logging.IAppLogger, TGBot.Application.PendingNotifySender?)
   type: Constructor
   source:
     remote:
       path: src/TGBot/Application/BotService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Application/BotService.cs
-    startLine: 20
+    startLine: 26
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
   summary: 初始化 <xref href="TGBot.Application.BotService" data-throw-if-not-resolved="false"></xref>。
   example: []
   syntax:
-    content: public BotService(ITelegramClient client, MessageRouter router, IAppLogger logger)
+    content: public BotService(ITelegramClient client, MessageRouter router, IAppLogger logger, PendingNotifySender? notifySender = null)
     parameters:
     - id: client
       type: TGBot.Messaging.ITelegramClient
@@ -75,11 +79,14 @@ items:
     - id: logger
       type: TGBot.Logging.IAppLogger
       description: 日志器。
-    content.vb: Public Sub New(client As ITelegramClient, router As MessageRouter, logger As IAppLogger)
+    - id: notifySender
+      type: TGBot.Application.PendingNotifySender
+      description: 重启通知发送器（可为空，测试注入便利）。
+    content.vb: Public Sub New(client As ITelegramClient, router As MessageRouter, logger As IAppLogger, notifySender As PendingNotifySender = Nothing)
   overload: TGBot.Application.BotService.#ctor*
-  nameWithType.vb: BotService.New(ITelegramClient, MessageRouter, IAppLogger)
-  fullName.vb: TGBot.Application.BotService.New(TGBot.Messaging.ITelegramClient, TGBot.Application.MessageRouter, TGBot.Logging.IAppLogger)
-  name.vb: New(ITelegramClient, MessageRouter, IAppLogger)
+  nameWithType.vb: BotService.New(ITelegramClient, MessageRouter, IAppLogger, PendingNotifySender)
+  fullName.vb: TGBot.Application.BotService.New(TGBot.Messaging.ITelegramClient, TGBot.Application.MessageRouter, TGBot.Logging.IAppLogger, TGBot.Application.PendingNotifySender)
+  name.vb: New(ITelegramClient, MessageRouter, IAppLogger, PendingNotifySender)
 - uid: TGBot.Application.BotService.RunAsync(System.Threading.CancellationToken)
   commentId: M:TGBot.Application.BotService.RunAsync(System.Threading.CancellationToken)
   id: RunAsync(System.Threading.CancellationToken)
@@ -94,11 +101,11 @@ items:
   source:
     remote:
       path: src/TGBot/Application/BotService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RunAsync
     path: ../src/TGBot/Application/BotService.cs
-    startLine: 31
+    startLine: 38
   assemblies:
   - tgdl-bot
   namespace: TGBot.Application
@@ -358,7 +365,7 @@ references:
   fullName: TGBot.Application.BotService
 - uid: TGBot.Application.BotService.#ctor*
   commentId: Overload:TGBot.Application.BotService.#ctor
-  href: TGBot.Application.BotService.html#TGBot_Application_BotService__ctor_TGBot_Messaging_ITelegramClient_TGBot_Application_MessageRouter_TGBot_Logging_IAppLogger_
+  href: TGBot.Application.BotService.html#TGBot_Application_BotService__ctor_TGBot_Messaging_ITelegramClient_TGBot_Application_MessageRouter_TGBot_Logging_IAppLogger_TGBot_Application_PendingNotifySender_
   name: BotService
   nameWithType: BotService.BotService
   fullName: TGBot.Application.BotService.BotService
@@ -386,6 +393,13 @@ references:
   name: IAppLogger
   nameWithType: IAppLogger
   fullName: TGBot.Logging.IAppLogger
+- uid: TGBot.Application.PendingNotifySender
+  commentId: T:TGBot.Application.PendingNotifySender
+  parent: TGBot.Application
+  href: TGBot.Application.PendingNotifySender.html
+  name: PendingNotifySender
+  nameWithType: PendingNotifySender
+  fullName: TGBot.Application.PendingNotifySender
 - uid: TGBot.Messaging
   commentId: N:TGBot.Messaging
   href: TGBot.html

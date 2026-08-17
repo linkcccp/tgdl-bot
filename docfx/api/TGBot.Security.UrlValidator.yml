@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlValidator
     path: ../src/TGBot/Security/UrlValidator.cs
-    startLine: 24
+    startLine: 28
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security
@@ -58,11 +58,11 @@ items:
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Security/UrlValidator.cs
-    startLine: 37
+    startLine: 41
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security
@@ -93,11 +93,11 @@ items:
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ExtractCandidates
     path: ../src/TGBot/Security/UrlValidator.cs
-    startLine: 47
+    startLine: 51
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security
@@ -131,11 +131,11 @@ items:
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ValidateAsync
     path: ../src/TGBot/Security/UrlValidator.cs
-    startLine: 70
+    startLine: 74
   assemblies:
   - tgdl-bot
   namespace: TGBot.Security

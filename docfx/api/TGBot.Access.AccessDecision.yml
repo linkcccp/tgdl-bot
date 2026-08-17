@@ -20,11 +20,11 @@ items:
   source:
     remote:
       path: src/TGBot/Access/AccessControlService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessDecision
     path: ../src/TGBot/Access/AccessControlService.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - tgdl-bot
   namespace: TGBot.Access
@@ -58,11 +58,11 @@ items:
   source:
     remote:
       path: src/TGBot/Access/AccessControlService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Access/AccessControlService.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - tgdl-bot
   namespace: TGBot.Access
@@ -96,11 +96,11 @@ items:
   source:
     remote:
       path: src/TGBot/Access/AccessControlService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Allowed
     path: ../src/TGBot/Access/AccessControlService.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - tgdl-bot
   namespace: TGBot.Access
@@ -127,11 +127,11 @@ items:
   source:
     remote:
       path: src/TGBot/Access/AccessControlService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Reason
     path: ../src/TGBot/Access/AccessControlService.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - tgdl-bot
   namespace: TGBot.Access
@@ -158,11 +158,11 @@ items:
   source:
     remote:
       path: src/TGBot/Access/AccessControlService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Allow
     path: ../src/TGBot/Access/AccessControlService.cs
-    startLine: 26
+    startLine: 30
   assemblies:
   - tgdl-bot
   namespace: TGBot.Access
@@ -187,11 +187,11 @@ items:
   source:
     remote:
       path: src/TGBot/Access/AccessControlService.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Deny
     path: ../src/TGBot/Access/AccessControlService.cs
-    startLine: 32
+    startLine: 36
   assemblies:
   - tgdl-bot
   namespace: TGBot.Access

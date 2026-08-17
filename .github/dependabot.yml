@@ -1,0 +1,22 @@
+# Dependabot 依赖自动更新配置。
+# 每周检查 NuGet（.NET 依赖）与 GitHub Actions（工作流依赖）的可用更新，
+# 自动创建依赖升级 PR；版本更新仍需通过 CI 校验后方可合并。
+version: 2
+updates:
+  # .NET 项目依赖（TGBot.slnx / 各 csproj），每周检查，最多同时 5 个 PR
+  - package-ecosystem: nuget
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+
+  # GitHub Actions 工作流依赖（actions/checkout、setup-dotnet 等），每周检查
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies

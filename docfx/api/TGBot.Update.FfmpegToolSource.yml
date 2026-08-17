@@ -5,7 +5,7 @@ items:
   id: FfmpegToolSource
   parent: TGBot.Update
   children:
-  - TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner)
+  - TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture})
   - TGBot.Update.FfmpegToolSource.DownloadBinaryAsync(System.String,System.Threading.CancellationToken)
   - TGBot.Update.FfmpegToolSource.GetLatestVersionAsync(System.Threading.CancellationToken)
   - TGBot.Update.FfmpegToolSource.Name
@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FfmpegToolSource
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 95
+    startLine: 100
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -49,32 +49,32 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner)
-  commentId: M:TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner)
-  id: '#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner)'
+- uid: TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture})
+  commentId: M:TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture})
+  id: '#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture})'
   parent: TGBot.Update.FfmpegToolSource
   langs:
   - csharp
   - vb
-  name: FfmpegToolSource(HttpClient, IProcessRunner)
-  nameWithType: FfmpegToolSource.FfmpegToolSource(HttpClient, IProcessRunner)
-  fullName: TGBot.Update.FfmpegToolSource.FfmpegToolSource(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner)
+  name: FfmpegToolSource(HttpClient, IProcessRunner, Func<Architecture>?)
+  nameWithType: FfmpegToolSource.FfmpegToolSource(HttpClient, IProcessRunner, Func<Architecture>?)
+  fullName: TGBot.Update.FfmpegToolSource.FfmpegToolSource(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner, System.Func<System.Runtime.InteropServices.Architecture>?)
   type: Constructor
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 108
+    startLine: 114
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
   summary: 初始化 <xref href="TGBot.Update.FfmpegToolSource" data-throw-if-not-resolved="false"></xref>。
   example: []
   syntax:
-    content: public FfmpegToolSource(HttpClient http, IProcessRunner runner)
+    content: public FfmpegToolSource(HttpClient http, IProcessRunner runner, Func<Architecture>? archProvider = null)
     parameters:
     - id: http
       type: System.Net.Http.HttpClient
@@ -82,11 +82,14 @@ items:
     - id: runner
       type: TGBot.Update.IProcessRunner
       description: 进程运行器（用于解压）。
-    content.vb: Public Sub New(http As HttpClient, runner As IProcessRunner)
+    - id: archProvider
+      type: System.Func{System.Runtime.InteropServices.Architecture}
+      description: 进程架构提供器；默认取真实进程架构，测试可注入指定架构。
+    content.vb: Public Sub New(http As HttpClient, runner As IProcessRunner, archProvider As Func(Of Architecture) = Nothing)
   overload: TGBot.Update.FfmpegToolSource.#ctor*
-  nameWithType.vb: FfmpegToolSource.New(HttpClient, IProcessRunner)
-  fullName.vb: TGBot.Update.FfmpegToolSource.New(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner)
-  name.vb: New(HttpClient, IProcessRunner)
+  nameWithType.vb: FfmpegToolSource.New(HttpClient, IProcessRunner, Func(Of Architecture))
+  fullName.vb: TGBot.Update.FfmpegToolSource.New(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner, System.Func(Of System.Runtime.InteropServices.Architecture))
+  name.vb: New(HttpClient, IProcessRunner, Func(Of Architecture))
 - uid: TGBot.Update.FfmpegToolSource.Name
   commentId: P:TGBot.Update.FfmpegToolSource.Name
   id: Name
@@ -101,11 +104,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Name
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 117
+    startLine: 124
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -134,11 +137,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetLatestVersionAsync
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 120
+    startLine: 127
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -171,11 +174,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadBinaryAsync
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 127
+    startLine: 134
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -451,7 +454,7 @@ references:
   fullName: TGBot.Update.FfmpegToolSource
 - uid: TGBot.Update.FfmpegToolSource.#ctor*
   commentId: Overload:TGBot.Update.FfmpegToolSource.#ctor
-  href: TGBot.Update.FfmpegToolSource.html#TGBot_Update_FfmpegToolSource__ctor_System_Net_Http_HttpClient_TGBot_Update_IProcessRunner_
+  href: TGBot.Update.FfmpegToolSource.html#TGBot_Update_FfmpegToolSource__ctor_System_Net_Http_HttpClient_TGBot_Update_IProcessRunner_System_Func_System_Runtime_InteropServices_Architecture__
   name: FfmpegToolSource
   nameWithType: FfmpegToolSource.FfmpegToolSource
   fullName: TGBot.Update.FfmpegToolSource.FfmpegToolSource
@@ -473,6 +476,41 @@ references:
   name: IProcessRunner
   nameWithType: IProcessRunner
   fullName: TGBot.Update.IProcessRunner
+- uid: System.Func{System.Runtime.InteropServices.Architecture}
+  commentId: T:System.Func{System.Runtime.InteropServices.Architecture}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Architecture>
+  nameWithType: Func<Architecture>
+  fullName: System.Func<System.Runtime.InteropServices.Architecture>
+  nameWithType.vb: Func(Of Architecture)
+  fullName.vb: System.Func(Of System.Runtime.InteropServices.Architecture)
+  name.vb: Func(Of Architecture)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Runtime.InteropServices.Architecture
+    name: Architecture
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices.architecture
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Runtime.InteropServices.Architecture
+    name: Architecture
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices.architecture
+  - name: )
 - uid: System.Net.Http
   commentId: N:System.Net.Http
   isExternal: true
@@ -510,6 +548,34 @@ references:
     name: Http
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.net.http
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
 - uid: TGBot.Update.FfmpegToolSource.Name*
   commentId: Overload:TGBot.Update.FfmpegToolSource.Name
   href: TGBot.Update.FfmpegToolSource.html#TGBot_Update_FfmpegToolSource_Name

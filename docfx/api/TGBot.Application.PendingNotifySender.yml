@@ -1,0 +1,602 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Application.PendingNotifySender
+  commentId: T:TGBot.Application.PendingNotifySender
+  id: PendingNotifySender
+  parent: TGBot.Application
+  children:
+  - TGBot.Application.PendingNotifySender.#ctor(TGBot.Config.Overlay.PendingNotifyStore,TGBot.Messaging.ITelegramClient,TGBot.Texts.I18n.II18n,TGBot.Logging.IAppLogger)
+  - TGBot.Application.PendingNotifySender.SendPendingAsync(System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: PendingNotifySender
+  nameWithType: PendingNotifySender
+  fullName: TGBot.Application.PendingNotifySender
+  type: Class
+  source:
+    remote:
+      path: src/TGBot/Application/PendingNotifySender.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: PendingNotifySender
+    path: ../src/TGBot/Application/PendingNotifySender.cs
+    startLine: 15
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Application
+  summary: >-
+    启动期消费 pending-notify：认领（rename .sending 防重复）→ 按存储语言渲染并发送 →
+
+    成功删除 / 失败递增计数待下次启动重试（上限后丢弃）。
+
+
+    <p>发送时机：BotService 就绪后、开始轮询前，由 <xref href="TGBot.Application.BotService" data-throw-if-not-resolved="false"></xref> 调用一次。</p>
+  example: []
+  syntax:
+    content: public sealed class PendingNotifySender
+    content.vb: Public NotInheritable Class PendingNotifySender
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Application.PendingNotifySender.#ctor(TGBot.Config.Overlay.PendingNotifyStore,TGBot.Messaging.ITelegramClient,TGBot.Texts.I18n.II18n,TGBot.Logging.IAppLogger)
+  commentId: M:TGBot.Application.PendingNotifySender.#ctor(TGBot.Config.Overlay.PendingNotifyStore,TGBot.Messaging.ITelegramClient,TGBot.Texts.I18n.II18n,TGBot.Logging.IAppLogger)
+  id: '#ctor(TGBot.Config.Overlay.PendingNotifyStore,TGBot.Messaging.ITelegramClient,TGBot.Texts.I18n.II18n,TGBot.Logging.IAppLogger)'
+  parent: TGBot.Application.PendingNotifySender
+  langs:
+  - csharp
+  - vb
+  name: PendingNotifySender(PendingNotifyStore, ITelegramClient, II18n, IAppLogger)
+  nameWithType: PendingNotifySender.PendingNotifySender(PendingNotifyStore, ITelegramClient, II18n, IAppLogger)
+  fullName: TGBot.Application.PendingNotifySender.PendingNotifySender(TGBot.Config.Overlay.PendingNotifyStore, TGBot.Messaging.ITelegramClient, TGBot.Texts.I18n.II18n, TGBot.Logging.IAppLogger)
+  type: Constructor
+  source:
+    remote:
+      path: src/TGBot/Application/PendingNotifySender.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: .ctor
+    path: ../src/TGBot/Application/PendingNotifySender.cs
+    startLine: 29
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Application
+  summary: 初始化 <xref href="TGBot.Application.PendingNotifySender" data-throw-if-not-resolved="false"></xref>。
+  example: []
+  syntax:
+    content: public PendingNotifySender(PendingNotifyStore store, ITelegramClient client, II18n i18n, IAppLogger logger)
+    parameters:
+    - id: store
+      type: TGBot.Config.Overlay.PendingNotifyStore
+      description: 待通知存储。
+    - id: client
+      type: TGBot.Messaging.ITelegramClient
+      description: Telegram 客户端。
+    - id: i18n
+      type: TGBot.Texts.I18n.II18n
+      description: 国际化服务（按通知存储的语言渲染）。
+    - id: logger
+      type: TGBot.Logging.IAppLogger
+      description: 日志器。
+    content.vb: Public Sub New(store As PendingNotifyStore, client As ITelegramClient, i18n As II18n, logger As IAppLogger)
+  overload: TGBot.Application.PendingNotifySender.#ctor*
+  nameWithType.vb: PendingNotifySender.New(PendingNotifyStore, ITelegramClient, II18n, IAppLogger)
+  fullName.vb: TGBot.Application.PendingNotifySender.New(TGBot.Config.Overlay.PendingNotifyStore, TGBot.Messaging.ITelegramClient, TGBot.Texts.I18n.II18n, TGBot.Logging.IAppLogger)
+  name.vb: New(PendingNotifyStore, ITelegramClient, II18n, IAppLogger)
+- uid: TGBot.Application.PendingNotifySender.SendPendingAsync(System.Threading.CancellationToken)
+  commentId: M:TGBot.Application.PendingNotifySender.SendPendingAsync(System.Threading.CancellationToken)
+  id: SendPendingAsync(System.Threading.CancellationToken)
+  parent: TGBot.Application.PendingNotifySender
+  langs:
+  - csharp
+  - vb
+  name: SendPendingAsync(CancellationToken)
+  nameWithType: PendingNotifySender.SendPendingAsync(CancellationToken)
+  fullName: TGBot.Application.PendingNotifySender.SendPendingAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Application/PendingNotifySender.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: SendPendingAsync
+    path: ../src/TGBot/Application/PendingNotifySender.cs
+    startLine: 42
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Application
+  summary: 发送挂起的重启通知（幂等：无待通知或已超过失败上限时无操作）。
+  example: []
+  syntax:
+    content: public Task SendPendingAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: 取消令牌。
+    return:
+      type: System.Threading.Tasks.Task
+      description: 完成异步操作。
+    content.vb: Public Function SendPendingAsync(cancellationToken As CancellationToken) As Task
+  overload: TGBot.Application.PendingNotifySender.SendPendingAsync*
+references:
+- uid: TGBot.Application.BotService
+  commentId: T:TGBot.Application.BotService
+  href: TGBot.Application.BotService.html
+  name: BotService
+  nameWithType: BotService
+  fullName: TGBot.Application.BotService
+- uid: TGBot.Application
+  commentId: N:TGBot.Application
+  href: TGBot.html
+  name: TGBot.Application
+  nameWithType: TGBot.Application
+  fullName: TGBot.Application
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Application
+    name: Application
+    href: TGBot.Application.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Application
+    name: Application
+    href: TGBot.Application.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TGBot.Application.PendingNotifySender
+  commentId: T:TGBot.Application.PendingNotifySender
+  parent: TGBot.Application
+  href: TGBot.Application.PendingNotifySender.html
+  name: PendingNotifySender
+  nameWithType: PendingNotifySender
+  fullName: TGBot.Application.PendingNotifySender
+- uid: TGBot.Application.PendingNotifySender.#ctor*
+  commentId: Overload:TGBot.Application.PendingNotifySender.#ctor
+  href: TGBot.Application.PendingNotifySender.html#TGBot_Application_PendingNotifySender__ctor_TGBot_Config_Overlay_PendingNotifyStore_TGBot_Messaging_ITelegramClient_TGBot_Texts_I18n_II18n_TGBot_Logging_IAppLogger_
+  name: PendingNotifySender
+  nameWithType: PendingNotifySender.PendingNotifySender
+  fullName: TGBot.Application.PendingNotifySender.PendingNotifySender
+  nameWithType.vb: PendingNotifySender.New
+  fullName.vb: TGBot.Application.PendingNotifySender.New
+  name.vb: New
+- uid: TGBot.Config.Overlay.PendingNotifyStore
+  commentId: T:TGBot.Config.Overlay.PendingNotifyStore
+  parent: TGBot.Config.Overlay
+  href: TGBot.Config.Overlay.PendingNotifyStore.html
+  name: PendingNotifyStore
+  nameWithType: PendingNotifyStore
+  fullName: TGBot.Config.Overlay.PendingNotifyStore
+- uid: TGBot.Messaging.ITelegramClient
+  commentId: T:TGBot.Messaging.ITelegramClient
+  parent: TGBot.Messaging
+  href: TGBot.Messaging.ITelegramClient.html
+  name: ITelegramClient
+  nameWithType: ITelegramClient
+  fullName: TGBot.Messaging.ITelegramClient
+- uid: TGBot.Texts.I18n.II18n
+  commentId: T:TGBot.Texts.I18n.II18n
+  parent: TGBot.Texts.I18n
+  href: TGBot.Texts.I18n.II18n.html
+  name: II18n
+  nameWithType: II18n
+  fullName: TGBot.Texts.I18n.II18n
+- uid: TGBot.Logging.IAppLogger
+  commentId: T:TGBot.Logging.IAppLogger
+  parent: TGBot.Logging
+  href: TGBot.Logging.IAppLogger.html
+  name: IAppLogger
+  nameWithType: IAppLogger
+  fullName: TGBot.Logging.IAppLogger
+- uid: TGBot.Config.Overlay
+  commentId: N:TGBot.Config.Overlay
+  href: TGBot.html
+  name: TGBot.Config.Overlay
+  nameWithType: TGBot.Config.Overlay
+  fullName: TGBot.Config.Overlay
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+  - name: .
+  - uid: TGBot.Config.Overlay
+    name: Overlay
+    href: TGBot.Config.Overlay.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+  - name: .
+  - uid: TGBot.Config.Overlay
+    name: Overlay
+    href: TGBot.Config.Overlay.html
+- uid: TGBot.Messaging
+  commentId: N:TGBot.Messaging
+  href: TGBot.html
+  name: TGBot.Messaging
+  nameWithType: TGBot.Messaging
+  fullName: TGBot.Messaging
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Messaging
+    name: Messaging
+    href: TGBot.Messaging.html
+- uid: TGBot.Texts.I18n
+  commentId: N:TGBot.Texts.I18n
+  href: TGBot.html
+  name: TGBot.Texts.I18n
+  nameWithType: TGBot.Texts.I18n
+  fullName: TGBot.Texts.I18n
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Texts
+    name: Texts
+    href: TGBot.Texts.html
+  - name: .
+  - uid: TGBot.Texts.I18n
+    name: I18n
+    href: TGBot.Texts.I18n.html
+- uid: TGBot.Logging
+  commentId: N:TGBot.Logging
+  href: TGBot.html
+  name: TGBot.Logging
+  nameWithType: TGBot.Logging
+  fullName: TGBot.Logging
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Logging
+    name: Logging
+    href: TGBot.Logging.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Logging
+    name: Logging
+    href: TGBot.Logging.html
+- uid: TGBot.Application.PendingNotifySender.SendPendingAsync*
+  commentId: Overload:TGBot.Application.PendingNotifySender.SendPendingAsync
+  href: TGBot.Application.PendingNotifySender.html#TGBot_Application_PendingNotifySender_SendPendingAsync_System_Threading_CancellationToken_
+  name: SendPendingAsync
+  nameWithType: PendingNotifySender.SendPendingAsync
+  fullName: TGBot.Application.PendingNotifySender.SendPendingAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

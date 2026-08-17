@@ -1,0 +1,40 @@
+name: Feature Request / 功能建议
+description: 建议新功能或改进（请先搜索是否已有相同建议）。Suggest a new feature or improvement (search existing issues first).
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你的建议！请描述清楚**要解决的问题**与**期望的行为**，便于评估。
+        Thanks for your suggestion! Describe the **problem** and the **expected
+        behavior** clearly so it can be evaluated.
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation / 动机
+      description: 想解决什么问题？在什么场景下遇到？（如站点、下载流程、bot 使用体验）
+      placeholder: 例如：需要批量下载某站点多个视频，目前每次只能处理一个链接…
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected Behavior / 期望行为
+      description: 希望 bot 如何表现？（尽量具体：命令、消息、配置键等）
+      placeholder: 例如：新增 `/batch` 命令，一次发送多个 URL…
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives / 备选方案
+      description: 你尝试过的变通方案，或考虑过的其他实现方式（可选）。
+      placeholder: 例如：手动逐条发送链接 / 外部脚本循环调用…
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist / 检查清单
+      options:
+        - label: 我已搜索现有 issue，无重复 / I searched existing issues for duplicates.
+        - label: 该功能与项目定位一致（Telegram 下载 bot，个人合法用途）/ The feature fits the project scope (personal, lawful use).

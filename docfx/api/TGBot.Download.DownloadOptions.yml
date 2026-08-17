@@ -31,11 +31,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadOptions
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -69,11 +69,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -128,11 +128,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Url
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -159,11 +159,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: JobDir
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 16
+    startLine: 19
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -190,11 +190,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpPath
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -221,11 +221,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FfmpegDir
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 18
+    startLine: 21
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -252,11 +252,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MergeFormat
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 19
+    startLine: 22
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -283,11 +283,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ExtractAudio
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 20
+    startLine: 23
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -314,11 +314,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AllowPlaylists
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -345,11 +345,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MaxSizeBytes
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 22
+    startLine: 25
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -376,11 +376,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Timeout
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 23
+    startLine: 26
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -407,11 +407,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookiesFile
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 26
+    startLine: 29
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -438,11 +438,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Proxy
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 29
+    startLine: 32
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -469,11 +469,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ExtraArgs
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 32
+    startLine: 35
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -500,11 +500,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FormatExpression
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 35
+    startLine: 38
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -531,11 +531,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YoutubePlayerClients
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 38
+    startLine: 41
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -562,11 +562,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FfmpegPath
     path: ../src/TGBot/Download/DownloadOptions.cs
-    startLine: 41
+    startLine: 44
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download

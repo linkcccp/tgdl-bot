@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/SiteCookieRegistry.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SiteCookieRegistry
     path: ../src/TGBot/Cookie/SiteCookieRegistry.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -55,11 +55,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/SiteCookieRegistry.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Cookie/SiteCookieRegistry.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -90,11 +90,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/SiteCookieRegistry.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Sites
     path: ../src/TGBot/Cookie/SiteCookieRegistry.cs
-    startLine: 33
+    startLine: 36
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -121,11 +121,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/SiteCookieRegistry.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ResolveHost
     path: ../src/TGBot/Cookie/SiteCookieRegistry.cs
-    startLine: 40
+    startLine: 43
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -159,11 +159,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/SiteCookieRegistry.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ResolveKey
     path: ../src/TGBot/Cookie/SiteCookieRegistry.cs
-    startLine: 48
+    startLine: 51
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie

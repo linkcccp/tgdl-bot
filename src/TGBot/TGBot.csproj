@@ -12,6 +12,13 @@
     <ServerGarbageCollection>false</ServerGarbageCollection>
     <TieredCompilation>false</TieredCompilation>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!--
+      发布版本号：CI 从 git tag（vX.Y.Z 形式）剥离 v 后经命令行
+      `dotnet publish -p:Version=X.Y.Z` 覆盖（MSBuild 标准行为：命令行 -p 优先于 csproj 属性）；
+      本地构建/测试使用默认值 2.4.0（与下一个发布 tag 对应）。
+      AssemblyInformationalVersion 自动跟随本属性，运行时经 AppInfo 读取并按 '+' 截断 commit 后缀。
+    -->
+    <Version>2.4.0</Version>
     <PublishSingleFile>true</PublishSingleFile>
     <PublishTrimmed>false</PublishTrimmed>
     <DebugType>embedded</DebugType>
@@ -19,6 +26,10 @@
 
   <ItemGroup>
     <PackageReference Include="Telegram.Bot" Version="22.10.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Texts\I18n\Resources\*.json" />
   </ItemGroup>
 
 </Project>

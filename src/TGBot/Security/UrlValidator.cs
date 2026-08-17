@@ -1,5 +1,9 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 using System.Net;
 using System.Text.RegularExpressions;
+using TGBot.Texts;
 
 namespace TGBot.Security;
 
@@ -8,14 +12,14 @@ namespace TGBot.Security;
 /// </summary>
 /// <param name="IsValid">是否通过校验。</param>
 /// <param name="NormalizedUrl">规范化后的 URL（仅校验通过时有意义）。</param>
-/// <param name="Error">面向用户的中文错误提示（校验失败时非空）。</param>
-public sealed record UrlValidationResult(bool IsValid, string NormalizedUrl, string Error)
+/// <param name="ErrorKey">面向用户的错误**资源键**（见 <c>Texts/I18n/Resources</c>，由调用方按消息语言渲染；校验失败时非空）。</param>
+public sealed record UrlValidationResult(bool IsValid, string NormalizedUrl, string ErrorKey)
 {
     /// <summary>
     /// 校验失败的结果。
     /// </summary>
-    /// <param name="error">错误提示。</param>
-    public static UrlValidationResult Fail(string error) => new(false, string.Empty, error);
+    /// <param name="errorKey">错误资源键。</param>
+    public static UrlValidationResult Fail(string errorKey) => new(false, string.Empty, errorKey);
 }
 
 /// <summary>
@@ -72,42 +76,42 @@ public sealed class UrlValidator
     {
         if (string.IsNullOrWhiteSpace(raw))
         {
-            return UrlValidationResult.Fail("链接为空。");
+            return UrlValidationResult.Fail(UserTexts.UrlEmpty);
         }
 
         if (raw.Length > MaxUrlLength)
         {
-            return UrlValidationResult.Fail("链接过长，无法处理。");
+            return UrlValidationResult.Fail(UserTexts.UrlTooLong);
         }
 
         if (raw.Any(c => char.IsControl(c)))
         {
-            return UrlValidationResult.Fail("链接包含非法字符。");
+            return UrlValidationResult.Fail(UserTexts.UrlInvalidChar);
         }
 
         if (!Uri.TryCreate(raw, UriKind.Absolute, out var uri))
         {
-            return UrlValidationResult.Fail("链接格式无效。");
+            return UrlValidationResult.Fail(UserTexts.UrlInvalidFormat);
         }
 
         if (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps)
         {
-            return UrlValidationResult.Fail("仅支持 http/https 链接。");
+            return UrlValidationResult.Fail(UserTexts.UrlSchemeNotAllowed);
         }
 
         if (!string.IsNullOrEmpty(uri.UserInfo))
         {
-            return UrlValidationResult.Fail("链接包含不被允许的用户名信息。");
+            return UrlValidationResult.Fail(UserTexts.UrlUserInfo);
         }
 
         if (string.IsNullOrEmpty(uri.Host) || uri.Host.Length > 253)
         {
-            return UrlValidationResult.Fail("链接主机名无效。");
+            return UrlValidationResult.Fail(UserTexts.UrlInvalidHost);
         }
 
         if (uri.Host.Any(c => c is '\\' or '/' || char.IsWhiteSpace(c) || char.IsControl(c)))
         {
-            return UrlValidationResult.Fail("链接主机名包含非法字符。");
+            return UrlValidationResult.Fail(UserTexts.UrlInvalidHostChar);
         }
 
         if (!allowPrivateUrls)
@@ -115,7 +119,7 @@ public sealed class UrlValidator
             var blocked = await IsHostBlockedAsync(uri.Host, cancellationToken).ConfigureAwait(false);
             if (blocked)
             {
-                return UrlValidationResult.Fail("链接指向的地址不受信任，已拒绝下载。");
+                return UrlValidationResult.Fail(UserTexts.UntrustedUrl);
             }
         }
 

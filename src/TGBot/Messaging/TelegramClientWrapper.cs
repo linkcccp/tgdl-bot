@@ -1,8 +1,13 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 using Telegram.Bot;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
+using TGBot.Texts;
+using TGBot.Texts.I18n;
 
 namespace TGBot.Messaging;
 
@@ -14,6 +19,8 @@ public sealed class TelegramClientWrapper : ITelegramClient
     private const int FileBufferSize = 81920;
 
     private readonly ITelegramBotClient _client;
+    private readonly II18n _i18n;
+    private readonly string _menuLanguage;
     private readonly ReceiverOptions _receiverOptions = new()
     {
         AllowedUpdates = new[] { UpdateType.Message, UpdateType.ChannelPost, UpdateType.CallbackQuery },
@@ -26,10 +33,20 @@ public sealed class TelegramClientWrapper : ITelegramClient
     /// <param name="baseUrl">本地 Bot API Server 地址。</param>
     /// <param name="http">共享 HttpClient。</param>
     /// <param name="cancellationToken">初始化取消令牌。</param>
-    public TelegramClientWrapper(string token, string baseUrl, HttpClient http, CancellationToken cancellationToken)
+    /// <param name="i18n">国际化服务（指令菜单文案渲染）。</param>
+    /// <param name="menuLanguage">指令菜单语言（全局默认语言，auto 已解析为 en）。</param>
+    public TelegramClientWrapper(
+        string token,
+        string baseUrl,
+        HttpClient http,
+        CancellationToken cancellationToken,
+        II18n i18n,
+        string menuLanguage)
     {
         var options = new TelegramBotClientOptions(token, baseUrl);
         _client = new TelegramBotClient(options, http, cancellationToken);
+        _i18n = i18n;
+        _menuLanguage = menuLanguage;
     }
 
     /// <inheritdoc />
@@ -109,11 +126,14 @@ public sealed class TelegramClientWrapper : ITelegramClient
     {
         var commands = new[]
         {
-            new BotCommand { Command = "update", Description = "检查并更新 ffmpeg 与 yt-dlp" },
-            new BotCommand { Command = "cookie", Description = "上传指定站点的 cookies" },
-            new BotCommand { Command = "cookies", Description = "查看各站点 cookies 状态" },
-            new BotCommand { Command = "status", Description = "查看运行状态与版本" },
-            new BotCommand { Command = "help", Description = "显示帮助" },
+            new BotCommand { Command = "update", Description = _i18n.Get(_menuLanguage, UserTexts.MenuUpdate) },
+            new BotCommand { Command = "cookie", Description = _i18n.Get(_menuLanguage, UserTexts.MenuCookie) },
+            new BotCommand { Command = "cookies", Description = _i18n.Get(_menuLanguage, UserTexts.MenuCookies) },
+            new BotCommand { Command = "status", Description = _i18n.Get(_menuLanguage, UserTexts.MenuStatus) },
+            new BotCommand { Command = "language", Description = _i18n.Get(_menuLanguage, UserTexts.MenuLanguage) },
+            new BotCommand { Command = "config", Description = _i18n.Get(_menuLanguage, UserTexts.MenuConfig) },
+            new BotCommand { Command = "access", Description = _i18n.Get(_menuLanguage, UserTexts.MenuAccess) },
+            new BotCommand { Command = "help", Description = _i18n.Get(_menuLanguage, UserTexts.MenuHelp) },
         };
         await _client.SetMyCommands(commands: commands, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
@@ -173,6 +193,8 @@ public sealed class TelegramClientWrapper : ITelegramClient
                 DocumentFileId = m.Document?.FileId,
                 DocumentFileName = m.Document?.FileName,
                 DocumentSizeBytes = m.Document?.FileSize,
+                Language = LanguageCatalog.NormalizeLanguageCode(m.From?.LanguageCode) ?? LanguageCatalog.FallbackLanguage,
+                LanguageCode = m.From?.LanguageCode,
             };
         }
 
@@ -186,6 +208,8 @@ public sealed class TelegramClientWrapper : ITelegramClient
                 Text = cp.Text,
                 Caption = cp.Caption,
                 TriggerMessageId = cp.MessageId,
+                Language = LanguageCatalog.NormalizeLanguageCode(cp.From?.LanguageCode) ?? LanguageCatalog.FallbackLanguage,
+                LanguageCode = cp.From?.LanguageCode,
             };
         }
 
@@ -199,6 +223,8 @@ public sealed class TelegramClientWrapper : ITelegramClient
                 TriggerMessageId = cbm.MessageId,
                 IsCallback = true,
                 CallbackData = cb.Data,
+                Language = LanguageCatalog.NormalizeLanguageCode(cb.From.LanguageCode) ?? LanguageCatalog.FallbackLanguage,
+                LanguageCode = cb.From.LanguageCode,
             };
         }
 

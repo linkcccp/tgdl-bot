@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IToolSource
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 7
+    startLine: 11
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -48,11 +48,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Name
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 12
+    startLine: 16
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -79,11 +79,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetLatestVersionAsync
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 19
+    startLine: 23
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -114,11 +114,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadBinaryAsync
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 27
+    startLine: 31
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update

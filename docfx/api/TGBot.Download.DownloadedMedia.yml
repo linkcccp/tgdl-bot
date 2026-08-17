@@ -23,11 +23,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadedMedia
     path: ../src/TGBot/Download/DownloadedMedia.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -59,11 +59,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FilePath
     path: ../src/TGBot/Download/DownloadedMedia.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -90,11 +90,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Title
     path: ../src/TGBot/Download/DownloadedMedia.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -121,11 +121,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RawTitle
     path: ../src/TGBot/Download/DownloadedMedia.cs
-    startLine: 20
+    startLine: 23
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -152,11 +152,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Extension
     path: ../src/TGBot/Download/DownloadedMedia.cs
-    startLine: 25
+    startLine: 28
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -183,11 +183,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SizeBytes
     path: ../src/TGBot/Download/DownloadedMedia.cs
-    startLine: 30
+    startLine: 33
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -214,11 +214,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DurationSeconds
     path: ../src/TGBot/Download/DownloadedMedia.cs
-    startLine: 35
+    startLine: 38
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -245,11 +245,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsAudio
     path: ../src/TGBot/Download/DownloadedMedia.cs
-    startLine: 40
+    startLine: 43
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -276,11 +276,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SourceUrl
     path: ../src/TGBot/Download/DownloadedMedia.cs
-    startLine: 45
+    startLine: 48
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download

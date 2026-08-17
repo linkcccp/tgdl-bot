@@ -1,0 +1,28 @@
+# Git 属性配置：统一行尾与二进制文件识别，避免跨平台 PR 行尾噪音。
+# 仓库文本文件统一使用 LF（与现有代码一致），二进制文件不参与文本转换。
+
+# 文本文件自动检测行尾（Git 按仓库配置统一处理）
+* text=auto
+
+# 源代码与配置文件：强制 LF，防止 Windows 检出为 CRLF 产生 PR 噪音
+*.cs text eol=lf
+*.csproj text eol=lf
+*.slnx text eol=lf
+*.sh text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+
+# 二进制文件：明确标记，Git 不做文本转换/差异比较
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff2 binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.tar binary
+*.xz binary

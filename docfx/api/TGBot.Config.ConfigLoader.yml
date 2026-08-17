@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigLoader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigLoader
     path: ../src/TGBot/Config/ConfigLoader.cs
-    startLine: 22
+    startLine: 26
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -33,7 +33,9 @@ items:
 
     <p>查找顺序：<code>--config &lt;path&gt;</code> 参数 → 环境变量 <code>TGDL_CONFIG</code> →
 
-    与程序二进制同目录 → 当前工作目录。若仍找不到则抛出 <xref href="TGBot.Config.ConfigLoadException" data-throw-if-not-resolved="false"></xref>。</p>
+    与程序二进制同目录 → 当前工作目录。若仍找不到则抛出 <xref href="TGBot.Config.ConfigLoadException" data-throw-if-not-resolved="false"></xref>。
+
+    错误消息为中英双行并列（启动期无用户上下文）。</p>
   example: []
   syntax:
     content: public static class ConfigLoader
@@ -62,11 +64,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigLoader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: EnvVarName
     path: ../src/TGBot/Config/ConfigLoader.cs
-    startLine: 25
+    startLine: 29
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -91,11 +93,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigLoader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DefaultFileName
     path: ../src/TGBot/Config/ConfigLoader.cs
-    startLine: 28
+    startLine: 32
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -120,11 +122,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigLoader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Locate
     path: ../src/TGBot/Config/ConfigLoader.cs
-    startLine: 36
+    startLine: 40
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -162,11 +164,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigLoader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Load
     path: ../src/TGBot/Config/ConfigLoader.cs
-    startLine: 80
+    startLine: 85
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config

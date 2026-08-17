@@ -1,0 +1,205 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Update.UpdateFailureReason
+  commentId: T:TGBot.Update.UpdateFailureReason
+  id: UpdateFailureReason
+  parent: TGBot.Update
+  children:
+  - TGBot.Update.UpdateFailureReason.DownloadFailed
+  - TGBot.Update.UpdateFailureReason.Failed
+  - TGBot.Update.UpdateFailureReason.LatestVersionUnavailable
+  - TGBot.Update.UpdateFailureReason.LocalVersionUnavailable
+  - TGBot.Update.UpdateFailureReason.ReplaceFailed
+  langs:
+  - csharp
+  - vb
+  name: UpdateFailureReason
+  nameWithType: UpdateFailureReason
+  fullName: TGBot.Update.UpdateFailureReason
+  type: Enum
+  source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: UpdateFailureReason
+    path: ../src/TGBot/Update/UpdateResult.cs
+    startLine: 51
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: 更新失败原因分类，用于向用户给出准确提示而不泄露内部细节。
+  example: []
+  syntax:
+    content: public enum UpdateFailureReason
+    content.vb: Public Enum UpdateFailureReason
+- uid: TGBot.Update.UpdateFailureReason.Failed
+  commentId: F:TGBot.Update.UpdateFailureReason.Failed
+  id: Failed
+  parent: TGBot.Update.UpdateFailureReason
+  langs:
+  - csharp
+  - vb
+  name: Failed
+  nameWithType: UpdateFailureReason.Failed
+  fullName: TGBot.Update.UpdateFailureReason.Failed
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Failed
+    path: ../src/TGBot/Update/UpdateResult.cs
+    startLine: 54
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: 一般性失败。
+  example: []
+  syntax:
+    content: Failed = 0
+    return:
+      type: TGBot.Update.UpdateFailureReason
+- uid: TGBot.Update.UpdateFailureReason.LocalVersionUnavailable
+  commentId: F:TGBot.Update.UpdateFailureReason.LocalVersionUnavailable
+  id: LocalVersionUnavailable
+  parent: TGBot.Update.UpdateFailureReason
+  langs:
+  - csharp
+  - vb
+  name: LocalVersionUnavailable
+  nameWithType: UpdateFailureReason.LocalVersionUnavailable
+  fullName: TGBot.Update.UpdateFailureReason.LocalVersionUnavailable
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: LocalVersionUnavailable
+    path: ../src/TGBot/Update/UpdateResult.cs
+    startLine: 57
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: 无法读取本地工具版本（安装路径异常或二进制不可执行）。
+  example: []
+  syntax:
+    content: LocalVersionUnavailable = 1
+    return:
+      type: TGBot.Update.UpdateFailureReason
+- uid: TGBot.Update.UpdateFailureReason.LatestVersionUnavailable
+  commentId: F:TGBot.Update.UpdateFailureReason.LatestVersionUnavailable
+  id: LatestVersionUnavailable
+  parent: TGBot.Update.UpdateFailureReason
+  langs:
+  - csharp
+  - vb
+  name: LatestVersionUnavailable
+  nameWithType: UpdateFailureReason.LatestVersionUnavailable
+  fullName: TGBot.Update.UpdateFailureReason.LatestVersionUnavailable
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: LatestVersionUnavailable
+    path: ../src/TGBot/Update/UpdateResult.cs
+    startLine: 60
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: 无法获取最新版本信息（网络或版本源异常）。
+  example: []
+  syntax:
+    content: LatestVersionUnavailable = 2
+    return:
+      type: TGBot.Update.UpdateFailureReason
+- uid: TGBot.Update.UpdateFailureReason.DownloadFailed
+  commentId: F:TGBot.Update.UpdateFailureReason.DownloadFailed
+  id: DownloadFailed
+  parent: TGBot.Update.UpdateFailureReason
+  langs:
+  - csharp
+  - vb
+  name: DownloadFailed
+  nameWithType: UpdateFailureReason.DownloadFailed
+  fullName: TGBot.Update.UpdateFailureReason.DownloadFailed
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: DownloadFailed
+    path: ../src/TGBot/Update/UpdateResult.cs
+    startLine: 63
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: 新版本二进制下载失败。
+  example: []
+  syntax:
+    content: DownloadFailed = 3
+    return:
+      type: TGBot.Update.UpdateFailureReason
+- uid: TGBot.Update.UpdateFailureReason.ReplaceFailed
+  commentId: F:TGBot.Update.UpdateFailureReason.ReplaceFailed
+  id: ReplaceFailed
+  parent: TGBot.Update.UpdateFailureReason
+  langs:
+  - csharp
+  - vb
+  name: ReplaceFailed
+  nameWithType: UpdateFailureReason.ReplaceFailed
+  fullName: TGBot.Update.UpdateFailureReason.ReplaceFailed
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Update/UpdateResult.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: ReplaceFailed
+    path: ../src/TGBot/Update/UpdateResult.cs
+    startLine: 66
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: 二进制替换失败（已回滚至原版本）。
+  example: []
+  syntax:
+    content: ReplaceFailed = 4
+    return:
+      type: TGBot.Update.UpdateFailureReason
+references:
+- uid: TGBot.Update
+  commentId: N:TGBot.Update
+  href: TGBot.html
+  name: TGBot.Update
+  nameWithType: TGBot.Update
+  fullName: TGBot.Update
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Update
+    name: Update
+    href: TGBot.Update.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Update
+    name: Update
+    href: TGBot.Update.html
+- uid: TGBot.Update.UpdateFailureReason
+  commentId: T:TGBot.Update.UpdateFailureReason
+  parent: TGBot.Update
+  href: TGBot.Update.UpdateFailureReason.html
+  name: UpdateFailureReason
+  nameWithType: UpdateFailureReason
+  fullName: TGBot.Update.UpdateFailureReason

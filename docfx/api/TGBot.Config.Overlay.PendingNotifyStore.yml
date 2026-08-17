@@ -1,0 +1,668 @@
+### YamlMime:ManagedReference
+items:
+- uid: TGBot.Config.Overlay.PendingNotifyStore
+  commentId: T:TGBot.Config.Overlay.PendingNotifyStore
+  id: PendingNotifyStore
+  parent: TGBot.Config.Overlay
+  children:
+  - TGBot.Config.Overlay.PendingNotifyStore.#ctor(System.String,TGBot.Logging.IAppLogger)
+  - TGBot.Config.Overlay.PendingNotifyStore.Claim
+  - TGBot.Config.Overlay.PendingNotifyStore.Fail
+  - TGBot.Config.Overlay.PendingNotifyStore.FileName
+  - TGBot.Config.Overlay.PendingNotifyStore.MaxAttempts
+  - TGBot.Config.Overlay.PendingNotifyStore.Save(TGBot.Config.Overlay.PendingNotify)
+  - TGBot.Config.Overlay.PendingNotifyStore.SendingFileName
+  - TGBot.Config.Overlay.PendingNotifyStore.Succeed
+  langs:
+  - csharp
+  - vb
+  name: PendingNotifyStore
+  nameWithType: PendingNotifyStore
+  fullName: TGBot.Config.Overlay.PendingNotifyStore
+  type: Class
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: PendingNotifyStore
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 31
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: >-
+    重启通知存储：<code>StateDir/pending-notify.json</code>。
+
+
+    <p>防重复：启动期先 rename 为 <code>.sending</code>（原子认领，进程崩溃也不重发）再发送，
+
+    成功后删除；失败保留并递增 <xref href="TGBot.Config.Overlay.PendingNotifyStore.MaxAttempts" data-throw-if-not-resolved="false"></xref>，超过上限丢弃并记录日志。</p>
+
+    <p>写入为同步原子写（临时文件 + rename）——调用方必须保证在进程退出前完成（设计遗留问题 5）。</p>
+  example: []
+  syntax:
+    content: public sealed class PendingNotifyStore
+    content.vb: Public NotInheritable Class PendingNotifyStore
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TGBot.Config.Overlay.PendingNotifyStore.FileName
+  commentId: F:TGBot.Config.Overlay.PendingNotifyStore.FileName
+  id: FileName
+  parent: TGBot.Config.Overlay.PendingNotifyStore
+  langs:
+  - csharp
+  - vb
+  name: FileName
+  nameWithType: PendingNotifyStore.FileName
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.FileName
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: FileName
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 34
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 待通知文件名。
+  example: []
+  syntax:
+    content: public const string FileName = "pending-notify.json"
+    return:
+      type: System.String
+    content.vb: Public Const FileName As String = "pending-notify.json"
+- uid: TGBot.Config.Overlay.PendingNotifyStore.SendingFileName
+  commentId: F:TGBot.Config.Overlay.PendingNotifyStore.SendingFileName
+  id: SendingFileName
+  parent: TGBot.Config.Overlay.PendingNotifyStore
+  langs:
+  - csharp
+  - vb
+  name: SendingFileName
+  nameWithType: PendingNotifyStore.SendingFileName
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.SendingFileName
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: SendingFileName
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 37
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 发送中文件名（rename 认领后）。
+  example: []
+  syntax:
+    content: public const string SendingFileName = "pending-notify.json.sending"
+    return:
+      type: System.String
+    content.vb: Public Const SendingFileName As String = "pending-notify.json.sending"
+- uid: TGBot.Config.Overlay.PendingNotifyStore.MaxAttempts
+  commentId: F:TGBot.Config.Overlay.PendingNotifyStore.MaxAttempts
+  id: MaxAttempts
+  parent: TGBot.Config.Overlay.PendingNotifyStore
+  langs:
+  - csharp
+  - vb
+  name: MaxAttempts
+  nameWithType: PendingNotifyStore.MaxAttempts
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.MaxAttempts
+  type: Field
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: MaxAttempts
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 40
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 发送失败上限，达到后丢弃。
+  example: []
+  syntax:
+    content: public const int MaxAttempts = 3
+    return:
+      type: System.Int32
+    content.vb: Public Const MaxAttempts As Integer = 3
+- uid: TGBot.Config.Overlay.PendingNotifyStore.#ctor(System.String,TGBot.Logging.IAppLogger)
+  commentId: M:TGBot.Config.Overlay.PendingNotifyStore.#ctor(System.String,TGBot.Logging.IAppLogger)
+  id: '#ctor(System.String,TGBot.Logging.IAppLogger)'
+  parent: TGBot.Config.Overlay.PendingNotifyStore
+  langs:
+  - csharp
+  - vb
+  name: PendingNotifyStore(string, IAppLogger?)
+  nameWithType: PendingNotifyStore.PendingNotifyStore(string, IAppLogger?)
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.PendingNotifyStore(string, TGBot.Logging.IAppLogger?)
+  type: Constructor
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: .ctor
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 52
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 初始化 <xref href="TGBot.Config.Overlay.PendingNotifyStore" data-throw-if-not-resolved="false"></xref>。
+  example: []
+  syntax:
+    content: public PendingNotifyStore(string stateDir, IAppLogger? logger = null)
+    parameters:
+    - id: stateDir
+      type: System.String
+      description: 状态目录（<code>StateDir</code> 配置键）。
+    - id: logger
+      type: TGBot.Logging.IAppLogger
+      description: 日志器（可空）。
+    content.vb: Public Sub New(stateDir As String, logger As IAppLogger = Nothing)
+  overload: TGBot.Config.Overlay.PendingNotifyStore.#ctor*
+  nameWithType.vb: PendingNotifyStore.New(String, IAppLogger)
+  fullName.vb: TGBot.Config.Overlay.PendingNotifyStore.New(String, TGBot.Logging.IAppLogger)
+  name.vb: New(String, IAppLogger)
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Save(TGBot.Config.Overlay.PendingNotify)
+  commentId: M:TGBot.Config.Overlay.PendingNotifyStore.Save(TGBot.Config.Overlay.PendingNotify)
+  id: Save(TGBot.Config.Overlay.PendingNotify)
+  parent: TGBot.Config.Overlay.PendingNotifyStore
+  langs:
+  - csharp
+  - vb
+  name: Save(PendingNotify)
+  nameWithType: PendingNotifyStore.Save(PendingNotify)
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Save(TGBot.Config.Overlay.PendingNotify)
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Save
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 66
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: >-
+    同步保存待通知（覆盖旧值，Attempts 重置为 0）。
+
+
+    <p>必须同步完成再触发进程退出：保证退出前已持久化，新进程启动即可消费。</p>
+  example: []
+  syntax:
+    content: public bool Save(PendingNotify notify)
+    parameters:
+    - id: notify
+      type: TGBot.Config.Overlay.PendingNotify
+      description: 通知内容。
+    return:
+      type: System.Boolean
+      description: 写入成功返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。
+    content.vb: Public Function Save(notify As PendingNotify) As Boolean
+  overload: TGBot.Config.Overlay.PendingNotifyStore.Save*
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Claim
+  commentId: M:TGBot.Config.Overlay.PendingNotifyStore.Claim
+  id: Claim
+  parent: TGBot.Config.Overlay.PendingNotifyStore
+  langs:
+  - csharp
+  - vb
+  name: Claim()
+  nameWithType: PendingNotifyStore.Claim()
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Claim()
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Claim
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 92
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 认领待发送通知：pending → .sending（原子 rename 防重复发送），随后读取内容。
+  example: []
+  syntax:
+    content: public PendingNotify? Claim()
+    return:
+      type: TGBot.Config.Overlay.PendingNotify
+      description: 待发送通知；无待发送或超过失败上限时返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Public Function Claim() As PendingNotify
+  overload: TGBot.Config.Overlay.PendingNotifyStore.Claim*
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Succeed
+  commentId: M:TGBot.Config.Overlay.PendingNotifyStore.Succeed
+  id: Succeed
+  parent: TGBot.Config.Overlay.PendingNotifyStore
+  langs:
+  - csharp
+  - vb
+  name: Succeed()
+  nameWithType: PendingNotifyStore.Succeed()
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Succeed()
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Succeed
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 146
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 发送成功：删除 .sending，本次通知完成。
+  example: []
+  syntax:
+    content: public void Succeed()
+    content.vb: Public Sub Succeed()
+  overload: TGBot.Config.Overlay.PendingNotifyStore.Succeed*
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Fail
+  commentId: M:TGBot.Config.Overlay.PendingNotifyStore.Fail
+  id: Fail
+  parent: TGBot.Config.Overlay.PendingNotifyStore
+  langs:
+  - csharp
+  - vb
+  name: Fail()
+  nameWithType: PendingNotifyStore.Fail()
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Fail()
+  type: Method
+  source:
+    remote:
+      path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
+      branch: dev
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: Fail
+    path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
+    startLine: 165
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Config.Overlay
+  summary: 发送失败：Attempts + 1；达到 <xref href="TGBot.Config.Overlay.PendingNotifyStore.MaxAttempts" data-throw-if-not-resolved="false"></xref> 时删除并丢弃。
+  example: []
+  syntax:
+    content: public bool Fail()
+    return:
+      type: System.Boolean
+      description: 丢弃返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；保留待下次启动重试返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>。
+    content.vb: Public Function Fail() As Boolean
+  overload: TGBot.Config.Overlay.PendingNotifyStore.Fail*
+references:
+- uid: TGBot.Config.Overlay.PendingNotifyStore.MaxAttempts
+  commentId: F:TGBot.Config.Overlay.PendingNotifyStore.MaxAttempts
+  href: TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_MaxAttempts
+  name: MaxAttempts
+  nameWithType: PendingNotifyStore.MaxAttempts
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.MaxAttempts
+- uid: TGBot.Config.Overlay
+  commentId: N:TGBot.Config.Overlay
+  href: TGBot.html
+  name: TGBot.Config.Overlay
+  nameWithType: TGBot.Config.Overlay
+  fullName: TGBot.Config.Overlay
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+  - name: .
+  - uid: TGBot.Config.Overlay
+    name: Overlay
+    href: TGBot.Config.Overlay.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Config
+    name: Config
+    href: TGBot.Config.html
+  - name: .
+  - uid: TGBot.Config.Overlay
+    name: Overlay
+    href: TGBot.Config.Overlay.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: TGBot.Config.Overlay.PendingNotifyStore
+  commentId: T:TGBot.Config.Overlay.PendingNotifyStore
+  parent: TGBot.Config.Overlay
+  href: TGBot.Config.Overlay.PendingNotifyStore.html
+  name: PendingNotifyStore
+  nameWithType: PendingNotifyStore
+  fullName: TGBot.Config.Overlay.PendingNotifyStore
+- uid: TGBot.Config.Overlay.PendingNotifyStore.#ctor*
+  commentId: Overload:TGBot.Config.Overlay.PendingNotifyStore.#ctor
+  href: TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore__ctor_System_String_TGBot_Logging_IAppLogger_
+  name: PendingNotifyStore
+  nameWithType: PendingNotifyStore.PendingNotifyStore
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.PendingNotifyStore
+  nameWithType.vb: PendingNotifyStore.New
+  fullName.vb: TGBot.Config.Overlay.PendingNotifyStore.New
+  name.vb: New
+- uid: TGBot.Logging.IAppLogger
+  commentId: T:TGBot.Logging.IAppLogger
+  parent: TGBot.Logging
+  href: TGBot.Logging.IAppLogger.html
+  name: IAppLogger
+  nameWithType: IAppLogger
+  fullName: TGBot.Logging.IAppLogger
+- uid: TGBot.Logging
+  commentId: N:TGBot.Logging
+  href: TGBot.html
+  name: TGBot.Logging
+  nameWithType: TGBot.Logging
+  fullName: TGBot.Logging
+  spec.csharp:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Logging
+    name: Logging
+    href: TGBot.Logging.html
+  spec.vb:
+  - uid: TGBot
+    name: TGBot
+    href: TGBot.html
+  - name: .
+  - uid: TGBot.Logging
+    name: Logging
+    href: TGBot.Logging.html
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Save*
+  commentId: Overload:TGBot.Config.Overlay.PendingNotifyStore.Save
+  href: TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_Save_TGBot_Config_Overlay_PendingNotify_
+  name: Save
+  nameWithType: PendingNotifyStore.Save
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Save
+- uid: TGBot.Config.Overlay.PendingNotify
+  commentId: T:TGBot.Config.Overlay.PendingNotify
+  parent: TGBot.Config.Overlay
+  href: TGBot.Config.Overlay.PendingNotify.html
+  name: PendingNotify
+  nameWithType: PendingNotify
+  fullName: TGBot.Config.Overlay.PendingNotify
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Claim*
+  commentId: Overload:TGBot.Config.Overlay.PendingNotifyStore.Claim
+  href: TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_Claim
+  name: Claim
+  nameWithType: PendingNotifyStore.Claim
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Claim
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Succeed*
+  commentId: Overload:TGBot.Config.Overlay.PendingNotifyStore.Succeed
+  href: TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_Succeed
+  name: Succeed
+  nameWithType: PendingNotifyStore.Succeed
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Succeed
+- uid: TGBot.Config.Overlay.PendingNotifyStore.Fail*
+  commentId: Overload:TGBot.Config.Overlay.PendingNotifyStore.Fail
+  href: TGBot.Config.Overlay.PendingNotifyStore.html#TGBot_Config_Overlay_PendingNotifyStore_Fail
+  name: Fail
+  nameWithType: PendingNotifyStore.Fail
+  fullName: TGBot.Config.Overlay.PendingNotifyStore.Fail

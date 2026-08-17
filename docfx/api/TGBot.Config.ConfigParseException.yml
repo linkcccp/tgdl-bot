@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParseException.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigParseException
     path: ../src/TGBot/Config/ConfigParseException.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config
@@ -64,11 +64,11 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParseException.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Config/ConfigParseException.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - tgdl-bot
   namespace: TGBot.Config

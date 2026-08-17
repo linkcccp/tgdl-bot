@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/BinaryVersionParser.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: BinaryVersionParser
     path: ../src/TGBot/Update/BinaryVersionParser.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -54,11 +54,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/BinaryVersionParser.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseYtDlp
     path: ../src/TGBot/Update/BinaryVersionParser.cs
-    startLine: 16
+    startLine: 19
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -92,11 +92,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/BinaryVersionParser.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseFfmpeg
     path: ../src/TGBot/Update/BinaryVersionParser.cs
-    startLine: 26
+    startLine: 29
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update

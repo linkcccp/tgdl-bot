@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/BuiltinSites.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: WeiboCookieSite
     path: ../src/TGBot/Cookie/BuiltinSites.cs
-    startLine: 129
+    startLine: 132
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -57,11 +57,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/BuiltinSites.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Key
     path: ../src/TGBot/Cookie/BuiltinSites.cs
-    startLine: 132
+    startLine: 135
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -89,11 +89,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/BuiltinSites.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DisplayName
     path: ../src/TGBot/Cookie/BuiltinSites.cs
-    startLine: 135
+    startLine: 138
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -121,11 +121,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/BuiltinSites.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Hosts
     path: ../src/TGBot/Cookie/BuiltinSites.cs
-    startLine: 138
+    startLine: 141
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie

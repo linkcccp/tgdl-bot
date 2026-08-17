@@ -20,11 +20,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpDownloader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpDownloader
     path: ../src/TGBot/Download/YtDlpDownloader.cs
-    startLine: 12
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -62,11 +62,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpDownloader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Download/YtDlpDownloader.cs
-    startLine: 30
+    startLine: 33
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -97,11 +97,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpDownloader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadAsync
     path: ../src/TGBot/Download/YtDlpDownloader.cs
-    startLine: 36
+    startLine: 39
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -147,11 +147,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpDownloader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ProbeBestFormatAsync
     path: ../src/TGBot/Download/YtDlpDownloader.cs
-    startLine: 220
+    startLine: 223
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -187,11 +187,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpDownloader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ProbeFormatsAsync
     path: ../src/TGBot/Download/YtDlpDownloader.cs
-    startLine: 238
+    startLine: 241
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -227,11 +227,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpDownloader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadAudioBundleAsync
     path: ../src/TGBot/Download/YtDlpDownloader.cs
-    startLine: 343
+    startLine: 346
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download

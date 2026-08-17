@@ -22,11 +22,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieStore
     path: ../src/TGBot/Cookie/CookieStore.cs
-    startLine: 9
+    startLine: 12
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -62,11 +62,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Cookie/CookieStore.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -100,11 +100,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RootDir
     path: ../src/TGBot/Cookie/CookieStore.cs
-    startLine: 30
+    startLine: 33
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -131,11 +131,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Initialize
     path: ../src/TGBot/Cookie/CookieStore.cs
-    startLine: 35
+    startLine: 38
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -159,11 +159,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetFile
     path: ../src/TGBot/Cookie/CookieStore.cs
-    startLine: 49
+    startLine: 52
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -197,11 +197,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Save
     path: ../src/TGBot/Cookie/CookieStore.cs
-    startLine: 71
+    startLine: 74
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -238,11 +238,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Delete
     path: ../src/TGBot/Cookie/CookieStore.cs
-    startLine: 105
+    startLine: 108
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie
@@ -276,11 +276,11 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: List
     path: ../src/TGBot/Cookie/CookieStore.cs
-    startLine: 133
+    startLine: 136
   assemblies:
   - tgdl-bot
   namespace: TGBot.Cookie

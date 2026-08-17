@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 using TGBot.Application;
 using TGBot.Config;
 using TGBot.Cookie;
@@ -60,13 +63,14 @@ public class FormatUnavailableFallbackTests : IDisposable
         var gate = new DownloadGate(2);
         var registry = new JobRegistry();
         var tempDir = new TempDirManager(_dir, logger);
-        var upload = new UploadService(client, 0, false, logger);
+        var upload = new UploadService(client, 0, false, logger, TestI18n.Instance);
         var cookieService = new CookieService(
             new SiteCookieRegistry(new CookieSite[] { new YoutubeCookieSite() }),
             new CookieStore(System.IO.Path.Combine(_dir, "cookies"), logger),
             client,
-            logger);
-        var coordinator = new DownloadCoordinator(downloader, gate, registry, tempDir, upload, client, cookieService, config, logger);
+            logger,
+            TestI18n.Instance);
+        var coordinator = new DownloadCoordinator(downloader, gate, registry, tempDir, upload, client, cookieService, config, logger, TestI18n.Instance);
         return (coordinator, client);
     }
 
@@ -98,7 +102,7 @@ public class FormatUnavailableFallbackTests : IDisposable
         };
         var (coordinator, client) = Build(downloader);
 
-        var msg = new InboundMessage { ChatId = 1000, IsPrivate = true, SenderUserId = 1000, Text = "https://youtube.com/v" };
+        var msg = new InboundMessage { ChatId = 1000, IsPrivate = true, SenderUserId = 1000, Text = "https://youtube.com/v", Language = "zh" };
         Assert.True(await coordinator.EnqueueAsync(msg, "https://youtube.com/v", "video", CancellationToken.None));
 
         for (var i = 0; i < 50 && calls.Count < 2; i++)
@@ -145,7 +149,7 @@ public class FormatUnavailableFallbackTests : IDisposable
         };
         var (coordinator, _) = Build(downloader);
 
-        var msg = new InboundMessage { ChatId = 1000, IsPrivate = true, SenderUserId = 1000, Text = "https://youtube.com/v" };
+        var msg = new InboundMessage { ChatId = 1000, IsPrivate = true, SenderUserId = 1000, Text = "https://youtube.com/v", Language = "zh" };
         Assert.True(await coordinator.EnqueueAsync(msg, "https://youtube.com/v", "video", CancellationToken.None));
 
         for (var i = 0; i < 50 && calls < 2; i++)
@@ -171,7 +175,7 @@ public class FormatUnavailableFallbackTests : IDisposable
         };
         var (coordinator, client) = Build(downloader);
 
-        var msg = new InboundMessage { ChatId = 1000, IsPrivate = true, SenderUserId = 1000, Text = "https://youtube.com/v" };
+        var msg = new InboundMessage { ChatId = 1000, IsPrivate = true, SenderUserId = 1000, Text = "https://youtube.com/v", Language = "zh" };
         Assert.True(await coordinator.EnqueueAsync(msg, "https://youtube.com/v", "video", CancellationToken.None));
 
         for (var i = 0; i < 50 && calls < 2; i++)

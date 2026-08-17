@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/AtomicFileReplacer.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AtomicFileReplacer
     path: ../src/TGBot/Update/AtomicFileReplacer.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -54,11 +54,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/AtomicFileReplacer.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Replace
     path: ../src/TGBot/Update/AtomicFileReplacer.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -103,11 +103,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/AtomicFileReplacer.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Sha256
     path: ../src/TGBot/Update/AtomicFileReplacer.cs
-    startLine: 77
+    startLine: 80
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update

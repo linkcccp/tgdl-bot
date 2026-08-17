@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/IDownloader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IDownloader
     path: ../src/TGBot/Download/IDownloader.cs
-    startLine: 12
+    startLine: 15
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -48,11 +48,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/IDownloader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadAsync
     path: ../src/TGBot/Download/IDownloader.cs
-    startLine: 22
+    startLine: 25
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -96,11 +96,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/IDownloader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ProbeBestFormatAsync
     path: ../src/TGBot/Download/IDownloader.cs
-    startLine: 33
+    startLine: 36
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -134,11 +134,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/IDownloader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ProbeFormatsAsync
     path: ../src/TGBot/Download/IDownloader.cs
-    startLine: 41
+    startLine: 44
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download
@@ -172,11 +172,11 @@ items:
   source:
     remote:
       path: src/TGBot/Download/IDownloader.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadAudioBundleAsync
     path: ../src/TGBot/Download/IDownloader.cs
-    startLine: 51
+    startLine: 54
   assemblies:
   - tgdl-bot
   namespace: TGBot.Download

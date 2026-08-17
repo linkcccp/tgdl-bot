@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: BotChatAction
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 82
+    startLine: 119
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -46,11 +46,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Typing
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 85
+    startLine: 122
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -74,11 +74,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadVideo
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 88
+    startLine: 125
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -102,11 +102,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadAudio
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 91
+    startLine: 128
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -130,11 +130,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadDocument
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 94
+    startLine: 131
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging

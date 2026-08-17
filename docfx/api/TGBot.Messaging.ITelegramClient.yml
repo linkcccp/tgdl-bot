@@ -25,11 +25,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ITelegramClient
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 100
+    startLine: 137
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -54,11 +54,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetBotUsernameAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 107
+    startLine: 144
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -89,11 +89,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendMessageAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 117
+    startLine: 154
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -138,11 +138,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendChatActionAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 125
+    startLine: 162
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -181,11 +181,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendVideoAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 135
+    startLine: 172
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -230,11 +230,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendAudioAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 147
+    startLine: 184
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -285,11 +285,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendDocumentAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 157
+    startLine: 194
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -334,11 +334,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadFileAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 165
+    startLine: 202
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -377,11 +377,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SetCommandsAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 171
+    startLine: 208
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -411,11 +411,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DropPendingUpdatesAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 177
+    startLine: 214
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging
@@ -445,11 +445,11 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: main
+      branch: dev
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RunLongPollingAsync
     path: ../src/TGBot/Messaging/ITelegramClient.cs
-    startLine: 186
+    startLine: 223
   assemblies:
   - tgdl-bot
   namespace: TGBot.Messaging

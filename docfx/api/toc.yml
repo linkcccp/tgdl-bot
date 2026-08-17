@@ -20,6 +20,9 @@ items:
   - uid: TGBot.Application.AppHost
     name: AppHost
     type: Class
+  - uid: TGBot.Application.AppInfo
+    name: AppInfo
+    type: Class
   - uid: TGBot.Application.BotService
     name: BotService
     type: Class
@@ -31,6 +34,9 @@ items:
     type: Class
   - uid: TGBot.Application.MessageRouter
     name: MessageRouter
+    type: Class
+  - uid: TGBot.Application.PendingNotifySender
+    name: PendingNotifySender
     type: Class
 - uid: TGBot.Config
   name: TGBot.Config
@@ -53,6 +59,37 @@ items:
     type: Class
   - uid: TGBot.Config.ConfigParser
     name: ConfigParser
+    type: Class
+- uid: TGBot.Config.Overlay
+  name: TGBot.Config.Overlay
+  type: Namespace
+  items:
+  - uid: TGBot.Config.Overlay.AccessEntry
+    name: AccessEntry
+    type: Class
+  - uid: TGBot.Config.Overlay.AccessEntrySource
+    name: AccessEntrySource
+    type: Enum
+  - uid: TGBot.Config.Overlay.AccessListMerge
+    name: AccessListMerge
+    type: Class
+  - uid: TGBot.Config.Overlay.AccessListMergeResult
+    name: AccessListMergeResult
+    type: Class
+  - uid: TGBot.Config.Overlay.AccessOverlayData
+    name: AccessOverlayData
+    type: Class
+  - uid: TGBot.Config.Overlay.OverlayApplier
+    name: OverlayApplier
+    type: Class
+  - uid: TGBot.Config.Overlay.OverlayStore
+    name: OverlayStore
+    type: Class
+  - uid: TGBot.Config.Overlay.PendingNotify
+    name: PendingNotify
+    type: Class
+  - uid: TGBot.Config.Overlay.PendingNotifyStore
+    name: PendingNotifyStore
     type: Class
 - uid: TGBot.Cookie
   name: TGBot.Cookie
@@ -246,6 +283,31 @@ items:
   - uid: TGBot.Texts.UserTexts
     name: UserTexts
     type: Class
+- uid: TGBot.Texts.I18n
+  name: TGBot.Texts.I18n
+  type: Namespace
+  items:
+  - uid: TGBot.Texts.I18n.BotLanguage
+    name: BotLanguage
+    type: Enum
+  - uid: TGBot.Texts.I18n.BotLanguageExtensions
+    name: BotLanguageExtensions
+    type: Class
+  - uid: TGBot.Texts.I18n.I18nService
+    name: I18nService
+    type: Class
+  - uid: TGBot.Texts.I18n.II18n
+    name: II18n
+    type: Interface
+  - uid: TGBot.Texts.I18n.LanguageCatalog
+    name: LanguageCatalog
+    type: Class
+  - uid: TGBot.Texts.I18n.UserLanguageResolver
+    name: UserLanguageResolver
+    type: Class
+  - uid: TGBot.Texts.I18n.UserLanguageStore
+    name: UserLanguageStore
+    type: Class
 - uid: TGBot.Update
   name: TGBot.Update
   type: Namespace
@@ -274,6 +336,9 @@ items:
   - uid: TGBot.Update.SystemProcessRunner
     name: SystemProcessRunner
     type: Class
+  - uid: TGBot.Update.ToolArch
+    name: ToolArch
+    type: Class
   - uid: TGBot.Update.ToolUpdateResult
     name: ToolUpdateResult
     type: Class
@@ -286,6 +351,9 @@ items:
   - uid: TGBot.Update.UpdateException
     name: UpdateException
     type: Class
+  - uid: TGBot.Update.UpdateFailureReason
+    name: UpdateFailureReason
+    type: Enum
   - uid: TGBot.Update.UpdateReport
     name: UpdateReport
     type: Class

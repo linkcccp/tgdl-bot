@@ -116,19 +116,19 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Update_FfmpegToolSource__ctor_System_Net_Http_HttpClient_TGBot_Update_IProcessRunner_.md&amp;value=---%0Auid%3A%20TGBot.Update.FfmpegToolSource.%23ctor(System.Net.Http.HttpClient%2CTGBot.Update.IProcessRunner)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Update_FfmpegToolSource__ctor_System_Net_Http_HttpClient_TGBot_Update_IProcessRunner_System_Func_System_Runtime_InteropServices_Architecture__.md&amp;value=---%0Auid%3A%20TGBot.Update.FfmpegToolSource.%23ctor(System.Net.Http.HttpClient%2CTGBot.Update.IProcessRunner%2CSystem.Func%7BSystem.Runtime.InteropServices.Architecture%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Update/ToolSource.cs/#L109">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Update/ToolSource.cs/#L115">View Source</a>
   </span>
   <a id="TGBot_Update_FfmpegToolSource__ctor_" data-uid="TGBot.Update.FfmpegToolSource.#ctor*"></a>
-  <h4 id="TGBot_Update_FfmpegToolSource__ctor_System_Net_Http_HttpClient_TGBot_Update_IProcessRunner_" data-uid="TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner)">FfmpegToolSource(HttpClient, IProcessRunner)</h4>
+  <h4 id="TGBot_Update_FfmpegToolSource__ctor_System_Net_Http_HttpClient_TGBot_Update_IProcessRunner_System_Func_System_Runtime_InteropServices_Architecture__" data-uid="TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture})">FfmpegToolSource(HttpClient, IProcessRunner, Func&lt;Architecture&gt;?)</h4>
   <div class="markdown level1 summary"><p>初始化 <a class="xref" href="TGBot.Update.FfmpegToolSource.html">FfmpegToolSource</a>。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public FfmpegToolSource(HttpClient http, IProcessRunner runner)</code></pre>
+    <pre><code class="lang-csharp hljs">public FfmpegToolSource(HttpClient http, IProcessRunner runner, Func&lt;Architecture&gt;? archProvider = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -152,16 +152,22 @@
         <td><p>进程运行器（用于解压）。</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.interopservices.architecture">Architecture</a>&gt;</td>
+        <td><span class="parametername">archProvider</span></td>
+        <td><p>进程架构提供器；默认取真实进程架构，测试可注入指定架构。</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h3 id="properties">Properties
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Update_FfmpegToolSource_Name.md&amp;value=---%0Auid%3A%20TGBot.Update.FfmpegToolSource.Name%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Update_FfmpegToolSource_Name.md&amp;value=---%0Auid%3A%20TGBot.Update.FfmpegToolSource.Name%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Update/ToolSource.cs/#L118">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Update/ToolSource.cs/#L125">View Source</a>
   </span>
   <a id="TGBot_Update_FfmpegToolSource_Name_" data-uid="TGBot.Update.FfmpegToolSource.Name*"></a>
   <h4 id="TGBot_Update_FfmpegToolSource_Name" data-uid="TGBot.Update.FfmpegToolSource.Name">Name</h4>
@@ -191,10 +197,10 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Update_FfmpegToolSource_DownloadBinaryAsync_System_String_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Update.FfmpegToolSource.DownloadBinaryAsync(System.String%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Update_FfmpegToolSource_DownloadBinaryAsync_System_String_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Update.FfmpegToolSource.DownloadBinaryAsync(System.String%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Update/ToolSource.cs/#L128">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Update/ToolSource.cs/#L135">View Source</a>
   </span>
   <a id="TGBot_Update_FfmpegToolSource_DownloadBinaryAsync_" data-uid="TGBot.Update.FfmpegToolSource.DownloadBinaryAsync*"></a>
   <h4 id="TGBot_Update_FfmpegToolSource_DownloadBinaryAsync_System_String_System_Threading_CancellationToken_" data-uid="TGBot.Update.FfmpegToolSource.DownloadBinaryAsync(System.String,System.Threading.CancellationToken)">DownloadBinaryAsync(string, CancellationToken)</h4>
@@ -247,10 +253,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Update_FfmpegToolSource_GetLatestVersionAsync_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Update.FfmpegToolSource.GetLatestVersionAsync(System.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Update_FfmpegToolSource_GetLatestVersionAsync_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20TGBot.Update.FfmpegToolSource.GetLatestVersionAsync(System.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Update/ToolSource.cs/#L121">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Update/ToolSource.cs/#L128">View Source</a>
   </span>
   <a id="TGBot_Update_FfmpegToolSource_GetLatestVersionAsync_" data-uid="TGBot.Update.FfmpegToolSource.GetLatestVersionAsync*"></a>
   <h4 id="TGBot_Update_FfmpegToolSource_GetLatestVersionAsync_System_Threading_CancellationToken_" data-uid="TGBot.Update.FfmpegToolSource.GetLatestVersionAsync(System.Threading.CancellationToken)">GetLatestVersionAsync(CancellationToken)</h4>
@@ -308,10 +314,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Update_FfmpegToolSource.md&amp;value=---%0Auid%3A%20TGBot.Update.FfmpegToolSource%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Update_FfmpegToolSource.md&amp;value=---%0Auid%3A%20TGBot.Update.FfmpegToolSource%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Update/ToolSource.cs/#L96" class="contribution-link">View Source</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Update/ToolSource.cs/#L101" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

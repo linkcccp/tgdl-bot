@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 linkcccp
+
 namespace TGBot.Update;
 
 /// <summary>
@@ -44,23 +47,44 @@ public sealed record UpdateReport(IReadOnlyList<ToolUpdateResult> Tools)
 }
 
 /// <summary>
+/// 更新失败原因分类，用于向用户给出准确提示而不泄露内部细节。
+/// </summary>
+public enum UpdateFailureReason
+{
+    /// <summary>一般性失败。</summary>
+    Failed,
+
+    /// <summary>无法读取本地工具版本（安装路径异常或二进制不可执行）。</summary>
+    LocalVersionUnavailable,
+
+    /// <summary>无法获取最新版本信息（网络或版本源异常）。</summary>
+    LatestVersionUnavailable,
+
+    /// <summary>新版本二进制下载失败。</summary>
+    DownloadFailed,
+
+    /// <summary>二进制替换失败（已回滚至原版本）。</summary>
+    ReplaceFailed,
+}
+
+/// <summary>
 /// 更新失败异常。
 /// </summary>
 public sealed class UpdateException : Exception
 {
     /// <summary>
-    /// 面向用户的中文提示（不含内部细节）。
+    /// 失败原因分类（调用方按分类渲染用户提示）。
     /// </summary>
-    public string UserMessage { get; }
+    public UpdateFailureReason Reason { get; }
 
     /// <summary>
     /// 初始化 <see cref="UpdateException"/>。
     /// </summary>
-    /// <param name="userMessage">面向用户的中文提示。</param>
-    /// <param name="detail">内部详细日志（仅记录，不发送给用户）。</param>
-    public UpdateException(string userMessage, string? detail = null)
-        : base(detail ?? userMessage)
+    /// <param name="reason">失败原因分类。</param>
+    /// <param name="detail">内部详细日志（仅记录，不发送给用户；消息由调用方按分类 i18n 渲染）。</param>
+    public UpdateException(UpdateFailureReason reason, string detail)
+        : base(detail)
     {
-        UserMessage = userMessage;
+        Reason = reason;
     }
 }
