@@ -268,8 +268,8 @@ dotnet run --project tools/TgdlDocBuilder   # 输出到 docs/，打开 docs/inde
   fork 的 `auto-sync` 工作流会定时同步上游并自动构建发布
 - **未验证项**：真实的 Telegram Bot API 交互（需真实 Token）无法在本开发机验证；容器全链路
   （tba 就绪 / bot 连接 / 内存）已在本机 Docker 实测通过
-- 仓库托管于 https://github.com/linkcccp/tgdl-bot（公开）。GitHub 仅保留 `main`（大版本
-  发布分支）与 tag；开发分支（`dev`、`feat/*` 等）仅在本地维护
+- 仓库托管于 https://github.com/linkcccp/tgdl-bot（公开）。`main` 是唯一远程分支（发布分支）；
+  开发分支（`dev`、`feat/*` 等）仅在本地维护；开发流程见 [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## 法律与合规声明
 

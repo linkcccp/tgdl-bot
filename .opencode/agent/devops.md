@@ -33,9 +33,9 @@ permission:
 
 ## 分支工作流（强制）
 
-- 任务开始：检查当前分支（`git branch --show-current`）。若不在 `feat/*` 或 `chore/*` 分支，基于 dev 创建：`git checkout dev && git checkout -b <分支名>`（分支前缀按任务类型：配置/CI 类用 `chore/`，功能类用 `feat/`；orchestrator 指定分支名时以其为准）。
+- 任务开始：检查当前分支（`git branch --show-current`）。若不在 `feat/*` 或 `chore/*` 分支，基于本地 dev 创建：`git checkout dev && git checkout -b <分支名>`（分支前缀按任务类型：配置/CI 类用 `chore/`，功能类用 `feat/`；orchestrator 指定分支名时以其为准）。
 - 在分支上开发 → 验证（build/test/audit）→ `git add` + `git commit`（feat:/chore: 风格，不提交 `docker/dist/`、密钥与本地状态）。
-- 任务完成并通过验证后，**squash 合并回 dev**：`git checkout dev && git pull`（拉最新 dev）`&& git merge --squash <分支> && git commit`（先拉最新 dev，再将该分支全部 commit 压成一条提交到 dev；dev 是汇聚分支，main 只接受从 dev 合并的大版本）。
+- 任务完成并通过验证后，**squash 合并回本地 dev**：`git checkout dev && git pull`（拉最新 dev）`&& git merge --squash <分支> && git commit`（先拉最新 dev，再将该分支全部 commit 压成一条提交到 dev；dev 是**本地草稿分支**、不进远程；main 是唯一远程分支，只接受 PR 或用户指示的大版本 squash 合并）。
 - 冲突：自行解决（先拉最新 dev，处理冲突后再合并）。
 - 清理：合并后 `git branch -d <分支>`。
 - 边界：**绝不擅自 push origin、绝不自行合并 dev→main**（push/`v*` tag 会触发 CI 发布镜像）；push、dev→main 合并与打 tag 一律等用户指示。

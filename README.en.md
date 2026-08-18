@@ -278,9 +278,9 @@ dotnet run --project tools/TgdlDocBuilder   # outputs to docs/, open docs/index.
 - The prebuilt telegram-bot-api binary depends on Releases of the fork (`linkcccp/telegram-bot-api`);
   the fork's `auto-sync` workflow periodically syncs upstream and rebuilds/releases
 - **Unverified**: real Telegram Bot API interaction (needs a real token) cannot be verified on the dev machine; the full container chain (tba readiness / bot connection / memory) has been tested locally with Docker
-- The repository is hosted at https://github.com/linkcccp/tgdl-bot (public). GitHub keeps
-  only the `main` branch (major releases, merged from `dev`) plus tags; development branches
-  (`dev`, `feat/*`, etc.) are local only
+- The repository is hosted at https://github.com/linkcccp/tgdl-bot (public). `main` is the
+  only remote branch (release branch); development branches (`dev`, `feat/*`, etc.) are local
+  only; see [CONTRIBUTING.md](CONTRIBUTING.md) for the development workflow
 
 ## Legal & Compliance
 

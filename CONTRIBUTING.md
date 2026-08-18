@@ -41,17 +41,20 @@ contributing you agree to its terms.
 ## 分支与提交规范 / Branching & Commit Guidelines
 
 ```
-main  ←── 仅接受 dev 合并（大版本发布分支，合并后打 v* tag 触发 CI）
-dev   ←── 所有 feat/fix/chore squash 合并的汇聚分支
-feat/*、fix/*、chore/*  ←── 一律基于 dev 创建
+main  ←── PR（CI 必须全绿 + 至少 1 人审查；外部贡献者与 Dependabot 均 PR 到 main）
+dev   ←── 本地草稿分支（仅本地，不 push 远程）：内部 feat/fix/chore squash 合并汇聚
+feat/*、fix/*、chore/*  ←── 内部开发一律基于 dev 创建；外部贡献者基于 main 创建
 ```
 
-- **`main`**：大版本发布分支。只接受从 `dev` 合并，**不接受直接提交或其他分支直接合并**；
-  合并后打 `v*` tag（如 `v2.4.0`，tag 与发布版本一一对应）触发 GitHub Actions
-  构建镜像并发布。
-- **`dev`**：最终测试与合并汇聚分支。分支开发完成后 **squash 合并**回 dev
-  （先拉最新 dev，`git merge --squash <分支>` 再提交），合并后删除分支。
-- **禁止**：直接 push 到 `main`；`dev → main` 合并由维护者主动指示。
+- **`main`**：**唯一远程分支**，常驻 GitHub、随时可发布。所有改动（含小修复/文档）
+  均以 **PR** 进入（CI 必须全绿 + 至少 1 人审查）；版本语义靠 `v*` tag + CHANGELOG
+  保证（如 `v2.4.1`），push tag 触发 GitHub Actions 构建镜像并发布。
+- **`dev`**：**本地开发草稿分支**（仅本地，不是远程协作渠道）。内部多步开发在 dev 上
+  积累，发版时由维护者将 dev 内容以**单一大版本提交 squash 合并进 main**（本地操作），
+  然后 push main + 打 `v*` tag。
+- **外部贡献者**：从 `main` fork/拉取（干净稳定基线）→ 基于 `main` 创建分支 →
+  PR 到 **`main`**；Dependabot 同样 PR 到 `main`。
+- **禁止**：直接 push 到 `main`（必须走 PR）；`dev` → `main` 合并由维护者主动指示。
 - **提交信息**：中文，采用 `feat:` / `fix:` / `docs:` / `test:` / `chore:` 前缀
   （如 `feat: 支持 xxx`、`fix: 修复 xxx`）；提交前检查只暂存本次改动文件。
 
@@ -67,17 +70,21 @@ feat/*、fix/*、chore/*  ←── 一律基于 dev 创建
 
 ## 提交 Pull Request / Submitting a Pull Request
 
-1. 从最新 `dev` 创建分支：`git checkout dev && git pull && git checkout -b feat/xxx`；
+1. fork 仓库（外部贡献者），从最新 `main` 创建分支：
+   `git checkout main && git pull && git checkout -b feat/xxx`；
 2. 开发并完成本地验证（build 0 警告 + test 全绿 + 必要文档）；
-3. push 分支并开 PR，目标分支为 `dev`；PR 描述请填写
+3. push 分支并开 PR，目标分支为 **`main`**；PR 描述请填写
    [PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md) 中的检查清单；
-4. 合并采用 **squash**（保持 dev 历史线性、可追溯）。
+4. 合并采用 **squash**；CI（`.github/workflows/ci.yml`）必须全绿，且需至少
+   1 名维护者审查通过。
 
-> 说明：当前 CI 仅由 `v*` tag 触发的发布流水线（`.github/workflows/release.yml`），
-> PR 阶段无自动检查——因此**本地 0 警告 + 全绿测试是合并的硬性前提**。
+> 说明：CI 在 PR（base: main）与 push 时自动运行（build 0 警告 + test 全绿），
+> 合并前必须通过；分支保护规则（require PR + CI、禁 force push/删除）由维护者
+> 在 GitHub 仓库设置中配置。
 >
-> Note: CI currently only runs the tag-triggered release pipeline; there is no
-> PR-time CI, so passing local build/test gates is a hard requirement for merge.
+> Note: CI runs automatically on PRs (base: main) and pushes (0-warning build +
+> all-green tests) and must pass before merge; branch protection (require PR + CI,
+> no force-push/deletion) is configured by maintainers in the repository settings.
 
 ## 报告问题 / Reporting Issues
 

@@ -18,13 +18,13 @@ Thanks for contributing! Fill in the sections below and tick the checklist
 
 ## 检查清单 / Checklist
 
-- [ ] 基于 `dev` 分支创建（`feat/*` / `fix/*` / `chore/*`）/ Branch created from `dev`
+- [ ] 基于 `main` 创建分支（`feat/*` / `fix/*` / `chore/*`）/ Branch created from `main`
 - [ ] `dotnet build -c Release` 通过且 **0 警告** / passes with **0 warnings**
 - [ ] `dotnet test` 全部通过（集成测试网络不可用时静默跳过）/ all tests pass (integration tests skip silently when network is unavailable)
 - [ ] 新增功能/修复已配套测试（共享 fakes 位于 `tests/TGBot.Tests/MessageRouterTests.cs`）/ new features/fixes covered by tests (shared fakes live in `tests/TGBot.Tests/MessageRouterTests.cs`)
-- [ ] 已准备 **squash** 合并回 `dev`（单条提交，信息符合 `feat:`/`fix:`/`docs:`/`test:`/`chore:` 规范）/ ready to be squash-merged into `dev`
+- [ ] 合并采用 **squash** 到 `main`（单条提交，信息符合 `feat:`/`fix:`/`docs:`/`test:`/`chore:` 规范）/ ready to be squash-merged into `main`
 - [ ] 行为/配置变更已同步文档：`docker/.env.example`、`docker/config.conf.example`、README（中/英）、CHANGELOG（如需）/ docs synced for behavior/config changes (`.env.example`, `config.conf.example`, README zh/en, CHANGELOG if needed)
-- [ ] 未向 `main` 推送（`main` 仅接受 `dev` 合并的大版本）/ no pushes to `main` (only merges from `dev` for major versions)
+- [ ] 目标分支为 `main`（CI 必须全绿 + 至少 1 人审查）/ PR targets `main` (CI green + at least 1 review)
 
 ## 相关 Issue / Related Issues
 

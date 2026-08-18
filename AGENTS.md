@@ -43,11 +43,12 @@ Agent 角色（详见 `.opencode/agent/`，openai 配置 `opencode.json` 默认 
 ## 配置新增的完整链路
 新增配置键必须同步：`AppConfig` → `ConfigParser`（别名+解析+校验）→ `docker/docker-entrypoint.sh`（TGDL_* 映射）→ `docker/.env.example` → `docker/config.conf.example` → README 配置表。
 
-## Git 约定
-- **`main`**：大版本发布分支。只接受从 `dev` 合并，不接受直接提交或其他分支直接合并；合并后打 `v*` tag 触发 CI（tag 名对应版本号，如 `v2.4.0`，tag 与发布版本一一对应；无 tag 不发布镜像）。
-- **`dev`**：最终测试与合并汇聚分支。所有 `feat/*`/`fix/*`/`chore/*` 分支完成后 squash 合并到 dev；只有 dev 完全测试跑通（build/test 通过）才能合并到 main。
-- **`feat/*`、`fix/*`、`chore/*` 等**：一律基于 dev 创建，开发完成并通过验证后 squash 合并回 dev（先拉最新 dev，`git merge --squash <分支>` 再提交），合并后删除分支。
-- **`dev` → `main` 合并必须由用户主动指示**，agent 无权自行合并。
+## Git 约定（GitHub Flow：main 唯一远程分支）
+- **`main`**：唯一远程分支，常驻 GitHub，随时可发布。所有进 `main` 的改动必须走 **PR**（CI 全绿 + 至少 1 人审查）；小改动（fix/docs 等）也直接以 PR 进 main，发布语义靠 `v*` tag + CHANGELOG 保证（如 `v2.4.1`，tag 与版本一一对应；push tag 触发 CI 发布镜像，无 tag 不发布）。
+- **`dev`**：本地开发草稿分支（**仅本地，不 push 远程**，不是远程协作渠道）。内部多步开发在 dev 上积累；发版时由用户指示，将 dev 内容以**单一大版本提交 squash 合并进 main**（本地操作），然后 push main + 打 `v*` tag。
+- **`feat/*`、`fix/*`、`chore/*` 等**：内部开发一律基于 dev 创建（**不要**基于 main 创建内部分支），开发完成并通过验证后 squash 合并回本地 dev（先拉最新 dev，`git merge --squash <分支>` 再提交），合并后删除分支。
+- **外部贡献者 / Dependabot**：从 main fork/拉取（干净稳定基线）→ PR 到 **main**；Dependabot 配置保持 `base: main`（默认）。
+- **push origin / dev→main 合并必须由用户主动指示**，agent 无权自行执行。
 - 提交约定：每个任务/阶段完成并通过验证后自动 `git add` + `git commit`（中文，`feat:`/`fix:`/`docs:`/`test:`/`chore:` 风格）；提交前检查只暂存本次改动文件；code-reviewer 只读，禁止 git 写操作。
 - 发布回滚由 git 管理（回退到上一 tag/提交）。
 - 本机外网阻断 GitHub 22 端口：origin 已用 `ssh://git@ssh.github.com:443/...`。
