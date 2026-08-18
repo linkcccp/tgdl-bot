@@ -47,8 +47,9 @@ feat/*、fix/*、chore/*  ←── 内部开发一律基于 dev 创建；外部
 ```
 
 - **`main`**：**唯一远程分支**，常驻 GitHub、随时可发布。所有改动（含小修复/文档）
-  均以 **PR** 进入（CI 必须全绿 + 至少 1 人审查）；版本语义靠 `v*` tag + CHANGELOG
-  保证（如 `v2.4.1`），push tag 触发 GitHub Actions 构建镜像并发布。
+  均以 **PR** 进入（CI 必须全绿 + 至少 1 人审查）；版本语义由 **PR 标题类型自动
+  决定**（SemVer 自动发版，见下方"版本与发布"小节），push tag 触发 GitHub Actions
+  构建镜像并发布。
 - **`dev`**：**本地开发草稿分支**（仅本地，不是远程协作渠道）。内部多步开发在 dev 上
   积累，发版时由维护者将 dev 内容以**单一大版本提交 squash 合并进 main**（本地操作），
   然后 push main + 打 `v*` tag。
@@ -73,7 +74,9 @@ feat/*、fix/*、chore/*  ←── 内部开发一律基于 dev 创建；外部
 1. fork 仓库（外部贡献者），从最新 `main` 创建分支：
    `git checkout main && git pull && git checkout -b feat/xxx`；
 2. 开发并完成本地验证（build 0 警告 + test 全绿 + 必要文档）；
-3. push 分支并开 PR，目标分支为 **`main`**；PR 描述请填写
+3. push 分支并开 PR，目标分支为 **`main`**；**PR 标题必须以类型前缀开头**
+   （`breaking:` / `feat:` / `fix:` / `chore:` / `docs:`，可带 scope，CI 强制
+   校验，Dependabot 豁免），类型决定合并后的自动发版版本；PR 描述请填写
    [PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md) 中的检查清单；
 4. 合并采用 **squash**；CI（`.github/workflows/ci.yml`）必须全绿，且需至少
    1 名维护者审查通过。
@@ -85,6 +88,47 @@ feat/*、fix/*、chore/*  ←── 内部开发一律基于 dev 创建；外部
 > Note: CI runs automatically on PRs (base: main) and pushes (0-warning build +
 > all-green tests) and must pass before merge; branch protection (require PR + CI,
 > no force-push/deletion) is configured by maintainers in the repository settings.
+
+## 版本与发布 / Versioning & Releases
+
+版本号遵循 **SemVer**（`vX.Y.Z`）。PR 合并进 `main` 后，**auto-version
+workflow** 自动读取 PR 标题类型并打下一个版本 tag：
+
+| PR 标题类型 | 下一个版本 | 示例 |
+| --- | --- | --- |
+| `breaking:`（或 `feat!:`) | 大版本 vX.0.0 | v2.4.0 → v3.0.0 |
+| `feat:` | 小版本 vX.Y.0 | v2.4.0 → v2.5.0 |
+| `fix:` / `chore:` | 修订号 vX.Y.Z+1 | v2.4.0 → v2.4.1 |
+| `docs:` | 不发版（无 tag） | — |
+| Dependabot "Bump ..." | 自动按 `chore:` 处理 | — |
+
+- **无 PR 的 push**（如维护者手动大版本合并 dev → main）：不自动打 tag，由维护者
+  手动打 tag（如架构级 v3.0.0）。
+- 打 tag 自动触发 [release.yml](.github/workflows/release.yml)：Docker 双架构
+  镜像发布（`{ver}` + `latest` multi-arch）+ GitHub Release。
+- **CHANGELOG 由维护者手动维护**：合并 PR 时在 `[Unreleased]` 段按
+  Added / Fixed / Changed 记录；发版时归档到新版本号段（Keep a Changelog 格式，
+  见 [CHANGELOG.md](CHANGELOG.md)）。
+
+Versions follow **SemVer** (`vX.Y.Z`). After a PR merges into `main`, the
+**auto-version workflow** reads the PR title type and tags the next version:
+
+| PR title type | Next version | Example |
+| --- | --- | --- |
+| `breaking:` (or `feat!:`) | major vX.0.0 | v2.4.0 → v3.0.0 |
+| `feat:` | minor vX.Y.0 | v2.4.0 → v2.5.0 |
+| `fix:` / `chore:` | patch vX.Y.Z+1 | v2.4.0 → v2.4.1 |
+| `docs:` | no release (no tag) | — |
+| Dependabot "Bump ..." | treated as `chore:` | — |
+
+- **Pushes without a PR** (e.g. maintainer manual dev → main major merge): no
+  automatic tag; the maintainer tags manually (e.g. architectural v3.0.0).
+- Tagging triggers [release.yml](.github/workflows/release.yml): dual-arch
+  Docker image release (`{ver}` + `latest` multi-arch) + GitHub Release.
+- **CHANGELOG is maintained manually by maintainers**: record entries under
+  the `[Unreleased]` section (Added / Fixed / Changed) when merging a PR;
+  archive them under the new version heading at release time (Keep a Changelog
+  format, see [CHANGELOG.md](CHANGELOG.md)).
 
 ## 报告问题 / Reporting Issues
 

@@ -8,6 +8,38 @@ Thanks for contributing! Fill in the sections below and tick the checklist
 
 <!-- 简要说明本次改动的目的与内容。Briefly describe the purpose and content of this change. -->
 
+## PR 标题类型 / PR Title Type
+
+PR 标题**必须以类型前缀开头**（CI 强制校验，Dependabot 自动更新除外）。
+类型决定合并后自动发布的版本（SemVer，auto-version workflow）：
+
+| 前缀 | 版本影响 | 示例 |
+| --- | --- | --- |
+| `breaking:`（或 `feat!:`) | 大版本 vX.0.0 | `breaking: 移除旧配置键` |
+| `feat:` | 小版本 vX.Y.0 | `feat: 支持多线程下载` |
+| `fix:` | 修订号 vX.Y.Z+1 | `fix: 修复内存泄漏` |
+| `chore:` | 修订号 vX.Y.Z+1 | `chore: 更新依赖` |
+| `docs:` | 不发版（无 tag） | `docs: 更新安装说明` |
+
+可带 scope（如 `feat(config):`）。标题不符合格式将导致 **CI 红叉**，无法合并；
+规则详见 [CONTRIBUTING.md](../CONTRIBUTING.md) 的"版本与发布"小节。
+
+The PR title **must start with a type prefix** (enforced by CI; Dependabot
+updates are exempt). The type determines the next version tag (SemVer,
+auto-version workflow) after the PR is merged into `main`:
+
+| Prefix | Version impact | Example |
+| --- | --- | --- |
+| `breaking:` (or `feat!:`) | major vX.0.0 | `breaking: remove legacy config keys` |
+| `feat:` | minor vX.Y.0 | `feat: support multi-threaded downloads` |
+| `fix:` | patch vX.Y.Z+1 | `fix: fix memory leak` |
+| `chore:` | patch vX.Y.Z+1 | `chore: bump dependencies` |
+| `docs:` | no release (no tag) | `docs: update install guide` |
+
+An optional scope is allowed (e.g. `feat(config):`). A non-conforming title
+fails **CI** and cannot be merged; see "版本与发布 / Versioning & Releases" in
+[CONTRIBUTING.md](../CONTRIBUTING.md).
+
 ## 改动类型 / Type of Change
 
 - [ ] 新功能 / feat

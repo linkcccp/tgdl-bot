@@ -50,6 +50,7 @@ Agent 角色（详见 `.opencode/agent/`，openai 配置 `opencode.json` 默认 
 - **外部贡献者 / Dependabot**：从 main fork/拉取（干净稳定基线）→ PR 到 **main**；Dependabot 配置保持 `base: main`（默认）。
 - **push origin / dev→main 合并必须由用户主动指示**，agent 无权自行执行。
 - 提交约定：每个任务/阶段完成并通过验证后自动 `git add` + `git commit`（中文，`feat:`/`fix:`/`docs:`/`test:`/`chore:` 风格）；提交前检查只暂存本次改动文件；code-reviewer 只读，禁止 git 写操作。
+- **版本策略（自动发版）**：PR 标题必须带类型前缀（CI 强制校验，Dependabot 豁免）——`breaking:`/`feat:`/`fix:`/`chore:`/`docs:`，可带 scope；合并后 auto-version workflow 按 SemVer 自动打 tag：breaking→vX.0.0、feat→vX.Y.0、fix/chore→vX.Y.Z+1、**docs→不发版（无 tag）**；无 PR 的 push 不自动打 tag，由维护者手动打。打 tag 自动触发 release.yml，**发版全自动，agent 不干预 tag 决策**（CHANGELOG 仍由维护者手动维护）。
 - 发布回滚由 git 管理（回退到上一 tag/提交）。
 - 本机外网阻断 GitHub 22 端口：origin 已用 `ssh://git@ssh.github.com:443/...`。
 - 子模块 `third_party/telegram-bot-api` → fork URL（源码参考；CI 不检出/构建）。
