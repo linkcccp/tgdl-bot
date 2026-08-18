@@ -28,18 +28,27 @@ public static class UriVersionParser
     }
 
     /// <summary>
-    /// 从 johnvansickle.com 首页 HTML 解析 release 版本，如 <c>release: 7.0.2</c>。
+    /// 从 GitHub API 的 release 响应 JSON 中解析 <c>published_at</c> 字段，
+    /// 如 <c>"published_at": "2026-08-17T13:29:26Z"</c> → <c>2026.08.17.13.29.26</c>。
+    /// <para>用于 BtbN/FFmpeg-Builds 的滚动 <c>latest</c> release：其 <c>tag_name</c> 恒为
+    /// <c>latest</c> 不含日期，版本标识只能取 ISO 8601 UTC 的 <c>published_at</c>（单调递增）。</para>
     /// </summary>
-    /// <param name="page">首页 HTML 内容。</param>
-    /// <returns>版本号；解析失败返回 <see langword="null"/>。</returns>
-    public static ToolVersion? ParseJohnVanSickleReleasePage(string? page)
+    /// <param name="json">GitHub API 响应 JSON。</param>
+    /// <returns>归一化后的 autobuild 版本；解析失败返回 <see langword="null"/>。</returns>
+    public static ToolVersion? ParseGitHubApiPublishedAt(string? json)
     {
-        if (string.IsNullOrWhiteSpace(page))
+        if (string.IsNullOrWhiteSpace(json))
         {
             return null;
         }
 
-        var match = Regex.Match(page, @"release\s*:\s*(\d+(?:\.\d+)+)", RegexOptions.IgnoreCase);
-        return match.Success && ToolVersion.TryParse(match.Groups[1].Value, out var v) ? v : null;
+        var match = Regex.Match(json, @"""published_at""\s*:\s*""(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})(?:Z)?""");
+        if (!match.Success)
+        {
+            return null;
+        }
+
+        var normalized = match.Groups[1].Value.Replace('-', '.').Replace('T', '.').Replace(':', '.');
+        return ToolVersion.TryParse(normalized, out var v) ? v : null;
     }
 }

@@ -34,6 +34,13 @@ public sealed class ToolVersion : IComparable<ToolVersion>
     public string Suffix { get; }
 
     /// <summary>
+    /// 是否为日期标度版本：首分量在 2000-2100 之间（如 autobuild 年份）。
+    /// <para>用于跨标度比较防护：git 提交计数（如 <c>118503</c>）或语义版本（如 <c>7.1.1</c>）
+    /// 与日期版本数值比较必然误判，标度不一致时不得短路"已是最新"。</para>
+    /// </summary>
+    public bool IsDateLike => _components.Length > 0 && _components[0] is >= 2000 and <= 2100;
+
+    /// <summary>
     /// 尝试从任意字符串解析版本号，如 <c>2025.01.26</c>、<c>n9.0.1</c>、<c>7.1.1-1</c>。
     /// </summary>
     /// <param name="raw">原始字符串。</param>

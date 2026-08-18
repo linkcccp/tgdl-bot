@@ -43,11 +43,31 @@ public class UpdaterIntegrationTests
         }
     }
 
+    [Fact]
+    public async Task UpdateFfmpeg_GetLatestVersion_ParsesAutobuildDate()
+    {
+        if (!await IsReachableAsync("https://api.github.com"))
+        {
+            return;
+        }
+
+        using var http = new HttpClient();
+        var runner = new SystemProcessRunner();
+        var source = new FfmpegToolSource(http, runner);
+
+        var latest = await source.GetLatestVersionAsync(CancellationToken.None);
+        Assert.NotNull(latest);
+        // BtbN 远端版本为 autobuild 日期标度（如 2026.08.17.13.29.26），非语义版本。
+        Assert.True(latest!.IsDateLike);
+    }
+
     private static async Task<bool> IsReachableAsync(string url)
     {
         try
         {
             using var client = new HttpClient { Timeout = TimeSpan.FromSeconds(10) };
+            // GitHub API 对无 User-Agent 的请求返回 403，须带上。
+            client.DefaultRequestHeaders.UserAgent.ParseAdd("tgdl-bot-test");
             using var response = await client.SendAsync(new HttpRequestMessage(HttpMethod.Head, url), HttpCompletionOption.ResponseHeadersRead);
             return response.StatusCode is HttpStatusCode.OK or HttpStatusCode.Found or HttpStatusCode.Redirect;
         }

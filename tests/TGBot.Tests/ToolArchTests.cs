@@ -15,8 +15,8 @@ namespace TGBot.Tests;
 public class ToolArchTests
 {
     [Theory]
-    [InlineData(Architecture.X64, "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz")]
-    [InlineData(Architecture.Arm64, "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-arm64-static.tar.xz")]
+    [InlineData(Architecture.X64, "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz")]
+    [InlineData(Architecture.Arm64, "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linuxarm64-gpl.tar.xz")]
     public void FfmpegReleaseUrl_MatchesArchAsset(Architecture arch, string expected)
     {
         Assert.Equal(expected, ToolArch.FfmpegReleaseUrl(arch));
@@ -82,10 +82,51 @@ public class ToolArchTests
         Directory.CreateDirectory(tmp);
         try
         {
-            // stub runner 解压必然失败；本测试只验证架构注入后请求的 URL 是 arm64 资产，不关心解压结果。
+            // stub 返回空内容：xz 魔数校验（下载后、解压前）先失败；本测试只验证架构注入后请求的 URL 是 arm64 资产。
+            var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => source.DownloadBinaryAsync(tmp, CancellationToken.None));
+            Assert.Contains("非 xz", ex.Message);
+            Assert.Equal("https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linuxarm64-gpl.tar.xz", handler.LastRequestUrl);
+        }
+        finally
+        {
+            Directory.Delete(tmp, true);
+        }
+    }
+
+    [Fact]
+    public async Task FfmpegToolSource_Download_ValidXzMagic_ProceedsToExtract()
+    {
+        using var handler = new StubHttpHandler([0xFD, 0x37, 0x7A, 0x58, 0x5A, 0x00, 0x01, 0x02]);
+        using var http = new HttpClient(handler);
+        var source = new FfmpegToolSource(http, new FailingProcessRunner(), () => Architecture.X64);
+
+        var tmp = Path.Combine(Path.GetTempPath(), "tgdl-arch-" + Guid.NewGuid().ToString("N")[..8]);
+        Directory.CreateDirectory(tmp);
+        try
+        {
+            // 魔数合法 → 走到解压步骤，stub runner 解压必然失败。
             var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => source.DownloadBinaryAsync(tmp, CancellationToken.None));
             Assert.Contains("解压", ex.Message);
-            Assert.Equal("https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-arm64-static.tar.xz", handler.LastRequestUrl);
+        }
+        finally
+        {
+            Directory.Delete(tmp, true);
+        }
+    }
+
+    [Fact]
+    public async Task FfmpegToolSource_Download_NonXzMagic_ThrowsBeforeExtract()
+    {
+        using var handler = new StubHttpHandler("not-an-xz-archive"u8.ToArray());
+        using var http = new HttpClient(handler);
+        var source = new FfmpegToolSource(http, new FailingProcessRunner(), () => Architecture.X64);
+
+        var tmp = Path.Combine(Path.GetTempPath(), "tgdl-arch-" + Guid.NewGuid().ToString("N")[..8]);
+        Directory.CreateDirectory(tmp);
+        try
+        {
+            var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => source.DownloadBinaryAsync(tmp, CancellationToken.None));
+            Assert.Contains("非 xz", ex.Message);
         }
         finally
         {
@@ -94,10 +135,21 @@ public class ToolArchTests
     }
 
     /// <summary>
-    /// 记录最后请求 URL 并返回 200 空内容的 HttpMessageHandler 桩。
+    /// 记录最后请求 URL 并返回指定内容的 HttpMessageHandler 桩。
     /// </summary>
     private sealed class StubHttpHandler : HttpMessageHandler
     {
+        private readonly byte[] _content;
+
+        /// <summary>
+        /// 初始化 <see cref="StubHttpHandler"/>。
+        /// </summary>
+        /// <param name="content">响应体内容（默认空）。</param>
+        public StubHttpHandler(byte[]? content = null)
+        {
+            _content = content ?? [];
+        }
+
         /// <summary>
         /// 最近一次请求的完整 URL。
         /// </summary>
@@ -107,7 +159,7 @@ public class ToolArchTests
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             LastRequestUrl = request.RequestUri?.ToString();
-            return Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK) { Content = new ByteArrayContent([]) });
+            return Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK) { Content = new ByteArrayContent(_content) });
         }
     }
 

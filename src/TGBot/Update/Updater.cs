@@ -126,7 +126,9 @@ public sealed class Updater : IUpdater
             throw new UpdateException(UpdateFailureReason.LatestVersionUnavailable, $"{name} 返回空版本");
         }
 
-        if (localVersion is not null && localVersion.CompareTo(latest) >= 0)
+        // 短路需标度一致：本地版本与远端同为日期标度（如 autobuild 年份）时才允许数值比较；
+        // 标度不一致（如本地 git 提交计数 118503 与远端日期 2026…）直接比较必然误判，不得短路。
+        if (localVersion is not null && localVersion.CompareTo(latest) >= 0 && localVersion.IsDateLike == latest.IsDateLike)
         {
             progress?.Invoke($"{name} 已是最新版本（{localVersion}），无需更新。");
             return new ToolUpdateResult(name, localVersion, latest, ToolUpdateStatus.AlreadyUpToDate);
@@ -150,6 +152,20 @@ public sealed class Updater : IUpdater
 
             AtomicFileReplacer.Replace(installPath, downloaded);
 
+            if (name == "ffmpeg")
+            {
+                try
+                {
+                    // 记录本次安装的 autobuild 时间，使下次 /update 能同标度比较短路；写失败忽略
+                    //（下次 /update 会重新下载，无害，不阻塞更新成功）。
+                    FfmpegVersionMarker.Write(installPath, latest);
+                }
+                catch
+                {
+                    // ignore
+                }
+            }
+
             var installedVersion = await GetLocalVersionAsync(name, installPath, cancellationToken).ConfigureAwait(false);
             progress?.Invoke($"{name} 更新完成：{installedVersion?.ToString() ?? "未知"}");
             return new ToolUpdateResult(name, localVersion, installedVersion, ToolUpdateStatus.Updated);
@@ -166,6 +182,13 @@ public sealed class Updater : IUpdater
 
     private async Task<ToolVersion?> GetLocalVersionAsync(string name, string installPath, CancellationToken cancellationToken)
     {
+        // ffmpeg 优先读 marker（上次安装的 autobuild 日期，与远端同标度）；无 marker 回退二进制解析
+        //（git 提交计数，仅作展示不参与短路）。
+        if (name == "ffmpeg" && FfmpegVersionMarker.TryRead(installPath, out var marked))
+        {
+            return marked;
+        }
+
         var args = name == "ffmpeg" ? new[] { "-version" } : new[] { "--version" };
         var output = await _runner.RunAsync(installPath, args, null, _toolTimeout, cancellationToken).ConfigureAwait(false);
         if (output.ExitCode != 0)

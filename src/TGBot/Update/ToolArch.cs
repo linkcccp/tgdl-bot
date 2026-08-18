@@ -14,16 +14,19 @@ namespace TGBot.Update;
 public static class ToolArch
 {
     /// <summary>
-    /// 按运行架构返回 johnvansickle ffmpeg 静态构建下载 URL。
+    /// 按运行架构返回 BtbN/FFmpeg-Builds 最新自动构建（autobuild）下载 URL。
+    /// <para>上游的 <c>latest</c> 是真实存在的滚动 release tag（资产名恒定不含日期），
+    /// URL 永不变化；资产命名 <c>linux64</c>/<c>linuxarm64</c> 分别对应 x64/arm64。</para>
     /// </summary>
     /// <param name="arch">运行架构（真实进程架构或测试注入值）。</param>
     /// <returns>对应架构的 ffmpeg 静态构建 .tar.xz 下载地址。</returns>
     /// <exception cref="InvalidOperationException">架构不是 x64/arm64 时抛出（快速失败，不做静默回退）。</exception>
     public static string FfmpegReleaseUrl(Architecture arch) => arch switch
     {
-        // 上游官方命名 amd64（即 x64），不可改。
-        Architecture.X64 => "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz",
-        Architecture.Arm64 => "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-arm64-static.tar.xz",
+        // 上游官方命名：linux64 资产对应 x64（amd64），与 CI（release.yml matrix ffmpeg-url）逐字符一致。
+        Architecture.X64 => "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz",
+        // 上游官方命名：linuxarm64 资产对应 arm64，与 CI 一致。
+        Architecture.Arm64 => "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linuxarm64-gpl.tar.xz",
         // 错误架构的二进制必然在 VerifyBinaryAsync（执行 --version 校验）失败，早失败省流量且报错清晰。
         _ => throw new InvalidOperationException($"不支持的运行架构 {arch}：/update 仅支持 x64 与 arm64"),
     };

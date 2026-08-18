@@ -94,13 +94,14 @@ public sealed class YtDlpToolSource : IToolSource
 }
 
 /// <summary>
-/// ffmpeg 官方静态构建源（johnvansickle.com）。
-/// <para>选择理由：官方维护的静态构建，无需 root 权限即可安装到非 root 运行目录、
-/// 支持原子替换与回滚，且版本通常领先 Debian apt 仓库；apt 需要 root 且版本较旧。</para>
+/// ffmpeg 静态构建源（BtbN/FFmpeg-Builds，GitHub Releases 托管）。
+/// <para>选择理由：与 CI 同源（同一 latest 滚动 release 资产）；GitHub Releases CDN 稳定；
+/// 无需 root 权限即可安装到非 root 运行目录、支持原子替换与回滚。
+/// 版本标识取 API 响应的 <c>published_at</c>（ISO 8601 UTC，单调递增）。</para>
 /// </summary>
 public sealed class FfmpegToolSource : IToolSource
 {
-    private const string HomePageUrl = "https://johnvansickle.com/ffmpeg/";
+    private const string ApiUrl = "https://api.github.com/repos/BtbN/FFmpeg-Builds/releases/tags/latest";
 
     private readonly HttpClient _http;
     private readonly IProcessRunner _runner;
@@ -127,8 +128,18 @@ public sealed class FfmpegToolSource : IToolSource
     /// <inheritdoc />
     public async Task<ToolVersion?> GetLatestVersionAsync(CancellationToken cancellationToken)
     {
-        var page = await _http.GetStringAsync(HomePageUrl, cancellationToken).ConfigureAwait(false);
-        return UriVersionParser.ParseJohnVanSickleReleasePage(page);
+        // GitHub API 要求请求带 User-Agent（缺失返回 403）；共享 HttpClient 未设默认 UA，
+        // 只在请求级设置，不污染共享 client 的默认头。
+        using var request = new HttpRequestMessage(HttpMethod.Get, ApiUrl);
+        request.Headers.UserAgent.ParseAdd("tgdl-bot");
+        using var response = await _http.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+        if (response.StatusCode != System.Net.HttpStatusCode.OK)
+        {
+            return null;
+        }
+
+        var json = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+        return UriVersionParser.ParseGitHubApiPublishedAt(json);
     }
 
     /// <inheritdoc />
@@ -147,6 +158,8 @@ public sealed class FfmpegToolSource : IToolSource
                 await using var file = new FileStream(archivePath, FileMode.CreateNew, FileAccess.Write, FileShare.None, 81920, useAsync: true);
                 await stream.CopyToAsync(file, cancellationToken).ConfigureAwait(false);
             }
+
+            VerifyXzMagic(archivePath);
 
             var result = await _runner.RunAsync("tar", new[] { "-xf", archivePath, "-C", extractDir }, null, TimeSpan.FromMinutes(5), cancellationToken).ConfigureAwait(false);
             if (result.ExitCode != 0)
@@ -178,6 +191,23 @@ public sealed class FfmpegToolSource : IToolSource
             {
                 // ignore
             }
+        }
+    }
+
+    /// <summary>
+    /// 校验下载产物为 xz 格式（魔数 <c>fd 37 7a 58 5a 00</c>，与 CI 一致），
+    /// 200 坏响应在解压前快速失败，归 <see cref="UpdateFailureReason.DownloadFailed"/>。
+    /// </summary>
+    /// <param name="archivePath">下载的归档文件路径。</param>
+    /// <exception cref="InvalidOperationException">前 6 字节与 xz 魔数不符（含文件不足 6 字节）时抛出。</exception>
+    private static void VerifyXzMagic(string archivePath)
+    {
+        using var file = new FileStream(archivePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+        Span<byte> magic = stackalloc byte[6];
+        var read = file.Read(magic);
+        if (read < 6 || magic[0] != 0xFD || magic[1] != 0x37 || magic[2] != 0x7A || magic[3] != 0x58 || magic[4] != 0x5A || magic[5] != 0x00)
+        {
+            throw new InvalidOperationException("ffmpeg 下载内容非 xz 格式");
         }
     }
 }
