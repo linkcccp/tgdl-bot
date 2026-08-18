@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/CaptionBuilder.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CaptionBuilder
     path: ../src/TGBot/Messaging/CaptionBuilder.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/CaptionBuilder.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Build
     path: ../src/TGBot/Messaging/CaptionBuilder.cs
@@ -101,7 +101,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/CaptionBuilder.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Sanitize
     path: ../src/TGBot/Messaging/CaptionBuilder.cs

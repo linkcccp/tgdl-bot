@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigLoader.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigLoadException
     path: ../src/TGBot/Config/ConfigLoader.cs
@@ -64,7 +64,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigLoader.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Config/ConfigLoader.cs

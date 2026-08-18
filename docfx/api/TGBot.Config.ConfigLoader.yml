@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigLoader.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigLoader
     path: ../src/TGBot/Config/ConfigLoader.cs
@@ -64,7 +64,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigLoader.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: EnvVarName
     path: ../src/TGBot/Config/ConfigLoader.cs
@@ -93,7 +93,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigLoader.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DefaultFileName
     path: ../src/TGBot/Config/ConfigLoader.cs
@@ -122,7 +122,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigLoader.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Locate
     path: ../src/TGBot/Config/ConfigLoader.cs
@@ -164,7 +164,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigLoader.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Load
     path: ../src/TGBot/Config/ConfigLoader.cs

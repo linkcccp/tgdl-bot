@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/CommandHandler.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CommandHandler
     path: ../src/TGBot/Application/CommandHandler.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/CommandHandler.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DefaultRestartThrottleWindow
     path: ../src/TGBot/Application/CommandHandler.cs
@@ -88,7 +88,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/CommandHandler.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LanguagePromptTimeout
     path: ../src/TGBot/Application/CommandHandler.cs
@@ -117,7 +117,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/CommandHandler.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Application/CommandHandler.cs
@@ -197,7 +197,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/CommandHandler.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: HandleAsync
     path: ../src/TGBot/Application/CommandHandler.cs
@@ -240,7 +240,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/CommandHandler.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RegisterLanguagePrompt
     path: ../src/TGBot/Application/CommandHandler.cs
@@ -278,7 +278,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/CommandHandler.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: PromptLanguageAsync
     path: ../src/TGBot/Application/CommandHandler.cs
@@ -316,7 +316,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/CommandHandler.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: HandleLanguageCallbackAsync
     path: ../src/TGBot/Application/CommandHandler.cs
@@ -354,7 +354,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/CommandHandler.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsLanguagePromptValid
     path: ../src/TGBot/Application/CommandHandler.cs

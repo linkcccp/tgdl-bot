@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/MessageRouter.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MessageRouter
     path: ../src/TGBot/Application/MessageRouter.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/MessageRouter.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Application/MessageRouter.cs
@@ -122,7 +122,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/MessageRouter.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: HandleAsync
     path: ../src/TGBot/Application/MessageRouter.cs

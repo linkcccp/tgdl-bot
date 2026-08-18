@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: InlineButton
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -56,7 +56,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -94,7 +94,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Text
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -125,7 +125,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CallbackData
     path: ../src/TGBot/Messaging/ITelegramClient.cs

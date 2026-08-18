@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/TGBot/Access/AccessControlService.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessControlService
     path: ../src/TGBot/Access/AccessControlService.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: src/TGBot/Access/AccessControlService.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Access/AccessControlService.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: src/TGBot/Access/AccessControlService.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Evaluate
     path: ../src/TGBot/Access/AccessControlService.cs

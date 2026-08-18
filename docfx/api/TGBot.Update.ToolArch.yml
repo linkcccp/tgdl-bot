@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolArch.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ToolArch
     path: ../src/TGBot/Update/ToolArch.cs
@@ -62,15 +62,21 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolArch.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FfmpegReleaseUrl
     path: ../src/TGBot/Update/ToolArch.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
-  summary: 按运行架构返回 johnvansickle ffmpeg 静态构建下载 URL。
+  summary: >-
+    按运行架构返回 BtbN/FFmpeg-Builds 最新自动构建（autobuild）下载 URL。
+
+
+    <p>上游的 <code>latest</code> 是真实存在的滚动 release tag（资产名恒定不含日期），
+
+    URL 永不变化；资产命名 <code>linux64</code>/<code>linuxarm64</code> 分别对应 x64/arm64。</p>
   example: []
   syntax:
     content: public static string FfmpegReleaseUrl(Architecture arch)
@@ -101,11 +107,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolArch.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpReleaseUrl
     path: ../src/TGBot/Update/ToolArch.cs
-    startLine: 36
+    startLine: 39
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update

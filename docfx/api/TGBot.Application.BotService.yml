@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/BotService.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: BotService
     path: ../src/TGBot/Application/BotService.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/BotService.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Application/BotService.cs
@@ -101,7 +101,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/BotService.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RunAsync
     path: ../src/TGBot/Application/BotService.cs

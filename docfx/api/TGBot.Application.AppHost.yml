@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/AppHost.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AppHost
     path: ../src/TGBot/Application/AppHost.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/AppHost.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RunAsync
     path: ../src/TGBot/Application/AppHost.cs

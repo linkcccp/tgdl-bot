@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/IDownloader.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IDownloader
     path: ../src/TGBot/Download/IDownloader.cs
@@ -48,7 +48,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/IDownloader.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadAsync
     path: ../src/TGBot/Download/IDownloader.cs
@@ -96,7 +96,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/IDownloader.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ProbeBestFormatAsync
     path: ../src/TGBot/Download/IDownloader.cs
@@ -134,7 +134,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/IDownloader.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ProbeFormatsAsync
     path: ../src/TGBot/Download/IDownloader.cs
@@ -172,7 +172,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/IDownloader.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadAudioBundleAsync
     path: ../src/TGBot/Download/IDownloader.cs

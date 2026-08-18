@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/HostResolver.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IpAddressPolicy
     path: ../src/TGBot/Security/HostResolver.cs
@@ -53,7 +53,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/HostResolver.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsPrivateOrLoopback
     path: ../src/TGBot/Security/HostResolver.cs

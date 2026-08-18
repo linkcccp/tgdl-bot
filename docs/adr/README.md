@@ -14,6 +14,8 @@
 | [0002](0002-bot-配置管理.md) | Bot 内配置管理（overlay 存储 / 重启生效 / /config 与 /access 命令） | 已采纳 | 2026-08-17 |
 | [0003](0003-install-交互式安装向导.md) | install.sh 交互式安装向导（/dev/tty 输入 / 校验重问 / TGDL_LANGUAGE 联动） | 已采纳 | 2026-08-17 |
 | [0004](0004-多架构镜像发布与架构感知更新.md) | 多架构镜像发布（matrix 双 job + imagetools 合并）与 /update 架构感知下载 | 已采纳 | 2026-08-17 |
+| [0005](0005-跨平台文档构建工具.md) | 跨平台文档构建工具（TgdlDocBuilder，替代 build-docs.sh） | 已采纳 | 2026-08-17 |
+| [0006](0006-用户态update的ffmpeg源切换为BtbN.md) | 用户态 /update 的 ffmpeg 源切换为 BtbN（GitHub API 日期版本 + marker + xz 校验） | 已采纳 | 2026-08-18 |
 
 ## 编号规则
 

@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NullLogger
     path: ../src/TGBot/Logging/NullLogger.cs
@@ -62,7 +62,7 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Instance
     path: ../src/TGBot/Logging/NullLogger.cs
@@ -91,7 +91,7 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Log
     path: ../src/TGBot/Logging/NullLogger.cs
@@ -134,7 +134,7 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Trace
     path: ../src/TGBot/Logging/NullLogger.cs
@@ -171,7 +171,7 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Debug
     path: ../src/TGBot/Logging/NullLogger.cs
@@ -208,7 +208,7 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Info
     path: ../src/TGBot/Logging/NullLogger.cs
@@ -245,7 +245,7 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Warn
     path: ../src/TGBot/Logging/NullLogger.cs
@@ -282,7 +282,7 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Error
     path: ../src/TGBot/Logging/NullLogger.cs
@@ -322,7 +322,7 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/NullLogger.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Dispose
     path: ../src/TGBot/Logging/NullLogger.cs

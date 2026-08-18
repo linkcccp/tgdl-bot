@@ -7,6 +7,7 @@ items:
   - TGBot.Update.AtomicFileReplacer
   - TGBot.Update.BinaryVersionParser
   - TGBot.Update.FfmpegToolSource
+  - TGBot.Update.FfmpegVersionMarker
   - TGBot.Update.IProcessRunner
   - TGBot.Update.IToolSource
   - TGBot.Update.IUpdater
@@ -44,6 +45,12 @@ references:
   name: BinaryVersionParser
   nameWithType: BinaryVersionParser
   fullName: TGBot.Update.BinaryVersionParser
+- uid: TGBot.Update.FfmpegVersionMarker
+  commentId: T:TGBot.Update.FfmpegVersionMarker
+  href: TGBot.Update.FfmpegVersionMarker.html
+  name: FfmpegVersionMarker
+  nameWithType: FfmpegVersionMarker
+  fullName: TGBot.Update.FfmpegVersionMarker
 - uid: TGBot.Update.ProcessOutput
   commentId: T:TGBot.Update.ProcessOutput
   href: TGBot.Update.ProcessOutput.html

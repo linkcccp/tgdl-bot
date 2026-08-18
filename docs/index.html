@@ -112,8 +112,8 @@
 </table>
 <h2 id="构建文档">构建文档</h2>
 <pre><code class="lang-bash">dotnet tool install --global docfx
-docfx build docfx/docfx.json
-# 输出到 docs/ 目录，用浏览器打开 docs/index.html
+dotnet run --project tools/TgdlDocBuilder
+# 输出到 docs/ 目录，用浏览器打开 docs/index.html（--help 查看参数）
 </code></pre>
 <p>本文档由 DocFX 从 XML 文档注释自动生成。</p>
 
@@ -125,7 +125,7 @@ docfx build docfx/docfx.json
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/feat/doc-builder/docfx/index.md/#L1" class="contribution-link">Edit this page</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/docfx/index.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>

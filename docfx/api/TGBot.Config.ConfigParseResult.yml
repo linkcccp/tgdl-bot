@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigParseResult
     path: ../src/TGBot/Config/ConfigParser.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Config/ConfigParser.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Config
     path: ../src/TGBot/Config/ConfigParser.cs
@@ -129,7 +129,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Warnings
     path: ../src/TGBot/Config/ConfigParser.cs
@@ -160,7 +160,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RawValues
     path: ../src/TGBot/Config/ConfigParser.cs

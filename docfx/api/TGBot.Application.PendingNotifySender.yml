@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/PendingNotifySender.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: PendingNotifySender
     path: ../src/TGBot/Application/PendingNotifySender.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/PendingNotifySender.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Application/PendingNotifySender.cs
@@ -103,7 +103,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/PendingNotifySender.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendPendingAsync
     path: ../src/TGBot/Application/PendingNotifySender.cs

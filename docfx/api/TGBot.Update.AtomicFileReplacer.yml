@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/AtomicFileReplacer.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AtomicFileReplacer
     path: ../src/TGBot/Update/AtomicFileReplacer.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/AtomicFileReplacer.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Replace
     path: ../src/TGBot/Update/AtomicFileReplacer.cs
@@ -103,7 +103,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/AtomicFileReplacer.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Sha256
     path: ../src/TGBot/Update/AtomicFileReplacer.cs

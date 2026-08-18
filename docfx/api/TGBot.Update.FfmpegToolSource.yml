@@ -5,7 +5,7 @@ items:
   id: FfmpegToolSource
   parent: TGBot.Update
   children:
-  - TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture})
+  - TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture},System.Nullable{System.TimeSpan})
   - TGBot.Update.FfmpegToolSource.DownloadBinaryAsync(System.String,System.Threading.CancellationToken)
   - TGBot.Update.FfmpegToolSource.GetLatestVersionAsync(System.Threading.CancellationToken)
   - TGBot.Update.FfmpegToolSource.Name
@@ -19,21 +19,23 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FfmpegToolSource
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 100
+    startLine: 101
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
   summary: >-
-    ffmpeg 官方静态构建源（johnvansickle.com）。
+    ffmpeg 静态构建源（BtbN/FFmpeg-Builds，GitHub Releases 托管）。
 
 
-    <p>选择理由：官方维护的静态构建，无需 root 权限即可安装到非 root 运行目录、
+    <p>选择理由：与 CI 同源（同一 latest 滚动 release 资产）；GitHub Releases CDN 稳定；
 
-    支持原子替换与回滚，且版本通常领先 Debian apt 仓库；apt 需要 root 且版本较旧。</p>
+    无需 root 权限即可安装到非 root 运行目录、支持原子替换与回滚。
+
+    版本标识取 API 响应的 <code>published_at</code>（ISO 8601 UTC，单调递增）。</p>
   example: []
   syntax:
     content: 'public sealed class FfmpegToolSource : IToolSource'
@@ -49,32 +51,32 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture})
-  commentId: M:TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture})
-  id: '#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture})'
+- uid: TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture},System.Nullable{System.TimeSpan})
+  commentId: M:TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture},System.Nullable{System.TimeSpan})
+  id: '#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture},System.Nullable{System.TimeSpan})'
   parent: TGBot.Update.FfmpegToolSource
   langs:
   - csharp
   - vb
-  name: FfmpegToolSource(HttpClient, IProcessRunner, Func<Architecture>?)
-  nameWithType: FfmpegToolSource.FfmpegToolSource(HttpClient, IProcessRunner, Func<Architecture>?)
-  fullName: TGBot.Update.FfmpegToolSource.FfmpegToolSource(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner, System.Func<System.Runtime.InteropServices.Architecture>?)
+  name: FfmpegToolSource(HttpClient, IProcessRunner, Func<Architecture>?, TimeSpan?)
+  nameWithType: FfmpegToolSource.FfmpegToolSource(HttpClient, IProcessRunner, Func<Architecture>?, TimeSpan?)
+  fullName: TGBot.Update.FfmpegToolSource.FfmpegToolSource(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner, System.Func<System.Runtime.InteropServices.Architecture>?, System.TimeSpan?)
   type: Constructor
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 114
+    startLine: 118
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
   summary: 初始化 <xref href="TGBot.Update.FfmpegToolSource" data-throw-if-not-resolved="false"></xref>。
   example: []
   syntax:
-    content: public FfmpegToolSource(HttpClient http, IProcessRunner runner, Func<Architecture>? archProvider = null)
+    content: public FfmpegToolSource(HttpClient http, IProcessRunner runner, Func<Architecture>? archProvider = null, TimeSpan? downloadTimeout = null)
     parameters:
     - id: http
       type: System.Net.Http.HttpClient
@@ -85,11 +87,16 @@ items:
     - id: archProvider
       type: System.Func{System.Runtime.InteropServices.Architecture}
       description: 进程架构提供器；默认取真实进程架构，测试可注入指定架构。
-    content.vb: Public Sub New(http As HttpClient, runner As IProcessRunner, archProvider As Func(Of Architecture) = Nothing)
+    - id: downloadTimeout
+      type: System.Nullable{System.TimeSpan}
+      description: >-
+        下载步骤独立超时；默认 10 分钟。共享 HttpClient 的总超时（110s）
+            对 BtbN 122MB 资产在慢链路上过短，仅放大下载这一步骤（链接令牌），不污染共享 client。
+    content.vb: Public Sub New(http As HttpClient, runner As IProcessRunner, archProvider As Func(Of Architecture) = Nothing, downloadTimeout As TimeSpan? = Nothing)
   overload: TGBot.Update.FfmpegToolSource.#ctor*
-  nameWithType.vb: FfmpegToolSource.New(HttpClient, IProcessRunner, Func(Of Architecture))
-  fullName.vb: TGBot.Update.FfmpegToolSource.New(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner, System.Func(Of System.Runtime.InteropServices.Architecture))
-  name.vb: New(HttpClient, IProcessRunner, Func(Of Architecture))
+  nameWithType.vb: FfmpegToolSource.New(HttpClient, IProcessRunner, Func(Of Architecture), TimeSpan?)
+  fullName.vb: TGBot.Update.FfmpegToolSource.New(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner, System.Func(Of System.Runtime.InteropServices.Architecture), System.TimeSpan?)
+  name.vb: New(HttpClient, IProcessRunner, Func(Of Architecture), TimeSpan?)
 - uid: TGBot.Update.FfmpegToolSource.Name
   commentId: P:TGBot.Update.FfmpegToolSource.Name
   id: Name
@@ -104,11 +111,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Name
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 124
+    startLine: 133
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -137,11 +144,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetLatestVersionAsync
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 127
+    startLine: 136
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -174,11 +181,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadBinaryAsync
     path: ../src/TGBot/Update/ToolSource.cs
-    startLine: 134
+    startLine: 153
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -454,7 +461,7 @@ references:
   fullName: TGBot.Update.FfmpegToolSource
 - uid: TGBot.Update.FfmpegToolSource.#ctor*
   commentId: Overload:TGBot.Update.FfmpegToolSource.#ctor
-  href: TGBot.Update.FfmpegToolSource.html#TGBot_Update_FfmpegToolSource__ctor_System_Net_Http_HttpClient_TGBot_Update_IProcessRunner_System_Func_System_Runtime_InteropServices_Architecture__
+  href: TGBot.Update.FfmpegToolSource.html#TGBot_Update_FfmpegToolSource__ctor_System_Net_Http_HttpClient_TGBot_Update_IProcessRunner_System_Func_System_Runtime_InteropServices_Architecture__System_Nullable_System_TimeSpan__
   name: FfmpegToolSource
   nameWithType: FfmpegToolSource.FfmpegToolSource
   fullName: TGBot.Update.FfmpegToolSource.FfmpegToolSource
@@ -511,6 +518,26 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices.architecture
   - name: )
+- uid: System.Nullable{System.TimeSpan}
+  commentId: T:System.Nullable{System.TimeSpan}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan?
+  nameWithType: TimeSpan?
+  fullName: System.TimeSpan?
+  spec.csharp:
+  - uid: System.TimeSpan
+    name: TimeSpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.timespan
+  - name: '?'
+  spec.vb:
+  - uid: System.TimeSpan
+    name: TimeSpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.timespan
+  - name: '?'
 - uid: System.Net.Http
   commentId: N:System.Net.Http
   isExternal: true
@@ -575,6 +602,34 @@ references:
   - name: Of
   - name: " "
   - name: TResult
+  - name: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
   - name: )
 - uid: TGBot.Update.FfmpegToolSource.Name*
   commentId: Overload:TGBot.Update.FfmpegToolSource.Name

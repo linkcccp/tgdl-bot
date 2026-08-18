@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpOutputParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MetaLine
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpOutputParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpOutputParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Title
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
@@ -129,7 +129,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpOutputParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DurationSeconds
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
@@ -160,7 +160,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpOutputParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SizeBytes
     path: ../src/TGBot/Download/YtDlpOutputParser.cs

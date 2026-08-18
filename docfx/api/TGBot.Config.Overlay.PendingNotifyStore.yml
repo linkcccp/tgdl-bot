@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: PendingNotifyStore
     path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
@@ -67,7 +67,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FileName
     path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
@@ -96,7 +96,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SendingFileName
     path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
@@ -125,7 +125,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MaxAttempts
     path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
@@ -154,7 +154,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
@@ -192,7 +192,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Save
     path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
@@ -231,7 +231,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Claim
     path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
@@ -262,7 +262,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Succeed
     path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs
@@ -290,7 +290,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/PendingNotifyStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Fail
     path: ../src/TGBot/Config/Overlay/PendingNotifyStore.cs

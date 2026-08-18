@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IToolSource
     path: ../src/TGBot/Update/ToolSource.cs
@@ -48,7 +48,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Name
     path: ../src/TGBot/Update/ToolSource.cs
@@ -79,7 +79,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetLatestVersionAsync
     path: ../src/TGBot/Update/ToolSource.cs
@@ -114,7 +114,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolSource.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadBinaryAsync
     path: ../src/TGBot/Update/ToolSource.cs

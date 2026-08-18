@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/AccessListMerge.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessEntrySource
     path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
@@ -44,7 +44,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/AccessListMerge.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Config
     path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
@@ -72,7 +72,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/AccessListMerge.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Overlay
     path: ../src/TGBot/Config/Overlay/AccessListMerge.cs

@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/BinaryVersionParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: BinaryVersionParser
     path: ../src/TGBot/Update/BinaryVersionParser.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/BinaryVersionParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseYtDlp
     path: ../src/TGBot/Update/BinaryVersionParser.cs
@@ -92,7 +92,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/BinaryVersionParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseFfmpeg
     path: ../src/TGBot/Update/BinaryVersionParser.cs

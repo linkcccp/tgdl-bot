@@ -27,7 +27,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/OverlayStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: OverlayStore
     path: ../src/TGBot/Config/Overlay/OverlayStore.cs
@@ -71,7 +71,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/OverlayStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigFileName
     path: ../src/TGBot/Config/Overlay/OverlayStore.cs
@@ -100,7 +100,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/OverlayStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessFileName
     path: ../src/TGBot/Config/Overlay/OverlayStore.cs
@@ -129,7 +129,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/OverlayStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Config/Overlay/OverlayStore.cs
@@ -167,7 +167,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/OverlayStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LoadConfig
     path: ../src/TGBot/Config/Overlay/OverlayStore.cs
@@ -198,7 +198,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/OverlayStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SetConfigValue
     path: ../src/TGBot/Config/Overlay/OverlayStore.cs
@@ -239,7 +239,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/OverlayStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RemoveConfigKey
     path: ../src/TGBot/Config/Overlay/OverlayStore.cs
@@ -277,7 +277,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/OverlayStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ClearConfig
     path: ../src/TGBot/Config/Overlay/OverlayStore.cs
@@ -308,7 +308,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/OverlayStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LoadAccess
     path: ../src/TGBot/Config/Overlay/OverlayStore.cs
@@ -339,7 +339,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/OverlayStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AddAccessUser
     path: ../src/TGBot/Config/Overlay/OverlayStore.cs
@@ -377,7 +377,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/OverlayStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RemoveAccessUser
     path: ../src/TGBot/Config/Overlay/OverlayStore.cs
@@ -415,7 +415,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/OverlayStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AddAccessChannel
     path: ../src/TGBot/Config/Overlay/OverlayStore.cs
@@ -453,7 +453,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/OverlayStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RemoveAccessChannel
     path: ../src/TGBot/Config/Overlay/OverlayStore.cs

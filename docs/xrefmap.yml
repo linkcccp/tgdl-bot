@@ -6806,15 +6806,15 @@ references:
   commentId: T:TGBot.Update.FfmpegToolSource
   fullName: TGBot.Update.FfmpegToolSource
   nameWithType: FfmpegToolSource
-- uid: TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture})
-  name: FfmpegToolSource(HttpClient, IProcessRunner, Func<Architecture>?)
-  href: api/TGBot.Update.FfmpegToolSource.html#TGBot_Update_FfmpegToolSource__ctor_System_Net_Http_HttpClient_TGBot_Update_IProcessRunner_System_Func_System_Runtime_InteropServices_Architecture__
-  commentId: M:TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture})
-  name.vb: New(HttpClient, IProcessRunner, Func(Of Architecture))
-  fullName: TGBot.Update.FfmpegToolSource.FfmpegToolSource(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner, System.Func<System.Runtime.InteropServices.Architecture>?)
-  fullName.vb: TGBot.Update.FfmpegToolSource.New(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner, System.Func(Of System.Runtime.InteropServices.Architecture))
-  nameWithType: FfmpegToolSource.FfmpegToolSource(HttpClient, IProcessRunner, Func<Architecture>?)
-  nameWithType.vb: FfmpegToolSource.New(HttpClient, IProcessRunner, Func(Of Architecture))
+- uid: TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture},System.Nullable{System.TimeSpan})
+  name: FfmpegToolSource(HttpClient, IProcessRunner, Func<Architecture>?, TimeSpan?)
+  href: api/TGBot.Update.FfmpegToolSource.html#TGBot_Update_FfmpegToolSource__ctor_System_Net_Http_HttpClient_TGBot_Update_IProcessRunner_System_Func_System_Runtime_InteropServices_Architecture__System_Nullable_System_TimeSpan__
+  commentId: M:TGBot.Update.FfmpegToolSource.#ctor(System.Net.Http.HttpClient,TGBot.Update.IProcessRunner,System.Func{System.Runtime.InteropServices.Architecture},System.Nullable{System.TimeSpan})
+  name.vb: New(HttpClient, IProcessRunner, Func(Of Architecture), TimeSpan?)
+  fullName: TGBot.Update.FfmpegToolSource.FfmpegToolSource(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner, System.Func<System.Runtime.InteropServices.Architecture>?, System.TimeSpan?)
+  fullName.vb: TGBot.Update.FfmpegToolSource.New(System.Net.Http.HttpClient, TGBot.Update.IProcessRunner, System.Func(Of System.Runtime.InteropServices.Architecture), System.TimeSpan?)
+  nameWithType: FfmpegToolSource.FfmpegToolSource(HttpClient, IProcessRunner, Func<Architecture>?, TimeSpan?)
+  nameWithType.vb: FfmpegToolSource.New(HttpClient, IProcessRunner, Func(Of Architecture), TimeSpan?)
 - uid: TGBot.Update.FfmpegToolSource.#ctor*
   name: FfmpegToolSource
   href: api/TGBot.Update.FfmpegToolSource.html#TGBot_Update_FfmpegToolSource__ctor_
@@ -6867,6 +6867,60 @@ references:
   isSpec: "True"
   fullName: TGBot.Update.FfmpegToolSource.Name
   nameWithType: FfmpegToolSource.Name
+- uid: TGBot.Update.FfmpegVersionMarker
+  name: FfmpegVersionMarker
+  href: api/TGBot.Update.FfmpegVersionMarker.html
+  commentId: T:TGBot.Update.FfmpegVersionMarker
+  fullName: TGBot.Update.FfmpegVersionMarker
+  nameWithType: FfmpegVersionMarker
+- uid: TGBot.Update.FfmpegVersionMarker.MarkerPath(System.String)
+  name: MarkerPath(string)
+  href: api/TGBot.Update.FfmpegVersionMarker.html#TGBot_Update_FfmpegVersionMarker_MarkerPath_System_String_
+  commentId: M:TGBot.Update.FfmpegVersionMarker.MarkerPath(System.String)
+  name.vb: MarkerPath(String)
+  fullName: TGBot.Update.FfmpegVersionMarker.MarkerPath(string)
+  fullName.vb: TGBot.Update.FfmpegVersionMarker.MarkerPath(String)
+  nameWithType: FfmpegVersionMarker.MarkerPath(string)
+  nameWithType.vb: FfmpegVersionMarker.MarkerPath(String)
+- uid: TGBot.Update.FfmpegVersionMarker.MarkerPath*
+  name: MarkerPath
+  href: api/TGBot.Update.FfmpegVersionMarker.html#TGBot_Update_FfmpegVersionMarker_MarkerPath_
+  commentId: Overload:TGBot.Update.FfmpegVersionMarker.MarkerPath
+  isSpec: "True"
+  fullName: TGBot.Update.FfmpegVersionMarker.MarkerPath
+  nameWithType: FfmpegVersionMarker.MarkerPath
+- uid: TGBot.Update.FfmpegVersionMarker.TryRead(System.String,TGBot.Update.ToolVersion@)
+  name: TryRead(string, out ToolVersion?)
+  href: api/TGBot.Update.FfmpegVersionMarker.html#TGBot_Update_FfmpegVersionMarker_TryRead_System_String_TGBot_Update_ToolVersion__
+  commentId: M:TGBot.Update.FfmpegVersionMarker.TryRead(System.String,TGBot.Update.ToolVersion@)
+  name.vb: TryRead(String, ToolVersion)
+  fullName: TGBot.Update.FfmpegVersionMarker.TryRead(string, out TGBot.Update.ToolVersion?)
+  fullName.vb: TGBot.Update.FfmpegVersionMarker.TryRead(String, TGBot.Update.ToolVersion)
+  nameWithType: FfmpegVersionMarker.TryRead(string, out ToolVersion?)
+  nameWithType.vb: FfmpegVersionMarker.TryRead(String, ToolVersion)
+- uid: TGBot.Update.FfmpegVersionMarker.TryRead*
+  name: TryRead
+  href: api/TGBot.Update.FfmpegVersionMarker.html#TGBot_Update_FfmpegVersionMarker_TryRead_
+  commentId: Overload:TGBot.Update.FfmpegVersionMarker.TryRead
+  isSpec: "True"
+  fullName: TGBot.Update.FfmpegVersionMarker.TryRead
+  nameWithType: FfmpegVersionMarker.TryRead
+- uid: TGBot.Update.FfmpegVersionMarker.Write(System.String,TGBot.Update.ToolVersion)
+  name: Write(string, ToolVersion)
+  href: api/TGBot.Update.FfmpegVersionMarker.html#TGBot_Update_FfmpegVersionMarker_Write_System_String_TGBot_Update_ToolVersion_
+  commentId: M:TGBot.Update.FfmpegVersionMarker.Write(System.String,TGBot.Update.ToolVersion)
+  name.vb: Write(String, ToolVersion)
+  fullName: TGBot.Update.FfmpegVersionMarker.Write(string, TGBot.Update.ToolVersion)
+  fullName.vb: TGBot.Update.FfmpegVersionMarker.Write(String, TGBot.Update.ToolVersion)
+  nameWithType: FfmpegVersionMarker.Write(string, ToolVersion)
+  nameWithType.vb: FfmpegVersionMarker.Write(String, ToolVersion)
+- uid: TGBot.Update.FfmpegVersionMarker.Write*
+  name: Write
+  href: api/TGBot.Update.FfmpegVersionMarker.html#TGBot_Update_FfmpegVersionMarker_Write_
+  commentId: Overload:TGBot.Update.FfmpegVersionMarker.Write
+  isSpec: "True"
+  fullName: TGBot.Update.FfmpegVersionMarker.Write
+  nameWithType: FfmpegVersionMarker.Write
 - uid: TGBot.Update.IProcessRunner
   name: IProcessRunner
   href: api/TGBot.Update.IProcessRunner.html
@@ -7225,6 +7279,19 @@ references:
   isSpec: "True"
   fullName: TGBot.Update.ToolVersion.CompareTo
   nameWithType: ToolVersion.CompareTo
+- uid: TGBot.Update.ToolVersion.IsDateLike
+  name: IsDateLike
+  href: api/TGBot.Update.ToolVersion.html#TGBot_Update_ToolVersion_IsDateLike
+  commentId: P:TGBot.Update.ToolVersion.IsDateLike
+  fullName: TGBot.Update.ToolVersion.IsDateLike
+  nameWithType: ToolVersion.IsDateLike
+- uid: TGBot.Update.ToolVersion.IsDateLike*
+  name: IsDateLike
+  href: api/TGBot.Update.ToolVersion.html#TGBot_Update_ToolVersion_IsDateLike_
+  commentId: Overload:TGBot.Update.ToolVersion.IsDateLike
+  isSpec: "True"
+  fullName: TGBot.Update.ToolVersion.IsDateLike
+  nameWithType: ToolVersion.IsDateLike
 - uid: TGBot.Update.ToolVersion.Parse(System.String)
   name: Parse(string)
   href: api/TGBot.Update.ToolVersion.html#TGBot_Update_ToolVersion_Parse_System_String_
@@ -7468,6 +7535,22 @@ references:
   commentId: T:TGBot.Update.UriVersionParser
   fullName: TGBot.Update.UriVersionParser
   nameWithType: UriVersionParser
+- uid: TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt(System.String)
+  name: ParseGitHubApiPublishedAt(string?)
+  href: api/TGBot.Update.UriVersionParser.html#TGBot_Update_UriVersionParser_ParseGitHubApiPublishedAt_System_String_
+  commentId: M:TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt(System.String)
+  name.vb: ParseGitHubApiPublishedAt(String)
+  fullName: TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt(string?)
+  fullName.vb: TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt(String)
+  nameWithType: UriVersionParser.ParseGitHubApiPublishedAt(string?)
+  nameWithType.vb: UriVersionParser.ParseGitHubApiPublishedAt(String)
+- uid: TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt*
+  name: ParseGitHubApiPublishedAt
+  href: api/TGBot.Update.UriVersionParser.html#TGBot_Update_UriVersionParser_ParseGitHubApiPublishedAt_
+  commentId: Overload:TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt
+  isSpec: "True"
+  fullName: TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt
+  nameWithType: UriVersionParser.ParseGitHubApiPublishedAt
 - uid: TGBot.Update.UriVersionParser.ParseGitHubRedirectLocation(System.String)
   name: ParseGitHubRedirectLocation(string?)
   href: api/TGBot.Update.UriVersionParser.html#TGBot_Update_UriVersionParser_ParseGitHubRedirectLocation_System_String_
@@ -7484,22 +7567,6 @@ references:
   isSpec: "True"
   fullName: TGBot.Update.UriVersionParser.ParseGitHubRedirectLocation
   nameWithType: UriVersionParser.ParseGitHubRedirectLocation
-- uid: TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage(System.String)
-  name: ParseJohnVanSickleReleasePage(string?)
-  href: api/TGBot.Update.UriVersionParser.html#TGBot_Update_UriVersionParser_ParseJohnVanSickleReleasePage_System_String_
-  commentId: M:TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage(System.String)
-  name.vb: ParseJohnVanSickleReleasePage(String)
-  fullName: TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage(string?)
-  fullName.vb: TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage(String)
-  nameWithType: UriVersionParser.ParseJohnVanSickleReleasePage(string?)
-  nameWithType.vb: UriVersionParser.ParseJohnVanSickleReleasePage(String)
-- uid: TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage*
-  name: ParseJohnVanSickleReleasePage
-  href: api/TGBot.Update.UriVersionParser.html#TGBot_Update_UriVersionParser_ParseJohnVanSickleReleasePage_
-  commentId: Overload:TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage
-  isSpec: "True"
-  fullName: TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage
-  nameWithType: UriVersionParser.ParseJohnVanSickleReleasePage
 - uid: TGBot.Update.YtDlpToolSource
   name: YtDlpToolSource
   href: api/TGBot.Update.YtDlpToolSource.html

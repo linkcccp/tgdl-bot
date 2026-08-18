@@ -31,7 +31,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadOptions
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -69,7 +69,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -128,7 +128,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Url
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -159,7 +159,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: JobDir
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -190,7 +190,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpPath
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -221,7 +221,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FfmpegDir
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -252,7 +252,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MergeFormat
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -283,7 +283,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ExtractAudio
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -314,7 +314,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AllowPlaylists
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -345,7 +345,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MaxSizeBytes
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -376,7 +376,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Timeout
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -407,7 +407,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookiesFile
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -438,7 +438,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Proxy
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -469,7 +469,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ExtraArgs
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -500,7 +500,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FormatExpression
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -531,7 +531,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YoutubePlayerClients
     path: ../src/TGBot/Download/DownloadOptions.cs
@@ -562,7 +562,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadOptions.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FfmpegPath
     path: ../src/TGBot/Download/DownloadOptions.cs

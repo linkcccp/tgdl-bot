@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/AccessListMerge.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessListMergeResult
     path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/AccessListMerge.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
@@ -96,7 +96,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/AccessListMerge.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Users
     path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
@@ -127,7 +127,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/AccessListMerge.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Channels
     path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
@@ -158,7 +158,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/AccessListMerge.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UserIds
     path: ../src/TGBot/Config/Overlay/AccessListMerge.cs
@@ -189,7 +189,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/AccessListMerge.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ChannelIds
     path: ../src/TGBot/Config/Overlay/AccessListMerge.cs

@@ -7,6 +7,7 @@ items:
   children:
   - TGBot.Update.ToolVersion.#ctor(System.Collections.Generic.IReadOnlyList{System.Int32},System.String)
   - TGBot.Update.ToolVersion.CompareTo(TGBot.Update.ToolVersion)
+  - TGBot.Update.ToolVersion.IsDateLike
   - TGBot.Update.ToolVersion.Parse(System.String)
   - TGBot.Update.ToolVersion.Raw
   - TGBot.Update.ToolVersion.Suffix
@@ -22,7 +23,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolVersion.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ToolVersion
     path: ../src/TGBot/Update/ToolVersion.cs
@@ -59,7 +60,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolVersion.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Update/ToolVersion.cs
@@ -97,7 +98,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolVersion.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Raw
     path: ../src/TGBot/Update/ToolVersion.cs
@@ -128,7 +129,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolVersion.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Suffix
     path: ../src/TGBot/Update/ToolVersion.cs
@@ -145,6 +146,43 @@ items:
       type: System.String
     content.vb: Public ReadOnly Property Suffix As String
   overload: TGBot.Update.ToolVersion.Suffix*
+- uid: TGBot.Update.ToolVersion.IsDateLike
+  commentId: P:TGBot.Update.ToolVersion.IsDateLike
+  id: IsDateLike
+  parent: TGBot.Update.ToolVersion
+  langs:
+  - csharp
+  - vb
+  name: IsDateLike
+  nameWithType: ToolVersion.IsDateLike
+  fullName: TGBot.Update.ToolVersion.IsDateLike
+  type: Property
+  source:
+    remote:
+      path: src/TGBot/Update/ToolVersion.cs
+      branch: main
+      repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
+    id: IsDateLike
+    path: ../src/TGBot/Update/ToolVersion.cs
+    startLine: 40
+  assemblies:
+  - tgdl-bot
+  namespace: TGBot.Update
+  summary: >-
+    是否为日期标度版本：首分量在 2000-2100 之间（如 autobuild 年份）。
+
+
+    <p>用于跨标度比较防护：git 提交计数（如 <code>118503</code>）或语义版本（如 <code>7.1.1</code>）
+
+    与日期版本数值比较必然误判，标度不一致时不得短路"已是最新"。</p>
+  example: []
+  syntax:
+    content: public bool IsDateLike { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsDateLike As Boolean
+  overload: TGBot.Update.ToolVersion.IsDateLike*
 - uid: TGBot.Update.ToolVersion.TryParse(System.String,TGBot.Update.ToolVersion@)
   commentId: M:TGBot.Update.ToolVersion.TryParse(System.String,TGBot.Update.ToolVersion@)
   id: TryParse(System.String,TGBot.Update.ToolVersion@)
@@ -159,11 +197,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolVersion.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TryParse
     path: ../src/TGBot/Update/ToolVersion.cs
-    startLine: 41
+    startLine: 48
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -200,11 +238,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolVersion.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Parse
     path: ../src/TGBot/Update/ToolVersion.cs
-    startLine: 110
+    startLine: 117
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -242,11 +280,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolVersion.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CompareTo
     path: ../src/TGBot/Update/ToolVersion.cs
-    startLine: 125
+    startLine: 132
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -282,11 +320,11 @@ items:
   source:
     remote:
       path: src/TGBot/Update/ToolVersion.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ToString
     path: ../src/TGBot/Update/ToolVersion.cs
-    startLine: 147
+    startLine: 154
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
@@ -712,12 +750,12 @@ references:
   name: Suffix
   nameWithType: ToolVersion.Suffix
   fullName: TGBot.Update.ToolVersion.Suffix
-- uid: TGBot.Update.ToolVersion.TryParse*
-  commentId: Overload:TGBot.Update.ToolVersion.TryParse
-  href: TGBot.Update.ToolVersion.html#TGBot_Update_ToolVersion_TryParse_System_String_TGBot_Update_ToolVersion__
-  name: TryParse
-  nameWithType: ToolVersion.TryParse
-  fullName: TGBot.Update.ToolVersion.TryParse
+- uid: TGBot.Update.ToolVersion.IsDateLike*
+  commentId: Overload:TGBot.Update.ToolVersion.IsDateLike
+  href: TGBot.Update.ToolVersion.html#TGBot_Update_ToolVersion_IsDateLike
+  name: IsDateLike
+  nameWithType: ToolVersion.IsDateLike
+  fullName: TGBot.Update.ToolVersion.IsDateLike
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -729,6 +767,12 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: TGBot.Update.ToolVersion.TryParse*
+  commentId: Overload:TGBot.Update.ToolVersion.TryParse
+  href: TGBot.Update.ToolVersion.html#TGBot_Update_ToolVersion_TryParse_System_String_TGBot_Update_ToolVersion__
+  name: TryParse
+  nameWithType: ToolVersion.TryParse
+  fullName: TGBot.Update.ToolVersion.TryParse
 - uid: System.FormatException
   commentId: T:System.FormatException
   isExternal: true

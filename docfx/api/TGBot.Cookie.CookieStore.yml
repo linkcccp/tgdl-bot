@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieStore
     path: ../src/TGBot/Cookie/CookieStore.cs
@@ -62,7 +62,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Cookie/CookieStore.cs
@@ -100,7 +100,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RootDir
     path: ../src/TGBot/Cookie/CookieStore.cs
@@ -131,7 +131,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Initialize
     path: ../src/TGBot/Cookie/CookieStore.cs
@@ -159,7 +159,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetFile
     path: ../src/TGBot/Cookie/CookieStore.cs
@@ -197,7 +197,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Save
     path: ../src/TGBot/Cookie/CookieStore.cs
@@ -238,7 +238,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Delete
     path: ../src/TGBot/Cookie/CookieStore.cs
@@ -276,7 +276,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieStore.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: List
     path: ../src/TGBot/Cookie/CookieStore.cs

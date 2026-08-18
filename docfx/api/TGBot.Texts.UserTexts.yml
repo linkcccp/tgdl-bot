@@ -123,7 +123,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UserTexts
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -168,7 +168,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UnauthorizedPrivate
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -197,7 +197,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UnauthorizedGroup
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -226,7 +226,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NoValidUrl
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -255,7 +255,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UntrustedUrl
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -284,7 +284,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Queued
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -313,7 +313,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Downloading
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -342,7 +342,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadProgress
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -371,7 +371,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Uploading
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -400,7 +400,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UploadDone
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -429,7 +429,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadFailed
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -458,7 +458,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FileTooLarge
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -487,7 +487,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NoDiskSpace
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -516,7 +516,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UnknownCommand
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -545,7 +545,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Help
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -574,7 +574,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AuthRequired
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -603,7 +603,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FormatUnavailable
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -632,7 +632,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ModeChoice
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -661,7 +661,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ModeVideoButton
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -690,7 +690,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ModeAudioButton
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -719,7 +719,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AudioBundleDone
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -748,7 +748,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieUsage
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -777,7 +777,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookiePrompt
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -806,7 +806,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieSaved
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -835,7 +835,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieSavedSuspicious
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -864,7 +864,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieSaveFailed
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -893,7 +893,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieDeleted
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -922,7 +922,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieNone
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -951,7 +951,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieListTemplate
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -980,7 +980,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieUnknownSite
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1009,7 +1009,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieFileTooLarge
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1038,7 +1038,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieInvalidFile
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1067,7 +1067,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieExpired
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1096,7 +1096,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateNotNeeded
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1125,7 +1125,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateFailed
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1154,7 +1154,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateFailedLocalVersion
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1183,7 +1183,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateFailedLatestVersion
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1212,7 +1212,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateFailedDownload
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1241,7 +1241,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateFailedReplace
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1270,7 +1270,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: StatusTemplate
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1299,7 +1299,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: StatusBotVersion
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1328,7 +1328,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Busy
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1357,7 +1357,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CommandPrivateOnly
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1386,7 +1386,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: PartialFailures
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1415,7 +1415,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateDoneHeader
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1444,7 +1444,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateLineUpdated
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1473,7 +1473,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateLineUpToDate
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1502,7 +1502,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateLineNotConfigured
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1531,7 +1531,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateLineFailed
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1560,7 +1560,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieListLine
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1589,7 +1589,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieStateSaved
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1618,7 +1618,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieStateNone
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1647,7 +1647,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Unknown
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1676,7 +1676,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UptimeDays
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1705,7 +1705,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UptimeHours
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1734,7 +1734,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UptimeMinutes
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1763,7 +1763,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CaptionTitle
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1792,7 +1792,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CaptionSource
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1821,7 +1821,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LanguagePrompt
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1850,7 +1850,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LanguageSaved
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1879,7 +1879,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LanguageNameZh
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1908,7 +1908,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LanguageNameEn
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1937,7 +1937,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigUsage
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1966,7 +1966,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigListTemplate
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -1995,7 +1995,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigListLine
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2024,7 +2024,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigSourceOverlay
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2053,7 +2053,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigSourceConfig
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2082,7 +2082,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigSourceDefault
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2111,7 +2111,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigSetApplied
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2140,7 +2140,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigResetApplied
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2169,7 +2169,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigResetAllApplied
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2198,7 +2198,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigApplied
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2227,7 +2227,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigRejected
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2256,7 +2256,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigUnknownKey
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2285,7 +2285,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigLockedKey
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2314,7 +2314,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigRiskWarning
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2343,7 +2343,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigNotOverridden
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2372,7 +2372,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigNoChange
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2401,7 +2401,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigSaveFailed
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2430,7 +2430,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ValueEmpty
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2459,7 +2459,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessUsage
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2488,7 +2488,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessTypeUser
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2517,7 +2517,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessTypeChannel
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2546,7 +2546,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessAdded
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2575,7 +2575,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessRemoved
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2604,7 +2604,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessAlreadyAdded
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2633,7 +2633,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessNotFound
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2662,7 +2662,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessRemovedFromConfig
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2691,7 +2691,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessInvalidId
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2720,7 +2720,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessListTemplate
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2749,7 +2749,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessListLine
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2778,7 +2778,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessSourceConfig
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2807,7 +2807,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AccessSourceOverlay
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2836,7 +2836,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlEmpty
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2865,7 +2865,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlTooLong
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2894,7 +2894,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlInvalidChar
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2923,7 +2923,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlInvalidFormat
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2952,7 +2952,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlSchemeNotAllowed
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -2981,7 +2981,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlUserInfo
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -3010,7 +3010,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlInvalidHost
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -3039,7 +3039,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlInvalidHostChar
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -3068,7 +3068,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MenuUpdate
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -3097,7 +3097,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MenuCookie
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -3126,7 +3126,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MenuCookies
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -3155,7 +3155,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MenuStatus
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -3184,7 +3184,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MenuLanguage
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -3213,7 +3213,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MenuConfig
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -3242,7 +3242,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MenuAccess
     path: ../src/TGBot/Texts/UserTexts.cs
@@ -3271,7 +3271,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/UserTexts.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MenuHelp
     path: ../src/TGBot/Texts/UserTexts.cs

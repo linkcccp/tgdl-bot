@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpFormatPicker.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpFormatPicker
     path: ../src/TGBot/Download/YtDlpFormatPicker.cs
@@ -60,7 +60,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpFormatPicker.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseFormats
     path: ../src/TGBot/Download/YtDlpFormatPicker.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpFormatPicker.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: PickBestExpression
     path: ../src/TGBot/Download/YtDlpFormatPicker.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpFormatPicker.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: HasVideo
     path: ../src/TGBot/Download/YtDlpFormatPicker.cs
@@ -177,7 +177,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpFormatPicker.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsAudioOnly
     path: ../src/TGBot/Download/YtDlpFormatPicker.cs

@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlValidationResult
     path: ../src/TGBot/Security/UrlValidator.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Security/UrlValidator.cs
@@ -99,7 +99,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsValid
     path: ../src/TGBot/Security/UrlValidator.cs
@@ -130,7 +130,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NormalizedUrl
     path: ../src/TGBot/Security/UrlValidator.cs
@@ -161,7 +161,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ErrorKey
     path: ../src/TGBot/Security/UrlValidator.cs
@@ -192,7 +192,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/UrlValidator.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Fail
     path: ../src/TGBot/Security/UrlValidator.cs

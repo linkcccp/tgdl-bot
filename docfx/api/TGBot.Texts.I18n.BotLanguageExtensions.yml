@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/BotLanguage.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: BotLanguageExtensions
     path: ../src/TGBot/Texts/I18n/BotLanguage.cs
@@ -55,7 +55,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/BotLanguage.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Code
     path: ../src/TGBot/Texts/I18n/BotLanguage.cs
@@ -90,7 +90,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/BotLanguage.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TryParseCode
     path: ../src/TGBot/Texts/I18n/BotLanguage.cs

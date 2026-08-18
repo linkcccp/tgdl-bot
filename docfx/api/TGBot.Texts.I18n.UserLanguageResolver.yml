@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/UserLanguageResolver.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UserLanguageResolver
     path: ../src/TGBot/Texts/I18n/UserLanguageResolver.cs
@@ -61,7 +61,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/UserLanguageResolver.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Auto
     path: ../src/TGBot/Texts/I18n/UserLanguageResolver.cs
@@ -90,7 +90,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/UserLanguageResolver.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Texts/I18n/UserLanguageResolver.cs
@@ -133,7 +133,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/UserLanguageResolver.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Resolve
     path: ../src/TGBot/Texts/I18n/UserLanguageResolver.cs

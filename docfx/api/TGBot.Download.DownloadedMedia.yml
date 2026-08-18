@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadedMedia
     path: ../src/TGBot/Download/DownloadedMedia.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FilePath
     path: ../src/TGBot/Download/DownloadedMedia.cs
@@ -90,7 +90,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Title
     path: ../src/TGBot/Download/DownloadedMedia.cs
@@ -121,7 +121,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RawTitle
     path: ../src/TGBot/Download/DownloadedMedia.cs
@@ -152,7 +152,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Extension
     path: ../src/TGBot/Download/DownloadedMedia.cs
@@ -183,7 +183,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SizeBytes
     path: ../src/TGBot/Download/DownloadedMedia.cs
@@ -214,7 +214,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DurationSeconds
     path: ../src/TGBot/Download/DownloadedMedia.cs
@@ -245,7 +245,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsAudio
     path: ../src/TGBot/Download/DownloadedMedia.cs
@@ -276,7 +276,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadedMedia.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SourceUrl
     path: ../src/TGBot/Download/DownloadedMedia.cs

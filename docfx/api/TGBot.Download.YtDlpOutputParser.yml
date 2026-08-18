@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpOutputParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpOutputParser
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
@@ -60,7 +60,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpOutputParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ProgressMarker
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
@@ -89,7 +89,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpOutputParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MetaMarker
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
@@ -118,7 +118,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpOutputParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FileMarker
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
@@ -147,7 +147,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpOutputParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseProgress
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
@@ -185,7 +185,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpOutputParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsTooLargeMessage
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
@@ -223,7 +223,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpOutputParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsAuthRequiredMessage
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
@@ -261,7 +261,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpOutputParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsFormatUnavailableMessage
     path: ../src/TGBot/Download/YtDlpOutputParser.cs
@@ -299,7 +299,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpOutputParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseMeta
     path: ../src/TGBot/Download/YtDlpOutputParser.cs

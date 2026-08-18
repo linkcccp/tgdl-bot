@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/OverlayApplier.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: OverlayApplier
     path: ../src/TGBot/Config/Overlay/OverlayApplier.cs
@@ -63,7 +63,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/Overlay/OverlayApplier.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Apply
     path: ../src/TGBot/Config/Overlay/OverlayApplier.cs

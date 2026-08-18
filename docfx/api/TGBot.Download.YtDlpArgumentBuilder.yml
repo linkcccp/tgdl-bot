@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpArgumentBuilder.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: YtDlpArgumentBuilder
     path: ../src/TGBot/Download/YtDlpArgumentBuilder.cs
@@ -60,7 +60,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpArgumentBuilder.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Build
     path: ../src/TGBot/Download/YtDlpArgumentBuilder.cs
@@ -95,7 +95,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/YtDlpArgumentBuilder.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsYoutubeUrl
     path: ../src/TGBot/Download/YtDlpArgumentBuilder.cs

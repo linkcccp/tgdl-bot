@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/LanguageCatalog.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LanguageCatalog
     path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs
@@ -65,7 +65,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/LanguageCatalog.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: BuiltinLanguages
     path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs
@@ -94,7 +94,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/LanguageCatalog.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FallbackLanguage
     path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs
@@ -123,7 +123,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/LanguageCatalog.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SupportedLanguages
     path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs
@@ -154,7 +154,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/LanguageCatalog.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Register
     path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs
@@ -196,7 +196,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/LanguageCatalog.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Unregister
     path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs
@@ -231,7 +231,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/LanguageCatalog.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NormalizeLanguageCode
     path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs
@@ -269,7 +269,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/LanguageCatalog.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetCatalog
     path: ../src/TGBot/Texts/I18n/LanguageCatalog.cs

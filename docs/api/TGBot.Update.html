@@ -82,9 +82,17 @@ Classes
       <section><p>从二进制输出文本中解析版本号（纯函数，便于单元测试）。</p>
 </section>
       <h4><a class="xref" href="TGBot.Update.FfmpegToolSource.html">FfmpegToolSource</a></h4>
-      <section><p>ffmpeg 官方静态构建源（johnvansickle.com）。</p>
-<p>选择理由：官方维护的静态构建，无需 root 权限即可安装到非 root 运行目录、
-支持原子替换与回滚，且版本通常领先 Debian apt 仓库；apt 需要 root 且版本较旧。</p>
+      <section><p>ffmpeg 静态构建源（BtbN/FFmpeg-Builds，GitHub Releases 托管）。</p>
+<p>选择理由：与 CI 同源（同一 latest 滚动 release 资产）；GitHub Releases CDN 稳定；
+无需 root 权限即可安装到非 root 运行目录、支持原子替换与回滚。
+版本标识取 API 响应的 <code>published_at</code>（ISO 8601 UTC，单调递增）。</p>
+</section>
+      <h4><a class="xref" href="TGBot.Update.FfmpegVersionMarker.html">FfmpegVersionMarker</a></h4>
+      <section><p>ffmpeg autobuild 版本 marker 文件读写。</p>
+<p>BtbN master 二进制的 <code>ffmpeg -version</code> 输出 git 提交计数（如 <code>N-118503</code>），
+与远端的 autobuild 日期版本（如 <code>2026.08.17.13.29.26</code>）标度不同，无法直接比较；
+更新成功后把安装的 autobuild 时间写入 <code>&lt;installPath&gt;.autobuild</code>，
+比较时优先读 marker 保持同标度，"已是最新"短路语义不变。</p>
 </section>
       <h4><a class="xref" href="TGBot.Update.ProcessOutput.html">ProcessOutput</a></h4>
       <section><p>进程运行结果。</p>

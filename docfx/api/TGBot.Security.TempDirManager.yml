@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/TempDirManager.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TempDirManager
     path: ../src/TGBot/Security/TempDirManager.cs
@@ -56,7 +56,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/TempDirManager.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Security/TempDirManager.cs
@@ -94,7 +94,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/TempDirManager.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Root
     path: ../src/TGBot/Security/TempDirManager.cs
@@ -125,7 +125,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/TempDirManager.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Initialize
     path: ../src/TGBot/Security/TempDirManager.cs
@@ -157,7 +157,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/TempDirManager.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CreateJobDirectory
     path: ../src/TGBot/Security/TempDirManager.cs
@@ -188,7 +188,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/TempDirManager.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CleanupJobDirectory
     path: ../src/TGBot/Security/TempDirManager.cs

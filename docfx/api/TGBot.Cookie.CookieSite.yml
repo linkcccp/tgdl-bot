@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieSite.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieSite
     path: ../src/TGBot/Cookie/CookieSite.cs
@@ -76,7 +76,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieSite.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Key
     path: ../src/TGBot/Cookie/CookieSite.cs
@@ -107,7 +107,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieSite.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DisplayName
     path: ../src/TGBot/Cookie/CookieSite.cs
@@ -138,7 +138,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieSite.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Hosts
     path: ../src/TGBot/Cookie/CookieSite.cs
@@ -169,7 +169,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieSite.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MatchedHosts
     path: ../src/TGBot/Cookie/CookieSite.cs
@@ -200,7 +200,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieSite.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Matches
     path: ../src/TGBot/Cookie/CookieSite.cs

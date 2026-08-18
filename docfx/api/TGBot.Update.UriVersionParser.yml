@@ -5,8 +5,8 @@ items:
   id: UriVersionParser
   parent: TGBot.Update
   children:
+  - TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt(System.String)
   - TGBot.Update.UriVersionParser.ParseGitHubRedirectLocation(System.String)
-  - TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage(System.String)
   langs:
   - csharp
   - vb
@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UriVersionParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UriVersionParser
     path: ../src/TGBot/Update/UriVersionParser.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UriVersionParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ParseGitHubRedirectLocation
     path: ../src/TGBot/Update/UriVersionParser.cs
@@ -81,44 +81,52 @@ items:
   nameWithType.vb: UriVersionParser.ParseGitHubRedirectLocation(String)
   fullName.vb: TGBot.Update.UriVersionParser.ParseGitHubRedirectLocation(String)
   name.vb: ParseGitHubRedirectLocation(String)
-- uid: TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage(System.String)
-  commentId: M:TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage(System.String)
-  id: ParseJohnVanSickleReleasePage(System.String)
+- uid: TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt(System.String)
+  commentId: M:TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt(System.String)
+  id: ParseGitHubApiPublishedAt(System.String)
   parent: TGBot.Update.UriVersionParser
   langs:
   - csharp
   - vb
-  name: ParseJohnVanSickleReleasePage(string?)
-  nameWithType: UriVersionParser.ParseJohnVanSickleReleasePage(string?)
-  fullName: TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage(string?)
+  name: ParseGitHubApiPublishedAt(string?)
+  nameWithType: UriVersionParser.ParseGitHubApiPublishedAt(string?)
+  fullName: TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt(string?)
   type: Method
   source:
     remote:
       path: src/TGBot/Update/UriVersionParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
-    id: ParseJohnVanSickleReleasePage
+    id: ParseGitHubApiPublishedAt
     path: ../src/TGBot/Update/UriVersionParser.cs
-    startLine: 34
+    startLine: 37
   assemblies:
   - tgdl-bot
   namespace: TGBot.Update
-  summary: '从 johnvansickle.com 首页 HTML 解析 release 版本，如 <code>release: 7.0.2</code>。'
+  summary: >-
+    从 GitHub API 的 release 响应 JSON 中解析 <code>published_at</code> 字段，
+
+    如 <code>"published_at": "2026-08-17T13:29:26Z"</code> → <code>2026.08.17.13.29.26</code>。
+
+
+    <p>用于 BtbN/FFmpeg-Builds 的滚动 <code>latest</code> release：其 <code>tag_name</code> 恒为
+
+    <code>latest</code> 不含日期，版本标识只能取 ISO 8601 UTC 的 <code>published_at</code>（单调递增）。</p>
   example: []
   syntax:
-    content: public static ToolVersion? ParseJohnVanSickleReleasePage(string? page)
+    content: public static ToolVersion? ParseGitHubApiPublishedAt(string? json)
     parameters:
-    - id: page
+    - id: json
       type: System.String
-      description: 首页 HTML 内容。
+      description: GitHub API 响应 JSON。
     return:
       type: TGBot.Update.ToolVersion
-      description: 版本号；解析失败返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
-    content.vb: Public Shared Function ParseJohnVanSickleReleasePage(page As String) As ToolVersion
-  overload: TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage*
-  nameWithType.vb: UriVersionParser.ParseJohnVanSickleReleasePage(String)
-  fullName.vb: TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage(String)
-  name.vb: ParseJohnVanSickleReleasePage(String)
+      description: 归一化后的 autobuild 版本；解析失败返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Public Shared Function ParseGitHubApiPublishedAt(json As String) As ToolVersion
+  overload: TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt*
+  nameWithType.vb: UriVersionParser.ParseGitHubApiPublishedAt(String)
+  fullName.vb: TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt(String)
+  name.vb: ParseGitHubApiPublishedAt(String)
 references:
 - uid: TGBot.Update
   commentId: N:TGBot.Update
@@ -403,9 +411,9 @@ references:
   name: ToolVersion
   nameWithType: ToolVersion
   fullName: TGBot.Update.ToolVersion
-- uid: TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage*
-  commentId: Overload:TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage
-  href: TGBot.Update.UriVersionParser.html#TGBot_Update_UriVersionParser_ParseJohnVanSickleReleasePage_System_String_
-  name: ParseJohnVanSickleReleasePage
-  nameWithType: UriVersionParser.ParseJohnVanSickleReleasePage
-  fullName: TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage
+- uid: TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt*
+  commentId: Overload:TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt
+  href: TGBot.Update.UriVersionParser.html#TGBot_Update_UriVersionParser_ParseGitHubApiPublishedAt_System_String_
+  name: ParseGitHubApiPublishedAt
+  nameWithType: UriVersionParser.ParseGitHubApiPublishedAt
+  fullName: TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt

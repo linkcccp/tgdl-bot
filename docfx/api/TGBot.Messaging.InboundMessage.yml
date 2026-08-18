@@ -30,7 +30,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: InboundMessage
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -66,7 +66,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ChatId
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -97,7 +97,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsPrivate
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -128,7 +128,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SenderUserId
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -159,7 +159,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Text
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -190,7 +190,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Caption
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -221,7 +221,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TriggerMessageId
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -252,7 +252,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DocumentFileId
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -283,7 +283,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DocumentFileName
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -314,7 +314,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DocumentSizeBytes
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -345,7 +345,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: IsCallback
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -376,7 +376,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CallbackData
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -407,7 +407,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Language
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -441,7 +441,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LanguageCode
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -475,7 +475,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: WithLanguage
     path: ../src/TGBot/Messaging/ITelegramClient.cs
@@ -513,7 +513,7 @@ items:
   source:
     remote:
       path: src/TGBot/Messaging/ITelegramClient.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UrlSearchText
     path: ../src/TGBot/Messaging/ITelegramClient.cs

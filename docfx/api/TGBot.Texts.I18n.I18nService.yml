@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/I18nService.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: I18nService
     path: ../src/TGBot/Texts/I18n/I18nService.cs
@@ -63,7 +63,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/I18nService.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Texts/I18n/I18nService.cs
@@ -101,7 +101,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/I18nService.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Get
     path: ../src/TGBot/Texts/I18n/I18nService.cs
@@ -147,7 +147,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/I18nService.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: T
     path: ../src/TGBot/Texts/I18n/I18nService.cs
@@ -190,7 +190,7 @@ items:
   source:
     remote:
       path: src/TGBot/Texts/I18n/I18nService.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CatalogFor
     path: ../src/TGBot/Texts/I18n/I18nService.cs

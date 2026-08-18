@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ToolUpdateResult
     path: ../src/TGBot/Update/UpdateResult.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Update/UpdateResult.cs
@@ -102,7 +102,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Tool
     path: ../src/TGBot/Update/UpdateResult.cs
@@ -133,7 +133,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LocalVersion
     path: ../src/TGBot/Update/UpdateResult.cs
@@ -164,7 +164,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LatestVersion
     path: ../src/TGBot/Update/UpdateResult.cs
@@ -195,7 +195,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Status
     path: ../src/TGBot/Update/UpdateResult.cs

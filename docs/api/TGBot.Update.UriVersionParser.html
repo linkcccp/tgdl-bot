@@ -113,10 +113,63 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Update_UriVersionParser_ParseGitHubRedirectLocation_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Update.UriVersionParser.ParseGitHubRedirectLocation(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Update_UriVersionParser_ParseGitHubApiPublishedAt_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Update/UriVersionParser.cs/#L19">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Update/UriVersionParser.cs/#L38">View Source</a>
+  </span>
+  <a id="TGBot_Update_UriVersionParser_ParseGitHubApiPublishedAt_" data-uid="TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt*"></a>
+  <h4 id="TGBot_Update_UriVersionParser_ParseGitHubApiPublishedAt_System_String_" data-uid="TGBot.Update.UriVersionParser.ParseGitHubApiPublishedAt(System.String)">ParseGitHubApiPublishedAt(string?)</h4>
+  <div class="markdown level1 summary"><p>从 GitHub API 的 release 响应 JSON 中解析 <code>published_at</code> 字段，
+如 <code>&quot;published_at&quot;: &quot;2026-08-17T13:29:26Z&quot;</code> → <code>2026.08.17.13.29.26</code>。</p>
+<p>用于 BtbN/FFmpeg-Builds 的滚动 <code>latest</code> release：其 <code>tag_name</code> 恒为
+<code>latest</code> 不含日期，版本标识只能取 ISO 8601 UTC 的 <code>published_at</code>（单调递增）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ToolVersion? ParseGitHubApiPublishedAt(string? json)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">json</span></td>
+        <td><p>GitHub API 响应 JSON。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="TGBot.Update.ToolVersion.html">ToolVersion</a></td>
+        <td><p>归一化后的 autobuild 版本；解析失败返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Update_UriVersionParser_ParseGitHubRedirectLocation_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Update.UriVersionParser.ParseGitHubRedirectLocation(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Update/UriVersionParser.cs/#L19">View Source</a>
   </span>
   <a id="TGBot_Update_UriVersionParser_ParseGitHubRedirectLocation_" data-uid="TGBot.Update.UriVersionParser.ParseGitHubRedirectLocation*"></a>
   <h4 id="TGBot_Update_UriVersionParser_ParseGitHubRedirectLocation_System_String_" data-uid="TGBot.Update.UriVersionParser.ParseGitHubRedirectLocation(System.String)">ParseGitHubRedirectLocation(string?)</h4>
@@ -162,56 +215,6 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Update_UriVersionParser_ParseJohnVanSickleReleasePage_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Update/UriVersionParser.cs/#L35">View Source</a>
-  </span>
-  <a id="TGBot_Update_UriVersionParser_ParseJohnVanSickleReleasePage_" data-uid="TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage*"></a>
-  <h4 id="TGBot_Update_UriVersionParser_ParseJohnVanSickleReleasePage_System_String_" data-uid="TGBot.Update.UriVersionParser.ParseJohnVanSickleReleasePage(System.String)">ParseJohnVanSickleReleasePage(string?)</h4>
-  <div class="markdown level1 summary"><p>从 johnvansickle.com 首页 HTML 解析 release 版本，如 <code>release: 7.0.2</code>。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static ToolVersion? ParseJohnVanSickleReleasePage(string? page)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">page</span></td>
-        <td><p>首页 HTML 内容。</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="TGBot.Update.ToolVersion.html">ToolVersion</a></td>
-        <td><p>版本号；解析失败返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
 
 </article>
           </div>
@@ -221,10 +224,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/dev/apiSpec/new?filename=TGBot_Update_UriVersionParser.md&amp;value=---%0Auid%3A%20TGBot.Update.UriVersionParser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Update_UriVersionParser.md&amp;value=---%0Auid%3A%20TGBot.Update.UriVersionParser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/dev/src/TGBot/Update/UriVersionParser.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Update/UriVersionParser.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

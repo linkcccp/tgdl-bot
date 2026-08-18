@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/AppInfo.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AppInfo
     path: ../src/TGBot/Application/AppInfo.cs
@@ -63,7 +63,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/AppInfo.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: FallbackVersion
     path: ../src/TGBot/Application/AppInfo.cs
@@ -92,7 +92,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/AppInfo.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Version
     path: ../src/TGBot/Application/AppInfo.cs
@@ -129,7 +129,7 @@ items:
   source:
     remote:
       path: src/TGBot/Application/AppInfo.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Normalize
     path: ../src/TGBot/Application/AppInfo.cs

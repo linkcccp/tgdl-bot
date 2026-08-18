@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: CookieUploadResult
     path: ../src/TGBot/Cookie/CookieService.cs
@@ -56,7 +56,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Cookie/CookieService.cs
@@ -94,7 +94,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Success
     path: ../src/TGBot/Cookie/CookieService.cs
@@ -125,7 +125,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/CookieService.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Message
     path: ../src/TGBot/Cookie/CookieService.cs

@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/SiteCookieRegistry.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: SiteCookieRegistry
     path: ../src/TGBot/Cookie/SiteCookieRegistry.cs
@@ -55,7 +55,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/SiteCookieRegistry.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Cookie/SiteCookieRegistry.cs
@@ -90,7 +90,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/SiteCookieRegistry.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Sites
     path: ../src/TGBot/Cookie/SiteCookieRegistry.cs
@@ -121,7 +121,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/SiteCookieRegistry.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ResolveHost
     path: ../src/TGBot/Cookie/SiteCookieRegistry.cs
@@ -159,7 +159,7 @@ items:
   source:
     remote:
       path: src/TGBot/Cookie/SiteCookieRegistry.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ResolveKey
     path: ../src/TGBot/Cookie/SiteCookieRegistry.cs

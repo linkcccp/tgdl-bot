@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/Updater.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Updater
     path: ../src/TGBot/Update/Updater.cs
@@ -55,7 +55,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/Updater.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Update/Updater.cs
@@ -99,7 +99,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/Updater.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateAsync
     path: ../src/TGBot/Update/Updater.cs

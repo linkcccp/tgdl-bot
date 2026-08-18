@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ConfigParser
     path: ../src/TGBot/Config/ConfigParser.cs
@@ -68,7 +68,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LockedKeys
     path: ../src/TGBot/Config/ConfigParser.cs
@@ -103,7 +103,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: MutableKeys
     path: ../src/TGBot/Config/ConfigParser.cs
@@ -132,7 +132,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: RequiresRiskWarning
     path: ../src/TGBot/Config/ConfigParser.cs
@@ -170,7 +170,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: TryResolveKey
     path: ../src/TGBot/Config/ConfigParser.cs
@@ -211,7 +211,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: NormalizeValue
     path: ../src/TGBot/Config/ConfigParser.cs
@@ -253,7 +253,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ValidateValue
     path: ../src/TGBot/Config/ConfigParser.cs
@@ -294,7 +294,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DisplayValue
     path: ../src/TGBot/Config/ConfigParser.cs
@@ -341,7 +341,7 @@ items:
   source:
     remote:
       path: src/TGBot/Config/ConfigParser.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Parse
     path: ../src/TGBot/Config/ConfigParser.cs

@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateException
     path: ../src/TGBot/Update/UpdateResult.cs
@@ -65,7 +65,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Reason
     path: ../src/TGBot/Update/UpdateResult.cs
@@ -96,7 +96,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Update/UpdateResult.cs

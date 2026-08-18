@@ -1,170 +1,196 @@
 ### YamlMime:ManagedReference
 items:
-- uid: TGBot.Download.DownloadProgress
-  commentId: T:TGBot.Download.DownloadProgress
-  id: DownloadProgress
-  parent: TGBot.Download
+- uid: TGBot.Update.FfmpegVersionMarker
+  commentId: T:TGBot.Update.FfmpegVersionMarker
+  id: FfmpegVersionMarker
+  parent: TGBot.Update
   children:
-  - TGBot.Download.DownloadProgress.#ctor(System.Nullable{System.Double},System.String)
-  - TGBot.Download.DownloadProgress.Percent
-  - TGBot.Download.DownloadProgress.SpeedText
+  - TGBot.Update.FfmpegVersionMarker.MarkerPath(System.String)
+  - TGBot.Update.FfmpegVersionMarker.TryRead(System.String,TGBot.Update.ToolVersion@)
+  - TGBot.Update.FfmpegVersionMarker.Write(System.String,TGBot.Update.ToolVersion)
   langs:
   - csharp
   - vb
-  name: DownloadProgress
-  nameWithType: DownloadProgress
-  fullName: TGBot.Download.DownloadProgress
+  name: FfmpegVersionMarker
+  nameWithType: FfmpegVersionMarker
+  fullName: TGBot.Update.FfmpegVersionMarker
   type: Class
   source:
     remote:
-      path: src/TGBot/Download/IDownloader.cs
+      path: src/TGBot/Update/FfmpegVersionMarker.cs
       branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
-    id: DownloadProgress
-    path: ../src/TGBot/Download/IDownloader.cs
-    startLine: 10
+    id: FfmpegVersionMarker
+    path: ../src/TGBot/Update/FfmpegVersionMarker.cs
+    startLine: 12
   assemblies:
   - tgdl-bot
-  namespace: TGBot.Download
-  summary: 下载进度信息。
+  namespace: TGBot.Update
+  summary: >-
+    ffmpeg autobuild 版本 marker 文件读写。
+
+
+    <p>BtbN master 二进制的 <code>ffmpeg -version</code> 输出 git 提交计数（如 <code>N-118503</code>），
+
+    与远端的 autobuild 日期版本（如 <code>2026.08.17.13.29.26</code>）标度不同，无法直接比较；
+
+    更新成功后把安装的 autobuild 时间写入 <code>&lt;installPath&gt;.autobuild</code>，
+
+    比较时优先读 marker 保持同标度，"已是最新"短路语义不变。</p>
   example: []
   syntax:
-    content: 'public sealed record DownloadProgress : IEquatable<DownloadProgress>'
-    content.vb: Public NotInheritable Class DownloadProgress Implements IEquatable(Of DownloadProgress)
+    content: public static class FfmpegVersionMarker
+    content.vb: Public Module FfmpegVersionMarker
   inheritance:
   - System.Object
-  implements:
-  - System.IEquatable{TGBot.Download.DownloadProgress}
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
   - System.Object.GetType
+  - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: TGBot.Download.DownloadProgress.#ctor(System.Nullable{System.Double},System.String)
-  commentId: M:TGBot.Download.DownloadProgress.#ctor(System.Nullable{System.Double},System.String)
-  id: '#ctor(System.Nullable{System.Double},System.String)'
-  parent: TGBot.Download.DownloadProgress
+- uid: TGBot.Update.FfmpegVersionMarker.MarkerPath(System.String)
+  commentId: M:TGBot.Update.FfmpegVersionMarker.MarkerPath(System.String)
+  id: MarkerPath(System.String)
+  parent: TGBot.Update.FfmpegVersionMarker
   langs:
   - csharp
   - vb
-  name: DownloadProgress(double?, string?)
-  nameWithType: DownloadProgress.DownloadProgress(double?, string?)
-  fullName: TGBot.Download.DownloadProgress.DownloadProgress(double?, string?)
-  type: Constructor
+  name: MarkerPath(string)
+  nameWithType: FfmpegVersionMarker.MarkerPath(string)
+  fullName: TGBot.Update.FfmpegVersionMarker.MarkerPath(string)
+  type: Method
   source:
     remote:
-      path: src/TGBot/Download/IDownloader.cs
+      path: src/TGBot/Update/FfmpegVersionMarker.cs
       branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
-    id: .ctor
-    path: ../src/TGBot/Download/IDownloader.cs
-    startLine: 10
+    id: MarkerPath
+    path: ../src/TGBot/Update/FfmpegVersionMarker.cs
+    startLine: 19
   assemblies:
   - tgdl-bot
-  namespace: TGBot.Download
-  summary: 下载进度信息。
+  namespace: TGBot.Update
+  summary: marker 文件路径：安装路径后追加 <code>.autobuild</code> 后缀。
   example: []
   syntax:
-    content: public DownloadProgress(double? Percent, string? SpeedText)
+    content: public static string MarkerPath(string installPath)
     parameters:
-    - id: Percent
-      type: System.Nullable{System.Double}
-      description: 下载百分比（0-100），未知为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
-    - id: SpeedText
+    - id: installPath
       type: System.String
-      description: 速度文本，可为空。
-    content.vb: Public Sub New(Percent As Double?, SpeedText As String)
-  overload: TGBot.Download.DownloadProgress.#ctor*
-  nameWithType.vb: DownloadProgress.New(Double?, String)
-  fullName.vb: TGBot.Download.DownloadProgress.New(Double?, String)
-  name.vb: New(Double?, String)
-- uid: TGBot.Download.DownloadProgress.Percent
-  commentId: P:TGBot.Download.DownloadProgress.Percent
-  id: Percent
-  parent: TGBot.Download.DownloadProgress
+      description: ffmpeg 安装路径。
+    return:
+      type: System.String
+      description: marker 文件完整路径。
+    content.vb: Public Shared Function MarkerPath(installPath As String) As String
+  overload: TGBot.Update.FfmpegVersionMarker.MarkerPath*
+  nameWithType.vb: FfmpegVersionMarker.MarkerPath(String)
+  fullName.vb: TGBot.Update.FfmpegVersionMarker.MarkerPath(String)
+  name.vb: MarkerPath(String)
+- uid: TGBot.Update.FfmpegVersionMarker.TryRead(System.String,TGBot.Update.ToolVersion@)
+  commentId: M:TGBot.Update.FfmpegVersionMarker.TryRead(System.String,TGBot.Update.ToolVersion@)
+  id: TryRead(System.String,TGBot.Update.ToolVersion@)
+  parent: TGBot.Update.FfmpegVersionMarker
   langs:
   - csharp
   - vb
-  name: Percent
-  nameWithType: DownloadProgress.Percent
-  fullName: TGBot.Download.DownloadProgress.Percent
-  type: Property
+  name: TryRead(string, out ToolVersion?)
+  nameWithType: FfmpegVersionMarker.TryRead(string, out ToolVersion?)
+  fullName: TGBot.Update.FfmpegVersionMarker.TryRead(string, out TGBot.Update.ToolVersion?)
+  type: Method
   source:
     remote:
-      path: src/TGBot/Download/IDownloader.cs
+      path: src/TGBot/Update/FfmpegVersionMarker.cs
       branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
-    id: Percent
-    path: ../src/TGBot/Download/IDownloader.cs
-    startLine: 10
+    id: TryRead
+    path: ../src/TGBot/Update/FfmpegVersionMarker.cs
+    startLine: 27
   assemblies:
   - tgdl-bot
-  namespace: TGBot.Download
-  summary: 下载百分比（0-100），未知为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+  namespace: TGBot.Update
+  summary: 读取上次安装的 autobuild 版本。
   example: []
   syntax:
-    content: public double? Percent { get; init; }
-    parameters: []
+    content: public static bool TryRead(string installPath, out ToolVersion? version)
+    parameters:
+    - id: installPath
+      type: System.String
+      description: ffmpeg 安装路径。
+    - id: version
+      type: TGBot.Update.ToolVersion
+      description: 读取到的版本；失败时为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
     return:
-      type: System.Nullable{System.Double}
-    content.vb: Public Property Percent As Double?
-  overload: TGBot.Download.DownloadProgress.Percent*
-- uid: TGBot.Download.DownloadProgress.SpeedText
-  commentId: P:TGBot.Download.DownloadProgress.SpeedText
-  id: SpeedText
-  parent: TGBot.Download.DownloadProgress
+      type: System.Boolean
+      description: 读取成功返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；文件缺失或内容损坏返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>。
+    content.vb: Public Shared Function TryRead(installPath As String, version As ToolVersion) As Boolean
+  overload: TGBot.Update.FfmpegVersionMarker.TryRead*
+  nameWithType.vb: FfmpegVersionMarker.TryRead(String, ToolVersion)
+  fullName.vb: TGBot.Update.FfmpegVersionMarker.TryRead(String, TGBot.Update.ToolVersion)
+  name.vb: TryRead(String, ToolVersion)
+- uid: TGBot.Update.FfmpegVersionMarker.Write(System.String,TGBot.Update.ToolVersion)
+  commentId: M:TGBot.Update.FfmpegVersionMarker.Write(System.String,TGBot.Update.ToolVersion)
+  id: Write(System.String,TGBot.Update.ToolVersion)
+  parent: TGBot.Update.FfmpegVersionMarker
   langs:
   - csharp
   - vb
-  name: SpeedText
-  nameWithType: DownloadProgress.SpeedText
-  fullName: TGBot.Download.DownloadProgress.SpeedText
-  type: Property
+  name: Write(string, ToolVersion)
+  nameWithType: FfmpegVersionMarker.Write(string, ToolVersion)
+  fullName: TGBot.Update.FfmpegVersionMarker.Write(string, TGBot.Update.ToolVersion)
+  type: Method
   source:
     remote:
-      path: src/TGBot/Download/IDownloader.cs
+      path: src/TGBot/Update/FfmpegVersionMarker.cs
       branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
-    id: SpeedText
-    path: ../src/TGBot/Download/IDownloader.cs
-    startLine: 10
+    id: Write
+    path: ../src/TGBot/Update/FfmpegVersionMarker.cs
+    startLine: 46
   assemblies:
   - tgdl-bot
-  namespace: TGBot.Download
-  summary: 速度文本，可为空。
+  namespace: TGBot.Update
+  summary: 写入上次安装的 autobuild 版本（先写临时文件再原子移动，避免写一半）。
   example: []
   syntax:
-    content: public string? SpeedText { get; init; }
-    parameters: []
-    return:
+    content: public static void Write(string installPath, ToolVersion version)
+    parameters:
+    - id: installPath
       type: System.String
-    content.vb: Public Property SpeedText As String
-  overload: TGBot.Download.DownloadProgress.SpeedText*
+      description: ffmpeg 安装路径。
+    - id: version
+      type: TGBot.Update.ToolVersion
+      description: 要记录的版本（如 <code>latest.ToString()</code>）。
+    content.vb: Public Shared Sub Write(installPath As String, version As ToolVersion)
+  overload: TGBot.Update.FfmpegVersionMarker.Write*
+  nameWithType.vb: FfmpegVersionMarker.Write(String, ToolVersion)
+  fullName.vb: TGBot.Update.FfmpegVersionMarker.Write(String, TGBot.Update.ToolVersion)
+  name.vb: Write(String, ToolVersion)
 references:
-- uid: TGBot.Download
-  commentId: N:TGBot.Download
+- uid: TGBot.Update
+  commentId: N:TGBot.Update
   href: TGBot.html
-  name: TGBot.Download
-  nameWithType: TGBot.Download
-  fullName: TGBot.Download
+  name: TGBot.Update
+  nameWithType: TGBot.Update
+  fullName: TGBot.Update
   spec.csharp:
   - uid: TGBot
     name: TGBot
     href: TGBot.html
   - name: .
-  - uid: TGBot.Download
-    name: Download
-    href: TGBot.Download.html
+  - uid: TGBot.Update
+    name: Update
+    href: TGBot.Update.html
   spec.vb:
   - uid: TGBot
     name: TGBot
     href: TGBot.html
   - name: .
-  - uid: TGBot.Download
-    name: Download
-    href: TGBot.Download.html
+  - uid: TGBot.Update
+    name: Update
+    href: TGBot.Update.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -176,39 +202,6 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.IEquatable{TGBot.Download.DownloadProgress}
-  commentId: T:System.IEquatable{TGBot.Download.DownloadProgress}
-  parent: System
-  definition: System.IEquatable`1
-  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  name: IEquatable<DownloadProgress>
-  nameWithType: IEquatable<DownloadProgress>
-  fullName: System.IEquatable<TGBot.Download.DownloadProgress>
-  nameWithType.vb: IEquatable(Of DownloadProgress)
-  fullName.vb: System.IEquatable(Of TGBot.Download.DownloadProgress)
-  name.vb: IEquatable(Of DownloadProgress)
-  spec.csharp:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: <
-  - uid: TGBot.Download.DownloadProgress
-    name: DownloadProgress
-    href: TGBot.Download.DownloadProgress.html
-  - name: '>'
-  spec.vb:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: TGBot.Download.DownloadProgress
-    name: DownloadProgress
-    href: TGBot.Download.DownloadProgress.html
-  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -335,6 +328,30 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
   - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
@@ -411,66 +428,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.IEquatable`1
-  commentId: T:System.IEquatable`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  name: IEquatable<T>
-  nameWithType: IEquatable<T>
-  fullName: System.IEquatable<T>
-  nameWithType.vb: IEquatable(Of T)
-  fullName.vb: System.IEquatable(Of T)
-  name.vb: IEquatable(Of T)
-  spec.csharp:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: TGBot.Download.DownloadProgress.#ctor*
-  commentId: Overload:TGBot.Download.DownloadProgress.#ctor
-  href: TGBot.Download.DownloadProgress.html#TGBot_Download_DownloadProgress__ctor_System_Nullable_System_Double__System_String_
-  name: DownloadProgress
-  nameWithType: DownloadProgress.DownloadProgress
-  fullName: TGBot.Download.DownloadProgress.DownloadProgress
-  nameWithType.vb: DownloadProgress.New
-  fullName.vb: TGBot.Download.DownloadProgress.New
-  name.vb: New
-- uid: System.Nullable{System.Double}
-  commentId: T:System.Nullable{System.Double}
-  parent: System
-  definition: System.Nullable`1
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: double?
-  nameWithType: double?
-  fullName: double?
-  nameWithType.vb: Double?
-  fullName.vb: Double?
-  name.vb: Double?
-  spec.csharp:
-  - uid: System.Double
-    name: double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: '?'
-  spec.vb:
-  - uid: System.Double
-    name: Double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: '?'
+- uid: TGBot.Update.FfmpegVersionMarker.MarkerPath*
+  commentId: Overload:TGBot.Update.FfmpegVersionMarker.MarkerPath
+  href: TGBot.Update.FfmpegVersionMarker.html#TGBot_Update_FfmpegVersionMarker_MarkerPath_System_String_
+  name: MarkerPath
+  nameWithType: FfmpegVersionMarker.MarkerPath
+  fullName: TGBot.Update.FfmpegVersionMarker.MarkerPath
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -482,43 +445,33 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System.Nullable`1
-  commentId: T:System.Nullable`1
+- uid: TGBot.Update.FfmpegVersionMarker.TryRead*
+  commentId: Overload:TGBot.Update.FfmpegVersionMarker.TryRead
+  href: TGBot.Update.FfmpegVersionMarker.html#TGBot_Update_FfmpegVersionMarker_TryRead_System_String_TGBot_Update_ToolVersion__
+  name: TryRead
+  nameWithType: FfmpegVersionMarker.TryRead
+  fullName: TGBot.Update.FfmpegVersionMarker.TryRead
+- uid: TGBot.Update.ToolVersion
+  commentId: T:TGBot.Update.ToolVersion
+  parent: TGBot.Update
+  href: TGBot.Update.ToolVersion.html
+  name: ToolVersion
+  nameWithType: ToolVersion
+  fullName: TGBot.Update.ToolVersion
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
-  name: Nullable<T>
-  nameWithType: Nullable<T>
-  fullName: System.Nullable<T>
-  nameWithType.vb: Nullable(Of T)
-  fullName.vb: System.Nullable(Of T)
-  name.vb: Nullable(Of T)
-  spec.csharp:
-  - uid: System.Nullable`1
-    name: Nullable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Nullable`1
-    name: Nullable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: TGBot.Download.DownloadProgress.Percent*
-  commentId: Overload:TGBot.Download.DownloadProgress.Percent
-  href: TGBot.Download.DownloadProgress.html#TGBot_Download_DownloadProgress_Percent
-  name: Percent
-  nameWithType: DownloadProgress.Percent
-  fullName: TGBot.Download.DownloadProgress.Percent
-- uid: TGBot.Download.DownloadProgress.SpeedText*
-  commentId: Overload:TGBot.Download.DownloadProgress.SpeedText
-  href: TGBot.Download.DownloadProgress.html#TGBot_Download_DownloadProgress_SpeedText
-  name: SpeedText
-  nameWithType: DownloadProgress.SpeedText
-  fullName: TGBot.Download.DownloadProgress.SpeedText
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: TGBot.Update.FfmpegVersionMarker.Write*
+  commentId: Overload:TGBot.Update.FfmpegVersionMarker.Write
+  href: TGBot.Update.FfmpegVersionMarker.html#TGBot_Update_FfmpegVersionMarker_Write_System_String_TGBot_Update_ToolVersion_
+  name: Write
+  nameWithType: FfmpegVersionMarker.Write
+  fullName: TGBot.Update.FfmpegVersionMarker.Write

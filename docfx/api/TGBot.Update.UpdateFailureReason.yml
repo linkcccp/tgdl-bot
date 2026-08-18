@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: UpdateFailureReason
     path: ../src/TGBot/Update/UpdateResult.cs
@@ -47,7 +47,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Failed
     path: ../src/TGBot/Update/UpdateResult.cs
@@ -75,7 +75,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LocalVersionUnavailable
     path: ../src/TGBot/Update/UpdateResult.cs
@@ -103,7 +103,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LatestVersionUnavailable
     path: ../src/TGBot/Update/UpdateResult.cs
@@ -131,7 +131,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadFailed
     path: ../src/TGBot/Update/UpdateResult.cs
@@ -159,7 +159,7 @@ items:
   source:
     remote:
       path: src/TGBot/Update/UpdateResult.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: ReplaceFailed
     path: ../src/TGBot/Update/UpdateResult.cs

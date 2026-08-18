@@ -5,11 +5,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class PathSanitizer | TGBot API 文档 </title>
+      <title>Class FfmpegVersionMarker | TGBot API 文档 </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class PathSanitizer | TGBot API 文档 ">
+      <meta name="title" content="Class FfmpegVersionMarker | TGBot API 文档 ">
     
-    <meta name="description" content="文件名/路径净化工具，用于防止路径穿越、隐藏文件、控制字符与符号链接攻击。">
+    <meta name="description" content="ffmpeg autobuild 版本 marker 文件读写。 BtbN master 二进制的 ffmpeg -version 输出 git 提交计数（如 N-118503）， 与远端的 autobuild 日期版本（如 2026.08.17.13.29.26）标度不同，无法直接比较； 更新成功后把安装的 autobuild 时间写入 &amp;lt;installPath&amp;gt;.autobuild， 比较时优先读 marker 保持同标度，&quot;已是最新&quot;短路语义不变。">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -66,18 +66,22 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="TGBot.Security.PathSanitizer">
+            <article class="content wrap" id="_content" data-uid="TGBot.Update.FfmpegVersionMarker">
 
 
 
-  <h1 id="TGBot_Security_PathSanitizer" data-uid="TGBot.Security.PathSanitizer" class="text-break">Class PathSanitizer</h1>
-  <div class="markdown level0 summary"><p>文件名/路径净化工具，用于防止路径穿越、隐藏文件、控制字符与符号链接攻击。</p>
+  <h1 id="TGBot_Update_FfmpegVersionMarker" data-uid="TGBot.Update.FfmpegVersionMarker" class="text-break">Class FfmpegVersionMarker</h1>
+  <div class="markdown level0 summary"><p>ffmpeg autobuild 版本 marker 文件读写。</p>
+<p>BtbN master 二进制的 <code>ffmpeg -version</code> 输出 git 提交计数（如 <code>N-118503</code>），
+与远端的 autobuild 日期版本（如 <code>2026.08.17.13.29.26</code>）标度不同，无法直接比较；
+更新成功后把安装的 autobuild 时间写入 <code>&lt;installPath&gt;.autobuild</code>，
+比较时优先读 marker 保持同标度，"已是最新"短路语义不变。</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">PathSanitizer</span></div>
+    <div class="level1"><span class="xref">FfmpegVersionMarker</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -103,29 +107,29 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="TGBot.html">TGBot</a>.<a class="xref" href="TGBot.Security.html">Security</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="TGBot.html">TGBot</a>.<a class="xref" href="TGBot.Update.html">Update</a></h6>
   <h6><strong>Assembly</strong>: tgdl-bot.dll</h6>
-  <h5 id="TGBot_Security_PathSanitizer_syntax">Syntax</h5>
+  <h5 id="TGBot_Update_FfmpegVersionMarker_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class PathSanitizer</code></pre>
+    <pre><code class="lang-csharp hljs">public static class FfmpegVersionMarker</code></pre>
   </div>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Security_PathSanitizer_IsSymbolicLink_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Security.PathSanitizer.IsSymbolicLink(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Update_FfmpegVersionMarker_MarkerPath_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Update.FfmpegVersionMarker.MarkerPath(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Security/PathSanitizer.cs/#L88">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Update/FfmpegVersionMarker.cs/#L20">View Source</a>
   </span>
-  <a id="TGBot_Security_PathSanitizer_IsSymbolicLink_" data-uid="TGBot.Security.PathSanitizer.IsSymbolicLink*"></a>
-  <h4 id="TGBot_Security_PathSanitizer_IsSymbolicLink_System_String_" data-uid="TGBot.Security.PathSanitizer.IsSymbolicLink(System.String)">IsSymbolicLink(string)</h4>
-  <div class="markdown level1 summary"><p>判断路径是否为符号链接。</p>
+  <a id="TGBot_Update_FfmpegVersionMarker_MarkerPath_" data-uid="TGBot.Update.FfmpegVersionMarker.MarkerPath*"></a>
+  <h4 id="TGBot_Update_FfmpegVersionMarker_MarkerPath_System_String_" data-uid="TGBot.Update.FfmpegVersionMarker.MarkerPath(System.String)">MarkerPath(string)</h4>
+  <div class="markdown level1 summary"><p>marker 文件路径：安装路径后追加 <code>.autobuild</code> 后缀。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsSymbolicLink(string path)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string MarkerPath(string installPath)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -139,8 +143,64 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">path</span></td>
-        <td><p>文件路径。</p>
+        <td><span class="parametername">installPath</span></td>
+        <td><p>ffmpeg 安装路径。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>marker 文件完整路径。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Update_FfmpegVersionMarker_TryRead_System_String_TGBot_Update_ToolVersion__.md&amp;value=---%0Auid%3A%20TGBot.Update.FfmpegVersionMarker.TryRead(System.String%2CTGBot.Update.ToolVersion%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Update/FfmpegVersionMarker.cs/#L28">View Source</a>
+  </span>
+  <a id="TGBot_Update_FfmpegVersionMarker_TryRead_" data-uid="TGBot.Update.FfmpegVersionMarker.TryRead*"></a>
+  <h4 id="TGBot_Update_FfmpegVersionMarker_TryRead_System_String_TGBot_Update_ToolVersion__" data-uid="TGBot.Update.FfmpegVersionMarker.TryRead(System.String,TGBot.Update.ToolVersion@)">TryRead(string, out ToolVersion?)</h4>
+  <div class="markdown level1 summary"><p>读取上次安装的 autobuild 版本。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryRead(string installPath, out ToolVersion? version)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">installPath</span></td>
+        <td><p>ffmpeg 安装路径。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="TGBot.Update.ToolVersion.html">ToolVersion</a></td>
+        <td><span class="parametername">version</span></td>
+        <td><p>读取到的版本；失败时为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。</p>
 </td>
       </tr>
     </tbody>
@@ -156,26 +216,26 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>是符号链接返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。</p>
+        <td><p>读取成功返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；文件缺失或内容损坏返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>。</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Security_PathSanitizer_IsWithinDirectory_System_String_System_String_.md&amp;value=---%0Auid%3A%20TGBot.Security.PathSanitizer.IsWithinDirectory(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Update_FfmpegVersionMarker_Write_System_String_TGBot_Update_ToolVersion_.md&amp;value=---%0Auid%3A%20TGBot.Update.FfmpegVersionMarker.Write(System.String%2CTGBot.Update.ToolVersion)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Security/PathSanitizer.cs/#L66">View Source</a>
+    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Update/FfmpegVersionMarker.cs/#L47">View Source</a>
   </span>
-  <a id="TGBot_Security_PathSanitizer_IsWithinDirectory_" data-uid="TGBot.Security.PathSanitizer.IsWithinDirectory*"></a>
-  <h4 id="TGBot_Security_PathSanitizer_IsWithinDirectory_System_String_System_String_" data-uid="TGBot.Security.PathSanitizer.IsWithinDirectory(System.String,System.String)">IsWithinDirectory(string, string)</h4>
-  <div class="markdown level1 summary"><p>校验某个绝对路径是否严格位于指定根目录之内（防路径穿越）。</p>
+  <a id="TGBot_Update_FfmpegVersionMarker_Write_" data-uid="TGBot.Update.FfmpegVersionMarker.Write*"></a>
+  <h4 id="TGBot_Update_FfmpegVersionMarker_Write_System_String_TGBot_Update_ToolVersion_" data-uid="TGBot.Update.FfmpegVersionMarker.Write(System.String,TGBot.Update.ToolVersion)">Write(string, ToolVersion)</h4>
+  <div class="markdown level1 summary"><p>写入上次安装的 autobuild 版本（先写临时文件再原子移动，避免写一半）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsWithinDirectory(string rootDir, string candidate)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Write(string installPath, ToolVersion version)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -189,86 +249,14 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">rootDir</span></td>
-        <td><p>根目录（绝对路径）。</p>
+        <td><span class="parametername">installPath</span></td>
+        <td><p>ffmpeg 安装路径。</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">candidate</span></td>
-        <td><p>待校验路径（绝对路径）。</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>在根目录内返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Security_PathSanitizer_SanitizeFileName_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20TGBot.Security.PathSanitizer.SanitizeFileName(System.String%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Security/PathSanitizer.cs/#L21">View Source</a>
-  </span>
-  <a id="TGBot_Security_PathSanitizer_SanitizeFileName_" data-uid="TGBot.Security.PathSanitizer.SanitizeFileName*"></a>
-  <h4 id="TGBot_Security_PathSanitizer_SanitizeFileName_System_String_System_Int32_" data-uid="TGBot.Security.PathSanitizer.SanitizeFileName(System.String,System.Int32)">SanitizeFileName(string?, int)</h4>
-  <div class="markdown level1 summary"><p>将任意用户输入净化为安全的文件名（不含目录分隔符）。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string SanitizeFileName(string? name, int maxLength = 120)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">name</span></td>
-        <td><p>原始名称。</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">maxLength</span></td>
-        <td><p>最大长度。</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>净化后的文件名。</p>
+        <td><a class="xref" href="TGBot.Update.ToolVersion.html">ToolVersion</a></td>
+        <td><span class="parametername">version</span></td>
+        <td><p>要记录的版本（如 <code>latest.ToString()</code>）。</p>
 </td>
       </tr>
     </tbody>
@@ -282,10 +270,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Security_PathSanitizer.md&amp;value=---%0Auid%3A%20TGBot.Security.PathSanitizer%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/new/main/apiSpec/new?filename=TGBot_Update_FfmpegVersionMarker.md&amp;value=---%0Auid%3A%20TGBot.Update.FfmpegVersionMarker%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Security/PathSanitizer.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://ssh.github.com/linkcccp/tgdl-bot/blob/main/src/TGBot/Update/FfmpegVersionMarker.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

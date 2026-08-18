@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadGate.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DownloadGate
     path: ../src/TGBot/Download/DownloadGate.cs
@@ -60,7 +60,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadGate.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: .ctor
     path: ../src/TGBot/Download/DownloadGate.cs
@@ -99,7 +99,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadGate.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DisposeAsync
     path: ../src/TGBot/Download/DownloadGate.cs
@@ -135,7 +135,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadGate.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AcquireDownloadAsync
     path: ../src/TGBot/Download/DownloadGate.cs
@@ -170,7 +170,7 @@ items:
   source:
     remote:
       path: src/TGBot/Download/DownloadGate.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: AcquireExclusiveAsync
     path: ../src/TGBot/Download/DownloadGate.cs

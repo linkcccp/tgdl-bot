@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/LogLevel.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: LogLevel
     path: ../src/TGBot/Logging/LogLevel.cs
@@ -47,7 +47,7 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/LogLevel.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Trace
     path: ../src/TGBot/Logging/LogLevel.cs
@@ -75,7 +75,7 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/LogLevel.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Debug
     path: ../src/TGBot/Logging/LogLevel.cs
@@ -103,7 +103,7 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/LogLevel.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Info
     path: ../src/TGBot/Logging/LogLevel.cs
@@ -131,7 +131,7 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/LogLevel.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Warn
     path: ../src/TGBot/Logging/LogLevel.cs
@@ -159,7 +159,7 @@ items:
   source:
     remote:
       path: src/TGBot/Logging/LogLevel.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: Error
     path: ../src/TGBot/Logging/LogLevel.cs

@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/DiskUtil.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: DiskUtil
     path: ../src/TGBot/Security/DiskUtil.cs
@@ -53,7 +53,7 @@ items:
   source:
     remote:
       path: src/TGBot/Security/DiskUtil.cs
-      branch: dev
+      branch: main
       repo: ssh://git@ssh.github.com:443/linkcccp/tgdl-bot.git
     id: GetFreeSpaceBytes
     path: ../src/TGBot/Security/DiskUtil.cs

@@ -321,6 +321,9 @@ items:
   - uid: TGBot.Update.FfmpegToolSource
     name: FfmpegToolSource
     type: Class
+  - uid: TGBot.Update.FfmpegVersionMarker
+    name: FfmpegVersionMarker
+    type: Class
   - uid: TGBot.Update.IProcessRunner
     name: IProcessRunner
     type: Interface
