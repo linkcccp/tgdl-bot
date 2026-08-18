@@ -33,14 +33,14 @@ jobs:
             runs-on: ubuntu-latest
             dotnet-rid: linux-x64
             tba-asset: telegram-bot-api-linux-x64
-            ffmpeg-url: https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz  # 上游官方命名（amd64），即 x64
+            ffmpeg-url: https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz  # BtbN 命名 linux64（对应 x64）
             ytdlp-asset: yt-dlp            # 官方 x86_64 命名资产（即 x64）
           - distarch: arm64                # 自命名
             platform: linux/arm64          # Docker 标准平台串
             runs-on: ubuntu-24.04-arm      # GitHub 官方免费 ARM 原生 runner
             dotnet-rid: linux-arm64
             tba-asset: telegram-bot-api-linux-arm64
-            ffmpeg-url: https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-arm64-static.tar.xz
+            ffmpeg-url: https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linuxarm64-gpl.tar.xz  # BtbN 命名 linuxarm64（对应 arm64）
             ytdlp-asset: yt-dlp_linux_aarch64  # 官方 aarch64 命名资产
     steps:
       - name: Checkout
@@ -97,7 +97,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          url="${{ matrix.ffmpeg-url }}"  # 上游官方命名（amd64 即 x64 / arm64），不可改
+          url="${{ matrix.ffmpeg-url }}"  # BtbN/FFmpeg-Builds 命名：x64 -> linux64、arm64 -> linuxarm64；tarball 内为 ffmpeg-master-*/bin/ffmpeg
           # 校验 xz 魔数并重试，防止瞬时坏响应（200 但内容错误时 curl 不会自动重试）
           ok=0
           for i in 1 2 3 4 5; do
