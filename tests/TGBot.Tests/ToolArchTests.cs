@@ -134,6 +134,30 @@ public class ToolArchTests
         }
     }
 
+    [Fact]
+    public async Task FfmpegToolSource_Download_ShortTimeout_CancelsMidDownload()
+    {
+        // 注入 100ms 短超时 + 挂起响应流（模拟慢链路数据不到达）：
+        // 验证下载步骤独立超时（链接令牌 CancelAfter）生效并抛出取消异常，且不留残留文件。
+        using var handler = new HangingHttpHandler();
+        using var http = new HttpClient(handler) { Timeout = TimeSpan.FromMinutes(1) };
+        var source = new FfmpegToolSource(http, new FailingProcessRunner(), () => Architecture.X64, TimeSpan.FromMilliseconds(100));
+
+        var tmp = Path.Combine(Path.GetTempPath(), "tgdl-arch-" + Guid.NewGuid().ToString("N")[..8]);
+        Directory.CreateDirectory(tmp);
+        try
+        {
+            var ex = await Assert.ThrowsAnyAsync<OperationCanceledException>(() => source.DownloadBinaryAsync(tmp, CancellationToken.None));
+            Assert.True(ex.CancellationToken.IsCancellationRequested);
+            // 超时中断后归档临时文件被清理（finally 删除）。
+            Assert.Empty(Directory.GetFiles(tmp));
+        }
+        finally
+        {
+            Directory.Delete(tmp, true);
+        }
+    }
+
     /// <summary>
     /// 记录最后请求 URL 并返回指定内容的 HttpMessageHandler 桩。
     /// </summary>
@@ -172,6 +196,67 @@ public class ToolArchTests
         public Task<ProcessOutput> RunAsync(string file, IReadOnlyList<string> args, string? workingDir, TimeSpan timeout, CancellationToken cancellationToken)
         {
             return Task.FromResult(new ProcessOutput(1, string.Empty, "stub 解压失败"));
+        }
+    }
+
+    /// <summary>
+    /// 响应体为挂起流的 HttpMessageHandler 桩（模拟慢链路：数据永不到达，直到取消令牌触发）。
+    /// </summary>
+    private sealed class HangingHttpHandler : HttpMessageHandler
+    {
+        /// <inheritdoc />
+        protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        {
+            return Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK) { Content = new StreamContent(new HangingStream()) });
+        }
+    }
+
+    /// <summary>
+    /// 读取时挂起直到取消令牌触发的流。
+    /// </summary>
+    private sealed class HangingStream : Stream
+    {
+        /// <inheritdoc />
+        public override bool CanRead => true;
+
+        /// <inheritdoc />
+        public override bool CanSeek => false;
+
+        /// <inheritdoc />
+        public override bool CanWrite => false;
+
+        /// <inheritdoc />
+        public override long Length => throw new NotSupportedException();
+
+        /// <inheritdoc />
+        public override long Position
+        {
+            get => throw new NotSupportedException();
+            set => throw new NotSupportedException();
+        }
+
+        /// <inheritdoc />
+        public override void Flush()
+        {
+        }
+
+        /// <inheritdoc />
+        public override int Read(byte[] buffer, int offset, int count) => throw new NotSupportedException();
+
+        /// <inheritdoc />
+        public override long Seek(long offset, SeekOrigin origin) => throw new NotSupportedException();
+
+        /// <inheritdoc />
+        public override void SetLength(long value) => throw new NotSupportedException();
+
+        /// <inheritdoc />
+        public override void Write(byte[] buffer, int offset, int count) => throw new NotSupportedException();
+
+        /// <inheritdoc />
+        public override async ValueTask<int> ReadAsync(Memory<byte> buffer, CancellationToken cancellationToken = default)
+        {
+            await Task.Delay(Timeout.InfiniteTimeSpan, cancellationToken).ConfigureAwait(false);
+            return 0;
         }
     }
 }

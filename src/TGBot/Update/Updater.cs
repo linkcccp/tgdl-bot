@@ -184,7 +184,9 @@ public sealed class Updater : IUpdater
     {
         // ffmpeg 优先读 marker（上次安装的 autobuild 日期，与远端同标度）；无 marker 回退二进制解析
         //（git 提交计数，仅作展示不参与短路）。
-        if (name == "ffmpeg" && FfmpegVersionMarker.TryRead(installPath, out var marked))
+        // 须校验二进制存在：marker 残留（二进制被删/手动替换）时不得短路为"已是最新"，
+        // 否则永久失去自愈能力；回退二进制解析路径（二进制缺失 → 进程启动失败 → LocalVersionUnavailable）。
+        if (name == "ffmpeg" && File.Exists(installPath) && FfmpegVersionMarker.TryRead(installPath, out var marked))
         {
             return marked;
         }

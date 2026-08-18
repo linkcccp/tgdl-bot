@@ -106,6 +106,7 @@ public sealed class FfmpegToolSource : IToolSource
     private readonly HttpClient _http;
     private readonly IProcessRunner _runner;
     private readonly Func<Architecture> _archProvider;
+    private readonly TimeSpan _downloadTimeout;
 
     /// <summary>
     /// 初始化 <see cref="FfmpegToolSource"/>。
@@ -113,11 +114,18 @@ public sealed class FfmpegToolSource : IToolSource
     /// <param name="http">共享 HttpClient。</param>
     /// <param name="runner">进程运行器（用于解压）。</param>
     /// <param name="archProvider">进程架构提供器；默认取真实进程架构，测试可注入指定架构。</param>
-    public FfmpegToolSource(HttpClient http, IProcessRunner runner, Func<Architecture>? archProvider = null)
+    /// <param name="downloadTimeout">下载步骤独立超时；默认 10 分钟。共享 HttpClient 的总超时（110s）
+    /// 对 BtbN 122MB 资产在慢链路上过短，仅放大下载这一步骤（链接令牌），不污染共享 client。</param>
+    public FfmpegToolSource(
+        HttpClient http,
+        IProcessRunner runner,
+        Func<Architecture>? archProvider = null,
+        TimeSpan? downloadTimeout = null)
     {
         _http = http;
         _runner = runner;
         _archProvider = archProvider ?? (() => RuntimeInformation.ProcessArchitecture);
+        _downloadTimeout = downloadTimeout ?? TimeSpan.FromMinutes(10);
     }
 
     /// <summary>
@@ -151,12 +159,16 @@ public sealed class FfmpegToolSource : IToolSource
 
         try
         {
-            using (var response = await _http.GetAsync(ToolArch.FfmpegReleaseUrl(_archProvider()), HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false))
+            // 下载独立超时：共享 HttpClient 总超时（110s）对 BtbN 122MB 资产在慢链路上过短，
+            // 用链接令牌只放大下载这一步（CancelAfter 不作用于共享 client，也不影响后续解压）。
+            using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            cts.CancelAfter(_downloadTimeout);
+            using (var response = await _http.GetAsync(ToolArch.FfmpegReleaseUrl(_archProvider()), HttpCompletionOption.ResponseHeadersRead, cts.Token).ConfigureAwait(false))
             {
                 response.EnsureSuccessStatusCode();
-                await using var stream = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                await using var stream = await response.Content.ReadAsStreamAsync(cts.Token).ConfigureAwait(false);
                 await using var file = new FileStream(archivePath, FileMode.CreateNew, FileAccess.Write, FileShare.None, 81920, useAsync: true);
-                await stream.CopyToAsync(file, cancellationToken).ConfigureAwait(false);
+                await stream.CopyToAsync(file, cts.Token).ConfigureAwait(false);
             }
 
             VerifyXzMagic(archivePath);

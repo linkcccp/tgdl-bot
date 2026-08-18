@@ -31,9 +31,9 @@ public class FfmpegVersionMarkerTests
 
             Assert.True(FfmpegVersionMarker.TryRead(installPath, out var read));
             Assert.Equal(0, read!.CompareTo(version));
-            Assert.True(File.Exists(installPath + ".autobuild"));
+            Assert.True(File.Exists(FfmpegVersionMarker.MarkerPath(installPath)));
             // 临时文件已被原子移动，不留残留。
-            Assert.False(File.Exists(installPath + ".autobuild.tmp"));
+            Assert.False(File.Exists(FfmpegVersionMarker.MarkerPath(installPath) + ".tmp"));
         }
         finally
         {
@@ -63,7 +63,7 @@ public class FfmpegVersionMarkerTests
         try
         {
             var installPath = Path.Combine(dir, "ffmpeg");
-            File.WriteAllText(installPath + ".autobuild", "not-a-version");
+            File.WriteAllText(FfmpegVersionMarker.MarkerPath(installPath), "not-a-version");
 
             Assert.False(FfmpegVersionMarker.TryRead(installPath, out _));
         }

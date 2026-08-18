@@ -238,6 +238,8 @@ public class UpdaterShortCircuitTests
         try
         {
             var ffmpegPath = Path.Combine(dir, "ffmpeg");
+            // 真实状态：二进制存在（更新后产物）+ marker 残留，才允许 marker 短路。
+            File.WriteAllText(ffmpegPath, "stub-binary");
             FfmpegVersionMarker.Write(ffmpegPath, ToolVersion.Parse("2026.08.17.13.29.26"));
 
             var source = new StubToolSource("ffmpeg") { Latest = ToolVersion.Parse("2026.08.17.12.00.00") };
@@ -265,6 +267,8 @@ public class UpdaterShortCircuitTests
         try
         {
             var ffmpegPath = Path.Combine(dir, "ffmpeg");
+            // 真实状态：二进制存在 + marker（旧版），走 marker 短路路径比较。
+            File.WriteAllText(ffmpegPath, "stub-binary");
             FfmpegVersionMarker.Write(ffmpegPath, ToolVersion.Parse("2026.08.17.10.00.00"));
             var latest = ToolVersion.Parse("2026.08.17.13.29.26");
 
@@ -306,6 +310,65 @@ public class UpdaterShortCircuitTests
             Assert.Equal(1, source.DownloadCount);
             // 更新成功后写入 marker，下次 /update 可同标度短路。
             Assert.True(FfmpegVersionMarker.TryRead(ffmpegPath, out _));
+        }
+        finally
+        {
+            Directory.Delete(dir, true);
+        }
+    }
+
+    [Fact]
+    public async Task UpdateFfmpeg_MarkerExistsButBinaryMissing_DoesNotShortCircuitAndFailsLocalVersion()
+    {
+        var dir = NewTempDir();
+        try
+        {
+            // marker 残留（二进制被删/手动替换，.autobuild 还在）时不得短路为"已是最新"：
+            // 必须回退二进制解析路径；二进制缺失 → 进程启动失败 → LocalVersionUnavailable。
+            var ffmpegPath = Path.Combine(dir, "ffmpeg");
+            FfmpegVersionMarker.Write(ffmpegPath, ToolVersion.Parse("2026.08.17.13.29.26"));
+
+            var source = new StubToolSource("ffmpeg") { Latest = ToolVersion.Parse("2026.08.17.12.00.00") };
+            var runner = new StubRunner { RunException = new InvalidOperationException("No such file or directory") };
+            var updater = new Updater(runner, new[] { source }, null, ffmpegPath);
+
+            var ex = await Assert.ThrowsAsync<UpdateException>(() =>
+                updater.UpdateAsync(includeYtDlp: false, includeFfmpeg: true, null, CancellationToken.None));
+
+            Assert.Equal(UpdateFailureReason.LocalVersionUnavailable, ex.Reason);
+            Assert.Contains("ffmpeg 本地版本查询失败", ex.Message);
+            // 回退路径确实被调用（未短路），且未发起下载。
+            Assert.Equal(1, runner.CallCount);
+            Assert.Equal(0, source.DownloadCount);
+        }
+        finally
+        {
+            Directory.Delete(dir, true);
+        }
+    }
+
+    [Fact]
+    public async Task UpdateFfmpeg_MarkerExistsButBinaryMissing_FallsBackToBinaryParsingAndRecovers()
+    {
+        var dir = NewTempDir();
+        try
+        {
+            // marker 残留但二进制缺失：回退二进制解析路径（版本命令成功 → 解析出 git 计数，
+            // 标度不一致不得短路）→ 正常下载替换并重写 marker，恢复自愈能力。
+            var ffmpegPath = Path.Combine(dir, "ffmpeg");
+            FfmpegVersionMarker.Write(ffmpegPath, ToolVersion.Parse("2026.08.17.13.29.26"));
+
+            var source = new StubToolSource("ffmpeg") { Latest = ToolVersion.Parse("2026.08.17.13.29.27") };
+            var runner = new StubRunner("ffmpeg version N-118503-g2b46d3311f");
+            var updater = new Updater(runner, new[] { source }, null, ffmpegPath);
+
+            var report = await updater.UpdateAsync(includeYtDlp: false, includeFfmpeg: true, null, CancellationToken.None);
+
+            var result = Assert.Single(report.Tools);
+            Assert.Equal(ToolUpdateStatus.Updated, result.Status);
+            Assert.Equal(1, source.DownloadCount);
+            Assert.True(FfmpegVersionMarker.TryRead(ffmpegPath, out var marked));
+            Assert.Equal(0, marked!.CompareTo(ToolVersion.Parse("2026.08.17.13.29.27")));
         }
         finally
         {
@@ -357,34 +420,44 @@ public class UpdaterShortCircuitTests
     }
 
     /// <summary>
-    /// 版本命令输出可配置的进程运行器桩。
-    /// </summary>
-    private sealed class StubRunner : IProcessRunner
-    {
-        /// <summary>
-        /// 初始化 <see cref="StubRunner"/>。
+        /// 版本命令输出可配置的进程运行器桩。
         /// </summary>
-        /// <param name="versionOutput">版本命令输出（默认 BtbN master git 计数格式）。</param>
-        public StubRunner(string? versionOutput = null)
+        private sealed class StubRunner : IProcessRunner
         {
-            VersionOutput = versionOutput ?? "ffmpeg version N-118503-g2b46d3311f";
+            /// <summary>
+            /// 初始化 <see cref="StubRunner"/>。
+            /// </summary>
+            /// <param name="versionOutput">版本命令输出（默认 BtbN master git 计数格式）。</param>
+            public StubRunner(string? versionOutput = null)
+            {
+                VersionOutput = versionOutput ?? "ffmpeg version N-118503-g2b46d3311f";
+            }
+
+            /// <summary>
+            /// 版本命令输出。
+            /// </summary>
+            public string VersionOutput { get; }
+
+            /// <summary>
+            /// 若设置，RunAsync 直接抛出该异常（模拟进程启动失败，如二进制缺失）。
+            /// </summary>
+            public Exception? RunException { get; set; }
+
+            /// <summary>
+            /// 被调用的次数。
+            /// </summary>
+            public int CallCount { get; private set; }
+
+            /// <inheritdoc />
+            public Task<ProcessOutput> RunAsync(string file, IReadOnlyList<string> args, string? workingDir, TimeSpan timeout, CancellationToken cancellationToken)
+            {
+                CallCount++;
+                if (RunException is not null)
+                {
+                    throw RunException;
+                }
+
+                return Task.FromResult(new ProcessOutput(0, VersionOutput, string.Empty));
+            }
         }
-
-        /// <summary>
-        /// 版本命令输出。
-        /// </summary>
-        public string VersionOutput { get; }
-
-        /// <summary>
-        /// 被调用的次数。
-        /// </summary>
-        public int CallCount { get; private set; }
-
-        /// <inheritdoc />
-        public Task<ProcessOutput> RunAsync(string file, IReadOnlyList<string> args, string? workingDir, TimeSpan timeout, CancellationToken cancellationToken)
-        {
-            CallCount++;
-            return Task.FromResult(new ProcessOutput(0, VersionOutput, string.Empty));
-        }
-    }
 }
