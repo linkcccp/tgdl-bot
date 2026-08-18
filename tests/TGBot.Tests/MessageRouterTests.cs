@@ -324,7 +324,13 @@ public class MessageRouterTests
         var router = Build(client, downloader, out _);
         await router.HandleAsync(Dm(1000, "https://example.com/v"), CancellationToken.None);
 
-        await Task.Delay(500);
+        // 入队是 fire-and-forget 后台任务：轮询等待 Queued 消息（CI 慢时固定延迟可能不足）
+        for (var i = 0; i < 50; i++)
+        {
+            if (client.Messages.Any(m => m.Text.Contains("已收到", StringComparison.Ordinal))) break;
+            await Task.Delay(100);
+        }
+
         Assert.Contains(client.Messages, m => m.Text.Contains("已收到", StringComparison.Ordinal));
         Assert.DoesNotContain(client.Messages, m => m.Text.Contains("请选择下载方式", StringComparison.Ordinal));
     }
@@ -514,9 +520,14 @@ public class MessageRouterCallbackTests
         };
         await router.HandleAsync(cb, CancellationToken.None);
 
+        // 入队与下载是 fire-and-forget 后台任务：轮询等待 Queued 消息与 Audios 全部就绪
+        //（CI 负载高时线程池调度可能延迟，固定等待会偶发失败，故与"已收到"同一模式轮询）
         for (var i = 0; i < 50; i++)
         {
-            if (client.Messages.Any(m => m.Text.Contains("已收到", StringComparison.Ordinal))) break;
+            var ack = client.Messages.Any(m => m.Text.Contains("已收到", StringComparison.Ordinal));
+            var flac = client.Audios.Any(a => a.FileName.EndsWith(".flac", StringComparison.Ordinal));
+            var mp3 = client.Audios.Any(a => a.FileName.EndsWith(".mp3", StringComparison.Ordinal));
+            if (ack && flac && mp3) break;
             await Task.Delay(100);
         }
 
