@@ -49,3 +49,21 @@ jobs:
       # 正常执行全部单元测试（真实网络/yt-dlp 的集成测试不可用时静默跳过）
       - name: Test
         run: dotnet test
+
+  # PR 标题格式校验：自动发版（auto-version workflow）依赖 PR 标题类型前缀计算
+  # SemVer 版本号，格式不合规的标题会导致版本类型误判，因此合并前必须校验。
+  # Dependabot 的 PR（标题 "Bump xxx from a to b"）跳过校验，自动版本逻辑按 chore 处理。
+  pr-title-check:
+    name: PR 标题格式校验（SemVer 发版依据）
+    if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR title prefix
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          echo "PR 标题: $TITLE"
+          if ! echo "$TITLE" | grep -qE '^(feat|fix|breaking|chore|docs)(\([^)]+\))?!?: '; then
+            echo "::error::PR 标题必须以类型前缀开头：breaking: / feat: / fix: / chore: / docs:（如 'feat: 支持 xxx'）——自动发版依赖标题类型"
+            exit 1
+          fi
