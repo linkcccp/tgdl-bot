@@ -109,6 +109,8 @@ yt-dlp 无此问题：本地 `--version` 与远端 tag 同为日期标度，可�
 
 **新增 xz 魔数校验（推荐，随源切换一并做）**：`DownloadBinaryAsync` 下载完成后、解压前读前 6 字节，须为 `fd377a585a00`，否则抛异常（归 `DownloadFailed`）。理由：与 CI（F9）防护一致，200 坏响应早失败、错误分类清晰；成本约 3 行。现有"解压失败/二进制执行失败"兜底保留（防御纵深）。不做 SHA-256 全量校验（BtbN 有 `checksums.sha256` 资产，但需额外请求且二进制执行校验已覆盖完整性语义）。
 
+> 备注（2026-08-19 线上修复）：解压走 `tar -xf`，GNU tar 解 `.tar.xz` 需调用外部 `xz` 命令——Dockerfile apt 层须安装 **`xz-utils`**（tar/gzip 为 Debian required 包，slim 自带），非 Docker 部署需系统安装 `xz-utils`。
+
 ### 3.5 职责划分（不重构）
 
 | 组件 | 职责 | 改动 |

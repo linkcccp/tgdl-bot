@@ -274,6 +274,7 @@ dotnet run --project tools/TgdlDocBuilder   # outputs to docs/, open docs/index.
   supported. The arm64 build side is verified (native arm64 runner build + native execution check
   of assets), **real-device runtime testing on ARM hardware is pending**
 - Files above the upload limit (~2GB) are fully downloaded before being rejected (direct-link sizes cannot be known in advance)
+- `/update` extracts ffmpeg (`.tar.xz`) and depends on the `xz` command: **the Docker image ships xz built-in**; non-Docker deployments (running locally) must install `xz-utils` on the host
 - URLs glued to adjacent Chinese text without a space cannot be reliably delimited; separate them with spaces
 - The prebuilt telegram-bot-api binary depends on Releases of the fork (`linkcccp/telegram-bot-api`);
   the fork's `auto-sync` workflow periodically syncs upstream and rebuilds/releases

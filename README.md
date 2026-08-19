@@ -263,6 +263,7 @@ dotnet run --project tools/TgdlDocBuilder   # 输出到 docs/，打开 docs/inde
   架构拉取）；不支持 armv7/32 位。arm64 构建侧已验证（原生 arm64 runner 构建 + 资产原生执行校验），
   **真实运行待 ARM 设备实测**
 - 超过上传上限（约 2GB）的文件会先完整下载再被拒绝（直链大小不可预知）
+- `/update` 解压 ffmpeg（.tar.xz）依赖 `xz` 命令：**Docker 镜像已内置 xz**；非 Docker 部署（本地直接运行）需系统安装 `xz-utils`
 - 紧贴中文且无空格分隔的 URL 无法可靠识别边界，请以空格分隔
 - telegram-bot-api 预编译二进制依赖 fork（`linkcccp/telegram-bot-api`）的 Release；
   fork 的 `auto-sync` 工作流会定时同步上游并自动构建发布

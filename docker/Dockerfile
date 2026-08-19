@@ -20,9 +20,11 @@ ARG DISTARCH=x64
 #   libssl3/zlib1g -> telegram-bot-api 动态链接所需
 #   curl/ca-certificates -> HEALTHCHECK 与 HTTPS
 #   passwd      -> useradd（构建用户）
+#   xz-utils    -> /update 解压 BtbN ffmpeg 的 .tar.xz（GNU tar 解 xz 需调用外部 xz 命令，
+#                  缺失会报 "tar (child): xz: Cannot exec"）；tar/gzip 为 Debian required 包，slim 自带
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        python3 libssl3 zlib1g curl ca-certificates passwd unzip \
+        python3 libssl3 zlib1g curl ca-certificates passwd unzip xz-utils \
     && rm -rf /var/lib/apt/lists/* \
     && useradd --system --no-create-home --uid 10001 tgdl-bot
 
