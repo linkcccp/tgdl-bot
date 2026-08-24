@@ -36,7 +36,7 @@ jobs:
       # 1) 找本次 push 关联的已合并 PR，解析类型（SemVer 递增依据）。
       #    类型识别用正则而非字符串包含（feat: 不误判 feature；支持 scope 形式）；
       #    常规前缀 + `!`（conventional commits breaking 标记）一律按 breaking。
-      - uses: actions/github-script@v7
+      - uses: actions/github-script@v9
         id: prinfo
         with:
           script: |
