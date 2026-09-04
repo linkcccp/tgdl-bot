@@ -53,7 +53,7 @@ fails **CI** and cannot be merged; see "版本与发布 / Versioning & Releases"
 - [ ] 基于 `main` 创建分支（`feat/*` / `fix/*` / `chore/*`）/ Branch created from `main`
 - [ ] `dotnet build -c Release` 通过且 **0 警告** / passes with **0 warnings**
 - [ ] `dotnet test` 全部通过（集成测试网络不可用时静默跳过）/ all tests pass (integration tests skip silently when network is unavailable)
-- [ ] 新增功能/修复已配套测试（共享 fakes 位于 `tests/TGBot.Tests/MessageRouterTests.cs`）/ new features/fixes covered by tests (shared fakes live in `tests/TGBot.Tests/MessageRouterTests.cs`)
+- [ ] 新增功能/修复已配套测试（共享 fakes 位于 `TGBot.Tests/MessageRouterTests.cs`）/ new features/fixes covered by tests (shared fakes live in `TGBot.Tests/MessageRouterTests.cs`)
 - [ ] 合并采用 **squash** 到 `main`（单条提交，信息符合 `feat:`/`fix:`/`docs:`/`test:`/`chore:` 规范）/ ready to be squash-merged into `main`
 - [ ] 行为/配置变更已同步文档：`docker/.env.example`、`docker/config.conf.example`、README（中/英）、CHANGELOG（如需）/ docs synced for behavior/config changes (`.env.example`, `config.conf.example`, README zh/en, CHANGELOG if needed)
 - [ ] 目标分支为 `main`（CI 必须全绿 + 至少 1 人审查）/ PR targets `main` (CI green + at least 1 review)

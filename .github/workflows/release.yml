@@ -116,7 +116,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p "docker/dist/${{ matrix.distarch }}"
-          dotnet publish src/TGBot/TGBot.csproj -c Release -r "${{ matrix.dotnet-rid }}" --self-contained true -p:PublishSingleFile=true -p:Version=${VERSION} -o "$RUNNER_TEMP/publish/${{ matrix.distarch }}"
+          dotnet publish TGBot/TGBot.csproj -c Release -r "${{ matrix.dotnet-rid }}" --self-contained true -p:PublishSingleFile=true -p:Version=${VERSION} -o "$RUNNER_TEMP/publish/${{ matrix.distarch }}"
           cp "$RUNNER_TEMP/publish/${{ matrix.distarch }}/tgdl-bot" "docker/dist/${{ matrix.distarch }}/tgdl-bot"
 
       - name: Download ffmpeg (静态 ${{ matrix.distarch }})

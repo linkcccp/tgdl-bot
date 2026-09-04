@@ -14,7 +14,7 @@ permission:
 - 部署：维护 `scripts/install.sh`（`curl|sudo bash` → 装/用 Docker → pull → 启动 → `docker image prune -f` 清悬空镜像）。
 - 配置模板：维护 `docker/docker-entrypoint.sh`（由 `TGDL_*` 环境变量生成 `config.conf`，若挂载文件则跳过）、`docker/.env.example`、`docker/config.conf.example`；**新增配置键时必须与 `AppConfig`/`ConfigParser` 同步**。
 - Cookie 持久化：默认 `/opt/tgdl-bot/api-data/cookies`（`tgdl-data` 卷内，v2.3.1 起，pull 重建不丢）。**勿改回 `/opt/tgdl-bot/cookies`**（早期安装非卷，会丢）。
-- 发布：`dotnet publish src/TGBot/TGBot.csproj -c Release -r linux-x64 --self-contained true -p:PublishSingleFile=true -o <dir>`。
+- 发布：`dotnet publish TGBot/TGBot.csproj -c Release -r linux-x64 --self-contained true -p:PublishSingleFile=true -o <dir>`。
 - 依赖审计：`dotnet list TGBot.slnx package --vulnerable` 检查供应链漏洞。
 
 ## 约定

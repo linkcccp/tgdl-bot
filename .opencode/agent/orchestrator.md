@@ -39,7 +39,7 @@ permission:
 1. 接收用户需求，明确目标、范围与约束。
 2. 按大厂开发流程拆解任务，通过 Task 工具调用子 agent：
    - `architect`：技术设计、配置键/接口/模块契约设计、ADR 产出（复杂功能/新配置/新接口前先调用）
-   - `developer`：`src/TGBot` 各模块实现（Config/Logging/Security/Access/Download/Update/Messaging/Application/Cookie/Texts）、yt-dlp 集成、配置新增完整链路
+   - `developer`：`TGBot` 各模块实现（Config/Logging/Security/Access/Download/Update/Messaging/Application/Cookie/Texts）、yt-dlp 集成、配置新增完整链路
    - `qa`：测试编写与验收
    - `code-reviewer`：代码审查（规范/注释/SOLID/安全/性能）
    - `docs`：docfx API 文档生成与一致性核对

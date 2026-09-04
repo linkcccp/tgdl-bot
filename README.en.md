@@ -37,7 +37,7 @@ the **local Bot API Server (--local mode)**, supporting uploads up to **~2GB**.
 ## Architecture Overview
 
 ```
-src/TGBot/
+TGBot/
 ├── Config/       config.conf parsing and validation
 ├── Logging/      leveled logging (console + optional file)
 ├── Security/     URL/SSRF validation, path sanitization, temp dir management, disk checks
@@ -48,7 +48,7 @@ src/TGBot/
 ├── Application/  message routing, download coordination, command handling, bot long-polling host, entry point
 └── Texts/        user-facing text messages (i18n: en/zh)
 
-tests/TGBot.Tests/   xUnit unit tests + real yt-dlp integration tests
+TGBot.Tests/   xUnit unit tests + real yt-dlp integration tests
 docker/              Dockerfile, docker-entrypoint.sh, compose.yaml, .env.example
 scripts/install.sh   one-command Docker deployment
 third_party/         telegram-bot-api submodule (source reference; not built by CI)
@@ -221,7 +221,7 @@ After a link is sent, the bot probes the content and picks the download method a
 
 ```bash
 dotnet restore && dotnet test
-dotnet publish src/TGBot/TGBot.csproj -c Release -r linux-x64 --self-contained true -p:PublishSingleFile=true -o publish/linux-x64
+dotnet publish TGBot/TGBot.csproj -c Release -r linux-x64 --self-contained true -p:PublishSingleFile=true -o publish/linux-x64
 ./publish/linux-x64/tgdl-bot --config ./config.conf --smoke-test 8    # local self-check (no network)
 ```
 
@@ -261,11 +261,12 @@ git tag v2.0.0 && git push origin v2.0.0
 
 ```bash
 dotnet tool install --global docfx
-dotnet run --project tools/TgdlDocBuilder   # outputs to docs/, open docs/index.html; see --help for options
+dotnet run --project TGBot.Docfx           # outputs to TGBot.Docfx/_site/
+docfx build TGBot.Docfx/docfx.json --serve -p 8080 --open-browser  # local preview
 ```
 
-> On macOS/Linux with a custom dotnet installation (e.g. `$HOME/dotnet`), run
-> `export DOTNET_ROOT=$HOME/dotnet` first (docfx needs the aspnetcore runtime).
+> On macOS/Linux with custom dotnet installation (e.g. `$HOME/dotnet`), run `export DOTNET_ROOT=$HOME/dotnet` first
+> (docfx needs the aspnetcore runtime).
 
 ## Known Limitations & Unverified Items
 

@@ -8,28 +8,28 @@
 
 ### 1.1 目标
 
-用 C# 编写的独立工具 `tools/TgdlDocBuilder/` 替代 `build-docs.sh`（bash），实现 **Windows / macOS / Linux 三平台同一条命令**生成 API 文档：
+用 C# 编写的独立工具 `TGBot.Docfx/` 替代 `build-docs.sh`（bash），实现 **Windows / macOS / Linux 三平台同一条命令**生成 API 文档：
 
 ```bash
-dotnet run --project tools/TgdlDocBuilder
+dotnet run --project TGBot.Docfx
 ```
 
-- 输出目录不变：`docs/`（docfx build 输出）+ `docfx/api/`（docfx metadata 输出）。
+- 输出目录不变：`docs/`（docfx build 输出）+ `TGBot.Docfx/api/`（docfx metadata 输出）。
 - 保持 0 警告硬门槛（`--warningsAsErrors`）。
 - 解决既有四个已知坑（见 §2）。
 
 ### 1.2 验收标准
 
-1. 三平台（Windows / macOS / Linux）各自执行 `dotnet run --project tools/TgdlDocBuilder`，退出码 0，`docs/index.html` 生成，docfx 输出 0 警告。
+1. 三平台（Windows / macOS / Linux）各自执行 `dotnet run --project tools/TGBot.Docfx`，退出码 0，`docs/index.html` 生成，docfx 输出 0 警告。
 2. docfx 未安装时，工具输出安装指引并以**非零退出码**结束。
-3. 连续执行两次（增量场景）结果一致，`docfx/api/` 下 yml 时间戳正确刷新（无增量缓存残留问题）。
+3. 连续执行两次（增量场景）结果一致，`TGBot.Docfx/api/` 下 yml 时间戳正确刷新（无增量缓存残留问题）。
 4. `build-docs.sh` 删除后，仓库内无任何指向它的引用残留（README / README.en / CONTRIBUTING / AGENTS.md / .opencode/* 同步完成）。
 
 ### 1.3 范围
 
 | 做 | 不做 |
 | --- | --- |
-| `tools/TgdlDocBuilder` 工具项目（publish + 缓存清理 + docfx build 编排） | `scripts/install.sh` 平台化（保持 Linux 部署脚本） |
+| `tools/TGBot.Docfx` 工具项目（publish + 缓存清理 + docfx build 编排） | `scripts/install.sh` 平台化（保持 Linux 部署脚本） |
 | `build-docs.sh` 删除 + 文档命令同步（§7 文件清单） | `/update` 资产平台化 |
 | docfx 缺失时的安装指引与退出码 | CI 接入文档 job（文档构建不在 release.yml 流程内，本次不引入 CI 改动） |
 | ADR 0005 决策记录 | 工具单测项目（§8） |
@@ -48,14 +48,14 @@ dotnet run --project tools/TgdlDocBuilder
 ### 3.1 项目结构
 
 ```
-tools/TgdlDocBuilder/
-├── TgdlDocBuilder.csproj
+TGBot.Docfx/
+├── TGBot.Docfx.csproj
 └── Program.cs          # 入口：参数解析 + 四步编排（含 internal 辅助类）
 ```
 
 工具逻辑薄（约 120–180 行），**单文件 `Program.cs` 承载**（顶层语句 + internal static 类），不拆多文件。
 
-#### `TgdlDocBuilder.csproj`（全文）
+#### `TGBot.Docfx.csproj`（全文）
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -92,7 +92,7 @@ tools/TgdlDocBuilder/
 internal static class DocBuilder：
   static int Main(string[] args)
     - 解析参数：--help/-h、--skip-publish、--keep-cache（手写循环，未知参数报错+提示 --help，返回 1）
-    - FindRepoRoot()：从 Environment.CurrentDirectory 向上逐级查找 docfx/docfx.json
+    - FindRepoRoot()：从 Environment.CurrentDirectory 向上逐级查找 TGBot.Docfx/docfx.json
         · 找到 → 仓库根
         · 找不到 → stderr 输出"请在仓库根目录或子目录运行"，返回 1
     - 若 --help：打印用法（含 docfx 安装指引与 DOTNET_ROOT 说明），返回 0
@@ -106,11 +106,11 @@ internal static class DocBuilder：
 ### 3.2 执行流程编排（四步）
 
 ```
-┌─ 解析参数 / 定位仓库根（向上找 docfx/docfx.json）
+┌─ 解析参数 / 定位仓库根（向上找 TGBot.Docfx/docfx.json）
 ├─ ① 检查 docfx 可用性 → ResolveDocfxCommand()：缺失 → 安装指引 + 退出码 1
 ├─ ② 清理增量缓存 → rm -rf src/TGBot/obj/docfx（跨平台；--keep-cache 跳过）
 ├─ ③ publish 生成 XML 文档 → dotnet publish … -o <临时目录>（不带 --no-restore；--skip-publish 跳过）
-└─ ④ docfx build → docfx build docfx/docfx.json --warningsAsErrors（工作目录=仓库根，实时透传）
+└─ ④ docfx build → docfx build TGBot.Docfx/docfx.json --warningsAsErrors（工作目录=仓库根，实时透传）
     成功 → 打印"文档已生成到 docs/，打开 docs/index.html 查看"，返回 0
 ```
 
@@ -149,7 +149,7 @@ internal static class DocBuilder：
 
 - `ProcessStartInfo`：
   - `FileName` = 解析到的命令（`docfx` 或 `dotnet docfx`）
-  - `ArgumentList`：`build`、`docfx/docfx.json`、`--warningsAsErrors`（`ArgumentList` 自动处理含空格路径，无注入面）
+  - `ArgumentList`：`build`、`TGBot.Docfx/docfx.json`、`--warningsAsErrors`（`ArgumentList` 自动处理含空格路径，无注入面）
   - `WorkingDirectory` = 仓库根
   - **不重定向 stdout/stderr**（`UseShellExecute=false` 默认继承控制台）：输出实时透传、保留 docfx 颜色、无管道死锁风险。这是比"重定向 + 异步读"更简单可靠的实时方案。
 - 退出码：非零 → 工具返回 docfx 的退出码（可诊断性优于统一返回 1）；零 → 打印成功提示。
@@ -183,7 +183,7 @@ internal static class DocBuilder：
 
 ### 4.7 仓库根定位
 
-- 从 `Environment.CurrentDirectory` 向上逐级查找 `docfx/docfx.json`，命中即仓库根。
+- 从 `Environment.CurrentDirectory` 向上逐级查找 `TGBot.Docfx/docfx.json`，命中即仓库根。
 - 与 build-docs.sh 的 `cd "$(dirname "$0")"`（定位脚本自身）不同：C# 工具的 `AppContext.BaseDirectory` 是编译输出目录（不可靠），向上查找实现简单且允许从仓库任意子目录运行。
 - 找不到时报错并提示"请在仓库根目录或子目录运行"，返回 1。
 
@@ -193,11 +193,11 @@ internal static class DocBuilder：
 
 1. **隔离主构建/测试/CI**：`TGBot.slnx` 是 `dotnet build` / `dotnet test` / CI 的入口；工具入 slnx 后每次主构建都会被牵连（新目标框架、警告门槛、构建时长），与"不影响主链路"的目标相悖。
 2. **零依赖自包含**：工具无 PackageReference，不需要 slnx 管理依赖图。
-3. **工具只在文档构建场景使用**：`dotnet run --project tools/TgdlDocBuilder` 直接指定项目路径即可，IDE 可见性非必需。
+3. **工具只在文档构建场景使用**：`dotnet run --project TGBot.Docfx` 直接指定项目路径即可，IDE 可见性非必需。
 
 代价与缓解：
 
-- 工具编译错误不会被主 CI 捕获。缓解：文档 agent 每次运行工具即触发编译（`dotnet run` 含 build）；dev 合流验证时 developer 顺手 `dotnet build tools/TgdlDocBuilder` 确认编译 0 警告（写入 §9 实现要点）。
+- 工具编译错误不会被主 CI 捕获。缓解：文档 agent 每次运行工具即触发编译（`dotnet run` 含 build）；dev 合流验证时 developer 顺手 `dotnet build TGBot.Docfx` 确认编译 0 警告（写入 §9 实现要点）。
 
 ## 6. CI 影响
 
@@ -207,7 +207,7 @@ internal static class DocBuilder：
 ## 7. build-docs.sh 处置与文档同步（developer/devops 实现工作）
 
 - **删除** `build-docs.sh`（单一入口，避免双脚本漂移）。
-- 同步文件清单（命令替换为 `dotnet run --project tools/TgdlDocBuilder`）：
+- 同步文件清单（命令替换为 `dotnet run --project TGBot.Docfx`）：
 
 | 文件 | 位置 | 改动 |
 | --- | --- | --- |
@@ -217,7 +217,7 @@ internal static class DocBuilder：
 | `AGENTS.md` | 命令段（L23） | 命令替换 + DOTNET_ROOT 说明 + 新增 tools/ 说明（0 警告门槛界定：编译 0 警告；XML 注释不强制） |
 | `.opencode/agent/docs.md` | description（L2）+ 正文（L12） | 命令替换 |
 | `.opencode/command/doc.md` | L6 | 命令替换 |
-| `docfx/index.md` | "构建文档"（L22–23） | 替换为工具命令（docfx 站点内指引保持一致） |
+| `TGBot.Docfx/index.md` | "构建文档"（L22–23） | 替换为工具命令（docfx 站点内指引保持一致） |
 
 - **不改**：`CHANGELOG.md`（历史记录）、`docs/design-internationalization.md`（历史设计文档）、`docs/history/*`（工作日志）。
 
@@ -228,28 +228,28 @@ internal static class DocBuilder：
 1. 工具是薄编排（进程调用 + 目录删除），核心风险在"编排顺序"与"环境差异"，单测需 mock 进程/文件系统，成本高于收益；
 2. 主项目 0 警告门槛与测试基建（xunit 分析器）是为 TGBot 发布产物服务的，工具不适用；
 3. 三平台人工验收（下述）已覆盖核心风险面。
-4. 若未来工具逻辑复杂化（如解析 docfx 输出、多参数矩阵），再补 `tools/TgdlDocBuilder.Tests`。
+4. 若未来工具逻辑复杂化（如解析 docfx 输出、多参数矩阵），再补 `TGBot.Docfx.Tests`。
 
 ### 人工验收步骤（每平台执行）
 
 | 步骤 | 命令 | 预期 |
 | --- | --- | --- |
-| 1. 干净环境 | `dotnet run --project tools/TgdlDocBuilder` | 退出码 0；`docs/index.html` 存在；无 docfx 警告输出 |
-| 2. 增量重跑 | 再次执行同一命令 | 退出码 0；`docfx/api/TGBot.*.yml` 时间戳刷新 |
+| 1. 干净环境 | `dotnet run --project TGBot.Docfx` | 退出码 0；`docs/index.html` 存在；无 docfx 警告输出 |
+| 2. 增量重跑 | 再次执行同一命令 | 退出码 0；`TGBot.Docfx/api/TGBot.*.yml` 时间戳刷新 |
 | 3. 缺 docfx | `PATH` 剔除 docfx 后执行 | 安装指引输出；退出码非 0 |
 | 4. 参数 | `--help` / `--skip-publish` / `--keep-cache` | 各自按 §4.6 行为工作 |
 | 5. 文档一致性 | 对照 §7 清单 | 无 build-docs.sh 引用残留（`grep -r build-docs` 空） |
 
 ## 9. 给 developer 的实现要点
 
-1. 新建 `tools/TgdlDocBuilder/TgdlDocBuilder.csproj`（§3.1 全文）+ `Program.cs`（§3.1 结构契约）。
+1. 新建 `TGBot.Docfx/TGBot.Docfx.csproj`（§3.1 全文）+ `Program.cs`（§3.1 结构契约）。
 2. 四步编排严格按 §3.2 顺序：**docfx 检测 → 清缓存 → publish → docfx build**；publish 不带 `--no-restore`。
 3. 进程调用一律 `ProcessStartInfo.ArgumentList`（无 shell、无注入）；输出不重定向（继承控制台）。
 4. docfx 回退链 `docfx` → `dotnet docfx`（§4.1）；缺失时输出安装指引返回 1。
 5. 缓存清理：先递归清 `ReadOnly` 属性再 `Directory.Delete(recursive:true)`，失败仅警告（§4.2）。
 6. 工具编译须 0 警告；不要求 XML 注释（§3.1）。
 7. 完成后执行 §7 文件清单同步并删除 `build-docs.sh`；`grep -r "build-docs"` 确认无残留。
-8. 提交前本机验证 §8 步骤 1–2（含 `dotnet build tools/TgdlDocBuilder` 编译确认）。
+8. 提交前本机验证 §8 步骤 1–2（含 `dotnet build TGBot.Docfx` 编译确认）。
 
 ## 10. 不做的边界（明确）
 

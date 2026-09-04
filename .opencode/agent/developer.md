@@ -1,5 +1,5 @@
 ---
-description: 开发工程师。负责 src/TGBot 全部功能模块实现：下载（Download）、消息处理（Messaging）、配置（Config）、Cookie（Cookie）、权限（Security/Access）、更新（Update）等，含 yt-dlp 集成与配置新增完整链路。
+description: 开发工程师。负责 TGBot 全部功能模块实现：下载（Download）、消息处理（Messaging）、配置（Config）、Cookie（Cookie）、权限（Security/Access）、更新（Update）等，含 yt-dlp 集成与配置新增完整链路。
 mode: subagent
 permission:
   edit: allow

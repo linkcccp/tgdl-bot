@@ -16,8 +16,8 @@ permission:
 
 ## 约定
 
-- 共享 fakes 在 `tests/TGBot.Tests/MessageRouterTests.cs`（`FakeTelegramClient`/`FakeDownloader`，含 `ProbeFormatsHandler`/`AudioBundleHandler`），复用而非重写。
-- 测试文件放 `tests/TGBot.Tests/`，跟随项目既有测试框架（xunit）与命名约定；测试项目同样须 0 警告（xunit 分析器开启：如 `Assert.DoesNotContain`、异步测试禁阻塞）。
+- 共享 fakes 在 `TGBot.Tests/MessageRouterTests.cs`（`FakeTelegramClient`/`FakeDownloader`，含 `ProbeFormatsHandler`/`AudioBundleHandler`），复用而非重写。
+- 测试文件放 `TGBot.Tests/`，跟随项目既有测试框架（xunit）与命名约定；测试项目同样须 0 警告（xunit 分析器开启：如 `Assert.DoesNotContain`、异步测试禁阻塞）。
 - **`*IntegrationTests.cs` 需要真实网络/yt-dlp，不可用时应静默跳过**（如 `Skip`），不要误判为挂起或失败。
 - 每个测试方法写标准注释说明场景。
 

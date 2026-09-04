@@ -8,3 +8,11 @@ artifacts/
 *.log
 *.tmp
 docker/dist/
+
+# docfx generated files
+TGBot.Docfx/api/*.yml
+TGBot.Docfx/api/toc.yml
+TGBot.Docfx/index.md
+TGBot.Docfx/_site/
+
+TGBot.Docfx/api/.manifest

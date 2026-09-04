@@ -36,7 +36,7 @@ bot 界面支持**中英双语**：默认跟随用户的 Telegram 语言设置�
 ## 架构概览
 
 ```
-src/TGBot/
+TGBot/
 ├── Config/       config.conf 解析与校验（中英双语错误提示）
 ├── Logging/      分级日志（控制台 + 可选文件）
 ├── Security/     URL/SSRF 校验、路径净化、临时目录管理、磁盘检查
@@ -47,7 +47,7 @@ src/TGBot/
 ├── Application/  消息路由、下载协调、指令处理、bot 长轮询宿主、入口
 └── Texts/        面向用户的双语文案（i18n：en/zh）
 
-tests/TGBot.Tests/   xUnit 单元测试 + 真实 yt-dlp 集成测试
+TGBot.Tests/   xUnit 单元测试 + 真实 yt-dlp 集成测试
 docker/              Dockerfile、docker-entrypoint.sh、compose.yaml、.env.example
 scripts/install.sh   一条命令 Docker 部署
 third_party/         telegram-bot-api 子项目（submodule，源码参考；CI 不检出/构建）
@@ -221,7 +221,7 @@ YouTube 默认启用多 player_client（`TGDL_YTDLP_PLAYER_CLIENTS=android,ios,w
 
 ```bash
 dotnet restore && dotnet test
-dotnet publish src/TGBot/TGBot.csproj -c Release -r linux-x64 --self-contained true -p:PublishSingleFile=true -o publish/linux-x64
+dotnet publish TGBot/TGBot.csproj -c Release -r linux-x64 --self-contained true -p:PublishSingleFile=true -o publish/linux-x64
 ./publish/linux-x64/tgdl-bot --config ./config.conf --smoke-test 8    # 本地自检（不连接网络）
 ```
 
@@ -260,7 +260,8 @@ git tag v2.0.0 && git push origin v2.0.0
 
 ```bash
 dotnet tool install --global docfx
-dotnet run --project tools/TgdlDocBuilder   # 输出到 docs/，打开 docs/index.html；--help 查看参数
+dotnet run --project TGBot.Docfx           # 输出到 TGBot.Docfx/_site/
+docfx build TGBot.Docfx/docfx.json --serve -p 8080 --open-browser  # 本地预览
 ```
 
 > macOS/Linux 使用自定义 dotnet 安装（如 `$HOME/dotnet`）时，先执行 `export DOTNET_ROOT=$HOME/dotnet`
