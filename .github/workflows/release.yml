@@ -227,19 +227,6 @@ jobs:
           echo "VERSION=${{ needs.check.outputs.version }}" >> "$GITHUB_ENV"
           echo "TAG=${{ needs.check.outputs.tag }}" >> "$GITHUB_ENV"
 
-      # 获取上一个 tag
-      - name: Get previous tag
-        id: prev_tag
-        shell: bash
-        run: |
-          # 获取当前 tag 之前的上一个 tag
-          PREV_TAG=$(git tag --sort=-v:refname | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | sed -n '2p')
-          if [ -z "$PREV_TAG" ]; then
-            # 如果没有上一个 tag，使用第一个 commit
-            PREV_TAG=$(git rev-list --max-parents=0 HEAD | head -1)
-          fi
-          echo "prev_tag=$PREV_TAG" >> "$GITHUB_OUTPUT"
-
       # 安装 git-cliff
       - name: Install git-cliff
         shell: bash
@@ -251,10 +238,8 @@ jobs:
         id: changelog
         shell: bash
         run: |
-          # 生成从上一个 tag 到当前 tag 的 changelog
-          git cliff "${{ steps.prev_tag.outputs.prev_tag }}..${TAG}" \
-            --tag "${TAG}" \
-            -o CHANGELOG_RELEASE.md
+          # 生成 changelog（不指定范围，让 git-cliff 自动从完整历史生成）
+          git cliff --tag "${TAG}" -o CHANGELOG_RELEASE.md
           
           # 读取生成的 changelog
           CHANGELOG=$(cat CHANGELOG_RELEASE.md)
