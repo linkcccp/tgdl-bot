@@ -252,9 +252,8 @@ jobs:
         shell: bash
         run: |
           # 生成从上一个 tag 到当前 tag 的 changelog
-          git cliff --tag "${TAG}" \
-            --from "${{ steps.prev_tag.outputs.prev_tag }}" \
-            --to "${TAG}" \
+          git cliff "${{ steps.prev_tag.outputs.prev_tag }}..${TAG}" \
+            --tag "${TAG}" \
             -o CHANGELOG_RELEASE.md
           
           # 读取生成的 changelog
