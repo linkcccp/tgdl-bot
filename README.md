@@ -158,6 +158,15 @@ cd /opt/tgdl-bot && sudo docker compose pull && sudo docker compose up -d && sud
   curl -fsSL https://raw.githubusercontent.com/linkcccp/tgdl-bot/main/scripts/install.sh | sudo bash
   ```
 
+### ⚠️ 注意：yt-dlp/ffmpeg 版本说明
+
+每次容器启动时，`yt-dlp` 和 `ffmpeg` 会被镜像内置版本覆盖。这意味着：
+
+- **优点**：每次 `docker compose pull && up -d` 后，你会自动获得最新的内置版本
+- **注意**：如果你通过 `/update` 命令更新了 yt-dlp/ffmpeg，下次容器重启后会被覆盖回内置版本
+
+如需使用自定义版本，请在容器启动后重新执行 `/update` 命令。
+
 ## 解决站点机器人检测（bot 内上传 cookies）
 
 某些站点（如 YouTube）会要求登录确认，bot 会**快速失败**并提示需要 cookies（不再空转重试）。

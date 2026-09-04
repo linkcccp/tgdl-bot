@@ -1,10 +1,12 @@
 name: CI
 
-# PR/推送校验 CI：任何开发分支的推送与面向 main/dev 的 PR 都需通过
-# 构建（0 警告硬门槛）与测试，保证合并前质量。
+# 全面覆盖：任何代码变更（分支 push、tag push、PR）都必须通过 CI 验证。
+# 构建（0 警告硬门槛）与测试保证代码质量，PR 标题校验作为代码规范。
 on:
-  push:          # 所有分支 + 所有 tag
-  pull_request:  # 所有 PR
+  push:
+    # 不限分支 = 所有分支 + 所有 tag
+  pull_request:
+    # 不限分支 = 所有 PR
 
 # 权限最小化：CI 只读仓库内容，构建与测试不产生任何外部写入。
 permissions:
@@ -42,11 +44,11 @@ jobs:
       - name: Test
         run: dotnet test
 
-  # PR 标题格式校验：自动发版（auto-version workflow）依赖 PR 标题类型前缀计算
-  # SemVer 版本号，格式不合规的标题会导致版本类型误判，因此合并前必须校验。
-  # Dependabot 的 PR（标题 "Bump xxx from a to b"）跳过校验，自动版本逻辑按 chore 处理。
+  # PR 标题格式校验：作为代码规范保留，即使不用于自动版本计算。
+  # 格式不合规的标题会导致合并，因此合并前必须校验。
+  # Dependabot 的 PR（标题 "Bump xxx from a to b"）跳过校验。
   pr-title-check:
-    name: PR 标题格式校验（SemVer 发版依据）
+    name: PR 标题格式校验
     if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
@@ -56,6 +58,6 @@ jobs:
         run: |
           echo "PR 标题: $TITLE"
           if ! echo "$TITLE" | grep -qE '^(feat|fix|breaking|chore|docs)(\([^)]+\))?!?: '; then
-            echo "::error::PR 标题必须以类型前缀开头：breaking: / feat: / fix: / chore: / docs:（如 'feat: 支持 xxx'）——自动发版依赖标题类型"
+            echo "::error::PR 标题必须以类型前缀开头：breaking: / feat: / fix: / chore: / docs:（如 'feat: 支持 xxx'）"
             exit 1
           fi

@@ -1,14 +1,14 @@
 name: Release
 
+# 使用 workflow_run 监听 CI 完成，只有 CI 成功且由 tag push 触发时才执行发布。
+# 这确保了：
+# 1. 代码质量（CI 成功）后才发布
+# 2. 只有 tag push 才触发发布（PR/分支 push 不会误触发）
+# 3. 维护者通过打 tag 完全控制发版时机
 on:
   workflow_run:
     workflows: ["CI"]
     types: [completed]
-
-# 防止快速连续打 tag 导致 release 并发执行；已开始的 release 不取消
-concurrency:
-  group: release
-  cancel-in-progress: false
 
 # 需要写权限以创建 Release 与推送 GHCR 包。
 # 权限已通过下方 permissions 显式声明（contents: write + packages: write）。
@@ -19,29 +19,49 @@ permissions:
   contents: write
   packages: write
 
+# 防并发竞态：多个 tag 快速推送时排队处理，避免 Release 并发执行。
+# cancel-in-progress: false —— 已开始的 Release 必须跑完（推送镜像/创建 Release 是持久副作用）。
+concurrency:
+  group: release
+  cancel-in-progress: false
+
 jobs:
+  # 条件检查：仅在 CI 成功且由 tag push 触发时才继续后续 job
   check:
-    name: Check release conditions
+    name: Check trigger condition
     runs-on: ubuntu-latest
-    if: github.event.workflow_run.conclusion == 'success'
     outputs:
       should_release: ${{ steps.check.outputs.should_release }}
       version: ${{ steps.check.outputs.version }}
       tag: ${{ steps.check.outputs.tag }}
     steps:
-      - name: Check if tag push triggered CI
+      - name: Check if CI succeeded and triggered by tag push
         id: check
-        env:
-          HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
+        shell: bash
         run: |
-          # 检查 CI 是否由 tag push 触发（通过 env 传入，避免 shell 注入）
-          if [[ "$HEAD_BRANCH" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "should_release=true" >> "$GITHUB_OUTPUT"
-            echo "tag=$HEAD_BRANCH" >> "$GITHUB_OUTPUT"
-            echo "version=${HEAD_BRANCH#v}" >> "$GITHUB_OUTPUT"
-          else
+          # 检查 CI 是否成功
+          if [ "${{ github.event.workflow_run.conclusion }}" != "success" ]; then
+            echo "CI did not succeed (conclusion: ${{ github.event.workflow_run.conclusion }}), skipping release"
             echo "should_release=false" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
+
+          # 检查是否由 tag push 触发（head_branch 以 v 开头）
+          HEAD_BRANCH="${{ github.event.workflow_run.head_branch }}"
+          if [[ ! "$HEAD_BRANCH" =~ ^v ]]; then
+            echo "Not triggered by tag push (head_branch: $HEAD_BRANCH), skipping release"
+            echo "should_release=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # 提取版本号（去掉 v 前缀）
+          VERSION="${HEAD_BRANCH#v}"
+          echo "Tag: $HEAD_BRANCH"
+          echo "Version: $VERSION"
+          echo "should_release=true" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=$HEAD_BRANCH" >> "$GITHUB_OUTPUT"
+
   # 双架构构建：matrix 按 distarch（自命名 x64/arm64）拆两个 job。
   #   x64   -> ubuntu-latest（x86_64 原生 runner），platform 标准串 linux/amd64（amd64 即 x64）
   #   arm64 -> ubuntu-24.04-arm（GitHub 官方免费 ARM 原生 runner，public 仓库可用），
@@ -74,16 +94,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.check.outputs.tag }}
+          fetch-depth: 0
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '10.0.x'
 
-      - name: Resolve version
+      - name: Set version env
         shell: bash
-        run: |
-          echo "VERSION=${{ needs.check.outputs.version }}" >> "$GITHUB_ENV"
+        run: echo "VERSION=${{ needs.check.outputs.version }}" >> "$GITHUB_ENV"
 
       # telegram-bot-api 预编译二进制来自 fork（linkcccp/telegram-bot-api）：
       # fork 由 auto-sync 工作流自动同步上游并构建发布到其 Release。
@@ -190,7 +212,7 @@ jobs:
           file: docker/Dockerfile
           platforms: ${{ matrix.platform }}
           push: true
-          tags: ghcr.io/linkcccp/tgdl-bot:${{ needs.check.outputs.version }}-${{ matrix.distarch }}
+          tags: ghcr.io/linkcccp/tgdl-bot:${{ env.VERSION }}-${{ matrix.distarch }}
           build-args: |
             DISTARCH=${{ matrix.distarch }}
 
@@ -200,7 +222,7 @@ jobs:
         if: matrix.distarch == 'x64'
         shell: bash
         run: |
-          docker run --rm --entrypoint bash "ghcr.io/linkcccp/tgdl-bot:${{ needs.check.outputs.version }}-${{ matrix.distarch }}" -c '
+          docker run --rm --entrypoint bash "ghcr.io/linkcccp/tgdl-bot:${{ env.VERSION }}-${{ matrix.distarch }}" -c '
             set -e
             deno --version >/dev/null
             /opt/tgdl-bot/seed-bin/yt-dlp --version >/dev/null
@@ -216,87 +238,9 @@ jobs:
     if: needs.check.outputs.should_release == 'true'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-        with:
-          fetch-depth: 0  # 需要完整历史来生成 changelog
-
-      - name: Resolve version
+      - name: Set version env
         shell: bash
-        run: |
-          echo "VERSION=${{ needs.check.outputs.version }}" >> "$GITHUB_ENV"
-          echo "TAG=${{ needs.check.outputs.tag }}" >> "$GITHUB_ENV"
-
-      # 获取上一个 tag
-      - name: Get previous tag
-        id: prev_tag
-        shell: bash
-        run: |
-          # 获取当前 tag 之前的上一个 tag
-          PREV_TAG=$(git tag --sort=-v:refname | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | sed -n '2p')
-          if [ -z "$PREV_TAG" ]; then
-            # 如果没有上一个 tag，使用第一个 commit
-            PREV_TAG=$(git rev-list --max-parents=0 HEAD | head -1)
-          fi
-          echo "prev_tag=$PREV_TAG" >> "$GITHUB_OUTPUT"
-
-      # 安装 git-cliff
-      - name: Install git-cliff
-        shell: bash
-        run: |
-          npm install -g git-cliff
-
-      # 生成 changelog
-      - name: Generate changelog
-        id: changelog
-        shell: bash
-        run: |
-          # 生成从上一个 tag 到当前 tag 的 changelog
-          git cliff --tag "${TAG}" \
-            --from "${{ steps.prev_tag.outputs.prev_tag }}" \
-            --to "${TAG}" \
-            -o CHANGELOG_RELEASE.md
-          
-          # 读取生成的 changelog
-          CHANGELOG=$(cat CHANGELOG_RELEASE.md)
-          echo "changelog<<EOF" >> "$GITHUB_OUTPUT"
-          echo "$CHANGELOG" >> "$GITHUB_OUTPUT"
-          echo "EOF" >> "$GITHUB_OUTPUT"
-
-      # 更新 CHANGELOG.md
-      - name: Update CHANGELOG.md
-        shell: bash
-        run: |
-          # 生成新的 changelog 内容
-          {
-            echo "# 更新日志 / Changelog"
-            echo ""
-            echo "本项目遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 格式"
-            echo "（中文为主、英文并存，与 README 策略一致）。"
-            echo "**版本号与 git tag 一一对应**：每个发布版本对应一个 \`v*\` tag"
-            echo "（如 \`v2.4.0\`），tag 触发 CI 构建镜像并创建 GitHub Release。"
-            echo ""
-            echo "This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)"
-            echo "format (Chinese-primary with English, same policy as the README)."
-            echo "**Every version maps to a git tag** (e.g. \`v2.4.0\`); pushing the tag triggers CI"
-            echo "to build the Docker image and create a GitHub Release."
-            echo ""
-          } > CHANGELOG.md
-          
-          # 追加生成的 changelog 内容
-          cat CHANGELOG_RELEASE.md >> CHANGELOG.md
-          
-          # 追加历史版本部分
-          {
-            echo ""
-            echo "## 历史版本 / Previous Releases"
-            echo ""
-            echo "较早版本（v2.3.1 及更早）无独立更新日志，变更内容见对应 git tag 与"
-            echo "[GitHub Releases](https://github.com/linkcccp/tgdl-bot/releases)。"
-            echo ""
-            echo "Earlier releases (v2.3.1 and before) do not have a dedicated changelog; see the"
-            echo "corresponding git tags and [GitHub Releases](https://github.com/linkcccp/tgdl-bot/releases)。"
-          } >> CHANGELOG.md
+        run: echo "VERSION=${{ needs.check.outputs.version }}" >> "$GITHUB_ENV"
 
       # imagetools 需要 buildx；GHCR 登录凭据 job 间不共享，manifest job 内需重新登录
       - name: Set up Docker Buildx
@@ -310,7 +254,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       # 合并 per-arch tag -> multi-arch manifest（{ver} 与 latest 一次建两个）
-      - name: Merge multi-arch manifest (${{ needs.check.outputs.version }} + latest)
+      - name: Merge multi-arch manifest (${{ env.VERSION }} + latest)
         shell: bash
         run: |
           set -euo pipefail
@@ -330,28 +274,14 @@ jobs:
           grep -q "linux/amd64" <<<"$out" || { echo "错误：manifest 缺少 linux/amd64（即 x64）"; exit 1; }
           grep -q "linux/arm64" <<<"$out" || { echo "错误：manifest 缺少 linux/arm64"; exit 1; }
 
-      # 更新 CHANGELOG.md 到仓库
-      - name: Commit CHANGELOG.md
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add CHANGELOG.md
-          git commit -m "docs: update CHANGELOG.md for ${VERSION}" || echo "No changes to commit"
-          git push origin HEAD:main
-
-      # 使用生成的 changelog 创建 GitHub Release
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ needs.check.outputs.tag }}
           name: Release ${{ needs.check.outputs.tag }}
+          generate_release_notes: true
           body: |
-            ${{ steps.changelog.outputs.changelog }}
-            
-            ---
-
-            已发布 Docker 镜像：`ghcr.io/linkcccp/tgdl-bot:${{ needs.check.outputs.version }}`（及 `:latest`）
+            已发布 Docker 镜像：`ghcr.io/linkcccp/tgdl-bot:${{ env.VERSION }}`（及 `:latest`）
             平台：linux/amd64（即 x64）+ linux/arm64（multi-arch manifest，`docker pull` 自动按宿主架构拉取）
 
             一键部署：

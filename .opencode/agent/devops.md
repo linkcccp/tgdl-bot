@@ -10,7 +10,7 @@ permission:
 ## 职责
 
 - 镜像：维护 `docker/Dockerfile`（用 `ARG TARGETARCH`；构建上下文 = `docker/`，dist 布局 `docker/dist/amd64/`；内置 tgdl-bot、telegram-bot-api（来自 fork `linkcccp/telegram-bot-api` 的 latest Release，**不本地编译**）、yt-dlp、ffmpeg 静态版、python3、**deno**（yt-dlp YouTube 提取必需））。
-- CI/CD：维护 `.github/workflows/release.yml`（`v*` tag 触发：仅构建 **linux/amd64** → 推 GHCR `ghcr.io/linkcccp/tgdl-bot:{ver}`+`latest` → 建 Release（**无二进制资产**））。
+- CI/CD：维护 `.github/workflows/release.yml`（由 `workflow_run` 监听 CI 完成后触发：matrix 双 job 构建 **linux/amd64** + **linux/arm64** → 推 GHCR `ghcr.io/linkcccp/tgdl-bot:{ver}`+`latest` → 建 Release（**无二进制资产**））。
 - 部署：维护 `scripts/install.sh`（`curl|sudo bash` → 装/用 Docker → pull → 启动 → `docker image prune -f` 清悬空镜像）。
 - 配置模板：维护 `docker/docker-entrypoint.sh`（由 `TGDL_*` 环境变量生成 `config.conf`，若挂载文件则跳过）、`docker/.env.example`、`docker/config.conf.example`；**新增配置键时必须与 `AppConfig`/`ConfigParser` 同步**。
 - Cookie 持久化：默认 `/opt/tgdl-bot/api-data/cookies`（`tgdl-data` 卷内，v2.3.1 起，pull 重建不丢）。**勿改回 `/opt/tgdl-bot/cookies`**（早期安装非卷，会丢）。
@@ -35,7 +35,7 @@ permission:
 
 - 任务开始：检查当前分支（`git branch --show-current`）。若不在 `feat/*` 或 `chore/*` 分支，基于本地 dev 创建：`git checkout dev && git checkout -b <分支名>`（分支前缀按任务类型：配置/CI 类用 `chore/`，功能类用 `feat/`；orchestrator 指定分支名时以其为准）。
 - 在分支上开发 → 验证（build/test/audit）→ `git add` + `git commit`（feat:/chore: 风格，不提交 `docker/dist/`、密钥与本地状态）。
-- 任务完成并通过验证后，**squash 合并回本地 dev**：`git checkout dev && git pull`（拉最新 dev）`&& git merge --squash <分支> && git commit`（先拉最新 dev，再将该分支全部 commit 压成一条提交到 dev；dev 是**本地草稿分支**、不进远程；main 是唯一远程分支，只接受 PR 或用户指示的大版本 squash 合并）。
+- 任务完成并通过验证后，**squash 合并回本地 dev**：`git checkout dev && git pull`（拉最新 dev）`&& git merge --squash <分支> && git commit`（先拉最新 dev，再将该分支全部 commit 压成一条提交到 dev；dev 是**本地草稿分支**、不进远程；main 是唯一远程分支，改动本地直接 push）。
 - 冲突：自行解决（先拉最新 dev，处理冲突后再合并）。
 - 清理：合并后 `git branch -d <分支>`。
 - 边界：**绝不擅自 push origin、绝不自行合并 dev→main**（push/`v*` tag 会触发 CI 发布镜像）；push、dev→main 合并与打 tag 一律等用户指示。

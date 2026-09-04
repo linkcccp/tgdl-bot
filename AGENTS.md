@@ -33,7 +33,7 @@ Agent 角色（详见 `.opencode/agent/`，openai 配置 `opencode.json` 默认 
 - **`tools/` 目录**：开发工具项目，**不入 `TGBot.slnx`**（不牵连主构建/测试/CI）。`tools/TgdlDocBuilder`（文档构建工具，跨平台）按需 `dotnet build tools/TgdlDocBuilder/TgdlDocBuilder.csproj` 单独编译。**0 警告硬门槛界定**：`GenerateDocumentationFile`+CS1591 的动机是 docfx 从 TGBot 生成 API 文档的质量；tools 工具自身不产文档、不进发布镜像，**编译仍须 0 警告，但不强制 XML 注释**。
 
 ## Docker / 发布（关键）
-- CI（`.github/workflows/release.yml`）由 `v*` tag 触发：matrix 双 job 构建 **linux/amd64（即 x64，ubuntu-latest）** 与 **linux/arm64（ubuntu-24.04-arm 免费原生 runner）**，各推 per-arch tag（`{ver}-x64`/`{ver}-arm64`），再由 manifest job 用 `buildx imagetools create` 合并出 `{ver}`+`latest` multi-arch tag 并建 Release（**无二进制资产**）。需仓库 Settings→Actions→General→Workflow permissions = **Read and write**。
+- CI（`.github/workflows/release.yml`）由 `workflow_run` 监听 CI 完成后触发：matrix 双 job 构建 **linux/amd64（即 x64，ubuntu-latest）** 与 **linux/arm64（ubuntu-24.04-arm 免费原生 runner）**，各推 per-arch tag（`{ver}-x64`/`{ver}-arm64`），再由 manifest job 用 `buildx imagetools create` 合并出 `{ver}`+`latest` multi-arch tag 并建 Release（**无二进制资产**）。需仓库 Settings→Actions→General→Workflow permissions = **Read and write**。
 - 镜像内置：tgdl-bot、telegram-bot-api（来自 fork `linkcccp/telegram-bot-api` 的 latest Release，**不本地编译**）、yt-dlp、ffmpeg 静态版、python3、**deno**（yt-dlp YouTube 提取必需；缺则报 "Requested format is not available"）。
 - `docker/Dockerfile` 用 `ARG TARGETARCH`（buildx 自动注入标准值 amd64/arm64，仅 deno 分支判断）+ `ARG DISTARCH`（自命名 x64/arm64，CI 显式传，驱动 COPY 路径）；dist 布局 `docker/dist/{x64,arm64}/`（构建上下文 = `docker/`，CI 负责放产物；旧布局 `dist/amd64/` 已废弃）。
 - 部署：`scripts/install.sh`（`curl|sudo bash`）→ 装/用 Docker → pull → 启动 → `docker image prune -f`（清悬空镜像）。
@@ -44,13 +44,13 @@ Agent 角色（详见 `.opencode/agent/`，openai 配置 `opencode.json` 默认 
 新增配置键必须同步：`AppConfig` → `ConfigParser`（别名+解析+校验）→ `docker/docker-entrypoint.sh`（TGDL_* 映射）→ `docker/.env.example` → `docker/config.conf.example` → README 配置表。
 
 ## Git 约定（GitHub Flow：main 唯一远程分支）
-- **`main`**：唯一远程分支，常驻 GitHub，随时可发布。所有进 `main` 的改动必须走 **PR**（CI 全绿 + 至少 1 人审查）；小改动（fix/docs 等）也直接以 PR 进 main，发布语义靠 `v*` tag + CHANGELOG 保证（如 `v2.4.1`，tag 与版本一一对应；push tag 触发 CI 发布镜像，无 tag 不发布）。
+- **`main`**：唯一远程分支，常驻 GitHub，随时可发布。main 分支改动本地直接 push（不走 PR），发布语义靠 `v*` tag + CHANGELOG 保证（如 `v2.4.1`，tag 与版本一一对应；push tag 触发 CI 发布镜像，无 tag 不发布）。
 - **`dev`**：本地开发草稿分支（**仅本地，不 push 远程**，不是远程协作渠道）。内部多步开发在 dev 上积累；发版时由用户指示，将 dev 内容以**单一大版本提交 squash 合并进 main**（本地操作），然后 push main + 打 `v*` tag。
 - **`feat/*`、`fix/*`、`chore/*` 等**：内部开发一律基于 dev 创建（**不要**基于 main 创建内部分支），开发完成并通过验证后 squash 合并回本地 dev（先拉最新 dev，`git merge --squash <分支>` 再提交），合并后删除分支。
 - **外部贡献者 / Dependabot**：从 main fork/拉取（干净稳定基线）→ PR 到 **main**；Dependabot 配置保持 `base: main`（默认）。
 - **push origin / dev→main 合并必须由用户主动指示**，agent 无权自行执行。
 - 提交约定：每个任务/阶段完成并通过验证后自动 `git add` + `git commit`（中文，`feat:`/`fix:`/`docs:`/`test:`/`chore:` 风格）；提交前检查只暂存本次改动文件；code-reviewer 只读，禁止 git 写操作。
-- **版本策略（自动发版）**：PR 标题必须带类型前缀（CI 强制校验，Dependabot 豁免）——`breaking:`/`feat:`/`fix:`/`chore:`/`docs:`，可带 scope；合并后 auto-version workflow 按 SemVer 自动打 tag：breaking→vX.0.0、feat→vX.Y.0、fix/chore→vX.Y.Z+1、**docs→不发版（无 tag）**；无 PR 的 push 不自动打 tag，由维护者手动打。打 tag 自动触发 release.yml，**发版全自动，agent 不干预 tag 决策**（CHANGELOG 仍由维护者手动维护）。
+- **版本策略（手动发版）**：维护者手动打 `v*` tag 并 push，CI 检测通过后自动构建并发布 Docker 镜像（workflow_run 监听 CI 完成）。CHANGELOG 由维护者手动维护。
 - 发布回滚由 git 管理（回退到上一 tag/提交）。
 - 本机外网阻断 GitHub 22 端口：origin 已用 `ssh://git@ssh.github.com:443/...`。
 - 子模块 `third_party/telegram-bot-api` → fork URL（源码参考；CI 不检出/构建）。

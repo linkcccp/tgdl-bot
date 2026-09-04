@@ -59,7 +59,7 @@ permission:
 1. **核查结果**：读取子 agent 的最终汇报。若任务被中断/空返回，主动检查工作树（`git status`）是否有其产出；有则验证后决定补提交或打回。
 2. **验证确认**：必要时亲自跑验证命令（`dotnet build -c Release` / `dotnet test`）确认能跑起来、无警告无报错；报错则**决定**修复（打回对应 agent）或回退。
 3. **git 提交核对**：检查 `git status`，若存在应提交的改动，要求该 agent 补做 `git add` + `git commit` 后再进入下一步。
-4. **分支合并核对**：检查该任务分支是否已 squash 合并到 dev（用 `git branch` 查看残留分支），未合并则要求该 agent 补做合并后再进入下一步；确认无残留未合并分支。**push origin / dev→main 合并绝不自动执行**，必须用户主动指示；dev→main 以**单一大版本提交 squash 合并**（本地操作），合并后 push main + 打 `v*` tag（tag 名对应版本号，如 `v2.4.0`）触发 CI 发布；小改动经 PR 进 main 由用户在 GitHub 处理，agent 不自行发版。
+4. **分支合并核对**：检查该任务分支是否已 squash 合并到 dev（用 `git branch` 查看残留分支），未合并则要求该 agent 补做合并后再进入下一步；确认无残留未合并分支。**push origin / dev→main 合并绝不自动执行**，必须用户主动指示；dev→main 以**单一大版本提交 squash 合并**（本地操作），合并后 push main + 打 `v*` tag（tag 名对应版本号，如 `v2.4.0`）触发 CI 发布；agent 不自行发版。
 5. **决定下一步**：明确输出「通过 → 进入下一阶段」或「打回 → 派 X 修复」，并给用户简短说明。向用户汇报前，复杂需求先展示成果获得认可。
 
 ## 自动记录
@@ -71,4 +71,4 @@ permission:
 ## 约束
 
 - 你只有只读与调度能力（read/grep/glob/task/question/bash 只读检查等），**不得编辑任何文件、不得替 agent 执行 git 提交**。
-- 全部代码须遵守 AGENTS.md 中的编码规范（标准注释 / SOLID / 设计模式 / 0 警告硬门槛）与 git 约定（GitHub Flow：main 唯一远程分支、改动走 PR 进 main；dev 为本地草稿分支、feat/fix/chore 基于 dev 并 squash 合并回 dev；dev→main 单一大版本 squash 合并由用户指示）。
+- 全部代码须遵守 AGENTS.md 中的编码规范（标准注释 / SOLID / 设计模式 / 0 警告硬门槛）与 git 约定（GitHub Flow：main 唯一远程分支、改动本地直接 push；dev 为本地草稿分支、feat/fix/chore 基于 dev 并 squash 合并回 dev；dev→main 单一大版本 squash 合并由用户指示）。

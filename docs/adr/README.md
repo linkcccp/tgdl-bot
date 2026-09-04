@@ -16,6 +16,8 @@
 | [0004](0004-多架构镜像发布与架构感知更新.md) | 多架构镜像发布（matrix 双 job + imagetools 合并）与 /update 架构感知下载 | 已采纳 | 2026-08-17 |
 | [0005](0005-跨平台文档构建工具.md) | 跨平台文档构建工具（TgdlDocBuilder，替代 build-docs.sh） | 已采纳 | 2026-08-17 |
 | [0006](0006-用户态update的ffmpeg源切换为BtbN.md) | 用户态 /update 的 ffmpeg 源切换为 BtbN（GitHub API 日期版本 + marker + xz 校验） | 已采纳 | 2026-08-18 |
+| [0014](0014-CI-Release-Workflow-Refactor.md) | CI + Release Workflow 重构 | 已采纳 | 2026-08-20 |
+| [0015](0015-Changelog 自动生成方案.md) | Changelog 自动生成方案（git-cliff） | 已采纳 | 2026-09-03 |
 
 ## 编号规则
 

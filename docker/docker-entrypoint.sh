@@ -41,8 +41,8 @@ is_bool() { [[ "${1,,}" =~ ^(true|yes|on|1|false|no|off|0)$ ]]; }
 mkdir -p "$BIN_DIR" "$API_DATA_DIR" "$TMP_DIR" "$COOKIE_DIR"
 chown -R "$RUN_USER":"$RUN_USER" "$INSTALL_DIR" /var/lib/tgdl-bot 2>/dev/null || true
 
-# ---------- 2. 种子 yt-dlp/ffmpeg 到 bin 卷（首启） ----------
-if [[ -d "$SEED_DIR" ]] && { [[ ! -x "$BIN_DIR/yt-dlp" ]] || [[ ! -x "$BIN_DIR/ffmpeg" ]]; }; then
+# ---------- 2. 种子 yt-dlp/ffmpeg 到 bin 卷（每次启动） ----------
+if [[ -d "$SEED_DIR" ]]; then
     cp -a "$SEED_DIR"/. "$BIN_DIR"/ 2>/dev/null || true
     chmod +x "$BIN_DIR/yt-dlp" "$BIN_DIR/ffmpeg" 2>/dev/null || true
     log "已将镜像内置 yt-dlp/ffmpeg 种子到 ${BIN_DIR}"
