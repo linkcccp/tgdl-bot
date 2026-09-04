@@ -306,25 +306,37 @@ internal static class DocBuilder
     }
 
     /// <summary>
-    /// 清理 dotnet CLI 注入的架构后缀环境变量（DOTNET_ROOT_&lt;ARCH&gt;，如 DOTNET_ROOT_X64）。
-    /// 该变量在 apphost 的运行时查找中优先级高于用户显式设置的 DOTNET_ROOT（dotnet run 会把
-    /// DOTNET_ROOT_X64 指向 CLI 自身安装根，遮蔽自定义安装如 $HOME/dotnet，导致 docfx 找不到
-    /// aspnetcore 运行时）。当 DOTNET_ROOT 已设置时将其移除，确保 docfx 使用用户指定的运行时根；
-    /// 不自动设置任何变量（§4.5：尊重用户设置、不干预）。
+    /// 为 docfx 子进程注入环境变量：清理 dotnet CLI 架构后缀变量（DOTNET_ROOT_&lt;ARCH&gt;），
+    /// 并强制设置 DOCFX_SOURCE_BRANCH_NAME / DOCFX_SOURCE_REPOSITORY_URL 使 "View Source"
+    /// 链接始终指向 main 分支（本地 dev 分支不推远程，docfx 默认从 git 读取当前分支会导致 404）。
     /// </summary>
     /// <param name="psi">docfx 子进程的启动配置。</param>
     private static void ApplyDocfxEnvironment(ProcessStartInfo psi)
     {
-        if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DOTNET_ROOT")))
+        // ① 清理 DOTNET_ROOT_<ARCH>：dotnet run 注入的架构后缀变量优先级高于用户显式设置的
+        //    DOTNET_ROOT，会遮蔽自定义安装（如 $HOME/dotnet），导致 docfx 找不到 aspnetcore 运行时。
+        if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DOTNET_ROOT")))
         {
-            return;
+            foreach (string key in psi.Environment.Keys
+                         .Where(k => k.StartsWith("DOTNET_ROOT_", StringComparison.Ordinal))
+                         .ToList())
+            {
+                psi.Environment.Remove(key);
+            }
         }
 
-        foreach (string key in psi.Environment.Keys
-                     .Where(k => k.StartsWith("DOTNET_ROOT_", StringComparison.Ordinal))
-                     .ToList())
+        // ② 强制 View Source 链接指向 main：本地 dev 分支不推远程，docfx 默认从 git 读取
+        //    当前分支名生成链接（如 blob/dev/...），但 dev 在 GitHub 上不存在会导致 404。
+        //    DOCFX_SOURCE_BRANCH_NAME 覆盖分支名，DOCFX_SOURCE_REPOSITORY_URL 覆盖仓库 URL。
+        //    仅在用户未显式设置时注入（尊重外部覆盖，如 CI 环境）。
+        if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DOCFX_SOURCE_BRANCH_NAME")))
         {
-            psi.Environment.Remove(key);
+            psi.Environment["DOCFX_SOURCE_BRANCH_NAME"] = "main";
+        }
+
+        if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DOCFX_SOURCE_REPOSITORY_URL")))
+        {
+            psi.Environment["DOCFX_SOURCE_REPOSITORY_URL"] = "https://github.com/linkcccp/tgdl-bot";
         }
     }
 

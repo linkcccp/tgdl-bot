@@ -361,3 +361,44 @@ jobs:
 
             说明：arm64 镜像经原生 arm64 runner 构建并完成资产原生执行校验，构建侧已验证；
             真实运行待 ARM 设备实测。armv7/32 位不支持。
+
+  # API 文档部署到 GitHub Pages；与 manifest 并行（仅等 check + build）
+  deploy-docs:
+    name: Deploy API docs to GitHub Pages
+    needs: [check, build]
+    if: needs.check.outputs.should_release == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write  # actions/deploy-pages 所需 OIDC token
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.check.outputs.tag }}  # 确保文档构建自 tag 对应的代码
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Install docfx
+        run: dotnet tool install --global docfx
+
+      - name: Build docs
+        run: dotnet run --project TGBot.Docfx
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: TGBot.Docfx/_site/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
