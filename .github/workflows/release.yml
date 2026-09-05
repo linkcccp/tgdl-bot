@@ -236,20 +236,22 @@ jobs:
           echo "prev_tag=${PREV_TAG}" >> "$GITHUB_OUTPUT"
           echo "前一个 tag: ${PREV_TAG}"
 
-      # 安装 git-cliff
-      - name: Install git-cliff
-        shell: bash
-        run: |
-          npm install -g git-cliff
-
-      # 生成 changelog（仅当前版本）
+      # 生成 changelog（纯 git log，无第三方依赖）
       - name: Generate changelog
         id: changelog
         shell: bash
         run: |
-          # 使用范围只生成当前版本的变更
-          git cliff "${PREV_TAG}..${TAG}" --tag "${TAG}" -o CHANGELOG_RELEASE.md
-          
+          PREV_TAG="${{ steps.prev_tag.outputs.prev_tag }}"
+          TAG="${TAG}"
+          REPO_URL="https://github.com/linkcccp/tgdl-bot"
+
+          # 生成 changelog 内容
+          {
+            echo "## [${TAG}] - $(date +%Y-%m-%d)"
+            echo ""
+            git log "${PREV_TAG}..${TAG}" --format="- %s" --no-merges
+          } > CHANGELOG_RELEASE.md
+
           # 读取生成的 changelog
           CHANGELOG=$(cat CHANGELOG_RELEASE.md)
           echo "changelog<<EOF" >> "$GITHUB_OUTPUT"
@@ -345,8 +347,6 @@ jobs:
             ---
             
             **Full Changelog**: https://github.com/linkcccp/tgdl-bot/compare/${{ steps.prev_tag.outputs.prev_tag }}...${{ needs.check.outputs.tag }}
-            
-            ---
             
             已发布 Docker 镜像：`ghcr.io/linkcccp/tgdl-bot:${{ needs.check.outputs.version }}`（及 `:latest`）
             平台：linux/amd64（即 x64）+ linux/arm64（multi-arch manifest，`docker pull` 自动按宿主架构拉取）
